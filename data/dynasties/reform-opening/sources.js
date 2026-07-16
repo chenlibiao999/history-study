@@ -1,0 +1,1 @@
+window.REFORM_OPENING_SOURCES = window.MODERN_CHINA_SOURCES || [];

@@ -1,0 +1,1437 @@
+window.JIN_EVENTS = [
+  {
+    "id": "jin-aguda-founds-jin",
+    "title": "完颜阿骨打建金",
+    "aliases": [],
+    "era": "女真崛起",
+    "period": "金",
+    "time": "1115",
+    "regions": [
+      "会宁",
+      "东北"
+    ],
+    "topics": [
+      "建国",
+      "女真"
+    ],
+    "summary": "完颜阿骨打统一女真反辽并称帝，建立金朝。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "完颜阿骨打",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "完颜阿骨打是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "完颜阿骨打建金"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "辽末对女真控制苛重，东北边疆矛盾激化。"
+    ],
+    "process": [
+      {
+        "time": "1114",
+        "title": "起兵反辽",
+        "description": "阿骨打率女真诸部起兵反辽，利用辽末腐败和边疆控制松动迅速扩大力量。女真军事组织形成强大冲击力。"
+      },
+      {
+        "time": "1115",
+        "title": "称帝建金",
+        "description": "阿骨打称帝建立金朝，把反辽联盟转为王朝政权。金从东北地方力量变成辽朝最大威胁。"
+      }
+    ],
+    "results": [
+      "金朝建立。",
+      "辽朝崩解加速。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "金的起点是女真反辽和国家化。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "完颜阿骨打建金是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「完颜阿骨打建金」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "完颜阿骨打建金为什么重要？",
+        "answer": "金的起点是女真反辽和国家化。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-destroys-liao",
+    "title": "金灭辽",
+    "aliases": [],
+    "era": "女真崛起",
+    "period": "金",
+    "time": "1125",
+    "regions": [
+      "辽",
+      "燕云"
+    ],
+    "topics": [
+      "战争",
+      "辽亡"
+    ],
+    "summary": "金军连续攻破辽朝核心地区，辽天祚帝被俘，辽朝灭亡。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "金太宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金太宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "金灭辽"
+        ]
+      },
+      {
+        "name": "辽天祚帝",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "辽天祚帝是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "金灭辽"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "女真崛起后辽朝内部衰败，宋也试图联金取回燕云。"
+    ],
+    "process": [
+      {
+        "time": "1120s",
+        "title": "金军推进",
+        "description": "金军攻取辽上京、中京等关键区域，辽朝失去草原和汉地支撑。辽的复合帝国结构迅速瓦解。"
+      },
+      {
+        "time": "1125",
+        "title": "天祚被俘",
+        "description": "辽天祚帝被俘，辽朝灭亡，金朝由反辽新兴政权变成北方主导力量。辽亡后金直接面对北宋，原有宋辽均势被打破。"
+      }
+    ],
+    "results": [
+      "辽朝灭亡。",
+      "金成为北方最大强权。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "辽亡使北宋失去缓冲，靖康危机由此逼近。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "金灭辽是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「金灭辽」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "金灭辽为什么重要？",
+        "answer": "辽亡使北宋失去缓冲，靖康危机由此逼近。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-song-alliance-yanyun",
+    "title": "宋金海上之盟与燕云交割",
+    "aliases": [],
+    "era": "灭辽灭北宋",
+    "period": "金",
+    "time": "1118-1125",
+    "regions": [
+      "燕云",
+      "宋",
+      "金"
+    ],
+    "topics": [
+      "外交",
+      "宋金"
+    ],
+    "summary": "宋金联盟灭辽后围绕燕云交割发生矛盾，金看清北宋军事实力虚弱。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "宋徽宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "宋徽宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "宋金海上之盟与燕云交割"
+        ]
+      },
+      {
+        "name": "金太宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金太宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "宋金海上之盟与燕云交割"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "北宋希望借金灭辽收复燕云，金则利用宋的需求获取利益。"
+    ],
+    "process": [
+      {
+        "time": "1118后",
+        "title": "宋金结盟",
+        "description": "宋通过海路与金约定夹攻辽，试图解决燕云问题。这个外交选择低估了金的扩张能力。"
+      },
+      {
+        "time": "1125前后",
+        "title": "交割矛盾",
+        "description": "金灭辽后，宋以高成本取得部分燕云，但宋军表现虚弱，控制能力不足。金由此判断南下侵宋有利可图。"
+      }
+    ],
+    "results": [
+      "宋金关系恶化。",
+      "燕云问题未真正解决。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "海上之盟对金而言是观察宋朝虚实的窗口。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "宋金海上之盟与燕云交割是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「宋金海上之盟与燕云交割」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "宋金海上之盟与燕云交割为什么重要？",
+        "answer": "海上之盟对金而言是观察宋朝虚实的窗口。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-jingkang-captures-kaifeng",
+    "title": "金军攻破开封与靖康之变",
+    "aliases": [],
+    "era": "灭辽灭北宋",
+    "period": "金",
+    "time": "1125-1127",
+    "regions": [
+      "开封"
+    ],
+    "topics": [
+      "战争",
+      "北宋灭亡"
+    ],
+    "summary": "金军两次南下攻宋，攻破开封，俘徽钦二帝，北宋灭亡。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "金太宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金太宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "金军攻破开封与靖康之变"
+        ]
+      },
+      {
+        "name": "宋徽宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "宋徽宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "金军攻破开封与靖康之变"
+        ]
+      },
+      {
+        "name": "宋钦宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "宋钦宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "金军攻破开封与靖康之变"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "宋金联盟破裂后，金利用宋朝军事虚弱和政治失误南下。"
+    ],
+    "process": [
+      {
+        "time": "1125-1126",
+        "title": "第一次南下",
+        "description": "金军逼近开封，北宋仓促求和而未能完成防御整顿。金军看到宋朝中枢缺乏决断和战斗力。"
+      },
+      {
+        "time": "1126-1127",
+        "title": "第二次破城",
+        "description": "金军再次围攻开封并攻破都城，徽宗、钦宗被俘。北宋中央政权崩溃，宋室南渡。"
+      }
+    ],
+    "results": [
+      "北宋灭亡。",
+      "宋金南北对峙开始。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "靖康之变是金朝扩张的顶点之一。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "金军攻破开封与靖康之变是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「金军攻破开封与靖康之变」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "金军攻破开封与靖康之变为什么重要？",
+        "answer": "靖康之变是金朝扩张的顶点之一。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-puppet-regimes-liu-yu",
+    "title": "伪楚、伪齐与金治华北",
+    "aliases": [],
+    "era": "灭辽灭北宋",
+    "period": "金",
+    "time": "1127-1137",
+    "regions": [
+      "华北",
+      "河南",
+      "山东"
+    ],
+    "topics": [
+      "统治",
+      "傀儡政权"
+    ],
+    "summary": "金在华北扶立张邦昌、刘豫等傀儡政权，试图降低直接统治成本。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "刘豫",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "刘豫是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "伪楚、伪齐与金治华北"
+        ]
+      },
+      {
+        "name": "金太宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金太宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "伪楚、伪齐与金治华北"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "金初对汉地治理经验不足，直接管理广阔中原成本很高。"
+    ],
+    "process": [
+      {
+        "time": "1127",
+        "title": "张邦昌伪楚",
+        "description": "金军攻破开封后扶立张邦昌，但伪楚缺乏合法性，很快失败。金需要寻找更可持续的汉地代理统治。"
+      },
+      {
+        "time": "1130-1137",
+        "title": "刘豫伪齐",
+        "description": "金扶立刘豫统治河南、山东等地，用其牵制南宋。伪齐最终因军事和政治价值下降被废除，金转向更直接治理。"
+      }
+    ],
+    "results": [
+      "金探索汉地统治方式。",
+      "南宋北伐和伪齐问题交织。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "傀儡政权说明金灭宋后并非立刻能稳定统治华北。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "伪楚、伪齐与金治华北是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「伪楚、伪齐与金治华北」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "伪楚、伪齐与金治华北为什么重要？",
+        "answer": "傀儡政权说明金灭宋后并非立刻能稳定统治华北。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-shaoxing-peace",
+    "title": "绍兴和议与宋金边界",
+    "aliases": [],
+    "era": "灭辽灭北宋",
+    "period": "金",
+    "time": "1141-1142",
+    "regions": [
+      "淮河",
+      "临安",
+      "金"
+    ],
+    "topics": [
+      "外交",
+      "宋金"
+    ],
+    "summary": "金与南宋达成绍兴和议，确立淮河边界和南宋对金称臣纳贡关系。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "金熙宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金熙宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "绍兴和议与宋金边界"
+        ]
+      },
+      {
+        "name": "宋高宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "宋高宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "绍兴和议与宋金边界"
+        ]
+      },
+      {
+        "name": "秦桧",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "秦桧是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "绍兴和议与宋金边界"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "岳飞北伐和宋金长期战争后，双方都面临继续作战成本。"
+    ],
+    "process": [
+      {
+        "time": "1141",
+        "title": "和谈推进",
+        "description": "金在军事压力和内部整合需求下接受议和，南宋高宗也希望稳定皇位和政权。双方利益在停战上出现交集。"
+      },
+      {
+        "time": "1142",
+        "title": "边界固定",
+        "description": "绍兴和议确定宋金以淮河、大散关一线为界，南宋称臣纳贡。金获得政治优势和北方统治喘息。"
+      }
+    ],
+    "results": [
+      "宋金南北对峙固定。",
+      "金得以整合北方。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "绍兴和议对金是稳定华北统治的重要外交成果。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "绍兴和议与宋金边界是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「绍兴和议与宋金边界」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "绍兴和议与宋金边界为什么重要？",
+        "answer": "绍兴和议对金是稳定华北统治的重要外交成果。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-hailing-move-capital",
+    "title": "海陵王迁都燕京与南侵",
+    "aliases": [],
+    "era": "海陵与世宗",
+    "period": "金",
+    "time": "1153-1161",
+    "regions": [
+      "燕京",
+      "淮河",
+      "采石"
+    ],
+    "topics": [
+      "迁都",
+      "战争"
+    ],
+    "summary": "海陵王迁都燕京并发动南侵，试图灭宋统一，但采石失败后被杀。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "完颜亮",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "完颜亮是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "海陵王迁都燕京与南侵"
+        ]
+      },
+      {
+        "name": "虞允文",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "虞允文是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "海陵王迁都燕京与南侵"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "金朝控制华北后，统治重心逐渐南移，海陵王追求更强皇权和统一野心。"
+    ],
+    "process": [
+      {
+        "time": "1153",
+        "title": "迁都燕京",
+        "description": "海陵王迁都燕京，加强对汉地和中原的控制，也削弱上京旧贵族根基。迁都体现金朝统治重心变化。"
+      },
+      {
+        "time": "1161",
+        "title": "南侵失败",
+        "description": "海陵王大举攻宋，在采石受挫，内部兵变爆发后被杀。金朝灭宋统一的激进路线失败。"
+      }
+    ],
+    "results": [
+      "海陵王被杀。",
+      "金世宗即位。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "海陵王线连接金朝汉地化和对宋统一野心。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "海陵王迁都燕京与南侵是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「海陵王迁都燕京与南侵」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "海陵王迁都燕京与南侵为什么重要？",
+        "answer": "海陵王线连接金朝汉地化和对宋统一野心。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-shizong-dading",
+    "title": "金世宗大定之治",
+    "aliases": [],
+    "era": "海陵与世宗",
+    "period": "金",
+    "time": "1161-1189",
+    "regions": [
+      "中都",
+      "华北"
+    ],
+    "topics": [
+      "治理",
+      "盛期"
+    ],
+    "summary": "金世宗即位后整顿政治、稳定宋金关系，金朝进入大定之治。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "金世宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金世宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "金世宗大定之治"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "海陵王失败后，金朝需要恢复内部秩序和财政民生。"
+    ],
+    "process": [
+      {
+        "time": "1161后",
+        "title": "稳定政局",
+        "description": "金世宗平定海陵王后局面，恢复贵族和官僚之间的平衡。金朝从激进南侵转向守成治理。"
+      },
+      {
+        "time": "大定年间",
+        "title": "治理盛期",
+        "description": "世宗重视节俭和吏治，华北社会得到恢复。金朝进入较稳定强盛阶段，也形成女真传统与汉制治理的平衡。"
+      }
+    ],
+    "results": [
+      "金朝进入盛期。",
+      "宋金长期相对和平。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "大定之治是金朝最重要的治理高峰。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "金世宗大定之治是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「金世宗大定之治」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "金世宗大定之治为什么重要？",
+        "answer": "大定之治是金朝最重要的治理高峰。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-zhangzong-culture-decline",
+    "title": "金章宗文化繁荣与财政隐患",
+    "aliases": [],
+    "era": "海陵与世宗",
+    "period": "金",
+    "time": "1189-1208",
+    "regions": [
+      "中都"
+    ],
+    "topics": [
+      "文化",
+      "财政"
+    ],
+    "summary": "金章宗时期文化繁荣、制度汉化加深，但财政和军政问题逐渐积累。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "金章宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金章宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "金章宗文化繁荣与财政隐患"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "世宗盛期后金朝承平日久，贵族生活和官僚制度发生变化。"
+    ],
+    "process": [
+      {
+        "time": "1189后",
+        "title": "文化繁荣",
+        "description": "章宗本人重视文治，金朝汉文化吸收更深，宫廷和士人文化活跃。金不只是军事征服王朝，也有成熟文治面貌。"
+      },
+      {
+        "time": "后期",
+        "title": "隐患积累",
+        "description": "承平背后财政、军备和女真军事传统弱化问题逐渐出现。北方草原蒙古势力崛起时，金的应对能力下降。"
+      }
+    ],
+    "results": [
+      "金朝文化发展。",
+      "末期隐患形成。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "章宗朝要两面看：文化高峰和军政松弛。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "金章宗文化繁荣与财政隐患是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「金章宗文化繁荣与财政隐患」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "金章宗文化繁荣与财政隐患为什么重要？",
+        "answer": "章宗朝要两面看：文化高峰和军政松弛。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-mongol-war-begins",
+    "title": "蒙金战争爆发",
+    "aliases": [],
+    "era": "金末危局",
+    "period": "金",
+    "time": "1211",
+    "regions": [
+      "野狐岭",
+      "中都"
+    ],
+    "topics": [
+      "蒙古",
+      "战争"
+    ],
+    "summary": "成吉思汗大举攻金，野狐岭等战后金朝北方防线崩溃。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "成吉思汗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "成吉思汗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "蒙金战争爆发"
+        ]
+      },
+      {
+        "name": "金宣宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金宣宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "蒙金战争爆发"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "蒙古统一草原后，金朝成为其南下首要目标。"
+    ],
+    "process": [
+      {
+        "time": "1211",
+        "title": "蒙古南下",
+        "description": "成吉思汗率军攻金，金军在野狐岭等战役中遭受重创。草原军事力量突破金朝北部防线。"
+      },
+      {
+        "time": "战后",
+        "title": "中都受压",
+        "description": "蒙古不断逼近中都，金朝被迫应对前所未有的机动战压力。金的旧边防体系难以适应蒙古进攻。"
+      }
+    ],
+    "results": [
+      "金朝北方防线瓦解。",
+      "蒙古成为决定性威胁。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "蒙金战争是金朝由盛转亡的决定性外压。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "蒙金战争爆发是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「蒙金战争爆发」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "蒙金战争爆发为什么重要？",
+        "answer": "蒙金战争是金朝由盛转亡的决定性外压。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-move-capital-kaifeng",
+    "title": "金宣宗南迁汴京",
+    "aliases": [],
+    "era": "金末危局",
+    "period": "金",
+    "time": "1214",
+    "regions": [
+      "中都",
+      "汴京"
+    ],
+    "topics": [
+      "迁都",
+      "危机"
+    ],
+    "summary": "金宣宗在蒙古压力下南迁汴京，金朝失去北方根基并与南宋矛盾加深。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "金宣宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金宣宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "金宣宗南迁汴京"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "蒙古持续攻击中都，金朝中枢安全受到严重威胁。"
+    ],
+    "process": [
+      {
+        "time": "1214",
+        "title": "南迁汴京",
+        "description": "金宣宗放弃中都南迁汴京，试图保存中枢。迁都短期避开蒙古压力，却削弱对北方故地控制。"
+      },
+      {
+        "time": "南迁后",
+        "title": "攻宋求补",
+        "description": "金朝为弥补对蒙古损失转而进攻南宋，导致宋金关系恶化。金在两线压力下更加被动。"
+      }
+    ],
+    "results": [
+      "金朝重心南移。",
+      "金宋冲突加剧。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "南迁不是简单避难，而是金朝战略空间坍缩。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "金宣宗南迁汴京是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「金宣宗南迁汴京」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "金宣宗南迁汴京为什么重要？",
+        "answer": "南迁不是简单避难，而是金朝战略空间坍缩。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-decline-against-song-mongol",
+    "title": "金末两线困局",
+    "aliases": [],
+    "era": "金末危局",
+    "period": "金",
+    "time": "1217-1230",
+    "regions": [
+      "河南",
+      "陕西",
+      "淮河"
+    ],
+    "topics": [
+      "战争",
+      "两线压力"
+    ],
+    "summary": "金朝在蒙古压力下又与南宋冲突，陷入两线消耗，国力快速衰竭。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "金宣宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金宣宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "金末两线困局"
+        ]
+      },
+      {
+        "name": "金哀宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金哀宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "金末两线困局"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "金南迁后失去北方资源，希望通过南侵宋朝弥补损失。"
+    ],
+    "process": [
+      {
+        "time": "1217后",
+        "title": "南攻宋",
+        "description": "金朝多次进攻南宋，希望取得土地和财赋补偿北方损失。但南宋抵抗和蒙古压力使金难以取得决定成果。"
+      },
+      {
+        "time": "1220s",
+        "title": "国力衰竭",
+        "description": "蒙古从北方持续压迫，南宋又不再提供稳定缓冲。金朝人口、财政和军事资源迅速消耗。"
+      }
+    ],
+    "results": [
+      "金朝陷入末期困局。",
+      "宋蒙夹击条件形成。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "金末的错误在于无法处理蒙古主敌和宋朝关系。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "金末两线困局是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「金末两线困局」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "金末两线困局为什么重要？",
+        "answer": "金末的错误在于无法处理蒙古主敌和宋朝关系。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  },
+  {
+    "id": "jin-caizhou-fall",
+    "title": "蔡州之战与金朝灭亡",
+    "aliases": [],
+    "era": "亡国",
+    "period": "金",
+    "time": "1233-1234",
+    "regions": [
+      "蔡州"
+    ],
+    "topics": [
+      "亡国",
+      "宋蒙"
+    ],
+    "summary": "蒙古与南宋夹击金朝，蔡州陷落，金哀宗自杀，金朝灭亡。",
+    "bookmarked": false,
+    "people": [
+      {
+        "name": "金哀宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "金哀宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "蔡州之战与金朝灭亡"
+        ]
+      },
+      {
+        "name": "窝阔台",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "窝阔台是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "蔡州之战与金朝灭亡"
+        ]
+      },
+      {
+        "name": "宋理宗",
+        "role": "关键人物",
+        "years": "",
+        "color": "var(--accent-gold)",
+        "bio": "宋理宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+        "events": [
+          "蔡州之战与金朝灭亡"
+        ]
+      }
+    ],
+    "relations": [],
+    "background": [
+      "蒙古长期攻金，南宋也希望报靖康之仇，金朝已被压缩到河南一隅。"
+    ],
+    "process": [
+      {
+        "time": "1233",
+        "title": "退守蔡州",
+        "description": "金哀宗退守蔡州，金朝失去大部分疆土和资源。末期金军虽仍抵抗，但战略空间已经极小。"
+      },
+      {
+        "time": "1234",
+        "title": "蔡州陷落",
+        "description": "宋蒙联军攻破蔡州，金哀宗自杀，金朝灭亡。金亡后南宋完成对靖康旧敌的复仇，但也直接暴露在蒙古压力之下。"
+      }
+    ],
+    "results": [
+      "金朝灭亡。",
+      "宋蒙矛盾迅速上升。"
+    ],
+    "debates": [
+      {
+        "view": "学习提示",
+        "content": "金亡既是南宋复仇，也是更大危机开端。"
+      }
+    ],
+    "claims": [
+      {
+        "statement": "蔡州之战与金朝灭亡是理解金主线的重要节点。",
+        "status": "较稳妥",
+        "statusType": "stable",
+        "confidence": "medium",
+        "sourceIds": [
+          "jin-main-source"
+        ],
+        "note": "当前先按主线整理，后续逐条补公开卷链接和现代研究校勘。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "jin-main-source",
+        "reference": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "status": "待核原文",
+        "plainText": "这条材料用于白话理解「蔡州之战与金朝灭亡」的时间顺序、关键人物和主线影响；后续会补具体公开卷目链接。",
+        "note": "不是纯原文摘录，先给学习用白话释义。"
+      }
+    ],
+    "causalChain": [],
+    "sources": [
+      {
+        "id": "jin-main-source",
+        "type": "正史与编年史",
+        "title": "《金史》《宋史》《续资治通鉴》相关纪事",
+        "author": "待补",
+        "authorityLevel": "公开权威史料，待逐条补卷链接",
+        "note": "先作为金主线事件的史料入口。",
+        "credibility": "高",
+        "credibilityLevel": "high"
+      }
+    ],
+    "reviewQuestions": [
+      {
+        "type": "主线理解",
+        "question": "蔡州之战与金朝灭亡为什么重要？",
+        "answer": "金亡既是南宋复仇，也是更大危机开端。"
+      }
+    ],
+    "notes": [],
+    "dynastyId": "jin",
+    "dynasty": "金",
+    "topicIds": []
+  }
+];

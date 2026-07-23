@@ -271,6 +271,31 @@
       estimate(1453, "君士坦丁堡陷落前", { value: 1, approx: true }, { min: 5, max: 10 }, "low", ancientWorldBasis, "末期拜占庭几乎只剩君士坦丁堡及少量周边据点，数字仅作终局收缩口径。")
     ], "拜占庭是罗马东部延续，面积人口随七世纪危机、复兴和晚期衰退剧烈变化。", ancientWorldBasis),
 
+
+    "viking-nordic-europe": fragmented([
+      estimate(800, "维京时代初期北欧诸地", { value: 110, approx: true }, { min: 100, max: 200 }, "low", ancientWorldBasis, "按斯堪的纳维亚主要居住区和北海活动核心估算，不代表统一国家。"),
+      estimate(1030, "北海帝国前后", { value: 160, approx: true }, { min: 250, max: 450 }, "low", ancientWorldBasis, "含英格兰、丹麦、挪威部分地区的短期王权合计，控制强度差异大。"),
+      estimate(1397, "卡尔马联盟", { value: 130, approx: true }, { min: 250, max: 400 }, "medium-low", ancientWorldBasis, "按丹麦、挪威、瑞典王国合计估算，冰岛和北大西洋属地口径不稳定。")
+    ], "北欧与维京世界不是单一政权，记录为北欧主要王国和海上活动核心的合计估算。", ancientWorldBasis),
+
+    "iberia-reconquista": fragmented([
+      estimate(711, "西哥特崩解与穆斯林征服", { value: 58, approx: true }, { min: 400, max: 700 }, "low", ancientWorldBasis, "按伊比利亚半岛主要政治空间估算，战乱后人口统计不清。"),
+      estimate(929, "科尔多瓦哈里发高峰", { value: 45, approx: true }, { min: 500, max: 800 }, "low", ancientWorldBasis, "安达卢斯为主，北部基督教小王国另计，控制强度和人口估算有争议。"),
+      estimate(1492, "格拉纳达陷落", { value: 58, approx: true }, { min: 700, max: 1000 }, "medium-low", ancientWorldBasis, "按伊比利亚主要王国合计估算，接近西班牙和葡萄牙近代国家形成前夜。")
+    ], "伊比利亚再征服时期长期多政权并立，面积人口按半岛主要政权合计，不是单一国家。", ancientWorldBasis),
+
+    "eastern-europe-slavic": fragmented([
+      estimate(900, "斯拉夫、罗斯与草原并立", { value: 250, approx: true }, { min: 300, max: 600 }, "low", ancientWorldBasis, "东欧范围广且政权松散，按主要居住区和贸易通道影响估算。"),
+      estimate(1050, "基辅罗斯与中欧王国形成", { value: 320, approx: true }, { min: 600, max: 1000 }, "low", ancientWorldBasis, "含基辅罗斯、波兰、匈牙利和巴尔干部分主线政权合计。"),
+      estimate(1569, "波兰立陶宛与莫斯科并立", { value: 420, approx: true }, { min: 1200, max: 1800 }, "medium-low", ancientWorldBasis, "按波兰立陶宛、莫斯科和周边东欧主体合计，非单一国家口径。")
+    ], "东欧斯拉夫与罗斯世界跨越森林、草原和巴尔干，记录为主要政权合计。", ancientWorldBasis),
+
+    "early-modern-europe": fragmented([
+      estimate(1500, "新君主制与王朝欧洲", { value: 500, approx: true }, { min: 7000, max: 9000 }, "medium-low", ancientWorldBasis, "按欧洲主要政权合计，含奥斯曼欧洲部分与俄国口径会影响估算。"),
+      estimate(1648, "威斯特伐利亚后", { value: 520, approx: true }, { min: 9000, max: 11000 }, "medium-low", ancientWorldBasis, "按欧洲国家体系合计，统计仍非现代普查。"),
+      estimate(1789, "法国大革命前夜", { value: 540, approx: true }, { min: 14000, max: 18000 }, "medium", ancientWorldBasis, "18世纪人口估算较清晰，但不同欧洲边界口径差异明显。")
+    ], "近代早期欧洲是多国家体系，记录为欧洲主要政权合计估算。", ancientWorldBasis),
+
     "renaissance-reformation": fragmented([
       estimate(1450, "意大利城邦与西欧王权并立", { value: 350, approx: true }, { min: 5000, max: 7000 }, "low", ancientWorldBasis, "这是欧洲主要政权合计估算，不是单一国家疆域。"),
       estimate(1555, "奥格斯堡和约前后", { value: 380, approx: true }, { min: 6500, max: 8500 }, "low", ancientWorldBasis, "按西欧、中欧和意大利主要政权合计，宗教分裂和王权国家并行。"),

@@ -3,7 +3,7 @@ window.EUROPE_HISTORY_PACKAGE = {
   regionId: "europe",
   title: "欧洲",
   scope: "欧洲历史主线：古希腊、罗马共和国与帝国、基督教化、拜占庭、法兰克与中世纪西欧、十字军、文艺复兴、宗教改革、民族国家、启蒙与革命、工业化、两次世界大战、冷战与欧洲一体化。",
-  moduleIds: ["ancient-greece", "roman-republic", "roman-empire", "byzantium", "medieval-western-europe", "renaissance-reformation"],
+  moduleIds: ["ancient-greece", "roman-republic", "roman-empire", "byzantium", "medieval-western-europe", "viking-nordic-europe", "iberia-reconquista", "eastern-europe-slavic", "renaissance-reformation", "early-modern-europe"],
   topicIds: [],
   boundaries: [
     "欧洲包先作为区域容器存在，不把未整理的欧洲事件混入当前中国时间线。",
@@ -17,8 +17,11 @@ window.EUROPE_HISTORY_PACKAGE = {
     { id: "roman-empire", title: "罗马帝国", status: "active", suggestedMinEvents: 35 },
     { id: "byzantium", title: "拜占庭帝国", status: "active", suggestedMinEvents: 25 },
     { id: "medieval-western-europe", title: "中世纪西欧", status: "active", suggestedMinEvents: 35 },
+    { id: "viking-nordic-europe", title: "北欧与维京世界", status: "active", suggestedMinEvents: 30 },
+    { id: "iberia-reconquista", title: "伊比利亚与再征服运动", status: "active", suggestedMinEvents: 35 },
+    { id: "eastern-europe-slavic", title: "东欧、斯拉夫与罗斯世界", status: "active", suggestedMinEvents: 40 },
     { id: "renaissance-reformation", title: "文艺复兴与宗教改革", status: "active", suggestedMinEvents: 25 },
-    { id: "early-modern-europe", title: "近代早期欧洲", status: "planned", suggestedMinEvents: 35 },
+    { id: "early-modern-europe", title: "近代早期欧洲", status: "active", suggestedMinEvents: 35 },
     { id: "revolutionary-industrial-europe", title: "革命与工业化欧洲", status: "planned", suggestedMinEvents: 40 },
     { id: "world-wars-europe", title: "两次世界大战中的欧洲", status: "planned", suggestedMinEvents: 40 },
     { id: "cold-war-europe", title: "冷战欧洲与欧洲一体化", status: "planned", suggestedMinEvents: 30 }

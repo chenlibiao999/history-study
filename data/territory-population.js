@@ -239,6 +239,25 @@
       estimate(2020, "令和时期", { value: 37.8, approx: true }, { min: 12500, max: 12650 }, "high", modernChinaBasis, "按现代日本国土和人口普查近似口径。")
     ], "日本早期不是统一国家；古代和中世按主要控制区估算，近现代需区分本土、殖民地和战后主权范围。", ancientWorldBasis),
 
+    "indian-subcontinent": fragmented([
+      estimate(-2600, "成熟哈拉帕城市文明", { min: 60, max: 90 }, { min: 250, max: 500 }, "low", ancientWorldBasis, "按印度河文明核心区和贸易影响区估算，非统一国家。"),
+      estimate(-250, "孔雀帝国高峰", { min: 450, max: 520 }, { min: 2000, max: 3000 }, "medium-low", ancientWorldBasis, "含今印度、巴基斯坦、孟加拉、阿富汗部分等，南端控制有限。"),
+      estimate(450, "笈多时代北印度高峰", { min: 250, max: 350 }, { min: 3000, max: 4500 }, "low", ancientWorldBasis, "按北印度帝国及影响区估算，南印度另有独立政权。"),
+      estimate(1600, "莫卧儿帝国扩张期", { min: 320, max: 400 }, { min: 10000, max: 14000 }, "medium-low", ancientWorldBasis, "莫卧儿控制强度随地区不同，德干和边疆需区分。"),
+      estimate(1858, "英属印度王冠统治开始", { min: 420, max: 460 }, { min: 20000, max: 25000 }, "medium", modernChinaBasis, "含英属印度直接统治区和土邦体系，口径不同于现代印度。"),
+      estimate(1947, "印巴分治", { min: 420, max: 460 }, { min: 38000, max: 41000 }, "medium-high", modernChinaBasis, "按英属印度分治前南亚人口近似口径。"),
+      estimate(2020, "现代南亚", { min: 430, max: 520 }, { min: 175000, max: 185000 }, "medium", modernChinaBasis, "按印度、巴基斯坦、孟加拉等南亚主要国家合计估算。")
+    ], "印度地区多数时期不是单一国家，按印度次大陆/南亚主要政权和文明区估算；现代须区分印度共和国与南亚合计。", ancientWorldBasis),
+
+    "southeast-asia": fragmented([
+      estimate(100, "早期河口与海上国家", { min: 100, max: 180 }, { min: 800, max: 1500 }, "low", ancientWorldBasis, "按大陆与海岛东南亚主要居住区估算，国家控制分散。"),
+      estimate(1200, "吴哥、蒲甘、室利佛逝并立", { min: 220, max: 320 }, { min: 2000, max: 3500 }, "low", ancientWorldBasis, "东南亚多中心并立，面积人口为主要政权和文明区合计。"),
+      estimate(1500, "马六甲与区域王国", { min: 250, max: 360 }, { min: 3000, max: 5000 }, "low", ancientWorldBasis, "海峡贸易、越南南进、暹罗和缅甸王国并行，非单一政权。"),
+      estimate(1900, "殖民东南亚与暹罗独立", { min: 430, max: 460 }, { min: 7000, max: 9000 }, "medium-low", modernChinaBasis, "欧洲殖民地、暹罗和本地王国并存，按区域合计。"),
+      estimate(1967, "东盟成立前后", { min: 430, max: 460 }, { min: 22000, max: 26000 }, "medium", modernChinaBasis, "按现代东南亚区域合计，不代表东盟当时全部覆盖。"),
+      estimate(2020, "现代东南亚", { min: 440, max: 450 }, { min: 65000, max: 68000 }, "high", modernChinaBasis, "按现代东南亚国家合计估算。")
+    ], "东南亚长期多政权、多岛屿、多河谷并立，面积人口必须按区域合计和控制强度区分。", ancientWorldBasis),
+
     "ancient-egypt": civilization([
       estimate(-3100, "上下埃及统一", { value: 8, approx: true }, { min: 100, max: 200 }, "low", ancientWorldBasis, "以尼罗河谷和三角洲可耕居住带为核心。"),
       estimate(-2500, "古王国金字塔时代", { value: 10, approx: true }, { min: 150, max: 250 }, "low", ancientWorldBasis, "人口和控制区按尼罗河核心区估算。"),

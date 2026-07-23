@@ -120,6 +120,10 @@ require(path.join(__dirname, "../data/dynasties/eastern-europe-slavic/metadata.j
 require(path.join(__dirname, "../data/dynasties/eastern-europe-slavic/sources.js"));
 require(path.join(__dirname, "../data/dynasties/eastern-europe-slavic/events.js"));
 require(path.join(__dirname, "../data/dynasties/eastern-europe-slavic/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/russia/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/russia/sources.js"));
+require(path.join(__dirname, "../data/dynasties/russia/events.js"));
+require(path.join(__dirname, "../data/dynasties/russia/emperors.js"));
 require(path.join(__dirname, "../data/dynasties/early-modern-europe/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/early-modern-europe/sources.js"));
 require(path.join(__dirname, "../data/dynasties/early-modern-europe/events.js"));
@@ -983,6 +987,19 @@ if (bronzeAgeCollapseEvents.length) {
   });
   if (bronzeAgeCollapseEvents.length < 50) {
     errors.push("青铜时代崩溃作为交界地专题，主线事件不应少于 50 个");
+  }
+}
+
+const russiaEvents = data.dynastyEvents?.russia || [];
+if (russiaEvents.length) {
+  const text = russiaEvents.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
+  ["基辅罗斯", "弗拉基米尔", "蒙古", "莫斯科", "伊凡三世", "伊凡四世", "罗曼诺夫", "彼得", "叶卡捷琳娜", "拿破仑", "农奴制", "1905", "二月革命", "十月革命", "苏联", "斯大林", "卫国战争", "冷战", "戈尔巴乔夫", "苏联解体"].forEach((keyword) => {
+    if (!text.includes(keyword)) {
+      errors.push(`俄罗斯区域主线缺少「${keyword}」覆盖`);
+    }
+  });
+  if (russiaEvents.length < 45) {
+    errors.push("俄罗斯区域横跨罗斯前史、莫斯科国家、帝国和苏联，主线事件不应少于 45 个");
   }
 }
 

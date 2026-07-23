@@ -273,6 +273,17 @@
       estimate(-2050, "乌尔第三王朝", { min: 20, max: 40 }, { min: 120, max: 250 }, "low", ancientWorldBasis, "两河核心官僚国家估算。")
     ], "苏美尔不是单一持续国家，记录文明区和阶段性霸权范围。", ancientWorldBasis),
 
+    russia: polity([
+      estimate(1000, "基辅罗斯高峰口径", { min: 100, max: 140 }, { min: 450, max: 550 }, "low", ancientWorldBasis, "罗斯前史是多中心王公共同体，面积和人口按主要控制区及贡赋网络近似估算，不等同现代俄罗斯。"),
+      estimate(1500, "莫斯科国家形成期", { min: 200, max: 280 }, { min: 600, max: 900 }, "low", ancientWorldBasis, "按莫斯科整合东北罗斯、诺夫哥罗德和周边土地后的有效控制区估算。"),
+      estimate(1721, "俄罗斯帝国建立", { min: 1500, max: 1600 }, { min: 1400, max: 1600 }, "medium-low", ancientWorldBasis, "彼得一世时期已跨越欧亚，面积包含西伯利亚广大低密度边疆。"),
+      estimate(1897, "俄罗斯帝国第一次全国人口普查", { value: 2280, approx: true }, { value: 12564, approx: true }, "medium", ancientWorldBasis, "1897年人口接近帝国普查口径，面积按俄罗斯帝国最大阶段近似。"),
+      estimate(1922, "苏联成立初期", { min: 2100, max: 2200 }, { min: 13500, max: 14500 }, "medium-low", ancientWorldBasis, "按苏联联盟国家口径估算，不等同俄罗斯苏维埃联邦社会主义共和国单独口径。"),
+      estimate(1939, "二战前苏联", { min: 2120, max: 2200 }, { min: 16800, max: 17200 }, "medium", ancientWorldBasis, "人口接近1939年前后苏联统计口径，边界随后因战争和并入地区变化。"),
+      estimate(1959, "战后苏联普查", { value: 2240, approx: true }, { value: 20880, approx: true }, "medium-high", ancientWorldBasis, "战后联盟边界稳定后的人口普查口径。"),
+      estimate(1989, "苏联末期", { value: 2240, approx: true }, { value: 28670, approx: true }, "medium-high", ancientWorldBasis, "1989年接近苏联末次人口普查口径，1991年后应拆为俄罗斯联邦和各独立国家。")
+    ], "俄罗斯区域跨越罗斯共同体、莫斯科国家、俄罗斯帝国和苏联，记录时必须区分有效控制、帝国范围和联盟国家口径。", ancientWorldBasis),
+
     "ancient-greece": civilization([
       estimate(-1400, "迈锡尼宫殿世界", { min: 8, max: 15 }, { min: 80, max: 150 }, "low", ancientWorldBasis, "按爱琴宫殿中心和影响区估算。"),
       estimate(-500, "古风末城邦世界", { min: 20, max: 40 }, { min: 300, max: 500 }, "low", ancientWorldBasis, "希腊本土、爱琴、殖民城市合计，非单一国家。"),

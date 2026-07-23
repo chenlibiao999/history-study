@@ -1,5 +1,5 @@
 (() => {
-  const dynasties = [window.SHANG_METADATA, window.WESTERN_ZHOU_METADATA, window.SAWS_METADATA, window.QIN_METADATA, window.WESTERN_HAN_METADATA, window.XIN_METADATA, window.EASTERN_HAN_METADATA, window.LH3K_METADATA, window.NS_METADATA, window.SUI_METADATA, window.TANG_METADATA, window.FDTK_METADATA, window.NORTHERN_SONG_METADATA, window.SOUTHERN_SONG_METADATA, window.LIAO_METADATA, window.WESTERN_XIA_METADATA, window.JIN_METADATA, window.MONGOL_METADATA, window.YUAN_METADATA, window.MING_METADATA, window.QING_METADATA, window.MODERN_CHINA_METADATA, window.REPUBLICAN_CHINA_METADATA, window.WAR_OF_RESISTANCE_METADATA, window.LIBERATION_CONSTRUCTION_METADATA, window.REFORM_OPENING_METADATA, window.ANCIENT_GREECE_METADATA, window.MEDIEVAL_WESTERN_EUROPE_METADATA, window.ANCIENT_EGYPT_METADATA, window.SUMER_EARLY_MESOPOTAMIA_METADATA, window.BRONZE_AGE_INTERNATIONAL_SYSTEM_METADATA, window.BRONZE_AGE_COLLAPSE_METADATA].filter(Boolean);
+  const dynasties = [window.SHANG_METADATA, window.WESTERN_ZHOU_METADATA, window.SAWS_METADATA, window.QIN_METADATA, window.WESTERN_HAN_METADATA, window.XIN_METADATA, window.EASTERN_HAN_METADATA, window.LH3K_METADATA, window.NS_METADATA, window.SUI_METADATA, window.TANG_METADATA, window.FDTK_METADATA, window.NORTHERN_SONG_METADATA, window.SOUTHERN_SONG_METADATA, window.LIAO_METADATA, window.WESTERN_XIA_METADATA, window.JIN_METADATA, window.MONGOL_METADATA, window.YUAN_METADATA, window.MING_METADATA, window.QING_METADATA, window.MODERN_CHINA_METADATA, window.REPUBLICAN_CHINA_METADATA, window.WAR_OF_RESISTANCE_METADATA, window.LIBERATION_CONSTRUCTION_METADATA, window.REFORM_OPENING_METADATA, window.ANCIENT_GREECE_METADATA, window.ROMAN_REPUBLIC_METADATA, window.ROMAN_EMPIRE_METADATA, window.BYZANTIUM_METADATA, window.MEDIEVAL_WESTERN_EUROPE_METADATA, window.RENAISSANCE_REFORMATION_METADATA, window.ANCIENT_EGYPT_METADATA, window.SUMER_EARLY_MESOPOTAMIA_METADATA, window.BRONZE_AGE_INTERNATIONAL_SYSTEM_METADATA, window.BRONZE_AGE_COLLAPSE_METADATA].filter(Boolean);
   const territoryPopulationData = window.TERRITORY_POPULATION_DATA || {};
   const politicalMapData = window.POLITICAL_MAP_DATA || {};
   dynasties.forEach((dynasty) => {
@@ -41,7 +41,11 @@
     "liberation-construction": window.LIBERATION_CONSTRUCTION_EVENTS || [],
     "reform-opening": window.REFORM_OPENING_EVENTS || [],
     "ancient-greece": window.ANCIENT_GREECE_EVENTS || [],
+    "roman-republic": window.ROMAN_REPUBLIC_EVENTS || [],
+    "roman-empire": window.ROMAN_EMPIRE_EVENTS || [],
+    byzantium: window.BYZANTIUM_EVENTS || [],
     "medieval-western-europe": window.MEDIEVAL_WESTERN_EUROPE_EVENTS || [],
+    "renaissance-reformation": window.RENAISSANCE_REFORMATION_EVENTS || [],
     "ancient-egypt": window.ANCIENT_EGYPT_EVENTS || [],
     "sumer-early-mesopotamia": window.SUMER_EARLY_MESOPOTAMIA_EVENTS || [],
     "bronze-age-international-system": window.BRONZE_AGE_INTERNATIONAL_SYSTEM_EVENTS || [],
@@ -75,7 +79,11 @@
     "liberation-construction": window.LIBERATION_CONSTRUCTION_EMPERORS || [],
     "reform-opening": window.REFORM_OPENING_EMPERORS || [],
     "ancient-greece": window.ANCIENT_GREECE_EMPERORS || [],
+    "roman-republic": window.ROMAN_REPUBLIC_EMPERORS || [],
+    "roman-empire": window.ROMAN_EMPIRE_EMPERORS || [],
+    byzantium: window.BYZANTIUM_EMPERORS || [],
     "medieval-western-europe": window.MEDIEVAL_WESTERN_EUROPE_EMPERORS || [],
+    "renaissance-reformation": window.RENAISSANCE_REFORMATION_EMPERORS || [],
     "ancient-egypt": window.ANCIENT_EGYPT_EMPERORS || [],
     "sumer-early-mesopotamia": window.SUMER_EARLY_MESOPOTAMIA_EMPERORS || [],
     "bronze-age-international-system": window.BRONZE_AGE_INTERNATIONAL_SYSTEM_EMPERORS || [],

@@ -249,6 +249,34 @@
       estimate(-146, "罗马征服希腊本土", { min: 10, max: 20 }, { min: 300, max: 500 }, "low", ancientWorldBasis, "按希腊本土和主要城邦区估算。")
     ], "古希腊多数时期是城邦文明，不是统一国家；亚历山大阶段单列为帝国口径。", ancientWorldBasis),
 
+
+    "roman-republic": polity([
+      estimate(-509, "共和国建立初期城邦", { value: 0.1, approx: true }, { min: 5, max: 10 }, "low", ancientWorldBasis, "早期罗马只是台伯河畔城邦，面积和人口只能按核心城市及近郊估算。"),
+      estimate(-272, "统一意大利后", { value: 25, approx: true }, { min: 350, max: 500 }, "medium-low", ancientWorldBasis, "按意大利同盟体系估算，包含直接控制和盟邦义务，不等于后世行省式行政区。"),
+      estimate(-146, "地中海霸权形成", { value: 180, approx: true }, { min: 600, max: 900 }, "medium-low", ancientWorldBasis, "含意大利、西西里、西班牙部分、北非和希腊方向行省及附属影响，控制强度差异很大。"),
+      estimate(-27, "共和国终局", { value: 300, approx: true }, { min: 4500, max: 6000 }, "medium", ancientWorldBasis, "按奥古斯都接收前后的罗马统治世界估算，人口含行省居民而非只有公民。")
+    ], "罗马共和国从城邦扩展为地中海霸权，早期数字高度估算，晚期接近帝国统计口径。", ancientWorldBasis),
+
+    "roman-empire": polity([
+      estimate(14, "奥古斯都去世前后", { value: 340, approx: true }, { min: 4500, max: 6000 }, "medium", ancientWorldBasis, "按地中海主要行省和附属区域估算，人口常见估算差异较大。"),
+      estimate(117, "图拉真疆域高峰", { value: 500, approx: true }, { min: 5500, max: 7500 }, "medium", ancientWorldBasis, "传统极盛疆域含达契亚、亚美尼亚和美索不达米亚短期扩张，部分地区控制时间很短。"),
+      estimate(395, "东西分治固定化", { value: 430, approx: true }, { min: 5000, max: 6500 }, "medium-low", ancientWorldBasis, "按东西帝国名义合计估算，西部实际控制已开始松动。"),
+      estimate(476, "西部皇帝终结", { value: 220, approx: true }, { min: 3000, max: 4500 }, "low", ancientWorldBasis, "此处按东部延续加西部残余罗马化区域估算，西部不再是统一行政帝国。")
+    ], "罗马帝国面积人口按统一帝国、短期极盛和晚期分裂分别估算，不能把每个节点都理解为同等有效控制。", ancientWorldBasis),
+
+    byzantium: polity([
+      estimate(565, "查士丁尼复兴高峰", { value: 280, approx: true }, { min: 2500, max: 3500 }, "medium-low", ancientWorldBasis, "含北非、意大利和东地中海收复区，西部收复地成本高且稳定性有限。"),
+      estimate(750, "七世纪危机后收缩", { value: 80, approx: true }, { min: 700, max: 1200 }, "low", ancientWorldBasis, "失去叙利亚、埃及后，以安纳托利亚和巴尔干部分地区为核心。"),
+      estimate(1025, "巴西尔二世高峰", { value: 120, approx: true }, { min: 1200, max: 1800 }, "medium-low", ancientWorldBasis, "马其顿王朝扩张后重新控制巴尔干和安纳托利亚核心区。"),
+      estimate(1453, "君士坦丁堡陷落前", { value: 1, approx: true }, { min: 5, max: 10 }, "low", ancientWorldBasis, "末期拜占庭几乎只剩君士坦丁堡及少量周边据点，数字仅作终局收缩口径。")
+    ], "拜占庭是罗马东部延续，面积人口随七世纪危机、复兴和晚期衰退剧烈变化。", ancientWorldBasis),
+
+    "renaissance-reformation": fragmented([
+      estimate(1450, "意大利城邦与西欧王权并立", { value: 350, approx: true }, { min: 5000, max: 7000 }, "low", ancientWorldBasis, "这是欧洲主要政权合计估算，不是单一国家疆域。"),
+      estimate(1555, "奥格斯堡和约前后", { value: 380, approx: true }, { min: 6500, max: 8500 }, "low", ancientWorldBasis, "按西欧、中欧和意大利主要政权合计，宗教分裂和王权国家并行。"),
+      estimate(1648, "威斯特伐利亚秩序形成", { value: 400, approx: true }, { min: 8000, max: 10000 }, "medium-low", ancientWorldBasis, "按欧洲主要国家体系估算，人口恢复和国家财政统计较中世纪更清晰但仍非精确普查。")
+    ], "文艺复兴与宗教改革不是单一政权，记录为欧洲主要政权和文明圈合计口径。", ancientWorldBasis),
+
     "medieval-western-europe": fragmented([
       estimate(500, "后罗马日耳曼王国并立", { min: 250, max: 350 }, { min: 1800, max: 2500 }, "low", ancientWorldBasis, "按意大利、高卢、伊比利亚、不列颠和莱茵周边主要后罗马政权及影响区合计估算。"),
       estimate(800, "查理曼帝国高峰", { min: 300, max: 420 }, { min: 2500, max: 3500 }, "low", ancientWorldBasis, "西欧整体仍非单一稳定国家；查理曼帝国本体约110-120万平方公里，记录采用西欧主要政权合计口径。"),

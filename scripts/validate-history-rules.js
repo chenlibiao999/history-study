@@ -80,6 +80,10 @@ require(path.join(__dirname, "../data/dynasties/liberation-construction/emperors
 require(path.join(__dirname, "../data/dynasties/reform-opening/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/reform-opening/events.js"));
 require(path.join(__dirname, "../data/dynasties/reform-opening/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/japan/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/japan/sources.js"));
+require(path.join(__dirname, "../data/dynasties/japan/events.js"));
+require(path.join(__dirname, "../data/dynasties/japan/emperors.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-greece/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-greece/sources.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-greece/events.js"));
@@ -140,6 +144,7 @@ require(path.join(__dirname, "../data/topics/imperial-exam.js"));
 require(path.join(__dirname, "../data/topics/song-mongol-yuan-war.js"));
 require(path.join(__dirname, "../data/regions/east-asia/metadata.js"));
 require(path.join(__dirname, "../data/regions/east-asia/china/package.js"));
+require(path.join(__dirname, "../data/regions/east-asia/japan/package.js"));
 require(path.join(__dirname, "../data/regions/europe/metadata.js"));
 require(path.join(__dirname, "../data/regions/europe/europe/package.js"));
 require(path.join(__dirname, "../data/regions/africa/metadata.js"));

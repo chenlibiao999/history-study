@@ -226,6 +226,19 @@
       estimate(1949, "中华人民共和国成立", { value: 960, approx: true }, { min: 54000, max: 55000 }, "medium-high", modernChinaBasis, "现代国土口径。")
     ], "近现代总包若参与聚合，可用此跨时期口径。", modernChinaBasis),
 
+    japan: polity([
+      estimate(-300, "弥生化扩散前后", { min: 20, max: 30 }, { min: 50, max: 100 }, "low", ancientWorldBasis, "按列岛主要稻作扩散区和人口估算，非统一国家口径。"),
+      estimate(500, "大和王权与古坟网络", { min: 10, max: 25 }, { min: 300, max: 500 }, "low", ancientWorldBasis, "以畿内大和王权影响区及主要岛屿人口估算，控制强度差异大。"),
+      estimate(710, "奈良律令国家", { min: 25, max: 35 }, { min: 450, max: 600 }, "medium-low", ancientWorldBasis, "律令国家对本州、九州、四国核心区控制较强，东北和南岛控制有限。"),
+      estimate(1192, "镰仓幕府初期", { min: 28, max: 36 }, { min: 600, max: 800 }, "medium-low", ancientWorldBasis, "按日本列岛主要农业区和幕府/朝廷共同秩序估算。"),
+      estimate(1600, "战国统一与江户开端", { value: 30, approx: true }, { min: 1200, max: 1800 }, "medium-low", ancientWorldBasis, "按丰臣-德川掌控的主要日本列岛区估算，虾夷地和琉球另有复杂关系。"),
+      estimate(1721, "江户中期人口调查", { value: 30, approx: true }, { min: 3000, max: 3200 }, "medium", ancientWorldBasis, "江户幕府人口调查较稳定，但不完全等同现代普查。"),
+      estimate(1872, "明治初年", { value: 38, approx: true }, { min: 3300, max: 3500 }, "medium-high", modernChinaBasis, "明治政府户籍统计开始接近现代国家口径。"),
+      estimate(1940, "帝国日本本土与殖民地", { min: 65, max: 75 }, { min: 10000, max: 11000 }, "medium", modernChinaBasis, "含日本本土、朝鲜、台湾、南桦太等直接殖民统治区；不含满洲国等傀儡/影响区。"),
+      estimate(1950, "战后日本", { value: 37.8, approx: true }, { min: 8300, max: 8500 }, "high", modernChinaBasis, "战后主权范围和人口统计口径。"),
+      estimate(2020, "令和时期", { value: 37.8, approx: true }, { min: 12500, max: 12650 }, "high", modernChinaBasis, "按现代日本国土和人口普查近似口径。")
+    ], "日本早期不是统一国家；古代和中世按主要控制区估算，近现代需区分本土、殖民地和战后主权范围。", ancientWorldBasis),
+
     "ancient-egypt": civilization([
       estimate(-3100, "上下埃及统一", { value: 8, approx: true }, { min: 100, max: 200 }, "low", ancientWorldBasis, "以尼罗河谷和三角洲可耕居住带为核心。"),
       estimate(-2500, "古王国金字塔时代", { value: 10, approx: true }, { min: 150, max: 250 }, "low", ancientWorldBasis, "人口和控制区按尼罗河核心区估算。"),

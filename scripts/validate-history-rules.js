@@ -152,6 +152,22 @@ require(path.join(__dirname, "../data/dynasties/bronze-age-collapse/metadata.js"
 require(path.join(__dirname, "../data/dynasties/bronze-age-collapse/sources.js"));
 require(path.join(__dirname, "../data/dynasties/bronze-age-collapse/events.js"));
 require(path.join(__dirname, "../data/dynasties/bronze-age-collapse/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/islamic-middle-east/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/islamic-middle-east/sources.js"));
+require(path.join(__dirname, "../data/dynasties/islamic-middle-east/events.js"));
+require(path.join(__dirname, "../data/dynasties/islamic-middle-east/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/african-civilizations/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/african-civilizations/sources.js"));
+require(path.join(__dirname, "../data/dynasties/african-civilizations/events.js"));
+require(path.join(__dirname, "../data/dynasties/african-civilizations/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/north-america/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/north-america/sources.js"));
+require(path.join(__dirname, "../data/dynasties/north-america/events.js"));
+require(path.join(__dirname, "../data/dynasties/north-america/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/south-america/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/south-america/sources.js"));
+require(path.join(__dirname, "../data/dynasties/south-america/events.js"));
+require(path.join(__dirname, "../data/dynasties/south-america/emperors.js"));
 require(path.join(__dirname, "../data/topics/imperial-exam.js"));
 require(path.join(__dirname, "../data/topics/song-mongol-yuan-war.js"));
 require(path.join(__dirname, "../data/regions/east-asia/metadata.js"));
@@ -169,6 +185,10 @@ require(path.join(__dirname, "../data/regions/west-asia/metadata.js"));
 require(path.join(__dirname, "../data/regions/west-asia/west-asia/package.js"));
 require(path.join(__dirname, "../data/regions/afro-eurasia-crossroads/metadata.js"));
 require(path.join(__dirname, "../data/regions/afro-eurasia-crossroads/afro-eurasia-crossroads/package.js"));
+require(path.join(__dirname, "../data/regions/north-america/metadata.js"));
+require(path.join(__dirname, "../data/regions/north-america/north-america/package.js"));
+require(path.join(__dirname, "../data/regions/south-america/metadata.js"));
+require(path.join(__dirname, "../data/regions/south-america/south-america/package.js"));
 require(path.join(__dirname, "../data/territory-population.js"));
 require(path.join(__dirname, "../data/political-maps.js"));
 require(path.join(__dirname, "../data/index.js"));
@@ -989,6 +1009,25 @@ if (bronzeAgeCollapseEvents.length) {
     errors.push("青铜时代崩溃作为交界地专题，主线事件不应少于 50 个");
   }
 }
+
+
+[
+  ["islamic-middle-east", 45, ["穆罕默德", "希吉拉", "倭马亚", "阿拔斯", "巴格达", "塞尔柱", "十字军", "蒙古", "马木鲁克", "奥斯曼", "萨法维", "苏伊士", "以色列", "伊朗", "阿拉伯之春"], "中东与伊斯兰世界"],
+  ["african-civilizations", 35, ["库施", "阿克苏姆", "加纳", "马里", "曼萨穆萨", "廷巴克图", "桑海", "斯瓦希里", "大津巴布韦", "刚果", "奴隶贸易", "柏林会议", "阿杜瓦", "加纳独立", "南非"], "非洲文明主线"],
+  ["north-america", 30, ["克洛维斯", "玛雅", "阿兹特克", "哥伦布", "新西班牙", "易洛魁", "七年战争", "美国独立", "美国宪法", "墨西哥独立", "加拿大", "美国内战", "墨西哥革命", "民权", "NAFTA"], "北美地区"],
+  ["south-america", 30, ["卡拉尔", "查文", "莫切", "蒂瓦纳库", "印加", "皮萨罗", "波托西", "巴西", "图帕克", "玻利瓦尔", "圣马丁", "三国同盟", "太平洋战争", "智利", "南方共同市场"], "南美地区"]
+].forEach(([dynastyId, minCount, keywords, label]) => {
+  const events = data.dynastyEvents?.[dynastyId] || [];
+  if (!events.length) {
+    errors.push(`缺少${label}独立事件集合`);
+    return;
+  }
+  const text = events.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
+  keywords.forEach((keyword) => {
+    if (!text.includes(keyword)) errors.push(`${label}主线缺少「${keyword}」覆盖`);
+  });
+  if (events.length < minCount) errors.push(`${label}主线事件不应少于 ${minCount} 个`);
+});
 
 const russiaEvents = data.dynastyEvents?.russia || [];
 if (russiaEvents.length) {

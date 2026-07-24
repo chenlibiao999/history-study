@@ -3,7 +3,7 @@ window.WEST_ASIA_HISTORY_PACKAGE = {
   regionId: "west-asia",
   title: "西亚",
   scope: "西亚历史主线：新石器农业、苏美尔、阿卡德、乌尔第三王朝、古巴比伦、赫梯、亚述、新巴比伦、阿契美尼德波斯、帕提亚、萨珊、阿拉伯帝国与伊斯兰世界。",
-  moduleIds: ["sumer-early-mesopotamia"],
+  moduleIds: ["sumer-early-mesopotamia", "islamic-middle-east"],
   topicIds: [],
   boundaries: [
     "两河流域归入西亚，因为其核心城市、书写、王权和灌溉农业基础位于底格里斯-幼发拉底流域。",
@@ -20,6 +20,7 @@ window.WEST_ASIA_HISTORY_PACKAGE = {
     { id: "achaemenid-persia", title: "阿契美尼德波斯", status: "planned", suggestedMinEvents: 35 },
     { id: "parthian-empire", title: "帕提亚帝国", status: "planned", suggestedMinEvents: 25 },
     { id: "sasanian-persia", title: "萨珊波斯", status: "planned", suggestedMinEvents: 30 },
-    { id: "early-islamic-caliphates", title: "早期伊斯兰与哈里发", status: "planned", suggestedMinEvents: 35 }
+    { id: "early-islamic-caliphates", title: "早期伊斯兰与哈里发", status: "active", suggestedMinEvents: 35 },
+    { id: "islamic-middle-east", title: "中东与伊斯兰世界", status: "active", suggestedMinEvents: 45 }
   ]
 };

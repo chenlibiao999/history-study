@@ -284,6 +284,38 @@
       estimate(1989, "苏联末期", { value: 2240, approx: true }, { value: 28670, approx: true }, "medium-high", ancientWorldBasis, "1989年接近苏联末次人口普查口径，1991年后应拆为俄罗斯联邦和各独立国家。")
     ], "俄罗斯区域跨越罗斯共同体、莫斯科国家、俄罗斯帝国和苏联，记录时必须区分有效控制、帝国范围和联盟国家口径。", ancientWorldBasis),
 
+    "islamic-middle-east": civilization([
+      estimate(750, "早期哈里发帝国高峰", { min: 1000, max: 1300 }, { min: 3000, max: 4500 }, "low", ancientWorldBasis, "按倭马亚/阿拔斯早期广域统治和附属区估算，控制强度差异很大。"),
+      estimate(1000, "阿拔斯分裂后的伊斯兰世界", { min: 700, max: 1000 }, { min: 3500, max: 5500 }, "low", ancientWorldBasis, "记录为中东核心文明区和主要王朝合计，不是单一国家。"),
+      estimate(1566, "奥斯曼-萨法维-阿拉伯格局", { min: 700, max: 1000 }, { min: 3000, max: 5000 }, "medium-low", ancientWorldBasis, "含奥斯曼中东、萨法维伊朗和阿拉伯半岛主要政治空间。"),
+      estimate(1920, "一战后现代中东边界形成", { min: 650, max: 850 }, { min: 3500, max: 5000 }, "medium-low", ancientWorldBasis, "按西亚/埃及/阿拉伯核心区域估算，不含北非全域。"),
+      estimate(2010, "阿拉伯之春前中东", { min: 650, max: 850 }, { min: 25000, max: 35000 }, "medium", ancientWorldBasis, "现代人口接近各国统计合计，但区域边界口径差异较大。")
+    ], "中东不是单一政权，记录为西亚-埃及-阿拉伯核心政治文明区和主要国家合计口径。", ancientWorldBasis),
+
+    "african-civilizations": civilization([
+      estimate(1000, "撒哈拉贸易与东北非王国并立", { min: 1200, max: 1800 }, { min: 2500, max: 4500 }, "low", ancientWorldBasis, "古代和中世纪非洲统计有限，只能按主要文明区合计估算。"),
+      estimate(1500, "西非帝国、东非海岸与中南非王国", { min: 1800, max: 2600 }, { min: 5000, max: 8000 }, "low", ancientWorldBasis, "按撒哈拉以南主要政权和贸易区估算，非洲全大陆仍高度多元。"),
+      estimate(1880, "瓜分非洲前夜", { min: 2500, max: 3000 }, { min: 9000, max: 12000 }, "medium-low", ancientWorldBasis, "按非洲大陆主要人口和政权空间估算，北非与埃及另有交叉。"),
+      estimate(1960, "非殖民化高峰", { value: 3037, approx: true }, { min: 28000, max: 32000 }, "medium", ancientWorldBasis, "按非洲大陆现代面积和人口近似。"),
+      estimate(1994, "南非种族隔离终结阶段", { value: 3037, approx: true }, { min: 65000, max: 75000 }, "medium", ancientWorldBasis, "现代非洲国家体系已基本成形，人口按大陆合计近似。")
+    ], "非洲文明主线覆盖多政权和文明区，面积人口为大陆/主要文明区合计，不是单一国家。", ancientWorldBasis),
+
+    "north-america": civilization([
+      estimate(-1000, "农业和区域社会扩展", { min: 1200, max: 1800 }, { min: 300, max: 800 }, "low", ancientWorldBasis, "按北美主要居住区和中美洲农业区估算。"),
+      estimate(1500, "欧洲接触前北美", { min: 1800, max: 2400 }, { min: 700, max: 1800 }, "low", ancientWorldBasis, "前哥伦布人口争议很大，记录为宽区间。"),
+      estimate(1783, "美国独立与殖民北美", { min: 1800, max: 2400 }, { min: 500, max: 900 }, "medium-low", ancientWorldBasis, "按英属北美、法西遗留和原住民空间合计估算。"),
+      estimate(1867, "美国、加拿大、墨西哥并立", { value: 2130, approx: true }, { min: 5000, max: 7000 }, "medium", ancientWorldBasis, "按北美三大国家和原住民空间近似。"),
+      estimate(2000, "现代北美", { value: 2470, approx: true }, { min: 42000, max: 46000 }, "medium-high", ancientWorldBasis, "按北美大陆主要国家合计，口径含美国、加拿大、墨西哥和中美洲时会变化。")
+    ], "北美主线跨原住民社会、殖民地和现代国家，面积人口采用区域合计口径。", ancientWorldBasis),
+
+    "south-america": civilization([
+      estimate(-1000, "安第斯早期文明区", { min: 200, max: 500 }, { min: 100, max: 300 }, "low", ancientWorldBasis, "按安第斯和南美主要早期聚落区估算。"),
+      estimate(1500, "印加与南美多社会并立", { min: 200, max: 260 }, { min: 1000, max: 2000 }, "low", ancientWorldBasis, "印加帝国本体加周边主要社会，前征服人口争议很大。"),
+      estimate(1800, "殖民南美", { value: 1780, approx: true }, { min: 1200, max: 1800 }, "medium-low", ancientWorldBasis, "按南美大陆殖民地和原住民空间合计，统计口径不统一。"),
+      estimate(1900, "共和国和巴西并立", { value: 1780, approx: true }, { min: 3500, max: 4500 }, "medium", ancientWorldBasis, "按南美主要国家合计估算。"),
+      estimate(2000, "现代南美", { value: 1780, approx: true }, { min: 34000, max: 36000 }, "medium-high", ancientWorldBasis, "按南美大陆国家合计近似。")
+    ], "南美主线跨安第斯文明、殖民地和现代共和国，面积人口为区域合计口径。", ancientWorldBasis),
+
     "ancient-greece": civilization([
       estimate(-1400, "迈锡尼宫殿世界", { min: 8, max: 15 }, { min: 80, max: 150 }, "low", ancientWorldBasis, "按爱琴宫殿中心和影响区估算。"),
       estimate(-500, "古风末城邦世界", { min: 20, max: 40 }, { min: 300, max: 500 }, "low", ancientWorldBasis, "希腊本土、爱琴、殖民城市合计，非单一国家。"),

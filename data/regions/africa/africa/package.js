@@ -3,7 +3,7 @@ window.AFRICA_HISTORY_PACKAGE = {
   regionId: "africa",
   title: "非洲",
   scope: "非洲历史主线：古埃及、努比亚/库施、迦太基、北非罗马化、基督教东北非、伊斯兰北非、阿克苏姆、撒哈拉贸易、西非帝国、东非海岸与近现代非洲。",
-  moduleIds: ["ancient-egypt", "african-civilizations"],
+  moduleIds: ["ancient-egypt", "nubia-kush", "phoenician-carthage", "african-civilizations"],
   topicIds: [],
   boundaries: [
     "古埃及归入非洲，因为其核心地理、农业、王权和社会基础在尼罗河流域；它同时会被亚非欧交界地专题引用。",
@@ -11,8 +11,8 @@ window.AFRICA_HISTORY_PACKAGE = {
     "区域包只做索引和边界说明，不复制事件正文；具体事件仍由对应文明模块维护。"
   ],
   nextExpansionSlots: [
-    { id: "nubia-kush", title: "努比亚/库施", status: "planned", suggestedMinEvents: 25 },
-    { id: "carthage-western-mediterranean", title: "迦太基与西地中海", status: "planned", suggestedMinEvents: 30 },
+    { id: "nubia-kush", title: "努比亚/库施", status: "active", suggestedMinEvents: 25 },
+    { id: "phoenician-carthage", title: "腓尼基城邦与迦太基", status: "active", suggestedMinEvents: 35 },
     { id: "aksum-ethiopia", title: "阿克苏姆与埃塞俄比亚", status: "planned", suggestedMinEvents: 25 },
     { id: "islamic-north-africa", title: "伊斯兰北非", status: "planned", suggestedMinEvents: 30 },
     { id: "west-african-empires", title: "西非帝国", status: "planned", suggestedMinEvents: 35 },

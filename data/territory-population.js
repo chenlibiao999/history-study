@@ -324,6 +324,22 @@
       estimate(1572, "维尔卡班巴终结", { min: 1, max: 5 }, { min: 5, max: 20 }, "low", ancientWorldBasis, "只记录新印加残余政权，不代表安第斯社会总人口。")
     ], "印加是安第斯山地帝国，面积人口按道路和劳役体系可达范围估算。", ancientWorldBasis),
 
+
+    "nubia-kush": civilization([
+      estimate(-2500, "克尔马兴起", { min: 5, max: 15 }, { min: 10, max: 30 }, "low", ancientWorldBasis, "按中尼罗河克尔马核心和周边影响区估算，考古聚落资料有限。"),
+      estimate(-700, "纳帕塔库施与第二十五王朝", { min: 80, max: 150 }, { min: 200, max: 500 }, "low", ancientWorldBasis, "包括努比亚本土与一度控制埃及时的尼罗河双中心空间，控制强度差异很大。"),
+      estimate(-100, "麦罗埃高峰", { min: 40, max: 80 }, { min: 100, max: 300 }, "low", ancientWorldBasis, "按麦罗埃王国核心、尼罗河通道和贸易影响区估算。"),
+      estimate(350, "后麦罗埃转型", { min: 10, max: 30 }, { min: 50, max: 150 }, "low", ancientWorldBasis, "王国分裂和阿克苏姆压力下，只记录后麦罗埃主要政治空间。")
+    ], "努比亚/库施不是埃及附属边疆，而是中尼罗河独立文明区；面积人口均为低置信区间。", ancientWorldBasis),
+
+    "phoenician-carthage": civilization([
+      estimate(-900, "黎凡特腓尼基城邦网络", { min: 2, max: 6 }, { min: 30, max: 80 }, "low", ancientWorldBasis, "腓尼基本土为港市网络，面积很小但海上商业影响远超本土。"),
+      estimate(-550, "西地中海殖民网络形成", { min: 20, max: 60 }, { min: 100, max: 300 }, "low", ancientWorldBasis, "按迦太基、撒丁、西西里西部、北非和伊比利亚据点的合计影响区估算。"),
+      estimate(-264, "第一次布匿战争前迦太基高峰", { min: 80, max: 150 }, { min: 300, max: 600 }, "low", ancientWorldBasis, "迦太基是海上霸权和附属/盟友网络，不能按单一连续行政国土理解。"),
+      estimate(-201, "第二次布匿战争后受限", { min: 2, max: 5 }, { min: 50, max: 100 }, "low", ancientWorldBasis, "失去海外领地和独立开战权后，记录为北非本土城邦国家。"),
+      estimate(-146, "迦太基毁灭", { value: 0, approx: true }, { value: 0, approx: true }, "medium-low", ancientWorldBasis, "罗马摧毁迦太基并建立阿非利加行省，独立布匿政权终结。")
+    ], "腓尼基阶段是城邦商业网络，迦太基阶段是西地中海海上政权；记录为文明网络/主导政权合计口径。", ancientWorldBasis),
+
     "islamic-middle-east": civilization([
       estimate(750, "早期哈里发帝国高峰", { min: 1000, max: 1300 }, { min: 3000, max: 4500 }, "low", ancientWorldBasis, "按倭马亚/阿拔斯早期广域统治和附属区估算，控制强度差异很大。"),
       estimate(1000, "阿拔斯分裂后的伊斯兰世界", { min: 700, max: 1000 }, { min: 3500, max: 5500 }, "low", ancientWorldBasis, "记录为中东核心文明区和主要王朝合计，不是单一国家。"),

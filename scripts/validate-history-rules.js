@@ -140,6 +140,14 @@ require(path.join(__dirname, "../data/dynasties/ancient-egypt/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-egypt/sources.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-egypt/events.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-egypt/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/nubia-kush/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/nubia-kush/sources.js"));
+require(path.join(__dirname, "../data/dynasties/nubia-kush/events.js"));
+require(path.join(__dirname, "../data/dynasties/nubia-kush/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/phoenician-carthage/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/phoenician-carthage/sources.js"));
+require(path.join(__dirname, "../data/dynasties/phoenician-carthage/events.js"));
+require(path.join(__dirname, "../data/dynasties/phoenician-carthage/emperors.js"));
 require(path.join(__dirname, "../data/dynasties/sumer-early-mesopotamia/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/sumer-early-mesopotamia/sources.js"));
 require(path.join(__dirname, "../data/dynasties/sumer-early-mesopotamia/events.js"));
@@ -1075,6 +1083,27 @@ if (bronzeAgeCollapseEvents.length) {
 });
 
 const russiaEvents = data.dynastyEvents?.russia || [];
+
+[
+  ["nubia-kush", 25, ["努比亚", "A-Group", "C-Group", "克尔马", "埃及", "库施总督", "纳帕塔", "皮耶", "第二十五王朝", "塔哈卡", "亚述", "麦罗埃", "坎达刻", "罗马", "阿克苏姆"], "努比亚与库施"],
+  ["phoenician-carthage", 35, ["腓尼基", "推罗", "西顿", "比布鲁斯", "字母", "塞浦路斯", "迦太基", "加的尔", "亚述", "新巴比伦", "波斯", "西西里", "阿拉利亚", "希梅拉", "布匿战争", "哈米尔卡", "汉尼拔", "坎尼", "扎马", "努米底亚", "罗马"], "腓尼基城邦与迦太基"]
+].forEach(([dynastyId, minCount, keywords, label]) => {
+  const events = data.dynastyEvents?.[dynastyId] || [];
+  if (!events.length) {
+    errors.push(`缺少${label}独立事件集合`);
+    return;
+  }
+  const text = events.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
+  keywords.forEach((keyword) => {
+    if (!text.includes(keyword)) errors.push(`${label}主线缺少“${keyword}”覆盖`);
+  });
+  if (events.length < minCount) errors.push(`${label}主线事件不应少于 ${minCount} 个`);
+  const dynasty = (data.dynasties || []).find((item) => item.id === dynastyId);
+  if (!dynasty?.territoryPopulation || dynasty.territoryPopulation.applicability === "missing") {
+    errors.push(`${label}缺少疆域/人口时间序列`);
+  }
+});
+
 if (russiaEvents.length) {
   const text = russiaEvents.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
   ["基辅罗斯", "弗拉基米尔", "蒙古", "莫斯科", "伊凡三世", "伊凡四世", "罗曼诺夫", "彼得", "叶卡捷琳娜", "拿破仑", "农奴制", "1905", "二月革命", "十月革命", "苏联", "斯大林", "卫国战争", "冷战", "戈尔巴乔夫", "苏联解体"].forEach((keyword) => {

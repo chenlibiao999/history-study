@@ -137,32 +137,100 @@
   const civilizationPackages = [window.CHINA_HISTORY_PACKAGE, window.JAPAN_HISTORY_PACKAGE, window.INDIAN_SUBCONTINENT_PACKAGE, window.SOUTHEAST_ASIA_PACKAGE, window.EUROPE_HISTORY_PACKAGE, window.AFRICA_HISTORY_PACKAGE, window.WEST_ASIA_HISTORY_PACKAGE, window.AFRO_EURASIA_CROSSROADS_PACKAGE, window.NORTH_AMERICA_HISTORY_PACKAGE, window.SOUTH_AMERICA_HISTORY_PACKAGE].filter(Boolean);
 
   function parseStartYear(timeText) {
-    const text = String(timeText || "");
-    const exact = text.match(/前(\d{3,4})/);
-    if (exact) return -Number(exact[1]);
-    const century = text.match(/前(\d{1,2})世纪/);
-    if (century) return -Number(century[1]) * 100;
-    const centuryRange = text.match(/前(\d{1,2})-/);
-    if (centuryRange) return -Number(centuryRange[1]) * 100;
-    const ce = text.match(/(\d{3,4})/);
-    if (ce) return Number(ce[1]);
+    const text = String(timeText || "").trim();
+    if (!text) return Number.MAX_SAFE_INTEGER;
+
+    const bceCentury = text.match(/(?:约)?(?:公元前|前|BC|BCE)\s*(\d{1,2})\s*(?:-|—|－|至)?\s*(?:公元前|前|BC|BCE)?\s*\d{0,2}\s*世纪/i);
+    if (bceCentury) return -Number(bceCentury[1]) * 100;
+
+    const bceYear = text.match(/(?:约)?(?:公元前|前|BC|BCE)\s*(\d{1,4})/i);
+    if (bceYear) return -Number(bceYear[1]);
+
+    const ceCentury = text.match(/(?:约)?(?:公元)?\s*(\d{1,2})\s*(?:-|—|－|至)?\s*\d{0,2}\s*世纪/);
+    if (ceCentury) return (Number(ceCentury[1]) - 1) * 100;
+
+    const ceYear = text.match(/(?:公元|约)?\s*(\d{3,4})/);
+    if (ceYear) return Number(ceYear[1]);
+
     return Number.MAX_SAFE_INTEGER;
   }
 
-  function parseStartYearV2(timeText) {
-    const text = String(timeText || "");
-    const bce = text.match(/(?:约)?(?:前|公元前|BC|BCE)\s*(\d{1,4})/i);
-    if (bce) return -Number(bce[1]);
-    const bceCentury = text.match(/(?:约)?(?:前|公元前)\s*(\d{1,2})世纪/);
-    if (bceCentury) return -Number(bceCentury[1]) * 100;
-    const ce = text.match(/(\d{3,4})/);
-    if (ce) return Number(ce[1]);
-    return Number.MAX_SAFE_INTEGER;
+  const geoRules = [
+    ["欧洲 / 爱琴海与希腊半岛", ["爱琴", "希腊", "雅典", "斯巴达", "伯罗奔尼撒", "克里特", "马其顿"]],
+    ["欧洲 / 亚平宁半岛", ["亚平宁", "意大利", "罗马", "拉丁", "伊特鲁里亚"]],
+    ["欧洲 / 西地中海岛屿", ["西西里", "撒丁", "科西嘉", "马耳他"]],
+    ["欧洲 / 伊比利亚半岛", ["伊比利亚", "西班牙", "葡萄牙", "安达卢斯", "加的斯", "加的尔"]],
+    ["欧洲 / 不列颠群岛", ["不列颠", "英格兰", "苏格兰", "爱尔兰", "伦敦", "牛津"]],
+    ["欧洲 / 高卢-法兰西盆地", ["高卢", "法兰西", "法国", "巴黎", "诺曼底", "阿维尼翁", "奥尔良"]],
+    ["欧洲 / 莱茵-多瑙与中欧", ["莱茵", "多瑙", "德意志", "神圣罗马帝国", "中欧", "奥地利", "波希米亚"]],
+    ["欧洲 / 巴尔干半岛", ["巴尔干", "拜占庭", "君士坦丁堡", "保加利亚", "塞尔维亚", "希腊北部"]],
+    ["欧洲 / 北欧斯堪的纳维亚", ["北欧", "斯堪的纳维亚", "丹麦", "挪威", "瑞典", "维京"]],
+    ["欧洲 / 波罗的海沿岸", ["波罗的海", "立陶宛", "普鲁士", "波兰"]],
+    ["欧洲 / 东欧平原", ["东欧", "斯拉夫", "罗斯", "基辅", "诺夫哥罗德", "莫斯科", "俄罗斯", "伏尔加", "乌拉尔", "西伯利亚", "苏联"]],
+    ["西亚 / 两河流域", ["两河流域", "美索不达米亚", "苏美尔", "阿卡德", "巴比伦", "亚述", "底格里斯", "幼发拉底"]],
+    ["西亚 / 安纳托利亚高原", ["安纳托利亚", "小亚细亚", "赫梯"]],
+    ["西亚 / 伊朗高原", ["伊朗高原", "波斯", "埃兰", "米底"]],
+    ["西亚 / 黎凡特海岸与叙利亚", ["黎凡特", "叙利亚", "巴勒斯坦", "迦南", "腓尼基", "推罗", "西顿", "比布鲁斯"]],
+    ["西亚 / 阿拉伯半岛", ["阿拉伯半岛", "阿拉伯"]],
+    ["非洲 / 尼罗河下游", ["埃及", "上埃及", "下埃及", "尼罗河下游", "三角洲"]],
+    ["非洲 / 尼罗河中游", ["努比亚", "库施", "克尔马", "纳帕塔", "麦罗埃", "尼罗河中游"]],
+    ["非洲 / 北非地中海沿岸", ["北非", "迦太基", "利比亚", "突尼斯"]],
+    ["东亚 / 黄河中下游", ["中原", "黄河", "洛阳", "开封", "山东", "河北", "河东"]],
+    ["东亚 / 关中与河西", ["关中", "长安", "河西", "安西", "西域"]],
+    ["东亚 / 长江中下游", ["长江", "江南", "江淮", "南方", "建康", "临安"]],
+    ["东亚 / 东北亚", ["东北", "辽东", "辽西", "朝鲜半岛", "日本列岛", "日本"]],
+    ["东亚 / 蒙古高原与草原", ["蒙古高原", "草原", "漠北", "漠南", "蒙古"]],
+    ["南亚 / 印度河-恒河平原", ["印度", "印度河", "恒河", "南亚"]],
+    ["东南亚 / 中南半岛与海岛世界", ["东南亚", "中南半岛", "马六甲", "爪哇", "苏门答腊", "婆罗洲", "菲律宾", "越南", "柬埔寨", "暹罗"]],
+    ["北美 / 墨西哥高原与中美洲", ["墨西哥", "中美洲", "玛雅", "阿兹特克", "特诺奇蒂特兰"]],
+    ["北美 / 北美东部与大平原", ["北美", "加拿大", "美国", "密西西比", "卡霍基亚", "易洛魁", "大平原"]],
+    ["南美 / 安第斯山地", ["南美", "安第斯", "秘鲁", "印加", "库斯科", "波托西", "玻利维亚"]],
+    ["南美 / 亚马孙与巴西高原", ["巴西", "亚马孙"]],
+    ["南美 / 南锥体", ["阿根廷", "智利", "乌拉圭", "巴拉圭", "南锥体"]]
+  ];
+
+  function deriveGeoRegions(event) {
+    if (Array.isArray(event.geoRegion) && event.geoRegion.length) return event.geoRegion;
+    const haystack = [
+      event.title,
+      event.summary,
+      event.period,
+      ...(event.regions || []),
+      ...(event.topics || [])
+    ].join(" ");
+    const matches = geoRules
+      .filter(([, terms]) => terms.some((term) => haystack.includes(term)))
+      .map(([label]) => label);
+    return [...new Set(matches.length ? matches : (event.regions || []))];
   }
+
+  function derivePolityContext(event) {
+    return [...new Set([event.period, event.dynasty, ...(event.regions || [])].filter(Boolean))];
+  }
+
+  function normalizeEvent(event, order) {
+    const sortYear = Number.isFinite(event.sortYear) ? event.sortYear : parseStartYear(event.time);
+    return {
+      ...event,
+      sortYear,
+      sortOrder: Number.isFinite(event.sortOrder) ? event.sortOrder : order,
+      dateLabel: event.dateLabel || event.time,
+      geoRegion: deriveGeoRegions(event),
+      polityContext: Array.isArray(event.polityContext) && event.polityContext.length
+        ? event.polityContext
+        : derivePolityContext(event)
+    };
+  }
+
+  Object.keys(dynastyEvents).forEach((dynastyId) => {
+    dynastyEvents[dynastyId] = (dynastyEvents[dynastyId] || []).map((event, index) => normalizeEvent(event, index));
+  });
 
   const events = Object.values(dynastyEvents).flat().sort((a, b) => {
-    const yearDiff = parseStartYearV2(a.time) - parseStartYearV2(b.time);
+    const yearDiff = a.sortYear - b.sortYear;
     if (yearDiff) return yearDiff;
+    const orderDiff = (a.sortOrder || 0) - (b.sortOrder || 0);
+    if (orderDiff) return orderDiff;
     return dynasties.findIndex((dynasty) => dynasty.id === a.dynastyId) - dynasties.findIndex((dynasty) => dynasty.id === b.dynastyId);
   });
   const emperors = Object.values(dynastyEmperors).flat();

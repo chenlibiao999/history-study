@@ -230,6 +230,19 @@ const emperors = data.emperors || [];
 const errors = [];
 const warnings = [];
 
+for (const event of data.events || []) {
+  if (!Number.isFinite(event.sortYear)) {
+    errors.push(`${event.title}: 缺少数字 sortYear`);
+  }
+  if (!Array.isArray(event.geoRegion) || !event.geoRegion.length) {
+    errors.push(`${event.title}: 缺少稳定地理字段 geoRegion`);
+  }
+  if (!Array.isArray(event.polityContext) || !event.polityContext.length) {
+    errors.push(`${event.title}: 缺少政权语境字段 polityContext`);
+  }
+}
+
+
 const eastAsiaRegion = data.regions?.find((region) => region.id === "east-asia");
 if (!eastAsiaRegion) {
   errors.push("缺少东亚区域包 data.regions.east-asia");

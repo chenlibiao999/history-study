@@ -2507,5 +2507,1451 @@ window.EASTERN_HAN_EVENTS = [
     "dynastyId": "eastern-han",
     "dynasty": "东汉",
     "topicIds": []
-  }
+  },
+{
+  "id": "ehan-hebei-pacification",
+  "title": "刘秀平定河北与豪强合作",
+  "aliases": [],
+  "era": "光武重建",
+  "period": "东汉",
+  "time": "25-30",
+  "regions": [
+    "河北",
+    "黄河"
+  ],
+  "topics": [
+    "政权兴亡",
+    "地方治理"
+  ],
+  "summary": "刘秀依靠河北地方豪强和军事集团稳定后方，为东汉统一战争提供基础。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "刘秀",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "刘秀需要放在“刘秀平定河北与豪强合作”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "刘秀平定河北与豪强合作"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "刘秀依靠河北地方豪强和军事集团稳定后方，为东汉统一战争提供基础。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "25-30",
+      "title": "结构背景",
+      "description": "刘秀依靠河北地方豪强和军事集团稳定后方，为东汉统一战争提供基础。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "25-30",
+      "title": "事件展开",
+      "description": "刘秀平定河北与豪强合作的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "25-30",
+      "title": "后续影响",
+      "description": "刘秀平定河北与豪强合作之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "刘秀依靠河北地方豪强和军事集团稳定后方，为东汉统一战争提供基础。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "刘秀依靠河北地方豪强和军事集团稳定后方，为东汉统一战争提供基础。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：刘秀依靠河北地方豪强和军事集团稳定后方，为东汉统一战争提供基础。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "刘秀平定河北与豪强合作为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-red-eyebrows-defeated",
+  "title": "赤眉军败亡与关中秩序恢复",
+  "aliases": [],
+  "era": "光武重建",
+  "period": "东汉",
+  "time": "27",
+  "regions": [
+    "关中",
+    "洛阳"
+  ],
+  "topics": [
+    "战争军事",
+    "社会结构"
+  ],
+  "summary": "赤眉军在关中失败后，刘秀逐步恢复关中和洛阳周边秩序。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "刘秀",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "刘秀需要放在“赤眉军败亡与关中秩序恢复”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "赤眉军败亡与关中秩序恢复"
+      ]
+    },
+    {
+      "name": "赤眉军",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "赤眉军需要放在“赤眉军败亡与关中秩序恢复”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "赤眉军败亡与关中秩序恢复"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "赤眉军在关中失败后，刘秀逐步恢复关中和洛阳周边秩序。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "27",
+      "title": "结构背景",
+      "description": "赤眉军在关中失败后，刘秀逐步恢复关中和洛阳周边秩序。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "27",
+      "title": "事件展开",
+      "description": "赤眉军败亡与关中秩序恢复的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "27",
+      "title": "后续影响",
+      "description": "赤眉军败亡与关中秩序恢复之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "赤眉军在关中失败后，刘秀逐步恢复关中和洛阳周边秩序。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "赤眉军在关中失败后，刘秀逐步恢复关中和洛阳周边秩序。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：赤眉军在关中失败后，刘秀逐步恢复关中和洛阳周边秩序。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "赤眉军败亡与关中秩序恢复为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-gongsun-shu-fall",
+  "title": "公孙述灭亡与西南统一",
+  "aliases": [],
+  "era": "光武统一",
+  "period": "东汉",
+  "time": "36",
+  "regions": [
+    "巴蜀",
+    "四川盆地"
+  ],
+  "topics": [
+    "战争军事",
+    "地方治理"
+  ],
+  "summary": "东汉攻灭据蜀的公孙述，巴蜀重新纳入中央王朝，统一战争基本结束。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "公孙述",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "公孙述需要放在“公孙述灭亡与西南统一”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "公孙述灭亡与西南统一"
+      ]
+    },
+    {
+      "name": "刘秀",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "刘秀需要放在“公孙述灭亡与西南统一”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "公孙述灭亡与西南统一"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "东汉攻灭据蜀的公孙述，巴蜀重新纳入中央王朝，统一战争基本结束。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "36",
+      "title": "结构背景",
+      "description": "东汉攻灭据蜀的公孙述，巴蜀重新纳入中央王朝，统一战争基本结束。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "36",
+      "title": "事件展开",
+      "description": "公孙述灭亡与西南统一的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "36",
+      "title": "后续影响",
+      "description": "公孙述灭亡与西南统一之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "东汉攻灭据蜀的公孙述，巴蜀重新纳入中央王朝，统一战争基本结束。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "东汉攻灭据蜀的公孙述，巴蜀重新纳入中央王朝，统一战争基本结束。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：东汉攻灭据蜀的公孙述，巴蜀重新纳入中央王朝，统一战争基本结束。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "公孙述灭亡与西南统一为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-cloud-terrace-merit",
+  "title": "云台二十八将与功臣秩序",
+  "aliases": [],
+  "era": "光武重建",
+  "period": "东汉",
+  "time": "60",
+  "regions": [
+    "洛阳"
+  ],
+  "topics": [
+    "文化宗教",
+    "制度治理"
+  ],
+  "summary": "明帝图画云台二十八将，体现东汉用功臣记忆巩固开国合法性。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "汉明帝",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "汉明帝需要放在“云台二十八将与功臣秩序”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "云台二十八将与功臣秩序"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "明帝图画云台二十八将，体现东汉用功臣记忆巩固开国合法性。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "60",
+      "title": "结构背景",
+      "description": "明帝图画云台二十八将，体现东汉用功臣记忆巩固开国合法性。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "60",
+      "title": "事件展开",
+      "description": "云台二十八将与功臣秩序的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "60",
+      "title": "后续影响",
+      "description": "云台二十八将与功臣秩序之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "明帝图画云台二十八将，体现东汉用功臣记忆巩固开国合法性。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "明帝图画云台二十八将，体现东汉用功臣记忆巩固开国合法性。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：明帝图画云台二十八将，体现东汉用功臣记忆巩固开国合法性。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "云台二十八将与功臣秩序为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-zhangdi-confucian-politics",
+  "title": "章帝时期经学政治与白虎观会议",
+  "aliases": [],
+  "era": "明章之治",
+  "period": "东汉",
+  "time": "79",
+  "regions": [
+    "洛阳"
+  ],
+  "topics": [
+    "文化宗教",
+    "制度治理"
+  ],
+  "summary": "白虎观会议整理经学解释，把儒家经典与国家制度说明结合起来。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "汉章帝",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "汉章帝需要放在“章帝时期经学政治与白虎观会议”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "章帝时期经学政治与白虎观会议"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "白虎观会议整理经学解释，把儒家经典与国家制度说明结合起来。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "79",
+      "title": "结构背景",
+      "description": "白虎观会议整理经学解释，把儒家经典与国家制度说明结合起来。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "79",
+      "title": "事件展开",
+      "description": "章帝时期经学政治与白虎观会议的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "79",
+      "title": "后续影响",
+      "description": "章帝时期经学政治与白虎观会议之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "白虎观会议整理经学解释，把儒家经典与国家制度说明结合起来。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "白虎观会议整理经学解释，把儒家经典与国家制度说明结合起来。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：白虎观会议整理经学解释，把儒家经典与国家制度说明结合起来。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "章帝时期经学政治与白虎观会议为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-dou-xian-northern-xiongnu",
+  "title": "窦宪北击匈奴与燕然勒石",
+  "aliases": [],
+  "era": "边疆扩张",
+  "period": "东汉",
+  "time": "89-91",
+  "regions": [
+    "漠北",
+    "河套"
+  ],
+  "topics": [
+    "战争军事",
+    "边疆外交"
+  ],
+  "summary": "窦宪率军大破北匈奴，东汉北边压力暂时缓解，西域经营也获得空间。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "窦宪",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "窦宪需要放在“窦宪北击匈奴与燕然勒石”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "窦宪北击匈奴与燕然勒石"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "窦宪率军大破北匈奴，东汉北边压力暂时缓解，西域经营也获得空间。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "89-91",
+      "title": "结构背景",
+      "description": "窦宪率军大破北匈奴，东汉北边压力暂时缓解，西域经营也获得空间。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "89-91",
+      "title": "事件展开",
+      "description": "窦宪北击匈奴与燕然勒石的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "89-91",
+      "title": "后续影响",
+      "description": "窦宪北击匈奴与燕然勒石之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "窦宪率军大破北匈奴，东汉北边压力暂时缓解，西域经营也获得空间。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "窦宪率军大破北匈奴，东汉北边压力暂时缓解，西域经营也获得空间。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：窦宪率军大破北匈奴，东汉北边压力暂时缓解，西域经营也获得空间。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "窦宪北击匈奴与燕然勒石为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-empress-dowager-deng",
+  "title": "邓太后临朝与幼主政治",
+  "aliases": [],
+  "era": "外戚宦官",
+  "period": "东汉",
+  "time": "106-121",
+  "regions": [
+    "洛阳"
+  ],
+  "topics": [
+    "制度治理",
+    "宫廷政治"
+  ],
+  "summary": "邓太后临朝维持政局，但幼主频繁也让外戚、宦官和士人权力关系更复杂。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "邓太后",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "邓太后需要放在“邓太后临朝与幼主政治”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "邓太后临朝与幼主政治"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "邓太后临朝维持政局，但幼主频繁也让外戚、宦官和士人权力关系更复杂。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "106-121",
+      "title": "结构背景",
+      "description": "邓太后临朝维持政局，但幼主频繁也让外戚、宦官和士人权力关系更复杂。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "106-121",
+      "title": "事件展开",
+      "description": "邓太后临朝与幼主政治的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "106-121",
+      "title": "后续影响",
+      "description": "邓太后临朝与幼主政治之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "邓太后临朝维持政局，但幼主频繁也让外戚、宦官和士人权力关系更复杂。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "邓太后临朝维持政局，但幼主频繁也让外戚、宦官和士人权力关系更复杂。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：邓太后临朝维持政局，但幼主频繁也让外戚、宦官和士人权力关系更复杂。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "邓太后临朝与幼主政治为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-taixue-students-politics",
+  "title": "太学生与清议政治",
+  "aliases": [],
+  "era": "士人政治",
+  "period": "东汉",
+  "time": "2世纪",
+  "regions": [
+    "洛阳",
+    "中原"
+  ],
+  "topics": [
+    "社会结构",
+    "文化宗教"
+  ],
+  "summary": "太学生和地方士人通过清议评价人物与政治，形成东汉后期士大夫舆论力量。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "太学生",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "太学生需要放在“太学生与清议政治”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "太学生与清议政治"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "太学生和地方士人通过清议评价人物与政治，形成东汉后期士大夫舆论力量。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "2世纪",
+      "title": "结构背景",
+      "description": "太学生和地方士人通过清议评价人物与政治，形成东汉后期士大夫舆论力量。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "2世纪",
+      "title": "事件展开",
+      "description": "太学生与清议政治的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "2世纪",
+      "title": "后续影响",
+      "description": "太学生与清议政治之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "太学生和地方士人通过清议评价人物与政治，形成东汉后期士大夫舆论力量。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "太学生和地方士人通过清议评价人物与政治，形成东汉后期士大夫舆论力量。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：太学生和地方士人通过清议评价人物与政治，形成东汉后期士大夫舆论力量。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "太学生与清议政治为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-local-gentry-estates",
+  "title": "豪强庄园与地方社会",
+  "aliases": [],
+  "era": "社会结构",
+  "period": "东汉",
+  "time": "2世纪",
+  "regions": [
+    "中原",
+    "河北",
+    "江淮"
+  ],
+  "topics": [
+    "社会结构",
+    "财政经济"
+  ],
+  "summary": "东汉地方豪强扩张田庄、宗族和宾客网络，中央对基层社会的掌握逐渐削弱。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "地方豪强",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "地方豪强需要放在“豪强庄园与地方社会”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "豪强庄园与地方社会"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "东汉地方豪强扩张田庄、宗族和宾客网络，中央对基层社会的掌握逐渐削弱。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "2世纪",
+      "title": "结构背景",
+      "description": "东汉地方豪强扩张田庄、宗族和宾客网络，中央对基层社会的掌握逐渐削弱。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "2世纪",
+      "title": "事件展开",
+      "description": "豪强庄园与地方社会的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "2世纪",
+      "title": "后续影响",
+      "description": "豪强庄园与地方社会之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "东汉地方豪强扩张田庄、宗族和宾客网络，中央对基层社会的掌握逐渐削弱。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "东汉地方豪强扩张田庄、宗族和宾客网络，中央对基层社会的掌握逐渐削弱。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：东汉地方豪强扩张田庄、宗族和宾客网络，中央对基层社会的掌握逐渐削弱。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "豪强庄园与地方社会为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-qingzhou-xuzhou-disorder",
+  "title": "青徐黄巾余波与地方武装",
+  "aliases": [],
+  "era": "黄巾余波",
+  "period": "东汉",
+  "time": "184后",
+  "regions": [
+    "山东",
+    "徐州"
+  ],
+  "topics": [
+    "战争军事",
+    "社会结构"
+  ],
+  "summary": "黄巾失败后青州、徐州等地仍有流民和武装集团活动，地方军政化继续发展。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "黄巾余部",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "黄巾余部需要放在“青徐黄巾余波与地方武装”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "青徐黄巾余波与地方武装"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "黄巾失败后青州、徐州等地仍有流民和武装集团活动，地方军政化继续发展。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "184后",
+      "title": "结构背景",
+      "description": "黄巾失败后青州、徐州等地仍有流民和武装集团活动，地方军政化继续发展。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "184后",
+      "title": "事件展开",
+      "description": "青徐黄巾余波与地方武装的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "184后",
+      "title": "后续影响",
+      "description": "青徐黄巾余波与地方武装之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "黄巾失败后青州、徐州等地仍有流民和武装集团活动，地方军政化继续发展。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "黄巾失败后青州、徐州等地仍有流民和武装集团活动，地方军政化继续发展。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：黄巾失败后青州、徐州等地仍有流民和武装集团活动，地方军政化继续发展。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "青徐黄巾余波与地方武装为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-warlords-coalition-dongzhuo",
+  "title": "关东诸侯讨董联盟",
+  "aliases": [],
+  "era": "汉末军阀化",
+  "period": "东汉",
+  "time": "190",
+  "regions": [
+    "洛阳",
+    "关东"
+  ],
+  "topics": [
+    "战争军事",
+    "政权兴亡"
+  ],
+  "summary": "董卓废立皇帝后，关东州郡长官起兵讨董，东汉中央权威被地方军事集团公开取代。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "董卓",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "董卓需要放在“关东诸侯讨董联盟”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "关东诸侯讨董联盟"
+      ]
+    },
+    {
+      "name": "袁绍",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "袁绍需要放在“关东诸侯讨董联盟”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "关东诸侯讨董联盟"
+      ]
+    },
+    {
+      "name": "曹操",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "曹操需要放在“关东诸侯讨董联盟”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "关东诸侯讨董联盟"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "董卓废立皇帝后，关东州郡长官起兵讨董，东汉中央权威被地方军事集团公开取代。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "190",
+      "title": "结构背景",
+      "description": "董卓废立皇帝后，关东州郡长官起兵讨董，东汉中央权威被地方军事集团公开取代。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "190",
+      "title": "事件展开",
+      "description": "关东诸侯讨董联盟的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "190",
+      "title": "后续影响",
+      "description": "关东诸侯讨董联盟之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "董卓废立皇帝后，关东州郡长官起兵讨董，东汉中央权威被地方军事集团公开取代。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "董卓废立皇帝后，关东州郡长官起兵讨董，东汉中央权威被地方军事集团公开取代。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：董卓废立皇帝后，关东州郡长官起兵讨董，东汉中央权威被地方军事集团公开取代。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "关东诸侯讨董联盟为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-changan-court-collapse",
+  "title": "长安朝廷混乱与献帝东归",
+  "aliases": [],
+  "era": "汉末军阀化",
+  "period": "东汉",
+  "time": "192-196",
+  "regions": [
+    "长安",
+    "洛阳"
+  ],
+  "topics": [
+    "政权兴亡",
+    "战争军事"
+  ],
+  "summary": "董卓死后李傕、郭汜控制长安，献帝东归过程显示汉廷已失去独立统治能力。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "汉献帝",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "汉献帝需要放在“长安朝廷混乱与献帝东归”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "长安朝廷混乱与献帝东归"
+      ]
+    },
+    {
+      "name": "李傕",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "李傕需要放在“长安朝廷混乱与献帝东归”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "长安朝廷混乱与献帝东归"
+      ]
+    },
+    {
+      "name": "郭汜",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "郭汜需要放在“长安朝廷混乱与献帝东归”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "长安朝廷混乱与献帝东归"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "董卓死后李傕、郭汜控制长安，献帝东归过程显示汉廷已失去独立统治能力。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "192-196",
+      "title": "结构背景",
+      "description": "董卓死后李傕、郭汜控制长安，献帝东归过程显示汉廷已失去独立统治能力。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "192-196",
+      "title": "事件展开",
+      "description": "长安朝廷混乱与献帝东归的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "192-196",
+      "title": "后续影响",
+      "description": "长安朝廷混乱与献帝东归之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "董卓死后李傕、郭汜控制长安，献帝东归过程显示汉廷已失去独立统治能力。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "董卓死后李傕、郭汜控制长安，献帝东归过程显示汉廷已失去独立统治能力。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：董卓死后李傕、郭汜控制长安，献帝东归过程显示汉廷已失去独立统治能力。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "长安朝廷混乱与献帝东归为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+},
+{
+  "id": "ehan-xuchang-court-caocao",
+  "title": "许都朝廷与曹操挟天子",
+  "aliases": [],
+  "era": "汉末军阀化",
+  "period": "东汉",
+  "time": "196后",
+  "regions": [
+    "许昌",
+    "中原"
+  ],
+  "topics": [
+    "政权兴亡",
+    "制度治理"
+  ],
+  "summary": "曹操迎献帝至许都，把汉帝名义转化为号令诸侯和重建北方秩序的政治资源。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "曹操",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "曹操需要放在“许都朝廷与曹操挟天子”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "许都朝廷与曹操挟天子"
+      ]
+    },
+    {
+      "name": "汉献帝",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "汉献帝需要放在“许都朝廷与曹操挟天子”的制度、战争或社会背景中理解，不应只作为孤立人物记忆。",
+      "events": [
+        "许都朝廷与曹操挟天子"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "曹操迎献帝至许都，把汉帝名义转化为号令诸侯和重建北方秩序的政治资源。 这条事件用于补足东汉主线中的制度、战争、边疆或社会结构断点。"
+  ],
+  "process": [
+    {
+      "time": "196后",
+      "title": "结构背景",
+      "description": "曹操迎献帝至许都，把汉帝名义转化为号令诸侯和重建北方秩序的政治资源。 这一节点前，东汉的政治秩序、地方力量、财政军事或边疆关系已经积累变化，需要放在连续主线里理解。"
+    },
+    {
+      "time": "196后",
+      "title": "事件展开",
+      "description": "许都朝廷与曹操挟天子的展开体现了中央权力、地方集团、军事行动和制度安排之间的互动，不能只当作一个孤立年份记忆。"
+    },
+    {
+      "time": "196后",
+      "title": "后续影响",
+      "description": "许都朝廷与曹操挟天子之后，影响继续进入后续政权结构、社会秩序或区域关系，是连接前后阶段的重要解释节点。"
+    }
+  ],
+  "results": [
+    "曹操迎献帝至许都，把汉帝名义转化为号令诸侯和重建北方秩序的政治资源。",
+    "它改变或解释了东汉后续的权力结构、区域秩序和制度运行。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "先按主线学习粒度整理，重点看因果链和结构变化；具体原文卷章后续再精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "曹操迎献帝至许都，把汉帝名义转化为号令诸侯和重建北方秩序的政治资源。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "eastern-han-main-source"
+      ],
+      "note": "当前绑定正史与编年史入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "eastern-han-main-source",
+      "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+      "status": "待核原文",
+      "plainText": "白话理解：曹操迎献帝至许都，把汉帝名义转化为号令诸侯和重建北方秩序的政治资源。",
+      "note": "不堆纯原文，先提供可读释义；后续再补具体卷目和公开链接。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "eastern-han-main-source",
+      "type": "正史与编年史",
+      "title": "《后汉书》《资治通鉴》东汉相关纪事",
+      "author": "司马光等",
+      "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+      "note": "作为东汉主线事件的史料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "许都朝廷与曹操挟天子为什么应放入东汉主线？",
+      "answer": "因为它能帮助解释这一阶段的政治秩序、战争格局、制度运行或社会变化如何延续到下一阶段。"
+    }
+  ],
+  "notes": [],
+  "dynastyId": "eastern-han",
+  "dynasty": "东汉",
+  "topicIds": []
+}
 ];

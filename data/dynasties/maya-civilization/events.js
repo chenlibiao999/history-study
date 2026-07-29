@@ -2934,5 +2934,2006 @@ window.MAYA_CIVILIZATION_EVENTS = [
     ],
     "notes": [],
     "sourceStatus": "公开入口已补"
-  }
+  },
+{
+  "id": "maya-maize-domestication-context",
+  "dynastyId": "maya-civilization",
+  "title": "玉米农业深化与人口基础",
+  "aliases": [],
+  "era": "前古典形成",
+  "period": "玛雅文明",
+  "time": "约前2000-前1000",
+  "regions": [
+    "北美",
+    "中美洲",
+    "玛雅低地"
+  ],
+  "topics": [
+    "财政经济",
+    "社会结构"
+  ],
+  "summary": "玉米农业、豆类和南瓜等复合种植支持村落扩张，为后来的礼仪中心提供人口和剩余。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "玉米农业、豆类和南瓜等复合种植支持村落扩张，为后来的礼仪中心提供人口和剩余。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "约前2000-前1000",
+      "title": "结构背景",
+      "description": "玉米农业、豆类和南瓜等复合种植支持村落扩张，为后来的礼仪中心提供人口和剩余。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "约前2000-前1000",
+      "title": "事件展开",
+      "description": "玉米农业深化与人口基础的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "约前2000-前1000",
+      "title": "后续影响",
+      "description": "玉米农业深化与人口基础之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "玉米农业、豆类和南瓜等复合种植支持村落扩张，为后来的礼仪中心提供人口和剩余。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "玉米农业、豆类和南瓜等复合种植支持村落扩张，为后来的礼仪中心提供人口和剩余。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：玉米农业、豆类和南瓜等复合种植支持村落扩张，为后来的礼仪中心提供人口和剩余。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "玉米农业深化与人口基础为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-olmec-interaction",
+  "dynastyId": "maya-civilization",
+  "title": "奥尔梅克互动与早期象征体系",
+  "aliases": [],
+  "era": "前古典形成",
+  "period": "玛雅文明",
+  "time": "前1200-前400",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "文化宗教",
+    "考古"
+  ],
+  "summary": "玛雅早期中心与奥尔梅克世界存在互动，部分图像、祭祀和权力表达在中美洲网络中成形。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "玛雅早期中心与奥尔梅克世界存在互动，部分图像、祭祀和权力表达在中美洲网络中成形。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前1200-前400",
+      "title": "结构背景",
+      "description": "玛雅早期中心与奥尔梅克世界存在互动，部分图像、祭祀和权力表达在中美洲网络中成形。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前1200-前400",
+      "title": "事件展开",
+      "description": "奥尔梅克互动与早期象征体系的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前1200-前400",
+      "title": "后续影响",
+      "description": "奥尔梅克互动与早期象征体系之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "玛雅早期中心与奥尔梅克世界存在互动，部分图像、祭祀和权力表达在中美洲网络中成形。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "玛雅早期中心与奥尔梅克世界存在互动，部分图像、祭祀和权力表达在中美洲网络中成形。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：玛雅早期中心与奥尔梅克世界存在互动，部分图像、祭祀和权力表达在中美洲网络中成形。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "奥尔梅克互动与早期象征体系为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-nakbe",
+  "dynastyId": "maya-civilization",
+  "title": "纳克贝与早期城市化",
+  "aliases": [],
+  "era": "前古典中心",
+  "period": "玛雅文明",
+  "time": "前1000-前400",
+  "regions": [
+    "北美",
+    "中美洲",
+    "玛雅低地"
+  ],
+  "topics": [
+    "考古",
+    "制度治理"
+  ],
+  "summary": "纳克贝等中心显示玛雅低地早在前古典时期已出现大型建筑和区域组织。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "纳克贝等中心显示玛雅低地早在前古典时期已出现大型建筑和区域组织。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前1000-前400",
+      "title": "结构背景",
+      "description": "纳克贝等中心显示玛雅低地早在前古典时期已出现大型建筑和区域组织。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前1000-前400",
+      "title": "事件展开",
+      "description": "纳克贝与早期城市化的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前1000-前400",
+      "title": "后续影响",
+      "description": "纳克贝与早期城市化之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "纳克贝等中心显示玛雅低地早在前古典时期已出现大型建筑和区域组织。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "纳克贝等中心显示玛雅低地早在前古典时期已出现大型建筑和区域组织。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：纳克贝等中心显示玛雅低地早在前古典时期已出现大型建筑和区域组织。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "纳克贝与早期城市化为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-san-bartolo",
+  "dynastyId": "maya-civilization",
+  "title": "圣巴尔托洛壁画",
+  "aliases": [],
+  "era": "前古典中心",
+  "period": "玛雅文明",
+  "time": "约前100",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "文化宗教",
+    "考古"
+  ],
+  "summary": "圣巴尔托洛壁画呈现早期王权和神话图像，是理解玛雅宗教政治的重要材料。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "圣巴尔托洛壁画呈现早期王权和神话图像，是理解玛雅宗教政治的重要材料。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "约前100",
+      "title": "结构背景",
+      "description": "圣巴尔托洛壁画呈现早期王权和神话图像，是理解玛雅宗教政治的重要材料。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "约前100",
+      "title": "事件展开",
+      "description": "圣巴尔托洛壁画的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "约前100",
+      "title": "后续影响",
+      "description": "圣巴尔托洛壁画之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "圣巴尔托洛壁画呈现早期王权和神话图像，是理解玛雅宗教政治的重要材料。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "圣巴尔托洛壁画呈现早期王权和神话图像，是理解玛雅宗教政治的重要材料。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：圣巴尔托洛壁画呈现早期王权和神话图像，是理解玛雅宗教政治的重要材料。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "圣巴尔托洛壁画为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-el-mirador-collapse",
+  "dynastyId": "maya-civilization",
+  "title": "埃尔米拉多衰落与前古典转折",
+  "aliases": [],
+  "era": "前古典转折",
+  "period": "玛雅文明",
+  "time": "2世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "政权兴亡",
+    "社会结构"
+  ],
+  "summary": "埃尔米拉多体系衰落后，玛雅低地政治中心重新组合，古典时期城市竞争逐渐形成。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "埃尔米拉多体系衰落后，玛雅低地政治中心重新组合，古典时期城市竞争逐渐形成。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "2世纪",
+      "title": "结构背景",
+      "description": "埃尔米拉多体系衰落后，玛雅低地政治中心重新组合，古典时期城市竞争逐渐形成。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "2世纪",
+      "title": "事件展开",
+      "description": "埃尔米拉多衰落与前古典转折的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "2世纪",
+      "title": "后续影响",
+      "description": "埃尔米拉多衰落与前古典转折之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "埃尔米拉多体系衰落后，玛雅低地政治中心重新组合，古典时期城市竞争逐渐形成。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "埃尔米拉多体系衰落后，玛雅低地政治中心重新组合，古典时期城市竞争逐渐形成。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：埃尔米拉多体系衰落后，玛雅低地政治中心重新组合，古典时期城市竞争逐渐形成。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "埃尔米拉多衰落与前古典转折为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-divine-kingship",
+  "dynastyId": "maya-civilization",
+  "title": "神圣王权和阿豪政治",
+  "aliases": [],
+  "era": "古典城邦",
+  "period": "玛雅文明",
+  "time": "3-8世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "文化宗教",
+    "制度治理"
+  ],
+  "summary": "古典玛雅城邦以神圣王权、谱系和祭祀仪式组织政治合法性。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "古典玛雅城邦以神圣王权、谱系和祭祀仪式组织政治合法性。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "3-8世纪",
+      "title": "结构背景",
+      "description": "古典玛雅城邦以神圣王权、谱系和祭祀仪式组织政治合法性。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "3-8世纪",
+      "title": "事件展开",
+      "description": "神圣王权和阿豪政治的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "3-8世纪",
+      "title": "后续影响",
+      "description": "神圣王权和阿豪政治之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "古典玛雅城邦以神圣王权、谱系和祭祀仪式组织政治合法性。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "古典玛雅城邦以神圣王权、谱系和祭祀仪式组织政治合法性。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：古典玛雅城邦以神圣王权、谱系和祭祀仪式组织政治合法性。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "神圣王权和阿豪政治为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-stela-long-count",
+  "dynastyId": "maya-civilization",
+  "title": "石碑长纪年与政治宣传",
+  "aliases": [],
+  "era": "古典城邦",
+  "period": "玛雅文明",
+  "time": "4-8世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "文献",
+    "制度治理"
+  ],
+  "summary": "石碑把长纪年、王室谱系和战争功绩结合起来，是重建玛雅政治史的核心证据。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "石碑把长纪年、王室谱系和战争功绩结合起来，是重建玛雅政治史的核心证据。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "4-8世纪",
+      "title": "结构背景",
+      "description": "石碑把长纪年、王室谱系和战争功绩结合起来，是重建玛雅政治史的核心证据。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "4-8世纪",
+      "title": "事件展开",
+      "description": "石碑长纪年与政治宣传的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "4-8世纪",
+      "title": "后续影响",
+      "description": "石碑长纪年与政治宣传之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "石碑把长纪年、王室谱系和战争功绩结合起来，是重建玛雅政治史的核心证据。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "石碑把长纪年、王室谱系和战争功绩结合起来，是重建玛雅政治史的核心证据。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：石碑把长纪年、王室谱系和战争功绩结合起来，是重建玛雅政治史的核心证据。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "石碑长纪年与政治宣传为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-tikal-calakmul-rivalry",
+  "dynastyId": "maya-civilization",
+  "title": "蒂卡尔与卡拉克穆尔长期争霸",
+  "aliases": [],
+  "era": "古典争霸",
+  "period": "玛雅文明",
+  "time": "6-7世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "战争军事",
+    "边疆外交"
+  ],
+  "summary": "两大中心通过盟友、婚姻和战争争夺低地霸权，塑造古典玛雅政治网络。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "蒂卡尔",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "蒂卡尔需要放在“蒂卡尔与卡拉克穆尔长期争霸”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "蒂卡尔与卡拉克穆尔长期争霸"
+      ]
+    },
+    {
+      "name": "卡拉克穆尔",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "卡拉克穆尔需要放在“蒂卡尔与卡拉克穆尔长期争霸”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "蒂卡尔与卡拉克穆尔长期争霸"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "两大中心通过盟友、婚姻和战争争夺低地霸权，塑造古典玛雅政治网络。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "6-7世纪",
+      "title": "结构背景",
+      "description": "两大中心通过盟友、婚姻和战争争夺低地霸权，塑造古典玛雅政治网络。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "6-7世纪",
+      "title": "事件展开",
+      "description": "蒂卡尔与卡拉克穆尔长期争霸的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "6-7世纪",
+      "title": "后续影响",
+      "description": "蒂卡尔与卡拉克穆尔长期争霸之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "两大中心通过盟友、婚姻和战争争夺低地霸权，塑造古典玛雅政治网络。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "两大中心通过盟友、婚姻和战争争夺低地霸权，塑造古典玛雅政治网络。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：两大中心通过盟友、婚姻和战争争夺低地霸权，塑造古典玛雅政治网络。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "蒂卡尔与卡拉克穆尔长期争霸为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-caracol-rise",
+  "dynastyId": "maya-civilization",
+  "title": "卡拉科尔崛起",
+  "aliases": [],
+  "era": "古典争霸",
+  "period": "玛雅文明",
+  "time": "562以后",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "战争军事",
+    "政权兴亡"
+  ],
+  "summary": "卡拉科尔在联盟战争中上升，显示中型城邦也能借霸权竞争改变区域格局。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "卡拉科尔在联盟战争中上升，显示中型城邦也能借霸权竞争改变区域格局。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "562以后",
+      "title": "结构背景",
+      "description": "卡拉科尔在联盟战争中上升，显示中型城邦也能借霸权竞争改变区域格局。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "562以后",
+      "title": "事件展开",
+      "description": "卡拉科尔崛起的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "562以后",
+      "title": "后续影响",
+      "description": "卡拉科尔崛起之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "卡拉科尔在联盟战争中上升，显示中型城邦也能借霸权竞争改变区域格局。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "卡拉科尔在联盟战争中上升，显示中型城邦也能借霸权竞争改变区域格局。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：卡拉科尔在联盟战争中上升，显示中型城邦也能借霸权竞争改变区域格局。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "卡拉科尔崛起为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-naranjo-wars",
+  "dynastyId": "maya-civilization",
+  "title": "纳兰霍战争与王室女性政治",
+  "aliases": [],
+  "era": "古典争霸",
+  "period": "玛雅文明",
+  "time": "7世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "战争军事",
+    "社会结构"
+  ],
+  "summary": "纳兰霍的战争和王室婚姻显示玛雅政治中女性精英也能发挥关键联盟作用。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "纳兰霍的战争和王室婚姻显示玛雅政治中女性精英也能发挥关键联盟作用。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "7世纪",
+      "title": "结构背景",
+      "description": "纳兰霍的战争和王室婚姻显示玛雅政治中女性精英也能发挥关键联盟作用。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "7世纪",
+      "title": "事件展开",
+      "description": "纳兰霍战争与王室女性政治的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "7世纪",
+      "title": "后续影响",
+      "description": "纳兰霍战争与王室女性政治之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "纳兰霍的战争和王室婚姻显示玛雅政治中女性精英也能发挥关键联盟作用。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "纳兰霍的战争和王室婚姻显示玛雅政治中女性精英也能发挥关键联盟作用。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：纳兰霍的战争和王室婚姻显示玛雅政治中女性精英也能发挥关键联盟作用。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "纳兰霍战争与王室女性政治为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-yaxchilan-piedras-negras",
+  "dynastyId": "maya-civilization",
+  "title": "乌苏马辛塔河城邦竞争",
+  "aliases": [],
+  "era": "古典争霸",
+  "period": "玛雅文明",
+  "time": "7-8世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "战争军事",
+    "海权贸易"
+  ],
+  "summary": "亚斯奇兰和彼德拉斯内格拉斯等城邦围绕河流交通和俘虏仪式长期竞争。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚斯奇兰和彼德拉斯内格拉斯等城邦围绕河流交通和俘虏仪式长期竞争。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "7-8世纪",
+      "title": "结构背景",
+      "description": "亚斯奇兰和彼德拉斯内格拉斯等城邦围绕河流交通和俘虏仪式长期竞争。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "7-8世纪",
+      "title": "事件展开",
+      "description": "乌苏马辛塔河城邦竞争的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "7-8世纪",
+      "title": "后续影响",
+      "description": "乌苏马辛塔河城邦竞争之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚斯奇兰和彼德拉斯内格拉斯等城邦围绕河流交通和俘虏仪式长期竞争。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚斯奇兰和彼德拉斯内格拉斯等城邦围绕河流交通和俘虏仪式长期竞争。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚斯奇兰和彼德拉斯内格拉斯等城邦围绕河流交通和俘虏仪式长期竞争。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "乌苏马辛塔河城邦竞争为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-copan-collapse-local",
+  "dynastyId": "maya-civilization",
+  "title": "科潘王权崩解",
+  "aliases": [],
+  "era": "终末古典危机",
+  "period": "玛雅文明",
+  "time": "9世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "政权兴亡",
+    "社会结构"
+  ],
+  "summary": "科潘在王权仪式和人口压力后衰落，显示终末古典危机有地方差异。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "科潘在王权仪式和人口压力后衰落，显示终末古典危机有地方差异。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "9世纪",
+      "title": "结构背景",
+      "description": "科潘在王权仪式和人口压力后衰落，显示终末古典危机有地方差异。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "9世纪",
+      "title": "事件展开",
+      "description": "科潘王权崩解的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "9世纪",
+      "title": "后续影响",
+      "description": "科潘王权崩解之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "科潘在王权仪式和人口压力后衰落，显示终末古典危机有地方差异。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "科潘在王权仪式和人口压力后衰落，显示终末古典危机有地方差异。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：科潘在王权仪式和人口压力后衰落，显示终末古典危机有地方差异。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "科潘王权崩解为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-drought-debate",
+  "dynastyId": "maya-civilization",
+  "title": "干旱、战争和崩溃争论",
+  "aliases": [],
+  "era": "终末古典危机",
+  "period": "玛雅文明",
+  "time": "8-10世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "灾害",
+    "政权兴亡"
+  ],
+  "summary": "玛雅低地衰落常被放在干旱、战争、贸易转移和政治碎片化共同作用中解释。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "玛雅低地衰落常被放在干旱、战争、贸易转移和政治碎片化共同作用中解释。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "8-10世纪",
+      "title": "结构背景",
+      "description": "玛雅低地衰落常被放在干旱、战争、贸易转移和政治碎片化共同作用中解释。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "8-10世纪",
+      "title": "事件展开",
+      "description": "干旱、战争和崩溃争论的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "8-10世纪",
+      "title": "后续影响",
+      "description": "干旱、战争和崩溃争论之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "玛雅低地衰落常被放在干旱、战争、贸易转移和政治碎片化共同作用中解释。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "玛雅低地衰落常被放在干旱、战争、贸易转移和政治碎片化共同作用中解释。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：玛雅低地衰落常被放在干旱、战争、贸易转移和政治碎片化共同作用中解释。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "干旱、战争和崩溃争论为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-coba-northern-yucatan",
+  "dynastyId": "maya-civilization",
+  "title": "科巴与北尤卡坦交通",
+  "aliases": [],
+  "era": "北部转向",
+  "period": "玛雅文明",
+  "time": "8-10世纪",
+  "regions": [
+    "北美",
+    "中美洲",
+    "尤卡坦"
+  ],
+  "topics": [
+    "交通工程",
+    "地方治理"
+  ],
+  "summary": "科巴等北部中心依靠道路和湖区资源，显示玛雅重心向北转移并非突然发生。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "科巴等北部中心依靠道路和湖区资源，显示玛雅重心向北转移并非突然发生。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "8-10世纪",
+      "title": "结构背景",
+      "description": "科巴等北部中心依靠道路和湖区资源，显示玛雅重心向北转移并非突然发生。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "8-10世纪",
+      "title": "事件展开",
+      "description": "科巴与北尤卡坦交通的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "8-10世纪",
+      "title": "后续影响",
+      "description": "科巴与北尤卡坦交通之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "科巴等北部中心依靠道路和湖区资源，显示玛雅重心向北转移并非突然发生。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "科巴等北部中心依靠道路和湖区资源，显示玛雅重心向北转移并非突然发生。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：科巴等北部中心依靠道路和湖区资源，显示玛雅重心向北转移并非突然发生。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "科巴与北尤卡坦交通为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-uxmal-puuc",
+  "dynastyId": "maya-civilization",
+  "title": "乌斯马尔与普克建筑",
+  "aliases": [],
+  "era": "北部转向",
+  "period": "玛雅文明",
+  "time": "9-10世纪",
+  "regions": [
+    "北美",
+    "中美洲",
+    "尤卡坦"
+  ],
+  "topics": [
+    "文化宗教",
+    "地方治理"
+  ],
+  "summary": "乌斯马尔代表普克地区城市和建筑传统高峰，说明后古典前夜北部仍有复杂政治。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "乌斯马尔代表普克地区城市和建筑传统高峰，说明后古典前夜北部仍有复杂政治。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "9-10世纪",
+      "title": "结构背景",
+      "description": "乌斯马尔代表普克地区城市和建筑传统高峰，说明后古典前夜北部仍有复杂政治。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "9-10世纪",
+      "title": "事件展开",
+      "description": "乌斯马尔与普克建筑的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "9-10世纪",
+      "title": "后续影响",
+      "description": "乌斯马尔与普克建筑之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "乌斯马尔代表普克地区城市和建筑传统高峰，说明后古典前夜北部仍有复杂政治。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "乌斯马尔代表普克地区城市和建筑传统高峰，说明后古典前夜北部仍有复杂政治。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：乌斯马尔代表普克地区城市和建筑传统高峰，说明后古典前夜北部仍有复杂政治。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "乌斯马尔与普克建筑为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-coastal-trade",
+  "dynastyId": "maya-civilization",
+  "title": "后古典海岸贸易网络",
+  "aliases": [],
+  "era": "后古典网络",
+  "period": "玛雅文明",
+  "time": "1000-1500",
+  "regions": [
+    "北美",
+    "中美洲",
+    "加勒比"
+  ],
+  "topics": [
+    "海权贸易",
+    "财政经济"
+  ],
+  "summary": "尤卡坦和加勒比海岸贸易增强，盐、黑曜石和奢侈品流通改变玛雅政治重心。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "尤卡坦和加勒比海岸贸易增强，盐、黑曜石和奢侈品流通改变玛雅政治重心。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "1000-1500",
+      "title": "结构背景",
+      "description": "尤卡坦和加勒比海岸贸易增强，盐、黑曜石和奢侈品流通改变玛雅政治重心。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "1000-1500",
+      "title": "事件展开",
+      "description": "后古典海岸贸易网络的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "1000-1500",
+      "title": "后续影响",
+      "description": "后古典海岸贸易网络之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "尤卡坦和加勒比海岸贸易增强，盐、黑曜石和奢侈品流通改变玛雅政治重心。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "尤卡坦和加勒比海岸贸易增强，盐、黑曜石和奢侈品流通改变玛雅政治重心。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：尤卡坦和加勒比海岸贸易增强，盐、黑曜石和奢侈品流通改变玛雅政治重心。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "后古典海岸贸易网络为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-mayapan-collapse",
+  "dynastyId": "maya-civilization",
+  "title": "玛雅潘崩溃与诸小邦并立",
+  "aliases": [],
+  "era": "后古典网络",
+  "period": "玛雅文明",
+  "time": "1441以后",
+  "regions": [
+    "北美",
+    "中美洲",
+    "尤卡坦"
+  ],
+  "topics": [
+    "政权兴亡"
+  ],
+  "summary": "玛雅潘衰落后，尤卡坦进入多个小邦并立状态，使西班牙征服长期化。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "玛雅潘衰落后，尤卡坦进入多个小邦并立状态，使西班牙征服长期化。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "1441以后",
+      "title": "结构背景",
+      "description": "玛雅潘衰落后，尤卡坦进入多个小邦并立状态，使西班牙征服长期化。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "1441以后",
+      "title": "事件展开",
+      "description": "玛雅潘崩溃与诸小邦并立的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "1441以后",
+      "title": "后续影响",
+      "description": "玛雅潘崩溃与诸小邦并立之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "玛雅潘衰落后，尤卡坦进入多个小邦并立状态，使西班牙征服长期化。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "玛雅潘衰落后，尤卡坦进入多个小邦并立状态，使西班牙征服长期化。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：玛雅潘衰落后，尤卡坦进入多个小邦并立状态，使西班牙征服长期化。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "玛雅潘崩溃与诸小邦并立为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-kaqchikel-annals",
+  "dynastyId": "maya-civilization",
+  "title": "卡克奇克尔编年传统",
+  "aliases": [],
+  "era": "高地玛雅",
+  "period": "玛雅文明",
+  "time": "16世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "文献",
+    "文化宗教"
+  ],
+  "summary": "高地玛雅文本记录王族记忆和西班牙接触，为理解征服提供本土视角。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "高地玛雅文本记录王族记忆和西班牙接触，为理解征服提供本土视角。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "16世纪",
+      "title": "结构背景",
+      "description": "高地玛雅文本记录王族记忆和西班牙接触，为理解征服提供本土视角。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "16世纪",
+      "title": "事件展开",
+      "description": "卡克奇克尔编年传统的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "16世纪",
+      "title": "后续影响",
+      "description": "卡克奇克尔编年传统之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "高地玛雅文本记录王族记忆和西班牙接触，为理解征服提供本土视角。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "高地玛雅文本记录王族记忆和西班牙接触，为理解征服提供本土视角。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：高地玛雅文本记录王族记忆和西班牙接触，为理解征服提供本土视角。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "卡克奇克尔编年传统为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-reducciones-encomienda",
+  "dynastyId": "maya-civilization",
+  "title": "集中村与恩贡米恩达",
+  "aliases": [],
+  "era": "殖民重组",
+  "period": "玛雅文明",
+  "time": "16世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "社会结构",
+    "制度治理"
+  ],
+  "summary": "西班牙通过集中村、贡赋和教化重组玛雅社会，但地方共同体持续保留身份。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "西班牙通过集中村、贡赋和教化重组玛雅社会，但地方共同体持续保留身份。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "16世纪",
+      "title": "结构背景",
+      "description": "西班牙通过集中村、贡赋和教化重组玛雅社会，但地方共同体持续保留身份。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "16世纪",
+      "title": "事件展开",
+      "description": "集中村与恩贡米恩达的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "16世纪",
+      "title": "后续影响",
+      "description": "集中村与恩贡米恩达之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "西班牙通过集中村、贡赋和教化重组玛雅社会，但地方共同体持续保留身份。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "西班牙通过集中村、贡赋和教化重组玛雅社会，但地方共同体持续保留身份。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：西班牙通过集中村、贡赋和教化重组玛雅社会，但地方共同体持续保留身份。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "集中村与恩贡米恩达为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-chilam-balam",
+  "dynastyId": "maya-civilization",
+  "title": "《奇兰·巴兰》传统",
+  "aliases": [],
+  "era": "殖民记忆",
+  "period": "玛雅文明",
+  "time": "17-18世纪",
+  "regions": [
+    "北美",
+    "中美洲"
+  ],
+  "topics": [
+    "文献",
+    "文化宗教"
+  ],
+  "summary": "《奇兰·巴兰》保存玛雅历法、预言和殖民经验，是后古典至殖民时期的重要记忆文本。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "《奇兰·巴兰》保存玛雅历法、预言和殖民经验，是后古典至殖民时期的重要记忆文本。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "17-18世纪",
+      "title": "结构背景",
+      "description": "《奇兰·巴兰》保存玛雅历法、预言和殖民经验，是后古典至殖民时期的重要记忆文本。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "17-18世纪",
+      "title": "事件展开",
+      "description": "《奇兰·巴兰》传统的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "17-18世纪",
+      "title": "后续影响",
+      "description": "《奇兰·巴兰》传统之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "《奇兰·巴兰》保存玛雅历法、预言和殖民经验，是后古典至殖民时期的重要记忆文本。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "《奇兰·巴兰》保存玛雅历法、预言和殖民经验，是后古典至殖民时期的重要记忆文本。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：《奇兰·巴兰》保存玛雅历法、预言和殖民经验，是后古典至殖民时期的重要记忆文本。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "《奇兰·巴兰》传统为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "maya-caste-war-memory",
+  "dynastyId": "maya-civilization",
+  "title": "尤卡坦社会记忆的长期延续",
+  "aliases": [],
+  "era": "长期余波",
+  "period": "玛雅文明",
+  "time": "19世纪",
+  "regions": [
+    "北美",
+    "中美洲",
+    "尤卡坦"
+  ],
+  "topics": [
+    "社会结构",
+    "政权兴亡"
+  ],
+  "summary": "玛雅共同体在殖民后仍保留语言、土地和宗教身份，后来的尤卡坦冲突体现这种长期延续。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "玛雅共同体在殖民后仍保留语言、土地和宗教身份，后来的尤卡坦冲突体现这种长期延续。 这条用于补足玛雅文明作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "19世纪",
+      "title": "结构背景",
+      "description": "玛雅共同体在殖民后仍保留语言、土地和宗教身份，后来的尤卡坦冲突体现这种长期延续。 这一节点前，玛雅文明的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "19世纪",
+      "title": "事件展开",
+      "description": "尤卡坦社会记忆的长期延续的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "19世纪",
+      "title": "后续影响",
+      "description": "尤卡坦社会记忆的长期延续之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "玛雅共同体在殖民后仍保留语言、土地和宗教身份，后来的尤卡坦冲突体现这种长期延续。",
+    "它补强了玛雅文明长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "玛雅共同体在殖民后仍保留语言、土地和宗教身份，后来的尤卡坦冲突体现这种长期延续。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "maya-civilization-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "maya-civilization-main-source",
+      "reference": "玛雅文明公开考古、铭文与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：玛雅共同体在殖民后仍保留语言、土地和宗教身份，后来的尤卡坦冲突体现这种长期延续。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "maya-civilization-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "玛雅文明公开考古、铭文与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为玛雅文明长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "尤卡坦社会记忆的长期延续为什么应放入玛雅文明主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+}
 ];

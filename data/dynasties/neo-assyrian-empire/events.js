@@ -2674,5 +2674,1728 @@ window.NEO_ASSYRIAN_EMPIRE_EVENTS = [
     ],
     "notes": [],
     "sourceStatus": "公开入口已补"
-  }
+  },
+{
+  "id": "assur-dan-ii-recovery",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "阿淑尔丹二世恢复核心区",
+  "aliases": [],
+  "era": "亚述复兴",
+  "period": "新亚述帝国",
+  "time": "前934-前912",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "制度治理",
+    "战争军事"
+  ],
+  "summary": "阿淑尔丹二世重建农业和边疆秩序，为新亚述扩张奠定早期基础。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "阿淑尔丹二世重建农业和边疆秩序，为新亚述扩张奠定早期基础。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前934-前912",
+      "title": "结构背景",
+      "description": "阿淑尔丹二世重建农业和边疆秩序，为新亚述扩张奠定早期基础。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前934-前912",
+      "title": "事件展开",
+      "description": "阿淑尔丹二世恢复核心区的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前934-前912",
+      "title": "后续影响",
+      "description": "阿淑尔丹二世恢复核心区之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "阿淑尔丹二世重建农业和边疆秩序，为新亚述扩张奠定早期基础。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "阿淑尔丹二世重建农业和边疆秩序，为新亚述扩张奠定早期基础。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：阿淑尔丹二世重建农业和边疆秩序，为新亚述扩张奠定早期基础。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "阿淑尔丹二世恢复核心区为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "adad-nirari-ii-campaigns",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "阿达德尼拉里二世重启远征",
+  "aliases": [],
+  "era": "亚述复兴",
+  "period": "新亚述帝国",
+  "time": "前911-前891",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "战争军事"
+  ],
+  "summary": "亚述重新向哈布尔和幼发拉底方向推进，恢复对周边的贡赋压力。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚述重新向哈布尔和幼发拉底方向推进，恢复对周边的贡赋压力。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前911-前891",
+      "title": "结构背景",
+      "description": "亚述重新向哈布尔和幼发拉底方向推进，恢复对周边的贡赋压力。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前911-前891",
+      "title": "事件展开",
+      "description": "阿达德尼拉里二世重启远征的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前911-前891",
+      "title": "后续影响",
+      "description": "阿达德尼拉里二世重启远征之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚述重新向哈布尔和幼发拉底方向推进，恢复对周边的贡赋压力。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚述重新向哈布尔和幼发拉底方向推进，恢复对周边的贡赋压力。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚述重新向哈布尔和幼发拉底方向推进，恢复对周边的贡赋压力。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "阿达德尼拉里二世重启远征为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "tukulti-ninurta-ii-logistics",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "图库尔提尼努尔塔二世道路和补给",
+  "aliases": [],
+  "era": "亚述复兴",
+  "period": "新亚述帝国",
+  "time": "前890-前884",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "交通工程",
+    "战争军事"
+  ],
+  "summary": "远征记录显示亚述重视道路、渡口和补给，为后来的常年征战提供条件。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "远征记录显示亚述重视道路、渡口和补给，为后来的常年征战提供条件。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前890-前884",
+      "title": "结构背景",
+      "description": "远征记录显示亚述重视道路、渡口和补给，为后来的常年征战提供条件。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前890-前884",
+      "title": "事件展开",
+      "description": "图库尔提尼努尔塔二世道路和补给的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前890-前884",
+      "title": "后续影响",
+      "description": "图库尔提尼努尔塔二世道路和补给之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "远征记录显示亚述重视道路、渡口和补给，为后来的常年征战提供条件。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "远征记录显示亚述重视道路、渡口和补给，为后来的常年征战提供条件。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：远征记录显示亚述重视道路、渡口和补给，为后来的常年征战提供条件。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "图库尔提尼努尔塔二世道路和补给为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "assyria-royal-terror-inscriptions",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "王室铭文与恐怖宣传",
+  "aliases": [],
+  "era": "帝国意识形态",
+  "period": "新亚述帝国",
+  "time": "前9-前7世纪",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "文献",
+    "制度治理"
+  ],
+  "summary": "亚述王室铭文把惩罚、献俘和毁城写成政治宣传，用威慑维持边疆服从。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚述王室铭文把惩罚、献俘和毁城写成政治宣传，用威慑维持边疆服从。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前9-前7世纪",
+      "title": "结构背景",
+      "description": "亚述王室铭文把惩罚、献俘和毁城写成政治宣传，用威慑维持边疆服从。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前9-前7世纪",
+      "title": "事件展开",
+      "description": "王室铭文与恐怖宣传的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前9-前7世纪",
+      "title": "后续影响",
+      "description": "王室铭文与恐怖宣传之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚述王室铭文把惩罚、献俘和毁城写成政治宣传，用威慑维持边疆服从。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚述王室铭文把惩罚、献俘和毁城写成政治宣传，用威慑维持边疆服从。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚述王室铭文把惩罚、献俘和毁城写成政治宣传，用威慑维持边疆服从。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "王室铭文与恐怖宣传为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "assyria-provincial-governors",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "行省总督与地方再编",
+  "aliases": [],
+  "era": "帝国制度",
+  "period": "新亚述帝国",
+  "time": "前9-前7世纪",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "制度治理",
+    "地方治理"
+  ],
+  "summary": "亚述把征服地改为行省并派总督管理，削弱附庸王反叛空间。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚述把征服地改为行省并派总督管理，削弱附庸王反叛空间。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前9-前7世纪",
+      "title": "结构背景",
+      "description": "亚述把征服地改为行省并派总督管理，削弱附庸王反叛空间。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前9-前7世纪",
+      "title": "事件展开",
+      "description": "行省总督与地方再编的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前9-前7世纪",
+      "title": "后续影响",
+      "description": "行省总督与地方再编之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚述把征服地改为行省并派总督管理，削弱附庸王反叛空间。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚述把征服地改为行省并派总督管理，削弱附庸王反叛空间。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚述把征服地改为行省并派总督管理，削弱附庸王反叛空间。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "行省总督与地方再编为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "assyria-siege-engineering",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "攻城技术和工程兵",
+  "aliases": [],
+  "era": "帝国军事",
+  "period": "新亚述帝国",
+  "time": "前9-前7世纪",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "战争军事",
+    "交通工程"
+  ],
+  "summary": "亚述军队发展攻城塔、撞锤和土坡技术，使坚城不再能长期阻挡帝国推进。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚述军队发展攻城塔、撞锤和土坡技术，使坚城不再能长期阻挡帝国推进。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前9-前7世纪",
+      "title": "结构背景",
+      "description": "亚述军队发展攻城塔、撞锤和土坡技术，使坚城不再能长期阻挡帝国推进。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前9-前7世纪",
+      "title": "事件展开",
+      "description": "攻城技术和工程兵的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前9-前7世纪",
+      "title": "后续影响",
+      "description": "攻城技术和工程兵之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚述军队发展攻城塔、撞锤和土坡技术，使坚城不再能长期阻挡帝国推进。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚述军队发展攻城塔、撞锤和土坡技术，使坚城不再能长期阻挡帝国推进。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚述军队发展攻城塔、撞锤和土坡技术，使坚城不再能长期阻挡帝国推进。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "攻城技术和工程兵为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "assyria-cavalry-development",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "骑兵和战车体系转型",
+  "aliases": [],
+  "era": "帝国军事",
+  "period": "新亚述帝国",
+  "time": "前8-前7世纪",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "战争军事"
+  ],
+  "summary": "亚述逐渐扩大骑兵作用，提高对山地、草原和远程战场的机动能力。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚述逐渐扩大骑兵作用，提高对山地、草原和远程战场的机动能力。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前8-前7世纪",
+      "title": "结构背景",
+      "description": "亚述逐渐扩大骑兵作用，提高对山地、草原和远程战场的机动能力。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前8-前7世纪",
+      "title": "事件展开",
+      "description": "骑兵和战车体系转型的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前8-前7世纪",
+      "title": "后续影响",
+      "description": "骑兵和战车体系转型之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚述逐渐扩大骑兵作用，提高对山地、草原和远程战场的机动能力。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚述逐渐扩大骑兵作用，提高对山地、草原和远程战场的机动能力。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚述逐渐扩大骑兵作用，提高对山地、草原和远程战场的机动能力。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "骑兵和战车体系转型为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "shalmaneser-jehu-tribute",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "黑方尖碑与耶户进贡",
+  "aliases": [],
+  "era": "西方扩张",
+  "period": "新亚述帝国",
+  "time": "前841",
+  "regions": [
+    "西亚",
+    "黎凡特"
+  ],
+  "topics": [
+    "文献",
+    "边疆外交"
+  ],
+  "summary": "黑方尖碑记录西方诸王进贡，是亚述威望进入黎凡特政治的证据。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "黑方尖碑记录西方诸王进贡，是亚述威望进入黎凡特政治的证据。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前841",
+      "title": "结构背景",
+      "description": "黑方尖碑记录西方诸王进贡，是亚述威望进入黎凡特政治的证据。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前841",
+      "title": "事件展开",
+      "description": "黑方尖碑与耶户进贡的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前841",
+      "title": "后续影响",
+      "description": "黑方尖碑与耶户进贡之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "黑方尖碑记录西方诸王进贡，是亚述威望进入黎凡特政治的证据。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "黑方尖碑记录西方诸王进贡，是亚述威望进入黎凡特政治的证据。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：黑方尖碑记录西方诸王进贡，是亚述威望进入黎凡特政治的证据。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "黑方尖碑与耶户进贡为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "sammu-ramat-regency",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "萨穆拉马特摄政传统",
+  "aliases": [],
+  "era": "宫廷政治",
+  "period": "新亚述帝国",
+  "time": "前9世纪",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "社会结构",
+    "政权兴亡"
+  ],
+  "summary": "萨穆拉马特相关传统反映亚述宫廷在继承和幼主政治中可能存在女性权力角色。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "萨穆拉马特相关传统反映亚述宫廷在继承和幼主政治中可能存在女性权力角色。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前9世纪",
+      "title": "结构背景",
+      "description": "萨穆拉马特相关传统反映亚述宫廷在继承和幼主政治中可能存在女性权力角色。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前9世纪",
+      "title": "事件展开",
+      "description": "萨穆拉马特摄政传统的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前9世纪",
+      "title": "后续影响",
+      "description": "萨穆拉马特摄政传统之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "萨穆拉马特相关传统反映亚述宫廷在继承和幼主政治中可能存在女性权力角色。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "萨穆拉马特相关传统反映亚述宫廷在继承和幼主政治中可能存在女性权力角色。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：萨穆拉马特相关传统反映亚述宫廷在继承和幼主政治中可能存在女性权力角色。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "萨穆拉马特摄政传统为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "assyria-urartu-rivalry",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "乌拉尔图长期竞争",
+  "aliases": [],
+  "era": "北方边疆",
+  "period": "新亚述帝国",
+  "time": "前9-前8世纪",
+  "regions": [
+    "西亚",
+    "安纳托利亚"
+  ],
+  "topics": [
+    "战争军事",
+    "边疆外交"
+  ],
+  "summary": "亚述与乌拉尔图围绕山地、金属和通道长期竞争，牵制北方战略。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚述与乌拉尔图围绕山地、金属和通道长期竞争，牵制北方战略。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前9-前8世纪",
+      "title": "结构背景",
+      "description": "亚述与乌拉尔图围绕山地、金属和通道长期竞争，牵制北方战略。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前9-前8世纪",
+      "title": "事件展开",
+      "description": "乌拉尔图长期竞争的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前9-前8世纪",
+      "title": "后续影响",
+      "description": "乌拉尔图长期竞争之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚述与乌拉尔图围绕山地、金属和通道长期竞争，牵制北方战略。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚述与乌拉尔图围绕山地、金属和通道长期竞争，牵制北方战略。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚述与乌拉尔图围绕山地、金属和通道长期竞争，牵制北方战略。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "乌拉尔图长期竞争为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "tiglapileser-babylon-kingship",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "提格拉特帕拉沙尔三世兼任巴比伦王",
+  "aliases": [],
+  "era": "帝国制度",
+  "period": "新亚述帝国",
+  "time": "前729",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "制度治理",
+    "文化宗教"
+  ],
+  "summary": "亚述王兼任巴比伦王，试图用传统王权名义稳定南部两河。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚述王兼任巴比伦王，试图用传统王权名义稳定南部两河。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前729",
+      "title": "结构背景",
+      "description": "亚述王兼任巴比伦王，试图用传统王权名义稳定南部两河。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前729",
+      "title": "事件展开",
+      "description": "提格拉特帕拉沙尔三世兼任巴比伦王的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前729",
+      "title": "后续影响",
+      "description": "提格拉特帕拉沙尔三世兼任巴比伦王之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚述王兼任巴比伦王，试图用传统王权名义稳定南部两河。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚述王兼任巴比伦王，试图用传统王权名义稳定南部两河。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚述王兼任巴比伦王，试图用传统王权名义稳定南部两河。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "提格拉特帕拉沙尔三世兼任巴比伦王为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "assyria-tribute-economy",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "贡赋经济与帝国中心",
+  "aliases": [],
+  "era": "帝国制度",
+  "period": "新亚述帝国",
+  "time": "前8-前7世纪",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "财政经济",
+    "制度治理"
+  ],
+  "summary": "贡金、人口迁徙和战利品流入尼尼微等中心，支撑宫殿、军队和手工业。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "贡金、人口迁徙和战利品流入尼尼微等中心，支撑宫殿、军队和手工业。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前8-前7世纪",
+      "title": "结构背景",
+      "description": "贡金、人口迁徙和战利品流入尼尼微等中心，支撑宫殿、军队和手工业。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前8-前7世纪",
+      "title": "事件展开",
+      "description": "贡赋经济与帝国中心的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前8-前7世纪",
+      "title": "后续影响",
+      "description": "贡赋经济与帝国中心之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "贡金、人口迁徙和战利品流入尼尼微等中心，支撑宫殿、军队和手工业。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "贡金、人口迁徙和战利品流入尼尼微等中心，支撑宫殿、军队和手工业。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：贡金、人口迁徙和战利品流入尼尼微等中心，支撑宫殿、军队和手工业。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "贡赋经济与帝国中心为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "sennacherib-lachish",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "拉吉围城浮雕",
+  "aliases": [],
+  "era": "西方战争",
+  "period": "新亚述帝国",
+  "time": "前701",
+  "regions": [
+    "西亚",
+    "黎凡特"
+  ],
+  "topics": [
+    "战争军事",
+    "文献"
+  ],
+  "summary": "拉吉围城浮雕把军事胜利和王权展示结合，是亚述战争宣传的重要材料。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "西拿基立",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "西拿基立需要放在“拉吉围城浮雕”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "拉吉围城浮雕"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "拉吉围城浮雕把军事胜利和王权展示结合，是亚述战争宣传的重要材料。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前701",
+      "title": "结构背景",
+      "description": "拉吉围城浮雕把军事胜利和王权展示结合，是亚述战争宣传的重要材料。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前701",
+      "title": "事件展开",
+      "description": "拉吉围城浮雕的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前701",
+      "title": "后续影响",
+      "description": "拉吉围城浮雕之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "拉吉围城浮雕把军事胜利和王权展示结合，是亚述战争宣传的重要材料。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "拉吉围城浮雕把军事胜利和王权展示结合，是亚述战争宣传的重要材料。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：拉吉围城浮雕把军事胜利和王权展示结合，是亚述战争宣传的重要材料。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "拉吉围城浮雕为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "esarhaddon-succession-treaties",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "以撒哈顿继承誓约",
+  "aliases": [],
+  "era": "宫廷政治",
+  "period": "新亚述帝国",
+  "time": "前672",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "制度治理",
+    "政权兴亡"
+  ],
+  "summary": "继承誓约要求贵族和附庸承认亚述巴尼拔，反映帝国对继承危机的制度化防范。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "以撒哈顿",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "以撒哈顿需要放在“以撒哈顿继承誓约”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "以撒哈顿继承誓约"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "继承誓约要求贵族和附庸承认亚述巴尼拔，反映帝国对继承危机的制度化防范。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前672",
+      "title": "结构背景",
+      "description": "继承誓约要求贵族和附庸承认亚述巴尼拔，反映帝国对继承危机的制度化防范。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前672",
+      "title": "事件展开",
+      "description": "以撒哈顿继承誓约的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前672",
+      "title": "后续影响",
+      "description": "以撒哈顿继承誓约之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "继承誓约要求贵族和附庸承认亚述巴尼拔，反映帝国对继承危机的制度化防范。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "继承誓约要求贵族和附庸承认亚述巴尼拔，反映帝国对继承危机的制度化防范。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：继承誓约要求贵族和附庸承认亚述巴尼拔，反映帝国对继承危机的制度化防范。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "以撒哈顿继承誓约为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ashurbanipal-shamash-shum-ukin",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "亚述巴尼拔与沙马什舒姆乌金内战",
+  "aliases": [],
+  "era": "帝国高峰后",
+  "period": "新亚述帝国",
+  "time": "前652-前648",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "政权兴亡",
+    "战争军事"
+  ],
+  "summary": "巴比伦王兄弟反叛引发内战，削弱帝国南部稳定和王室资源。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "亚述巴尼拔",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "亚述巴尼拔需要放在“亚述巴尼拔与沙马什舒姆乌金内战”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "亚述巴尼拔与沙马什舒姆乌金内战"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "巴比伦王兄弟反叛引发内战，削弱帝国南部稳定和王室资源。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前652-前648",
+      "title": "结构背景",
+      "description": "巴比伦王兄弟反叛引发内战，削弱帝国南部稳定和王室资源。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前652-前648",
+      "title": "事件展开",
+      "description": "亚述巴尼拔与沙马什舒姆乌金内战的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前652-前648",
+      "title": "后续影响",
+      "description": "亚述巴尼拔与沙马什舒姆乌金内战之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "巴比伦王兄弟反叛引发内战，削弱帝国南部稳定和王室资源。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "巴比伦王兄弟反叛引发内战，削弱帝国南部稳定和王室资源。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：巴比伦王兄弟反叛引发内战，削弱帝国南部稳定和王室资源。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "亚述巴尼拔与沙马什舒姆乌金内战为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "assyria-arabian-campaigns",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "阿拉伯和沙漠边疆战役",
+  "aliases": [],
+  "era": "边疆压力",
+  "period": "新亚述帝国",
+  "time": "前7世纪",
+  "regions": [
+    "西亚",
+    "阿拉伯半岛"
+  ],
+  "topics": [
+    "边疆外交",
+    "战争军事"
+  ],
+  "summary": "亚述在叙利亚沙漠和阿拉伯边缘作战，显示帝国必须管理贸易路和游牧集团。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚述在叙利亚沙漠和阿拉伯边缘作战，显示帝国必须管理贸易路和游牧集团。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前7世纪",
+      "title": "结构背景",
+      "description": "亚述在叙利亚沙漠和阿拉伯边缘作战，显示帝国必须管理贸易路和游牧集团。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前7世纪",
+      "title": "事件展开",
+      "description": "阿拉伯和沙漠边疆战役的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前7世纪",
+      "title": "后续影响",
+      "description": "阿拉伯和沙漠边疆战役之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚述在叙利亚沙漠和阿拉伯边缘作战，显示帝国必须管理贸易路和游牧集团。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚述在叙利亚沙漠和阿拉伯边缘作战，显示帝国必须管理贸易路和游牧集团。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚述在叙利亚沙漠和阿拉伯边缘作战，显示帝国必须管理贸易路和游牧集团。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "阿拉伯和沙漠边疆战役为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "assyria-postal-road",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "王家道路与情报传递",
+  "aliases": [],
+  "era": "帝国制度",
+  "period": "新亚述帝国",
+  "time": "前8-前7世纪",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "交通工程",
+    "制度治理"
+  ],
+  "summary": "亚述通过驿站、道路和报告系统把边疆情报送回王宫，提高军事反应速度。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚述通过驿站、道路和报告系统把边疆情报送回王宫，提高军事反应速度。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前8-前7世纪",
+      "title": "结构背景",
+      "description": "亚述通过驿站、道路和报告系统把边疆情报送回王宫，提高军事反应速度。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前8-前7世纪",
+      "title": "事件展开",
+      "description": "王家道路与情报传递的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前8-前7世纪",
+      "title": "后续影响",
+      "description": "王家道路与情报传递之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚述通过驿站、道路和报告系统把边疆情报送回王宫，提高军事反应速度。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚述通过驿站、道路和报告系统把边疆情报送回王宫，提高军事反应速度。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚述通过驿站、道路和报告系统把边疆情报送回王宫，提高军事反应速度。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "王家道路与情报传递为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "assyria-temple-politics",
+  "dynastyId": "neo-assyrian-empire",
+  "title": "神庙、王权和城市忠诚",
+  "aliases": [],
+  "era": "帝国制度",
+  "period": "新亚述帝国",
+  "time": "前8-前7世纪",
+  "regions": [
+    "西亚",
+    "两河流域"
+  ],
+  "topics": [
+    "文化宗教",
+    "制度治理"
+  ],
+  "summary": "亚述王在阿淑尔、尼尼微和巴比伦神庙之间分配敬奉，宗教政治影响城市忠诚。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "亚述王在阿淑尔、尼尼微和巴比伦神庙之间分配敬奉，宗教政治影响城市忠诚。 这条用于补足新亚述帝国作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前8-前7世纪",
+      "title": "结构背景",
+      "description": "亚述王在阿淑尔、尼尼微和巴比伦神庙之间分配敬奉，宗教政治影响城市忠诚。 这一节点前，新亚述帝国的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前8-前7世纪",
+      "title": "事件展开",
+      "description": "神庙、王权和城市忠诚的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前8-前7世纪",
+      "title": "后续影响",
+      "description": "神庙、王权和城市忠诚之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "亚述王在阿淑尔、尼尼微和巴比伦神庙之间分配敬奉，宗教政治影响城市忠诚。",
+    "它补强了新亚述帝国长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "亚述王在阿淑尔、尼尼微和巴比伦神庙之间分配敬奉，宗教政治影响城市忠诚。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "neo-assyrian-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "neo-assyrian-main-source",
+      "reference": "新亚述帝国公开铭文、考古与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：亚述王在阿淑尔、尼尼微和巴比伦神庙之间分配敬奉，宗教政治影响城市忠诚。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "neo-assyrian-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "新亚述帝国公开铭文、考古与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为新亚述帝国长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "神庙、王权和城市忠诚为什么应放入新亚述帝国主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+}
 ];

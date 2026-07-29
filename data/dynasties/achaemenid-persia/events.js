@@ -2807,5 +2807,2189 @@ window.ACHAEMENID_PERSIA_EVENTS = [
     ],
     "notes": [],
     "sourceStatus": "公开入口已补"
-  }
+  },
+{
+  "id": "ach-pasargadae",
+  "dynastyId": "achaemenid-persia",
+  "title": "帕萨尔加德与居鲁士王权空间",
+  "aliases": [],
+  "era": "居鲁士扩张",
+  "period": "阿契美尼德波斯",
+  "time": "前6世纪中期",
+  "regions": [
+    "西亚",
+    "伊朗高原"
+  ],
+  "topics": [
+    "制度治理",
+    "文化宗教"
+  ],
+  "summary": "帕萨尔加德体现波斯王权把草原、伊朗高原和征服合法性整合为新的帝国象征。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "居鲁士二世",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "居鲁士二世需要放在“帕萨尔加德与居鲁士王权空间”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "帕萨尔加德与居鲁士王权空间"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "帕萨尔加德体现波斯王权把草原、伊朗高原和征服合法性整合为新的帝国象征。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前6世纪中期",
+      "title": "结构背景",
+      "description": "帕萨尔加德体现波斯王权把草原、伊朗高原和征服合法性整合为新的帝国象征。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前6世纪中期",
+      "title": "事件展开",
+      "description": "帕萨尔加德与居鲁士王权空间的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前6世纪中期",
+      "title": "后续影响",
+      "description": "帕萨尔加德与居鲁士王权空间之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "帕萨尔加德体现波斯王权把草原、伊朗高原和征服合法性整合为新的帝国象征。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "帕萨尔加德体现波斯王权把草原、伊朗高原和征服合法性整合为新的帝国象征。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：帕萨尔加德体现波斯王权把草原、伊朗高原和征服合法性整合为新的帝国象征。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "帕萨尔加德与居鲁士王权空间为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-cyrus-central-asia",
+  "dynastyId": "achaemenid-persia",
+  "title": "居鲁士中亚边疆与死亡传统",
+  "aliases": [],
+  "era": "居鲁士扩张",
+  "period": "阿契美尼德波斯",
+  "time": "前530前后",
+  "regions": [
+    "西亚",
+    "中亚"
+  ],
+  "topics": [
+    "战争军事",
+    "边疆外交"
+  ],
+  "summary": "居鲁士晚年面向中亚草原边疆作战，显示帝国从建立之初就面对游牧边界压力。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "居鲁士二世",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "居鲁士二世需要放在“居鲁士中亚边疆与死亡传统”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "居鲁士中亚边疆与死亡传统"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "居鲁士晚年面向中亚草原边疆作战，显示帝国从建立之初就面对游牧边界压力。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前530前后",
+      "title": "结构背景",
+      "description": "居鲁士晚年面向中亚草原边疆作战，显示帝国从建立之初就面对游牧边界压力。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前530前后",
+      "title": "事件展开",
+      "description": "居鲁士中亚边疆与死亡传统的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前530前后",
+      "title": "后续影响",
+      "description": "居鲁士中亚边疆与死亡传统之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "居鲁士晚年面向中亚草原边疆作战，显示帝国从建立之初就面对游牧边界压力。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "居鲁士晚年面向中亚草原边疆作战，显示帝国从建立之初就面对游牧边界压力。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：居鲁士晚年面向中亚草原边疆作战，显示帝国从建立之初就面对游牧边界压力。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "居鲁士中亚边疆与死亡传统为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-bardiya-gaumata-crisis",
+  "dynastyId": "achaemenid-persia",
+  "title": "巴尔狄亚/高墨达危机",
+  "aliases": [],
+  "era": "大流士夺位",
+  "period": "阿契美尼德波斯",
+  "time": "前522",
+  "regions": [
+    "西亚",
+    "伊朗高原"
+  ],
+  "topics": [
+    "政权兴亡",
+    "制度治理"
+  ],
+  "summary": "冈比西斯死后王位危机使大流士必须用铭文和贵族联盟重建合法性。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "大流士一世",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "大流士一世需要放在“巴尔狄亚/高墨达危机”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "巴尔狄亚/高墨达危机"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "冈比西斯死后王位危机使大流士必须用铭文和贵族联盟重建合法性。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前522",
+      "title": "结构背景",
+      "description": "冈比西斯死后王位危机使大流士必须用铭文和贵族联盟重建合法性。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前522",
+      "title": "事件展开",
+      "description": "巴尔狄亚/高墨达危机的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前522",
+      "title": "后续影响",
+      "description": "巴尔狄亚/高墨达危机之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "冈比西斯死后王位危机使大流士必须用铭文和贵族联盟重建合法性。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "冈比西斯死后王位危机使大流士必须用铭文和贵族联盟重建合法性。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：冈比西斯死后王位危机使大流士必须用铭文和贵族联盟重建合法性。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "巴尔狄亚/高墨达危机为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-darius-revolts",
+  "dynastyId": "achaemenid-persia",
+  "title": "大流士初年多地叛乱",
+  "aliases": [],
+  "era": "大流士夺位",
+  "period": "阿契美尼德波斯",
+  "time": "前522-前520",
+  "regions": [
+    "西亚",
+    "两河流域",
+    "伊朗高原"
+  ],
+  "topics": [
+    "战争军事",
+    "制度治理"
+  ],
+  "summary": "巴比伦、埃兰、米底等地反复叛乱，说明阿契美尼德帝国仍需通过军事和行政重新整合。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "大流士一世",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "大流士一世需要放在“大流士初年多地叛乱”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "大流士初年多地叛乱"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "巴比伦、埃兰、米底等地反复叛乱，说明阿契美尼德帝国仍需通过军事和行政重新整合。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前522-前520",
+      "title": "结构背景",
+      "description": "巴比伦、埃兰、米底等地反复叛乱，说明阿契美尼德帝国仍需通过军事和行政重新整合。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前522-前520",
+      "title": "事件展开",
+      "description": "大流士初年多地叛乱的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前522-前520",
+      "title": "后续影响",
+      "description": "大流士初年多地叛乱之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "巴比伦、埃兰、米底等地反复叛乱，说明阿契美尼德帝国仍需通过军事和行政重新整合。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "巴比伦、埃兰、米底等地反复叛乱，说明阿契美尼德帝国仍需通过军事和行政重新整合。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：巴比伦、埃兰、米底等地反复叛乱，说明阿契美尼德帝国仍需通过军事和行政重新整合。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "大流士初年多地叛乱为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-daric-coinage",
+  "dynastyId": "achaemenid-persia",
+  "title": "大流士金币与帝国财政",
+  "aliases": [],
+  "era": "帝国制度",
+  "period": "阿契美尼德波斯",
+  "time": "前6世纪末",
+  "regions": [
+    "西亚",
+    "伊朗高原"
+  ],
+  "topics": [
+    "财政经济",
+    "制度治理"
+  ],
+  "summary": "达利克金币和银币体系提升跨区域支付、赏赐和贡赋结算能力。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "大流士一世",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "大流士一世需要放在“大流士金币与帝国财政”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "大流士金币与帝国财政"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "达利克金币和银币体系提升跨区域支付、赏赐和贡赋结算能力。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前6世纪末",
+      "title": "结构背景",
+      "description": "达利克金币和银币体系提升跨区域支付、赏赐和贡赋结算能力。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前6世纪末",
+      "title": "事件展开",
+      "description": "大流士金币与帝国财政的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前6世纪末",
+      "title": "后续影响",
+      "description": "大流士金币与帝国财政之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "达利克金币和银币体系提升跨区域支付、赏赐和贡赋结算能力。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "达利克金币和银币体系提升跨区域支付、赏赐和贡赋结算能力。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：达利克金币和银币体系提升跨区域支付、赏赐和贡赋结算能力。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "大流士金币与帝国财政为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-imperial-aramaic",
+  "dynastyId": "achaemenid-persia",
+  "title": "帝国阿拉米语与文书网络",
+  "aliases": [],
+  "era": "帝国制度",
+  "period": "阿契美尼德波斯",
+  "time": "前6-前4世纪",
+  "regions": [
+    "西亚",
+    "两河流域",
+    "伊朗高原"
+  ],
+  "topics": [
+    "文献",
+    "制度治理"
+  ],
+  "summary": "阿拉米语作为行政通用语帮助跨民族行省传递命令、税务和法律文书。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "阿拉米语作为行政通用语帮助跨民族行省传递命令、税务和法律文书。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前6-前4世纪",
+      "title": "结构背景",
+      "description": "阿拉米语作为行政通用语帮助跨民族行省传递命令、税务和法律文书。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前6-前4世纪",
+      "title": "事件展开",
+      "description": "帝国阿拉米语与文书网络的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前6-前4世纪",
+      "title": "后续影响",
+      "description": "帝国阿拉米语与文书网络之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "阿拉米语作为行政通用语帮助跨民族行省传递命令、税务和法律文书。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "阿拉米语作为行政通用语帮助跨民族行省传递命令、税务和法律文书。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：阿拉米语作为行政通用语帮助跨民族行省传递命令、税务和法律文书。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "帝国阿拉米语与文书网络为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-satrap-checks",
+  "dynastyId": "achaemenid-persia",
+  "title": "行省总督、王使和驻军制衡",
+  "aliases": [],
+  "era": "帝国制度",
+  "period": "阿契美尼德波斯",
+  "time": "前6-前4世纪",
+  "regions": [
+    "西亚",
+    "伊朗高原"
+  ],
+  "topics": [
+    "制度治理"
+  ],
+  "summary": "阿契美尼德通过总督、财官、驻军和王室使者相互制衡，降低地方割据风险。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "阿契美尼德通过总督、财官、驻军和王室使者相互制衡，降低地方割据风险。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前6-前4世纪",
+      "title": "结构背景",
+      "description": "阿契美尼德通过总督、财官、驻军和王室使者相互制衡，降低地方割据风险。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前6-前4世纪",
+      "title": "事件展开",
+      "description": "行省总督、王使和驻军制衡的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前6-前4世纪",
+      "title": "后续影响",
+      "description": "行省总督、王使和驻军制衡之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "阿契美尼德通过总督、财官、驻军和王室使者相互制衡，降低地方割据风险。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "阿契美尼德通过总督、财官、驻军和王室使者相互制衡，降低地方割据风险。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：阿契美尼德通过总督、财官、驻军和王室使者相互制衡，降低地方割据风险。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "行省总督、王使和驻军制衡为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-darius-scythian",
+  "dynastyId": "achaemenid-persia",
+  "title": "大流士斯基泰远征",
+  "aliases": [],
+  "era": "边疆扩张",
+  "period": "阿契美尼德波斯",
+  "time": "前513前后",
+  "regions": [
+    "欧洲",
+    "黑海",
+    "中亚"
+  ],
+  "topics": [
+    "战争军事",
+    "边疆外交"
+  ],
+  "summary": "大流士越过黑海北岸远征斯基泰，显示帝国尝试控制草原边界和欧亚通道。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "大流士一世",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "大流士一世需要放在“大流士斯基泰远征”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "大流士斯基泰远征"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "大流士越过黑海北岸远征斯基泰，显示帝国尝试控制草原边界和欧亚通道。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前513前后",
+      "title": "结构背景",
+      "description": "大流士越过黑海北岸远征斯基泰，显示帝国尝试控制草原边界和欧亚通道。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前513前后",
+      "title": "事件展开",
+      "description": "大流士斯基泰远征的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前513前后",
+      "title": "后续影响",
+      "description": "大流士斯基泰远征之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "大流士越过黑海北岸远征斯基泰，显示帝国尝试控制草原边界和欧亚通道。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "大流士越过黑海北岸远征斯基泰，显示帝国尝试控制草原边界和欧亚通道。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：大流士越过黑海北岸远征斯基泰，显示帝国尝试控制草原边界和欧亚通道。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "大流士斯基泰远征为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-thrace-macedon",
+  "dynastyId": "achaemenid-persia",
+  "title": "色雷斯和马其顿纳入波斯影响",
+  "aliases": [],
+  "era": "西部边疆",
+  "period": "阿契美尼德波斯",
+  "time": "前6世纪末",
+  "regions": [
+    "欧洲",
+    "巴尔干"
+  ],
+  "topics": [
+    "边疆外交",
+    "战争军事"
+  ],
+  "summary": "波斯在爱琴北岸建立影响，使希腊城邦与帝国边界直接接触。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "波斯在爱琴北岸建立影响，使希腊城邦与帝国边界直接接触。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前6世纪末",
+      "title": "结构背景",
+      "description": "波斯在爱琴北岸建立影响，使希腊城邦与帝国边界直接接触。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前6世纪末",
+      "title": "事件展开",
+      "description": "色雷斯和马其顿纳入波斯影响的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前6世纪末",
+      "title": "后续影响",
+      "description": "色雷斯和马其顿纳入波斯影响之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "波斯在爱琴北岸建立影响，使希腊城邦与帝国边界直接接触。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "波斯在爱琴北岸建立影响，使希腊城邦与帝国边界直接接触。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：波斯在爱琴北岸建立影响，使希腊城邦与帝国边界直接接触。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "色雷斯和马其顿纳入波斯影响为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-nile-red-sea-canal",
+  "dynastyId": "achaemenid-persia",
+  "title": "尼罗河至红海运河传统",
+  "aliases": [],
+  "era": "帝国交通",
+  "period": "阿契美尼德波斯",
+  "time": "前6世纪末",
+  "regions": [
+    "非洲",
+    "埃及",
+    "红海"
+  ],
+  "topics": [
+    "交通工程",
+    "财政经济"
+  ],
+  "summary": "波斯王权维护或开通埃及到红海的交通线，服务贸易、军队和王权宣传。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "大流士一世",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "大流士一世需要放在“尼罗河至红海运河传统”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "尼罗河至红海运河传统"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "波斯王权维护或开通埃及到红海的交通线，服务贸易、军队和王权宣传。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前6世纪末",
+      "title": "结构背景",
+      "description": "波斯王权维护或开通埃及到红海的交通线，服务贸易、军队和王权宣传。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前6世纪末",
+      "title": "事件展开",
+      "description": "尼罗河至红海运河传统的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前6世纪末",
+      "title": "后续影响",
+      "description": "尼罗河至红海运河传统之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "波斯王权维护或开通埃及到红海的交通线，服务贸易、军队和王权宣传。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "波斯王权维护或开通埃及到红海的交通线，服务贸易、军队和王权宣传。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：波斯王权维护或开通埃及到红海的交通线，服务贸易、军队和王权宣传。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "尼罗河至红海运河传统为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-jerusalem-temple",
+  "dynastyId": "achaemenid-persia",
+  "title": "犹太圣殿重建与地方合法性",
+  "aliases": [],
+  "era": "帝国治理",
+  "period": "阿契美尼德波斯",
+  "time": "前6-前5世纪",
+  "regions": [
+    "西亚",
+    "黎凡特"
+  ],
+  "topics": [
+    "文化宗教",
+    "制度治理"
+  ],
+  "summary": "波斯允许耶路撒冷圣殿重建，体现帝国利用地方宗教精英稳定统治。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "波斯允许耶路撒冷圣殿重建，体现帝国利用地方宗教精英稳定统治。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前6-前5世纪",
+      "title": "结构背景",
+      "description": "波斯允许耶路撒冷圣殿重建，体现帝国利用地方宗教精英稳定统治。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前6-前5世纪",
+      "title": "事件展开",
+      "description": "犹太圣殿重建与地方合法性的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前6-前5世纪",
+      "title": "后续影响",
+      "description": "犹太圣殿重建与地方合法性之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "波斯允许耶路撒冷圣殿重建，体现帝国利用地方宗教精英稳定统治。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "波斯允许耶路撒冷圣殿重建，体现帝国利用地方宗教精英稳定统治。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：波斯允许耶路撒冷圣殿重建，体现帝国利用地方宗教精英稳定统治。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "犹太圣殿重建与地方合法性为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-phoenician-fleet",
+  "dynastyId": "achaemenid-persia",
+  "title": "腓尼基舰队与帝国海权",
+  "aliases": [],
+  "era": "西部边疆",
+  "period": "阿契美尼德波斯",
+  "time": "前5世纪",
+  "regions": [
+    "西亚",
+    "黎凡特",
+    "东地中海"
+  ],
+  "topics": [
+    "海权贸易",
+    "战争军事"
+  ],
+  "summary": "波斯海军高度依赖腓尼基城邦，海上力量和地方自治互相捆绑。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "波斯海军高度依赖腓尼基城邦，海上力量和地方自治互相捆绑。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前5世纪",
+      "title": "结构背景",
+      "description": "波斯海军高度依赖腓尼基城邦，海上力量和地方自治互相捆绑。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前5世纪",
+      "title": "事件展开",
+      "description": "腓尼基舰队与帝国海权的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前5世纪",
+      "title": "后续影响",
+      "description": "腓尼基舰队与帝国海权之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "波斯海军高度依赖腓尼基城邦，海上力量和地方自治互相捆绑。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "波斯海军高度依赖腓尼基城邦，海上力量和地方自治互相捆绑。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：波斯海军高度依赖腓尼基城邦，海上力量和地方自治互相捆绑。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "腓尼基舰队与帝国海权为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-xerxes-administration",
+  "dynastyId": "achaemenid-persia",
+  "title": "薛西斯后宫廷和行省维持",
+  "aliases": [],
+  "era": "薛西斯以后",
+  "period": "阿契美尼德波斯",
+  "time": "前479以后",
+  "regions": [
+    "西亚",
+    "伊朗高原"
+  ],
+  "topics": [
+    "制度治理",
+    "财政经济"
+  ],
+  "summary": "希腊远征失败后，帝国仍依靠行省贡赋、王道和地方精英维持广域统治。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "薛西斯一世",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "薛西斯一世需要放在“薛西斯后宫廷和行省维持”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "薛西斯后宫廷和行省维持"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "希腊远征失败后，帝国仍依靠行省贡赋、王道和地方精英维持广域统治。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前479以后",
+      "title": "结构背景",
+      "description": "希腊远征失败后，帝国仍依靠行省贡赋、王道和地方精英维持广域统治。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前479以后",
+      "title": "事件展开",
+      "description": "薛西斯后宫廷和行省维持的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前479以后",
+      "title": "后续影响",
+      "description": "薛西斯后宫廷和行省维持之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "希腊远征失败后，帝国仍依靠行省贡赋、王道和地方精英维持广域统治。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "希腊远征失败后，帝国仍依靠行省贡赋、王道和地方精英维持广域统治。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：希腊远征失败后，帝国仍依靠行省贡赋、王道和地方精英维持广域统治。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "薛西斯后宫廷和行省维持为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-megabyzus-revolt",
+  "dynastyId": "achaemenid-persia",
+  "title": "梅加比佐斯叛乱与西部总督问题",
+  "aliases": [],
+  "era": "中期危机",
+  "period": "阿契美尼德波斯",
+  "time": "前5世纪中期",
+  "regions": [
+    "西亚",
+    "叙利亚"
+  ],
+  "topics": [
+    "政权兴亡",
+    "制度治理"
+  ],
+  "summary": "重要贵族和总督的反叛说明王权与地方军事精英之间始终存在张力。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "重要贵族和总督的反叛说明王权与地方军事精英之间始终存在张力。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前5世纪中期",
+      "title": "结构背景",
+      "description": "重要贵族和总督的反叛说明王权与地方军事精英之间始终存在张力。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前5世纪中期",
+      "title": "事件展开",
+      "description": "梅加比佐斯叛乱与西部总督问题的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前5世纪中期",
+      "title": "后续影响",
+      "description": "梅加比佐斯叛乱与西部总督问题之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "重要贵族和总督的反叛说明王权与地方军事精英之间始终存在张力。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "重要贵族和总督的反叛说明王权与地方军事精英之间始终存在张力。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：重要贵族和总督的反叛说明王权与地方军事精英之间始终存在张力。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "梅加比佐斯叛乱与西部总督问题为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-cyprus-evagoras",
+  "dynastyId": "achaemenid-persia",
+  "title": "塞浦路斯埃瓦戈拉斯战争",
+  "aliases": [],
+  "era": "西部边疆",
+  "period": "阿契美尼德波斯",
+  "time": "前411-前374",
+  "regions": [
+    "东地中海",
+    "塞浦路斯"
+  ],
+  "topics": [
+    "战争军事",
+    "海权贸易"
+  ],
+  "summary": "塞浦路斯城邦挑战波斯海上秩序，暴露东地中海边缘治理的复杂性。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "塞浦路斯城邦挑战波斯海上秩序，暴露东地中海边缘治理的复杂性。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前411-前374",
+      "title": "结构背景",
+      "description": "塞浦路斯城邦挑战波斯海上秩序，暴露东地中海边缘治理的复杂性。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前411-前374",
+      "title": "事件展开",
+      "description": "塞浦路斯埃瓦戈拉斯战争的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前411-前374",
+      "title": "后续影响",
+      "description": "塞浦路斯埃瓦戈拉斯战争之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "塞浦路斯城邦挑战波斯海上秩序，暴露东地中海边缘治理的复杂性。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "塞浦路斯城邦挑战波斯海上秩序，暴露东地中海边缘治理的复杂性。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：塞浦路斯城邦挑战波斯海上秩序，暴露东地中海边缘治理的复杂性。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "塞浦路斯埃瓦戈拉斯战争为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-great-satraps-revolt",
+  "dynastyId": "achaemenid-persia",
+  "title": "大总督叛乱传统",
+  "aliases": [],
+  "era": "晚期危机",
+  "period": "阿契美尼德波斯",
+  "time": "前366-前360",
+  "regions": [
+    "西亚",
+    "小亚细亚"
+  ],
+  "topics": [
+    "政权兴亡",
+    "制度治理"
+  ],
+  "summary": "小亚细亚等地总督反叛显示晚期帝国地方权力和王权财政关系趋于紧张。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "小亚细亚等地总督反叛显示晚期帝国地方权力和王权财政关系趋于紧张。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前366-前360",
+      "title": "结构背景",
+      "description": "小亚细亚等地总督反叛显示晚期帝国地方权力和王权财政关系趋于紧张。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前366-前360",
+      "title": "事件展开",
+      "description": "大总督叛乱传统的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前366-前360",
+      "title": "后续影响",
+      "description": "大总督叛乱传统之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "小亚细亚等地总督反叛显示晚期帝国地方权力和王权财政关系趋于紧张。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "小亚细亚等地总督反叛显示晚期帝国地方权力和王权财政关系趋于紧张。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：小亚细亚等地总督反叛显示晚期帝国地方权力和王权财政关系趋于紧张。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "大总督叛乱传统为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-sidon-revolt",
+  "dynastyId": "achaemenid-persia",
+  "title": "西顿反叛与阿尔塔薛西斯三世镇压",
+  "aliases": [],
+  "era": "晚期危机",
+  "period": "阿契美尼德波斯",
+  "time": "前351-前345",
+  "regions": [
+    "西亚",
+    "黎凡特"
+  ],
+  "topics": [
+    "战争军事",
+    "边疆外交"
+  ],
+  "summary": "西顿反叛被残酷镇压，说明波斯晚期仍能动员军力，但地方忠诚已经不稳。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "阿尔塔薛西斯三世",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "阿尔塔薛西斯三世需要放在“西顿反叛与阿尔塔薛西斯三世镇压”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "西顿反叛与阿尔塔薛西斯三世镇压"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "西顿反叛被残酷镇压，说明波斯晚期仍能动员军力，但地方忠诚已经不稳。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前351-前345",
+      "title": "结构背景",
+      "description": "西顿反叛被残酷镇压，说明波斯晚期仍能动员军力，但地方忠诚已经不稳。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前351-前345",
+      "title": "事件展开",
+      "description": "西顿反叛与阿尔塔薛西斯三世镇压的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前351-前345",
+      "title": "后续影响",
+      "description": "西顿反叛与阿尔塔薛西斯三世镇压之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "西顿反叛被残酷镇压，说明波斯晚期仍能动员军力，但地方忠诚已经不稳。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "西顿反叛被残酷镇压，说明波斯晚期仍能动员军力，但地方忠诚已经不稳。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：西顿反叛被残酷镇压，说明波斯晚期仍能动员军力，但地方忠诚已经不稳。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "西顿反叛与阿尔塔薛西斯三世镇压为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-royal-ideology-ahuramazda",
+  "dynastyId": "achaemenid-persia",
+  "title": "阿胡拉马兹达与王权意识形态",
+  "aliases": [],
+  "era": "帝国制度",
+  "period": "阿契美尼德波斯",
+  "time": "前6-前4世纪",
+  "regions": [
+    "西亚",
+    "伊朗高原"
+  ],
+  "topics": [
+    "文化宗教",
+    "制度治理"
+  ],
+  "summary": "王室铭文反复强调阿胡拉马兹达和王的正义，构成帝国合法性语言。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "王室铭文反复强调阿胡拉马兹达和王的正义，构成帝国合法性语言。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前6-前4世纪",
+      "title": "结构背景",
+      "description": "王室铭文反复强调阿胡拉马兹达和王的正义，构成帝国合法性语言。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前6-前4世纪",
+      "title": "事件展开",
+      "description": "阿胡拉马兹达与王权意识形态的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前6-前4世纪",
+      "title": "后续影响",
+      "description": "阿胡拉马兹达与王权意识形态之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "王室铭文反复强调阿胡拉马兹达和王的正义，构成帝国合法性语言。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "王室铭文反复强调阿胡拉马兹达和王的正义，构成帝国合法性语言。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：王室铭文反复强调阿胡拉马兹达和王的正义，构成帝国合法性语言。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "阿胡拉马兹达与王权意识形态为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-local-laws-customs",
+  "dynastyId": "achaemenid-persia",
+  "title": "地方律法和族群习俗的保留",
+  "aliases": [],
+  "era": "帝国制度",
+  "period": "阿契美尼德波斯",
+  "time": "前6-前4世纪",
+  "regions": [
+    "西亚",
+    "非洲",
+    "两河流域"
+  ],
+  "topics": [
+    "制度治理",
+    "社会结构"
+  ],
+  "summary": "帝国允许埃及、巴比伦、犹太等地保留部分传统法律，以地方精英换取税收和秩序。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "帝国允许埃及、巴比伦、犹太等地保留部分传统法律，以地方精英换取税收和秩序。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前6-前4世纪",
+      "title": "结构背景",
+      "description": "帝国允许埃及、巴比伦、犹太等地保留部分传统法律，以地方精英换取税收和秩序。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前6-前4世纪",
+      "title": "事件展开",
+      "description": "地方律法和族群习俗的保留的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前6-前4世纪",
+      "title": "后续影响",
+      "description": "地方律法和族群习俗的保留之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "帝国允许埃及、巴比伦、犹太等地保留部分传统法律，以地方精英换取税收和秩序。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "帝国允许埃及、巴比伦、犹太等地保留部分传统法律，以地方精英换取税收和秩序。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：帝国允许埃及、巴比伦、犹太等地保留部分传统法律，以地方精英换取税收和秩序。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "地方律法和族群习俗的保留为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-mercenaries-greek-service",
+  "dynastyId": "achaemenid-persia",
+  "title": "希腊雇佣兵与晚期军事依赖",
+  "aliases": [],
+  "era": "晚期危机",
+  "period": "阿契美尼德波斯",
+  "time": "前5-前4世纪",
+  "regions": [
+    "欧洲",
+    "西亚",
+    "爱琴海"
+  ],
+  "topics": [
+    "战争军事",
+    "财政经济"
+  ],
+  "summary": "波斯晚期大量使用希腊雇佣兵，说明帝国军事资源和爱琴政治已经深度交织。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "波斯晚期大量使用希腊雇佣兵，说明帝国军事资源和爱琴政治已经深度交织。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前5-前4世纪",
+      "title": "结构背景",
+      "description": "波斯晚期大量使用希腊雇佣兵，说明帝国军事资源和爱琴政治已经深度交织。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前5-前4世纪",
+      "title": "事件展开",
+      "description": "希腊雇佣兵与晚期军事依赖的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前5-前4世纪",
+      "title": "后续影响",
+      "description": "希腊雇佣兵与晚期军事依赖之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "波斯晚期大量使用希腊雇佣兵，说明帝国军事资源和爱琴政治已经深度交织。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "波斯晚期大量使用希腊雇佣兵，说明帝国军事资源和爱琴政治已经深度交织。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：波斯晚期大量使用希腊雇佣兵，说明帝国军事资源和爱琴政治已经深度交织。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "希腊雇佣兵与晚期军事依赖为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-alexander-persepolis",
+  "dynastyId": "achaemenid-persia",
+  "title": "亚历山大焚毁波斯波利斯",
+  "aliases": [],
+  "era": "帝国终局",
+  "period": "阿契美尼德波斯",
+  "time": "前330",
+  "regions": [
+    "西亚",
+    "伊朗高原"
+  ],
+  "topics": [
+    "政权兴亡",
+    "战争军事"
+  ],
+  "summary": "波斯波利斯被焚成为阿契美尼德王权象征性终结的重要节点。",
+  "bookmarked": false,
+  "people": [
+    {
+      "name": "亚历山大",
+      "role": "关键人物/群体",
+      "years": "",
+      "color": "var(--accent-gold)",
+      "bio": "亚历山大需要放在“亚历山大焚毁波斯波利斯”的制度、战争、宗教或社会背景中理解。",
+      "events": [
+        "亚历山大焚毁波斯波利斯"
+      ]
+    }
+  ],
+  "relations": [],
+  "background": [
+    "波斯波利斯被焚成为阿契美尼德王权象征性终结的重要节点。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前330",
+      "title": "结构背景",
+      "description": "波斯波利斯被焚成为阿契美尼德王权象征性终结的重要节点。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前330",
+      "title": "事件展开",
+      "description": "亚历山大焚毁波斯波利斯的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前330",
+      "title": "后续影响",
+      "description": "亚历山大焚毁波斯波利斯之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "波斯波利斯被焚成为阿契美尼德王权象征性终结的重要节点。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "波斯波利斯被焚成为阿契美尼德王权象征性终结的重要节点。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：波斯波利斯被焚成为阿契美尼德王权象征性终结的重要节点。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "亚历山大焚毁波斯波利斯为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+},
+{
+  "id": "ach-post-imperial-legacy",
+  "dynastyId": "achaemenid-persia",
+  "title": "阿契美尼德制度遗产",
+  "aliases": [],
+  "era": "帝国余波",
+  "period": "阿契美尼德波斯",
+  "time": "前4世纪以后",
+  "regions": [
+    "西亚",
+    "伊朗高原"
+  ],
+  "topics": [
+    "制度治理",
+    "政权兴亡"
+  ],
+  "summary": "行省、王道、王权仪式和多族群治理经验被亚历山大继业者和后续伊朗王朝部分继承。",
+  "bookmarked": false,
+  "people": [],
+  "relations": [],
+  "background": [
+    "行省、王道、王权仪式和多族群治理经验被亚历山大继业者和后续伊朗王朝部分继承。 这条用于补足阿契美尼德波斯作为长周期文明/帝国的制度、战争、社会或边疆主线。"
+  ],
+  "process": [
+    {
+      "time": "前4世纪以后",
+      "title": "结构背景",
+      "description": "行省、王道、王权仪式和多族群治理经验被亚历山大继业者和后续伊朗王朝部分继承。 这一节点前，阿契美尼德波斯的地方结构、军政组织、资源网络或外部关系已经积累变化，适合放在长期文明脉络中理解。"
+    },
+    {
+      "time": "前4世纪以后",
+      "title": "事件展开",
+      "description": "阿契美尼德制度遗产的展开体现了统治者、地方精英、军队、祭司或附属共同体之间的互动，不能只当作单一事件记忆。"
+    },
+    {
+      "time": "前4世纪以后",
+      "title": "后续影响",
+      "description": "阿契美尼德制度遗产之后，相关影响继续进入国家能力、社会结构、宗教政治或跨区域竞争，是连接前后阶段的关键节点。"
+    }
+  ],
+  "results": [
+    "行省、王道、王权仪式和多族群治理经验被亚历山大继业者和后续伊朗王朝部分继承。",
+    "它补强了阿契美尼德波斯长期演化中的关键解释链。"
+  ],
+  "debates": [
+    {
+      "view": "学习提示",
+      "content": "本条按主线学习粒度整理，重点看因果和结构；具体原始材料可后续继续精核。"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "行省、王道、王权仪式和多族群治理经验被亚历山大继业者和后续伊朗王朝部分继承。",
+      "status": "较稳妥",
+      "statusType": "stable",
+      "confidence": "medium",
+      "sourceIds": [
+        "achaemenid-persia-main-source"
+      ],
+      "note": "当前绑定公开史料/考古/现代研究入口，细部材料待逐条核卷。"
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "achaemenid-persia-main-source",
+      "reference": "阿契美尼德波斯公开史料与现代研究入口",
+      "status": "待核原文",
+      "plainText": "白话理解：行省、王道、王权仪式和多族群治理经验被亚历山大继业者和后续伊朗王朝部分继承。",
+      "note": "不堆纯原文，先提供可读释义；涉及古代规模和年代时保留估算意识。"
+    }
+  ],
+  "causalChain": [],
+  "sources": [
+    {
+      "id": "achaemenid-persia-main-source",
+      "type": "公开史料、考古与现代研究",
+      "title": "阿契美尼德波斯公开史料与现代研究入口",
+      "author": "公开资料与现代研究",
+      "authorityLevel": "公开权威入口，待逐条补具体链接",
+      "note": "作为阿契美尼德波斯长周期主线的资料入口。",
+      "credibility": "高",
+      "credibilityLevel": "high"
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "type": "主线理解",
+      "question": "阿契美尼德制度遗产为什么应放入阿契美尼德波斯主线？",
+      "answer": "因为它能解释该文明或帝国在长期演化中的国家能力、社会结构、宗教政治或外部关系变化。"
+    }
+  ],
+  "notes": [],
+  "sourceStatus": "公开入口已补"
+}
 ];

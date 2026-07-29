@@ -284,6 +284,46 @@
       estimate(1989, "苏联末期", { value: 2240, approx: true }, { value: 28670, approx: true }, "medium-high", ancientWorldBasis, "1989年接近苏联末次人口普查口径，1991年后应拆为俄罗斯联邦和各独立国家。")
     ], "俄罗斯区域跨越罗斯共同体、莫斯科国家、俄罗斯帝国和苏联，记录时必须区分有效控制、帝国范围和联盟国家口径。", ancientWorldBasis),
 
+    "hittite-anatolia": polity([
+      estimate(-1650, "赫梯古王国形成", { min: 20, max: 35 }, { min: 80, max: 150 }, "low", ancientWorldBasis, "按哈attusa核心和安纳托利亚中部控制区估算。"),
+      estimate(-1274, "卡迭石前后帝国高峰", { min: 45, max: 70 }, { min: 200, max: 350 }, "low", ancientWorldBasis, "含安纳托利亚核心、北叙利亚附属区和不稳定边疆。"),
+      estimate(-1200, "帝国崩溃前夜", { min: 25, max: 45 }, { min: 120, max: 250 }, "low", ancientWorldBasis, "晚期附属体系松动，实际控制明显收缩。")
+    ], "赫梯疆域按高原核心和叙利亚附属体系估算，不等同稳定省制帝国。", ancientWorldBasis),
+
+    "neo-assyrian-empire": polity([
+      estimate(-883, "亚述复兴初期", { min: 10, max: 20 }, { min: 80, max: 150 }, "low", ancientWorldBasis, "按亚述核心区和近邻贡赋区估算。"),
+      estimate(-745, "军政改革后扩张", { min: 60, max: 90 }, { min: 300, max: 600 }, "low", ancientWorldBasis, "省制和贡赋区并存，控制强度差异很大。"),
+      estimate(-671, "征服埃及后的短期高峰", { min: 120, max: 160 }, { min: 800, max: 1200 }, "medium-low", ancientWorldBasis, "埃及控制短暂，记录为极盛影响范围。"),
+      estimate(-609, "亚述终局", { min: 5, max: 15 }, { min: 50, max: 120 }, "low", ancientWorldBasis, "尼尼微后只剩残余据点和盟友支持。")
+    ], "新亚述是军事行政帝国，面积人口需区分核心省份、贡赋区和短期征服地。", ancientWorldBasis),
+
+    "achaemenid-persia": polity([
+      estimate(-550, "居鲁士整合米底前后", { min: 80, max: 120 }, { min: 400, max: 700 }, "low", ancientWorldBasis, "按伊朗高原和米底波斯核心估算。"),
+      estimate(-522, "冈比西斯征埃及后", { min: 450, max: 550 }, { min: 1800, max: 2500 }, "medium-low", ancientWorldBasis, "帝国横跨西亚、埃及和小亚细亚，人口估算差异大。"),
+      estimate(-480, "薛西斯远征前后", { min: 550, max: 650 }, { min: 2500, max: 3500 }, "medium-low", ancientWorldBasis, "按阿契美尼德高峰疆域估算，含行省和附属区。"),
+      estimate(-330, "亚历山大征服前夜", { min: 450, max: 600 }, { min: 2200, max: 3200 }, "medium-low", ancientWorldBasis, "晚期边疆控制仍广，但宫廷和地方独立性增强。")
+    ], "阿契美尼德波斯是多民族行省帝国，记录为行省体系和王权影响范围估算。", ancientWorldBasis),
+
+    "maya-civilization": civilization([
+      estimate(-300, "前古典玛雅中心", { min: 15, max: 30 }, { min: 100, max: 300 }, "low", ancientWorldBasis, "按玛雅低地和高地主要聚落区估算。"),
+      estimate(700, "古典玛雅城邦高峰", { min: 25, max: 40 }, { min: 300, max: 800 }, "low", ancientWorldBasis, "玛雅不是统一帝国，按城邦文明区合计。"),
+      estimate(1200, "后古典玛雅潘体系", { min: 15, max: 30 }, { min: 150, max: 400 }, "low", ancientWorldBasis, "北尤卡坦和高地政权并立，人口估算争议大。"),
+      estimate(1697, "塔亚萨尔陷落前", { min: 5, max: 15 }, { min: 50, max: 150 }, "low", ancientWorldBasis, "独立政治中心已大幅收缩，但玛雅社会和文化延续。")
+    ], "玛雅为多城邦文明区，面积人口不能按统一国家处理。", ancientWorldBasis),
+
+    "mexica-aztec-triple-alliance": polity([
+      estimate(1428, "三方同盟建立", { min: 3, max: 8 }, { min: 80, max: 150 }, "low", ancientWorldBasis, "按墨西哥谷地核心和早期贡赋区估算。"),
+      estimate(1500, "阿兹特克贡赋帝国高峰", { min: 18, max: 25 }, { min: 500, max: 800 }, "low", ancientWorldBasis, "控制主要通过贡赋和军事威慑，不是均质行政省制。"),
+      estimate(1521, "特诺奇蒂特兰陷落", { min: 1, max: 5 }, { min: 100, max: 300 }, "low", ancientWorldBasis, "围城、疾病和联盟战争下核心控制迅速崩解。")
+    ], "阿兹特克三方同盟是贡赋帝国，面积人口按核心和贡赋网络近似。", ancientWorldBasis),
+
+    "inca-empire": polity([
+      estimate(1438, "帕查库提扩张初期", { min: 20, max: 40 }, { min: 100, max: 250 }, "low", ancientWorldBasis, "按库斯科周边和早期扩张区估算。"),
+      estimate(1525, "印加帝国高峰", { min: 180, max: 250 }, { min: 800, max: 1400 }, "low", ancientWorldBasis, "前征服安第斯人口争议大，记录为宽区间。"),
+      estimate(1533, "库斯科陷落", { min: 80, max: 150 }, { min: 500, max: 1000 }, "low", ancientWorldBasis, "内战和疾病后人口与有效控制都快速下降。"),
+      estimate(1572, "维尔卡班巴终结", { min: 1, max: 5 }, { min: 5, max: 20 }, "low", ancientWorldBasis, "只记录新印加残余政权，不代表安第斯社会总人口。")
+    ], "印加是安第斯山地帝国，面积人口按道路和劳役体系可达范围估算。", ancientWorldBasis),
+
     "islamic-middle-east": civilization([
       estimate(750, "早期哈里发帝国高峰", { min: 1000, max: 1300 }, { min: 3000, max: 4500 }, "low", ancientWorldBasis, "按倭马亚/阿拔斯早期广域统治和附属区估算，控制强度差异很大。"),
       estimate(1000, "阿拔斯分裂后的伊斯兰世界", { min: 700, max: 1000 }, { min: 3500, max: 5500 }, "low", ancientWorldBasis, "记录为中东核心文明区和主要王朝合计，不是单一国家。"),

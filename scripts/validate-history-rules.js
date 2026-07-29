@@ -168,6 +168,30 @@ require(path.join(__dirname, "../data/dynasties/south-america/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/south-america/sources.js"));
 require(path.join(__dirname, "../data/dynasties/south-america/events.js"));
 require(path.join(__dirname, "../data/dynasties/south-america/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/hittite-anatolia/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/hittite-anatolia/sources.js"));
+require(path.join(__dirname, "../data/dynasties/hittite-anatolia/events.js"));
+require(path.join(__dirname, "../data/dynasties/hittite-anatolia/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/neo-assyrian-empire/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/neo-assyrian-empire/sources.js"));
+require(path.join(__dirname, "../data/dynasties/neo-assyrian-empire/events.js"));
+require(path.join(__dirname, "../data/dynasties/neo-assyrian-empire/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/achaemenid-persia/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/achaemenid-persia/sources.js"));
+require(path.join(__dirname, "../data/dynasties/achaemenid-persia/events.js"));
+require(path.join(__dirname, "../data/dynasties/achaemenid-persia/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/maya-civilization/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/maya-civilization/sources.js"));
+require(path.join(__dirname, "../data/dynasties/maya-civilization/events.js"));
+require(path.join(__dirname, "../data/dynasties/maya-civilization/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/mexica-aztec-triple-alliance/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/mexica-aztec-triple-alliance/sources.js"));
+require(path.join(__dirname, "../data/dynasties/mexica-aztec-triple-alliance/events.js"));
+require(path.join(__dirname, "../data/dynasties/mexica-aztec-triple-alliance/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/inca-empire/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/inca-empire/sources.js"));
+require(path.join(__dirname, "../data/dynasties/inca-empire/events.js"));
+require(path.join(__dirname, "../data/dynasties/inca-empire/emperors.js"));
 require(path.join(__dirname, "../data/topics/imperial-exam.js"));
 require(path.join(__dirname, "../data/topics/song-mongol-yuan-war.js"));
 require(path.join(__dirname, "../data/regions/east-asia/metadata.js"));
@@ -1016,6 +1040,27 @@ if (bronzeAgeCollapseEvents.length) {
   ["african-civilizations", 35, ["库施", "阿克苏姆", "加纳", "马里", "曼萨穆萨", "廷巴克图", "桑海", "斯瓦希里", "大津巴布韦", "刚果", "奴隶贸易", "柏林会议", "阿杜瓦", "加纳独立", "南非"], "非洲文明主线"],
   ["north-america", 30, ["克洛维斯", "玛雅", "阿兹特克", "哥伦布", "新西班牙", "易洛魁", "七年战争", "美国独立", "美国宪法", "墨西哥独立", "加拿大", "美国内战", "墨西哥革命", "民权", "NAFTA"], "北美地区"],
   ["south-america", 30, ["卡拉尔", "查文", "莫切", "蒂瓦纳库", "印加", "皮萨罗", "波托西", "巴西", "图帕克", "玻利瓦尔", "圣马丁", "三国同盟", "太平洋战争", "智利", "南方共同市场"], "南美地区"]
+].forEach(([dynastyId, minCount, keywords, label]) => {
+  const events = data.dynastyEvents?.[dynastyId] || [];
+  if (!events.length) {
+    errors.push(`缺少${label}独立事件集合`);
+    return;
+  }
+  const text = events.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
+  keywords.forEach((keyword) => {
+    if (!text.includes(keyword)) errors.push(`${label}主线缺少「${keyword}」覆盖`);
+  });
+  if (events.length < minCount) errors.push(`${label}主线事件不应少于 ${minCount} 个`);
+});
+
+
+[
+  ["hittite-anatolia", 18, ["卡内什", "哈attusa", "穆尔西里", "泰列皮努", "苏庇路里乌玛", "卡迭石", "埃及", "雅兹勒卡亚", "亚述", "乌加里特", "新赫梯"], "赫梯与安纳托利亚"],
+  ["neo-assyrian-empire", 22, ["亚述", "卡尔胡", "卡尔卡尔", "提格拉特", "迁徙", "撒马利亚", "萨尔贡", "西拿基立", "巴比伦", "埃及", "亚述巴尼拔", "尼尼微"], "新亚述帝国"],
+  ["achaemenid-persia", 22, ["居鲁士", "米底", "吕底亚", "巴比伦", "冈比西斯", "大流士", "贝希斯敦", "行省", "王道", "波斯波利斯", "伊奥尼亚", "马拉松", "薛西斯", "高加米拉"], "阿契美尼德波斯"],
+  ["maya-civilization", 22, ["玛雅", "埃尔米拉多", "文字", "蒂卡尔", "特奥蒂瓦坎", "科潘", "卡拉克穆尔", "帕伦克", "奇琴伊察", "玛雅潘", "基切", "西班牙", "塔亚萨尔"], "玛雅文明"],
+  ["mexica-aztec-triple-alliance", 22, ["墨西卡", "特诺奇蒂特兰", "三方同盟", "贡赋", "特拉卡埃莱尔", "奇南帕", "花战", "特拉斯卡拉", "科尔特斯", "天花", "夸乌特莫克"], "墨西卡-阿兹特克三方同盟"],
+  ["inca-empire", 22, ["库斯科", "帕查库提", "道路", "米塔", "基普", "迁徙", "图帕克", "瓦伊纳", "内战", "皮萨罗", "曼科", "维尔卡班巴", "图帕克·阿马鲁"], "印加帝国"]
 ].forEach(([dynastyId, minCount, keywords, label]) => {
   const events = data.dynastyEvents?.[dynastyId] || [];
   if (!events.length) {

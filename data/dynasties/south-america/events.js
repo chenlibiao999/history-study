@@ -4028,3 +4028,144 @@
   }
 ];
 
+// 本批补充南美殖民深入、地方国家形成、资源经济和现代区域政治，避免只围绕印加与独立战争叙述。
+const SOUTH_AMERICA_EXPANSION_SOURCES = [
+  {id: "loc-spanish-conquest", title: "Library of Congress: The Spanish Conquest in America", url: "https://www.loc.gov/item/a21001449/", type: "digital-book"},
+  {id: "loc-south-america-independence", title: "Library of Congress Finding Aids: South America Wars of Independence", url: "https://findingaids.loc.gov/subjects/23097", type: "finding-aid"},
+  {id: "met-americas", title: "The Met Heilbrunn Timeline: Art of the Americas Chronologies", url: "https://www.metmuseum.org/toah/chronology/", type: "museum-timeline"}
+];
+
+function addSouthAmericaExpansionEvent(item) {
+  window.SOUTH_AMERICA_EVENTS.push({
+    id: item.id,
+    dynastyId: "south-america",
+    title: item.title,
+    aliases: [],
+    era: item.era,
+    period: "南美地区",
+    time: item.time,
+    regions: item.regions,
+    topics: item.topics,
+    summary: item.summary,
+    bookmarked: false,
+    people: item.people.map(name => ({name, role: "关键人物/群体", years: "", color: "var(--accent-gold)", bio: `${name}需要放在${item.title}的区域结构、社会组织与权力变化中理解。`, events: [item.title]})),
+    relations: [],
+    background: [item.background],
+    process: item.process,
+    results: [item.result],
+    debates: [{view: "范围提示", content: "本条用于建立南美区域主线，后续可按安第斯、亚马孙与南锥体分别展开。"}],
+    claims: [{statement: item.summary, status: "较稳定", statusType: "stable", confidence: "medium", sourceIds: SOUTH_AMERICA_EXPANSION_SOURCES.map(source => source.id), note: "采用公开博物馆、图书馆和研究目录作为入门证据入口。"}],
+    citations: [{sourceId: SOUTH_AMERICA_EXPANSION_SOURCES[0].id, reference: SOUTH_AMERICA_EXPANSION_SOURCES[0].title, status: "已给公开入口", plainText: item.summary, note: "提供可直接阅读的释文与历史位置。"}],
+    causalChain: [],
+    sources: SOUTH_AMERICA_EXPANSION_SOURCES,
+    reviewQuestions: [{type: "主线理解", question: `${item.title}为什么应放入南美区域主线？`, answer: item.result}],
+    notes: [],
+    sourceStatus: "公开权威入口已补"
+  });
+}
+
+[
+  {
+    id: "muisca-confederation",
+    title: "穆伊斯卡政治联盟与高原贸易网络",
+    era: "前殖民南美",
+    time: "约1200-1537",
+    regions: ["安第斯", "南美"],
+    topics: ["政权兴衰", "贸易网络"],
+    summary: "穆伊斯卡社群在哥伦比亚高原形成以多个酋邦和祭祀中心为节点的政治联盟，盐、黄金和农产品贸易连接安第斯北部。",
+    background: "高原农业、盐泉资源和山地交通使地方社群既保持自治，又需要通过交换和战争协调区域秩序。",
+    process: [
+      {time: "约1200以后", title: "高原聚落分化", description: "穆伊斯卡各社群在高原河谷发展农业和手工业，地方首领通过祭祀、贡赋和交换维持权威。", participants: ["穆伊斯卡各社群"], action: "组织农业、盐业和地方贡赋", impact: "形成多个区域中心"},
+      {time: "15世纪", title: "联盟与竞争并存", description: "以巴卡塔和洪萨为代表的政治中心形成竞争关系，婚姻、战争和礼仪交换共同塑造高原权力网络。", participants: ["巴卡塔", "洪萨及周边酋邦"], action: "通过联盟和战争争夺区域优势", impact: "扩大政治整合范围"},
+      {time: "1537前后", title: "遭遇西班牙征服", description: "西班牙远征进入高原后利用地方分裂、武器优势和疾病冲击建立殖民统治，穆伊斯卡原有政治结构被纳入新格局。", participants: ["穆伊斯卡酋邦", "贡萨洛·希门内斯·德·克萨达"], action: "在征服压力下重组地方权力", impact: "前殖民联盟转入殖民行政体系"}
+    ],
+    result: "穆伊斯卡说明南美北部存在不同于印加帝国的多中心政治和区域贸易体系。",
+    people: ["穆伊斯卡社群", "巴卡塔酋邦", "洪萨酋邦"]
+  },
+  {
+    id: "portuguese-bandeiras-interior",
+    title: "葡萄牙 bandeiras 深入巴西内陆",
+    era: "殖民南美",
+    time: "17世纪-18世纪前期",
+    regions: ["巴西高原", "南美"],
+    topics: ["殖民与反殖民", "资源经济"],
+    summary: "圣保罗出发的 bandeirantes 以捕奴、探矿和扩张为动力深入巴西内陆，突破托德西利亚斯条约的原有边界，推动葡属巴西领土扩张。",
+    background: "沿海甘蔗经济、劳动力需求和贵金属探索促使殖民者向内陆推进，原住民社群承担了战争、捕奴和迁徙的主要代价。",
+    process: [
+      {time: "17世纪", title: "捕奴远征扩大", description: "圣保罗远征队深入内陆袭击和俘获原住民，既服务于殖民劳动力需求，也逐渐摸清河流、山口和内陆路线。", participants: ["圣保罗远征队", "巴西原住民社群"], action: "沿内陆路线捕奴和侦察", impact: "扩大葡萄牙实际活动范围"},
+      {time: "17世纪末", title: "金矿发现改变方向", description: "米纳斯吉拉斯等地的金矿发现使远征从捕奴转向矿产搜索，移民、道路、税收和军事管制随之向内陆集中。", participants: ["葡萄牙殖民者", "矿工与商人", "原住民社群"], action: "开发金矿并建立交通节点", impact: "形成内陆殖民经济"},
+      {time: "18世纪前期", title: "条约承认既成扩张", description: "葡萄牙通过外交和实际占领把内陆活动转化为领土主张，西班牙与葡萄牙在南美边界上的争议进入条约重划阶段。", participants: ["葡萄牙王室", "西班牙王室", "殖民地地方力量"], action: "以占领和谈判重划边界", impact: "塑造现代巴西疆域"}
+    ],
+    result: "bandeiras 把劳动力掠夺、资源开发和边界扩张连接起来，是理解巴西领土形成的重要过程。",
+    people: ["圣保罗远征队", "葡萄牙殖民者", "巴西原住民社群"]
+  },
+  {
+    id: "guarani-war-missions",
+    title: "瓜拉尼战争与传教区边界冲突",
+    era: "殖民南美",
+    time: "1754-1756",
+    regions: ["南锥体", "南美"],
+    topics: ["殖民与反殖民", "战争军事"],
+    summary: "西葡两国交换殖民地后，七个瓜拉尼传教区居民拒绝迁移，战争使传教区自治、原住民土地和殖民边界问题集中爆发。",
+    background: "马德里条约要求重新划定西葡殖民边界，传教区居民担心土地和社区秩序被交给葡萄牙殖民当局。",
+    process: [
+      {time: "1750-1753", title: "边界条约触发迁移", description: "西葡王室以条约交换殖民地，要求传教区居民迁往乌拉圭河西岸，地方社群拒绝接受外部强制安排。", participants: ["西葡王室", "瓜拉尼传教区居民", "耶稣会传教士"], action: "试图执行殖民地和人口迁移", impact: "激化地方抵抗"},
+      {time: "1754-1756", title: "原住民武装抵抗", description: "瓜拉尼居民组织武装抵抗，熟悉地形的地方力量与西葡联军发生战斗，战争暴露出殖民条约与地方社会现实的冲突。", participants: ["瓜拉尼武装", "西葡殖民军"], action: "以武装阻止迁移和接管", impact: "使边界安排无法平稳执行"},
+      {time: "1756以后", title: "传教区体系解体", description: "联军击败主要抵抗后，传教区居民被迫迁移或分散，耶稣会最终被驱逐，原有社会组织逐渐纳入殖民行政。", participants: ["瓜拉尼社群", "西葡殖民当局"], action: "军事接管并重组地方社会", impact: "改变南锥体人口和土地秩序"}
+    ],
+    result: "瓜拉尼战争说明殖民边界不是地图上的简单划线，而会直接改变原住民土地、自治和社区生存。",
+    people: ["瓜拉尼社群", "耶稣会传教士", "西葡殖民军"]
+  },
+  {
+    id: "argentine-civil-wars-federalism",
+    title: "阿根廷联邦派与中央派内战",
+    era: "南美独立后国家形成",
+    time: "1814-1853",
+    regions: ["南锥体", "南美"],
+    topics: ["国家形成", "战争军事"],
+    summary: "独立后的拉普拉塔地区围绕布宜诺斯艾利斯关税、地方自治和中央政府权力长期冲突，联邦派与中央派内战最终推动1853年宪法建立联邦框架。",
+    background: "港口关税和出口收入集中在布宜诺斯艾利斯，内陆省份要求分享资源并保留地方军政权力。",
+    process: [
+      {time: "1814-1820", title: "中央权力首次瓦解", description: "布宜诺斯艾利斯的中央政府与内陆省份冲突，地方 caudillo 率军挑战中央，独立后的政治共同体陷入省份自治状态。", participants: ["布宜诺斯艾利斯政府", "内陆省份 caudillo"], action: "争夺关税和中央权力", impact: "形成松散的省份联盟"},
+      {time: "1820-1852", title: "联邦与中央派反复内战", description: "各省围绕宪法、港口和贸易政策多次交战，胡安·曼努埃尔·德·罗萨斯以布宜诺斯艾利斯优势维持较松散的联邦秩序。", participants: ["联邦派省份", "中央派力量", "罗萨斯政府"], action: "通过战争和联盟争取国家主导权", impact: "延迟统一宪法国家形成"},
+      {time: "1852-1853", title: "宪法联邦框架建立", description: "罗萨斯倒台后，各省在圣菲制宪会议制定宪法，联邦政府、地方自治和关税分配被重新写入国家制度。", participants: ["各省代表", "胡斯托·乌尔基萨"], action: "以制宪会议重建共同国家", impact: "确立阿根廷联邦共和框架"}
+    ],
+    result: "阿根廷国家形成不是独立宣言之后自动完成的，而是在港口收入、地方自治与联邦制度的长期冲突中完成。",
+    people: ["胡安·曼努埃尔·德·罗萨斯", "胡斯托·乌尔基萨", "阿根廷各省联盟"]
+  },
+  {
+    id: "amazon-rubber-boom",
+    title: "亚马孙橡胶热与区域开发",
+    era: "南美现代国家与资源经济",
+    time: "约1870-1912",
+    regions: ["亚马孙流域", "南美"],
+    topics: ["资源经济", "全球贸易"],
+    summary: "工业化提高橡胶需求，亚马孙流域形成以采胶、河运和出口城市为核心的经济网络，但繁荣建立在对原住民和劳工的强制控制上。",
+    background: "轮胎、电缆和工业制品扩大橡胶市场，巴西和秘鲁通过河流将内陆资源接入大西洋贸易。",
+    process: [
+      {time: "19世纪后期", title: "采胶网络深入雨林", description: "商人和承包制把采胶工人带入森林，河流成为运输和债务控制的主要通道，原住民社群遭受掠夺和强迫劳动。", participants: ["采胶商人", "采胶工人", "亚马孙原住民社群"], action: "以承包和债务组织采集", impact: "把雨林纳入出口经济"},
+      {time: "约1890-1910", title: "出口城市短期繁荣", description: "马瑙斯、贝伦等港口积累财富，剧院、码头和金融设施显示全球商品贸易对地方城市的重塑。", participants: ["巴西地方政府", "出口商", "国际贸易商"], action: "建设港口和城市基础设施", impact: "形成资源型城市繁荣"},
+      {time: "20世纪初", title: "亚洲种植园竞争冲击", description: "英国把橡胶种植扩展到东南亚，规模化种植降低成本，亚马孙野生采集失去竞争力，区域经济迅速衰退。", participants: ["东南亚种植园", "亚马孙出口商", "国际工业企业"], action: "以规模化种植改变供给结构", impact: "终结亚马孙橡胶热"}
+    ],
+    result: "亚马孙橡胶热展示了全球市场如何重组南美内陆，也揭示资源繁荣背后的劳工压迫和区域脆弱性。",
+    people: ["亚马孙采胶工人", "亚马孙原住民社群", "马瑙斯与贝伦商人"]
+  },
+  {
+    id: "falklands-war-1982",
+    title: "马岛战争与南大西洋主权问题",
+    era: "南美现代政治",
+    time: "1982",
+    regions: ["南锥体", "南美"],
+    topics: ["战争军事", "现代政治"],
+    summary: "阿根廷军政府出兵占领马尔维纳斯群岛，英国组织远征并重新控制岛屿，战争加速阿根廷军政府失去合法性，也使主权争议延续至今。",
+    background: "岛屿主权争议、阿根廷经济与政治危机和军政府寻求民族主义动员相互叠加，英国则坚持其对岛屿的控制。",
+    process: [
+      {time: "1982年4月", title: "阿根廷登陆岛屿", description: "阿根廷军政府以主权诉求为名发动军事行动，短期占领岛屿，却低估了英国的远程军事反应和国际外交压力。", participants: ["阿根廷军政府", "英国政府与驻岛力量"], action: "以军事行动改变现状", impact: "把主权争议升级为国际战争"},
+      {time: "1982年4-6月", title: "英国远征与海空作战", description: "英国派遣海军和地面部队远赴南大西洋，海空战和岛上战斗造成双方伤亡，联合国调停未能阻止战争继续。", participants: ["英国远征军", "阿根廷军队"], action: "争夺海上交通和岛屿据点", impact: "决定岛屿军事控制权"},
+      {time: "1982年6月以后", title: "军政府政治崩溃", description: "阿根廷战败削弱军政府的民族主义合法性，社会要求民主选举，英国继续控制岛屿而阿根廷保留主权主张。", participants: ["阿根廷社会", "阿根廷军政府", "英国政府"], action: "在战后重建政治秩序", impact: "推动阿根廷民主化并延续主权争议"}
+    ],
+    result: "马岛战争连接了殖民遗产、军政府危机和南大西洋地缘政治，是理解南美晚20世纪的重要转折。",
+    people: ["阿根廷军政府", "英国政府", "马尔维纳斯群岛居民"]
+  }
+].forEach(addSouthAmericaExpansionEvent);
+

@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>历史学习工作台</title>
+  <title>鍘嗗彶瀛︿範宸ヤ綔鍙?/title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <header class="app-header">
-    <div class="app-logo" aria-label="历史学习工作台">
-      <div class="logo-icon">史</div>
-      <span>历史学习工作台</span>
+    <div class="app-logo" aria-label="鍘嗗彶瀛︿範宸ヤ綔鍙?>
+      <div class="logo-icon">鍙?/div>
+      <span>鍘嗗彶瀛︿範宸ヤ綔鍙?/span>
     </div>
 
     <label class="search-box">
       <span class="search-icon" aria-hidden="true">&#128269;</span>
-      <input id="searchInput" type="search" placeholder="搜索事件、人物、地点、概念">
+      <input id="searchInput" type="search" placeholder="鎼滅储浜嬩欢銆佷汉鐗┿€佸湴鐐广€佹蹇?>
     </label>
 
-    <div class="header-filters" aria-label="筛选">
+    <div class="header-filters" aria-label="绛涢€?>
       <button id="filterToggle" class="filter-toggle" type="button" aria-expanded="false" aria-controls="filterPanel">
         <span class="filter-toggle-icon" aria-hidden="true">&#9776;</span>
-        <span>筛选</span>
+        <span>绛涢€?/span>
         <span id="filterCount" class="filter-count" hidden>0</span>
       </button>
       <div id="activeFilters" class="active-filters" aria-live="polite"></div>
-      <button id="clearFiltersBtn" class="clear-filters-btn" type="button" hidden>清除</button>
+      <button id="clearFiltersBtn" class="clear-filters-btn" type="button" hidden>娓呴櫎</button>
       <div id="filterPanel" class="filter-panel" hidden>
         <div class="filter-panel-head">
           <div>
-            <h2>筛选事件</h2>
+            <h2>绛涢€変簨浠?/h2>
             <p id="filterResultCount"></p>
           </div>
-          <button id="filterPanelClose" class="filter-panel-close" type="button" aria-label="关闭筛选">&#215;</button>
+          <button id="filterPanelClose" class="filter-panel-close" type="button" aria-label="鍏抽棴绛涢€?>&#215;</button>
         </div>
         <div id="filterGroups" class="filter-groups"></div>
       </div>
@@ -40,13 +40,13 @@
   </header>
 
   <div class="workspace">
-    <aside class="timeline-panel" aria-label="时间线">
+    <aside class="timeline-panel" aria-label="鏃堕棿绾?>
       <div class="panel-header">
-        <h2>时间线</h2>
+        <h2>鏃堕棿绾?/h2>
       </div>
-      <div class="timeline-tabs" role="tablist" aria-label="主线导航类型">
-        <button id="timeline-tab-events" class="timeline-tab active" role="tab" aria-selected="true" aria-controls="timelineList" type="button" data-mode="events">大事</button>
-        <button id="timeline-tab-emperors" class="timeline-tab" role="tab" aria-selected="false" aria-controls="timelineList" type="button" data-mode="emperors">帝王</button>
+      <div class="timeline-tabs" role="tablist" aria-label="涓荤嚎瀵艰埅绫诲瀷">
+        <button id="timeline-tab-events" class="timeline-tab active" role="tab" aria-selected="true" aria-controls="timelineList" type="button" data-mode="events">澶т簨</button>
+        <button id="timeline-tab-emperors" class="timeline-tab" role="tab" aria-selected="false" aria-controls="timelineList" type="button" data-mode="emperors">甯濈帇</button>
       </div>
       <div id="timelineList" class="timeline-scroll"></div>
     </aside>
@@ -58,8 +58,8 @@
           <div id="eventMeta" class="detail-meta"></div>
         </div>
         <div class="detail-actions">
-          <button id="bookmarkBtn" class="detail-btn" type="button">&#9733; 收藏</button>
-          <button id="focusReviewBtn" class="detail-btn" type="button">&#9998; 复习</button>
+          <button id="bookmarkBtn" class="detail-btn" type="button">&#9733; 鏀惰棌</button>
+          <button id="focusReviewBtn" class="detail-btn" type="button">&#9998; 澶嶄範</button>
         </div>
       </div>
 
@@ -67,7 +67,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9679;</span>
-            <h2>关键人物</h2>
+            <h2>鍏抽敭浜虹墿</h2>
           </div>
           <div id="peopleChips" class="people-row"></div>
         </section>
@@ -75,7 +75,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9670;</span>
-            <h2>背景</h2>
+            <h2>鑳屾櫙</h2>
           </div>
           <div id="backgroundContent" class="detail-section-content"></div>
         </section>
@@ -83,7 +83,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9632;</span>
-            <h2>疆域与人口</h2>
+            <h2>鐤嗗煙涓庝汉鍙?/h2>
           </div>
           <div id="territoryPopulationContent" class="territory-population-list"></div>
         </section>
@@ -91,7 +91,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9633;</span>
-            <h2>势力范围示意</h2>
+            <h2>鍔垮姏鑼冨洿绀烘剰</h2>
           </div>
           <div id="politicalMapContent" class="political-map-list"></div>
         </section>
@@ -99,7 +99,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9654;</span>
-            <h2>经过</h2>
+            <h2>缁忚繃</h2>
           </div>
           <div id="processList" class="sub-event-list"></div>
         </section>
@@ -107,7 +107,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9656;</span>
-            <h2>结果与影响</h2>
+            <h2>缁撴灉涓庡奖鍝?/h2>
           </div>
           <div id="resultContent" class="detail-section-content"></div>
         </section>
@@ -115,7 +115,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9830;</span>
-            <h2>不同说法</h2>
+            <h2>涓嶅悓璇存硶</h2>
           </div>
           <div id="debateContent" class="detail-section-content"></div>
         </section>
@@ -123,20 +123,20 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9671;</span>
-            <h2>关键判断</h2>
+            <h2>鍏抽敭鍒ゆ柇</h2>
           </div>
           <div id="claimsList" class="claims-list"></div>
         </section>
       </div>
     </main>
 
-    <aside class="supplementary-panel" aria-label="辅助信息">
+    <aside class="supplementary-panel" aria-label="杈呭姪淇℃伅">
       <div class="sup-tabs" role="tablist">
-        <button id="sup-tab-people" class="sup-tab active" role="tab" aria-selected="true" aria-controls="tab-people" type="button" data-tab="people">人物</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="causal" aria-controls="tab-causal">因果链</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="sources" aria-controls="tab-sources">史料</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="citations" aria-controls="tab-citations">引用</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="review" aria-controls="tab-review">复习</button>
+        <button id="sup-tab-people" class="sup-tab active" role="tab" aria-selected="true" aria-controls="tab-people" type="button" data-tab="people">浜虹墿</button>
+        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="causal" aria-controls="tab-causal">鍥犳灉閾?/button>
+        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="sources" aria-controls="tab-sources">鍙叉枡</button>
+        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="citations" aria-controls="tab-citations">寮曠敤</button>
+        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="review" aria-controls="tab-review">澶嶄範</button>
       </div>
       <div class="sup-content">
         <section id="tab-people" role="tabpanel" aria-labelledby="sup-tab-people" class="sup-section active"></section>
@@ -149,267 +149,20 @@
   </div>
 
   <footer class="notes-bar">
-    <button id="notesToggle" class="notes-toggle" type="button">&#9998; 笔记</button>
-    <input aria-label="当前事件笔记" id="noteInput" class="notes-input" type="text" placeholder="记录理解、疑问、待查证">
+    <button id="notesToggle" class="notes-toggle" type="button">&#9998; 绗旇</button>
+    <input aria-label="褰撳墠浜嬩欢绗旇" id="noteInput" class="notes-input" type="text" placeholder="璁板綍鐞嗚В銆佺枒闂€佸緟鏌ヨ瘉">
     <span id="notesCount" class="notes-count"></span>
   </footer>
 
   <section id="notesOverlay" class="notes-overlay" role="dialog" aria-modal="true" aria-labelledby="notesTitle" hidden>
     <div class="notes-overlay-header">
       <h2 id="notesTitle"></h2>
-      <button id="notesOverlayClose" class="notes-overlay-close" type="button" aria-label="关闭笔记">&#215;</button>
+      <button id="notesOverlayClose" class="notes-overlay-close" type="button" aria-label="鍏抽棴绗旇">&#215;</button>
     </div>
     <div id="notesList" class="notes-list"></div>
   </section>
 
-  <script defer src="data/dynasties/shang/metadata.js"></script>
-  <script defer src="data/dynasties/shang/events.js"></script>
-  <script defer src="data/dynasties/shang/emperors.js"></script>
-  <script defer src="data/dynasties/shang/sources.js"></script>
-  <script defer src="data/dynasties/western-zhou/metadata.js"></script>
-  <script defer src="data/dynasties/western-zhou/events.js"></script>
-  <script defer src="data/dynasties/western-zhou/emperors.js"></script>
-  <script defer src="data/dynasties/western-zhou/sources.js"></script>
-  <script defer src="data/dynasties/spring-autumn-warring-states/metadata.js"></script>
-  <script defer src="data/dynasties/spring-autumn-warring-states/events.js"></script>
-  <script defer src="data/dynasties/spring-autumn-warring-states/emperors.js"></script>
-  <script defer src="data/dynasties/spring-autumn-warring-states/sources.js"></script>
-  <script defer src="data/dynasties/qin/metadata.js"></script>
-  <script defer src="data/dynasties/qin/events.js"></script>
-  <script defer src="data/dynasties/qin/emperors.js"></script>
-  <script defer src="data/dynasties/qin/sources.js"></script>
-  <script defer src="data/dynasties/western-han/metadata.js"></script>
-  <script defer src="data/dynasties/western-han/events.js"></script>
-  <script defer src="data/dynasties/western-han/emperors.js"></script>
-  <script defer src="data/dynasties/western-han/sources.js"></script>
-  <script defer src="data/dynasties/xin/metadata.js"></script>
-  <script defer src="data/dynasties/xin/events.js"></script>
-  <script defer src="data/dynasties/xin/emperors.js"></script>
-  <script defer src="data/dynasties/xin/sources.js"></script>
-  <script defer src="data/dynasties/eastern-han/metadata.js"></script>
-  <script defer src="data/dynasties/eastern-han/events.js"></script>
-  <script defer src="data/dynasties/eastern-han/emperors.js"></script>
-  <script defer src="data/dynasties/eastern-han/sources.js"></script>
-  <script defer src="data/dynasties/late-han-three-kingdoms/metadata.js"></script>
-  <script defer src="data/dynasties/late-han-three-kingdoms/events.js"></script>
-  <script defer src="data/dynasties/late-han-three-kingdoms/emperors.js"></script>
-  <script defer src="data/dynasties/late-han-three-kingdoms/sources.js"></script>
-  <script defer src="data/dynasties/northern-southern/metadata.js"></script>
-  <script defer src="data/dynasties/northern-southern/events.js"></script>
-  <script defer src="data/dynasties/northern-southern/emperors.js"></script>
-  <script defer src="data/dynasties/northern-southern/sources.js"></script>
-  <script defer src="data/dynasties/sui/metadata.js"></script>
-  <script defer src="data/dynasties/sui/events.js"></script>
-  <script defer src="data/dynasties/sui/emperors.js"></script>
-  <script defer src="data/dynasties/sui/sources.js"></script>
-  <script defer src="data/dynasties/tang/metadata.js"></script>
-  <script defer src="data/dynasties/tang/events.js"></script>
-  <script defer src="data/dynasties/tang/emperors.js"></script>
-  <script defer src="data/dynasties/tang/sources.js"></script>
-  <script defer src="data/dynasties/five-dynasties-ten-kingdoms/metadata.js"></script>
-  <script defer src="data/dynasties/five-dynasties-ten-kingdoms/events.js"></script>
-  <script defer src="data/dynasties/five-dynasties-ten-kingdoms/emperors.js"></script>
-  <script defer src="data/dynasties/five-dynasties-ten-kingdoms/sources.js"></script>
-  <script defer src="data/dynasties/northern-song/metadata.js"></script>
-  <script defer src="data/dynasties/northern-song/events.js"></script>
-  <script defer src="data/dynasties/northern-song/emperors.js"></script>
-  <script defer src="data/dynasties/northern-song/sources.js"></script>
-  <script defer src="data/dynasties/southern-song/metadata.js"></script>
-  <script defer src="data/dynasties/southern-song/events.js"></script>
-  <script defer src="data/dynasties/southern-song/emperors.js"></script>
-  <script defer src="data/dynasties/southern-song/sources.js"></script>
-  <script defer src="data/dynasties/liao/metadata.js"></script>
-  <script defer src="data/dynasties/liao/events.js"></script>
-  <script defer src="data/dynasties/liao/emperors.js"></script>
-  <script defer src="data/dynasties/liao/sources.js"></script>
-  <script defer src="data/dynasties/western-xia/metadata.js"></script>
-  <script defer src="data/dynasties/western-xia/events.js"></script>
-  <script defer src="data/dynasties/western-xia/emperors.js"></script>
-  <script defer src="data/dynasties/western-xia/sources.js"></script>
-  <script defer src="data/dynasties/jin/metadata.js"></script>
-  <script defer src="data/dynasties/jin/events.js"></script>
-  <script defer src="data/dynasties/jin/emperors.js"></script>
-  <script defer src="data/dynasties/jin/sources.js"></script>
-  <script defer src="data/dynasties/mongol/metadata.js"></script>
-  <script defer src="data/dynasties/mongol/events.js"></script>
-  <script defer src="data/dynasties/mongol/emperors.js"></script>
-  <script defer src="data/dynasties/mongol/sources.js"></script>
-  <script defer src="data/dynasties/yuan/metadata.js"></script>
-  <script defer src="data/dynasties/yuan/events.js"></script>
-  <script defer src="data/dynasties/yuan/emperors.js"></script>
-  <script defer src="data/dynasties/yuan/sources.js"></script>
-  <script defer src="data/dynasties/ming/metadata.js"></script>
-  <script defer src="data/dynasties/ming/events.js"></script>
-  <script defer src="data/dynasties/ming/emperors.js"></script>
-  <script defer src="data/dynasties/ming/sources.js"></script>
-  <script defer src="data/dynasties/qing/metadata.js"></script>
-  <script defer src="data/dynasties/qing/events.js"></script>
-  <script defer src="data/dynasties/qing/emperors.js"></script>
-  <script defer src="data/dynasties/qing/sources.js"></script>
-  <script defer src="data/dynasties/modern-china/metadata.js"></script>
-  <script defer src="data/dynasties/modern-china/events.js"></script>
-  <script defer src="data/dynasties/modern-china/emperors.js"></script>
-  <script defer src="data/dynasties/modern-china/sources.js"></script>
-  <script defer src="data/dynasties/republican-china/metadata.js"></script>
-  <script defer src="data/dynasties/republican-china/events.js"></script>
-  <script defer src="data/dynasties/republican-china/emperors.js"></script>
-  <script defer src="data/dynasties/republican-china/sources.js"></script>
-  <script defer src="data/dynasties/war-of-resistance/metadata.js"></script>
-  <script defer src="data/dynasties/war-of-resistance/events.js"></script>
-  <script defer src="data/dynasties/war-of-resistance/emperors.js"></script>
-  <script defer src="data/dynasties/war-of-resistance/sources.js"></script>
-  <script defer src="data/dynasties/liberation-construction/metadata.js"></script>
-  <script defer src="data/dynasties/liberation-construction/events.js"></script>
-  <script defer src="data/dynasties/liberation-construction/emperors.js"></script>
-  <script defer src="data/dynasties/liberation-construction/sources.js"></script>
-  <script defer src="data/dynasties/reform-opening/metadata.js"></script>
-  <script defer src="data/dynasties/reform-opening/events.js"></script>
-  <script defer src="data/dynasties/reform-opening/emperors.js"></script>
-  <script defer src="data/dynasties/reform-opening/sources.js"></script>
-  <script defer src="data/dynasties/japan/metadata.js"></script>
-  <script defer src="data/dynasties/japan/sources.js"></script>
-  <script defer src="data/dynasties/japan/events.js"></script>
-  <script defer src="data/dynasties/japan/emperors.js"></script>
-  <script defer src="data/dynasties/indian-subcontinent/metadata.js"></script>
-  <script defer src="data/dynasties/indian-subcontinent/sources.js"></script>
-  <script defer src="data/dynasties/indian-subcontinent/events.js"></script>
-  <script defer src="data/dynasties/indian-subcontinent/emperors.js"></script>
-  <script defer src="data/dynasties/southeast-asia/metadata.js"></script>
-  <script defer src="data/dynasties/southeast-asia/sources.js"></script>
-  <script defer src="data/dynasties/southeast-asia/events.js"></script>
-  <script defer src="data/dynasties/southeast-asia/emperors.js"></script>
-  <script defer src="data/dynasties/ancient-greece/metadata.js"></script>
-  <script defer src="data/dynasties/ancient-greece/sources.js"></script>
-  <script defer src="data/dynasties/ancient-greece/events.js"></script>
-  <script defer src="data/dynasties/ancient-greece/emperors.js"></script>
-  <script defer src="data/dynasties/roman-republic/metadata.js"></script>
-  <script defer src="data/dynasties/roman-republic/sources.js"></script>
-  <script defer src="data/dynasties/roman-republic/events.js"></script>
-  <script defer src="data/dynasties/roman-republic/emperors.js"></script>
-  <script defer src="data/dynasties/roman-empire/metadata.js"></script>
-  <script defer src="data/dynasties/roman-empire/sources.js"></script>
-  <script defer src="data/dynasties/roman-empire/events.js"></script>
-  <script defer src="data/dynasties/roman-empire/emperors.js"></script>
-  <script defer src="data/dynasties/byzantium/metadata.js"></script>
-  <script defer src="data/dynasties/byzantium/sources.js"></script>
-  <script defer src="data/dynasties/byzantium/events.js"></script>
-  <script defer src="data/dynasties/byzantium/emperors.js"></script>
-  <script defer src="data/dynasties/viking-nordic-europe/metadata.js"></script>
-  <script defer src="data/dynasties/viking-nordic-europe/sources.js"></script>
-  <script defer src="data/dynasties/viking-nordic-europe/events.js"></script>
-  <script defer src="data/dynasties/viking-nordic-europe/emperors.js"></script>
-  <script defer src="data/dynasties/iberia-reconquista/metadata.js"></script>
-  <script defer src="data/dynasties/iberia-reconquista/sources.js"></script>
-  <script defer src="data/dynasties/iberia-reconquista/events.js"></script>
-  <script defer src="data/dynasties/iberia-reconquista/emperors.js"></script>
-  <script defer src="data/dynasties/eastern-europe-slavic/metadata.js"></script>
-  <script defer src="data/dynasties/eastern-europe-slavic/sources.js"></script>
-  <script defer src="data/dynasties/eastern-europe-slavic/events.js"></script>
-  <script defer src="data/dynasties/eastern-europe-slavic/emperors.js"></script>
-  <script defer src="data/dynasties/russia/metadata.js"></script>
-  <script defer src="data/dynasties/russia/sources.js"></script>
-  <script defer src="data/dynasties/russia/events.js"></script>
-  <script defer src="data/dynasties/russia/emperors.js"></script>
-  <script defer src="data/dynasties/early-modern-europe/metadata.js"></script>
-  <script defer src="data/dynasties/early-modern-europe/sources.js"></script>
-  <script defer src="data/dynasties/early-modern-europe/events.js"></script>
-  <script defer src="data/dynasties/early-modern-europe/emperors.js"></script>
-  <script defer src="data/dynasties/renaissance-reformation/metadata.js"></script>
-  <script defer src="data/dynasties/renaissance-reformation/sources.js"></script>
-  <script defer src="data/dynasties/renaissance-reformation/events.js"></script>
-  <script defer src="data/dynasties/renaissance-reformation/emperors.js"></script>
-  <script defer src="data/dynasties/medieval-western-europe/metadata.js"></script>
-  <script defer src="data/dynasties/medieval-western-europe/sources.js"></script>
-  <script defer src="data/dynasties/medieval-western-europe/events.js"></script>
-  <script defer src="data/dynasties/medieval-western-europe/emperors.js"></script>
-  <script defer src="data/dynasties/ancient-egypt/metadata.js"></script>
-  <script defer src="data/dynasties/ancient-egypt/sources.js"></script>
-  <script defer src="data/dynasties/ancient-egypt/events.js"></script>
-  <script defer src="data/dynasties/ancient-egypt/emperors.js"></script>
-  <script defer src="data/dynasties/nubia-kush/metadata.js"></script>
-  <script defer src="data/dynasties/nubia-kush/sources.js"></script>
-  <script defer src="data/dynasties/nubia-kush/events.js"></script>
-  <script defer src="data/dynasties/nubia-kush/emperors.js"></script>
-  <script defer src="data/dynasties/phoenician-carthage/metadata.js"></script>
-  <script defer src="data/dynasties/phoenician-carthage/sources.js"></script>
-  <script defer src="data/dynasties/phoenician-carthage/events.js"></script>
-  <script defer src="data/dynasties/phoenician-carthage/emperors.js"></script>
-  <script defer src="data/dynasties/sumer-early-mesopotamia/metadata.js"></script>
-  <script defer src="data/dynasties/sumer-early-mesopotamia/sources.js"></script>
-  <script defer src="data/dynasties/sumer-early-mesopotamia/events.js"></script>
-  <script defer src="data/dynasties/sumer-early-mesopotamia/emperors.js"></script>
-  <script defer src="data/dynasties/bronze-age-international-system/metadata.js"></script>
-  <script defer src="data/dynasties/bronze-age-international-system/sources.js"></script>
-  <script defer src="data/dynasties/bronze-age-international-system/events.js"></script>
-  <script defer src="data/dynasties/bronze-age-international-system/emperors.js"></script>
-  <script defer src="data/dynasties/bronze-age-collapse/metadata.js"></script>
-  <script defer src="data/dynasties/bronze-age-collapse/sources.js"></script>
-  <script defer src="data/dynasties/bronze-age-collapse/events.js"></script>
-  <script defer src="data/dynasties/bronze-age-collapse/emperors.js"></script>
-  <script defer src="data/dynasties/islamic-middle-east/metadata.js"></script>
-  <script defer src="data/dynasties/islamic-middle-east/sources.js"></script>
-  <script defer src="data/dynasties/islamic-middle-east/events.js"></script>
-  <script defer src="data/dynasties/islamic-middle-east/emperors.js"></script>
-  <script defer src="data/dynasties/african-civilizations/metadata.js"></script>
-  <script defer src="data/dynasties/african-civilizations/sources.js"></script>
-  <script defer src="data/dynasties/african-civilizations/events.js"></script>
-  <script defer src="data/dynasties/african-civilizations/emperors.js"></script>
-  <script defer src="data/dynasties/north-america/metadata.js"></script>
-  <script defer src="data/dynasties/north-america/sources.js"></script>
-  <script defer src="data/dynasties/north-america/events.js"></script>
-  <script defer src="data/dynasties/north-america/emperors.js"></script>
-  <script defer src="data/dynasties/south-america/metadata.js"></script>
-  <script defer src="data/dynasties/south-america/sources.js"></script>
-  <script defer src="data/dynasties/south-america/events.js"></script>
-  <script defer src="data/dynasties/south-america/emperors.js"></script>
-  <script defer src="data/dynasties/hittite-anatolia/metadata.js"></script>
-  <script defer src="data/dynasties/hittite-anatolia/sources.js"></script>
-  <script defer src="data/dynasties/hittite-anatolia/events.js"></script>
-  <script defer src="data/dynasties/hittite-anatolia/emperors.js"></script>
-  <script defer src="data/dynasties/neo-assyrian-empire/metadata.js"></script>
-  <script defer src="data/dynasties/neo-assyrian-empire/sources.js"></script>
-  <script defer src="data/dynasties/neo-assyrian-empire/events.js"></script>
-  <script defer src="data/dynasties/neo-assyrian-empire/emperors.js"></script>
-  <script defer src="data/dynasties/achaemenid-persia/metadata.js"></script>
-  <script defer src="data/dynasties/achaemenid-persia/sources.js"></script>
-  <script defer src="data/dynasties/achaemenid-persia/events.js"></script>
-  <script defer src="data/dynasties/achaemenid-persia/emperors.js"></script>
-  <script defer src="data/dynasties/maya-civilization/metadata.js"></script>
-  <script defer src="data/dynasties/maya-civilization/sources.js"></script>
-  <script defer src="data/dynasties/maya-civilization/events.js"></script>
-  <script defer src="data/dynasties/maya-civilization/emperors.js"></script>
-  <script defer src="data/dynasties/mexica-aztec-triple-alliance/metadata.js"></script>
-  <script defer src="data/dynasties/mexica-aztec-triple-alliance/sources.js"></script>
-  <script defer src="data/dynasties/mexica-aztec-triple-alliance/events.js"></script>
-  <script defer src="data/dynasties/mexica-aztec-triple-alliance/emperors.js"></script>
-  <script defer src="data/dynasties/inca-empire/metadata.js"></script>
-  <script defer src="data/dynasties/inca-empire/sources.js"></script>
-  <script defer src="data/dynasties/inca-empire/events.js"></script>
-  <script defer src="data/dynasties/inca-empire/emperors.js"></script>
-  <script defer src="data/topics/imperial-exam.js"></script>
-  <script defer src="data/topics/song-mongol-yuan-war.js"></script>
-  <script defer src="data/regions/east-asia/metadata.js"></script>
-  <script defer src="data/regions/east-asia/china/package.js"></script>
-  <script defer src="data/regions/east-asia/japan/package.js"></script>
-  <script defer src="data/regions/south-asia/metadata.js"></script>
-  <script defer src="data/regions/south-asia/indian-subcontinent/package.js"></script>
-  <script defer src="data/regions/southeast-asia/metadata.js"></script>
-  <script defer src="data/regions/southeast-asia/southeast-asia/package.js"></script>
-  <script defer src="data/regions/europe/metadata.js"></script>
-  <script defer src="data/regions/europe/europe/package.js"></script>
-  <script defer src="data/regions/africa/metadata.js"></script>
-  <script defer src="data/regions/africa/africa/package.js"></script>
-  <script defer src="data/regions/west-asia/metadata.js"></script>
-  <script defer src="data/regions/west-asia/west-asia/package.js"></script>
-  <script defer src="data/regions/afro-eurasia-crossroads/metadata.js"></script>
-  <script defer src="data/regions/afro-eurasia-crossroads/afro-eurasia-crossroads/package.js"></script>
-  <script defer src="data/regions/north-america/metadata.js"></script>
-  <script defer src="data/regions/north-america/north-america/package.js"></script>
-  <script defer src="data/regions/south-america/metadata.js"></script>
-  <script defer src="data/regions/south-america/south-america/package.js"></script>
-  <script defer src="data/territory-population.js"></script>
-  <script defer src="data/political-maps.js"></script>
-  <script defer src="data/index.js"></script>
+  <script defer src="data/bundle.js"></script>
   <script defer src="assets/app.js?v=20260710-source-status"></script>
 </body>
 </html>

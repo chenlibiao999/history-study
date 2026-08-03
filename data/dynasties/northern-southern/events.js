@@ -6592,7 +6592,7 @@ window.NS_EVENTS.push(...[
     "topicIds": []
   },
   {
-    "id": "ns-northern-zhou-reforms",
+    "id": "ns-northern-zhou-wudi-reforms",
     "dynastyId": "northern-southern",
     "dynasty": "五胡十六国南北朝",
     "title": "北周武帝改革与灭佛集权",

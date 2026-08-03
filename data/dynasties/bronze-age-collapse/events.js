@@ -44,6 +44,7 @@
       era: item.era,
       period: dynasty,
       time: item.time,
+      sortYear: item.sortYear,
       regions: item.regions || ["亚非欧交界地", "东地中海", "西亚"],
       topics: item.topics || ["青铜时代崩溃"],
       summary: item.summary,
@@ -136,11 +137,14 @@
     ["bac-multi-causal-model", "多因一果模型取代单因解释", "铁器时代转型", "总论", ["现代研究者", "考古资料", "古代铭文"], "现代研究通常把青铜时代崩溃视为气候、战争、迁徙、贸易断裂、宫殿脆弱性和地方反抗叠加的系统性结果。", "学习这一时期的关键是避免把海上民族、干旱或地震任何单一因素当作全部答案。"]
   ];
 
+  const explicitSortYears = { "bac-multi-causal-model": -1200 };
+
   window.BRONZE_AGE_COLLAPSE_EVENTS = rows.map(([id, title, era, time, peopleList, summary, result]) => event({
     id,
     title,
     era,
     time,
+    sortYear: explicitSortYears[id],
     people: peopleList,
     summary,
     result,

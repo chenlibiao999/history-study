@@ -134,7 +134,7 @@ window.AFRICAN_CIVILIZATIONS_EMPERORS = [
     "notes": []
   },
   {
-    "id": "african-civilizations-ghana",
+    "id": "african-civilizations-independence-modern",
     "dynastyId": "african-civilizations",
     "name": "独立与现代转型",
     "title": "阶段主线",

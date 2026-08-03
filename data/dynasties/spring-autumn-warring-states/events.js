@@ -132,7 +132,7 @@
       answer: "它既维护周王室名义，又让强国以保护中原的名义领导诸侯。"
     }),
     event({
-      id: "saws-song-xiang-failure",
+      id: "saws-song-xiang-failure-early",
       title: "宋襄公争霸失败",
       era: "春秋霸政",
       time: "前643-前638",
@@ -198,7 +198,7 @@
       answer: "他让秦国从西陲诸侯成长为有广阔西部基础的大国。"
     }),
     event({
-      id: "saws-chu-zhuang-hegemony",
+      id: "saws-chu-zhuang-hegemony-early",
       title: "楚庄王问鼎与邲之战",
       era: "春秋霸政",
       time: "前613-前591",

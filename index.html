@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>鍘嗗彶瀛︿範宸ヤ綔鍙?/title>
+  <title>历史学习工作台</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <header class="app-header">
-    <div class="app-logo" aria-label="鍘嗗彶瀛︿範宸ヤ綔鍙?>
-      <div class="logo-icon">鍙?/div>
-      <span>鍘嗗彶瀛︿範宸ヤ綔鍙?/span>
+    <div class="app-logo" aria-label="历史学习工作台">
+      <div class="logo-icon">史</div>
+      <span>历史学习工作台</span>
     </div>
 
     <label class="search-box">
       <span class="search-icon" aria-hidden="true">&#128269;</span>
-      <input id="searchInput" type="search" placeholder="鎼滅储浜嬩欢銆佷汉鐗┿€佸湴鐐广€佹蹇?>
+      <input id="searchInput" type="search" placeholder="搜索事件、人物、地点、概念">
     </label>
 
-    <div class="header-filters" aria-label="绛涢€?>
+    <div class="header-filters" aria-label="筛选">
       <button id="filterToggle" class="filter-toggle" type="button" aria-expanded="false" aria-controls="filterPanel">
         <span class="filter-toggle-icon" aria-hidden="true">&#9776;</span>
-        <span>绛涢€?/span>
+        <span>筛选</span>
         <span id="filterCount" class="filter-count" hidden>0</span>
       </button>
       <div id="activeFilters" class="active-filters" aria-live="polite"></div>
-      <button id="clearFiltersBtn" class="clear-filters-btn" type="button" hidden>娓呴櫎</button>
+      <button id="clearFiltersBtn" class="clear-filters-btn" type="button" hidden>清除</button>
       <div id="filterPanel" class="filter-panel" hidden>
         <div class="filter-panel-head">
           <div>
-            <h2>绛涢€変簨浠?/h2>
+            <h2>筛选事件</h2>
             <p id="filterResultCount"></p>
           </div>
-          <button id="filterPanelClose" class="filter-panel-close" type="button" aria-label="鍏抽棴绛涢€?>&#215;</button>
+          <button id="filterPanelClose" class="filter-panel-close" type="button" aria-label="关闭筛选">&#215;</button>
         </div>
         <div id="filterGroups" class="filter-groups"></div>
       </div>
@@ -40,13 +40,13 @@
   </header>
 
   <div class="workspace">
-    <aside class="timeline-panel" aria-label="鏃堕棿绾?>
+    <aside class="timeline-panel" aria-label="时间线">
       <div class="panel-header">
-        <h2>鏃堕棿绾?/h2>
+        <h2>时间线</h2>
       </div>
-      <div class="timeline-tabs" role="tablist" aria-label="涓荤嚎瀵艰埅绫诲瀷">
-        <button id="timeline-tab-events" class="timeline-tab active" role="tab" aria-selected="true" aria-controls="timelineList" type="button" data-mode="events">澶т簨</button>
-        <button id="timeline-tab-emperors" class="timeline-tab" role="tab" aria-selected="false" aria-controls="timelineList" type="button" data-mode="emperors">甯濈帇</button>
+      <div class="timeline-tabs" role="tablist" aria-label="主线导航类型">
+        <button id="timeline-tab-events" class="timeline-tab active" role="tab" aria-selected="true" aria-controls="timelineList" type="button" data-mode="events">大事</button>
+        <button id="timeline-tab-emperors" class="timeline-tab" role="tab" aria-selected="false" aria-controls="timelineList" type="button" data-mode="emperors">帝王</button>
       </div>
       <div id="timelineList" class="timeline-scroll"></div>
     </aside>
@@ -58,8 +58,8 @@
           <div id="eventMeta" class="detail-meta"></div>
         </div>
         <div class="detail-actions">
-          <button id="bookmarkBtn" class="detail-btn" type="button">&#9733; 鏀惰棌</button>
-          <button id="focusReviewBtn" class="detail-btn" type="button">&#9998; 澶嶄範</button>
+          <button id="bookmarkBtn" class="detail-btn" type="button">&#9733; 收藏</button>
+          <button id="focusReviewBtn" class="detail-btn" type="button">&#9998; 复习</button>
         </div>
       </div>
 
@@ -67,7 +67,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9679;</span>
-            <h2>鍏抽敭浜虹墿</h2>
+            <h2>关键人物</h2>
           </div>
           <div id="peopleChips" class="people-row"></div>
         </section>
@@ -75,7 +75,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9670;</span>
-            <h2>鑳屾櫙</h2>
+            <h2>背景</h2>
           </div>
           <div id="backgroundContent" class="detail-section-content"></div>
         </section>
@@ -83,7 +83,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9632;</span>
-            <h2>鐤嗗煙涓庝汉鍙?/h2>
+            <h2>疆域与人口</h2>
           </div>
           <div id="territoryPopulationContent" class="territory-population-list"></div>
         </section>
@@ -91,7 +91,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9633;</span>
-            <h2>鍔垮姏鑼冨洿绀烘剰</h2>
+            <h2>势力范围示意</h2>
           </div>
           <div id="politicalMapContent" class="political-map-list"></div>
         </section>
@@ -99,7 +99,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9654;</span>
-            <h2>缁忚繃</h2>
+            <h2>经过</h2>
           </div>
           <div id="processList" class="sub-event-list"></div>
         </section>
@@ -107,7 +107,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9656;</span>
-            <h2>缁撴灉涓庡奖鍝?/h2>
+            <h2>结果与影响</h2>
           </div>
           <div id="resultContent" class="detail-section-content"></div>
         </section>
@@ -115,7 +115,7 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9830;</span>
-            <h2>涓嶅悓璇存硶</h2>
+            <h2>不同说法</h2>
           </div>
           <div id="debateContent" class="detail-section-content"></div>
         </section>
@@ -123,20 +123,20 @@
         <section class="detail-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9671;</span>
-            <h2>鍏抽敭鍒ゆ柇</h2>
+            <h2>关键判断</h2>
           </div>
           <div id="claimsList" class="claims-list"></div>
         </section>
       </div>
     </main>
 
-    <aside class="supplementary-panel" aria-label="杈呭姪淇℃伅">
+    <aside class="supplementary-panel" aria-label="辅助信息">
       <div class="sup-tabs" role="tablist">
-        <button id="sup-tab-people" class="sup-tab active" role="tab" aria-selected="true" aria-controls="tab-people" type="button" data-tab="people">浜虹墿</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="causal" aria-controls="tab-causal">鍥犳灉閾?/button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="sources" aria-controls="tab-sources">鍙叉枡</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="citations" aria-controls="tab-citations">寮曠敤</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="review" aria-controls="tab-review">澶嶄範</button>
+        <button id="sup-tab-people" class="sup-tab active" role="tab" aria-selected="true" aria-controls="tab-people" type="button" data-tab="people">人物</button>
+        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="causal" aria-controls="tab-causal">因果链</button>
+        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="sources" aria-controls="tab-sources">史料</button>
+        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="citations" aria-controls="tab-citations">引用</button>
+        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="review" aria-controls="tab-review">复习</button>
       </div>
       <div class="sup-content">
         <section id="tab-people" role="tabpanel" aria-labelledby="sup-tab-people" class="sup-section active"></section>
@@ -149,19 +149,18 @@
   </div>
 
   <footer class="notes-bar">
-    <button id="notesToggle" class="notes-toggle" type="button">&#9998; 绗旇</button>
-    <input aria-label="褰撳墠浜嬩欢绗旇" id="noteInput" class="notes-input" type="text" placeholder="璁板綍鐞嗚В銆佺枒闂€佸緟鏌ヨ瘉">
+    <button id="notesToggle" class="notes-toggle" type="button">&#9998; 笔记</button>
+    <input aria-label="当前事件笔记" id="noteInput" class="notes-input" type="text" placeholder="记录理解、疑问、待查证">
     <span id="notesCount" class="notes-count"></span>
   </footer>
 
   <section id="notesOverlay" class="notes-overlay" role="dialog" aria-modal="true" aria-labelledby="notesTitle" hidden>
     <div class="notes-overlay-header">
       <h2 id="notesTitle"></h2>
-      <button id="notesOverlayClose" class="notes-overlay-close" type="button" aria-label="鍏抽棴绗旇">&#215;</button>
+      <button id="notesOverlayClose" class="notes-overlay-close" type="button" aria-label="关闭笔记">&#215;</button>
     </div>
     <div id="notesList" class="notes-list"></div>
   </section>
-
   <script defer src="data/bundle.js"></script>
   <script defer src="assets/app.js?v=20260710-source-status"></script>
 </body>

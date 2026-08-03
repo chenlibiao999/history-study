@@ -1,8 +1,10 @@
 # 东亚区域包
 
-这一层用于管理东亚范围内的文明/国家历史单元。
+本区域包只负责东亚的地理层级、模块索引和跨区域组织。事件正文归入对应朝代、国家或专题模块。
 
-- `china/`：中国历史包，当前已收束现有中国主线模块。
-- 后续可并列新增 `japan/`、`korean-peninsula/`、`vietnam/`、`mongolian-steppe/`、`ryukyu/` 等包。
+## 当前模块
 
-规则：区域包只做索引和跨区域组织，不直接复制事件正文。具体事件仍放在各自时期或专题模块里，避免一改全改。
+- `china/`：中国历史模块。
+- 后续可并列增加 `japan/`、`korean-peninsula/`、`vietnam/`、`mongolian-steppe/`、`ryukyu/`。
+
+区域分类遵守 `data/rules/05-geography.md`；跨区域专题遵守 `data/rules/08-dynasty-and-cross-period.md`。

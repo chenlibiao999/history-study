@@ -196,21 +196,69 @@
     ["南美 / 南锥体", ["阿根廷", "智利", "乌拉圭", "巴拉圭", "南锥体"]]
   ];
 
+  const fallbackGeoByPackageId = {
+    china: "\u4e1c\u4e9a / \u4e2d\u56fd\u5185\u5730",
+    japan: "\u4e1c\u4e9a / \u65e5\u672c\u5217\u5c9b",
+    "indian-subcontinent": "\u5357\u4e9a / \u5370\u5ea6\u6b21\u5927\u9646",
+    "southeast-asia": "\u4e1c\u5357\u4e9a / \u5927\u9646\u4e0e\u6d77\u5c9b\u4e1c\u5357\u4e9a",
+    europe: "\u6b27\u6d32 / \u897f\u6b27\u4e0e\u4e2d\u6b27",
+    africa: "\u975e\u6d32 / \u6492\u54c8\u62c9\u4ee5\u5357\u975e\u6d32",
+    "west-asia": "\u897f\u4e9a / \u897f\u4e9a\u5176\u4ed6\u5730\u533a",
+    "afro-eurasia-crossroads": "\u4e9a\u975e\u6b27\u4ea4\u754c\u5730 / \u8de8\u533a\u57df\u5173\u8054",
+    "north-america": "\u5317\u7f8e / \u5317\u7f8e\u5927\u9646\u4e0e\u52a0\u52d2\u6bd4",
+    "south-america": "\u5357\u7f8e / \u5357\u7f8e\u5176\u4ed6\u5730\u533a"
+  };
+  const chinaFallbackModuleIds = new Set([
+    "modern-china",
+    "republican-china",
+    "war-of-resistance",
+    "liberation-construction",
+    "reform-opening"
+  ]);
+  const fallbackGeoByDynastyId = Object.fromEntries(civilizationPackages.flatMap((historyPackage) => (
+    (historyPackage.moduleIds || []).map((moduleId) => [moduleId, fallbackGeoByPackageId[historyPackage.id]])
+  )).filter(([, fallback]) => fallback));
+  chinaFallbackModuleIds.forEach((moduleId) => {
+    fallbackGeoByDynastyId[moduleId] = fallbackGeoByPackageId.china;
+  });
+  const geoCatalogRoots = [
+    ["east-asia", "\u4e1c\u4e9a"],
+    ["south-asia", "\u5357\u4e9a"],
+    ["southeast-asia", "\u4e1c\u5357\u4e9a"],
+    ["west-asia", "\u897f\u4e9a"],
+    ["europe", "\u6b27\u6d32"],
+    ["africa", "\u975e\u6d32"],
+    ["north-america", "\u5317\u7f8e"],
+    ["south-america", "\u5357\u7f8e"],
+    ["afro-eurasia-crossroads", "\u4e9a\u975e\u6b27\u4ea4\u754c\u5730"]
+  ];
+  const geoCatalogLabels = [...new Set([
+    ...geoRules.map(([label]) => label),
+    ...Object.values(fallbackGeoByPackageId)
+  ])];
+  const geoCatalog = geoCatalogRoots.map(([id, title]) => ({
+    id,
+    title,
+    terms: [title],
+    children: geoCatalogLabels
+      .filter((label) => label.startsWith(`${title} /`))
+      .map((label) => [label.slice(title.length + 3), [label]])
+  })).filter((group) => group.children.length);
+
   function deriveGeoRegions(event) {
-    if (Array.isArray(event.geoRegion) && event.geoRegion.length) return event.geoRegion;
     const haystack = [
       event.title,
       event.summary,
       event.period,
+      ...(event.geoRegion || []),
       ...(event.regions || []),
       ...(event.topics || [])
     ].join(" ");
     const matches = geoRules
       .filter(([, terms]) => terms.some((term) => haystack.includes(term)))
       .map(([label]) => label);
-    return [...new Set(matches.length ? matches : (event.regions || []))];
+    return [...new Set(matches.length ? matches : [fallbackGeoByDynastyId[event.dynastyId] || "\u4e9a\u975e\u6b27\u4ea4\u754c\u5730 / \u8de8\u533a\u57df\u5173\u8054"])];
   }
-
   function derivePolityContext(event) {
     return [...new Set([event.period, event.dynasty, ...(event.regions || [])].filter(Boolean))];
   }
@@ -252,6 +300,7 @@
     topics,
     regions,
     civilizationPackages,
+    geoCatalog,
     territoryPopulation: territoryPopulationData,
     politicalMaps: politicalMapData
   };
@@ -260,4 +309,5 @@
   window.HISTORY_TOPICS = topics;
   window.HISTORY_REGIONS = regions;
   window.HISTORY_CIVILIZATION_PACKAGES = civilizationPackages;
+  window.HISTORY_GEO_CATALOG = geoCatalog;
 })();

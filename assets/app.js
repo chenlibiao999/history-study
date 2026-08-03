@@ -1,23 +1,33 @@
-﻿(function(){
-  const data = window.HISTORY_DATA;
-  const emperors = data.emperors || window.TANG_EMPERORS || [];
-  let selectedId = data.events[0]?.id;
+(function(){
+  const data = window.HISTORY_DATA || {events: [], emperors: [], dynastyEmperors: {}};
+  const events = Array.isArray(data.events) ? data.events : [];
+  const emperors = Array.isArray(data.emperors) ? data.emperors : (window.TANG_EMPERORS || []);
+  let selectedId = events[0]?.id || null;
   let activeTab = "people";
   let timelineMode = "events";
   const activeFilters = {period: "", region: "", topic: ""};
   const regionFilterLabels = new Map();
   const topicFilterLabels = new Map();
-  const notes = new Map(data.events.map(event => [event.id, [...(event.notes || [])]]));
-  const bookmarked = new Set(data.events.filter(event => event.bookmarked).map(event => event.id));
+  const storage = {
+    read(key, fallback){
+      try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
+    },
+    write(key, value){
+      try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* private mode or quota */ }
+    }
+  };
+  const storedNotes = storage.read("history-study-notes", {});
+  const notes = new Map(events.map(event => [event.id, Array.isArray(storedNotes[event.id]) ? storedNotes[event.id] : [...(event.notes || [])]]));
+  const bookmarked = new Set([...(storage.read("history-study-bookmarks", []) || []), ...events.filter(event => event.bookmarked).map(event => event.id)]);
 
   const $ = selector => document.querySelector(selector);
 
   function currentEvent(){
-    return data.events.find(event => event.id === selectedId) || data.events[0];
+    return events.find(event => event.id === selectedId) || events[0] || null;
   }
 
   function selectEvent(eventId){
-    if (!data.events.some(event => event.id === eventId)) return;
+    if (!events.some(event => event.id === eventId)) return;
     selectedId = eventId;
     renderAll();
   }
@@ -27,13 +37,13 @@
   }
 
   function findEventByLabel(label){
-    return data.events.find(event => eventMatchesLabel(event, label));
+    return events.find(event => eventMatchesLabel(event, label));
   }
 
   function emperorEvents(emperor){
     const found = new Map();
     (emperor.relatedEventIds || [])
-      .map(id => data.events.find(event => event.id === id))
+      .map(id => events.find(event => event.id === id))
       .filter(Boolean)
       .forEach(event => found.set(event.id, event));
     (emperor.keyEvents || [])
@@ -71,97 +81,13 @@
   }
 
   function regionCatalog(){
-    return [
-      {
-        id: "east-asia",
-        title: "东亚",
-        terms: ["东亚", "中国", "黄河中下游", "关中-陇右与河西", "长江中下游", "巴蜀与四川盆地", "岭南与珠江流域", "云贵高原", "青藏高原", "东南沿海与台湾海峡", "辽河流域与东北", "朝鲜半岛", "日本列岛", "蒙古高原与草原"],
-        children: [
-          ["黄河中下游", ["黄河中下游", "黄河", "中原", "洛阳", "开封", "山东", "河北", "河东", "邯郸", "许昌"]],
-          ["关中-陇右与河西", ["关中-陇右与河西", "关中", "长安", "咸阳", "陇右", "河西", "安西", "西域", "函谷关"]],
-          ["长江中下游", ["长江中下游", "长江", "江南", "江淮", "建康", "临安", "扬州", "蔡州"]],
-          ["巴蜀与四川盆地", ["巴蜀与四川盆地", "巴蜀", "四川盆地", "成都", "益州", "蜀"]],
-          ["岭南与珠江流域", ["岭南与珠江流域", "岭南", "珠江", "广州", "百越", "南越"]],
-          ["云贵高原", ["云贵高原", "云贵", "南诏", "大理", "云南", "贵州"]],
-          ["青藏高原", ["青藏高原", "青藏", "吐蕃", "西藏", "逻些"]],
-          ["东南沿海与台湾海峡", ["东南沿海与台湾海峡", "东南沿海", "福建", "台湾", "澎湖", "泉州", "海禁"]],
-          ["辽河流域与东北", ["辽河流域与东北", "东北", "辽东", "辽西", "辽河", "松花江", "黑龙江", "女真", "渤海"]],
-          ["朝鲜半岛", ["朝鲜半岛", "高句丽", "百济", "新罗", "高丽", "安东都护府"]],
-          ["日本列岛", ["日本列岛", "日本", "倭国", "近畿", "关东"]],
-          ["蒙古高原与草原", ["蒙古高原与草原", "蒙古高原", "草原", "漠北", "漠南", "蒙古", "回纥", "突厥"]]
-        ]
-      },
-      {
-        id: "west-asia",
-        title: "西亚",
-        terms: ["西亚", "两河流域", "美索不达米亚", "苏美尔", "阿卡德", "巴比伦", "亚述", "底格里斯河", "幼发拉底河", "安纳托利亚", "赫梯", "伊朗高原", "波斯", "黎凡特", "叙利亚", "巴勒斯坦", "阿拉伯半岛"],
-        children: [
-          ["两河流域", ["两河流域", "美索不达米亚", "苏美尔", "阿卡德", "巴比伦", "亚述", "底格里斯河", "幼发拉底河"]],
-          ["安纳托利亚", ["安纳托利亚", "赫梯", "小亚细亚"]],
-          ["伊朗高原/波斯", ["伊朗高原", "波斯", "埃兰"]],
-          ["黎凡特/叙利亚", ["黎凡特", "叙利亚", "巴勒斯坦", "迦南", "腓尼基"]],
-          ["阿拉伯半岛", ["阿拉伯半岛", "阿拉伯"]]
-        ]
-      },
-      {
-        id: "europe",
-        title: "欧洲",
-        terms: ["欧洲", "爱琴海与希腊半岛", "亚平宁半岛", "西地中海岛屿", "伊比利亚半岛", "不列颠群岛", "高卢-法兰西盆地", "莱茵-多瑙与中欧", "巴尔干半岛", "北欧斯堪的纳维亚", "波罗的海沿岸", "东欧平原"],
-        children: [
-          ["爱琴海与希腊半岛", ["爱琴海与希腊半岛", "爱琴", "希腊", "雅典", "斯巴达", "伯罗奔尼撒", "克里特", "马其顿"]],
-          ["亚平宁半岛", ["亚平宁半岛", "亚平宁", "意大利", "罗马", "拉丁", "伊特鲁里亚"]],
-          ["西地中海岛屿", ["西地中海岛屿", "西西里", "撒丁", "科西嘉", "马耳他"]],
-          ["伊比利亚半岛", ["伊比利亚半岛", "伊比利亚", "西班牙", "葡萄牙", "安达卢斯", "加的斯", "加的尔"]],
-          ["不列颠群岛", ["不列颠群岛", "不列颠", "英格兰", "苏格兰", "爱尔兰", "伦敦", "牛津"]],
-          ["高卢-法兰西盆地", ["高卢-法兰西盆地", "高卢", "法兰西", "法国", "巴黎", "诺曼底", "阿维尼翁", "奥尔良"]],
-          ["莱茵-多瑙与中欧", ["莱茵-多瑙与中欧", "莱茵", "多瑙", "德意志", "神圣罗马帝国", "中欧", "奥地利", "波希米亚"]],
-          ["巴尔干半岛", ["巴尔干半岛", "巴尔干", "拜占庭", "君士坦丁堡", "保加利亚", "塞尔维亚", "希腊北部"]],
-          ["北欧斯堪的纳维亚", ["北欧斯堪的纳维亚", "北欧", "斯堪的纳维亚", "丹麦", "挪威", "瑞典", "维京"]],
-          ["波罗的海沿岸", ["波罗的海沿岸", "波罗的海", "立陶宛", "普鲁士", "波兰"]],
-          ["东欧平原", ["东欧平原", "东欧", "斯拉夫", "罗斯", "基辅", "诺夫哥罗德", "莫斯科", "俄罗斯", "伏尔加", "乌拉尔", "西伯利亚", "苏联"]]
-        ]
-      },
-      {
-        id: "north-america",
-        title: "北美",
-        terms: ["北美", "美洲", "加拿大", "美国", "墨西哥", "中美洲", "加勒比", "玛雅", "阿兹特克", "密西西比", "卡霍基亚", "易洛魁", "特诺奇蒂特兰"],
-        children: [
-          ["北美东部/大平原", ["北美", "美国", "加拿大", "密西西比", "卡霍基亚", "易洛魁", "大平原"]],
-          ["墨西哥/中美洲", ["墨西哥", "中美洲", "玛雅", "阿兹特克", "特诺奇蒂特兰"]],
-          ["加勒比", ["加勒比", "海地", "泰诺"]]
-        ]
-      },
-      {
-        id: "south-america",
-        title: "南美",
-        terms: ["南美", "安第斯", "亚马孙", "秘鲁", "巴西", "阿根廷", "智利", "哥伦比亚", "印加", "库斯科", "波托西"],
-        children: [
-          ["安第斯", ["安第斯", "秘鲁", "印加", "库斯科", "波托西", "玻利维亚"]],
-          ["巴西/亚马孙", ["巴西", "亚马孙"]],
-          ["南锥体", ["阿根廷", "智利", "乌拉圭", "巴拉圭", "南锥体"]]
-        ]
-      },
-      {
-        id: "africa",
-        title: "非洲",
-        terms: ["非洲", "埃及", "尼罗河", "北非", "努比亚", "库施"],
-        children: [
-          ["尼罗河流域", ["尼罗河", "埃及", "上埃及", "下埃及"]],
-          ["北非", ["北非", "利比亚"]],
-          ["努比亚/库施", ["努比亚", "库施"]]
-        ]
-      },
-      {
-        id: "crossroads",
-        title: "亚非欧交界地",
-        terms: ["亚非欧交界地", "东地中海", "地中海", "爱琴", "黎凡特", "埃及", "安纳托利亚", "两河流域"],
-        children: [
-          ["东地中海", ["东地中海", "地中海", "爱琴"]],
-          ["埃及-黎凡特", ["埃及", "黎凡特", "叙利亚", "巴勒斯坦"]],
-          ["安纳托利亚-两河", ["安纳托利亚", "赫梯", "两河流域", "亚述", "巴比伦"]]
-        ]
-      }
-    ];
+    const catalog = data.geoCatalog || window.HISTORY_GEO_CATALOG || [];
+    return catalog.map(group => ({
+      ...group,
+      children: group.children.filter(([, terms]) => events.some(event => (
+        (event.geoRegion || []).some(region => terms.includes(region))
+      )))
+    })).filter(group => group.children.length);
   }
 
   function registerRegionFilter(value, label){
@@ -182,12 +108,12 @@
   function eventMatchesRegionFilter(event, value){
     if (!value) return true;
     const terms = regionFilterTerms(value);
-    const geoRegions = event.geoRegion?.length ? event.geoRegion : event.regions;
-    return geoRegions.some(region => terms.some(term => region.includes(term) || term.includes(region)));
+    const geoRegions = event.geoRegion?.length ? event.geoRegion : [];
+    return geoRegions.some(region => terms.some(term => region === term || region.startsWith(`${term} /`)));
   }
 
   function countEventsForRegionFilter(value){
-    return data.events.filter(event => eventMatchesRegionFilter(event, value)).length;
+    return events.filter(event => eventMatchesRegionFilter(event, value)).length;
   }
 
   function topicCatalog(){
@@ -294,15 +220,28 @@
   }
 
   function countEventsForTopicFilter(value){
-    return data.events.filter(event => eventMatchesTopicFilter(event, value)).length;
+    return events.filter(event => eventMatchesTopicFilter(event, value)).length;
   }
 
   function unique(items){
     return [...new Set(items.filter(Boolean))];
   }
 
+  function eventSearchText(event){
+    const people = (event.people || []).flatMap(person => [person.name, person.role, person.bio, ...(person.events || [])]);
+    const process = (event.process || []).flatMap(step => [step.title, step.description, step.action, step.impact, ...(step.participants || [])]);
+    const sources = (event.sources || []).flatMap(source => [source.title, source.author, source.note]);
+    const citations = (event.citations || []).flatMap(citation => [citation.reference, citation.plainText, citation.note]);
+    const causal = (event.causalChain || []).flatMap(item => typeof item === "string" ? [item] : [item.title, item.description, item.from, item.to]);
+    return [
+      event.title, event.summary, event.period, event.era, event.geoRegion, event.regions,
+      event.polityContext, event.topics, event.background, event.results, event.debates,
+      people, process, sources, citations, causal
+    ].flat(Infinity).filter(value => value !== undefined && value !== null).join(" ").toLowerCase();
+  }
+
   function countEventsForFilter(type, value){
-    return data.events.filter(event => {
+    return events.filter(event => {
       if (type === "period") return event.period === value;
       if (type === "region") return eventMatchesRegionFilter(event, value);
       if (type === "topic") return eventMatchesTopicFilter(event, value);
@@ -312,7 +251,7 @@
 
   function filterGroups(){
     return [
-      {type: "period", title: "朝代/文明", allLabel: "全部朝代/文明", values: unique(data.events.map(event => event.period))},
+      {type: "period", title: "朝代/文明", allLabel: "全部朝代/文明", values: unique(events.map(event => event.period))},
       {type: "region-tree", title: "地区目录", allLabel: "全部地区", values: []},
       {type: "topic-tree", title: "主线主题", allLabel: "全部主题", values: []}
     ];
@@ -329,17 +268,17 @@
       const options = document.createElement("div");
       options.className = "filter-options";
       if (group.type === "region-tree") {
-        options.append(filterOptionButton("region", "", group.allLabel, data.events.length));
+        options.append(filterOptionButton("region", "", group.allLabel, events.length));
         section.append(options, renderRegionTree());
         panel.append(section);
         return;
       } else if (group.type === "topic-tree") {
-        options.append(filterOptionButton("topic", "", group.allLabel, data.events.length));
+        options.append(filterOptionButton("topic", "", group.allLabel, events.length));
         section.append(options, renderTopicTree());
         panel.append(section);
         return;
       } else {
-        options.append(filterOptionButton(group.type, "", group.allLabel, data.events.length));
+        options.append(filterOptionButton(group.type, "", group.allLabel, events.length));
         group.values.forEach(value => {
           options.append(filterOptionButton(group.type, value, value, countEventsForFilter(group.type, value)));
         });
@@ -464,7 +403,7 @@
 
   function afterFilterChange(){
     const events = filteredEvents();
-    if (events.length && !events.some(event => event.id === selectedId)) selectedId = events[0].id;
+    selectedId = events[0]?.id || null;
     renderActiveFilters();
     updateFilterPanelState();
     renderAll();
@@ -475,15 +414,7 @@
     const {period, region, topic} = activeFilters;
 
     return data.events.filter(event => {
-      const haystack = [
-        event.title,
-        event.summary,
-        event.period,
-        ...(event.geoRegion || event.regions),
-        ...(event.polityContext || []),
-        ...event.topics,
-        ...event.people.map(person => person.name)
-      ].join(" ").toLowerCase();
+      const haystack = eventSearchText(event);
       return (!query || haystack.includes(query))
         && (!period || event.period === period)
         && (!region || eventMatchesRegionFilter(event, region))
@@ -519,7 +450,7 @@
       button.append(
         textNode("span", "tl-year", event.time),
         textNode("span", "tl-title", event.title),
-        textNode("span", "tl-tag", event.topics.join(" · "))
+        textNode("span", "tl-tag", (event.topics || []).join(" · "))
       );
       button.addEventListener("click", () => {
         selectEvent(event.id);
@@ -542,7 +473,7 @@
         emperor.plainText,
         ...(emperor.names || []),
         ...(emperor.keyEvents || []),
-        ...linkedEvents.flatMap(event => [event.title, event.summary, event.period, ...event.regions, ...event.topics])
+        ...linkedEvents.flatMap(event => [event.title, event.summary, event.period, ...(event.regions || []), ...(event.topics || [])])
       ].join(" ").toLowerCase();
 
       return (!query || haystack.includes(query))
@@ -570,6 +501,20 @@
       const active = linkedEvents.some(event => event.id === selectedId);
       const card = document.createElement("article");
       card.className = "tl-emperor" + (active ? " selected" : "");
+      card.tabIndex = linkedEvents.length ? 0 : -1;
+      card.setAttribute("role", linkedEvents.length ? "button" : "article");
+      if (linkedEvents.length) {
+        const jumpToFirstEvent = () => selectEvent(linkedEvents[0].id);
+        card.addEventListener("click", event => {
+          if (!event.target.closest("button")) jumpToFirstEvent();
+        });
+        card.addEventListener("keydown", event => {
+          if ((event.key === "Enter" || event.key === " ") && !event.target.closest("button")) {
+            event.preventDefault();
+            jumpToFirstEvent();
+          }
+        });
+      }
 
       const head = document.createElement("div");
       head.className = "tl-emperor-head";
@@ -600,7 +545,23 @@
 
   function renderEvent(){
     const event = currentEvent();
-    const eventEmperors = emperors.filter(emperor => emperor.relatedEventIds.includes(event.id));
+    if (!event) {
+      $("#eventTitle").textContent = "当前筛选没有匹配事件";
+      clear($("#eventMeta"));
+      ["#peopleChips", "#backgroundContent", "#territoryPopulationContent", "#politicalMapContent", "#processContent", "#resultContent", "#debatesContent", "#claimsContent", "#notesList"].forEach(selector => {
+        const element = $(selector);
+        if (element) clear(element);
+      });
+      $("#bookmarkBtn").disabled = true;
+      $("#focusReviewBtn").disabled = true;
+      ["#tab-people", "#tab-causal", "#tab-sources", "#tab-citations", "#tab-review"].forEach(selector => clear($(selector)));
+      $("#notesTitle").textContent = "当前筛选没有匹配事件";
+      $("#notesCount").textContent = "";
+      return;
+    }
+    $("#bookmarkBtn").disabled = false;
+    $("#focusReviewBtn").disabled = false;
+    const eventEmperors = emperors.filter(emperor => (emperor.relatedEventIds || []).includes(event.id));
     $("#eventTitle").textContent = event.title;
     $("#bookmarkBtn").classList.toggle("bookmarked", bookmarked.has(event.id));
     $("#bookmarkBtn").innerHTML = bookmarked.has(event.id) ? "&#9733; 已收藏" : "&#9734; 收藏";
@@ -610,9 +571,10 @@
     [
       ["时间", event.time, "amber"],
       ["朝代", event.period, "accent"],
-      ["地理", (event.geoRegion || event.regions).join(" / "), ""],
+      ["\u5730\u7406\u8303\u56f4", (event.geoRegion || []).join(" / ") || "\u5f85\u5f52\u7c7b", ""],
+      ["\u5177\u4f53\u5730\u70b9", (event.regions || []).join(" / ") || "\u672a\u6ce8\u660e", ""],
       ["政权语境", (event.polityContext || [event.period]).join(" / "), ""],
-      ["类型", event.topics.join(" · "), ""]
+      ["类型", (event.topics || []).join(" · "), ""]
     ].forEach(([label, value, tone]) => {
       const item = textNode("span", "meta-item", "");
       item.append(textNode("span", "meta-label", label), textNode("span", "meta-value " + tone, value));
@@ -640,7 +602,7 @@
   function renderPeopleChips(event){
     const row = $("#peopleChips");
     clear(row);
-    event.people.forEach(person => {
+    (event.people || []).forEach(person => {
       const chip = document.createElement("div");
       chip.className = "person-chip";
       const dot = textNode("span", "person-dot", "");
@@ -887,7 +849,7 @@
   function renderProcess(event){
     const list = $("#processList");
     clear(list);
-    event.process.forEach(item => {
+    (event.process || []).forEach(item => {
       const row = document.createElement("div");
       row.className = "sub-event";
       const body = document.createElement("div");
@@ -900,7 +862,7 @@
   function renderDebates(event){
     const container = $("#debateContent");
     clear(container);
-    event.debates.forEach(debate => {
+    (event.debates || []).forEach(debate => {
       const p = document.createElement("p");
       const title = document.createElement("strong");
       title.textContent = debate.view + "：";
@@ -943,6 +905,10 @@
   }
 
   function renderSupplementary(event){
+    if (!event) {
+      document.querySelectorAll(".sup-section").forEach(section => clear(section));
+      return;
+    }
     renderPeopleTab(event);
     renderCausalTab(event);
     renderSourcesTab(event);
@@ -956,7 +922,7 @@
   function renderPeopleTab(event){
     const section = $("#tab-people");
     clear(section);
-    event.people.forEach(person => {
+    (event.people || []).forEach(person => {
       const card = document.createElement("article");
       card.className = "person-card";
       const header = document.createElement("div");
@@ -964,12 +930,12 @@
       header.append(textNode("span", "person-avatar", person.name.slice(0,1)), textNode("span", "person-name-lg", person.name), textNode("span", "person-years", person.years || ""));
       const tags = document.createElement("div");
       tags.className = "tag-row";
-      person.events.forEach(item => tags.append(textNode("span", "small-tag", item)));
+      (person.events || []).forEach(item => tags.append(textNode("span", "small-tag", item)));
       card.append(header, textNode("div", "person-bio", person.bio), tags);
       section.append(card);
     });
 
-    event.relations.forEach(rel => {
+    (event.relations || []).forEach(rel => {
       const row = document.createElement("div");
       row.className = "relationship-row";
       row.append(textNode("span", "rel-from", rel.from), textNode("span", "rel-type", rel.type), textNode("span", "rel-to", rel.to));
@@ -980,7 +946,7 @@
   function renderCausalTab(event){
     const section = $("#tab-causal");
     clear(section);
-    event.causalChain.forEach(node => {
+    (event.causalChain || []).forEach(node => {
       const row = document.createElement("div");
       row.className = "causal-node " + node.kind;
       row.append(textNode("div", "causal-label", node.label), textNode("div", "causal-title", node.title), textNode("div", "causal-desc", node.description));
@@ -991,7 +957,7 @@
   function renderSourcesTab(event){
     const section = $("#tab-sources");
     clear(section);
-    event.sources.forEach(source => {
+    (event.sources || []).forEach(source => {
       const card = document.createElement("article");
       card.className = "source-card";
       const title = source.url ? document.createElement("a") : document.createElement("div");
@@ -1046,84 +1012,6 @@
     });
   }
 
-  function renderEmperorsTab(event){
-    const section = $("#tab-emperors");
-    clear(section);
-    if (!emperors.length) {
-      section.append(textNode("div", "empty-state", "还没有帝王谱系数据。"));
-      return;
-    }
-
-    let group = "";
-    emperors.forEach(emperor => {
-      if (emperor.phase !== group) {
-        section.append(textNode("h3", "emperor-group-title", emperor.phase));
-        group = emperor.phase;
-      }
-
-      const card = document.createElement("article");
-      const related = (event.people || []).some(person => emperor.names.includes(person.name))
-        || emperor.relatedEventIds.includes(event.id);
-      card.className = "emperor-card" + (related ? " active" : "");
-
-      const head = document.createElement("div");
-      head.className = "emperor-head";
-      head.append(
-        textNode("span", "emperor-name", emperor.title + " " + emperor.name),
-        textNode("span", "emperor-years", emperor.reign)
-      );
-
-      const events = document.createElement("div");
-      events.className = "emperor-events";
-      const structuredEvents = emperor.relatedEventIds
-        .map(id => data.events.find(item => item.id === id))
-        .filter(Boolean);
-      const structuredEventIds = new Set(structuredEvents.map(item => item.id));
-      structuredEvents.forEach(item => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "emperor-event-link" + (item.id === event.id ? " selected" : "");
-        button.textContent = item.time + " · " + item.title;
-        button.addEventListener("click", () => selectEvent(item.id));
-        events.append(button);
-      });
-      emperor.keyEvents
-        .forEach(item => {
-          const linkedEvent = findEventByLabel(item);
-          if (linkedEvent && !structuredEventIds.has(linkedEvent.id)) {
-            structuredEventIds.add(linkedEvent.id);
-            const button = document.createElement("button");
-            button.type = "button";
-            button.className = "emperor-event-link" + (linkedEvent.id === event.id ? " selected" : "");
-            button.textContent = linkedEvent.time + " · " + item;
-            button.addEventListener("click", () => selectEvent(linkedEvent.id));
-            events.append(button);
-            return;
-          }
-          if (!linkedEvent) events.append(textNode("span", "small-tag", item));
-        });
-
-      const source = emperor.sourceUrl ? document.createElement("a") : document.createElement("div");
-      source.className = "emperor-source";
-      source.textContent = emperor.source;
-      if (emperor.sourceUrl) {
-        source.href = emperor.sourceUrl;
-        source.target = "_blank";
-        source.rel = "noreferrer";
-      }
-
-      card.append(
-        head,
-        textNode("div", "emperor-position", emperor.position),
-        textNode("div", "emperor-event-label", structuredEvents.length ? "已关联时间线事件" : "待升级为事件页的大事"),
-        events,
-        textNode("div", "citation-plain", emperor.plainText),
-        source
-      );
-      section.append(card);
-    });
-  }
-
   function sourceLink(source){
     const link = document.createElement("a");
     link.className = "citation-source";
@@ -1137,7 +1025,7 @@
   function renderReviewTab(event){
     const section = $("#tab-review");
     clear(section);
-    event.reviewQuestions.forEach(item => {
+    (event.reviewQuestions || []).forEach(item => {
       const card = document.createElement("button");
       card.type = "button";
       card.className = "review-card";
@@ -1172,6 +1060,7 @@
       String(now.getMinutes()).padStart(2, "0");
     eventNotes.push({time, text});
     notes.set(event.id, eventNotes);
+    storage.write("history-study-notes", Object.fromEntries(notes));
     renderNotes(event);
   }
 
@@ -1207,6 +1096,7 @@
         $("#filterPanel").hidden = true;
         $("#filterToggle").setAttribute("aria-expanded", "false");
       }
+      if (event.key === "Escape" && $("#notesOverlay").classList.contains("open")) closeNotes();
     });
 
     document.addEventListener("click", event => {
@@ -1216,28 +1106,36 @@
       $("#filterToggle").setAttribute("aria-expanded", "false");
     });
 
-    document.querySelectorAll(".sup-tab").forEach(tab => {
-      tab.addEventListener("click", () => {
-        activeTab = tab.dataset.tab;
-        document.querySelectorAll(".sup-tab").forEach(item => item.classList.remove("active"));
-        tab.classList.add("active");
-        renderSupplementary(currentEvent());
+      document.querySelectorAll(".sup-tab").forEach(tab => {
+        tab.addEventListener("click", () => {
+          activeTab = tab.dataset.tab;
+          document.querySelectorAll(".sup-tab").forEach(item => {
+            item.classList.toggle("active", item === tab);
+            item.setAttribute("aria-selected", String(item === tab));
+          });
+          tab.classList.add("active");
+          renderSupplementary(currentEvent());
       });
     });
 
     document.querySelectorAll(".timeline-tab").forEach(tab => {
       tab.addEventListener("click", () => {
         timelineMode = tab.dataset.mode;
-        document.querySelectorAll(".timeline-tab").forEach(item => item.classList.remove("active"));
+        document.querySelectorAll(".timeline-tab").forEach(item => {
+          item.classList.toggle("active", item === tab);
+          item.setAttribute("aria-selected", String(item === tab));
+        });
         tab.classList.add("active");
         renderTimeline();
       });
     });
 
     $("#notesToggle").addEventListener("click", () => {
-      $("#notesToggle").classList.toggle("active");
-      $("#notesOverlay").classList.toggle("open");
+      if ($("#notesOverlay").classList.contains("open")) closeNotes();
+      else openNotes();
     });
+
+    $("#notesOverlayClose").addEventListener("click", closeNotes);
 
     $("#noteInput").addEventListener("keydown", event => {
       if (event.key === "Enter" && event.target.value.trim()) {
@@ -1249,14 +1147,33 @@
     $("#bookmarkBtn").addEventListener("click", () => {
       const id = currentEvent().id;
       bookmarked.has(id) ? bookmarked.delete(id) : bookmarked.add(id);
+      storage.write("history-study-bookmarks", [...bookmarked]);
       renderEvent();
     });
 
     $("#focusReviewBtn").addEventListener("click", () => {
       activeTab = "review";
-      document.querySelectorAll(".sup-tab").forEach(tab => tab.classList.toggle("active", tab.dataset.tab === "review"));
+      document.querySelectorAll(".sup-tab").forEach(tab => {
+        const active = tab.dataset.tab === "review";
+        tab.classList.toggle("active", active);
+        tab.setAttribute("aria-selected", String(active));
+      });
       renderSupplementary(currentEvent());
     });
+  }
+
+  function openNotes(){
+    $("#notesToggle").classList.add("active");
+    $("#notesOverlay").hidden = false;
+    $("#notesOverlay").classList.add("open");
+    $("#notesOverlayClose").focus();
+  }
+
+  function closeNotes(){
+    $("#notesToggle").classList.remove("active");
+    $("#notesOverlay").classList.remove("open");
+    $("#notesOverlay").hidden = true;
+    $("#notesToggle").focus();
   }
 
   function renderAll(){

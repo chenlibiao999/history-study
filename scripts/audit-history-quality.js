@@ -43,6 +43,8 @@ const sharedEventIds = [];
 const shortProcessEvents = [];
 const genericProcessEvents = [];
 const badGeoRegions = [];
+const structuredProcessNodes = [];
+const structuredProcessGaps = [];
 
 function labelForEvent(event) {
   return `${event.dynastyId || "unknown"}/${event.id || event.title || "untitled"}`;
@@ -162,6 +164,15 @@ for (const event of data.events || []) {
     if (!item.time || !item.title || !item.description) {
       errors.push(`${label}: process[${index}] is missing time/title/description`);
     }
+    const hasStructuredFields = ["participants", "action", "impact"].some((field) => field in item);
+    if (hasStructuredFields) {
+      structuredProcessNodes.push(`${label}[${index}]`);
+      for (const field of ["participants", "action", "impact"]) {
+        if ((field === "participants" && (!Array.isArray(item[field]) || !item[field].length)) || (field !== "participants" && typeof item[field] !== "string")) {
+          structuredProcessGaps.push(`${label}[${index}].${field}`);
+        }
+      }
+    }
     if (String(item.description || "").includes(genericProcessSuffix)) genericCount += 1;
   }
   if (genericCount >= 2) {
@@ -211,6 +222,8 @@ const byModule = Object.entries(data.dynastyEvents || {})
 
 console.log(`qualityErrors=${errors.length}`);
 console.log(`qualityWarnings=${warnings.length}`);
+console.log(`processStructuredNodes=${structuredProcessNodes.length}`);
+console.log(`processStructuredGaps=${structuredProcessGaps.length}`);
 console.log("topModulesByEventCount=");
 for (const row of byModule.slice(0, 12)) {
   console.log(`- ${row.dynastyId}: events=${row.events}, processLt3=${row.processLt3}, eventsWithoutMap=${row.eventsWithoutMap}`);

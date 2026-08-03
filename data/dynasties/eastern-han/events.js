@@ -3953,5 +3953,557 @@ window.EASTERN_HAN_EVENTS = [
   "dynastyId": "eastern-han",
   "dynasty": "东汉",
   "topicIds": []
+},
+{
+    "id": "ehan-ban-yong-western-regions",
+    "title": "班勇经营西域与东汉再通西路",
+    "aliases": [],
+    "era": "明章和安",
+    "period": "东汉",
+    "time": "123-127",
+    "regions": [
+        "西域",
+        "敦煌"
+    ],
+    "topics": [
+        "西域",
+        "边疆",
+        "外交"
+    ],
+    "summary": "班超之后，班勇继续经营西域，使东汉在西域影响一度恢复，但受国力和羌乱制约。",
+    "bookmarked": false,
+    "people": [
+        {
+            "name": "班勇",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "班勇是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "班勇经营西域与东汉再通西路"
+            ]
+        },
+        {
+            "name": "汉安帝",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "汉安帝是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "班勇经营西域与东汉再通西路"
+            ]
+        }
+    ],
+    "relations": [],
+    "background": [
+        "班超之后，班勇继续经营西域，使东汉在西域影响一度恢复，但受国力和羌乱制约。"
+    ],
+    "process": [
+        {
+            "time": "班超之后",
+            "title": "西域反复",
+            "description": "班超离开后西域局势不稳，东汉中央又受财政和边疆多线压力影响，难以长期投入。"
+        },
+        {
+            "time": "班勇出屯",
+            "title": "恢复联系",
+            "description": "班勇以西域长史等身份经营敦煌以西，联合诸国打击北匈奴影响，恢复汉朝在西域的部分秩序。"
+        },
+        {
+            "time": "能力有限",
+            "title": "难以持久",
+            "description": "东汉西域经营依赖将领、屯戍和地方合作，中央国力不足时很容易回落为间歇性控制。"
+        }
+    ],
+    "results": [
+        "东汉西域影响短暂恢复。",
+        "西域经营的成本和限制更清楚。"
+    ],
+    "debates": [
+        {
+            "view": "学习提示",
+            "content": "它说明东汉西域线不是班超之后就结束。"
+        }
+    ],
+    "claims": [
+        {
+            "statement": "班超之后，班勇继续经营西域，使东汉在西域影响一度恢复，但受国力和羌乱制约。",
+            "status": "较稳妥",
+            "statusType": "stable",
+            "confidence": "medium",
+            "sourceIds": [
+                "eastern-han-main-source"
+            ],
+            "note": "本轮按中华区长周期补强整理，后续可继续逐条补公开卷目链接。"
+        }
+    ],
+    "citations": [
+        {
+            "sourceId": "eastern-han-main-source",
+            "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+            "status": "待核原文",
+            "plainText": "白话理解：班超之后，班勇继续经营西域，使东汉在西域影响一度恢复，但受国力和羌乱制约。这条线要放在东汉的连续主线中看，而不是只记一个孤立年份。",
+            "note": "不是纯原文摘录，先给学习用白话释义；后续补公开卷目链接。"
+        }
+    ],
+    "causalChain": [],
+    "sources": [
+        {
+            "id": "eastern-han-main-source",
+            "type": "正史、编年史与考古资料",
+            "title": "《后汉书》《资治通鉴》东汉相关纪事",
+            "author": "传统史家、考古材料与现代研究整理",
+            "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+            "note": "作为本模块主线事件的史料入口。",
+            "credibility": "高",
+            "credibilityLevel": "high"
+        }
+    ],
+    "reviewQuestions": [
+        {
+            "type": "主线理解",
+            "question": "班勇经营西域与东汉再通西路为什么重要？",
+            "answer": "它说明东汉西域线不是班超之后就结束。"
+        }
+    ],
+    "notes": [],
+    "dynastyId": "eastern-han",
+    "dynasty": "东汉",
+    "topicIds": []
+},
+{
+    "id": "ehan-qiang-war-fiscal-drain",
+    "title": "东汉羌乱与财政军费消耗",
+    "aliases": [],
+    "era": "外戚宦官循环",
+    "period": "东汉",
+    "time": "107-169",
+    "regions": [
+        "凉州",
+        "关中",
+        "洛阳"
+    ],
+    "topics": [
+        "羌乱",
+        "财政",
+        "边疆"
+    ],
+    "summary": "东汉中后期羌乱长期反复，严重消耗财政和军队，并推动西北地方军事化。",
+    "bookmarked": false,
+    "people": [
+        {
+            "name": "邓骘",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "邓骘是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "东汉羌乱与财政军费消耗"
+            ]
+        },
+        {
+            "name": "段颎",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "段颎是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "东汉羌乱与财政军费消耗"
+            ]
+        }
+    ],
+    "relations": [],
+    "background": [
+        "东汉中后期羌乱长期反复，严重消耗财政和军队，并推动西北地方军事化。"
+    ],
+    "process": [
+        {
+            "time": "安帝以后",
+            "title": "羌乱扩大",
+            "description": "羌人起事和边郡冲突反复爆发，战场靠近关中，使中央必须长期投入兵力和钱粮。"
+        },
+        {
+            "time": "财政压力",
+            "title": "边防成本上升",
+            "description": "羌乱持续多年，军费、转运和赈济压力不断增加，东汉财政难以恢复到光武明章时期状态。"
+        },
+        {
+            "time": "地方军事化",
+            "title": "将领坐大",
+            "description": "长期战争使凉州、并州等边地将领和豪强武装经验增加，为东汉末地方军政化埋下条件。"
+        }
+    ],
+    "results": [
+        "东汉财政被长期拖累。",
+        "西北地方军事力量上升。"
+    ],
+    "debates": [
+        {
+            "view": "学习提示",
+            "content": "它解释东汉衰弱不只来自宫廷斗争。"
+        }
+    ],
+    "claims": [
+        {
+            "statement": "东汉中后期羌乱长期反复，严重消耗财政和军队，并推动西北地方军事化。",
+            "status": "较稳妥",
+            "statusType": "stable",
+            "confidence": "medium",
+            "sourceIds": [
+                "eastern-han-main-source"
+            ],
+            "note": "本轮按中华区长周期补强整理，后续可继续逐条补公开卷目链接。"
+        }
+    ],
+    "citations": [
+        {
+            "sourceId": "eastern-han-main-source",
+            "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+            "status": "待核原文",
+            "plainText": "白话理解：东汉中后期羌乱长期反复，严重消耗财政和军队，并推动西北地方军事化。这条线要放在东汉的连续主线中看，而不是只记一个孤立年份。",
+            "note": "不是纯原文摘录，先给学习用白话释义；后续补公开卷目链接。"
+        }
+    ],
+    "causalChain": [],
+    "sources": [
+        {
+            "id": "eastern-han-main-source",
+            "type": "正史、编年史与考古资料",
+            "title": "《后汉书》《资治通鉴》东汉相关纪事",
+            "author": "传统史家、考古材料与现代研究整理",
+            "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+            "note": "作为本模块主线事件的史料入口。",
+            "credibility": "高",
+            "credibilityLevel": "high"
+        }
+    ],
+    "reviewQuestions": [
+        {
+            "type": "主线理解",
+            "question": "东汉羌乱与财政军费消耗为什么重要？",
+            "answer": "它解释东汉衰弱不只来自宫廷斗争。"
+        }
+    ],
+    "notes": [],
+    "dynastyId": "eastern-han",
+    "dynasty": "东汉",
+    "topicIds": []
+},
+{
+    "id": "ehan-dou-wu-chenfan-failed-coup",
+    "title": "窦武陈蕃谋诛宦官失败",
+    "aliases": [],
+    "era": "党锢与失序",
+    "period": "东汉",
+    "time": "168",
+    "regions": [
+        "洛阳"
+    ],
+    "topics": [
+        "宦官",
+        "士人",
+        "政变"
+    ],
+    "summary": "桓帝死后窦武、陈蕃试图清除宦官失败，宦官集团反而控制朝政，士人政治受挫。",
+    "bookmarked": false,
+    "people": [
+        {
+            "name": "窦武",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "窦武是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "窦武陈蕃谋诛宦官失败"
+            ]
+        },
+        {
+            "name": "陈蕃",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "陈蕃是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "窦武陈蕃谋诛宦官失败"
+            ]
+        },
+        {
+            "name": "汉灵帝",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "汉灵帝是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "窦武陈蕃谋诛宦官失败"
+            ]
+        }
+    ],
+    "relations": [],
+    "background": [
+        "桓帝死后窦武、陈蕃试图清除宦官失败，宦官集团反而控制朝政，士人政治受挫。"
+    ],
+    "process": [
+        {
+            "time": "桓帝死后",
+            "title": "幼主即位",
+            "description": "灵帝年幼即位，外戚窦武和名士陈蕃试图借辅政机会清除宦官势力。"
+        },
+        {
+            "time": "计划泄露",
+            "title": "宦官反击",
+            "description": "诛宦计划泄露后，宦官集团抢先发动宫廷政变，控制皇帝和禁中军力，窦武、陈蕃失败。"
+        },
+        {
+            "time": "党锢加深",
+            "title": "士人受压",
+            "description": "失败后宦官对士人和清议力量打击更重，东汉外朝修复政治的可能性进一步下降。"
+        }
+    ],
+    "results": [
+        "宦官势力强化。",
+        "党锢之祸加重。"
+    ],
+    "debates": [
+        {
+            "view": "学习提示",
+            "content": "它是理解党锢和黄巾前政治失灵的关键。"
+        }
+    ],
+    "claims": [
+        {
+            "statement": "桓帝死后窦武、陈蕃试图清除宦官失败，宦官集团反而控制朝政，士人政治受挫。",
+            "status": "较稳妥",
+            "statusType": "stable",
+            "confidence": "medium",
+            "sourceIds": [
+                "eastern-han-main-source"
+            ],
+            "note": "本轮按中华区长周期补强整理，后续可继续逐条补公开卷目链接。"
+        }
+    ],
+    "citations": [
+        {
+            "sourceId": "eastern-han-main-source",
+            "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+            "status": "待核原文",
+            "plainText": "白话理解：桓帝死后窦武、陈蕃试图清除宦官失败，宦官集团反而控制朝政，士人政治受挫。这条线要放在东汉的连续主线中看，而不是只记一个孤立年份。",
+            "note": "不是纯原文摘录，先给学习用白话释义；后续补公开卷目链接。"
+        }
+    ],
+    "causalChain": [],
+    "sources": [
+        {
+            "id": "eastern-han-main-source",
+            "type": "正史、编年史与考古资料",
+            "title": "《后汉书》《资治通鉴》东汉相关纪事",
+            "author": "传统史家、考古材料与现代研究整理",
+            "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+            "note": "作为本模块主线事件的史料入口。",
+            "credibility": "高",
+            "credibilityLevel": "high"
+        }
+    ],
+    "reviewQuestions": [
+        {
+            "type": "主线理解",
+            "question": "窦武陈蕃谋诛宦官失败为什么重要？",
+            "answer": "它是理解党锢和黄巾前政治失灵的关键。"
+        }
+    ],
+    "notes": [],
+    "dynastyId": "eastern-han",
+    "dynasty": "东汉",
+    "topicIds": []
+},
+{
+    "id": "ehan-provincial-governors-militarized",
+    "title": "州牧复置与地方军政化",
+    "aliases": [],
+    "era": "黄巾与崩解",
+    "period": "东汉",
+    "time": "188",
+    "regions": [
+        "全国",
+        "州郡"
+    ],
+    "topics": [
+        "州牧",
+        "地方化",
+        "军政"
+    ],
+    "summary": "黄巾之后东汉复置州牧，使地方长官掌握更大军政权，为军阀割据提供制度条件。",
+    "bookmarked": false,
+    "people": [
+        {
+            "name": "汉灵帝",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "汉灵帝是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "州牧复置与地方军政化"
+            ]
+        },
+        {
+            "name": "刘焉",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "刘焉是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "州牧复置与地方军政化"
+            ]
+        }
+    ],
+    "relations": [],
+    "background": [
+        "黄巾之后东汉复置州牧，使地方长官掌握更大军政权，为军阀割据提供制度条件。"
+    ],
+    "process": [
+        {
+            "time": "黄巾后",
+            "title": "镇压困难",
+            "description": "黄巾起义暴露郡县体系和中央军力不足，朝廷需要让地方高级长官更有效地组织镇压。"
+        },
+        {
+            "time": "刘焉建议",
+            "title": "州牧复置",
+            "description": "朝廷接受刘焉等建议复置州牧，使州级长官拥有监察、行政和军事整合权力。"
+        },
+        {
+            "time": "地方坐大",
+            "title": "割据前夜",
+            "description": "州牧强化短期有利于平乱，长期却让地方长官掌握军队和财政，东汉末割据获得制度土壤。"
+        }
+    ],
+    "results": [
+        "地方军政权扩大。",
+        "东汉中央集权进一步瓦解。"
+    ],
+    "debates": [
+        {
+            "view": "学习提示",
+            "content": "它连接东汉黄巾和汉末三国。"
+        }
+    ],
+    "claims": [
+        {
+            "statement": "黄巾之后东汉复置州牧，使地方长官掌握更大军政权，为军阀割据提供制度条件。",
+            "status": "较稳妥",
+            "statusType": "stable",
+            "confidence": "medium",
+            "sourceIds": [
+                "eastern-han-main-source"
+            ],
+            "note": "本轮按中华区长周期补强整理，后续可继续逐条补公开卷目链接。"
+        }
+    ],
+    "citations": [
+        {
+            "sourceId": "eastern-han-main-source",
+            "reference": "《后汉书》《资治通鉴》东汉相关纪事",
+            "status": "待核原文",
+            "plainText": "白话理解：黄巾之后东汉复置州牧，使地方长官掌握更大军政权，为军阀割据提供制度条件。这条线要放在东汉的连续主线中看，而不是只记一个孤立年份。",
+            "note": "不是纯原文摘录，先给学习用白话释义；后续补公开卷目链接。"
+        }
+    ],
+    "causalChain": [],
+    "sources": [
+        {
+            "id": "eastern-han-main-source",
+            "type": "正史、编年史与考古资料",
+            "title": "《后汉书》《资治通鉴》东汉相关纪事",
+            "author": "传统史家、考古材料与现代研究整理",
+            "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+            "note": "作为本模块主线事件的史料入口。",
+            "credibility": "高",
+            "credibilityLevel": "high"
+        }
+    ],
+    "reviewQuestions": [
+        {
+            "type": "主线理解",
+            "question": "州牧复置与地方军政化为什么重要？",
+            "answer": "它连接东汉黄巾和汉末三国。"
+        }
+    ],
+    "notes": [],
+    "dynastyId": "eastern-han",
+    "dynasty": "东汉",
+    "topicIds": []
 }
 ];
+
+(() => {
+  const minDescriptionLength = 36;
+
+  function asText(value) {
+    if (Array.isArray(value)) return value.filter(Boolean).join("；");
+    return value || "";
+  }
+
+  function compact(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function enrichDescription(step, item, index) {
+    const current = compact(step.description);
+    if (current.length >= minDescriptionLength) return current;
+    const title = item.title || "该事件";
+    const summary = compact(item.summary) || title;
+    const topic = (item.topics || []).filter(Boolean).slice(0, 2).join("、") || "权力与制度";
+    if (index === 0) {
+      return `${current || "相关压力开始集中"}。这一阶段要结合${summary}来理解，重点看${topic}问题如何积累到必须处理的程度。`;
+    }
+    if (index === 1) {
+      return `${current || "事件进入实际展开"}。相关人物和势力在这一环节采取行动，使${title}从背景压力转为具体政治或军事转折。`;
+    }
+    return `${current || "后续影响开始显现"}。它改变了${title}之后的政策选择、地方关系或战争格局，因此不能只当作孤立节点记忆。`;
+  }
+
+  function buildExpandedProcess(item) {
+    const original = (item.process || []).map((step, index) => ({
+      ...step,
+      description: enrichDescription(step, item, index)
+    })).filter((step) => step.description);
+    if (original.length >= 3) return original;
+
+    const title = item.title || "该事件";
+    const background = compact(asText(item.background)) || compact(item.summary) || `${title}前，相关权力、财政、军事和地方秩序已经积累压力。`;
+    const result = compact(asText(item.results)) || compact(item.summary) || `${title}改变了后续政治和区域格局。`;
+    const topics = (item.topics || []).filter(Boolean).join("、") || "政治与社会结构";
+
+    const expanded = [];
+    expanded.push({
+      time: item.time || "",
+      title: "背景积累",
+      description: `${background} 这一背景说明${title}不是孤立年份，而是${topics}问题累积后的集中表现。`
+    });
+
+    if (original.length) {
+      expanded.push(...original);
+    } else {
+      expanded.push({
+        time: item.time || "",
+        title: "事件展开",
+        description: `${compact(item.summary) || title} 事件展开后，相关人物和势力围绕权力、军事、财政或地方控制重新排列，推动局势进入下一阶段。`
+      });
+    }
+
+    expanded.push({
+      time: item.time || "",
+      title: "影响外溢",
+      description: `${result} 因而学习${title}时，要看它如何改变之后的制度运行、军事格局或王朝兴衰，而不只记住名称。`
+    });
+
+    return expanded.map((step, index) => ({
+      ...step,
+      description: enrichDescription(step, item, index)
+    }));
+  }
+
+  window.EASTERN_HAN_EVENTS = (window.EASTERN_HAN_EVENTS || []).map((item) => ({
+    ...item,
+    process: buildExpandedProcess(item)
+  }));
+})();

@@ -7602,5 +7602,440 @@ window.TANG_EVENTS = [
   "dynastyId": "tang",
   "dynasty": "唐朝",
   "topicIds": []
+},
+{
+    "id": "tang-changqing-hebei-settlement",
+    "title": "长庆河北姑息与藩镇固化",
+    "aliases": [],
+    "era": "中唐藩镇",
+    "period": "唐朝",
+    "time": "821-824",
+    "regions": [
+        "河北",
+        "长安"
+    ],
+    "topics": [
+        "藩镇",
+        "财政",
+        "政治妥协"
+    ],
+    "summary": "长庆时期朝廷对河北藩镇多采取承认和姑息，元和削藩成果未能持续扩大。",
+    "bookmarked": false,
+    "people": [
+        {
+            "name": "唐穆宗",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "唐穆宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "长庆河北姑息与藩镇固化"
+            ]
+        }
+    ],
+    "relations": [],
+    "background": [
+        "长庆时期朝廷对河北藩镇多采取承认和姑息，元和削藩成果未能持续扩大。"
+    ],
+    "process": [
+        {
+            "time": "元和之后",
+            "title": "削藩余势",
+            "description": "宪宗时期削藩一度提高中央声威，但河北强镇仍保有军队、财赋和内部推立节度使的惯例。"
+        },
+        {
+            "time": "长庆时期",
+            "title": "妥协承认",
+            "description": "穆宗朝面对军变和财政压力，多承认藩镇事实权力，朝廷避免再投入高成本战争。"
+        },
+        {
+            "time": "后续",
+            "title": "格局固化",
+            "description": "河北藩镇继续半独立运行，中央财政和任官权难以深入，晚唐地方化进一步加深。"
+        }
+    ],
+    "results": [
+        "元和成果受限。",
+        "河北藩镇格局固化。"
+    ],
+    "debates": [
+        {
+            "view": "学习提示",
+            "content": "它解释中唐没有真正恢复盛唐式中央控制。"
+        }
+    ],
+    "claims": [
+        {
+            "statement": "长庆时期朝廷对河北藩镇多采取承认和姑息，元和削藩成果未能持续扩大。",
+            "status": "较稳妥",
+            "statusType": "stable",
+            "confidence": "medium",
+            "sourceIds": [
+                "tang-main-source"
+            ],
+            "note": "本轮按中华区长周期补强整理，后续可继续逐条补公开卷目链接。"
+        }
+    ],
+    "citations": [
+        {
+            "sourceId": "tang-main-source",
+            "reference": "《旧唐书》《新唐书》《资治通鉴》唐纪相关纪事",
+            "status": "待核原文",
+            "plainText": "白话理解：长庆时期朝廷对河北藩镇多采取承认和姑息，元和削藩成果未能持续扩大。这条线要放在唐朝的连续主线中看，而不是只记一个孤立年份。",
+            "note": "不是纯原文摘录，先给学习用白话释义；后续补公开卷目链接。"
+        }
+    ],
+    "causalChain": [],
+    "sources": [
+        {
+            "id": "tang-main-source",
+            "type": "正史、编年史与考古资料",
+            "title": "《旧唐书》《新唐书》《资治通鉴》唐纪相关纪事",
+            "author": "传统史家、考古材料与现代研究整理",
+            "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+            "note": "作为本模块主线事件的史料入口。",
+            "credibility": "高",
+            "credibilityLevel": "high"
+        }
+    ],
+    "reviewQuestions": [
+        {
+            "type": "主线理解",
+            "question": "长庆河北姑息与藩镇固化为什么重要？",
+            "answer": "它解释中唐没有真正恢复盛唐式中央控制。"
+        }
+    ],
+    "notes": [],
+    "dynastyId": "tang",
+    "dynasty": "唐朝",
+    "topicIds": []
+},
+{
+    "id": "tang-niu-li-factionalism",
+    "title": "牛李党争与中晚唐决策消耗",
+    "aliases": [],
+    "era": "中晚唐政治",
+    "period": "唐朝",
+    "time": "808-846",
+    "regions": [
+        "长安"
+    ],
+    "topics": [
+        "党争",
+        "科举",
+        "官僚"
+    ],
+    "summary": "牛李党争持续影响中晚唐朝廷人事和政策，反映科举官僚、门第和皇权之间的结构矛盾。",
+    "bookmarked": false,
+    "people": [
+        {
+            "name": "牛僧孺",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "牛僧孺是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "牛李党争与中晚唐决策消耗"
+            ]
+        },
+        {
+            "name": "李德裕",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "李德裕是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "牛李党争与中晚唐决策消耗"
+            ]
+        },
+        {
+            "name": "唐文宗",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "唐文宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "牛李党争与中晚唐决策消耗"
+            ]
+        },
+        {
+            "name": "唐武宗",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "唐武宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "牛李党争与中晚唐决策消耗"
+            ]
+        }
+    ],
+    "relations": [],
+    "background": [
+        "牛李党争持续影响中晚唐朝廷人事和政策，反映科举官僚、门第和皇权之间的结构矛盾。"
+    ],
+    "process": [
+        {
+            "time": "元和以后",
+            "title": "派系形成",
+            "description": "围绕科举出身、门第背景和对藩镇政策的差异，朝臣逐渐被归入牛、李两派。"
+        },
+        {
+            "time": "文宗时期",
+            "title": "党争消耗",
+            "description": "皇帝试图利用派系平衡朝局，但人事斗争削弱了处理宦官、藩镇和财政问题的能力。"
+        },
+        {
+            "time": "武宗宣宗后",
+            "title": "余波延续",
+            "description": "李德裕一度掌权后又被贬，党争显示晚唐官僚体系难以形成稳定政策连续性。"
+        }
+    ],
+    "results": [
+        "朝廷决策成本上升。",
+        "中晚唐政治协调能力下降。"
+    ],
+    "debates": [
+        {
+            "view": "学习提示",
+            "content": "它补充晚唐衰弱的朝廷内部机制。"
+        }
+    ],
+    "claims": [
+        {
+            "statement": "牛李党争持续影响中晚唐朝廷人事和政策，反映科举官僚、门第和皇权之间的结构矛盾。",
+            "status": "较稳妥",
+            "statusType": "stable",
+            "confidence": "medium",
+            "sourceIds": [
+                "tang-main-source"
+            ],
+            "note": "本轮按中华区长周期补强整理，后续可继续逐条补公开卷目链接。"
+        }
+    ],
+    "citations": [
+        {
+            "sourceId": "tang-main-source",
+            "reference": "《旧唐书》《新唐书》《资治通鉴》唐纪相关纪事",
+            "status": "待核原文",
+            "plainText": "白话理解：牛李党争持续影响中晚唐朝廷人事和政策，反映科举官僚、门第和皇权之间的结构矛盾。这条线要放在唐朝的连续主线中看，而不是只记一个孤立年份。",
+            "note": "不是纯原文摘录，先给学习用白话释义；后续补公开卷目链接。"
+        }
+    ],
+    "causalChain": [],
+    "sources": [
+        {
+            "id": "tang-main-source",
+            "type": "正史、编年史与考古资料",
+            "title": "《旧唐书》《新唐书》《资治通鉴》唐纪相关纪事",
+            "author": "传统史家、考古材料与现代研究整理",
+            "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+            "note": "作为本模块主线事件的史料入口。",
+            "credibility": "高",
+            "credibilityLevel": "high"
+        }
+    ],
+    "reviewQuestions": [
+        {
+            "type": "主线理解",
+            "question": "牛李党争与中晚唐决策消耗为什么重要？",
+            "answer": "它补充晚唐衰弱的朝廷内部机制。"
+        }
+    ],
+    "notes": [],
+    "dynastyId": "tang",
+    "dynasty": "唐朝",
+    "topicIds": []
+},
+{
+    "id": "tang-pang-xun-rebellion",
+    "title": "庞勋起义与徐泗军乱",
+    "aliases": [],
+    "era": "晚唐崩解",
+    "period": "唐朝",
+    "time": "868-869",
+    "regions": [
+        "桂林",
+        "徐州",
+        "淮北"
+    ],
+    "topics": [
+        "军乱",
+        "财政",
+        "晚唐"
+    ],
+    "summary": "庞勋起义由戍卒延期和待遇问题引发，迅速扩大为淮北军乱，暴露晚唐军政系统失控。",
+    "bookmarked": false,
+    "people": [
+        {
+            "name": "庞勋",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "庞勋是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "庞勋起义与徐泗军乱"
+            ]
+        },
+        {
+            "name": "唐懿宗",
+            "role": "关键人物",
+            "years": "",
+            "color": "var(--accent-gold)",
+            "bio": "唐懿宗是此事件中的关键行动者，具体作用需要结合事件过程理解。",
+            "events": [
+                "庞勋起义与徐泗军乱"
+            ]
+        }
+    ],
+    "relations": [],
+    "background": [
+        "庞勋起义由戍卒延期和待遇问题引发，迅速扩大为淮北军乱，暴露晚唐军政系统失控。"
+    ],
+    "process": [
+        {
+            "time": "桂林戍卒",
+            "title": "延期激变",
+            "description": "徐泗戍卒长期驻守桂林，因轮换延期和待遇不满哗变，基层军役压力转化为公开反叛。"
+        },
+        {
+            "time": "北归成乱",
+            "title": "淮北扩大",
+            "description": "庞勋率众北返并占据徐州一带，地方官军应对迟缓，使军乱从兵变扩大为区域性危机。"
+        },
+        {
+            "time": "平定之后",
+            "title": "病根未除",
+            "description": "朝廷最终镇压庞勋，但财政、军纪和地方控制问题没有解决，黄巢起义前的社会张力继续积累。"
+        }
+    ],
+    "results": [
+        "晚唐军政失控加深。",
+        "黄巢前夜的基层危机更清楚。"
+    ],
+    "debates": [
+        {
+            "view": "学习提示",
+            "content": "它是黄巢起义前很重要的预警事件。"
+        }
+    ],
+    "claims": [
+        {
+            "statement": "庞勋起义由戍卒延期和待遇问题引发，迅速扩大为淮北军乱，暴露晚唐军政系统失控。",
+            "status": "较稳妥",
+            "statusType": "stable",
+            "confidence": "medium",
+            "sourceIds": [
+                "tang-main-source"
+            ],
+            "note": "本轮按中华区长周期补强整理，后续可继续逐条补公开卷目链接。"
+        }
+    ],
+    "citations": [
+        {
+            "sourceId": "tang-main-source",
+            "reference": "《旧唐书》《新唐书》《资治通鉴》唐纪相关纪事",
+            "status": "待核原文",
+            "plainText": "白话理解：庞勋起义由戍卒延期和待遇问题引发，迅速扩大为淮北军乱，暴露晚唐军政系统失控。这条线要放在唐朝的连续主线中看，而不是只记一个孤立年份。",
+            "note": "不是纯原文摘录，先给学习用白话释义；后续补公开卷目链接。"
+        }
+    ],
+    "causalChain": [],
+    "sources": [
+        {
+            "id": "tang-main-source",
+            "type": "正史、编年史与考古资料",
+            "title": "《旧唐书》《新唐书》《资治通鉴》唐纪相关纪事",
+            "author": "传统史家、考古材料与现代研究整理",
+            "authorityLevel": "公开权威史料入口，待逐条补卷目链接",
+            "note": "作为本模块主线事件的史料入口。",
+            "credibility": "高",
+            "credibilityLevel": "high"
+        }
+    ],
+    "reviewQuestions": [
+        {
+            "type": "主线理解",
+            "question": "庞勋起义与徐泗军乱为什么重要？",
+            "answer": "它是黄巢起义前很重要的预警事件。"
+        }
+    ],
+    "notes": [],
+    "dynastyId": "tang",
+    "dynasty": "唐朝",
+    "topicIds": []
 }
 ];
+
+(() => {
+  const minDescriptionLength = 36;
+
+  function asText(value) {
+    if (Array.isArray(value)) return value.filter(Boolean).join("；");
+    return value || "";
+  }
+
+  function compact(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function enrichDescription(step, item, index) {
+    const current = compact(step.description);
+    if (current.length >= minDescriptionLength) return current;
+    const title = item.title || "该事件";
+    const summary = compact(item.summary) || title;
+    const topic = (item.topics || []).filter(Boolean).slice(0, 2).join("、") || "权力与制度";
+    if (index === 0) {
+      return `${current || "相关压力开始集中"}。这一阶段要结合${summary}来理解，重点看${topic}问题如何积累到必须处理的程度。`;
+    }
+    if (index === 1) {
+      return `${current || "事件进入实际展开"}。相关人物和势力在这一环节采取行动，使${title}从背景压力转为具体政治或军事转折。`;
+    }
+    return `${current || "后续影响开始显现"}。它改变了${title}之后的政策选择、地方关系或战争格局，因此不能只当作孤立节点记忆。`;
+  }
+
+  function buildExpandedProcess(item) {
+    const original = (item.process || []).map((step, index) => ({
+      ...step,
+      description: enrichDescription(step, item, index)
+    })).filter((step) => step.description);
+    if (original.length >= 3) return original;
+
+    const title = item.title || "该事件";
+    const background = compact(asText(item.background)) || compact(item.summary) || `${title}前，相关权力、财政、军事和地方秩序已经积累压力。`;
+    const result = compact(asText(item.results)) || compact(item.summary) || `${title}改变了后续政治和区域格局。`;
+    const topics = (item.topics || []).filter(Boolean).join("、") || "政治与社会结构";
+
+    const expanded = [];
+    expanded.push({
+      time: item.time || "",
+      title: "背景积累",
+      description: `${background} 这一背景说明${title}不是孤立年份，而是${topics}问题累积后的集中表现。`
+    });
+
+    if (original.length) {
+      expanded.push(...original);
+    } else {
+      expanded.push({
+        time: item.time || "",
+        title: "事件展开",
+        description: `${compact(item.summary) || title} 事件展开后，相关人物和势力围绕权力、军事、财政或地方控制重新排列，推动局势进入下一阶段。`
+      });
+    }
+
+    expanded.push({
+      time: item.time || "",
+      title: "影响外溢",
+      description: `${result} 因而学习${title}时，要看它如何改变之后的制度运行、军事格局或王朝兴衰，而不只记住名称。`
+    });
+
+    return expanded.map((step, index) => ({
+      ...step,
+      description: enrichDescription(step, item, index)
+    }));
+  }
+
+  window.TANG_EVENTS = (window.TANG_EVENTS || []).map((item) => ({
+    ...item,
+    process: buildExpandedProcess(item)
+  }));
+})();

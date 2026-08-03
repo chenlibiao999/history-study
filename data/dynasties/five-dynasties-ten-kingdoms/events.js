@@ -587,3 +587,77 @@
     })
   ];
 })();
+
+(() => {
+  const minDescriptionLength = 36;
+
+  function asText(value) {
+    if (Array.isArray(value)) return value.filter(Boolean).join("；");
+    return value || "";
+  }
+
+  function compact(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function enrichDescription(step, item, index) {
+    const current = compact(step.description);
+    if (current.length >= minDescriptionLength) return current;
+    const title = item.title || "该事件";
+    const summary = compact(item.summary) || title;
+    const topic = (item.topics || []).filter(Boolean).slice(0, 2).join("、") || "权力与制度";
+    if (index === 0) {
+      return `${current || "相关压力开始集中"}。这一阶段要结合${summary}来理解，重点看${topic}问题如何积累到必须处理的程度。`;
+    }
+    if (index === 1) {
+      return `${current || "事件进入实际展开"}。相关人物和势力在这一环节采取行动，使${title}从背景压力转为具体政治或军事转折。`;
+    }
+    return `${current || "后续影响开始显现"}。它改变了${title}之后的政策选择、地方关系或战争格局，因此不能只当作孤立节点记忆。`;
+  }
+
+  function buildExpandedProcess(item) {
+    const original = (item.process || []).map((step, index) => ({
+      ...step,
+      description: enrichDescription(step, item, index)
+    })).filter((step) => step.description);
+    if (original.length >= 3) return original;
+
+    const title = item.title || "该事件";
+    const background = compact(asText(item.background)) || compact(item.summary) || `${title}前，相关权力、财政、军事和地方秩序已经积累压力。`;
+    const result = compact(asText(item.results)) || compact(item.summary) || `${title}改变了后续政治和区域格局。`;
+    const topics = (item.topics || []).filter(Boolean).join("、") || "政治与社会结构";
+
+    const expanded = [];
+    expanded.push({
+      time: item.time || "",
+      title: "背景积累",
+      description: `${background} 这一背景说明${title}不是孤立年份，而是${topics}问题累积后的集中表现。`
+    });
+
+    if (original.length) {
+      expanded.push(...original);
+    } else {
+      expanded.push({
+        time: item.time || "",
+        title: "事件展开",
+        description: `${compact(item.summary) || title} 事件展开后，相关人物和势力围绕权力、军事、财政或地方控制重新排列，推动局势进入下一阶段。`
+      });
+    }
+
+    expanded.push({
+      time: item.time || "",
+      title: "影响外溢",
+      description: `${result} 因而学习${title}时，要看它如何改变之后的制度运行、军事格局或王朝兴衰，而不只记住名称。`
+    });
+
+    return expanded.map((step, index) => ({
+      ...step,
+      description: enrichDescription(step, item, index)
+    }));
+  }
+
+  window.FDTK_EVENTS = (window.FDTK_EVENTS || []).map((item) => ({
+    ...item,
+    process: buildExpandedProcess(item)
+  }));
+})();

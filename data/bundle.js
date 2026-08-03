@@ -78438,6 +78438,217 @@ window.NORTH_AMERICA_EVENTS = [
   }
 ];
 
+// 本批补充北美前殖民社会、殖民冲突与国家制度转折，避免把北美史压缩成欧洲到美国建国的单线叙事。
+const NORTH_AMERICA_EXPANSION_SOURCES = [
+  {id: "nps-cahokia", title: "National Park Service: Cahokia Mounds", url: "https://www.nps.gov/came/index.htm", type: "heritage-site"},
+  {id: "nps-chaco", title: "National Park Service: Chaco Culture", url: "https://www.nps.gov/chcu/index.htm", type: "heritage-site"},
+  {id: "loc-us-history-timeline", title: "Library of Congress: U.S. History Primary Source Timeline", url: "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/", type: "primary-source-timeline"},
+  {id: "archives-indian-removal", title: "U.S. National Archives: Indian Removal Act", url: "https://www.archives.gov/milestone-documents/indian-removal-act", type: "primary-document"}
+];
+
+function addNorthAmericaExpansionEvent(item) {
+  window.NORTH_AMERICA_EVENTS.push({
+    id: item.id,
+    dynastyId: "north-america",
+    title: item.title,
+    aliases: [],
+    era: item.era,
+    period: "北美地区",
+    time: item.time,
+    regions: item.regions,
+    topics: item.topics,
+    summary: item.summary,
+    bookmarked: false,
+    people: item.people.map(name => ({name, role: "关键人物/群体", years: "", color: "var(--accent-gold)", bio: `${name}需要放在${item.title}的区域结构、社会组织与权力变化中理解。`, events: [item.title]})),
+    relations: [],
+    background: [item.background],
+    process: item.process,
+    results: [item.result],
+    debates: [{view: "范围提示", content: "本条用于建立北美区域主线，后续可再按具体族群、城市网络与地方档案展开。"}],
+    claims: [{statement: item.summary, status: "较稳定", statusType: "stable", confidence: "medium", sourceIds: NORTH_AMERICA_EXPANSION_SOURCES.map(source => source.id), note: "先采用公开机构的概述与遗址资料，后续可补充考古报告和专题论文。"}],
+    citations: [{sourceId: NORTH_AMERICA_EXPANSION_SOURCES[0].id, reference: NORTH_AMERICA_EXPANSION_SOURCES[0].title, status: "已给公开入口", plainText: item.summary, note: "提供可直接阅读的释文与历史位置，不堆叠难读原文。"}],
+    causalChain: [],
+    sources: NORTH_AMERICA_EXPANSION_SOURCES,
+    reviewQuestions: [{type: "主线理解", question: `${item.title}为什么应放入北美区域主线？`, answer: item.result}],
+    notes: [],
+    sourceStatus: "公开权威入口已补"
+  });
+}
+
+[
+  {
+    id: "cahokia-urban-peak",
+    title: "卡霍基亚城市网络达到高峰",
+    era: "密西西比文化",
+    time: "约1050-1350",
+    regions: ["密西西比河流域", "北美大平原"],
+    topics: ["城市与国家", "贸易网络"],
+    summary: "卡霍基亚在密西西比河与密苏里河交汇地带形成大型聚落和土墩礼仪中心，显示北美中部出现跨社区的权力、生产与交换网络。",
+    background: "密西西比河流域适合玉米农业，但人口集中还需要仓储、劳役组织、仪式权威和远距离交换共同支撑。",
+    process: [
+      {time: "约1000-1050", title: "农业与聚落集中", description: "玉米农业扩展提高了密西西比河中游的粮食供给，多个村落围绕交通节点和仪式中心重新组织。", participants: ["密西西比文化社群"], action: "扩大农业生产并集中人口", impact: "形成城市化的物质基础"},
+      {time: "约1050-1200", title: "土墩与礼仪中心扩建", description: "卡霍基亚修建大型土墩、广场和居住区，工程需要持续动员劳力，也把政治权威与宗教仪式固定在城市空间中。", participants: ["卡霍基亚统治集团", "工匠与农业社群"], action: "建设土墩和公共空间", impact: "强化区域中心的统合能力"},
+      {time: "约1100-1300", title: "交换网络外扩", description: "贝壳、石材和其他物品沿河流与陆路流动，卡霍基亚与周边社群形成互换、朝贡或礼仪性交往。", participants: ["密西西比河流域社群"], action: "维持远距离交换和联盟", impact: "扩大城市中心的区域影响"},
+      {time: "约1300以后", title: "中心衰落与网络分散", description: "人口、环境、政治竞争和区域网络变化共同削弱卡霍基亚中心，城市规模下降并不等于密西西比文化立即消失。", participants: ["卡霍基亚及周边社群"], action: "调整聚落与权力中心", impact: "北美中部进入多中心格局"}
+    ],
+    result: "卡霍基亚证明北美前殖民社会存在大型城市、公共工程和区域政治网络，不能用缺乏欧亚式文字国家来否定其复杂性。",
+    people: ["卡霍基亚居民", "密西西比文化社群"]
+  },
+  {
+    id: "chaco-canyon-regional-system",
+    title: "查科峡谷区域建筑与道路体系",
+    era: "祖先普韦布洛社会",
+    time: "约850-1150",
+    regions: ["北美大平原", "北美"],
+    topics: ["城市与国家", "技术文化"],
+    summary: "查科峡谷形成大型多层建筑、仪式空间和道路网络，连接新墨西哥西北部多个聚落，体现干旱环境下的组织能力。",
+    background: "西南北美降水不稳定，聚落发展依赖储水、农业调度、建筑技术和跨聚落合作。",
+    process: [
+      {time: "约850-950", title: "大型聚落出现", description: "查科峡谷的聚落开始采用更复杂的石砌建筑和公共空间，人口组织从分散村落向区域中心集中。", participants: ["祖先普韦布洛社群"], action: "建设大型居住和仪式建筑", impact: "形成区域中心"},
+      {time: "约950-1100", title: "道路与建筑网络扩展", description: "道路、储藏设施和大型建筑把峡谷中心与周边聚落联系起来，网络的功能可能兼有交通、仪式和资源调度。", participants: ["查科中心", "周边聚落"], action: "修建道路并维持跨社区联系", impact: "增强区域整合"},
+      {time: "约1100-1150", title: "环境压力累积", description: "干旱、资源压力和人口迁移使原有中心难以维持，查科体系的衰落表现为网络重组而不是文明突然消失。", participants: ["西南北美各聚落"], action: "迁移并重建新的聚落关系", impact: "推动区域中心转移"}
+    ],
+    result: "查科体系把环境适应、建筑工程和区域网络结合起来，是理解北美前殖民社会复杂性的关键案例。",
+    people: ["祖先普韦布洛社群", "查科峡谷建筑者"]
+  },
+  {
+    id: "thule-inuit-expansion",
+    title: "图勒文化向北极东部扩展",
+    era: "北极原住民社会",
+    time: "约1000-1500",
+    regions: ["北美", "北美大平原"],
+    topics: ["迁徙", "技术文化"],
+    summary: "图勒文化携带海兽捕猎、皮舟和雪屋等适应性技术，从阿拉斯加向加拿大北极和格陵兰扩展，成为现代因纽特人祖先的重要来源。",
+    background: "北极环境要求社会同时掌握海冰出行、海兽捕猎、季节迁徙和食物储存等技术。",
+    process: [
+      {time: "约1000前后", title: "阿拉斯加技术成熟", description: "图勒社群在白令海峡周边形成适应海冰和海兽资源的工具、船具与居住方式，为向东迁徙准备条件。", participants: ["图勒社群"], action: "发展海兽捕猎与冰海交通技术", impact: "提高北极环境中的移动能力"},
+      {time: "约1000-1300", title: "沿北极海岸东迁", description: "社群沿海岸和海冰条件较好的路线向加拿大北极扩展，在新的海域建立季节性营地和资源网络。", participants: ["图勒迁徙社群", "既有北极居民"], action: "迁徙并建立海岸营地", impact: "改变北极人口分布"},
+      {time: "约1200-1500", title: "区域传统融合", description: "图勒居民与当地社会发生接触和文化融合，技术、语言与生活方式在不同北极区域形成差异化传统。", participants: ["图勒社群", "多地区北极居民"], action: "交换技术并适应地方环境", impact: "奠定因纽特历史文化的区域基础"}
+    ],
+    result: "图勒扩展说明北极并非历史空白，而是拥有跨区域迁徙、技术创新和社会适应的长期人类历史。",
+    people: ["图勒社群", "北极原住民" ]
+  },
+  {
+    id: "beaver-wars-great-lakes",
+    title: "海狸战争重组五大湖政治网络",
+    era: "殖民早期北美",
+    time: "约1640-1701",
+    regions: ["北美大平原", "北美"],
+    topics: ["战争军事", "贸易网络"],
+    summary: "围绕毛皮贸易、武器获取和狩猎地控制，易洛魁联盟与五大湖及圣劳伦斯河流域多个社群发生长期战争，重组了区域人口和贸易路线。",
+    background: "欧洲商人把毛皮纳入大西洋贸易，火器和金属工具改变力量平衡，原有联盟关系因此被贸易竞争重新塑造。",
+    process: [
+      {time: "17世纪前期", title: "毛皮贸易竞争升级", description: "海狸皮成为欧洲市场需要的商品，贸易据点、武器来源和狩猎地控制让五大湖社群卷入更激烈的竞争。", participants: ["易洛魁联盟", "五大湖社群", "法国商人"], action: "争夺贸易通道和狩猎地", impact: "扩大区域冲突范围"},
+      {time: "约1640-1680", title: "战争与人口迁移并行", description: "袭击、俘虏和联盟变化导致部分社群迁移或重组，战争不只是欧洲殖民者与原住民的二元冲突。", participants: ["易洛魁联盟", "休伦等社群", "阿尔冈昆语族社群"], action: "通过战争、收纳和联盟重建人口", impact: "改变五大湖政治版图"},
+      {time: "约1680-1701", title: "和平谈判重新划界", description: "长期战争消耗各方资源，新的谈判和联盟安排逐步稳定贸易与领地关系，为18世纪殖民竞争留下新的政治边界。", participants: ["五大湖各社群", "英国与法国殖民当局"], action: "通过条约和联盟重建秩序", impact: "形成新的区域均势"}
+    ],
+    result: "海狸战争揭示了原住民政治主体、欧洲贸易和武器流通共同塑造北美殖民早期秩序。",
+    people: ["易洛魁联盟", "五大湖原住民社群"]
+  },
+  {
+    id: "pueblo-revolt-1680",
+    title: "普韦布洛起义驱逐西班牙殖民当局",
+    era: "殖民早期北美",
+    time: "1680",
+    regions: ["北美大平原", "北美"],
+    topics: ["战争军事", "殖民与反殖民"],
+    summary: "普韦布洛社群在宗教压制、劳役负担和殖民治理压力下联合起义，一度驱逐新墨西哥地区的西班牙殖民者，重建原住民政治空间。",
+    background: "西班牙殖民制度把传教、劳役、土地控制和行政权力结合起来，地方社群的宗教与自治空间持续收缩。",
+    process: [
+      {time: "17世纪中叶", title: "殖民治理压力累积", description: "传教体系和劳役制度深入普韦布洛社会，疾病、旱灾与地方官员要求进一步加重社群的不满。", participants: ["普韦布洛社群", "西班牙传教士与官员"], action: "扩张殖民宗教和劳役控制", impact: "激化地方抵抗"},
+      {time: "1680年起义", title: "多社群协同行动", description: "各地普韦布洛社群在波佩的组织下协调行动，攻击殖民据点并切断交通，使西班牙驻军无法迅速恢复统治。", participants: ["波佩", "普韦布洛社群"], action: "联合起义并夺取据点", impact: "短期驱逐西班牙殖民当局"},
+      {time: "1680-1692", title: "原住民自治时期", description: "起义后的十余年间，普韦布洛社群重新安排宗教和地方权力，但内部差异与外部军事压力始终存在。", participants: ["普韦布洛各社群"], action: "恢复地方仪式和自治秩序", impact: "形成北美殖民史中重要的原住民胜利案例"}
+    ],
+    result: "普韦布洛起义表明殖民统治并非单向推进，原住民社群能够以联盟和宗教政治动员重塑区域秩序。",
+    people: ["波佩", "普韦布洛社群"]
+  },
+  {
+    id: "war-of-1812-north-america",
+    title: "1812年战争重塑北美边疆格局",
+    era: "北美国家形成",
+    time: "1812-1815",
+    regions: ["北美", "北美大平原"],
+    topics: ["战争军事", "国家形成"],
+    summary: "美国与英国及其加拿大殖民地之间的战争牵动原住民联盟和大西洋贸易，战后美国、加拿大与五大湖地区的政治边界趋于稳定。",
+    background: "海上封锁、强征水手、贸易限制和美国向西北扩张，使英美矛盾与原住民土地问题交织在一起。",
+    process: [
+      {time: "1812年", title: "美国对英宣战", description: "美国以海上权利和边疆冲突为由宣战，但军队准备不足，北方战线和加拿大边境的行动很快陷入拉锯。", participants: ["美国政府", "英国与加拿大殖民地"], action: "发动边境和海上战争", impact: "扩大北美国家竞争"},
+      {time: "1813-1814", title: "原住民联盟参与战争", description: "特库姆塞等原住民力量试图借英美冲突阻止美国继续扩张，但联盟在军事压力和领导者阵亡后逐渐瓦解。", participants: ["特库姆塞联盟", "美国军队", "英军"], action: "联合抵抗美国扩张", impact: "影响五大湖与西北边疆力量平衡"},
+      {time: "1814-1815", title: "条约恢复战前边界", description: "根特条约基本恢复战前边界，却没有解决原住民土地和主权问题，战后美国继续加强对内陆的控制。", participants: ["美国", "英国", "原住民社群"], action: "通过外交结束战争", impact: "巩固英美边界并加速美国西进"}
+    ],
+    result: "1812年战争是美国国家形成、加拿大政治身份和原住民土地问题交汇的关键节点。",
+    people: ["特库姆塞", "詹姆斯·麦迪逊", "英国与加拿大殖民地"]
+  },
+  {
+    id: "indian-removal-trail-tears",
+    title: "印第安人迁移政策与血泪之路",
+    era: "北美国家扩张",
+    time: "1830-1850年代",
+    regions: ["北美", "北美大平原"],
+    topics: ["国家形成", "殖民与反殖民"],
+    summary: "美国联邦政府以法律和军事压力推动东南部原住民迁往密西西比河以西，切罗基等社群的强制迁徙造成大量死亡并重塑美国疆域。",
+    background: "棉花种植扩张、土地投机和州政府要求扩大辖区，与原住民条约权利和自治制度发生直接冲突。",
+    process: [
+      {time: "1830", title: "联邦迁移法通过", description: "《印第安人迁移法》为政府谈判或强制迁移提供法律框架，南方州与联邦权力围绕原住民主权发生冲突。", participants: ["美国国会", "安德鲁·杰克逊政府", "东南部原住民国家"], action: "把迁移政策制度化", impact: "为强制迁徙打开行政通道"},
+      {time: "1830年代", title: "条约与军事强制并用", description: "部分社群签订不平等条约，拒绝迁移者则面临军队驱赶和拘押，原住民内部也出现合作与抵抗的分裂。", participants: ["切罗基等原住民社群", "美国军队与地方政府"], action: "通过条约和强制执行迁移", impact: "剥夺东南部大片土地"},
+      {time: "1838-1839", title: "切罗基被迫西迁", description: "切罗基社群在拘押、饥饿、疾病和严寒中被迫前往印第安领地，这段迁徙后来被称为血泪之路。", participants: ["切罗基社群", "美国军队"], action: "执行大规模强制迁徙", impact: "造成严重人口损失和社会创伤"}
+    ],
+    result: "印第安人迁移是美国领土扩张和原住民主权受损的核心事件，不能只作为西进运动的附属背景。",
+    people: ["切罗基社群", "安德鲁·杰克逊", "约翰·罗斯"]
+  },
+  {
+    id: "mexican-reform-war",
+    title: "墨西哥改革战争确立世俗国家方向",
+    era: "墨西哥共和国形成",
+    time: "1857-1861",
+    regions: ["北美", "中美洲"],
+    topics: ["制度治理", "国家形成"],
+    summary: "围绕1857年宪法、教会财产和军人特权，墨西哥自由派与保守派爆发改革战争，贝尼托·胡亚雷斯政府最终恢复对全国的控制。",
+    background: "独立后的墨西哥面临中央与地方、教会与国家、军队特权与公民法权之间的长期冲突。",
+    process: [
+      {time: "1857", title: "新宪法引发对立", description: "自由派推动限制教会和军队特权的宪法改革，保守派拒绝承认新制度，政治冲突迅速转化为内战。", participants: ["贝尼托·胡亚雷斯与自由派", "保守派与教会"], action: "争夺宪法与国家权力", impact: "分裂中央政府和地方政治"},
+      {time: "1858-1860", title: "内战与双重政权", description: "自由派政府和保守派政府分别控制不同地区，港口、税收和军队成为双方维持政权的关键资源。", participants: ["自由派政府", "保守派政府"], action: "争夺税收、军队和交通节点", impact: "扩大国家危机"},
+      {time: "1861", title: "自由派重新掌权", description: "自由派军队进入墨西哥城，改革法令获得更大执行空间，但财政困难又为法国干涉和第二帝国埋下条件。", participants: ["胡亚雷斯政府", "自由派军队"], action: "恢复中央政府并推进改革", impact: "确立墨西哥世俗共和方向"}
+    ],
+    result: "改革战争把墨西哥国家建设从独立后的政治争夺推进到宪法、教会财产和公民权利的制度重组。",
+    people: ["贝尼托·胡亚雷斯", "墨西哥自由派", "墨西哥保守派"]
+  },
+  {
+    id: "mexican-revolution-constitution",
+    title: "墨西哥革命与1917年宪法",
+    era: "北美现代国家形成",
+    time: "1910-1917",
+    regions: ["北美", "中美洲"],
+    topics: ["革命与社会", "制度治理"],
+    summary: "墨西哥革命推翻波菲里奥·迪亚斯长期统治，土地、劳工和地方自治诉求进入国家制度，1917年宪法成为革命秩序的法律框架。",
+    background: "长期独裁、土地集中、城乡不平等和地方社群权利受压，形成跨阶层但目标并不完全一致的反抗联盟。",
+    process: [
+      {time: "1910-1911", title: "反迪亚斯起义扩散", description: "马德罗号召反对长期统治，北方武装、地方社群和城市反对派共同施压，迪亚斯最终辞职流亡。", participants: ["弗朗西斯科·马德罗", "北方武装", "地方农民社群"], action: "发动全国性政治与武装反抗", impact: "终结波菲里奥统治"},
+      {time: "1913-1914", title: "军人政变与多方战争", description: "马德罗遇刺后，维多利亚诺·韦尔塔建立军政权，卡兰萨、比利亚和萨帕塔等力量联合反对，但革命阵营随后分裂。", participants: ["韦尔塔", "卡兰萨", "比利亚", "萨帕塔"], action: "争夺中央政权与土地方案", impact: "把革命推进为多方内战"},
+      {time: "1917", title: "宪法吸收土地与劳工议题", description: "新宪法确认国家对土地和资源的更大权力，并规定劳工权利和世俗教育，为革命成果提供制度表达。", participants: ["制宪会议", "革命派政府", "农民与劳工组织"], action: "把社会诉求写入宪法", impact: "重建现代墨西哥国家合法性"}
+    ],
+    result: "墨西哥革命说明北美现代国家建设不仅是选举和领土扩张，也包含土地、劳工与地方权利的制度冲突。",
+    people: ["弗朗西斯科·马德罗", "埃米利亚诺·萨帕塔", "潘乔·比利亚", "贝努斯蒂亚诺·卡兰萨"]
+  },
+  {
+    id: "zapatista-uprising-1994",
+    title: "萨帕塔民族解放军起义与原住民议题再进入公共政治",
+    era: "北美当代转折",
+    time: "1994",
+    regions: ["北美", "中美洲"],
+    topics: ["殖民与反殖民", "现代政治"],
+    summary: "恰帕斯州的萨帕塔民族解放军起义把原住民土地、自治和全球化冲突带入墨西哥全国政治，并引发长期谈判与社会运动。",
+    background: "北美自由贸易协定生效、农村贫困和土地制度变化，使恰帕斯原住民社群对国家发展方向和自治权利的矛盾集中爆发。",
+    process: [
+      {time: "1994年1月", title: "起义占领地方据点", description: "萨帕塔民族解放军在恰帕斯多个城镇发动起义，公开反对土地不平等和原住民被排除在国家政治之外。", participants: ["萨帕塔民族解放军", "恰帕斯原住民社群", "墨西哥政府"], action: "以武装行动提出自治与土地诉求", impact: "迫使全国关注原住民问题"},
+      {time: "1994年后", title: "停火与公共谈判", description: "军事冲突很快转入停火、谈判和公民社会动员，起义组织通过公报和网络扩大国际影响。", participants: ["萨帕塔组织", "墨西哥政府", "公民社会"], action: "以谈判和政治传播延续运动", impact: "扩大原住民自治议题的公共空间"},
+      {time: "长期影响", title: "自治实践与国家改革争论", description: "围绕圣安德烈斯协议和自治实践的争论持续多年，国家承认、地方自治和发展模式之间的矛盾仍未完全消失。", participants: ["原住民自治组织", "墨西哥联邦与地方政府"], action: "在地方实践自治并争取制度承认", impact: "成为全球化时代原住民政治的重要案例"}
+    ],
+    result: "萨帕塔起义把殖民遗产、原住民自治和全球化政策连接起来，是理解当代北美政治的重要节点。",
+    people: ["萨帕塔民族解放军", "恰帕斯原住民社群"]
+  }
+].forEach(addNorthAmericaExpansionEvent);
+
 
 // --- data/dynasties/north-america/emperors.js ---
 

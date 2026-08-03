@@ -9370,6 +9370,148 @@ window.AFRICAN_CIVILIZATIONS_EVENTS = [
   }
 ];
 
+// 本批补充西非国家形态、乍得湖区域、东非反殖民和现代非洲灾难史。
+const AFRICA_EXPANSION_SOURCES = [
+  {id: "unesco-general-history-africa", title: "UNESCO: General History of Africa", url: "https://unesdoc.unesco.org/", type: "general-history"},
+  {id: "loc-african-studies", title: "Library of Congress: African Studies", url: "https://www.loc.gov/research-centers/african-and-middle-eastern/about-this-research-center/african-studies/", type: "research-center"},
+  {id: "un-rwanda-history", title: "United Nations: Historical Background of the 1994 Genocide against the Tutsi", url: "https://www.un.org/en/preventgenocide/rwanda/historical-background.shtml", type: "international-organization"
+  }
+];
+
+function addAfricaExpansionEvent(item) {
+  window.AFRICAN_CIVILIZATIONS_EVENTS.push({
+    id: item.id,
+    dynastyId: "african-civilizations",
+    title: item.title,
+    aliases: [],
+    era: item.era,
+    period: "非洲文明主线",
+    time: item.time,
+    regions: item.regions,
+    topics: item.topics,
+    summary: item.summary,
+    bookmarked: false,
+    people: item.people.map(name => ({name, role: "关键人物/群体", years: "", color: "var(--accent-gold)", bio: `${name}需要放在${item.title}的区域结构、社会组织与权力变化中理解。`, events: [item.title]})),
+    relations: [],
+    background: [item.background],
+    process: item.process,
+    results: [item.result],
+    debates: [{view: "范围提示", content: "本条用于补足非洲区域主线，后续可按西非、东非和中部非洲继续拆分。"}],
+    claims: [{statement: item.summary, status: "较稳定", statusType: "stable", confidence: "medium", sourceIds: AFRICA_EXPANSION_SOURCES.map(source => source.id), note: "采用联合国、联合国教科文组织和美国国会图书馆的公开资料入口。"}],
+    citations: [{sourceId: AFRICA_EXPANSION_SOURCES[0].id, reference: AFRICA_EXPANSION_SOURCES[0].title, status: "已给公开入口", plainText: item.summary, note: "提供可直接阅读的释文与历史位置。"}],
+    causalChain: [],
+    sources: AFRICA_EXPANSION_SOURCES,
+    reviewQuestions: [{type: "主线理解", question: `${item.title}为什么应放入非洲区域主线？`, answer: item.result}],
+    notes: [],
+    sourceStatus: "公开权威入口已补"
+  });
+}
+
+[
+  {
+    id: "kanem-bornu-lake-chad",
+    title: "卡奈姆—博尔努国家形成",
+    era: "萨赫勒国家与伊斯兰化",
+    time: "约9世纪-19世纪",
+    regions: ["乍得湖流域", "撒哈拉以南非洲"],
+    topics: ["政权兴衰", "贸易网络"],
+    summary: "卡奈姆—博尔努围绕乍得湖流域发展，借助跨撒哈拉贸易、骑兵和伊斯兰政治文化维持了西非持续时间很长的国家传统。",
+    background: "乍得湖连接沙漠商路、萨赫勒牧业和南部农业，控制湖区与商路能够获得税收、马匹和政治盟友。",
+    process: [
+      {time: "约9-11世纪", title: "卡奈姆政权形成", description: "卡奈姆统治者在乍得湖东北部整合地方社群和商路，王权通过贡赋、军事组织与跨区域贸易扩大影响。", participants: ["卡奈姆统治集团", "乍得湖流域社群"], action: "整合湖区聚落与商路", impact: "形成萨赫勒东部国家"},
+      {time: "11世纪以后", title: "伊斯兰政治文化进入宫廷", description: "伊斯兰学者、商人和外交网络进入宫廷，王权借助文字行政、宗教合法性与跨撒哈拉联系强化统治。", participants: ["卡奈姆王室", "穆斯林学者与商人"], action: "吸收伊斯兰制度和知识网络", impact: "扩大国家对外联系"},
+      {time: "14-16世纪", title: "迁都与博尔努重建", description: "战争和环境变化促使王室向乍得湖西部转移，博尔努成为新的权力中心，国家传统没有因迁都而中断。", participants: ["卡奈姆—博尔努王室", "湖区与萨赫勒社群"], action: "迁移王都并重建统治网络", impact: "延续区域国家传统"}
+    ],
+    result: "卡奈姆—博尔努说明西非和中非之间存在长期国家、贸易与伊斯兰知识网络，不能只用黄金帝国解释非洲政治史。",
+    people: ["卡奈姆—博尔努王室", "乍得湖流域社群"]
+  },
+  {
+    id: "benin-kingdom-court-art",
+    title: "贝宁王国宫廷体系与青铜艺术",
+    era: "西非国家与城市文明",
+    time: "约13世纪-1897",
+    regions: ["几内亚湾", "撒哈拉以南非洲"],
+    topics: ["政权兴衰", "技术文化"],
+    summary: "贝宁王国以王都、宫廷官僚、城市防御和青铜铸造闻名，宫廷艺术记录了王权、战争和外交关系，也反映了西非成熟的金属工艺。",
+    background: "尼日尔河三角洲与几内亚湾贸易为城市和王室提供资源，森林环境、地方社群和外部商路共同塑造贝宁政治。",
+    process: [
+      {time: "13-15世纪", title: "王都和王权集中", description: "贝宁王室逐步整合周边社群，王都建设、宫廷职官和防御工程把地方权力集中到城市中心。", participants: ["贝宁王室", "王都社群"], action: "集中行政、军事和礼仪权力", impact: "形成城市国家体系"},
+      {time: "15-17世纪", title: "海岸贸易与宫廷艺术发展", description: "贝宁与葡萄牙等海上商人建立联系，象牙、胡椒和金属贸易为宫廷提供资源，青铜铸造成为记录王室秩序的重要媒介。", participants: ["贝宁宫廷", "西非工匠", "葡萄牙商人"], action: "经营海岸贸易并发展宫廷工艺", impact: "扩大王国财富和外交影响"},
+      {time: "1897", title: "英国远征与王国被吞并", description: "英国远征军攻入贝宁城，王宫被焚毁，大量宫廷艺术品被掠走，王国被纳入英国殖民体系。", participants: ["贝宁王国", "英国殖民军"], action: "以军事远征接管王都", impact: "终结独立王国的政治主权"}
+    ],
+    result: "贝宁王国是西非城市国家、宫廷政治和金属艺术传统的代表，殖民掠夺也使其遗产问题延续到当代。",
+    people: ["贝宁王室", "西非青铜工匠", "英国殖民军"]
+  },
+  {
+    id: "hausa-city-states-kano",
+    title: "豪萨城邦与萨赫勒商业城市兴起",
+    era: "西非城市与贸易网络",
+    time: "约11世纪-19世纪",
+    regions: ["尼日尔河中游", "撒哈拉以南非洲"],
+    topics: ["城市与国家", "贸易网络"],
+    summary: "卡诺、卡齐纳等豪萨城邦依靠农业、纺织、皮革和跨撒哈拉贸易发展，城市之间既竞争又共享伊斯兰商业和知识网络。",
+    background: "萨赫勒南缘连接沙漠商路与森林地带，稳定的城市市场能够把农业、手工业和长距离贸易结合起来。",
+    process: [
+      {time: "11-14世纪", title: "城邦和市场形成", description: "豪萨地区的城镇围绕市场、城墙和王宫发展，地方统治者通过税收和治安吸引商人和工匠。", participants: ["豪萨城邦", "农民与工匠", "商人"], action: "建设城市市场和统治中心", impact: "形成多中心城市网络"},
+      {time: "15-17世纪", title: "伊斯兰商路深化", description: "穆斯林商人和学者加强豪萨城邦与北非、博尔努和西非帝国的联系，文字、法律和商业规范进入城市治理。", participants: ["豪萨城邦", "穆斯林商人与学者"], action: "扩大跨撒哈拉贸易和知识交流", impact: "提高城市的区域影响"},
+      {time: "19世纪", title: "圣战国家重组城邦", description: "乌斯曼·丹·福迪奥的圣战及其后续政治整合改变豪萨城邦的权力格局，部分城市被纳入索科托哈里发国家。", participants: ["豪萨城邦", "索科托运动", "乌斯曼·丹·福迪奥"], action: "以宗教政治重组城邦联盟", impact: "形成新的萨赫勒国家秩序"}
+    ],
+    result: "豪萨城邦说明西非历史不仅是帝国兴亡，也包括大量以城市、市场和知识网络为核心的政治共同体。",
+    people: ["豪萨城邦", "乌斯曼·丹·福迪奥", "萨赫勒商人"]
+  },
+  {
+    id: "maji-maji-uprising",
+    title: "马及马及起义与德属东非殖民统治",
+    era: "非洲殖民与反殖民",
+    time: "1905-1907",
+    regions: ["东非", "撒哈拉以南非洲"],
+    topics: ["殖民与反殖民", "战争军事"],
+    summary: "德属东非的多族群社群反对棉花强制种植、税收和劳役，马及马及起义扩散后遭到残酷镇压，造成严重人口损失。",
+    background: "殖民政府试图把东非农村纳入出口种植和税收体系，地方社会的土地、劳动力和宗教权威受到持续挤压。",
+    process: [
+      {time: "1905年", title: "强制种植引发抵抗", description: "殖民当局推广棉花种植并征收人头税，地方社群在宗教领袖动员下开始拒种、拒税和攻击殖民设施。", participants: ["东非地方社群", "宗教领袖", "德国殖民当局"], action: "以拒种、拒税和起义抵抗殖民政策", impact: "冲突迅速扩散"},
+      {time: "1905-1906", title: "多族群联盟扩大", description: "不同语言和社会背景的社群加入起义，马及马及信仰提供共同象征，但各地目标和组织方式并不完全一致。", participants: ["马及马及运动", "东非多族群社群"], action: "以宗教象征联合地方抵抗", impact: "形成跨区域反殖民战争"},
+      {time: "1906-1907", title: "焦土政策镇压", description: "德国殖民军采取焚毁村庄、破坏粮食和军事惩罚等手段，起义被压制并造成饥荒和大规模人口损失。", participants: ["德国殖民军", "东非平民与起义者"], action: "以军事和粮食封锁镇压起义", impact: "重创地方社会并加深殖民统治创伤"}
+    ],
+    result: "马及马及起义是东非殖民暴力和跨社群抵抗的重要节点，不能被简化为一次地方叛乱。",
+    people: ["马及马及运动", "东非地方社群", "德国殖民军"]
+  },
+  {
+    id: "mau-mau-uprising-kenya",
+    title: "肯尼亚茅茅起义与殖民地土地问题",
+    era: "非洲殖民与民族独立",
+    time: "1952-1960",
+    regions: ["东非", "撒哈拉以南非洲"],
+    topics: ["殖民与反殖民", "国家形成"],
+    summary: "肯尼亚茅茅运动反对殖民土地占有、种族等级和政治排斥，英国通过紧急状态和拘禁镇压，战争最终推动肯尼亚独立谈判。",
+    background: "高地土地被殖民者大量占有，非洲农民面临土地短缺、劳工管制和政治权利受限，民族主义组织逐步扩大。",
+    process: [
+      {time: "1952年", title: "紧急状态与武装抵抗", description: "英国宣布紧急状态并大规模逮捕政治活动者，森林游击队和城市支持网络继续攻击殖民设施及合作对象。", participants: ["茅茅运动", "肯尼亚农民与工人", "英国殖民政府"], action: "以游击战和紧急法对抗殖民统治", impact: "扩大殖民地安全危机"},
+      {time: "1950年代", title: "拘禁和集体惩罚", description: "殖民政府建立拘禁营和村落管制体系，对嫌疑人实施审讯和强制劳动，暴力与人权问题逐渐引起国际关注。", participants: ["英国殖民当局", "肯尼亚平民与被拘禁者"], action: "以拘禁和村落重组压制抵抗", impact: "加深殖民统治合法性危机"},
+      {time: "1960-1963", title: "独立谈判展开", description: "武装冲突、殖民成本和民族主义政治共同推动宪制谈判，肯尼亚在1963年取得独立，土地和族群问题却继续影响新国家。", participants: ["肯尼亚民族主义者", "英国政府", "殖民地社会"], action: "以宪制谈判完成权力转移", impact: "结束英国殖民统治"}
+    ],
+    result: "茅茅起义把土地、殖民暴力和独立国家形成连接起来，是理解东非去殖民化的关键事件。",
+    people: ["茅茅运动", "肯尼亚民族主义者", "英国殖民政府"]
+  },
+  {
+    id: "rwanda-genocide-1994",
+    title: "卢旺达种族灭绝与国际干预失败",
+    era: "非洲现代国家与区域冲突",
+    time: "1994",
+    regions: ["东非", "撒哈拉以南非洲"],
+    topics: ["战争军事", "现代政治"],
+    summary: "1994年卢旺达发生针对图西族以及胡图温和派的大规模种族灭绝，联合国维和力量未能及时阻止屠杀，随后国际刑事审判与社区司法成为重建的一部分。",
+    background: "殖民时期的身份分类、独立后的政治暴力、难民问题和内战共同积累矛盾，和平协议执行失败进一步恶化局势。",
+    process: [
+      {time: "1990-1993", title: "内战与和平协议", description: "卢旺达爱国阵线从乌干达方向发动进攻，政府与反对力量在国际和地区斡旋下签署阿鲁沙协议，但政治互信和执行机制十分脆弱。", participants: ["卢旺达政府", "卢旺达爱国阵线", "联合国与地区组织"], action: "以战争和谈判争夺国家权力", impact: "形成脆弱的过渡安排"},
+      {time: "1994年4-7月", title: "系统性屠杀扩散", description: "总统飞机坠毁后，政府军、民兵和部分地方行政网络发动有组织屠杀，图西族和平民以及反对极端主义的胡图人遭到攻击。", participants: ["图西族平民", "胡图温和派", "政府军与民兵", "卢旺达爱国阵线"], action: "以宣传、路障和武装行动实施屠杀", impact: "造成数十万至百万人死亡和大规模流离"},
+      {time: "1994年以后", title: "政权更替与司法重建", description: "卢旺达爱国阵线控制全国后，国际刑事法庭、国家法院和社区 gacaca 法庭分别处理不同层级责任，难民回流又把冲突外溢到刚果地区。", participants: ["卢旺达新政府", "联合国国际刑事法庭", "幸存者与社区"], action: "以司法、回归和社区审判重建秩序", impact: "形成战后国家重建与区域冲突的新阶段"}
+    ],
+    result: "卢旺达悲剧说明殖民身份遗产、国家暴力、媒体动员和国际迟缓反应如何共同造成灾难，也说明战后司法与和解同样是历史主线。",
+    people: ["卢旺达幸存者", "卢旺达爱国阵线", "联合国维和人员"]
+  }
+].forEach(addAfricaExpansionEvent);
+
 
 // --- data/dynasties/african-civilizations/emperors.js ---
 

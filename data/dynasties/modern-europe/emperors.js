@@ -1,0 +1,7 @@
+window.MODERN_EUROPE_EMPERORS = [
+  { dynastyId: "modern-europe", title: "文艺复兴欧洲", name: "意大利城邦、宫廷和人文主义者", years: "14-16世纪", summary: "城市财富、古典复兴和赞助制度推动欧洲知识与艺术转型。", keyEvents: ["意大利文艺复兴", "印刷术与知识传播"], relatedEventIds: ["modern-europe-renaissance", "modern-europe-printing"] },
+  { dynastyId: "modern-europe", title: "宗教改革与国家", name: "路德、加尔文、哈布斯堡和新教国家", years: "1517-1648", summary: "宗教改革、王权和战争重塑欧洲政治宗教版图。", keyEvents: ["宗教改革", "三十年战争与威斯特伐利亚"], relatedEventIds: ["modern-europe-reformation", "modern-europe-westphalia"] },
+  { dynastyId: "modern-europe", title: "启蒙与革命", name: "启蒙思想、法国革命和拿破仑", years: "17-19世纪", summary: "科学、启蒙、财政国家和革命战争推动现代政治语言形成。", keyEvents: ["科学革命与启蒙", "法国革命", "拿破仑战争"], relatedEventIds: ["modern-europe-science-enlightenment", "modern-europe-french-revolution", "modern-europe-napoleon"] },
+  { dynastyId: "modern-europe", title: "工业化与帝国主义", name: "英国工业化、民族国家和殖民帝国", years: "18-19世纪", summary: "工业化、民族主义和海外帝国扩张使欧洲权力影响全球。", keyEvents: ["工业革命", "1848年革命", "德意志和意大利统一", "帝国主义与瓜分世界"], relatedEventIds: ["modern-europe-industrial-revolution", "modern-europe-1848", "modern-europe-unifications", "modern-europe-imperialism"] },
+  { dynastyId: "modern-europe", title: "战争与一体化", name: "世界大战、冷战欧洲和欧盟", years: "1914-1993", summary: "两次世界大战摧毁欧洲列强旧秩序，冷战分裂后欧洲逐步走向制度一体化。", keyEvents: ["第一次世界大战", "第二次世界大战", "冷战欧洲", "欧洲联盟形成"], relatedEventIds: ["modern-europe-wwi", "modern-europe-wwii", "modern-europe-cold-war", "modern-europe-eu"] }
+];

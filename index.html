@@ -45,8 +45,8 @@
         <h2>时间线</h2>
       </div>
       <div class="timeline-tabs" role="tablist" aria-label="主线导航类型">
-        <button id="timeline-tab-events" class="timeline-tab active" role="tab" aria-selected="true" aria-controls="timelineList" type="button" data-mode="events">大事</button>
-        <button id="timeline-tab-emperors" class="timeline-tab" role="tab" aria-selected="false" aria-controls="timelineList" type="button" data-mode="emperors">帝王</button>
+        <button class="timeline-tab active" type="button" data-mode="events">大事</button>
+        <button class="timeline-tab" type="button" data-mode="emperors">帝王</button>
       </div>
       <div id="timelineList" class="timeline-scroll"></div>
     </aside>
@@ -80,7 +80,7 @@
           <div id="backgroundContent" class="detail-section-content"></div>
         </section>
 
-        <section class="detail-section">
+        <section class="detail-section auxiliary-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9632;</span>
             <h2>疆域与人口</h2>
@@ -88,7 +88,7 @@
           <div id="territoryPopulationContent" class="territory-population-list"></div>
         </section>
 
-        <section class="detail-section">
+        <section class="detail-section auxiliary-section">
           <div class="detail-section-header">
             <span class="section-icon">&#9633;</span>
             <h2>势力范围示意</h2>
@@ -132,36 +132,311 @@
 
     <aside class="supplementary-panel" aria-label="辅助信息">
       <div class="sup-tabs" role="tablist">
-        <button id="sup-tab-people" class="sup-tab active" role="tab" aria-selected="true" aria-controls="tab-people" type="button" data-tab="people">人物</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="causal" aria-controls="tab-causal">因果链</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="sources" aria-controls="tab-sources">史料</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="citations" aria-controls="tab-citations">引用</button>
-        <button class="sup-tab" role="tab" aria-selected="false" type="button" data-tab="review" aria-controls="tab-review">复习</button>
+        <button class="sup-tab active" type="button" data-tab="people">人物</button>
+        <button class="sup-tab" type="button" data-tab="causal">因果链</button>
+        <button class="sup-tab" type="button" data-tab="sources">史料</button>
+        <button class="sup-tab" type="button" data-tab="citations">引用</button>
+        <button class="sup-tab" type="button" data-tab="review">复习</button>
       </div>
       <div class="sup-content">
-        <section id="tab-people" role="tabpanel" aria-labelledby="sup-tab-people" class="sup-section active"></section>
-        <section id="tab-causal" role="tabpanel" aria-labelledby="sup-tab-causal" class="sup-section"></section>
-        <section id="tab-sources" role="tabpanel" aria-labelledby="sup-tab-sources" class="sup-section"></section>
-        <section id="tab-citations" role="tabpanel" aria-labelledby="sup-tab-citations" class="sup-section"></section>
-        <section id="tab-review" role="tabpanel" aria-labelledby="sup-tab-review" class="sup-section"></section>
+        <section id="tab-people" class="sup-section active"></section>
+        <section id="tab-causal" class="sup-section"></section>
+        <section id="tab-sources" class="sup-section"></section>
+        <section id="tab-citations" class="sup-section"></section>
+        <section id="tab-review" class="sup-section"></section>
       </div>
     </aside>
   </div>
 
   <footer class="notes-bar">
     <button id="notesToggle" class="notes-toggle" type="button">&#9998; 笔记</button>
-    <input aria-label="当前事件笔记" id="noteInput" class="notes-input" type="text" placeholder="记录理解、疑问、待查证">
+    <input id="noteInput" class="notes-input" type="text" placeholder="记录理解、疑问、待查证">
     <span id="notesCount" class="notes-count"></span>
   </footer>
 
-  <section id="notesOverlay" class="notes-overlay" role="dialog" aria-modal="true" aria-labelledby="notesTitle" hidden>
+  <section id="notesOverlay" class="notes-overlay" aria-label="我的笔记">
     <div class="notes-overlay-header">
       <h2 id="notesTitle"></h2>
-      <button id="notesOverlayClose" class="notes-overlay-close" type="button" aria-label="关闭笔记">&#215;</button>
     </div>
     <div id="notesList" class="notes-list"></div>
   </section>
-  <script defer src="data/bundle.js"></script>
-  <script defer src="assets/app.js?v=20260710-source-status"></script>
+
+  <script src="data/dynasties/shang/metadata.js"></script>
+  <script src="data/dynasties/shang/events.js"></script>
+  <script src="data/dynasties/shang/emperors.js"></script>
+  <script src="data/dynasties/shang/sources.js"></script>
+  <script src="data/dynasties/western-zhou/metadata.js"></script>
+  <script src="data/dynasties/western-zhou/events.js"></script>
+  <script src="data/dynasties/western-zhou/emperors.js"></script>
+  <script src="data/dynasties/western-zhou/sources.js"></script>
+  <script src="data/dynasties/spring-autumn-warring-states/metadata.js"></script>
+  <script src="data/dynasties/spring-autumn-warring-states/events.js"></script>
+  <script src="data/dynasties/spring-autumn-warring-states/emperors.js"></script>
+  <script src="data/dynasties/spring-autumn-warring-states/sources.js"></script>
+  <script src="data/dynasties/qin/metadata.js"></script>
+  <script src="data/dynasties/qin/events.js"></script>
+  <script src="data/dynasties/qin/emperors.js"></script>
+  <script src="data/dynasties/qin/sources.js"></script>
+  <script src="data/dynasties/western-han/metadata.js"></script>
+  <script src="data/dynasties/western-han/events.js"></script>
+  <script src="data/dynasties/western-han/emperors.js"></script>
+  <script src="data/dynasties/western-han/sources.js"></script>
+  <script src="data/dynasties/xin/metadata.js"></script>
+  <script src="data/dynasties/xin/events.js"></script>
+  <script src="data/dynasties/xin/emperors.js"></script>
+  <script src="data/dynasties/xin/sources.js"></script>
+  <script src="data/dynasties/eastern-han/metadata.js"></script>
+  <script src="data/dynasties/eastern-han/events.js"></script>
+  <script src="data/dynasties/eastern-han/emperors.js"></script>
+  <script src="data/dynasties/eastern-han/sources.js"></script>
+  <script src="data/dynasties/late-han-three-kingdoms/metadata.js"></script>
+  <script src="data/dynasties/late-han-three-kingdoms/events.js"></script>
+  <script src="data/dynasties/late-han-three-kingdoms/emperors.js"></script>
+  <script src="data/dynasties/late-han-three-kingdoms/sources.js"></script>
+  <script src="data/dynasties/northern-southern/metadata.js"></script>
+  <script src="data/dynasties/northern-southern/events.js"></script>
+  <script src="data/dynasties/northern-southern/emperors.js"></script>
+  <script src="data/dynasties/northern-southern/sources.js"></script>
+  <script src="data/dynasties/sui/metadata.js"></script>
+  <script src="data/dynasties/sui/events.js"></script>
+  <script src="data/dynasties/sui/emperors.js"></script>
+  <script src="data/dynasties/sui/sources.js"></script>
+  <script src="data/dynasties/tang/metadata.js"></script>
+  <script src="data/dynasties/tang/events.js"></script>
+  <script src="data/dynasties/tang/emperors.js"></script>
+  <script src="data/dynasties/tang/sources.js"></script>
+  <script src="data/dynasties/five-dynasties-ten-kingdoms/metadata.js"></script>
+  <script src="data/dynasties/five-dynasties-ten-kingdoms/events.js"></script>
+  <script src="data/dynasties/five-dynasties-ten-kingdoms/emperors.js"></script>
+  <script src="data/dynasties/five-dynasties-ten-kingdoms/sources.js"></script>
+  <script src="data/dynasties/northern-song/metadata.js"></script>
+  <script src="data/dynasties/northern-song/events.js"></script>
+  <script src="data/dynasties/northern-song/emperors.js"></script>
+  <script src="data/dynasties/northern-song/sources.js"></script>
+  <script src="data/dynasties/southern-song/metadata.js"></script>
+  <script src="data/dynasties/southern-song/events.js"></script>
+  <script src="data/dynasties/southern-song/emperors.js"></script>
+  <script src="data/dynasties/southern-song/sources.js"></script>
+  <script src="data/dynasties/liao/metadata.js"></script>
+  <script src="data/dynasties/liao/events.js"></script>
+  <script src="data/dynasties/liao/emperors.js"></script>
+  <script src="data/dynasties/liao/sources.js"></script>
+  <script src="data/dynasties/western-xia/metadata.js"></script>
+  <script src="data/dynasties/western-xia/events.js"></script>
+  <script src="data/dynasties/western-xia/emperors.js"></script>
+  <script src="data/dynasties/western-xia/sources.js"></script>
+  <script src="data/dynasties/jin/metadata.js"></script>
+  <script src="data/dynasties/jin/events.js"></script>
+  <script src="data/dynasties/jin/emperors.js"></script>
+  <script src="data/dynasties/jin/sources.js"></script>
+  <script src="data/dynasties/mongol/metadata.js"></script>
+  <script src="data/dynasties/mongol/events.js"></script>
+  <script src="data/dynasties/mongol/emperors.js"></script>
+  <script src="data/dynasties/mongol/sources.js"></script>
+  <script src="data/dynasties/yuan/metadata.js"></script>
+  <script src="data/dynasties/yuan/events.js"></script>
+  <script src="data/dynasties/yuan/emperors.js"></script>
+  <script src="data/dynasties/yuan/sources.js"></script>
+  <script src="data/dynasties/ming/metadata.js"></script>
+  <script src="data/dynasties/ming/events.js"></script>
+  <script src="data/dynasties/ming/emperors.js"></script>
+  <script src="data/dynasties/ming/sources.js"></script>
+  <script src="data/dynasties/qing/metadata.js"></script>
+  <script src="data/dynasties/qing/events.js"></script>
+  <script src="data/dynasties/qing/emperors.js"></script>
+  <script src="data/dynasties/qing/sources.js"></script>
+  <script src="data/dynasties/modern-china/metadata.js"></script>
+  <script src="data/dynasties/modern-china/events.js"></script>
+  <script src="data/dynasties/modern-china/emperors.js"></script>
+  <script src="data/dynasties/modern-china/sources.js"></script>
+  <script src="data/dynasties/republican-china/metadata.js"></script>
+  <script src="data/dynasties/republican-china/events.js"></script>
+  <script src="data/dynasties/republican-china/emperors.js"></script>
+  <script src="data/dynasties/republican-china/sources.js"></script>
+  <script src="data/dynasties/war-of-resistance/metadata.js"></script>
+  <script src="data/dynasties/war-of-resistance/events.js"></script>
+  <script src="data/dynasties/war-of-resistance/emperors.js"></script>
+  <script src="data/dynasties/war-of-resistance/sources.js"></script>
+  <script src="data/dynasties/liberation-construction/metadata.js"></script>
+  <script src="data/dynasties/liberation-construction/events.js"></script>
+  <script src="data/dynasties/liberation-construction/emperors.js"></script>
+  <script src="data/dynasties/liberation-construction/sources.js"></script>
+  <script src="data/dynasties/reform-opening/metadata.js"></script>
+  <script src="data/dynasties/reform-opening/events.js"></script>
+  <script src="data/dynasties/reform-opening/emperors.js"></script>
+  <script src="data/dynasties/japan/metadata.js"></script>
+  <script src="data/dynasties/japan/sources.js"></script>
+  <script src="data/dynasties/japan/events.js"></script>
+  <script src="data/dynasties/japan/emperors.js"></script>
+  <script src="data/dynasties/korean-peninsula/metadata.js"></script>
+  <script src="data/dynasties/korean-peninsula/sources.js"></script>
+  <script src="data/dynasties/korean-peninsula/events.js"></script>
+  <script src="data/dynasties/korean-peninsula/emperors.js"></script>
+  <script src="data/dynasties/south-asia/metadata.js"></script>
+  <script src="data/dynasties/south-asia/sources.js"></script>
+  <script src="data/dynasties/south-asia/events.js"></script>
+  <script src="data/dynasties/south-asia/emperors.js"></script>
+  <script src="data/dynasties/southeast-asia/metadata.js"></script>
+  <script src="data/dynasties/southeast-asia/sources.js"></script>
+  <script src="data/dynasties/southeast-asia/events.js"></script>
+  <script src="data/dynasties/southeast-asia/emperors.js"></script>
+  <script src="data/dynasties/central-asia/metadata.js"></script>
+  <script src="data/dynasties/central-asia/sources.js"></script>
+  <script src="data/dynasties/central-asia/events.js"></script>
+  <script src="data/dynasties/central-asia/emperors.js"></script>
+  <script src="data/dynasties/iranian-world/metadata.js"></script>
+  <script src="data/dynasties/iranian-world/sources.js"></script>
+  <script src="data/dynasties/iranian-world/events.js"></script>
+  <script src="data/dynasties/iranian-world/emperors.js"></script>
+  <script src="data/dynasties/islamic-world/metadata.js"></script>
+  <script src="data/dynasties/islamic-world/sources.js"></script>
+  <script src="data/dynasties/islamic-world/events.js"></script>
+  <script src="data/dynasties/islamic-world/emperors.js"></script>
+  <script src="data/dynasties/reform-opening/sources.js"></script>
+  <script src="data/dynasties/ancient-greece/metadata.js"></script>
+  <script src="data/dynasties/ancient-greece/sources.js"></script>
+  <script src="data/dynasties/ancient-greece/events.js"></script>
+  <script src="data/dynasties/ancient-greece/emperors.js"></script>
+  <script src="data/dynasties/roman-world/metadata.js"></script>
+  <script src="data/dynasties/roman-world/sources.js"></script>
+  <script src="data/dynasties/roman-world/events.js"></script>
+  <script src="data/dynasties/roman-world/emperors.js"></script>
+  <script src="data/dynasties/roman-republic/metadata.js"></script>
+  <script src="data/dynasties/roman-republic/sources.js"></script>
+  <script src="data/dynasties/roman-republic/events.js"></script>
+  <script src="data/dynasties/roman-republic/emperors.js"></script>
+  <script src="data/dynasties/roman-empire/metadata.js"></script>
+  <script src="data/dynasties/roman-empire/sources.js"></script>
+  <script src="data/dynasties/roman-empire/events.js"></script>
+  <script src="data/dynasties/roman-empire/emperors.js"></script>
+  <script src="data/dynasties/byzantium/metadata.js"></script>
+  <script src="data/dynasties/byzantium/sources.js"></script>
+  <script src="data/dynasties/byzantium/events.js"></script>
+  <script src="data/dynasties/byzantium/emperors.js"></script>
+  <script src="data/dynasties/medieval-western-europe/metadata.js"></script>
+  <script src="data/dynasties/medieval-western-europe/sources.js"></script>
+  <script src="data/dynasties/medieval-western-europe/events.js"></script>
+  <script src="data/dynasties/medieval-western-europe/emperors.js"></script>
+  <script src="data/dynasties/russian-eastern-europe/metadata.js"></script>
+  <script src="data/dynasties/russian-eastern-europe/sources.js"></script>
+  <script src="data/dynasties/russian-eastern-europe/events.js"></script>
+  <script src="data/dynasties/russian-eastern-europe/emperors.js"></script>
+  <script src="data/dynasties/ottoman-world/metadata.js"></script>
+  <script src="data/dynasties/ottoman-world/sources.js"></script>
+  <script src="data/dynasties/ottoman-world/events.js"></script>
+  <script src="data/dynasties/ottoman-world/emperors.js"></script>
+  <script src="data/dynasties/modern-europe/metadata.js"></script>
+  <script src="data/dynasties/modern-europe/sources.js"></script>
+  <script src="data/dynasties/modern-europe/events.js"></script>
+  <script src="data/dynasties/modern-europe/emperors.js"></script>
+  <script src="data/dynasties/ancient-egypt/metadata.js"></script>
+  <script src="data/dynasties/ancient-egypt/sources.js"></script>
+  <script src="data/dynasties/ancient-egypt/events.js"></script>
+  <script src="data/dynasties/ancient-egypt/emperors.js"></script>
+  <script src="data/dynasties/african-world/metadata.js"></script>
+  <script src="data/dynasties/african-world/sources.js"></script>
+  <script src="data/dynasties/african-world/events.js"></script>
+  <script src="data/dynasties/african-world/emperors.js"></script>
+  <script src="data/dynasties/americas-world/metadata.js"></script>
+  <script src="data/dynasties/americas-world/sources.js"></script>
+  <script src="data/dynasties/americas-world/events.js"></script>
+  <script src="data/dynasties/americas-world/emperors.js"></script>
+  <script src="data/dynasties/oceania-world/metadata.js"></script>
+  <script src="data/dynasties/oceania-world/sources.js"></script>
+  <script src="data/dynasties/oceania-world/events.js"></script>
+  <script src="data/dynasties/oceania-world/emperors.js"></script>
+  <script src="data/dynasties/ancient-near-east/metadata.js"></script>
+  <script src="data/dynasties/ancient-near-east/sources.js"></script>
+  <script src="data/dynasties/ancient-near-east/events.js"></script>
+  <script src="data/dynasties/ancient-near-east/emperors.js"></script>
+  <script src="data/dynasties/sumer-early-mesopotamia/metadata.js"></script>
+  <script src="data/dynasties/sumer-early-mesopotamia/sources.js"></script>
+  <script src="data/dynasties/sumer-early-mesopotamia/events.js"></script>
+  <script src="data/dynasties/sumer-early-mesopotamia/emperors.js"></script>
+  <script src="data/dynasties/indus-civilization/metadata.js"></script>
+  <script src="data/dynasties/indus-civilization/sources.js"></script>
+  <script src="data/dynasties/indus-civilization/events.js"></script>
+  <script src="data/dynasties/indus-civilization/emperors.js"></script>
+  <script src="data/dynasties/maurya-gupta/metadata.js"></script>
+  <script src="data/dynasties/maurya-gupta/sources.js"></script>
+  <script src="data/dynasties/maurya-gupta/events.js"></script>
+  <script src="data/dynasties/maurya-gupta/emperors.js"></script>
+  <script src="data/dynasties/delhi-sultanate-mughal/metadata.js"></script>
+  <script src="data/dynasties/delhi-sultanate-mughal/sources.js"></script>
+  <script src="data/dynasties/delhi-sultanate-mughal/events.js"></script>
+  <script src="data/dynasties/delhi-sultanate-mughal/emperors.js"></script>
+  <script src="data/dynasties/mainland-southeast-asia/metadata.js"></script>
+  <script src="data/dynasties/mainland-southeast-asia/sources.js"></script>
+  <script src="data/dynasties/mainland-southeast-asia/events.js"></script>
+  <script src="data/dynasties/mainland-southeast-asia/emperors.js"></script>
+  <script src="data/dynasties/island-southeast-asia/metadata.js"></script>
+  <script src="data/dynasties/island-southeast-asia/sources.js"></script>
+  <script src="data/dynasties/island-southeast-asia/events.js"></script>
+  <script src="data/dynasties/island-southeast-asia/emperors.js"></script>
+  <script src="data/dynasties/colonial-southeast-asia/metadata.js"></script>
+  <script src="data/dynasties/colonial-southeast-asia/sources.js"></script>
+  <script src="data/dynasties/colonial-southeast-asia/events.js"></script>
+  <script src="data/dynasties/colonial-southeast-asia/emperors.js"></script>
+  <script src="data/dynasties/south-asia-imperial-core/metadata.js"></script>
+  <script src="data/dynasties/south-asia-imperial-core/sources.js"></script>
+  <script src="data/dynasties/south-asia-imperial-core/events.js"></script>
+  <script src="data/dynasties/south-asia-imperial-core/emperors.js"></script>
+  <script src="data/dynasties/southeast-asia-core-kingdoms/metadata.js"></script>
+  <script src="data/dynasties/southeast-asia-core-kingdoms/sources.js"></script>
+  <script src="data/dynasties/southeast-asia-core-kingdoms/events.js"></script>
+  <script src="data/dynasties/southeast-asia-core-kingdoms/emperors.js"></script>
+  <script src="data/dynasties/steppe-silk-road-core/metadata.js"></script>
+  <script src="data/dynasties/steppe-silk-road-core/sources.js"></script>
+  <script src="data/dynasties/steppe-silk-road-core/events.js"></script>
+  <script src="data/dynasties/steppe-silk-road-core/emperors.js"></script>
+  <script src="data/dynasties/africa-essential-empires/metadata.js"></script>
+  <script src="data/dynasties/africa-essential-empires/sources.js"></script>
+  <script src="data/dynasties/africa-essential-empires/events.js"></script>
+  <script src="data/dynasties/africa-essential-empires/emperors.js"></script>
+  <script src="data/dynasties/mesoamerica-andes-core/metadata.js"></script>
+  <script src="data/dynasties/mesoamerica-andes-core/sources.js"></script>
+  <script src="data/dynasties/mesoamerica-andes-core/events.js"></script>
+  <script src="data/dynasties/mesoamerica-andes-core/emperors.js"></script>
+  <script src="data/dynasties/polynesian-oceania-core/metadata.js"></script>
+  <script src="data/dynasties/polynesian-oceania-core/sources.js"></script>
+  <script src="data/dynasties/polynesian-oceania-core/events.js"></script>
+  <script src="data/dynasties/polynesian-oceania-core/emperors.js"></script>
+  <script src="data/dynasties/bronze-age-international-system/metadata.js"></script>
+  <script src="data/dynasties/bronze-age-international-system/sources.js"></script>
+  <script src="data/dynasties/bronze-age-international-system/events.js"></script>
+  <script src="data/dynasties/bronze-age-international-system/emperors.js"></script>
+  <script src="data/dynasties/bronze-age-collapse/metadata.js"></script>
+  <script src="data/dynasties/bronze-age-collapse/sources.js"></script>
+  <script src="data/dynasties/bronze-age-collapse/events.js"></script>
+  <script src="data/dynasties/bronze-age-collapse/emperors.js"></script>
+  <script src="data/topics/imperial-exam.js"></script>
+  <script src="data/topics/song-mongol-yuan-war.js"></script>
+  <script src="data/regions/east-asia/metadata.js"></script>
+  <script src="data/regions/east-asia/china/package.js"></script>
+  <script src="data/regions/east-asia/japan/package.js"></script>
+  <script src="data/regions/east-asia/korean-peninsula/package.js"></script>
+  <script src="data/regions/south-asia/metadata.js"></script>
+  <script src="data/regions/south-asia/south-asia/package.js"></script>
+  <script src="data/regions/southeast-asia/metadata.js"></script>
+  <script src="data/regions/southeast-asia/southeast-asia/package.js"></script>
+  <script src="data/regions/central-asia/metadata.js"></script>
+  <script src="data/regions/central-asia/central-asia/package.js"></script>
+  <script src="data/regions/europe/metadata.js"></script>
+  <script src="data/regions/europe/europe/package.js"></script>
+  <script src="data/regions/africa/metadata.js"></script>
+  <script src="data/regions/africa/africa/package.js"></script>
+  <script src="data/regions/west-asia/metadata.js"></script>
+  <script src="data/regions/west-asia/west-asia/package.js"></script>
+  <script src="data/regions/americas/metadata.js"></script>
+  <script src="data/regions/americas/americas/package.js"></script>
+  <script src="data/regions/oceania/metadata.js"></script>
+  <script src="data/regions/oceania/oceania/package.js"></script>
+  <script src="data/regions/afro-eurasia-crossroads/metadata.js"></script>
+  <script src="data/regions/afro-eurasia-crossroads/afro-eurasia-crossroads/package.js"></script>
+  <script src="data/filter-catalog.js?v=20260826-filter-tree"></script>
+  <script src="data/territory-population.js"></script>
+  <script src="data/political-maps.js"></script>
+  <script src="data/index.js"></script>
+  <script src="assets/app.js?v=20260826-filter-cache"></script>
 </body>
 </html>

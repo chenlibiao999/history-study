@@ -1,0 +1,7 @@
+window.AMERICAS_WORLD_EMPERORS = [
+  { dynastyId: "americas-world", title: "早期美洲", name: "迁徙社群与农业村落", years: "约前15000-前1500", summary: "早期人群适应多样生态，并在中美洲、安第斯等地发展农业。", keyEvents: ["早期人群进入美洲", "玉米、马铃薯与农业扩散"], relatedEventIds: ["americas-world-peopling", "americas-world-agriculture"] },
+  { dynastyId: "americas-world", title: "中美洲古典传统", name: "奥尔梅克、玛雅与特奥蒂瓦坎", years: "约前1500-900", summary: "中美洲形成城市、文字、历法、宗教和区域交换网络。", keyEvents: ["奥尔梅克与中美洲早期传统", "玛雅城邦与古典高峰", "特奥蒂瓦坎影响网络"], relatedEventIds: ["americas-world-olmec", "americas-world-maya-classic", "americas-world-teotihuacan"] },
+  { dynastyId: "americas-world", title: "安第斯国家", name: "查文、莫切、蒂瓦纳库、瓦里与印加", years: "约前900-1533", summary: "安第斯以高原、海岸和山地道路形成多中心国家传统，最终由印加整合。", keyEvents: ["安第斯早期宗教与区域中心", "蒂瓦纳库、瓦里与安第斯整合", "印加帝国扩张"], relatedEventIds: ["americas-world-chavin", "americas-world-tiwanaku-wari", "americas-world-inca"] },
+  { dynastyId: "americas-world", title: "征服与殖民", name: "西班牙、葡萄牙和原住民社会", years: "1492-1800", summary: "欧洲征服、疾病、传教、矿业和殖民制度重塑美洲。", keyEvents: ["哥伦布航行与大西洋接触", "阿兹特克帝国被征服", "印加帝国被征服", "大西洋殖民体系"], relatedEventIds: ["americas-world-columbus", "americas-world-aztec-conquest", "americas-world-inca-conquest", "americas-world-atlantic-colonial"] },
+  { dynastyId: "americas-world", title: "独立与新秩序", name: "海地、美国和拉丁美洲新国家", years: "1776-1898", summary: "美洲殖民地独立重塑大西洋世界，同时原住民、奴隶制和领土扩张问题持续存在。", keyEvents: ["美国独立", "海地革命", "拉美独立运动", "美国大陆扩张与美西战争"], relatedEventIds: ["americas-world-us-independence", "americas-world-haiti", "americas-world-latin-independence", "americas-world-us-expansion"] }
+];

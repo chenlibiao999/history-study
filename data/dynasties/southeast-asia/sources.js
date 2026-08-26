@@ -1,52 +1,32 @@
 window.SOUTHEAST_ASIA_SOURCES = [
   {
-    "id": "sea-met-1000-1400",
-    "type": "博物馆年表",
-    "title": "The Metropolitan Museum of Art: Southeast Asia, 1000-1400 A.D.",
-    "author": "The Metropolitan Museum of Art",
-    "authorityLevel": "吴哥、蒲甘、室利佛逝、满者伯夷等中世纪东南亚校核入口",
-    "credibility": "高",
-    "credibilityLevel": "high",
-    "url": "https://82nd-and-fifth.metmuseum.org/toah/ht/07/sse.html"
+    id: "southeast-asia-britannica",
+    type: "公开通史入口",
+    title: "Encyclopaedia Britannica: Southeast Asia",
+    author: "Encyclopaedia Britannica",
+    authorityLevel: "公开通史入口，适合核对东南亚阶段划分和主要事件",
+    credibility: "中高",
+    credibilityLevel: "medium-high",
+    url: "https://www.britannica.com/place/Southeast-Asia"
   },
   {
-    "id": "sea-columbia-topic",
-    "type": "教学资料入口",
-    "title": "Columbia Asia for Educators: Vietnam and Southeast Asia topics",
-    "author": "Columbia University Asia for Educators",
-    "authorityLevel": "越南与东南亚分期和教学主题入口",
-    "credibility": "高",
-    "credibilityLevel": "high",
-    "url": "https://afe.easia.columbia.edu/tps/topic_index.htm"
+    id: "southeast-asia-met",
+    type: "博物馆学习资料",
+    title: "The Metropolitan Museum of Art: Southeast Asia",
+    author: "The Metropolitan Museum of Art",
+    authorityLevel: "公开博物馆资料，适合核对宗教艺术、贸易和区域文化交流背景",
+    credibility: "高",
+    credibilityLevel: "high",
+    url: "https://www.metmuseum.org/toah/ht/06/sse.html"
   },
   {
-    "id": "sea-loc-southern-asia",
-    "type": "馆藏研究入口",
-    "title": "Library of Congress: Southern Asia Studies Collection Overview",
-    "author": "Library of Congress",
-    "authorityLevel": "南亚与东南亚研究馆藏范围说明",
-    "credibility": "高",
-    "credibilityLevel": "high",
-    "url": "https://www.loc.gov/acq/devpol/colloverviews/south-asia.html"
-  },
-  {
-    "id": "sea-asean-crs",
-    "type": "现代区域组织资料",
-    "title": "Congressional Research Service: The Association of Southeast Asian Nations",
-    "author": "Congressional Research Service",
-    "authorityLevel": "ASEAN 现代区域政治经济概览",
-    "credibility": "高",
-    "credibilityLevel": "high",
-    "url": "https://www.congress.gov/crs-product/IF10348"
-  },
-  {
-    "id": "sea-britannica-history",
-    "type": "百科通史入口",
-    "title": "Britannica: History of Southeast Asia",
-    "author": "Encyclopaedia Britannica",
-    "authorityLevel": "综合通史框架校核",
-    "credibility": "中高",
-    "credibilityLevel": "medium-high",
-    "url": "https://www.britannica.com/place/Southeast-Asia/History"
+    id: "southeast-asia-unesco-angkor",
+    type: "世界遗产资料",
+    title: "UNESCO World Heritage Centre: Angkor",
+    author: "UNESCO World Heritage Centre",
+    authorityLevel: "公开机构资料，适合核对吴哥遗址与文化遗产背景",
+    credibility: "高",
+    credibilityLevel: "high",
+    url: "https://whc.unesco.org/en/list/668/"
   }
 ];

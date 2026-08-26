@@ -1,0 +1,7 @@
+window.OCEANIA_WORLD_EMPERORS = [
+  { dynastyId: "oceania-world", title: "深时澳大利亚", name: "澳大利亚原住民社群", years: "约前50000以后", summary: "原住民在澳大利亚大陆形成长期土地、亲属、仪式和生态知识体系。", keyEvents: ["澳大利亚早期定居", "原住民土地与仪式体系"], relatedEventIds: ["oceania-world-australia-settlement", "oceania-world-aboriginal-country"] },
+  { dynastyId: "oceania-world", title: "太平洋航海扩散", name: "拉皮塔与南岛航海者", years: "约前1500-1000", summary: "拉皮塔陶器、航海和亲属网络推动人群进入美拉尼西亚、波利尼西亚和密克罗尼西亚。", keyEvents: ["拉皮塔文化扩散", "波利尼西亚远航定居"], relatedEventIds: ["oceania-world-lapita", "oceania-world-polynesian-voyaging"] },
+  { dynastyId: "oceania-world", title: "岛屿社会", name: "汤加、夏威夷、毛利和多岛社群", years: "1000-1800", summary: "太平洋岛屿形成酋邦、祭祀、交换和航海网络。", keyEvents: ["汤加海上势力", "毛利定居新西兰", "夏威夷酋邦整合"], relatedEventIds: ["oceania-world-tonga", "oceania-world-maori", "oceania-world-hawaii"] },
+  { dynastyId: "oceania-world", title: "殖民时代", name: "欧洲殖民国家与本地社会", years: "18-20世纪", summary: "英国、法国、德国、美国等进入太平洋，殖民、传教、劳工贸易和定居改变区域。", keyEvents: ["库克航行与欧洲接触", "澳大利亚殖民与原住民 dispossession", "新西兰怀唐伊条约", "太平洋劳工贸易"], relatedEventIds: ["oceania-world-cook", "oceania-world-australia-colony", "oceania-world-waitangi", "oceania-world-labor-trade"] },
+  { dynastyId: "oceania-world", title: "现代大洋洲", name: "战争、自治与独立国家", years: "1941-1975", summary: "太平洋战争后，岛屿殖民地和澳新国家进入新的安全与独立秩序。", keyEvents: ["太平洋战争改变区域格局", "萨摩亚和巴布亚新几内亚独立"], relatedEventIds: ["oceania-world-pacific-war", "oceania-world-independence"] }
+];

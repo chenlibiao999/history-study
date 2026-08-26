@@ -1,78 +1,90 @@
 window.BYZANTIUM_EMPERORS = [
   {
     "dynastyId": "byzantium",
-    "title": "皇帝",
-    "name": "查士丁尼一世",
-    "years": "482-565",
-    "color": "var(--accent-green)",
-    "bio": "法典、建筑和西征共同塑造查士丁尼时代。",
+    "title": "新罗马",
+    "name": "新罗马",
+    "years": "330",
+    "summary": "新罗马是拜占庭帝国中必须掌握的阶段。",
     "keyEvents": [
-      "查士丁尼法典编纂",
-      "查士丁尼西征北非与意大利"
+      "君士坦丁堡成为新都"
     ],
     "relatedEventIds": [
-      "byz-justinian-code",
-      "byz-reconquest-africa-italy"
+      "byzantium-constantinople"
     ]
   },
   {
     "dynastyId": "byzantium",
-    "title": "皇帝",
-    "name": "希拉克略",
-    "years": "约575-641",
-    "color": "var(--accent-gold)",
-    "bio": "击败萨珊后又面对阿拉伯扩张，处在古典帝国向中世纪拜占庭转型的节点。",
+    "title": "查士丁尼",
+    "name": "查士丁尼",
+    "years": "529-534",
+    "summary": "查士丁尼是拜占庭帝国中必须掌握的阶段。",
     "keyEvents": [
-      "希拉克略与萨珊波斯决战",
-      "阿拉伯扩张冲击拜占庭"
+      "查士丁尼法典",
+      "查士丁尼再征服"
     ],
     "relatedEventIds": [
-      "byz-heraclius-persian-war",
-      "byz-arab-conquests"
+      "byzantium-justinian-code",
+      "byzantium-justinian-reconquest"
     ]
   },
   {
     "dynastyId": "byzantium",
-    "title": "皇帝",
-    "name": "巴西尔二世",
-    "years": "958-1025",
-    "color": "var(--accent-green)",
-    "bio": "马其顿王朝高峰人物，重新压制保加利亚。",
+    "title": "收缩与改革",
+    "name": "收缩与改革",
+    "years": "7世纪",
+    "summary": "收缩与改革是拜占庭帝国中必须掌握的阶段。",
     "keyEvents": [
-      "巴西尔二世征服保加利亚"
+      "失去叙利亚与埃及",
+      "军区制与防御国家",
+      "圣像破坏运动"
     ],
     "relatedEventIds": [
-      "byz-basil-ii-bulgaria"
+      "byzantium-arab-losses",
+      "byzantium-themes",
+      "byzantium-iconoclasm"
     ]
   },
   {
     "dynastyId": "byzantium",
-    "title": "皇帝",
-    "name": "阿莱克修斯一世",
-    "years": "1057-1118",
-    "color": "var(--accent-blue)",
-    "bio": "在塞尔柱压力下寻求西方援助，引出十字军与拜占庭复杂关系。",
+    "title": "中期复兴",
+    "name": "中期复兴",
+    "years": "867-1025",
+    "summary": "中期复兴是拜占庭帝国中必须掌握的阶段。",
     "keyEvents": [
-      "阿莱克修斯一世与科穆宁恢复",
-      "第一次十字军经过拜占庭"
+      "马其顿王朝复兴",
+      "东西教会大分裂"
     ],
     "relatedEventIds": [
-      "byz-alexios-komnenos-recovery",
-      "byz-first-crusade-crossing"
+      "byzantium-macedonian",
+      "byzantium-schism"
     ]
   },
   {
     "dynastyId": "byzantium",
-    "title": "末代皇帝",
-    "name": "君士坦丁十一世",
-    "years": "1405-1453",
-    "color": "var(--accent-gold)",
-    "bio": "1453年君士坦丁堡陷落时战死，象征拜占庭终局。",
+    "title": "十字军冲击",
+    "name": "十字军冲击",
+    "years": "1071",
+    "summary": "十字军冲击是拜占庭帝国中必须掌握的阶段。",
+    "keyEvents": [
+      "曼齐刻尔特战役",
+      "第四次十字军攻陷君士坦丁堡"
+    ],
+    "relatedEventIds": [
+      "byzantium-manzikert",
+      "byzantium-fourth-crusade"
+    ]
+  },
+  {
+    "dynastyId": "byzantium",
+    "title": "晚期灭亡",
+    "name": "晚期灭亡",
+    "years": "1453",
+    "summary": "晚期灭亡是拜占庭帝国中必须掌握的阶段。",
     "keyEvents": [
       "君士坦丁堡陷落"
     ],
     "relatedEventIds": [
-      "byz-fall-constantinople-1453"
+      "byzantium-fall-1453"
     ]
   }
 ];

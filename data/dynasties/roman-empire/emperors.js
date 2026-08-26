@@ -1,78 +1,66 @@
 window.ROMAN_EMPIRE_EMPERORS = [
   {
     "dynastyId": "roman-empire",
-    "title": "首任元首",
-    "name": "奥古斯都",
-    "years": "前63-14",
-    "color": "var(--accent-green)",
-    "bio": "通过共和外壳重建帝国治理秩序。",
+    "title": "元首制",
+    "name": "元首制",
+    "years": "前31-14",
+    "summary": "元首制是罗马帝国中必须掌握的阶段。",
     "keyEvents": [
-      "奥古斯都元首制确立"
+      "奥古斯都与元首制",
+      "朱里亚-克劳狄王朝",
+      "弗拉维王朝与帝国恢复"
     ],
     "relatedEventIds": [
-      "re-augustan-principate"
+      "roman-empire-augustus",
+      "roman-empire-julio-claudian",
+      "roman-empire-flavian"
     ]
   },
   {
     "dynastyId": "roman-empire",
-    "title": "扩张皇帝",
-    "name": "图拉真",
-    "years": "53-117",
-    "color": "var(--accent-gold)",
-    "bio": "把帝国扩张推向传统疆域高峰。",
+    "title": "帝国高峰",
+    "name": "帝国高峰",
+    "years": "98-117",
+    "summary": "帝国高峰是罗马帝国中必须掌握的阶段。",
     "keyEvents": [
-      "图拉真扩张至帝国高峰"
+      "图拉真最大扩张",
+      "哈德良边界治理",
+      "安敦尼瘟疫与压力"
     ],
     "relatedEventIds": [
-      "re-trajan-dacia-parthia"
+      "roman-empire-trajan",
+      "roman-empire-hadrian",
+      "roman-empire-antonine-plague"
     ]
   },
   {
     "dynastyId": "roman-empire",
-    "title": "改革皇帝",
-    "name": "戴克里先",
-    "years": "约244-312",
-    "color": "var(--accent-blue)",
-    "bio": "通过税制、行政和四帝共治重组晚期帝国。",
+    "title": "三世纪危机",
+    "name": "三世纪危机",
+    "years": "235-284",
+    "summary": "三世纪危机是罗马帝国中必须掌握的阶段。",
+    "keyEvents": [
+      "三世纪危机"
+    ],
+    "relatedEventIds": [
+      "roman-empire-third-century"
+    ]
+  },
+  {
+    "dynastyId": "roman-empire",
+    "title": "晚期帝国",
+    "name": "晚期帝国",
+    "years": "284以后",
+    "summary": "晚期帝国是罗马帝国中必须掌握的阶段。",
     "keyEvents": [
       "戴克里先改革",
-      "四帝共治"
+      "君士坦丁与新都",
+      "西罗马政治终结"
     ],
     "relatedEventIds": [
-      "re-diocletian-reforms",
-      "re-tetrarchy"
-    ]
-  },
-  {
-    "dynastyId": "roman-empire",
-    "title": "基督教化关键皇帝",
-    "name": "君士坦丁",
-    "years": "约272-337",
-    "color": "var(--accent-green)",
-    "bio": "合法化基督教并建立君士坦丁堡。",
-    "keyEvents": [
-      "米兰敕令与基督教合法化",
-      "尼西亚会议",
-      "君士坦丁堡成为新都"
-    ],
-    "relatedEventIds": [
-      "re-milan-edict",
-      "re-nicaea-council",
-      "re-constantinople-founded"
-    ]
-  },
-  {
-    "dynastyId": "roman-empire",
-    "title": "西部终局人物",
-    "name": "奥多亚塞",
-    "years": "约433-493",
-    "color": "var(--accent-gold)",
-    "bio": "废黜西部末代皇帝，标志西部帝制终结。",
-    "keyEvents": [
-      "西罗马末代皇帝被废"
-    ],
-    "relatedEventIds": [
-      "re-odoacer-476"
+      "roman-empire-diocletian",
+      "roman-empire-constantine",
+      "roman-empire-western-fall"
     ]
   }
 ];

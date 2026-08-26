@@ -23,6 +23,12 @@ window.AFRO_EURASIA_CROSSROADS_PACKAGE = {
   referenceModuleIds: [
     "ancient-egypt",
     "sumer-early-mesopotamia",
-    "ancient-greece"
+    "ancient-greece",
+    "roman-world",
+    "iranian-world",
+    "islamic-world",
+    "ottoman-world",
+    "modern-europe",
+    "americas-world"
   ]
 };

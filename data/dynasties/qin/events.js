@@ -34,16 +34,12 @@
         events: [item.title]
       })),
       relations: [],
-      background: item.background || [`${item.title}需要放在秦从战国强国转向大一统帝国的主线中理解，重点看统一战争、官僚制度、资源汲取和秦末危机之间的关系。`],
-      process: item.process || [
-        { time: item.time, title: "结构背景", description: `${item.summary} 这一节点前，秦已经完成或接近完成统一，但如何把战国战争能力转化为帝国治理能力仍是核心问题。` },
-        { time: item.time, title: "事件展开", description: `${item.title}的展开体现了秦在中央命令、地方郡县、军队调动、赋役征发之间的联动，也暴露出高压治理的成本。` },
-        { time: item.time, title: "后续影响", description: `${item.title}之后，相关影响继续进入汉承秦制、秦末崩溃或大一统国家形成的因果链中，不能只记作孤立制度名。` }
-      ],
-      results: item.results || [item.summary, "它补足秦朝统一后制度运行和社会承压的关键环节。"],
-      debates: [{ view: "学习提示", content: item.tip || "先按主线学习粒度整理，重点看因果和制度变化；具体卷章后续再细核。" }],
+      background: item.background,
+      process: item.process,
+      results: item.results,
+      debates: [{ view: "学习提示", content: item.tip }],
       claims: [{
-        statement: item.claim || item.summary,
+        statement: item.claim,
         status: "较稳妥",
         statusType: "stable",
         confidence: "medium",
@@ -54,13 +50,12 @@
         sourceId: "qin-main-source",
         reference: item.reference || "《史记》《资治通鉴》秦朝相关纪事",
         status: "待核原文",
-        plainText: item.plainText || `白话理解：${item.summary}`,
+        plainText: item.plainText,
         note: "不是纯原文摘录，先给学习用白话释义；后续补公开卷目链接。"
       }],
-      unificationProfile: item.unificationProfile,
       causalChain: item.causalChain || [],
       sources: [source],
-      reviewQuestions: [{ type: "主线理解", question: item.question || `${item.title}为什么应放入秦朝主线？`, answer: item.answer || "因为它能解释秦如何把统一战争、中央集权和社会动员连接起来，以及这些机制为何既有效又高压。" }],
+      reviewQuestions: [{ type: "主线理解", question: item.question, answer: item.answer }],
       notes: [],
       dynastyId,
       dynasty,
@@ -376,147 +371,6 @@
       plainText: "史料主线是：刘邦先入关接受秦降，但天下并没有马上太平，项羽分封又引发楚汉战争。",
       question: "秦亡后为什么还会有楚汉战争？",
       answer: "因为秦被推翻后，谁来重新安排天下秩序仍未解决。"
-    }),
-    event({
-      "id": "qin-conquest-han-zhao-wei",
-      "title": "秦灭韩赵魏与统一战争推进",
-      "era": "兼并六国",
-      "time": "前221前后",
-      "summary": "秦先后灭韩、赵、魏，切断三晋屏障，使统一战争从关中东出转为对东方列国的系统收束。",
-      "topics": [
-            "统一战争",
-            "战争军事"
-      ],
-      "regions": [
-            "关中",
-            "中原"
-      ],
-      "people": [
-            "秦王政",
-            "王翦",
-            "李斯"
-      ],
-      "process": [
-            { "time": "前230", "title": "灭韩打开东出通道", "description": "秦先灭韩国，拆掉三晋中最靠近秦东出道路的屏障，使关中军队能更直接压向黄河中下游。韩国虽小，但位置决定它是统一战争收束阶段的起点。" },
-            { "time": "前228", "title": "赵国主力被击破", "description": "秦军在长期消耗后攻破赵都邯郸，赵的骑兵和北方防线优势瓦解，东方列国失去最能牵制秦军的军事力量之一。" },
-            { "time": "前225", "title": "魏国被水攻攻灭", "description": "秦军攻大梁时引河水灌城，魏国灭亡。此后秦对中原平原和黄河交通的控制更完整，楚、燕、齐被进一步孤立。" },
-            { "time": "前230-前225", "title": "三晋屏障瓦解", "description": "韩赵魏相继灭亡后，战国以来阻挡秦东出的核心地带被拆解，统一战争进入从中原向江淮、燕齐推进的最后阶段。" },
-            { "time": "前221前后", "title": "帝国边界成形", "description": "秦把原列国土地纳入郡县和军政控制，为随后称皇帝、废分封、统一度量衡和道路体系提供了现实领土基础。" }
-      ],
-      "results": ["韩赵魏相继灭亡。", "秦控制中原战略枢纽。", "统一战争进入最后收束。"],
-      "unificationProfile": { "requiredKeywords": ["灭韩", "赵国", "魏国", "三晋", "统一战争"] },
-      "plainText": "白话理解：秦不是突然在前221年完成统一，而是先拆掉韩赵魏这组三晋屏障，再把东方列国逐个孤立和吞并。",
-      "question": "秦为什么先集中处理韩赵魏？",
-      "answer": "因为三晋位于秦东出中原的要道，既是军事屏障，也是连接其他东方国家的战略支点。"
-}),
-    event({
-      "id": "qin-conquest-chu-yan-qi",
-      "title": "秦灭楚燕齐与六国终局",
-      "era": "兼并六国",
-      "time": "前221前后",
-      "summary": "秦在王翦、王贲等将领推进下灭楚、燕、齐，最终结束战国列国并立局面。",
-      "topics": [
-            "统一战争",
-            "战争军事"
-      ],
-      "regions": [
-            "中原",
-            "江淮",
-            "山东"
-      ],
-      "people": [
-            "秦王政",
-            "王翦",
-            "王贲"
-      ],
-      "process": [
-            { "time": "前225", "title": "楚国成为最大难点", "description": "三晋瓦解后，楚国地域广阔、兵源充足，是秦统一战争中最难处理的东方大国，秦必须投入更大兵力和更谨慎的统帅安排。" },
-            { "time": "前224-前223", "title": "王翦大军灭楚", "description": "秦最终采用王翦持重推进的方案，以长期动员和优势兵力压垮楚军，说明统一战争不只是战术胜负，更是国家资源调动能力的比拼。" },
-            { "time": "前222", "title": "燕代残余被清除", "description": "秦军继续北上处理燕、代残余势力，解除东北方向对新帝国边界和交通线的威胁。" },
-            { "time": "前221", "title": "齐国投降", "description": "齐国在外交孤立和秦军压境下投降，战国列国并立格局终结，秦王政获得建立皇帝制度的现实基础。" },
-            { "time": "前221后", "title": "由征服转向建制", "description": "六国终局后，秦立即面对如何治理旧贵族、旧国人民和广大新占地区的问题，统一战争的成果必须通过郡县、法律和交通体系固定下来。" }
-      ],
-      "results": ["楚燕齐相继灭亡。", "战国列国并立结束。", "秦朝大一统帝国正式形成。"],
-      "unificationProfile": { "requiredKeywords": ["楚国", "燕", "齐", "六国", "郡县"] },
-      "plainText": "白话理解：秦灭楚燕齐是统一战争最后阶段，重点不是背灭国顺序，而是看秦如何把军事征服转成全国治理。",
-      "question": "为什么灭楚是秦统一战争中的关键难点？",
-      "answer": "因为楚国地域广、资源和兵员多，只有秦的长期动员能力足够强，才可能把这个大国压垮。"
-}),
-    event({
-      "id": "qin-three-lords-nine-ministers",
-      "title": "三公九卿与咸阳中枢",
-      "era": "统一建制",
-      "time": "前221后",
-      "summary": "秦以丞相、太尉、御史大夫和九卿体系组织中央事务，把皇帝命令转化为官僚执行链。",
-      "topics": [
-            "制度治理",
-            "中央集权"
-      ],
-      "regions": [
-            "咸阳",
-            "全国"
-      ],
-      "people": [
-            "秦始皇",
-            "李斯"
-      ]
-}),
-    event({
-      "id": "qin-household-registration-tax-corvee",
-      "title": "户籍、田租与徭役汲取",
-      "era": "秦制运行",
-      "time": "前221后",
-      "summary": "秦以户籍、爵制、田租、徭役和刑罚联动汲取资源，支撑道路、边防、陵墓和大规模工程。",
-      "topics": [
-            "财政经济",
-            "社会结构"
-      ],
-      "regions": [
-            "全国",
-            "关中"
-      ],
-      "people": [
-            "秦始皇"
-      ]
-}),
-    event({
-      "id": "qin-roads-posts-empire-network",
-      "title": "驰道、直道与帝国交通网",
-      "era": "秦制运行",
-      "time": "前220-前212",
-      "summary": "秦修驰道、直道并统一车轨，使军事调动、文书传递和皇帝巡行更适应大一统空间。",
-      "topics": [
-            "制度治理",
-            "交通工程"
-      ],
-      "regions": [
-            "关中",
-            "全国",
-            "九原"
-      ],
-      "people": [
-            "秦始皇",
-            "蒙恬"
-      ]
-}),
-    event({
-      "id": "qin-palace-mausoleum-labor-pressure",
-      "title": "宫室陵墓工程与徭役压力",
-      "era": "秦末危机",
-      "time": "前212-前210",
-      "summary": "阿房宫、骊山陵和边防交通工程叠加徭役，使统一后的社会承受力持续下降。",
-      "topics": [
-            "财政经济",
-            "社会结构"
-      ],
-      "regions": [
-            "关中",
-            "骊山",
-            "咸阳"
-      ],
-      "people": [
-            "秦始皇"
-      ]
-})
+    })
   ];
 })();

@@ -1,0 +1,1 @@
+window.ANCIENT_NEAR_EAST_SOURCES = [{ id: "ancient-near-east-britannica", type: "公开通史入口", title: "Encyclopaedia Britannica: Ancient Middle East", author: "Encyclopaedia Britannica / public history resources", authorityLevel: "用于核对阶段划分和主要事件", credibility: "中高", credibilityLevel: "medium-high", url: "https://www.britannica.com/place/Middle-East/History" }];

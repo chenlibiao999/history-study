@@ -1,33 +1,56 @@
-(function(){
-  const data = window.HISTORY_DATA || {events: [], emperors: [], dynastyEmperors: {}};
-  const events = Array.isArray(data.events) ? data.events : [];
-  const emperors = Array.isArray(data.emperors) ? data.emperors : (window.TANG_EMPERORS || []);
-  let selectedId = events[0]?.id || null;
+﻿(function(){
+  const data = window.HISTORY_DATA;
+  const events = data.events || [];
+  const emperors = data.emperors || window.TANG_EMPERORS || [];
+  let selectedId = events[0]?.id;
   let activeTab = "people";
   let timelineMode = "events";
+  const TIMELINE_BATCH_SIZE = 180;
   const activeFilters = {period: "", region: "", topic: ""};
+  const periodFilterLabels = new Map();
   const regionFilterLabels = new Map();
   const topicFilterLabels = new Map();
-  const storage = {
-    read(key, fallback){
-      try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
-    },
-    write(key, value){
-      try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* private mode or quota */ }
-    }
-  };
-  const storedNotes = storage.read("history-study-notes", {});
-  const notes = new Map(events.map(event => [event.id, Array.isArray(storedNotes[event.id]) ? storedNotes[event.id] : [...(event.notes || [])]]));
-  const bookmarked = new Set([...(storage.read("history-study-bookmarks", []) || []), ...events.filter(event => event.bookmarked).map(event => event.id)]);
+  const eventById = new Map(events.map(event => [event.id, event]));
+  const eventByLabel = new Map();
+  events.forEach(event => {
+    eventByLabel.set(event.title, event);
+    (event.aliases || []).forEach(alias => eventByLabel.set(alias, event));
+  });
+  const eventSearchText = new Map(events.map(event => [event.id, [
+    event.title,
+    event.summary,
+    event.period,
+    ...(event.regions || []),
+    ...(event.topics || []),
+    ...((event.people || []).map(person => person.name))
+  ].join(" ").toLowerCase()]));
+  const regionMatchCache = new Map();
+  const periodMatchCache = new Map();
+  const topicMatchCache = new Map();
+  const filterCountCache = new Map();
+  const emperorEventsCache = new Map();
+  const emperorSearchTextCache = new Map();
+  let cachedRegionCatalog;
+  let cachedPeriodCatalog;
+  let cachedTopicCatalog;
+  let cachedFilterKey = "";
+  let cachedFilteredEvents = events;
+  const notes = new Map(events.map(event => [event.id, [...(event.notes || [])]]));
+  const bookmarked = new Set(events.filter(event => event.bookmarked).map(event => event.id));
 
   const $ = selector => document.querySelector(selector);
 
+  function displayText(value, fallback = ""){
+    if (value === undefined || value === null) return fallback;
+    return String(value);
+  }
+
   function currentEvent(){
-    return events.find(event => event.id === selectedId) || events[0] || null;
+    return eventById.get(selectedId) || events[0];
   }
 
   function selectEvent(eventId){
-    if (!events.some(event => event.id === eventId)) return;
+    if (!eventById.has(eventId)) return;
     selectedId = eventId;
     renderAll();
   }
@@ -36,27 +59,71 @@
     return event.title === label || (event.aliases || []).includes(label);
   }
 
+  function emperorDisplayName(emperor){
+    return [emperor.title, emperor.name].filter(Boolean).join(" ") || "未命名人物";
+  }
+
+  function emperorPhase(emperor){
+    return emperor.phase || emperor.era || emperor.dynasty || "未分期";
+  }
+
+  function emperorReign(emperor){
+    return emperor.reign || emperor.years || "年代待核";
+  }
+
+  function emperorNames(emperor){
+    return emperor.names || [emperor.name, emperor.title].filter(Boolean);
+  }
+
+  function emperorKeyEvents(emperor){
+    return emperor.keyEvents || emperor.tags || [];
+  }
+
+  function emperorRelatedEventIds(emperor){
+    return emperor.relatedEventIds || [];
+  }
+
+  function emperorPosition(emperor){
+    return emperor.position || emperor.summary || (emperorDisplayName(emperor) + "应结合相关主线事件理解。");
+  }
+
+  function emperorPlainText(emperor){
+    return emperor.plainText || emperor.summary || "暂无白话说明。";
+  }
+
+  function emperorSource(emperor){
+    return emperor.source || "来源待补";
+  }
+
+  function emperorSourceUrl(emperor){
+    return emperor.sourceUrl || "";
+  }
+
   function findEventByLabel(label){
-    return events.find(event => eventMatchesLabel(event, label));
+    return eventByLabel.get(label);
   }
 
   function emperorEvents(emperor){
+    const cacheKey = [emperor.dynastyId, emperor.title, emperor.name, emperorReign(emperor)].join("::");
+    if (emperorEventsCache.has(cacheKey)) return emperorEventsCache.get(cacheKey);
     const found = new Map();
-    (emperor.relatedEventIds || [])
-      .map(id => events.find(event => event.id === id))
+    emperorRelatedEventIds(emperor)
+      .map(id => eventById.get(id))
       .filter(Boolean)
       .forEach(event => found.set(event.id, event));
-    (emperor.keyEvents || [])
+    emperorKeyEvents(emperor)
       .map(findEventByLabel)
       .filter(Boolean)
       .forEach(event => found.set(event.id, event));
-    return [...found.values()];
+    const result = [...found.values()];
+    emperorEventsCache.set(cacheKey, result);
+    return result;
   }
 
   function textNode(tag, className, text){
     const el = document.createElement(tag);
     if (className) el.className = className;
-    el.textContent = text;
+    el.textContent = displayText(text);
     return el;
   }
 
@@ -81,13 +148,50 @@
   }
 
   function regionCatalog(){
-    const catalog = data.geoCatalog || window.HISTORY_GEO_CATALOG || [];
-    return catalog.map(group => ({
-      ...group,
-      children: group.children.filter(([, terms]) => events.some(event => (
-        (event.geoRegion || []).some(region => terms.includes(region))
-      )))
-    })).filter(group => group.children.length);
+    return window.HISTORY_FILTER_CATALOG?.regions || [];
+  }
+
+  function periodCatalog(){
+    return window.HISTORY_FILTER_CATALOG?.periods || [];
+  }
+
+  function getPeriodCatalog(){
+    if (!cachedPeriodCatalog) cachedPeriodCatalog = periodCatalog();
+    return cachedPeriodCatalog;
+  }
+
+  function registerPeriodFilter(value, label){
+    periodFilterLabels.set(value, label);
+    return value;
+  }
+
+  function periodFilterTerms(value){
+    if (!value) return [];
+    const [scope, id, childIndex] = value.split(":");
+    if (scope !== "period-scope") return [value];
+    const group = getPeriodCatalog().find(item => item.id === id);
+    if (!group) return [value];
+    if (childIndex !== undefined) return group.children[Number(childIndex)]?.[1] || [value];
+    return group.terms;
+  }
+
+  function eventMatchesPeriodFilter(event, value){
+    if (!value) return true;
+    const cacheKey = [event.id, event.period, value].join("::");
+    if (periodMatchCache.has(cacheKey)) return periodMatchCache.get(cacheKey);
+    const terms = periodFilterTerms(value);
+    const result = terms.includes(event.period);
+    periodMatchCache.set(cacheKey, result);
+    return result;
+  }
+
+  function countEventsForPeriodFilter(value){
+    return cachedFilterCount("period", value, () => events.filter(event => eventMatchesPeriodFilter(event, value)).length);
+  }
+
+  function getRegionCatalog(){
+    if (!cachedRegionCatalog) cachedRegionCatalog = regionCatalog();
+    return cachedRegionCatalog;
   }
 
   function registerRegionFilter(value, label){
@@ -99,7 +203,7 @@
     if (!value) return [];
     const [scope, id, childIndex] = value.split(":");
     if (scope !== "region-scope") return [value];
-    const group = regionCatalog().find(item => item.id === id);
+    const group = getRegionCatalog().find(item => item.id === id);
     if (!group) return [value];
     if (childIndex !== undefined) return group.children[Number(childIndex)]?.[1] || [value];
     return group.terms;
@@ -107,94 +211,25 @@
 
   function eventMatchesRegionFilter(event, value){
     if (!value) return true;
+    const cacheKey = event.id + "::" + value;
+    if (regionMatchCache.has(cacheKey)) return regionMatchCache.get(cacheKey);
     const terms = regionFilterTerms(value);
-    const geoRegions = event.geoRegion?.length ? event.geoRegion : [];
-    return geoRegions.some(region => terms.some(term => region === term || region.startsWith(`${term} /`)));
+    const result = (event.regions || []).some(region => terms.some(term => region.includes(term) || term.includes(region)));
+    regionMatchCache.set(cacheKey, result);
+    return result;
   }
 
   function countEventsForRegionFilter(value){
-    return events.filter(event => eventMatchesRegionFilter(event, value)).length;
+    return cachedFilterCount("region", value, () => events.filter(event => eventMatchesRegionFilter(event, value)).length);
   }
 
   function topicCatalog(){
-    return [
-      {
-        id: "state-formation",
-        title: "政权兴亡",
-        terms: ["建国", "亡国", "改朝", "统一", "统一战争", "政权更替", "迁都", "继承", "皇位"],
-        children: [
-          ["建国/统一", ["建国", "统一", "统一战争"]],
-          ["改朝/政权更替", ["改朝", "政权更替"]],
-          ["亡国/崩溃", ["亡国", "崩溃", "青铜时代崩溃"]],
-          ["继承/皇位", ["继承", "皇位", "皇权"]]
-        ]
-      },
-      {
-        id: "war-military",
-        title: "战争军事",
-        terms: ["军事", "战争", "北伐", "内战", "正面战场", "解放战争", "军阀战争", "武装起义", "宋金", "宋蒙"],
-        children: [
-          ["大战/军事", ["军事", "战争"]],
-          ["统一与北伐", ["统一战争", "北伐"]],
-          ["内战/军阀", ["内战", "军阀战争", "解放战争"]],
-          ["边境战争", ["宋金", "宋蒙", "边疆"]]
-        ]
-      },
-      {
-        id: "institutions",
-        title: "制度治理",
-        terms: ["制度", "治理", "改革", "法律", "礼制", "军政", "地方治理", "行省", "科举"],
-        children: [
-          ["制度建设", ["制度", "法律", "礼制"]],
-          ["改革/变法", ["改革", "变法"]],
-          ["治理结构", ["治理", "军政", "地方治理", "行省"]],
-          ["选官/教育", ["科举", "选官", "教育"]]
-        ]
-      },
-      {
-        id: "power-politics",
-        title: "权力结构",
-        terms: ["政治", "皇权", "政变", "宦官", "外戚", "权臣", "党争", "宫廷", "藩镇"],
-        children: [
-          ["皇权/宫廷", ["皇权", "宫廷", "皇位"]],
-          ["政变/权臣", ["政变", "权臣"]],
-          ["宦官/外戚", ["宦官", "外戚"]],
-          ["党争/藩镇", ["党争", "藩镇"]]
-        ]
-      },
-      {
-        id: "economy-society",
-        title: "财政社会",
-        terms: ["财政", "社会", "民变", "人口", "土地", "赋税", "基础设施", "现代化"],
-        children: [
-          ["财政/赋税", ["财政", "赋税", "税"]],
-          ["社会/民变", ["社会", "民变", "武装起义"]],
-          ["人口/土地", ["人口", "土地"]],
-          ["建设/现代化", ["基础设施", "现代化"]]
-        ]
-      },
-      {
-        id: "frontier-diplomacy",
-        title: "边疆外交",
-        terms: ["边疆", "外交", "西域", "蒙古", "大国体系形成", "阿马尔那外交", "青铜时代国际体系"],
-        children: [
-          ["边疆经营", ["边疆", "西域", "蒙古"]],
-          ["外交关系", ["外交", "阿马尔那外交"]],
-          ["国际体系", ["大国体系形成", "青铜时代国际体系"]]
-        ]
-      },
-      {
-        id: "culture-religion",
-        title: "文化宗教",
-        terms: ["文化", "宗教", "王权", "礼制", "古埃及", "苏美尔", "两河流域", "雅典", "斯巴达"],
-        children: [
-          ["文化/思想", ["文化", "思想"]],
-          ["宗教/礼制", ["宗教", "礼制"]],
-          ["古代文明", ["古埃及", "苏美尔", "两河流域"]],
-          ["希腊城邦", ["雅典", "斯巴达"]]
-        ]
-      }
-    ];
+    return window.HISTORY_FILTER_CATALOG?.topics || [];
+  }
+
+  function getTopicCatalog(){
+    if (!cachedTopicCatalog) cachedTopicCatalog = topicCatalog();
+    return cachedTopicCatalog;
   }
 
   function registerTopicFilter(value, label){
@@ -206,7 +241,7 @@
     if (!value) return [];
     const [scope, id, childIndex] = value.split(":");
     if (scope !== "topic-scope") return [value];
-    const group = topicCatalog().find(item => item.id === id);
+    const group = getTopicCatalog().find(item => item.id === id);
     if (!group) return [value];
     if (childIndex !== undefined) return group.children[Number(childIndex)]?.[1] || [value];
     return group.terms;
@@ -214,44 +249,41 @@
 
   function eventMatchesTopicFilter(event, value){
     if (!value) return true;
+    const cacheKey = event.id + "::" + value;
+    if (topicMatchCache.has(cacheKey)) return topicMatchCache.get(cacheKey);
     const terms = topicFilterTerms(value);
     const haystack = [event.title, event.summary, ...(event.topics || [])].join(" ");
-    return terms.some(term => haystack.includes(term));
+    const result = terms.some(term => haystack.includes(term));
+    topicMatchCache.set(cacheKey, result);
+    return result;
   }
 
   function countEventsForTopicFilter(value){
-    return events.filter(event => eventMatchesTopicFilter(event, value)).length;
+    return cachedFilterCount("topic", value, () => events.filter(event => eventMatchesTopicFilter(event, value)).length);
   }
 
   function unique(items){
     return [...new Set(items.filter(Boolean))];
   }
 
-  function eventSearchText(event){
-    const people = (event.people || []).flatMap(person => [person.name, person.role, person.bio, ...(person.events || [])]);
-    const process = (event.process || []).flatMap(step => [step.title, step.description, step.action, step.impact, ...(step.participants || [])]);
-    const sources = (event.sources || []).flatMap(source => [source.title, source.author, source.note]);
-    const citations = (event.citations || []).flatMap(citation => [citation.reference, citation.plainText, citation.note]);
-    const causal = (event.causalChain || []).flatMap(item => typeof item === "string" ? [item] : [item.title, item.description, item.from, item.to]);
-    return [
-      event.title, event.summary, event.period, event.era, event.geoRegion, event.regions,
-      event.polityContext, event.topics, event.background, event.results, event.debates,
-      people, process, sources, citations, causal
-    ].flat(Infinity).filter(value => value !== undefined && value !== null).join(" ").toLowerCase();
-  }
-
   function countEventsForFilter(type, value){
-    return events.filter(event => {
-      if (type === "period") return event.period === value;
+    return cachedFilterCount(type, value, () => events.filter(event => {
+      if (type === "period") return eventMatchesPeriodFilter(event, value);
       if (type === "region") return eventMatchesRegionFilter(event, value);
       if (type === "topic") return eventMatchesTopicFilter(event, value);
       return false;
-    }).length;
+    }).length);
+  }
+
+  function cachedFilterCount(type, value, calculator){
+    const cacheKey = type + "::" + value;
+    if (!filterCountCache.has(cacheKey)) filterCountCache.set(cacheKey, calculator());
+    return filterCountCache.get(cacheKey);
   }
 
   function filterGroups(){
     return [
-      {type: "period", title: "朝代/文明", allLabel: "全部朝代/文明", values: unique(events.map(event => event.period))},
+      {type: "period-tree", title: "历史单元", allLabel: "全部历史单元", values: []},
       {type: "region-tree", title: "地区目录", allLabel: "全部地区", values: []},
       {type: "topic-tree", title: "主线主题", allLabel: "全部主题", values: []}
     ];
@@ -267,7 +299,12 @@
 
       const options = document.createElement("div");
       options.className = "filter-options";
-      if (group.type === "region-tree") {
+      if (group.type === "period-tree") {
+        options.append(filterOptionButton("period", "", group.allLabel, events.length));
+        section.append(options, renderPeriodTree());
+        panel.append(section);
+        return;
+      } else if (group.type === "region-tree") {
         options.append(filterOptionButton("region", "", group.allLabel, events.length));
         section.append(options, renderRegionTree());
         panel.append(section);
@@ -301,16 +338,41 @@
       textNode("span", "filter-option-count", String(count))
     );
     button.addEventListener("click", () => {
+      if (activeFilters[type] === value) return;
       activeFilters[type] = value;
       afterFilterChange();
     });
     return button;
   }
 
+  function renderPeriodTree(){
+    const tree = document.createElement("div");
+    tree.className = "region-tree period-tree";
+    getPeriodCatalog().forEach(group => {
+      const groupValue = registerPeriodFilter("period-scope:" + group.id, group.title);
+      const item = document.createElement("div");
+      item.className = "region-tree-group period-tree-group";
+
+      const parent = filterOptionButton("period", groupValue, group.title, countEventsForPeriodFilter(groupValue));
+      parent.classList.add("region-parent", "period-parent");
+      item.append(parent);
+
+      const children = document.createElement("div");
+      children.className = "region-children period-children";
+      group.children.forEach(([label], index) => {
+        const childValue = registerPeriodFilter("period-scope:" + group.id + ":" + index, label);
+        children.append(filterOptionButton("period", childValue, label, countEventsForPeriodFilter(childValue)));
+      });
+      item.append(children);
+      tree.append(item);
+    });
+    return tree;
+  }
+
   function renderRegionTree(){
     const tree = document.createElement("div");
     tree.className = "region-tree";
-    regionCatalog().forEach(group => {
+    getRegionCatalog().forEach(group => {
       const groupValue = registerRegionFilter("region-scope:" + group.id, group.title);
       const item = document.createElement("div");
       item.className = "region-tree-group";
@@ -334,7 +396,7 @@
   function renderTopicTree(){
     const tree = document.createElement("div");
     tree.className = "region-tree topic-tree";
-    topicCatalog().forEach(group => {
+    getTopicCatalog().forEach(group => {
       const groupValue = registerTopicFilter("topic-scope:" + group.id, group.title);
       const item = document.createElement("div");
       item.className = "region-tree-group topic-tree-group";
@@ -370,11 +432,13 @@
 
     const labels = {period: "时期", region: "地区", topic: "主题"};
     active.forEach(([type, value]) => {
-      const displayValue = type === "region"
-        ? (regionFilterLabels.get(value) || value)
-        : type === "topic"
-          ? (topicFilterLabels.get(value) || value)
-          : value;
+      const displayValue = type === "period"
+        ? (periodFilterLabels.get(value) || value)
+        : type === "region"
+          ? (regionFilterLabels.get(value) || value)
+          : type === "topic"
+            ? (topicFilterLabels.get(value) || value)
+            : value;
       const chip = document.createElement("button");
       chip.type = "button";
       chip.className = "active-filter-chip";
@@ -391,72 +455,94 @@
     });
   }
 
-  function updateFilterPanelState(){
+  function updateFilterPanelState(filtered = filteredEvents()){
     document.querySelectorAll(".filter-option").forEach(button => {
       const type = button.dataset.filterType;
       const value = button.dataset.filterValue;
       button.classList.toggle("active", activeFilters[type] === value);
     });
-    const count = filteredEvents().length;
-    $("#filterResultCount").textContent = count + " 个匹配事件";
+    $("#filterResultCount").textContent = filtered.length + " 个匹配事件";
   }
 
   function afterFilterChange(){
-    const events = filteredEvents();
-    selectedId = events[0]?.id || null;
+    const filtered = filteredEvents();
+    if (filtered.length && !filtered.some(event => event.id === selectedId)) selectedId = filtered[0].id;
     renderActiveFilters();
-    updateFilterPanelState();
-    renderAll();
+    updateFilterPanelState(filtered);
+    renderAll({events: filtered});
   }
 
   function filteredEvents(){
     const query = $("#searchInput").value.trim().toLowerCase();
     const {period, region, topic} = activeFilters;
+    const filterKey = [query, period, region, topic].join("\u0001");
+    if (filterKey === cachedFilterKey) return cachedFilteredEvents;
 
-    return data.events.filter(event => {
-      const haystack = eventSearchText(event);
+    cachedFilterKey = filterKey;
+    cachedFilteredEvents = events.filter(event => {
+      const haystack = eventSearchText.get(event.id) || "";
       return (!query || haystack.includes(query))
-        && (!period || event.period === period)
+        && (!period || eventMatchesPeriodFilter(event, period))
         && (!region || eventMatchesRegionFilter(event, region))
         && (!topic || eventMatchesTopicFilter(event, topic));
     });
+    return cachedFilteredEvents;
   }
 
-  function renderTimeline(){
+  function renderTimeline(precomputedEvents){
     const list = $("#timelineList");
     clear(list);
+    list.onscroll = null;
     if (timelineMode === "emperors") {
       renderEmperorTimeline(list);
       return;
     }
-    const events = filteredEvents();
+    const timelineEvents = precomputedEvents || filteredEvents();
 
-    if (!events.length) {
+    if (!timelineEvents.length) {
       list.append(textNode("div", "empty-state", "没有匹配的事件。"));
       return;
     }
 
-    let lastEra = "";
-    events.forEach(event => {
-      if (event.era !== lastEra) {
-        list.append(textNode("div", "tl-era-label", event.era));
-        lastEra = event.era;
-      }
+    const selectedIndex = timelineEvents.findIndex(event => event.id === selectedId);
+    const initialBatchSize = selectedIndex >= TIMELINE_BATCH_SIZE ? selectedIndex + 1 : TIMELINE_BATCH_SIZE;
+    const state = {index: 0, lastEra: ""};
+    const appendNextBatch = (batchSize = TIMELINE_BATCH_SIZE) => {
+      appendTimelineBatch(list, timelineEvents, state, batchSize);
+      if (state.index >= timelineEvents.length) list.onscroll = null;
+    };
+    appendNextBatch(initialBatchSize);
+    list.onscroll = () => {
+      if (list.scrollTop + list.clientHeight >= list.scrollHeight - 180) appendNextBatch();
+    };
+  }
 
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "tl-event" + (event.id === selectedId ? " selected" : "");
-      button.dataset.id = event.id;
-      button.append(
-        textNode("span", "tl-year", event.time),
-        textNode("span", "tl-title", event.title),
-        textNode("span", "tl-tag", (event.topics || []).join(" · "))
-      );
-      button.addEventListener("click", () => {
-        selectEvent(event.id);
-      });
-      list.append(button);
+  function appendTimelineBatch(list, timelineEvents, state, batchSize = TIMELINE_BATCH_SIZE){
+    const nextIndex = Math.min(state.index + batchSize, timelineEvents.length);
+    for (; state.index < nextIndex; state.index += 1) {
+      const event = timelineEvents[state.index];
+      if (event.era !== state.lastEra) {
+        list.append(textNode("div", "tl-era-label", event.era));
+        state.lastEra = event.era;
+      }
+      list.append(renderTimelineEventButton(event));
+    }
+  }
+
+  function renderTimelineEventButton(event){
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "tl-event" + (event.id === selectedId ? " selected" : "");
+    button.dataset.id = event.id;
+    button.append(
+      textNode("span", "tl-year", event.time),
+      textNode("span", "tl-title", event.title),
+      textNode("span", "tl-tag", event.topics.join(" · "))
+    );
+    button.addEventListener("click", () => {
+      selectEvent(event.id);
     });
+    return button;
   }
 
   function filteredEmperors(){
@@ -465,19 +551,23 @@
 
     return emperors.filter(emperor => {
       const linkedEvents = emperorEvents(emperor);
-      const haystack = [
-        emperor.phase,
-        emperor.title,
-        emperor.name,
-        emperor.position,
-        emperor.plainText,
-        ...(emperor.names || []),
-        ...(emperor.keyEvents || []),
-        ...linkedEvents.flatMap(event => [event.title, event.summary, event.period, ...(event.regions || []), ...(event.topics || [])])
-      ].join(" ").toLowerCase();
+      const cacheKey = [emperor.dynastyId, emperor.title, emperor.name, emperorReign(emperor)].join("::");
+      if (!emperorSearchTextCache.has(cacheKey)) {
+        emperorSearchTextCache.set(cacheKey, [
+          emperorPhase(emperor),
+          emperor.title,
+          emperor.name,
+          emperorPosition(emperor),
+          emperorPlainText(emperor),
+          ...emperorNames(emperor),
+          ...emperorKeyEvents(emperor),
+          ...linkedEvents.flatMap(event => [event.title, event.summary, event.period, ...(event.regions || []), ...(event.topics || [])])
+        ].join(" ").toLowerCase());
+      }
+      const haystack = emperorSearchTextCache.get(cacheKey);
 
       return (!query || haystack.includes(query))
-        && (!period || linkedEvents.some(event => event.period === period))
+        && (!period || linkedEvents.some(event => eventMatchesPeriodFilter(event, period)))
         && (!region || linkedEvents.some(event => eventMatchesRegionFilter(event, region)))
         && (!topic || linkedEvents.some(event => eventMatchesTopicFilter(event, topic)));
     });
@@ -492,35 +582,22 @@
 
     let lastPhase = "";
     items.forEach(emperor => {
-      if (emperor.phase !== lastPhase) {
-        list.append(textNode("div", "tl-era-label", emperor.phase));
-        lastPhase = emperor.phase;
+      const phase = emperorPhase(emperor);
+      if (phase !== lastPhase) {
+        list.append(textNode("div", "tl-era-label", phase));
+        lastPhase = phase;
       }
 
       const linkedEvents = emperorEvents(emperor);
       const active = linkedEvents.some(event => event.id === selectedId);
       const card = document.createElement("article");
       card.className = "tl-emperor" + (active ? " selected" : "");
-      card.tabIndex = linkedEvents.length ? 0 : -1;
-      card.setAttribute("role", linkedEvents.length ? "button" : "article");
-      if (linkedEvents.length) {
-        const jumpToFirstEvent = () => selectEvent(linkedEvents[0].id);
-        card.addEventListener("click", event => {
-          if (!event.target.closest("button")) jumpToFirstEvent();
-        });
-        card.addEventListener("keydown", event => {
-          if ((event.key === "Enter" || event.key === " ") && !event.target.closest("button")) {
-            event.preventDefault();
-            jumpToFirstEvent();
-          }
-        });
-      }
 
       const head = document.createElement("div");
       head.className = "tl-emperor-head";
       head.append(
-        textNode("span", "tl-emperor-name", emperor.title + " " + emperor.name),
-        textNode("span", "tl-emperor-years", emperor.reign)
+        textNode("span", "tl-emperor-name", emperorDisplayName(emperor)),
+        textNode("span", "tl-emperor-years", emperorReign(emperor))
       );
 
       const links = document.createElement("div");
@@ -529,14 +606,14 @@
         const button = document.createElement("button");
         button.type = "button";
         button.className = "tl-emperor-event" + (event.id === selectedId ? " selected" : "");
-        button.textContent = event.time + " · " + event.title;
+        button.textContent = displayText(event.time, "时间待核") + " · " + displayText(event.title, "未命名事件");
         button.addEventListener("click", () => selectEvent(event.id));
         links.append(button);
       });
 
       card.append(
         head,
-        textNode("div", "tl-emperor-position", emperor.position),
+        textNode("div", "tl-emperor-position", emperorPosition(emperor)),
         links
       );
       list.append(card);
@@ -545,24 +622,8 @@
 
   function renderEvent(){
     const event = currentEvent();
-    if (!event) {
-      $("#eventTitle").textContent = "当前筛选没有匹配事件";
-      clear($("#eventMeta"));
-      ["#peopleChips", "#backgroundContent", "#territoryPopulationContent", "#politicalMapContent", "#processContent", "#resultContent", "#debatesContent", "#claimsContent", "#notesList"].forEach(selector => {
-        const element = $(selector);
-        if (element) clear(element);
-      });
-      $("#bookmarkBtn").disabled = true;
-      $("#focusReviewBtn").disabled = true;
-      ["#tab-people", "#tab-causal", "#tab-sources", "#tab-citations", "#tab-review"].forEach(selector => clear($(selector)));
-      $("#notesTitle").textContent = "当前筛选没有匹配事件";
-      $("#notesCount").textContent = "";
-      return;
-    }
-    $("#bookmarkBtn").disabled = false;
-    $("#focusReviewBtn").disabled = false;
-    const eventEmperors = emperors.filter(emperor => (emperor.relatedEventIds || []).includes(event.id));
-    $("#eventTitle").textContent = event.title;
+    const eventEmperors = emperors.filter(emperor => emperorRelatedEventIds(emperor).includes(event.id));
+    $("#eventTitle").textContent = displayText(event.title, "未命名事件");
     $("#bookmarkBtn").classList.toggle("bookmarked", bookmarked.has(event.id));
     $("#bookmarkBtn").innerHTML = bookmarked.has(event.id) ? "&#9733; 已收藏" : "&#9734; 收藏";
 
@@ -571,10 +632,8 @@
     [
       ["时间", event.time, "amber"],
       ["朝代", event.period, "accent"],
-      ["\u5730\u7406\u8303\u56f4", (event.geoRegion || []).join(" / ") || "\u5f85\u5f52\u7c7b", ""],
-      ["\u5177\u4f53\u5730\u70b9", (event.regions || []).join(" / ") || "\u672a\u6ce8\u660e", ""],
-      ["政权语境", (event.polityContext || [event.period]).join(" / "), ""],
-      ["类型", (event.topics || []).join(" · "), ""]
+      ["地区", event.regions.join(" / "), ""],
+      ["类型", event.topics.join(" · "), ""]
     ].forEach(([label, value, tone]) => {
       const item = textNode("span", "meta-item", "");
       item.append(textNode("span", "meta-label", label), textNode("span", "meta-value " + tone, value));
@@ -583,7 +642,7 @@
     const emperorMeta = textNode("span", "meta-item", "");
     emperorMeta.append(
       textNode("span", "meta-label", "在位帝王"),
-      textNode("span", "meta-value accent", eventEmperors.map(emperor => emperor.title + " " + emperor.name).join(" / ") || "待关联")
+      textNode("span", "meta-value accent", eventEmperors.map(emperorDisplayName).join(" / ") || "待关联")
     );
     meta.append(emperorMeta);
 
@@ -602,7 +661,7 @@
   function renderPeopleChips(event){
     const row = $("#peopleChips");
     clear(row);
-    (event.people || []).forEach(person => {
+    event.people.forEach(person => {
       const chip = document.createElement("div");
       chip.className = "person-chip";
       const dot = textNode("span", "person-dot", "");
@@ -616,7 +675,7 @@
     clear(container);
     paragraphs.forEach(paragraph => {
       const p = document.createElement("p");
-      p.textContent = paragraph;
+      p.textContent = displayText(paragraph);
       container.append(p);
     });
   }
@@ -757,12 +816,20 @@
     }
 
     snapshots.forEach(snapshot => {
-      const card = document.createElement("article");
+      const card = document.createElement("details");
       card.className = "political-map-card";
+      card.addEventListener("toggle", () => {
+        if (card.open && !card.dataset.loaded) {
+          renderPoliticalMapExpanded(card, snapshot);
+          card.dataset.loaded = "true";
+        }
+      });
 
-      const head = document.createElement("div");
+      const head = document.createElement("summary");
       head.className = "political-map-head";
-      head.append(textNode("div", "political-map-title", snapshot.title));
+      const titleBlock = document.createElement("div");
+      titleBlock.className = "political-map-summary-text";
+      titleBlock.append(textNode("div", "political-map-title", snapshot.title));
 
       const meta = document.createElement("div");
       meta.className = "political-map-meta";
@@ -770,16 +837,38 @@
         textNode("span", "political-map-chip", snapshot.timeRange || snapshot.period || "时期待补"),
         textNode("span", "political-map-chip", "置信度 " + formatConfidence(snapshot.confidence))
       );
-      head.append(meta);
+      titleBlock.append(meta);
+      head.append(titleBlock, renderPoliticalMapPreview(snapshot));
       card.append(head);
-
-      if (snapshot.note) card.append(textNode("div", "political-map-note", snapshot.note));
-      card.append(renderPoliticalMapReference(snapshot));
-      card.append(renderPoliticalMapLegend(snapshot));
-      card.append(renderPoliticalMapAreas(snapshot));
-      if (snapshot.basis) card.append(textNode("div", "political-map-basis", snapshot.basis));
       container.append(card);
     });
+  }
+
+  function renderPoliticalMapExpanded(card, snapshot){
+    const body = document.createElement("div");
+    body.className = "political-map-expanded";
+    if (snapshot.note) body.append(textNode("div", "political-map-note", snapshot.note));
+    body.append(renderPoliticalMapReference(snapshot));
+    body.append(renderPoliticalMapLegend(snapshot));
+    body.append(renderPoliticalMapAreas(snapshot));
+    if (snapshot.basis) body.append(textNode("div", "political-map-basis", snapshot.basis));
+    card.append(body);
+  }
+
+  function renderPoliticalMapPreview(snapshot){
+    const preview = document.createElement("div");
+    preview.className = "political-map-preview";
+    if (!snapshot.referenceMap?.src) {
+      preview.append(textNode("span", "political-map-preview-empty", "地图待补"));
+      return preview;
+    }
+    const image = document.createElement("img");
+    image.src = snapshot.referenceMap.src;
+    image.alt = snapshot.referenceMap.title || (snapshot.title + "地图预览");
+    image.loading = "lazy";
+    image.decoding = "async";
+    preview.append(image);
+    return preview;
   }
 
   function renderPoliticalMapReference(snapshot){
@@ -788,8 +877,8 @@
 
     const image = document.createElement("img");
     image.className = "political-map-reference-img";
-    image.src = snapshot.referenceMap.src;
-    image.alt = snapshot.referenceMap.title || (snapshot.title + "参考历史地图");
+    image.src = snapshot.referenceMap?.src || "";
+    image.alt = snapshot.referenceMap?.title || (snapshot.title + "参考历史地图");
     image.loading = "lazy";
     image.decoding = "async";
     wrap.append(image);
@@ -797,17 +886,17 @@
     const caption = document.createElement("figcaption");
     caption.className = "political-map-attribution";
     const source = document.createElement("a");
-    source.href = snapshot.referenceMap.sourceUrl;
+    source.href = snapshot.referenceMap?.sourceUrl || "#";
     source.target = "_blank";
     source.rel = "noreferrer";
-    source.textContent = snapshot.referenceMap.sourceTitle || "参考地图来源";
+    source.textContent = displayText(snapshot.referenceMap?.sourceTitle, "参考地图来源");
     caption.append(
       textNode("span", "", "参考底图："),
       source,
-      textNode("span", "", "；作者：" + (snapshot.referenceMap.author || "待补")),
-      textNode("span", "", "；许可：" + (snapshot.referenceMap.license || "待补"))
+      textNode("span", "", "；作者：" + (snapshot.referenceMap?.author || "待补")),
+      textNode("span", "", "；许可：" + (snapshot.referenceMap?.license || "待补"))
     );
-    if (snapshot.referenceMap.note) {
+    if (snapshot.referenceMap?.note) {
       caption.append(textNode("span", "political-map-attribution-note", "；" + snapshot.referenceMap.note));
     }
     wrap.append(caption);
@@ -849,7 +938,7 @@
   function renderProcess(event){
     const list = $("#processList");
     clear(list);
-    (event.process || []).forEach(item => {
+    event.process.forEach(item => {
       const row = document.createElement("div");
       row.className = "sub-event";
       const body = document.createElement("div");
@@ -862,11 +951,11 @@
   function renderDebates(event){
     const container = $("#debateContent");
     clear(container);
-    (event.debates || []).forEach(debate => {
+    event.debates.forEach(debate => {
       const p = document.createElement("p");
       const title = document.createElement("strong");
-      title.textContent = debate.view + "：";
-      p.append(title, document.createTextNode(debate.content));
+      title.textContent = displayText(debate.view, "观点") + "：";
+      p.append(title, document.createTextNode(displayText(debate.content, "内容待补。")));
       container.append(p);
     });
   }
@@ -905,10 +994,6 @@
   }
 
   function renderSupplementary(event){
-    if (!event) {
-      document.querySelectorAll(".sup-section").forEach(section => clear(section));
-      return;
-    }
     renderPeopleTab(event);
     renderCausalTab(event);
     renderSourcesTab(event);
@@ -922,7 +1007,7 @@
   function renderPeopleTab(event){
     const section = $("#tab-people");
     clear(section);
-    (event.people || []).forEach(person => {
+    event.people.forEach(person => {
       const card = document.createElement("article");
       card.className = "person-card";
       const header = document.createElement("div");
@@ -930,12 +1015,12 @@
       header.append(textNode("span", "person-avatar", person.name.slice(0,1)), textNode("span", "person-name-lg", person.name), textNode("span", "person-years", person.years || ""));
       const tags = document.createElement("div");
       tags.className = "tag-row";
-      (person.events || []).forEach(item => tags.append(textNode("span", "small-tag", item)));
+      person.events.forEach(item => tags.append(textNode("span", "small-tag", item)));
       card.append(header, textNode("div", "person-bio", person.bio), tags);
       section.append(card);
     });
 
-    (event.relations || []).forEach(rel => {
+    event.relations.forEach(rel => {
       const row = document.createElement("div");
       row.className = "relationship-row";
       row.append(textNode("span", "rel-from", rel.from), textNode("span", "rel-type", rel.type), textNode("span", "rel-to", rel.to));
@@ -946,7 +1031,7 @@
   function renderCausalTab(event){
     const section = $("#tab-causal");
     clear(section);
-    (event.causalChain || []).forEach(node => {
+    event.causalChain.forEach(node => {
       const row = document.createElement("div");
       row.className = "causal-node " + node.kind;
       row.append(textNode("div", "causal-label", node.label), textNode("div", "causal-title", node.title), textNode("div", "causal-desc", node.description));
@@ -957,12 +1042,12 @@
   function renderSourcesTab(event){
     const section = $("#tab-sources");
     clear(section);
-    (event.sources || []).forEach(source => {
+    event.sources.forEach(source => {
       const card = document.createElement("article");
       card.className = "source-card";
       const title = source.url ? document.createElement("a") : document.createElement("div");
       title.className = "source-title";
-      title.textContent = source.title;
+      title.textContent = displayText(source.title, "史料来源");
       if (source.url) {
         title.href = source.url;
         title.target = "_blank";
@@ -1012,20 +1097,100 @@
     });
   }
 
+  function renderEmperorsTab(event){
+    const section = $("#tab-emperors");
+    clear(section);
+    if (!emperors.length) {
+      section.append(textNode("div", "empty-state", "还没有帝王谱系数据。"));
+      return;
+    }
+
+    let group = "";
+    emperors.forEach(emperor => {
+      const phase = emperorPhase(emperor);
+      if (phase !== group) {
+        section.append(textNode("h3", "emperor-group-title", phase));
+        group = phase;
+      }
+
+      const card = document.createElement("article");
+      const related = (event.people || []).some(person => emperorNames(emperor).includes(person.name))
+        || emperorRelatedEventIds(emperor).includes(event.id);
+      card.className = "emperor-card" + (related ? " active" : "");
+
+      const head = document.createElement("div");
+      head.className = "emperor-head";
+      head.append(
+        textNode("span", "emperor-name", emperorDisplayName(emperor)),
+        textNode("span", "emperor-years", emperorReign(emperor))
+      );
+
+      const events = document.createElement("div");
+      events.className = "emperor-events";
+      const structuredEvents = emperorRelatedEventIds(emperor)
+        .map(id => eventById.get(id))
+        .filter(Boolean);
+      const structuredEventIds = new Set(structuredEvents.map(item => item.id));
+      structuredEvents.forEach(item => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "emperor-event-link" + (item.id === event.id ? " selected" : "");
+        button.textContent = displayText(item.time, "时间待核") + " · " + displayText(item.title, "未命名事件");
+        button.addEventListener("click", () => selectEvent(item.id));
+        events.append(button);
+      });
+      emperorKeyEvents(emperor)
+        .forEach(item => {
+          const linkedEvent = findEventByLabel(item);
+          if (linkedEvent && !structuredEventIds.has(linkedEvent.id)) {
+            structuredEventIds.add(linkedEvent.id);
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "emperor-event-link" + (linkedEvent.id === event.id ? " selected" : "");
+            button.textContent = displayText(linkedEvent.time, "时间待核") + " · " + displayText(item, "未命名事件");
+            button.addEventListener("click", () => selectEvent(linkedEvent.id));
+            events.append(button);
+            return;
+          }
+          if (!linkedEvent) events.append(textNode("span", "small-tag", item));
+        });
+
+      const sourceUrl = emperorSourceUrl(emperor);
+      const source = sourceUrl ? document.createElement("a") : document.createElement("div");
+      source.className = "emperor-source";
+      source.textContent = emperorSource(emperor);
+      if (sourceUrl) {
+        source.href = sourceUrl;
+        source.target = "_blank";
+        source.rel = "noreferrer";
+      }
+
+      card.append(
+        head,
+        textNode("div", "emperor-position", emperorPosition(emperor)),
+        textNode("div", "emperor-event-label", structuredEvents.length ? "已关联时间线事件" : "待升级为事件页的大事"),
+        events,
+        textNode("div", "citation-plain", emperorPlainText(emperor)),
+        source
+      );
+      section.append(card);
+    });
+  }
+
   function sourceLink(source){
     const link = document.createElement("a");
     link.className = "citation-source";
     link.href = source.url;
     link.target = "_blank";
     link.rel = "noreferrer";
-    link.textContent = source.title;
+    link.textContent = displayText(source.title, "史料来源");
     return link;
   }
 
   function renderReviewTab(event){
     const section = $("#tab-review");
     clear(section);
-    (event.reviewQuestions || []).forEach(item => {
+    event.reviewQuestions.forEach(item => {
       const card = document.createElement("button");
       card.type = "button";
       card.className = "review-card";
@@ -1037,7 +1202,7 @@
 
   function renderNotes(event){
     const eventNotes = notes.get(event.id) || [];
-    $("#notesTitle").textContent = "我的笔记 · " + event.title;
+    $("#notesTitle").textContent = "我的笔记 · " + displayText(event.title, "未命名事件");
     $("#notesCount").textContent = eventNotes.length + " 条笔记";
     const list = $("#notesList");
     clear(list);
@@ -1060,7 +1225,6 @@
       String(now.getMinutes()).padStart(2, "0");
     eventNotes.push({time, text});
     notes.set(event.id, eventNotes);
-    storage.write("history-study-notes", Object.fromEntries(notes));
     renderNotes(event);
   }
 
@@ -1096,7 +1260,6 @@
         $("#filterPanel").hidden = true;
         $("#filterToggle").setAttribute("aria-expanded", "false");
       }
-      if (event.key === "Escape" && $("#notesOverlay").classList.contains("open")) closeNotes();
     });
 
     document.addEventListener("click", event => {
@@ -1106,36 +1269,28 @@
       $("#filterToggle").setAttribute("aria-expanded", "false");
     });
 
-      document.querySelectorAll(".sup-tab").forEach(tab => {
-        tab.addEventListener("click", () => {
-          activeTab = tab.dataset.tab;
-          document.querySelectorAll(".sup-tab").forEach(item => {
-            item.classList.toggle("active", item === tab);
-            item.setAttribute("aria-selected", String(item === tab));
-          });
-          tab.classList.add("active");
-          renderSupplementary(currentEvent());
+    document.querySelectorAll(".sup-tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        activeTab = tab.dataset.tab;
+        document.querySelectorAll(".sup-tab").forEach(item => item.classList.remove("active"));
+        tab.classList.add("active");
+        renderSupplementary(currentEvent());
       });
     });
 
     document.querySelectorAll(".timeline-tab").forEach(tab => {
       tab.addEventListener("click", () => {
         timelineMode = tab.dataset.mode;
-        document.querySelectorAll(".timeline-tab").forEach(item => {
-          item.classList.toggle("active", item === tab);
-          item.setAttribute("aria-selected", String(item === tab));
-        });
+        document.querySelectorAll(".timeline-tab").forEach(item => item.classList.remove("active"));
         tab.classList.add("active");
         renderTimeline();
       });
     });
 
     $("#notesToggle").addEventListener("click", () => {
-      if ($("#notesOverlay").classList.contains("open")) closeNotes();
-      else openNotes();
+      $("#notesToggle").classList.toggle("active");
+      $("#notesOverlay").classList.toggle("open");
     });
-
-    $("#notesOverlayClose").addEventListener("click", closeNotes);
 
     $("#noteInput").addEventListener("keydown", event => {
       if (event.key === "Enter" && event.target.value.trim()) {
@@ -1147,37 +1302,18 @@
     $("#bookmarkBtn").addEventListener("click", () => {
       const id = currentEvent().id;
       bookmarked.has(id) ? bookmarked.delete(id) : bookmarked.add(id);
-      storage.write("history-study-bookmarks", [...bookmarked]);
       renderEvent();
     });
 
     $("#focusReviewBtn").addEventListener("click", () => {
       activeTab = "review";
-      document.querySelectorAll(".sup-tab").forEach(tab => {
-        const active = tab.dataset.tab === "review";
-        tab.classList.toggle("active", active);
-        tab.setAttribute("aria-selected", String(active));
-      });
+      document.querySelectorAll(".sup-tab").forEach(tab => tab.classList.toggle("active", tab.dataset.tab === "review"));
       renderSupplementary(currentEvent());
     });
   }
 
-  function openNotes(){
-    $("#notesToggle").classList.add("active");
-    $("#notesOverlay").hidden = false;
-    $("#notesOverlay").classList.add("open");
-    $("#notesOverlayClose").focus();
-  }
-
-  function closeNotes(){
-    $("#notesToggle").classList.remove("active");
-    $("#notesOverlay").classList.remove("open");
-    $("#notesOverlay").hidden = true;
-    $("#notesToggle").focus();
-  }
-
-  function renderAll(){
-    renderTimeline();
+  function renderAll(options = {}){
+    renderTimeline(options.events);
     renderEvent();
   }
 

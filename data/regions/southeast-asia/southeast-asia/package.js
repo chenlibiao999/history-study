@@ -1,19 +1,19 @@
-window.SOUTHEAST_ASIA_PACKAGE = {
+window.SOUTHEAST_ASIA_HISTORY_PACKAGE = {
   id: "southeast-asia",
   regionId: "southeast-asia",
-  title: "东南亚地区",
-  scope: "东南亚主线：史前农业、东山文化、扶南、占婆、真腊、室利佛逝、吴哥、蒲甘、大越、满者伯夷、马六甲、欧洲殖民、民族独立、冷战战争、东盟。",
-  moduleIds: ["southeast-asia"],
+  title: "东南亚",
+  scope: "东南亚历史主线：稻作与青铜文化、季风贸易、扶南、真腊、吴哥、占婆、蒲甘、素可泰、大城、室利佛逝、满者伯夷、马六甲、欧洲殖民、日本占领和民族国家形成。",
+  moduleIds: ["colonial-southeast-asia", "island-southeast-asia", "mainland-southeast-asia", "southeast-asia-core-kingdoms", "southeast-asia"],
   topicIds: [],
   boundaries: [
-    "东南亚包并列处理大陆与海岛东南亚，不把现代 ASEAN 国家边界倒推到古代。",
-    "涉及中国郡县、印度化、伊斯兰化、郑和、欧洲殖民、日本占领、越南战争和东盟等跨区域事件，后续通过专题关系串联。",
-    "本包为首版总线模块，后续可拆为越南、大陆东南亚、海岛东南亚、殖民与现代东南亚等模块。"
+    "东南亚必须同时看大陆河谷王国和岛屿海洋网络，不能只按现代国家列表拆散。",
+    "印度化、佛教、伊斯兰和汉文化影响都要作为交流与本土重组理解，不能写成单向输入。",
+    "殖民时期按葡萄牙、荷兰、英国、法国、西班牙、美国和日本占领等力量串联，后续再拆具体国家。"
   ],
   nextExpansionSlots: [
-    { id: "ancient-southeast-asia", title: "古代东南亚", status: "planned", suggestedMinEvents: 40 },
-    { id: "mainland-southeast-asia", title: "大陆东南亚", status: "planned", suggestedMinEvents: 50 },
-    { id: "island-southeast-asia", title: "海岛东南亚", status: "planned", suggestedMinEvents: 45 },
-    { id: "modern-southeast-asia", title: "现代东南亚", status: "planned", suggestedMinEvents: 45 }
+    { id: "mainland-southeast-asia", title: "大陆东南亚王国", status: "planned", suggestedMinEvents: 35 },
+    { id: "island-southeast-asia", title: "岛屿东南亚与海峡贸易", status: "planned", suggestedMinEvents: 35 },
+    { id: "southeast-asia-religions", title: "佛教、印度教与伊斯兰传播", status: "planned", suggestedMinEvents: 25 },
+    { id: "colonial-southeast-asia", title: "殖民东南亚与民族国家形成", status: "planned", suggestedMinEvents: 40 }
   ]
 };

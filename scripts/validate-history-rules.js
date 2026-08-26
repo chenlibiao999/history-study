@@ -80,18 +80,6 @@ require(path.join(__dirname, "../data/dynasties/liberation-construction/emperors
 require(path.join(__dirname, "../data/dynasties/reform-opening/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/reform-opening/events.js"));
 require(path.join(__dirname, "../data/dynasties/reform-opening/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/japan/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/japan/sources.js"));
-require(path.join(__dirname, "../data/dynasties/japan/events.js"));
-require(path.join(__dirname, "../data/dynasties/japan/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/indian-subcontinent/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/indian-subcontinent/sources.js"));
-require(path.join(__dirname, "../data/dynasties/indian-subcontinent/events.js"));
-require(path.join(__dirname, "../data/dynasties/indian-subcontinent/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/southeast-asia/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/southeast-asia/sources.js"));
-require(path.join(__dirname, "../data/dynasties/southeast-asia/events.js"));
-require(path.join(__dirname, "../data/dynasties/southeast-asia/emperors.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-greece/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-greece/sources.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-greece/events.js"));
@@ -108,50 +96,94 @@ require(path.join(__dirname, "../data/dynasties/byzantium/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/byzantium/sources.js"));
 require(path.join(__dirname, "../data/dynasties/byzantium/events.js"));
 require(path.join(__dirname, "../data/dynasties/byzantium/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/viking-nordic-europe/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/viking-nordic-europe/sources.js"));
-require(path.join(__dirname, "../data/dynasties/viking-nordic-europe/events.js"));
-require(path.join(__dirname, "../data/dynasties/viking-nordic-europe/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/iberia-reconquista/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/iberia-reconquista/sources.js"));
-require(path.join(__dirname, "../data/dynasties/iberia-reconquista/events.js"));
-require(path.join(__dirname, "../data/dynasties/iberia-reconquista/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/eastern-europe-slavic/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/eastern-europe-slavic/sources.js"));
-require(path.join(__dirname, "../data/dynasties/eastern-europe-slavic/events.js"));
-require(path.join(__dirname, "../data/dynasties/eastern-europe-slavic/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/russia/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/russia/sources.js"));
-require(path.join(__dirname, "../data/dynasties/russia/events.js"));
-require(path.join(__dirname, "../data/dynasties/russia/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/early-modern-europe/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/early-modern-europe/sources.js"));
-require(path.join(__dirname, "../data/dynasties/early-modern-europe/events.js"));
-require(path.join(__dirname, "../data/dynasties/early-modern-europe/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/renaissance-reformation/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/renaissance-reformation/sources.js"));
-require(path.join(__dirname, "../data/dynasties/renaissance-reformation/events.js"));
-require(path.join(__dirname, "../data/dynasties/renaissance-reformation/emperors.js"));
 require(path.join(__dirname, "../data/dynasties/medieval-western-europe/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/medieval-western-europe/sources.js"));
 require(path.join(__dirname, "../data/dynasties/medieval-western-europe/events.js"));
 require(path.join(__dirname, "../data/dynasties/medieval-western-europe/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/russian-eastern-europe/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/russian-eastern-europe/sources.js"));
+require(path.join(__dirname, "../data/dynasties/russian-eastern-europe/events.js"));
+require(path.join(__dirname, "../data/dynasties/russian-eastern-europe/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/ottoman-world/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/ottoman-world/sources.js"));
+require(path.join(__dirname, "../data/dynasties/ottoman-world/events.js"));
+require(path.join(__dirname, "../data/dynasties/ottoman-world/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/modern-europe/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/modern-europe/sources.js"));
+require(path.join(__dirname, "../data/dynasties/modern-europe/events.js"));
+require(path.join(__dirname, "../data/dynasties/modern-europe/emperors.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-egypt/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-egypt/sources.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-egypt/events.js"));
 require(path.join(__dirname, "../data/dynasties/ancient-egypt/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/nubia-kush/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/nubia-kush/sources.js"));
-require(path.join(__dirname, "../data/dynasties/nubia-kush/events.js"));
-require(path.join(__dirname, "../data/dynasties/nubia-kush/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/phoenician-carthage/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/phoenician-carthage/sources.js"));
-require(path.join(__dirname, "../data/dynasties/phoenician-carthage/events.js"));
-require(path.join(__dirname, "../data/dynasties/phoenician-carthage/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/african-world/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/african-world/sources.js"));
+require(path.join(__dirname, "../data/dynasties/african-world/events.js"));
+require(path.join(__dirname, "../data/dynasties/african-world/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/americas-world/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/americas-world/sources.js"));
+require(path.join(__dirname, "../data/dynasties/americas-world/events.js"));
+require(path.join(__dirname, "../data/dynasties/americas-world/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/oceania-world/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/oceania-world/sources.js"));
+require(path.join(__dirname, "../data/dynasties/oceania-world/events.js"));
+require(path.join(__dirname, "../data/dynasties/oceania-world/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/ancient-near-east/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/ancient-near-east/sources.js"));
+require(path.join(__dirname, "../data/dynasties/ancient-near-east/events.js"));
+require(path.join(__dirname, "../data/dynasties/ancient-near-east/emperors.js"));
 require(path.join(__dirname, "../data/dynasties/sumer-early-mesopotamia/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/sumer-early-mesopotamia/sources.js"));
 require(path.join(__dirname, "../data/dynasties/sumer-early-mesopotamia/events.js"));
 require(path.join(__dirname, "../data/dynasties/sumer-early-mesopotamia/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/indus-civilization/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/indus-civilization/sources.js"));
+require(path.join(__dirname, "../data/dynasties/indus-civilization/events.js"));
+require(path.join(__dirname, "../data/dynasties/indus-civilization/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/maurya-gupta/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/maurya-gupta/sources.js"));
+require(path.join(__dirname, "../data/dynasties/maurya-gupta/events.js"));
+require(path.join(__dirname, "../data/dynasties/maurya-gupta/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/delhi-sultanate-mughal/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/delhi-sultanate-mughal/sources.js"));
+require(path.join(__dirname, "../data/dynasties/delhi-sultanate-mughal/events.js"));
+require(path.join(__dirname, "../data/dynasties/delhi-sultanate-mughal/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/mainland-southeast-asia/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/mainland-southeast-asia/sources.js"));
+require(path.join(__dirname, "../data/dynasties/mainland-southeast-asia/events.js"));
+require(path.join(__dirname, "../data/dynasties/mainland-southeast-asia/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/island-southeast-asia/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/island-southeast-asia/sources.js"));
+require(path.join(__dirname, "../data/dynasties/island-southeast-asia/events.js"));
+require(path.join(__dirname, "../data/dynasties/island-southeast-asia/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/colonial-southeast-asia/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/colonial-southeast-asia/sources.js"));
+require(path.join(__dirname, "../data/dynasties/colonial-southeast-asia/events.js"));
+require(path.join(__dirname, "../data/dynasties/colonial-southeast-asia/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/south-asia-imperial-core/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/south-asia-imperial-core/sources.js"));
+require(path.join(__dirname, "../data/dynasties/south-asia-imperial-core/events.js"));
+require(path.join(__dirname, "../data/dynasties/south-asia-imperial-core/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/southeast-asia-core-kingdoms/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/southeast-asia-core-kingdoms/sources.js"));
+require(path.join(__dirname, "../data/dynasties/southeast-asia-core-kingdoms/events.js"));
+require(path.join(__dirname, "../data/dynasties/southeast-asia-core-kingdoms/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/steppe-silk-road-core/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/steppe-silk-road-core/sources.js"));
+require(path.join(__dirname, "../data/dynasties/steppe-silk-road-core/events.js"));
+require(path.join(__dirname, "../data/dynasties/steppe-silk-road-core/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/africa-essential-empires/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/africa-essential-empires/sources.js"));
+require(path.join(__dirname, "../data/dynasties/africa-essential-empires/events.js"));
+require(path.join(__dirname, "../data/dynasties/africa-essential-empires/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/mesoamerica-andes-core/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/mesoamerica-andes-core/sources.js"));
+require(path.join(__dirname, "../data/dynasties/mesoamerica-andes-core/events.js"));
+require(path.join(__dirname, "../data/dynasties/mesoamerica-andes-core/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/polynesian-oceania-core/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/polynesian-oceania-core/sources.js"));
+require(path.join(__dirname, "../data/dynasties/polynesian-oceania-core/events.js"));
+require(path.join(__dirname, "../data/dynasties/polynesian-oceania-core/emperors.js"));
 require(path.join(__dirname, "../data/dynasties/bronze-age-international-system/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/bronze-age-international-system/sources.js"));
 require(path.join(__dirname, "../data/dynasties/bronze-age-international-system/events.js"));
@@ -160,67 +192,63 @@ require(path.join(__dirname, "../data/dynasties/bronze-age-collapse/metadata.js"
 require(path.join(__dirname, "../data/dynasties/bronze-age-collapse/sources.js"));
 require(path.join(__dirname, "../data/dynasties/bronze-age-collapse/events.js"));
 require(path.join(__dirname, "../data/dynasties/bronze-age-collapse/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/islamic-middle-east/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/islamic-middle-east/sources.js"));
-require(path.join(__dirname, "../data/dynasties/islamic-middle-east/events.js"));
-require(path.join(__dirname, "../data/dynasties/islamic-middle-east/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/african-civilizations/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/african-civilizations/sources.js"));
-require(path.join(__dirname, "../data/dynasties/african-civilizations/events.js"));
-require(path.join(__dirname, "../data/dynasties/african-civilizations/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/north-america/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/north-america/sources.js"));
-require(path.join(__dirname, "../data/dynasties/north-america/events.js"));
-require(path.join(__dirname, "../data/dynasties/north-america/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/south-america/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/south-america/sources.js"));
-require(path.join(__dirname, "../data/dynasties/south-america/events.js"));
-require(path.join(__dirname, "../data/dynasties/south-america/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/hittite-anatolia/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/hittite-anatolia/sources.js"));
-require(path.join(__dirname, "../data/dynasties/hittite-anatolia/events.js"));
-require(path.join(__dirname, "../data/dynasties/hittite-anatolia/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/neo-assyrian-empire/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/neo-assyrian-empire/sources.js"));
-require(path.join(__dirname, "../data/dynasties/neo-assyrian-empire/events.js"));
-require(path.join(__dirname, "../data/dynasties/neo-assyrian-empire/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/achaemenid-persia/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/achaemenid-persia/sources.js"));
-require(path.join(__dirname, "../data/dynasties/achaemenid-persia/events.js"));
-require(path.join(__dirname, "../data/dynasties/achaemenid-persia/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/maya-civilization/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/maya-civilization/sources.js"));
-require(path.join(__dirname, "../data/dynasties/maya-civilization/events.js"));
-require(path.join(__dirname, "../data/dynasties/maya-civilization/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/mexica-aztec-triple-alliance/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/mexica-aztec-triple-alliance/sources.js"));
-require(path.join(__dirname, "../data/dynasties/mexica-aztec-triple-alliance/events.js"));
-require(path.join(__dirname, "../data/dynasties/mexica-aztec-triple-alliance/emperors.js"));
-require(path.join(__dirname, "../data/dynasties/inca-empire/metadata.js"));
-require(path.join(__dirname, "../data/dynasties/inca-empire/sources.js"));
-require(path.join(__dirname, "../data/dynasties/inca-empire/events.js"));
-require(path.join(__dirname, "../data/dynasties/inca-empire/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/japan/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/japan/sources.js"));
+require(path.join(__dirname, "../data/dynasties/japan/events.js"));
+require(path.join(__dirname, "../data/dynasties/japan/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/korean-peninsula/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/korean-peninsula/sources.js"));
+require(path.join(__dirname, "../data/dynasties/korean-peninsula/events.js"));
+require(path.join(__dirname, "../data/dynasties/korean-peninsula/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/south-asia/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/south-asia/sources.js"));
+require(path.join(__dirname, "../data/dynasties/south-asia/events.js"));
+require(path.join(__dirname, "../data/dynasties/south-asia/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/southeast-asia/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/southeast-asia/sources.js"));
+require(path.join(__dirname, "../data/dynasties/southeast-asia/events.js"));
+require(path.join(__dirname, "../data/dynasties/southeast-asia/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/central-asia/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/central-asia/sources.js"));
+require(path.join(__dirname, "../data/dynasties/central-asia/events.js"));
+require(path.join(__dirname, "../data/dynasties/central-asia/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/iranian-world/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/iranian-world/sources.js"));
+require(path.join(__dirname, "../data/dynasties/iranian-world/events.js"));
+require(path.join(__dirname, "../data/dynasties/iranian-world/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/islamic-world/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/islamic-world/sources.js"));
+require(path.join(__dirname, "../data/dynasties/islamic-world/events.js"));
+require(path.join(__dirname, "../data/dynasties/islamic-world/emperors.js"));
+require(path.join(__dirname, "../data/dynasties/roman-world/metadata.js"));
+require(path.join(__dirname, "../data/dynasties/roman-world/sources.js"));
+require(path.join(__dirname, "../data/dynasties/roman-world/events.js"));
+require(path.join(__dirname, "../data/dynasties/roman-world/emperors.js"));
 require(path.join(__dirname, "../data/topics/imperial-exam.js"));
 require(path.join(__dirname, "../data/topics/song-mongol-yuan-war.js"));
 require(path.join(__dirname, "../data/regions/east-asia/metadata.js"));
 require(path.join(__dirname, "../data/regions/east-asia/china/package.js"));
 require(path.join(__dirname, "../data/regions/east-asia/japan/package.js"));
+require(path.join(__dirname, "../data/regions/east-asia/korean-peninsula/package.js"));
 require(path.join(__dirname, "../data/regions/south-asia/metadata.js"));
-require(path.join(__dirname, "../data/regions/south-asia/indian-subcontinent/package.js"));
+require(path.join(__dirname, "../data/regions/south-asia/south-asia/package.js"));
 require(path.join(__dirname, "../data/regions/southeast-asia/metadata.js"));
 require(path.join(__dirname, "../data/regions/southeast-asia/southeast-asia/package.js"));
+require(path.join(__dirname, "../data/regions/central-asia/metadata.js"));
+require(path.join(__dirname, "../data/regions/central-asia/central-asia/package.js"));
 require(path.join(__dirname, "../data/regions/europe/metadata.js"));
 require(path.join(__dirname, "../data/regions/europe/europe/package.js"));
 require(path.join(__dirname, "../data/regions/africa/metadata.js"));
 require(path.join(__dirname, "../data/regions/africa/africa/package.js"));
 require(path.join(__dirname, "../data/regions/west-asia/metadata.js"));
 require(path.join(__dirname, "../data/regions/west-asia/west-asia/package.js"));
+require(path.join(__dirname, "../data/regions/americas/metadata.js"));
+require(path.join(__dirname, "../data/regions/americas/americas/package.js"));
+require(path.join(__dirname, "../data/regions/oceania/metadata.js"));
+require(path.join(__dirname, "../data/regions/oceania/oceania/package.js"));
 require(path.join(__dirname, "../data/regions/afro-eurasia-crossroads/metadata.js"));
 require(path.join(__dirname, "../data/regions/afro-eurasia-crossroads/afro-eurasia-crossroads/package.js"));
-require(path.join(__dirname, "../data/regions/north-america/metadata.js"));
-require(path.join(__dirname, "../data/regions/north-america/north-america/package.js"));
-require(path.join(__dirname, "../data/regions/south-america/metadata.js"));
-require(path.join(__dirname, "../data/regions/south-america/south-america/package.js"));
+require(path.join(__dirname, "../data/filter-catalog.js"));
 require(path.join(__dirname, "../data/territory-population.js"));
 require(path.join(__dirname, "../data/political-maps.js"));
 require(path.join(__dirname, "../data/index.js"));
@@ -230,18 +258,72 @@ const emperors = data.emperors || [];
 const errors = [];
 const warnings = [];
 
-for (const event of data.events || []) {
-  if (!Number.isFinite(event.sortYear)) {
-    errors.push(`${event.title}: 缺少数字 sortYear`);
-  }
-  if (!Array.isArray(event.geoRegion) || !event.geoRegion.length) {
-    errors.push(`${event.title}: 缺少稳定地理字段 geoRegion`);
-  }
-  if (!Array.isArray(event.polityContext) || !event.polityContext.length) {
-    errors.push(`${event.title}: 缺少政权语境字段 polityContext`);
+function hasValue(value) {
+  return value !== undefined && value !== null && value !== "";
+}
+
+function requireFields(kind, item, fields) {
+  for (const field of fields) {
+    if (!hasValue(item[field])) {
+      errors.push(`${kind} ${item.id || item.title || item.name || "unknown"}: 缺少 ${field}`);
+    }
   }
 }
 
+function requireArrayFields(kind, item, fields) {
+  for (const field of fields) {
+    if (!Array.isArray(item[field])) {
+      errors.push(`${kind} ${item.id || item.title || item.name || "unknown"}: ${field} 必须是数组`);
+    }
+  }
+}
+
+function validateFilterCatalog() {
+  const catalog = window.HISTORY_FILTER_CATALOG;
+  if (!catalog) {
+    errors.push("缺少 HISTORY_FILTER_CATALOG");
+    return;
+  }
+  for (const type of ["periods", "regions", "topics"]) {
+    if (!Array.isArray(catalog[type]) || !catalog[type].length) {
+      errors.push(`HISTORY_FILTER_CATALOG.${type} 必须是非空数组`);
+      continue;
+    }
+    for (const group of catalog[type]) {
+      requireFields(`filter.${type}`, group, ["id", "title"]);
+      requireArrayFields(`filter.${type} ${group.id || group.title}`, group, ["terms", "children"]);
+      for (const child of group.children || []) {
+        if (!Array.isArray(child) || !hasValue(child[0]) || !Array.isArray(child[1])) {
+          errors.push(`filter.${type} ${group.id || group.title}: children 必须是 [label, terms[]]`);
+        }
+      }
+    }
+  }
+}
+
+validateFilterCatalog();
+
+const catalogPeriods = new Set(
+  (window.HISTORY_FILTER_CATALOG?.periods || []).flatMap((group) => [
+    ...(group.terms || []),
+    ...(group.children || []).flatMap((child) => child[1] || [])
+  ])
+);
+const uncoveredPeriods = [...new Set((data.events || []).map((event) => event.period).filter(hasValue))]
+  .filter((period) => !catalogPeriods.has(period));
+if (uncoveredPeriods.length) {
+  errors.push(`历史单元目录未覆盖事件时期：${uncoveredPeriods.join("、")}`);
+}
+
+for (const event of data.events || []) {
+  requireFields("event", event, ["id", "title", "time", "era", "period", "summary"]);
+  requireArrayFields("event", event, ["regions", "topics", "people", "background", "process", "results", "debates", "sources", "citations", "claims", "notes", "aliases"]);
+}
+
+for (const emperor of emperors) {
+  requireFields("emperor", emperor, ["title", "name", "phase", "reign", "position", "plainText", "source"]);
+  requireArrayFields("emperor", emperor, ["names", "keyEvents", "relatedEventIds"]);
+}
 
 const eastAsiaRegion = data.regions?.find((region) => region.id === "east-asia");
 if (!eastAsiaRegion) {
@@ -1052,80 +1134,6 @@ if (bronzeAgeCollapseEvents.length) {
   });
   if (bronzeAgeCollapseEvents.length < 50) {
     errors.push("青铜时代崩溃作为交界地专题，主线事件不应少于 50 个");
-  }
-}
-
-
-[
-  ["islamic-middle-east", 45, ["穆罕默德", "希吉拉", "倭马亚", "阿拔斯", "巴格达", "塞尔柱", "十字军", "蒙古", "马木鲁克", "奥斯曼", "萨法维", "苏伊士", "以色列", "伊朗", "阿拉伯之春"], "中东与伊斯兰世界"],
-  ["african-civilizations", 35, ["库施", "阿克苏姆", "加纳", "马里", "曼萨穆萨", "廷巴克图", "桑海", "斯瓦希里", "大津巴布韦", "刚果", "奴隶贸易", "柏林会议", "阿杜瓦", "加纳独立", "南非"], "非洲文明主线"],
-  ["north-america", 30, ["克洛维斯", "玛雅", "阿兹特克", "哥伦布", "新西班牙", "易洛魁", "七年战争", "美国独立", "美国宪法", "墨西哥独立", "加拿大", "美国内战", "墨西哥革命", "民权", "NAFTA"], "北美地区"],
-  ["south-america", 30, ["卡拉尔", "查文", "莫切", "蒂瓦纳库", "印加", "皮萨罗", "波托西", "巴西", "图帕克", "玻利瓦尔", "圣马丁", "三国同盟", "太平洋战争", "智利", "南方共同市场"], "南美地区"]
-].forEach(([dynastyId, minCount, keywords, label]) => {
-  const events = data.dynastyEvents?.[dynastyId] || [];
-  if (!events.length) {
-    errors.push(`缺少${label}独立事件集合`);
-    return;
-  }
-  const text = events.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
-  keywords.forEach((keyword) => {
-    if (!text.includes(keyword)) errors.push(`${label}主线缺少「${keyword}」覆盖`);
-  });
-  if (events.length < minCount) errors.push(`${label}主线事件不应少于 ${minCount} 个`);
-});
-
-
-[
-  ["hittite-anatolia", 18, ["卡内什", "哈attusa", "穆尔西里", "泰列皮努", "苏庇路里乌玛", "卡迭石", "埃及", "雅兹勒卡亚", "亚述", "乌加里特", "新赫梯"], "赫梯与安纳托利亚"],
-  ["neo-assyrian-empire", 22, ["亚述", "卡尔胡", "卡尔卡尔", "提格拉特", "迁徙", "撒马利亚", "萨尔贡", "西拿基立", "巴比伦", "埃及", "亚述巴尼拔", "尼尼微"], "新亚述帝国"],
-  ["achaemenid-persia", 22, ["居鲁士", "米底", "吕底亚", "巴比伦", "冈比西斯", "大流士", "贝希斯敦", "行省", "王道", "波斯波利斯", "伊奥尼亚", "马拉松", "薛西斯", "高加米拉"], "阿契美尼德波斯"],
-  ["maya-civilization", 22, ["玛雅", "埃尔米拉多", "文字", "蒂卡尔", "特奥蒂瓦坎", "科潘", "卡拉克穆尔", "帕伦克", "奇琴伊察", "玛雅潘", "基切", "西班牙", "塔亚萨尔"], "玛雅文明"],
-  ["mexica-aztec-triple-alliance", 22, ["墨西卡", "特诺奇蒂特兰", "三方同盟", "贡赋", "特拉卡埃莱尔", "奇南帕", "花战", "特拉斯卡拉", "科尔特斯", "天花", "夸乌特莫克"], "墨西卡-阿兹特克三方同盟"],
-  ["inca-empire", 22, ["库斯科", "帕查库提", "道路", "米塔", "基普", "迁徙", "图帕克", "瓦伊纳", "内战", "皮萨罗", "曼科", "维尔卡班巴", "图帕克·阿马鲁"], "印加帝国"]
-].forEach(([dynastyId, minCount, keywords, label]) => {
-  const events = data.dynastyEvents?.[dynastyId] || [];
-  if (!events.length) {
-    errors.push(`缺少${label}独立事件集合`);
-    return;
-  }
-  const text = events.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
-  keywords.forEach((keyword) => {
-    if (!text.includes(keyword)) errors.push(`${label}主线缺少「${keyword}」覆盖`);
-  });
-  if (events.length < minCount) errors.push(`${label}主线事件不应少于 ${minCount} 个`);
-});
-
-const russiaEvents = data.dynastyEvents?.russia || [];
-
-[
-  ["nubia-kush", 25, ["努比亚", "A-Group", "C-Group", "克尔马", "埃及", "库施总督", "纳帕塔", "皮耶", "第二十五王朝", "塔哈卡", "亚述", "麦罗埃", "坎达刻", "罗马", "阿克苏姆"], "努比亚与库施"],
-  ["phoenician-carthage", 35, ["腓尼基", "推罗", "西顿", "比布鲁斯", "字母", "塞浦路斯", "迦太基", "加的尔", "亚述", "新巴比伦", "波斯", "西西里", "阿拉利亚", "希梅拉", "布匿战争", "哈米尔卡", "汉尼拔", "坎尼", "扎马", "努米底亚", "罗马"], "腓尼基城邦与迦太基"]
-].forEach(([dynastyId, minCount, keywords, label]) => {
-  const events = data.dynastyEvents?.[dynastyId] || [];
-  if (!events.length) {
-    errors.push(`缺少${label}独立事件集合`);
-    return;
-  }
-  const text = events.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
-  keywords.forEach((keyword) => {
-    if (!text.includes(keyword)) errors.push(`${label}主线缺少“${keyword}”覆盖`);
-  });
-  if (events.length < minCount) errors.push(`${label}主线事件不应少于 ${minCount} 个`);
-  const dynasty = (data.dynasties || []).find((item) => item.id === dynastyId);
-  if (!dynasty?.territoryPopulation || dynasty.territoryPopulation.applicability === "missing") {
-    errors.push(`${label}缺少疆域/人口时间序列`);
-  }
-});
-
-if (russiaEvents.length) {
-  const text = russiaEvents.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
-  ["基辅罗斯", "弗拉基米尔", "蒙古", "莫斯科", "伊凡三世", "伊凡四世", "罗曼诺夫", "彼得", "叶卡捷琳娜", "拿破仑", "农奴制", "1905", "二月革命", "十月革命", "苏联", "斯大林", "卫国战争", "冷战", "戈尔巴乔夫", "苏联解体"].forEach((keyword) => {
-    if (!text.includes(keyword)) {
-      errors.push(`俄罗斯区域主线缺少「${keyword}」覆盖`);
-    }
-  });
-  if (russiaEvents.length < 45) {
-    errors.push("俄罗斯区域横跨罗斯前史、莫斯科国家、帝国和苏联，主线事件不应少于 45 个");
   }
 }
 

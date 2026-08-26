@@ -241,172 +241,356 @@
               area("代、雁门、上谷及北边", "白登之围和和亲政策说明西汉初北方边防仍受匈奴强压，不能把北边视为稳定扩张区。")
             ], "外部军事压力与边防空间。")
           ]
-        }),
+        })
+      ]
+    },
+
+    "roman-empire": {
+      dynastyId: "roman-empire",
+      title: "罗马帝国参考历史地图",
+      mapPolicy: "reference-map-only",
+      note: "罗马帝国地图先接入图拉真时期最大疆域快照，用于解释直接行省、属国和边境军区差异。",
+      snapshots: [
         snapshot({
-          id: "china-map-han-2ce",
-          dynastyId: "western-han",
-          title: "西汉末郡县王国与西域都护格局",
-          period: "西汉末",
-          timeRange: "2",
-          eventIds: ["whan-han-xiongnu-war", "whan-hexi-western-regions", "whan-zhang-qian-western-regions", "whan-western-regions-protectorate", "whan-late-western-han-crisis"],
+          id: "roman-map-trajan-117",
+          dynastyId: "roman-empire",
+          title: "图拉真时期罗马帝国最大范围",
+          period: "帝国高峰",
+          timeRange: "117",
+          eventIds: [
+            "roman-empire-trajan",
+            "roman-empire-hadrian"
+          ],
           basis: referenceMapBasis,
           confidence: "medium-high",
-          referenceMap: { src: "assets/maps/china/han-dynasty-2ce.png", title: "Han Dynasty map 2CE.png", sourceTitle: "Wikimedia Commons: Han Dynasty map 2CE.png", sourceUrl: "https://commons.wikimedia.org/wiki/File:Han_Dynasty_map_2CE.png", author: "Historian of the arab people", license: "Public domain", note: "原图表现公元2年前后的西汉疆域、郡国和西域都护大势。西域都护属于边疆军事行政和交通控制体系，不能按内地郡县强度理解。" },
-          note: "西汉末地图适合串联武帝反击匈奴、河西四郡、西域交通、都护设置和后期外戚政治危机。",
+          referenceMap: {
+            src: "assets/maps/world/roman-empire-trajan-117.png",
+            title: "Roman Empire Trajan 117AD.png",
+            sourceTitle: "Wikimedia Commons: Roman Empire Trajan 117AD.png",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Roman_Empire_Trajan_117AD.png",
+            author: "Tataryn",
+            license: "CC BY-SA 3.0",
+            note: "原图标示117年图拉真去世时罗马帝国及属国范围；阅读时应区分行省、属国和短期军事占领。"
+          },
+          note: "图拉真时期常被用作罗马疆域高点，但帝国治理强度并不均一。达契亚、亚美尼亚、两河等东方战役区不应按长期稳定省份简单理解。",
           layers: [
-            layer("core-admin", "郡县与王国核心治理区", "#5ba88c", [area("关中、关东、江淮、江南、巴蜀及主要郡国", "这些地区纳入较稳定的户籍、赋役、官僚和法令体系，是西汉国家能力的主体。")], "西汉直接治理的基本盘。"),
-            layer("military", "河西与西域交通控制", "#c29a5c", [area("河西四郡、西域都护相关通道", "这些地区连接中原与西域，依赖军事屯戍、交通节点和外交网络维持控制。")], "边疆控制强度低于内地郡县。"),
-            layer("contested", "匈奴压力与北方边地", "#6a91c9", [area("漠南、河套、天山南北通道", "汉匈战争和西域经营都围绕这些战略空间展开，控制线随军事与外交形势变化。")], "争夺区不等于固定疆界。")
+            layer("core-admin", "帝国行省核心", "#5ba88c", [
+              area("地中海环内海行省", "意大利、高卢、西班牙、北非、埃及、希腊、小亚细亚和叙利亚等地构成财政、军队和城市网络核心。")
+            ], "罗马行政、税收、军团和道路体系较稳定覆盖的区域。"),
+            layer("vassal", "属国与缓冲区", "#8bbf6a", [
+              area("东方属国和边境盟邦", "属国参与帝国边疆秩序，但不等同于普通行省。")
+            ], "政治依附和军事缓冲层。"),
+            layer("military", "边境军区", "#c29a5c", [
+              area("莱茵、多瑙、幼发拉底边境", "边境线依赖军团、堡垒和道路维系，是防御体系而非现代国界。")
+            ], "军事控制和边防压力区。")
           ]
         })
       ]
     },
 
-
-    "eastern-han": {
-      dynastyId: "eastern-han",
-      title: "东汉参考历史地图",
+    "islamic-world": {
+      dynastyId: "islamic-world",
+      title: "伊斯兰世界参考历史地图",
       mapPolicy: "reference-map-only",
-      note: "东汉地图先接入东汉末参考图，用于理解黄巾、州牧、董卓进京和献帝被挟持之后，王朝名义与地方实权怎样分离。",
+      note: "伊斯兰世界不是单一持续国家，地图只按哈里发扩张阶段做快照，避免把宗教文化圈误读成统一疆域。",
       snapshots: [
         snapshot({
-          id: "china-map-eastern-han-200ad",
-          dynastyId: "eastern-han",
-          title: "东汉末州郡军阀割据大势",
-          period: "东汉末",
-          timeRange: "约200",
-          eventIds: ["ehan-yellow-turban-rebellion", "ehan-provincial-governors", "ehan-dong-zhuo-enters-luoyang", "ehan-emperor-xian-controlled", "ehan-cao-pi-ends-han"],
+          id: "islamic-map-caliphate-expansion",
+          dynastyId: "islamic-world",
+          title: "正统哈里发至倭马亚扩张范围",
+          period: "7-8世纪",
+          timeRange: "622-750",
+          eventIds: [
+            "islamic-world-hijra-medina",
+            "islamic-world-yarmuk-qadisiyya",
+            "islamic-world-umayyad-caliphate"
+          ],
           basis: referenceMapBasis,
           confidence: "medium",
-          referenceMap: { src: "assets/maps/china/eastern-han-200ad.png", title: "Han Dynasty 200AD.png", sourceTitle: "Wikimedia Commons: Han Dynasty 200AD.png", sourceUrl: "https://commons.wikimedia.org/wiki/File:Han_Dynasty_200AD.png", author: "Thomas Lessman; derivative work by Hongkongresident", license: "CC BY-SA 3.0", note: "原图表现约200年前后的汉末军阀格局；用于读东汉末政治崩解，不应理解为东汉中央仍能直接控制全部标示区域。" },
-          note: "东汉末的重点是中央名义、州牧刺史军事化、地方豪强与军阀控制之间的断裂。",
+          referenceMap: {
+            src: "assets/maps/world/caliphate-expansion-622-750.svg",
+            title: "Map of expansion of Caliphate.svg",
+            sourceTitle: "Wikimedia Commons: Map of expansion of Caliphate.svg",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Map_of_expansion_of_Caliphate.svg",
+            author: "DieBuche",
+            license: "Public domain",
+            note: "原图按早期哈里发扩张阶段分色；不代表后续伊斯兰世界一直由单一中央直接治理。"
+          },
+          note: "早期扩张要区分麦地那共同体、正统哈里发征服、倭马亚行政帝国和后续地方化，不应把宗教传播、军事征服和行政控制混为一体。",
           layers: [
-            layer("core-admin", "名义汉廷与州郡体系", "#5ba88c", [area("洛阳、长安、许都及汉廷名义秩序", "东汉制度名义仍存在，但中央对州郡的实际控制已大幅下降。")], "行政名义与实际控制需要分开理解。"),
-            layer("military", "地方军阀实际控制区", "#c29a5c", [area("袁绍、曹操、孙策、刘表、刘璋等势力范围", "地方军事集团依托州郡、豪强和军队掌握实际权力，是汉末向三国转化的关键。")], "军事控制优先于名义朝廷秩序。"),
-            layer("contested", "中原争夺区", "#6a91c9", [area("兖豫司冀交界与黄河中下游", "官渡前后，中原控制权决定谁能挟天子、整合北方资源并取得统一优势。")], "争夺区边界随战局快速变化。")
+            layer("core-admin", "哈里发行政核心", "#5ba88c", [
+              area("阿拉伯半岛、叙利亚、伊拉克和埃及", "这些地区较早进入哈里发财政、军事和城市行政框架。")
+            ], "早期哈里发较稳定的政治行政核心。"),
+            layer("military", "征服扩张方向", "#c29a5c", [
+              area("北非、伊比利亚、中亚和印度河边缘", "扩张速度快，但地方整合、驻军和税制建立存在阶段差异。")
+            ], "军事征服和边疆治理空间。"),
+            layer("influence", "宗教商业扩散", "#4a7fb5", [
+              area("红海、波斯湾和印度洋通道", "贸易、朝觐和学术网络使伊斯兰影响超出直接行政边界。")
+            ], "文化与商业影响层。")
           ]
         })
       ]
     },
 
-    "late-han-three-kingdoms": {
-      dynastyId: "late-han-three-kingdoms",
-      title: "汉末三国参考历史地图",
+    "maurya-gupta": {
+      dynastyId: "maurya-gupta",
+      title: "孔雀与笈多参考历史地图",
       mapPolicy: "reference-map-only",
-      note: "汉末三国地图服务于从群雄割据到魏蜀吴制度化并立的分析，需结合官渡、赤壁、入蜀、夷陵和魏灭蜀等事件理解。",
+      note: "南亚古典帝国先接入孔雀帝国高峰图，用于解释恒河核心、德干边缘和阿育王法诏传播范围。",
       snapshots: [
         snapshot({
-          id: "china-map-three-kingdoms-260",
-          dynastyId: "late-han-three-kingdoms",
-          title: "魏蜀吴三国鼎立格局",
-          period: "三国后期",
-          timeRange: "约260",
-          eventIds: ["lh3k-caopi-replaces-han", "lh3k-yiling-battle", "lh3k-sunquan-emperor-wu-shu-alliance", "lh3k-zhuge-liang-northern-expeditions", "lh3k-wei-conquers-shu", "lh3k-jin-replaces-wei"],
-          basis: referenceMapBasis,
-          confidence: "medium-high",
-          referenceMap: { src: "assets/maps/china/three-kingdoms-260.svg", title: "Trois royaumes de Chine carte.svg", sourceTitle: "Wikimedia Commons: Trois royaumes de Chine carte.svg", sourceUrl: "https://commons.wikimedia.org/wiki/File:Trois_royaumes_de_Chine_carte.svg", author: "Zunkir; base map after Kanguole", license: "CC BY-SA 4.0", note: "原图用于表现三国鼎立阶段的大势；蜀汉、东吴边缘区和少数族地区的实际控制强度不可等同于现代国界。" },
-          note: "三国地图要看北方人口财政优势、蜀汉战略纵深、东吴长江防线以及曹魏最终统一优势如何形成。",
-          layers: [
-            layer("core-admin", "魏蜀吴核心统治区", "#5ba88c", [area("曹魏华北与中原", "曹魏掌握人口、屯田和制度资源，是三国后期最强的行政军事主体。"), area("蜀汉益州核心", "蜀汉依托四川盆地维持政权，北伐方向受秦岭、汉中和补给线限制。"), area("东吴江东与长江中下游", "东吴依托江东士族、水军和长江防线维持长期割据。")], "三国核心行政区与边缘影响区需要区分。"),
-            layer("military", "北伐与江淮争夺线", "#c29a5c", [area("汉中、陇右、淮南、荆州", "这些方向决定三国之间能否突破相持格局。")], "军事争夺方向不等于稳定治理范围。"),
-            layer("contested", "边缘控制与羁縻地带", "#6a91c9", [area("南中、辽东、岭南部分地区", "这些区域常见间接控制、地方豪族或族群势力共存。")], "分裂时期尤其要标明控制强弱。")
-          ]
-        })
-      ]
-    },
-
-    "northern-southern": {
-      dynastyId: "northern-southern",
-      title: "魏晋南北朝参考历史地图",
-      mapPolicy: "reference-map-only",
-      note: "魏晋南北朝地图按统一、崩解、南北对峙阶段管理。政权更替密集，地图只放阶段快照，具体事件仍以时间线和过程说明为主。",
-      snapshots: [
-        snapshot({
-          id: "china-map-western-jin-unification",
-          dynastyId: "northern-southern",
-          title: "西晋统一后的短期全国格局",
-          period: "西晋",
-          timeRange: "280-316",
-          eventIds: ["ns-jin-unifies-wu", "ns-eight-princes-war", "ns-yongjia-collapse"],
+          id: "south-asia-map-maurya-c250-bce",
+          dynastyId: "maurya-gupta",
+          title: "孔雀帝国约前250年范围",
+          period: "孔雀帝国",
+          timeRange: "约前250",
+          eventIds: [
+            "maurya-gupta-chandragupta",
+            "maurya-gupta-ashoka-kalinga",
+            "maurya-gupta-maurya-decline"
+          ],
           basis: referenceMapBasis,
           confidence: "medium",
-          referenceMap: { src: "assets/maps/china/western-jin.png", title: "China Western Jin.PNG", sourceTitle: "Wikimedia Commons: China Western Jin.PNG", sourceUrl: "https://commons.wikimedia.org/wiki/File:China_Western_Jin.PNG", author: "LiDaobing", license: "GFDL / CC BY-SA 3.0", note: "原图用于表现西晋统一后的疆域大势；西晋统一时间很短，地方宗王、州郡军事化和内迁族群问题很快改变实际控制强度。" },
-          note: "西晋地图重点不是把280年统一看成稳定结局，而是看统一后制度承压。",
+          referenceMap: {
+            src: "assets/maps/world/maurya-empire-c250-bce.png",
+            title: "Maurya Empire, c.250 BCE.png",
+            sourceTitle: "Wikimedia Commons: Maurya Empire, c.250 BCE.png",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Maurya_Empire,_c.250_BCE.png",
+            author: "Avantiputra7",
+            license: "CC BY-SA 3.0",
+            note: "原图标示约前250年孔雀帝国范围；南亚古代控制强度需区分核心行政、边疆、贡赋和法诏影响。"
+          },
+          note: "孔雀帝国是南亚早期大范围整合的关键案例，但不能把所有标色区域都理解为后世郡县式直接治理。",
           layers: [
-            layer("core-admin", "西晋州郡核心区", "#5ba88c", [area("洛阳中枢、华北、江南旧吴地", "灭吴后西晋名义上完成全国统一，但不同地区整合程度并不相同。")], "短期统一行政格局。"),
-            layer("contested", "宗王与边地压力区", "#6a91c9", [area("关中、并州、河北及诸王封镇", "八王之乱中宗王军事力量和地方控制互相牵连，削弱中央对北方的治理能力。")], "西晋崩解要从内部权力结构看。")
-          ]
-        }),
-        snapshot({
-          id: "china-map-northern-southern-560",
-          dynastyId: "northern-southern",
-          title: "北齐北周陈并立格局",
-          period: "南北朝后期",
-          timeRange: "约560",
-          eventIds: ["ns-northern-wei-split", "ns-northern-qi-zhou-founded", "ns-northern-zhou-prevails", "ns-chen-northern-frontier-and-sui-threat"],
-          basis: referenceMapBasis,
-          confidence: "medium-high",
-          referenceMap: { src: "assets/maps/china/northern-southern-dynasties-560.png", title: "Northern and Southern Dynasties 560 CE.png", sourceTitle: "Wikimedia Commons: Northern and Southern Dynasties 560 CE.png", sourceUrl: "https://commons.wikimedia.org/wiki/File:Northern_and_Southern_Dynasties_560_CE.png", author: "Ian Kiu", license: "GFDL / CC BY 3.0", note: "原图用于表现约560年前后北齐、北周、陈等政权并立，适合解释隋统一前的空间结构。" },
-          note: "南北朝后期要看北方东西分裂怎样重新走向北周优势，以及南朝陈的战略空间为何收窄。",
-          layers: [
-            layer("core-admin", "北齐、北周、陈核心区", "#5ba88c", [area("北齐山东河北核心", "北齐继承东魏势力，拥有华北东部人口和农业资源。"), area("北周关陇核心", "北周依托关中和关陇军政集团，后续成为隋唐政治军事基础之一。"), area("陈朝江南核心", "陈朝保有江南，但北方压力和内部资源限制使其战略空间收窄。")], "三个主要政权的直接统治区。"),
-            layer("military", "北方再统一方向", "#c29a5c", [area("河东、洛阳、邺城方向", "北周要压倒北齐，必须夺取华北关键通道和政治中心。")], "军事推进线要和行政控制分开。")
-          ]
-        })
-      ]
-    },
-
-    "tang": {
-      dynastyId: "tang",
-      title: "唐朝参考历史地图",
-      mapPolicy: "reference-map-only",
-      note: "唐朝地图优先展示统一后到开元天宝前后的高峰格局，并把边疆都护、羁縻、军事影响与核心州县分开理解。",
-      snapshots: [
-        snapshot({
-          id: "china-map-tang-742",
-          dynastyId: "tang",
-          title: "唐玄宗开元天宝前后疆域与道制",
-          period: "盛唐",
-          timeRange: "742",
-          eventIds: ["defeat-eastern-turkic-khaganate", "conquest-goguryeo", "kaiyuan-era", "tianbao-frontier-crisis", "tang-talas-and-western-regions"],
-          basis: referenceMapBasis,
-          confidence: "high",
-          referenceMap: { src: "assets/maps/china/tang-742.svg", title: "China, 742.svg", sourceTitle: "Wikimedia Commons: China, 742.svg", sourceUrl: "https://commons.wikimedia.org/wiki/File:China,_742.svg", author: "Yug", license: "CC BY-SA 3.0", note: "原图说明参考 Cambridge History of China 与相关研究，用于表现742年前后的唐朝行政与边疆格局。都护、羁縻和军事影响区不能等同于内地州县。" },
-          note: "盛唐地图必须同时看国家能力高峰和结构风险：内地州县较稳定，西域、东北、草原和吐蕃方向更多依赖都护、羁縻、军镇和外交军事压力。",
-          layers: [
-            layer("core-admin", "内地州县与稳定治理区", "#5ba88c", [area("关中、河南、河北、江淮、江南、巴蜀、岭南主要州县", "这些区域构成唐朝财政、户籍和官僚治理的基本盘。")], "实际行政控制优先。"),
-            layer("vassal", "都护府、羁縻与属部", "#8bbf6a", [area("安西、北庭、安东等边疆体系", "唐朝在边疆通过都护、羁縻、册封和驻军维持影响，控制强度与内地州县不同。")], "边疆治理强度分层。"),
-            layer("military", "边镇压力与战略通道", "#c29a5c", [area("河西、西域、东北、陇右、范阳等方向", "这些方向既显示唐朝扩张能力，也孕育节度使和边镇坐大的结构风险。")], "军事影响和行政控制不可混同。")
+            layer("core-admin", "恒河与摩揭陀核心", "#5ba88c", [
+              area("摩揭陀、恒河中下游和北印度核心", "帝国财政、官僚和军事动员较集中，是孔雀统治的基础。")
+            ], "相对稳定的行政控制核心。"),
+            layer("military", "西北与德干扩展", "#c29a5c", [
+              area("西北、德干和羯陵伽方向", "征服和整合强度随地区不同，羯陵伽战争尤其说明边缘整合成本。")
+            ], "军事扩张和新纳入区域。"),
+            layer("influence", "法诏与佛教传播", "#4a7fb5", [
+              area("阿育王法诏分布和周边交流区", "法诏传播反映帝国意识形态和交通网络，但不等同直接行政边界。")
+            ], "政治文化影响层。")
           ]
         })
       ]
     },
 
-    "northern-song": {
-      dynastyId: "northern-song",
-      title: "北宋参考历史地图",
+    "island-southeast-asia": {
+      dynastyId: "island-southeast-asia",
+      title: "岛屿东南亚参考历史地图",
       mapPolicy: "reference-map-only",
-      note: "北宋地图必须与辽、西夏和西北边疆共同阅读。当前接入1111年前后宋辽西夏格局，用于理解澶渊后和平、宋夏战争和熙河开边。",
+      note: "岛屿东南亚先接入室利佛逝快照，用于解释海峡贸易、贡赋网络和海上影响范围。",
       snapshots: [
         snapshot({
-          id: "china-map-song-liao-xixia-1111",
-          dynastyId: "northern-song",
-          title: "北宋辽西夏三方格局",
-          period: "北宋后期",
-          timeRange: "1111",
-          eventIds: ["nsong-southern-unification", "nsong-northern-han-annexed", "nsong-chanyuan-treaty", "nsong-western-xia-rise", "nsong-xihe-hehuang-expansion"],
+          id: "sea-map-srivijaya",
+          dynastyId: "island-southeast-asia",
+          title: "室利佛逝海峡贸易网络",
+          period: "海峡佛教网络",
+          timeRange: "约8世纪",
+          eventIds: [
+            "island-southeast-asia-srivijaya",
+            "island-southeast-asia-sailendra",
+            "island-southeast-asia-malacca"
+          ],
+          basis: referenceMapBasis,
+          confidence: "medium-low",
+          referenceMap: {
+            src: "assets/maps/world/srivijaya-empire.svg",
+            title: "Srivijaya Empire.svg",
+            sourceTitle: "Wikimedia Commons: Srivijaya Empire.svg",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Srivijaya_Empire.svg",
+            author: "Gunawan Kartapranata",
+            license: "CC BY-SA 3.0 / GFDL 1.2+",
+            note: "原图标示约8世纪室利佛逝最大影响范围和远征方向；海上贡赋圈不能等同连续陆上疆域。"
+          },
+          note: "室利佛逝更适合按港口、海峡、贡赋、宗教和航线理解，而不是按现代领土国家边界理解。",
+          layers: [
+            layer("core-admin", "苏门答腊核心港口区", "#5ba88c", [
+              area("巨港及苏门答腊东南部", "室利佛逝的政治和贸易核心通常与苏门答腊港口网络相连。")
+            ], "较稳定的港口政治核心。"),
+            layer("vassal", "海峡贡赋网络", "#8bbf6a", [
+              area("马六甲、巽他海峡及马来半岛相关港口", "贡赋和联盟关系具有流动性，不能视为均质行政区。")
+            ], "附属、联盟和贸易控制网络。"),
+            layer("influence", "佛教与印度洋联系", "#4a7fb5", [
+              area("爪哇、中国航路和印度洋方向", "佛教学习、朝贡和贸易把室利佛逝接入更大的海洋世界。")
+            ], "宗教商业影响层。")
+          ]
+        })
+      ]
+    },
+
+    "steppe-silk-road-core": {
+      dynastyId: "steppe-silk-road-core",
+      title: "中亚草原与丝路参考历史地图",
+      mapPolicy: "reference-map-only",
+      note: "中亚先接入帖木儿帝国快照，用于解释河中核心、伊朗扩张和短期征服范围的差异。",
+      snapshots: [
+        snapshot({
+          id: "central-asia-map-timurid-1400",
+          dynastyId: "steppe-silk-road-core",
+          title: "帖木儿帝国约1400年范围",
+          period: "帖木儿",
+          timeRange: "约1400",
+          eventIds: [
+            "steppe-silk-road-core-timur"
+          ],
+          basis: referenceMapBasis,
+          confidence: "medium-low",
+          referenceMap: {
+            src: "assets/maps/world/timurid-empire-1400.png",
+            title: "TimuridEmpire1400.png",
+            sourceTitle: "Wikimedia Commons: TimuridEmpire1400.png",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:TimuridEmpire1400.png",
+            author: "Arab Hafez",
+            license: "CC BY-SA 4.0",
+            note: "原图用于显示约1400年前后帖木儿帝国范围；短期征服和稳定治理需分开理解。"
+          },
+          note: "帖木儿帝国从河中出发跨入伊朗、呼罗珊和周边地区，适合作为中亚、伊朗、印度边缘联动的地图入口。",
+          layers: [
+            layer("core-admin", "河中核心", "#5ba88c", [
+              area("撒马尔罕、布哈拉及河中地区", "帖木儿政权的政治、军队和文化赞助核心。")
+            ], "相对稳定的统治核心。"),
+            layer("military", "征服扩张区", "#c29a5c", [
+              area("伊朗、呼罗珊、两河和印度边缘", "大量区域来自军事征服，控制强度与时间长度差异很大。")
+            ], "军事扩张和短期统治空间。"),
+            layer("influence", "波斯语文化影响", "#4a7fb5", [
+              area("撒马尔罕、赫拉特和伊朗文化圈", "帖木儿文化圈影响后来的萨非和莫卧儿政治文化。")
+            ], "文化影响层。")
+          ]
+        })
+      ]
+    },
+
+    "africa-essential-empires": {
+      dynastyId: "africa-essential-empires",
+      title: "非洲核心帝国参考历史地图",
+      mapPolicy: "reference-map-only",
+      note: "非洲核心帝国先接入马里帝国快照，用于解释萨赫勒黄金贸易、尼日尔河城市和撒哈拉商路。",
+      snapshots: [
+        snapshot({
+          id: "africa-map-mali-empire",
+          dynastyId: "africa-essential-empires",
+          title: "马里帝国与跨撒哈拉贸易",
+          period: "跨撒哈拉西非",
+          timeRange: "14世纪",
+          eventIds: [
+            "africa-essential-empires-mali"
+          ],
+          basis: referenceMapBasis,
+          confidence: "medium-low",
+          referenceMap: {
+            src: "assets/maps/world/mali-empire-1337.jpg",
+            title: "The Mali Empire.jpg",
+            sourceTitle: "Wikimedia Commons: The Mali Empire.jpg",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Mali_Empire.jpg",
+            author: "Gabagool",
+            license: "CC BY-SA 4.0",
+            note: "原图用于表现马里帝国及周边贸易空间；撒哈拉商路和政治控制不能等同连续行政边界。"
+          },
+          note: "马里帝国学习重点是黄金、盐、尼日尔河城市、伊斯兰学术和跨撒哈拉联系，而不是只记一个版图轮廓。",
+          layers: [
+            layer("core-admin", "尼日尔河核心", "#5ba88c", [
+              area("尼日尔河上中游与马里核心区", "帝国权力、黄金贸易和城市网络较集中的区域。")
+            ], "较稳定的政治经济核心。"),
+            layer("influence", "跨撒哈拉商路", "#4a7fb5", [
+              area("通往北非的盐金贸易路线", "商路连接撒哈拉南北，但商路影响不等于直接领土治理。")
+            ], "贸易和文化联系层。"),
+            layer("vassal", "贡赋与附属地区", "#8bbf6a", [
+              area("萨赫勒周边附属空间", "地方首领、商路节点和帝国中心关系会随时期变化。")
+            ], "附属和贡赋关系。")
+          ]
+        })
+      ]
+    },
+
+    "mesoamerica-andes-core": {
+      dynastyId: "mesoamerica-andes-core",
+      title: "中美洲与安第斯参考历史地图",
+      mapPolicy: "reference-map-only",
+      note: "美洲核心文明先接入印加扩张图，用于解释库斯科核心、安第斯道路和征服断裂。",
+      snapshots: [
+        snapshot({
+          id: "americas-map-inca-expansion",
+          dynastyId: "mesoamerica-andes-core",
+          title: "印加帝国扩张过程",
+          period: "高原帝国",
+          timeRange: "约1438-1533",
+          eventIds: [
+            "mesoamerica-andes-core-inca",
+            "mesoamerica-andes-core-conquest"
+          ],
           basis: referenceMapBasis,
           confidence: "medium",
-          referenceMap: { src: "assets/maps/china/song-liao-xixia-1111.png", title: "Song-Liao-Xixia-1111.png", sourceTitle: "Wikimedia Commons: Song-Liao-Xixia-1111.png", sourceUrl: "https://commons.wikimedia.org/wiki/File:Song-Liao-Xixia-1111.png", author: "Douglasfrankfort", license: "GFDL / CC BY 3.0", note: "原图表现1111年前后宋、辽、西夏及周边政权大势；适合解释北宋并非大一统帝国，而是长期处于多政权并立体系中。" },
-          note: "北宋疆域学习要把燕云、河西、河湟和西夏边界放在同一张图里看：北宋的制度能力很强，但北方和西北战略空间长期受辽夏制约。",
+          referenceMap: {
+            src: "assets/maps/world/inca-expansion.svg",
+            title: "Inca Expansion.svg",
+            sourceTitle: "Wikimedia Commons: Inca Expansion.svg",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Inca_Expansion.svg",
+            author: "Aucahuasi",
+            license: "CC BY-SA 3.0",
+            note: "原图按阶段展示印加扩张；安第斯道路、劳役和地方首领关系需与现代国界分开理解。"
+          },
+          note: "印加帝国的重点是高地生态、道路、仓储、劳役和地方整合方式，地图只提供空间入口。",
           layers: [
-            layer("core-admin", "北宋州县核心区", "#5ba88c", [area("中原、江淮、江南、川峡、岭南", "北宋在这些区域建立较强文官财政国家，是其长期维持经济和行政能力的基础。")], "北宋直接行政控制区。"),
-            layer("contested", "宋辽宋夏边境", "#6a91c9", [area("燕云、河北北缘、陕西沿边、河湟", "这些区域是军事、外交和财政压力集中地。")], "边境争夺和条约边界并存。"),
-            layer("vassal", "并立政权体系", "#8bbf6a", [area("辽、西夏、大理、高丽等周边政权", "北宋不是单独面对空白边疆，而是在多个成熟政权并立的东亚秩序中运作。")], "并立政权不属于北宋行政控制。")
+            layer("core-admin", "库斯科核心", "#5ba88c", [
+              area("库斯科及秘鲁高地核心", "王权、宗教和行政动员最集中的区域。")
+            ], "相对稳定的行政和仪式核心。"),
+            layer("military", "扩张推进区", "#c29a5c", [
+              area("安第斯南北方向扩张带", "印加通过军事、联盟和地方首领整合逐步扩张。")
+            ], "军事扩张和整合空间。"),
+            layer("influence", "道路与劳役网络", "#4a7fb5", [
+              area("安第斯道路系统连接区", "道路和仓储增强治理能力，但地方控制强度存在差异。")
+            ], "基础设施和制度影响层。")
           ]
         })
       ]
     },
+
+    "polynesian-oceania-core": {
+      dynastyId: "polynesian-oceania-core",
+      title: "大洋洲航海参考历史地图",
+      mapPolicy: "reference-map-only",
+      note: "大洋洲先接入波利尼西亚迁徙图，用于解释远洋航海、岛屿定居和文化扩散。",
+      snapshots: [
+        snapshot({
+          id: "oceania-map-polynesian-migration",
+          dynastyId: "polynesian-oceania-core",
+          title: "波利尼西亚迁徙与远航定居",
+          period: "波利尼西亚航海",
+          timeRange: "约前1000-1200",
+          eventIds: [
+            "polynesian-oceania-core-lapita",
+            "polynesian-oceania-core-polynesian-voyaging",
+            "polynesian-oceania-core-maori"
+          ],
+          basis: referenceMapBasis,
+          confidence: "medium-low",
+          referenceMap: {
+            src: "assets/maps/world/polynesian-migration.svg",
+            title: "Polynesian Migration.svg",
+            sourceTitle: "Wikimedia Commons: Polynesian Migration.svg",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Polynesian_Migration.svg",
+            author: "User:Dbachmann",
+            license: "CC BY-SA 3.0",
+            note: "原图展示波利尼西亚迁徙路径；迁徙箭头是学习示意，不能理解为单一国家疆域。"
+          },
+          note: "大洋洲地图不能按陆上帝国疆域理解，重点是航海路线、亲族网络、岛屿生态适应和接触后的变化。",
+          layers: [
+            layer("core-admin", "核心岛群社会", "#5ba88c", [
+              area("萨摩亚、汤加、社会群岛等核心岛群", "这些岛群是波利尼西亚社会组织和远航网络的重要节点。")
+            ], "岛屿社会核心，不是统一行政区。"),
+            layer("influence", "远航定居网络", "#4a7fb5", [
+              area("夏威夷、新西兰、复活节岛方向", "远航定居扩展了文化联系，但各岛社会独立发展。")
+            ], "迁徙和文化扩散层。"),
+            layer("contested", "接触时代压力区", "#c29a5c", [
+              area("18-19世纪欧洲接触后的太平洋", "贸易、传教、疾病和殖民压力改变岛屿社会。")
+            ], "后期外部压力和转型空间。")
+          ]
+        })
+      ]
+    },
+
     "medieval-western-europe": {
       dynastyId: "medieval-western-europe",
       title: "中世纪西欧参考历史地图",

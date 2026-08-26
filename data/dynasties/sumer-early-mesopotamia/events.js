@@ -44,7 +44,6 @@
       era: item.era,
       period: dynasty,
       time: item.time,
-      sortYear: item.sortYear,
       regions: item.regions || ["两河流域", "西亚"],
       topics: item.topics || [],
       summary: item.summary,
@@ -133,14 +132,11 @@
     ["sumer-isin-larsa-transition", "伊辛-拉尔萨时代承接苏美尔传统", "伊辛-拉尔萨过渡", "约前2000-前1792", ["伊辛", "拉尔萨", "阿摩利王朝"], "伊辛和拉尔萨等王国承接乌尔第三王朝行政和苏美尔文化，同时为巴比伦兴起提供背景。", "这一阶段是苏美尔早期两河模块通向古巴比伦和汉谟拉比的接口。"]
   ];
 
-  const explicitSortYears = { "sumer-nippur-enlil": -2600 };
-
   window.SUMER_EARLY_MESOPOTAMIA_EVENTS = rows.map(([id, title, era, time, peopleList, summary, result]) => event({
     id,
     title,
     era,
     time,
-    sortYear: explicitSortYears[id],
     people: peopleList,
     summary,
     result,

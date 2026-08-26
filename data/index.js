@@ -1,5 +1,5 @@
 (() => {
-  const dynasties = [window.SHANG_METADATA, window.WESTERN_ZHOU_METADATA, window.SAWS_METADATA, window.QIN_METADATA, window.WESTERN_HAN_METADATA, window.XIN_METADATA, window.EASTERN_HAN_METADATA, window.LH3K_METADATA, window.NS_METADATA, window.SUI_METADATA, window.TANG_METADATA, window.FDTK_METADATA, window.NORTHERN_SONG_METADATA, window.SOUTHERN_SONG_METADATA, window.LIAO_METADATA, window.WESTERN_XIA_METADATA, window.JIN_METADATA, window.MONGOL_METADATA, window.YUAN_METADATA, window.MING_METADATA, window.QING_METADATA, window.MODERN_CHINA_METADATA, window.REPUBLICAN_CHINA_METADATA, window.WAR_OF_RESISTANCE_METADATA, window.LIBERATION_CONSTRUCTION_METADATA, window.REFORM_OPENING_METADATA, window.JAPAN_METADATA, window.INDIAN_SUBCONTINENT_METADATA, window.SOUTHEAST_ASIA_METADATA, window.ANCIENT_GREECE_METADATA, window.ROMAN_REPUBLIC_METADATA, window.ROMAN_EMPIRE_METADATA, window.BYZANTIUM_METADATA, window.MEDIEVAL_WESTERN_EUROPE_METADATA, window.VIKING_NORDIC_EUROPE_METADATA, window.IBERIA_RECONQUISTA_METADATA, window.EASTERN_EUROPE_SLAVIC_METADATA, window.RUSSIA_METADATA, window.RENAISSANCE_REFORMATION_METADATA, window.EARLY_MODERN_EUROPE_METADATA, window.ANCIENT_EGYPT_METADATA, window.NUBIA_KUSH_METADATA, window.PHOENICIAN_CARTHAGE_METADATA, window.SUMER_EARLY_MESOPOTAMIA_METADATA, window.BRONZE_AGE_INTERNATIONAL_SYSTEM_METADATA, window.BRONZE_AGE_COLLAPSE_METADATA, window.ISLAMIC_MIDDLE_EAST_METADATA, window.AFRICAN_CIVILIZATIONS_METADATA, window.NORTH_AMERICA_METADATA, window.SOUTH_AMERICA_METADATA, window.HITTITE_ANATOLIA_METADATA, window.NEO_ASSYRIAN_EMPIRE_METADATA, window.ACHAEMENID_PERSIA_METADATA, window.MAYA_CIVILIZATION_METADATA, window.MEXICA_AZTEC_TRIPLE_ALLIANCE_METADATA, window.INCA_EMPIRE_METADATA].filter(Boolean);
+  const dynasties = [window.SHANG_METADATA, window.WESTERN_ZHOU_METADATA, window.SAWS_METADATA, window.QIN_METADATA, window.WESTERN_HAN_METADATA, window.XIN_METADATA, window.EASTERN_HAN_METADATA, window.LH3K_METADATA, window.NS_METADATA, window.SUI_METADATA, window.TANG_METADATA, window.FDTK_METADATA, window.NORTHERN_SONG_METADATA, window.SOUTHERN_SONG_METADATA, window.LIAO_METADATA, window.WESTERN_XIA_METADATA, window.JIN_METADATA, window.MONGOL_METADATA, window.YUAN_METADATA, window.MING_METADATA, window.QING_METADATA, window.MODERN_CHINA_METADATA, window.REPUBLICAN_CHINA_METADATA, window.WAR_OF_RESISTANCE_METADATA, window.LIBERATION_CONSTRUCTION_METADATA, window.REFORM_OPENING_METADATA, window.JAPAN_METADATA, window.KOREAN_PENINSULA_METADATA, window.SOUTH_ASIA_METADATA, window.SOUTHEAST_ASIA_METADATA, window.CENTRAL_ASIA_METADATA, window.IRANIAN_WORLD_METADATA, window.ISLAMIC_WORLD_METADATA, window.ANCIENT_GREECE_METADATA, window.ROMAN_WORLD_METADATA, window.ROMAN_REPUBLIC_METADATA, window.ROMAN_EMPIRE_METADATA, window.BYZANTIUM_METADATA, window.MEDIEVAL_WESTERN_EUROPE_METADATA, window.RUSSIAN_EASTERN_EUROPE_METADATA, window.OTTOMAN_WORLD_METADATA, window.MODERN_EUROPE_METADATA, window.ANCIENT_EGYPT_METADATA, window.AFRICAN_WORLD_METADATA, window.AMERICAS_WORLD_METADATA, window.OCEANIA_WORLD_METADATA, window.ANCIENT_NEAR_EAST_METADATA, window.SUMER_EARLY_MESOPOTAMIA_METADATA, window.INDUS_CIVILIZATION_METADATA, window.MAURYA_GUPTA_METADATA, window.DELHI_SULTANATE_MUGHAL_METADATA, window.MAINLAND_SOUTHEAST_ASIA_METADATA, window.ISLAND_SOUTHEAST_ASIA_METADATA, window.COLONIAL_SOUTHEAST_ASIA_METADATA, window.SOUTH_ASIA_IMPERIAL_CORE_METADATA, window.SOUTHEAST_ASIA_CORE_KINGDOMS_METADATA, window.STEPPE_SILK_ROAD_CORE_METADATA, window.AFRICA_ESSENTIAL_EMPIRES_METADATA, window.MESOAMERICA_ANDES_CORE_METADATA, window.POLYNESIAN_OCEANIA_CORE_METADATA, window.BRONZE_AGE_INTERNATIONAL_SYSTEM_METADATA, window.BRONZE_AGE_COLLAPSE_METADATA].filter(Boolean);
   const territoryPopulationData = window.TERRITORY_POPULATION_DATA || {};
   const politicalMapData = window.POLITICAL_MAP_DATA || {};
   dynasties.forEach((dynasty) => {
@@ -41,35 +41,41 @@
     "liberation-construction": window.LIBERATION_CONSTRUCTION_EVENTS || [],
     "reform-opening": window.REFORM_OPENING_EVENTS || [],
     japan: window.JAPAN_EVENTS || [],
-    "indian-subcontinent": window.INDIAN_SUBCONTINENT_EVENTS || [],
+    "korean-peninsula": window.KOREAN_PENINSULA_EVENTS || [],
+    "south-asia": window.SOUTH_ASIA_EVENTS || [],
     "southeast-asia": window.SOUTHEAST_ASIA_EVENTS || [],
+    "central-asia": window.CENTRAL_ASIA_EVENTS || [],
+    "iranian-world": window.IRANIAN_WORLD_EVENTS || [],
+    "islamic-world": window.ISLAMIC_WORLD_EVENTS || [],
     "ancient-greece": window.ANCIENT_GREECE_EVENTS || [],
+    "roman-world": window.ROMAN_WORLD_EVENTS || [],
     "roman-republic": window.ROMAN_REPUBLIC_EVENTS || [],
     "roman-empire": window.ROMAN_EMPIRE_EVENTS || [],
     byzantium: window.BYZANTIUM_EVENTS || [],
     "medieval-western-europe": window.MEDIEVAL_WESTERN_EUROPE_EVENTS || [],
-    "viking-nordic-europe": window.VIKING_NORDIC_EUROPE_EVENTS || [],
-    "iberia-reconquista": window.IBERIA_RECONQUISTA_EVENTS || [],
-    "eastern-europe-slavic": window.EASTERN_EUROPE_SLAVIC_EVENTS || [],
-    russia: window.RUSSIA_EVENTS || [],
-    "renaissance-reformation": window.RENAISSANCE_REFORMATION_EVENTS || [],
-    "early-modern-europe": window.EARLY_MODERN_EUROPE_EVENTS || [],
+    "russian-eastern-europe": window.RUSSIAN_EASTERN_EUROPE_EVENTS || [],
+    "ottoman-world": window.OTTOMAN_WORLD_EVENTS || [],
+    "modern-europe": window.MODERN_EUROPE_EVENTS || [],
     "ancient-egypt": window.ANCIENT_EGYPT_EVENTS || [],
-    "nubia-kush": window.NUBIA_KUSH_EVENTS || [],
-    "phoenician-carthage": window.PHOENICIAN_CARTHAGE_EVENTS || [],
+    "african-world": window.AFRICAN_WORLD_EVENTS || [],
+    "americas-world": window.AMERICAS_WORLD_EVENTS || [],
+    "oceania-world": window.OCEANIA_WORLD_EVENTS || [],
+    "ancient-near-east": window.ANCIENT_NEAR_EAST_EVENTS || [],
     "sumer-early-mesopotamia": window.SUMER_EARLY_MESOPOTAMIA_EVENTS || [],
+    "indus-civilization": window.INDUS_CIVILIZATION_EVENTS || [],
+    "maurya-gupta": window.MAURYA_GUPTA_EVENTS || [],
+    "delhi-sultanate-mughal": window.DELHI_SULTANATE_MUGHAL_EVENTS || [],
+    "mainland-southeast-asia": window.MAINLAND_SOUTHEAST_ASIA_EVENTS || [],
+    "island-southeast-asia": window.ISLAND_SOUTHEAST_ASIA_EVENTS || [],
+    "colonial-southeast-asia": window.COLONIAL_SOUTHEAST_ASIA_EVENTS || [],
+    "south-asia-imperial-core": window.SOUTH_ASIA_IMPERIAL_CORE_EVENTS || [],
+    "southeast-asia-core-kingdoms": window.SOUTHEAST_ASIA_CORE_KINGDOMS_EVENTS || [],
+    "steppe-silk-road-core": window.STEPPE_SILK_ROAD_CORE_EVENTS || [],
+    "africa-essential-empires": window.AFRICA_ESSENTIAL_EMPIRES_EVENTS || [],
+    "mesoamerica-andes-core": window.MESOAMERICA_ANDES_CORE_EVENTS || [],
+    "polynesian-oceania-core": window.POLYNESIAN_OCEANIA_CORE_EVENTS || [],
     "bronze-age-international-system": window.BRONZE_AGE_INTERNATIONAL_SYSTEM_EVENTS || [],
-    "bronze-age-collapse": window.BRONZE_AGE_COLLAPSE_EVENTS || [],
-    "islamic-middle-east": window.ISLAMIC_MIDDLE_EAST_EVENTS || [],
-    "african-civilizations": window.AFRICAN_CIVILIZATIONS_EVENTS || [],
-    "north-america": window.NORTH_AMERICA_EVENTS || [],
-    "south-america": window.SOUTH_AMERICA_EVENTS || [],
-    "hittite-anatolia": window.HITTITE_ANATOLIA_EVENTS || [],
-    "neo-assyrian-empire": window.NEO_ASSYRIAN_EMPIRE_EVENTS || [],
-    "achaemenid-persia": window.ACHAEMENID_PERSIA_EVENTS || [],
-    "maya-civilization": window.MAYA_CIVILIZATION_EVENTS || [],
-    "mexica-aztec-triple-alliance": window.MEXICA_AZTEC_TRIPLE_ALLIANCE_EVENTS || [],
-    "inca-empire": window.INCA_EMPIRE_EVENTS || []
+    "bronze-age-collapse": window.BRONZE_AGE_COLLAPSE_EVENTS || []
   };
   const dynastyEmperors = {
     shang: window.SHANG_EMPERORS || [],
@@ -99,196 +105,131 @@
     "liberation-construction": window.LIBERATION_CONSTRUCTION_EMPERORS || [],
     "reform-opening": window.REFORM_OPENING_EMPERORS || [],
     japan: window.JAPAN_EMPERORS || [],
-    "indian-subcontinent": window.INDIAN_SUBCONTINENT_EMPERORS || [],
+    "korean-peninsula": window.KOREAN_PENINSULA_EMPERORS || [],
+    "south-asia": window.SOUTH_ASIA_EMPERORS || [],
     "southeast-asia": window.SOUTHEAST_ASIA_EMPERORS || [],
+    "central-asia": window.CENTRAL_ASIA_EMPERORS || [],
+    "iranian-world": window.IRANIAN_WORLD_EMPERORS || [],
+    "islamic-world": window.ISLAMIC_WORLD_EMPERORS || [],
     "ancient-greece": window.ANCIENT_GREECE_EMPERORS || [],
+    "roman-world": window.ROMAN_WORLD_EMPERORS || [],
     "roman-republic": window.ROMAN_REPUBLIC_EMPERORS || [],
     "roman-empire": window.ROMAN_EMPIRE_EMPERORS || [],
     byzantium: window.BYZANTIUM_EMPERORS || [],
     "medieval-western-europe": window.MEDIEVAL_WESTERN_EUROPE_EMPERORS || [],
-    "viking-nordic-europe": window.VIKING_NORDIC_EUROPE_EMPERORS || [],
-    "iberia-reconquista": window.IBERIA_RECONQUISTA_EMPERORS || [],
-    "eastern-europe-slavic": window.EASTERN_EUROPE_SLAVIC_EMPERORS || [],
-    russia: window.RUSSIA_EMPERORS || [],
-    "renaissance-reformation": window.RENAISSANCE_REFORMATION_EMPERORS || [],
-    "early-modern-europe": window.EARLY_MODERN_EUROPE_EMPERORS || [],
+    "russian-eastern-europe": window.RUSSIAN_EASTERN_EUROPE_EMPERORS || [],
+    "ottoman-world": window.OTTOMAN_WORLD_EMPERORS || [],
+    "modern-europe": window.MODERN_EUROPE_EMPERORS || [],
     "ancient-egypt": window.ANCIENT_EGYPT_EMPERORS || [],
-    "nubia-kush": window.NUBIA_KUSH_EMPERORS || [],
-    "phoenician-carthage": window.PHOENICIAN_CARTHAGE_EMPERORS || [],
+    "african-world": window.AFRICAN_WORLD_EMPERORS || [],
+    "americas-world": window.AMERICAS_WORLD_EMPERORS || [],
+    "oceania-world": window.OCEANIA_WORLD_EMPERORS || [],
+    "ancient-near-east": window.ANCIENT_NEAR_EAST_EMPERORS || [],
     "sumer-early-mesopotamia": window.SUMER_EARLY_MESOPOTAMIA_EMPERORS || [],
+    "indus-civilization": window.INDUS_CIVILIZATION_EMPERORS || [],
+    "maurya-gupta": window.MAURYA_GUPTA_EMPERORS || [],
+    "delhi-sultanate-mughal": window.DELHI_SULTANATE_MUGHAL_EMPERORS || [],
+    "mainland-southeast-asia": window.MAINLAND_SOUTHEAST_ASIA_EMPERORS || [],
+    "island-southeast-asia": window.ISLAND_SOUTHEAST_ASIA_EMPERORS || [],
+    "colonial-southeast-asia": window.COLONIAL_SOUTHEAST_ASIA_EMPERORS || [],
+    "south-asia-imperial-core": window.SOUTH_ASIA_IMPERIAL_CORE_EMPERORS || [],
+    "southeast-asia-core-kingdoms": window.SOUTHEAST_ASIA_CORE_KINGDOMS_EMPERORS || [],
+    "steppe-silk-road-core": window.STEPPE_SILK_ROAD_CORE_EMPERORS || [],
+    "africa-essential-empires": window.AFRICA_ESSENTIAL_EMPIRES_EMPERORS || [],
+    "mesoamerica-andes-core": window.MESOAMERICA_ANDES_CORE_EMPERORS || [],
+    "polynesian-oceania-core": window.POLYNESIAN_OCEANIA_CORE_EMPERORS || [],
     "bronze-age-international-system": window.BRONZE_AGE_INTERNATIONAL_SYSTEM_EMPERORS || [],
-    "bronze-age-collapse": window.BRONZE_AGE_COLLAPSE_EMPERORS || [],
-    "islamic-middle-east": window.ISLAMIC_MIDDLE_EAST_EMPERORS || [],
-    "african-civilizations": window.AFRICAN_CIVILIZATIONS_EMPERORS || [],
-    "north-america": window.NORTH_AMERICA_EMPERORS || [],
-    "south-america": window.SOUTH_AMERICA_EMPERORS || [],
-    "hittite-anatolia": window.HITTITE_ANATOLIA_EMPERORS || [],
-    "neo-assyrian-empire": window.NEO_ASSYRIAN_EMPIRE_EMPERORS || [],
-    "achaemenid-persia": window.ACHAEMENID_PERSIA_EMPERORS || [],
-    "maya-civilization": window.MAYA_CIVILIZATION_EMPERORS || [],
-    "mexica-aztec-triple-alliance": window.MEXICA_AZTEC_TRIPLE_ALLIANCE_EMPERORS || [],
-    "inca-empire": window.INCA_EMPIRE_EMPERORS || []
+    "bronze-age-collapse": window.BRONZE_AGE_COLLAPSE_EMPERORS || []
   };
   const topics = [
     window.IMPERIAL_EXAM_TOPIC,
     window.SONG_MONGOL_YUAN_WAR_TOPIC
   ].filter(Boolean);
-  const regions = [window.EAST_ASIA_REGION, window.SOUTH_ASIA_REGION, window.SOUTHEAST_ASIA_REGION, window.EUROPE_REGION, window.AFRICA_REGION, window.WEST_ASIA_REGION, window.AFRO_EURASIA_CROSSROADS_REGION, window.NORTH_AMERICA_REGION, window.SOUTH_AMERICA_REGION].filter(Boolean);
-  const civilizationPackages = [window.CHINA_HISTORY_PACKAGE, window.JAPAN_HISTORY_PACKAGE, window.INDIAN_SUBCONTINENT_PACKAGE, window.SOUTHEAST_ASIA_PACKAGE, window.EUROPE_HISTORY_PACKAGE, window.AFRICA_HISTORY_PACKAGE, window.WEST_ASIA_HISTORY_PACKAGE, window.AFRO_EURASIA_CROSSROADS_PACKAGE, window.NORTH_AMERICA_HISTORY_PACKAGE, window.SOUTH_AMERICA_HISTORY_PACKAGE].filter(Boolean);
+  const regions = [window.EAST_ASIA_REGION, window.SOUTH_ASIA_REGION, window.SOUTHEAST_ASIA_REGION, window.CENTRAL_ASIA_REGION, window.EUROPE_REGION, window.AFRICA_REGION, window.WEST_ASIA_REGION, window.AMERICAS_REGION, window.OCEANIA_REGION, window.AFRO_EURASIA_CROSSROADS_REGION].filter(Boolean);
+  const civilizationPackages = [window.CHINA_HISTORY_PACKAGE, window.JAPAN_HISTORY_PACKAGE, window.KOREAN_PENINSULA_HISTORY_PACKAGE, window.SOUTH_ASIA_HISTORY_PACKAGE, window.SOUTHEAST_ASIA_HISTORY_PACKAGE, window.CENTRAL_ASIA_HISTORY_PACKAGE, window.EUROPE_HISTORY_PACKAGE, window.AFRICA_HISTORY_PACKAGE, window.WEST_ASIA_HISTORY_PACKAGE, window.AMERICAS_HISTORY_PACKAGE, window.OCEANIA_HISTORY_PACKAGE, window.AFRO_EURASIA_CROSSROADS_PACKAGE].filter(Boolean);
 
   function parseStartYear(timeText) {
-    const text = String(timeText || "").trim();
-    if (!text) return Number.MAX_SAFE_INTEGER;
-
-    const bceCentury = text.match(/(?:约)?(?:公元前|前|BC|BCE)\s*(\d{1,2})\s*(?:-|—|－|至)?\s*(?:公元前|前|BC|BCE)?\s*\d{0,2}\s*世纪/i);
-    if (bceCentury) return -Number(bceCentury[1]) * 100;
-
-    const bceYear = text.match(/(?:约)?(?:公元前|前|BC|BCE)\s*(\d{1,5})/i);
-    if (bceYear) return -Number(bceYear[1]);
-
-    const ceCentury = text.match(/(?:约)?(?:公元)?\s*(\d{1,2})\s*(?:-|—|－|至)?\s*\d{0,2}\s*世纪/);
-    if (ceCentury) return (Number(ceCentury[1]) - 1) * 100;
-
-    const ceYear = text.match(/(?:公元|约)?\s*(\d{1,4})/);
-    if (ceYear) return Number(ceYear[1]);
-
+    const text = String(timeText || "");
+    const exact = text.match(/前(\d{3,4})/);
+    if (exact) return -Number(exact[1]);
+    const century = text.match(/前(\d{1,2})世纪/);
+    if (century) return -Number(century[1]) * 100;
+    const centuryRange = text.match(/前(\d{1,2})-/);
+    if (centuryRange) return -Number(centuryRange[1]) * 100;
+    const ce = text.match(/(\d{3,4})/);
+    if (ce) return Number(ce[1]);
     return Number.MAX_SAFE_INTEGER;
   }
 
-  const geoRules = [
-    ["欧洲 / 爱琴海与希腊半岛", ["爱琴", "希腊", "雅典", "斯巴达", "伯罗奔尼撒", "克里特", "马其顿"]],
-    ["欧洲 / 亚平宁半岛", ["亚平宁", "意大利", "罗马", "拉丁", "伊特鲁里亚"]],
-    ["欧洲 / 西地中海岛屿", ["西西里", "撒丁", "科西嘉", "马耳他"]],
-    ["欧洲 / 伊比利亚半岛", ["伊比利亚", "西班牙", "葡萄牙", "安达卢斯", "加的斯", "加的尔"]],
-    ["欧洲 / 不列颠群岛", ["不列颠", "英格兰", "苏格兰", "爱尔兰", "伦敦", "牛津"]],
-    ["欧洲 / 高卢-法兰西盆地", ["高卢", "法兰西", "法国", "巴黎", "诺曼底", "阿维尼翁", "奥尔良"]],
-    ["欧洲 / 莱茵-多瑙与中欧", ["莱茵", "多瑙", "德意志", "神圣罗马帝国", "中欧", "奥地利", "波希米亚"]],
-    ["欧洲 / 巴尔干半岛", ["巴尔干", "拜占庭", "君士坦丁堡", "保加利亚", "塞尔维亚", "希腊北部"]],
-    ["欧洲 / 北欧斯堪的纳维亚", ["北欧", "斯堪的纳维亚", "丹麦", "挪威", "瑞典", "维京"]],
-    ["欧洲 / 波罗的海沿岸", ["波罗的海", "立陶宛", "普鲁士", "波兰"]],
-    ["欧洲 / 东欧平原", ["东欧", "斯拉夫", "罗斯", "基辅", "诺夫哥罗德", "莫斯科", "俄罗斯", "伏尔加", "乌拉尔", "西伯利亚", "苏联"]],
-    ["西亚 / 两河流域", ["两河流域", "美索不达米亚", "苏美尔", "阿卡德", "巴比伦", "亚述", "底格里斯", "幼发拉底"]],
-    ["西亚 / 安纳托利亚高原", ["安纳托利亚", "小亚细亚", "赫梯"]],
-    ["西亚 / 伊朗高原", ["伊朗高原", "波斯", "埃兰", "米底"]],
-    ["西亚 / 黎凡特海岸与叙利亚", ["黎凡特", "叙利亚", "巴勒斯坦", "迦南", "腓尼基", "推罗", "西顿", "比布鲁斯"]],
-    ["西亚 / 阿拉伯半岛", ["阿拉伯半岛", "阿拉伯"]],
-    ["非洲 / 尼罗河下游", ["埃及", "上埃及", "下埃及", "尼罗河下游", "三角洲"]],
-    ["非洲 / 尼罗河中游", ["努比亚", "库施", "克尔马", "纳帕塔", "麦罗埃", "尼罗河中游"]],
-    ["非洲 / 北非地中海沿岸", ["北非", "迦太基", "利比亚", "突尼斯"]],
-    ["东亚 / 黄河中下游", ["中原", "黄河", "洛阳", "开封", "山东", "河北", "河东", "邯郸", "许昌"]],
-    ["东亚 / 关中-陇右与河西", ["关中", "长安", "咸阳", "陇右", "河西", "安西", "西域", "函谷关"]],
-    ["东亚 / 长江中下游", ["长江", "江南", "江淮", "建康", "临安", "扬州", "蔡州"]],
-    ["东亚 / 巴蜀与四川盆地", ["巴蜀", "四川盆地", "成都", "益州", "蜀"]],
-    ["东亚 / 岭南与珠江流域", ["岭南", "珠江", "广州", "百越", "南越"]],
-    ["东亚 / 云贵高原", ["云贵", "南诏", "大理", "云南", "贵州"]],
-    ["东亚 / 青藏高原", ["青藏", "吐蕃", "西藏", "逻些"]],
-    ["东亚 / 东南沿海与台湾海峡", ["东南沿海", "福建", "台湾", "澎湖", "泉州", "海禁"]],
-    ["东亚 / 辽河流域与东北", ["东北", "辽东", "辽西", "辽河", "松花江", "黑龙江", "女真", "渤海"]],
-    ["东亚 / 朝鲜半岛", ["朝鲜半岛", "高句丽", "百济", "新罗", "高丽", "安东都护府"]],
-    ["东亚 / 日本列岛", ["日本列岛", "日本", "倭国", "近畿", "关东"]],
-    ["东亚 / 蒙古高原与草原", ["蒙古高原", "草原", "漠北", "漠南", "蒙古", "回纥", "突厥"]],
-    ["南亚 / 印度河-恒河平原", ["印度", "印度河", "恒河", "南亚"]],
-    ["东南亚 / 中南半岛与海岛世界", ["东南亚", "中南半岛", "马六甲", "爪哇", "苏门答腊", "婆罗洲", "菲律宾", "越南", "柬埔寨", "暹罗"]],
-    ["北美 / 墨西哥高原与中美洲", ["墨西哥", "中美洲", "玛雅", "阿兹特克", "特诺奇蒂特兰"]],
-    ["北美 / 北美东部与大平原", ["北美", "加拿大", "美国", "密西西比", "卡霍基亚", "易洛魁", "大平原"]],
-    ["南美 / 安第斯山地", ["南美", "安第斯", "秘鲁", "印加", "库斯科", "波托西", "玻利维亚"]],
-    ["南美 / 亚马孙与巴西高原", ["巴西", "亚马孙"]],
-    ["南美 / 南锥体", ["阿根廷", "智利", "乌拉圭", "巴拉圭", "南锥体"]]
-  ];
-
-  const fallbackGeoByPackageId = {
-    china: "\u4e1c\u4e9a / \u4e2d\u56fd\u5185\u5730",
-    japan: "\u4e1c\u4e9a / \u65e5\u672c\u5217\u5c9b",
-    "indian-subcontinent": "\u5357\u4e9a / \u5370\u5ea6\u6b21\u5927\u9646",
-    "southeast-asia": "\u4e1c\u5357\u4e9a / \u5927\u9646\u4e0e\u6d77\u5c9b\u4e1c\u5357\u4e9a",
-    europe: "\u6b27\u6d32 / \u897f\u6b27\u4e0e\u4e2d\u6b27",
-    africa: "\u975e\u6d32 / \u6492\u54c8\u62c9\u4ee5\u5357\u975e\u6d32",
-    "west-asia": "\u897f\u4e9a / \u897f\u4e9a\u5176\u4ed6\u5730\u533a",
-    "afro-eurasia-crossroads": "\u4e9a\u975e\u6b27\u4ea4\u754c\u5730 / \u8de8\u533a\u57df\u5173\u8054",
-    "north-america": "\u5317\u7f8e / \u5317\u7f8e\u5927\u9646\u4e0e\u52a0\u52d2\u6bd4",
-    "south-america": "\u5357\u7f8e / \u5357\u7f8e\u5176\u4ed6\u5730\u533a"
-  };
-  const chinaFallbackModuleIds = new Set([
-    "modern-china",
-    "republican-china",
-    "war-of-resistance",
-    "liberation-construction",
-    "reform-opening"
-  ]);
-  const fallbackGeoByDynastyId = Object.fromEntries(civilizationPackages.flatMap((historyPackage) => (
-    (historyPackage.moduleIds || []).map((moduleId) => [moduleId, fallbackGeoByPackageId[historyPackage.id]])
-  )).filter(([, fallback]) => fallback));
-  chinaFallbackModuleIds.forEach((moduleId) => {
-    fallbackGeoByDynastyId[moduleId] = fallbackGeoByPackageId.china;
-  });
-  const geoCatalogRoots = [
-    ["east-asia", "\u4e1c\u4e9a"],
-    ["south-asia", "\u5357\u4e9a"],
-    ["southeast-asia", "\u4e1c\u5357\u4e9a"],
-    ["west-asia", "\u897f\u4e9a"],
-    ["europe", "\u6b27\u6d32"],
-    ["africa", "\u975e\u6d32"],
-    ["north-america", "\u5317\u7f8e"],
-    ["south-america", "\u5357\u7f8e"],
-    ["afro-eurasia-crossroads", "\u4e9a\u975e\u6b27\u4ea4\u754c\u5730"]
-  ];
-  const geoCatalogLabels = [...new Set([
-    ...geoRules.map(([label]) => label),
-    ...Object.values(fallbackGeoByPackageId)
-  ])];
-  const geoCatalog = geoCatalogRoots.map(([id, title]) => ({
-    id,
-    title,
-    terms: [title],
-    children: geoCatalogLabels
-      .filter((label) => label.startsWith(`${title} /`))
-      .map((label) => [label.slice(title.length + 3), [label]])
-  })).filter((group) => group.children.length);
-
-  function deriveGeoRegions(event) {
-    const haystack = [
-      event.title,
-      event.summary,
-      event.period,
-      ...(event.geoRegion || []),
-      ...(event.regions || []),
-      ...(event.topics || [])
-    ].join(" ");
-    const matches = geoRules
-      .filter(([, terms]) => terms.some((term) => haystack.includes(term)))
-      .map(([label]) => label);
-    return [...new Set(matches.length ? matches : [fallbackGeoByDynastyId[event.dynastyId] || "\u4e9a\u975e\u6b27\u4ea4\u754c\u5730 / \u8de8\u533a\u57df\u5173\u8054"])];
-  }
-  function derivePolityContext(event) {
-    return [...new Set([event.period, event.dynasty, ...(event.regions || [])].filter(Boolean))];
+  function parseStartYearV2(timeText) {
+    const text = String(timeText || "");
+    const bce = text.match(/(?:约)?(?:前|公元前|BC|BCE)\s*(\d{1,4})/i);
+    if (bce) return -Number(bce[1]);
+    const bceCentury = text.match(/(?:约)?(?:前|公元前)\s*(\d{1,2})世纪/);
+    if (bceCentury) return -Number(bceCentury[1]) * 100;
+    const ce = text.match(/(\d{3,4})/);
+    if (ce) return Number(ce[1]);
+    return Number.MAX_SAFE_INTEGER;
   }
 
-  function normalizeEvent(event, order) {
-    const sortYear = Number.isFinite(event.sortYear) ? event.sortYear : parseStartYear(event.time);
+  function asArray(value) {
+    return Array.isArray(value) ? value : [];
+  }
+
+  function fallbackText(value, fallback) {
+    return value === undefined || value === null || value === "" ? fallback : value;
+  }
+
+  function normalizeEvent(event) {
+    const title = fallbackText(event.title, "未命名事件");
     return {
       ...event,
-      sortYear,
-      sortOrder: Number.isFinite(event.sortOrder) ? event.sortOrder : order,
-      dateLabel: event.dateLabel || event.time,
-      geoRegion: deriveGeoRegions(event),
-      polityContext: Array.isArray(event.polityContext) && event.polityContext.length
-        ? event.polityContext
-        : derivePolityContext(event)
+      title,
+      time: fallbackText(event.time, "时间待核"),
+      era: fallbackText(event.era, "未分期"),
+      period: fallbackText(event.period, "未归类"),
+      summary: fallbackText(event.summary, "摘要待补。"),
+      regions: asArray(event.regions),
+      topics: asArray(event.topics),
+      people: asArray(event.people),
+      background: asArray(event.background),
+      process: asArray(event.process),
+      results: asArray(event.results),
+      debates: asArray(event.debates),
+      sources: asArray(event.sources),
+      citations: asArray(event.citations),
+      claims: asArray(event.claims),
+      notes: asArray(event.notes),
+      aliases: asArray(event.aliases)
     };
   }
 
-  Object.keys(dynastyEvents).forEach((dynastyId) => {
-    dynastyEvents[dynastyId] = (dynastyEvents[dynastyId] || []).map((event, index) => normalizeEvent(event, index));
-  });
+  function normalizeEmperor(emperor) {
+    const name = fallbackText(emperor.name, "未命名人物");
+    const title = fallbackText(emperor.title, "");
+    const displayTitle = title || fallbackText(emperor.dynasty, "相关人物");
+    return {
+      ...emperor,
+      title: displayTitle,
+      name,
+      names: asArray(emperor.names).length ? emperor.names : [name, displayTitle].filter(Boolean),
+      phase: fallbackText(emperor.phase || emperor.era, emperor.dynasty || "未分期"),
+      reign: fallbackText(emperor.reign || emperor.years, "年代待核"),
+      position: fallbackText(emperor.position || emperor.summary, `${displayTitle}${name}应结合相关主线事件理解。`),
+      plainText: fallbackText(emperor.plainText || emperor.summary, "暂无白话说明。"),
+      keyEvents: asArray(emperor.keyEvents).length ? emperor.keyEvents : asArray(emperor.tags),
+      relatedEventIds: asArray(emperor.relatedEventIds),
+      source: fallbackText(emperor.source, "来源待补"),
+      sourceUrl: fallbackText(emperor.sourceUrl, "")
+    };
+  }
 
-  const events = Object.values(dynastyEvents).flat().sort((a, b) => {
-    const yearDiff = a.sortYear - b.sortYear;
+  const events = Object.values(dynastyEvents).flat().map(normalizeEvent).sort((a, b) => {
+    const yearDiff = parseStartYearV2(a.time) - parseStartYearV2(b.time);
     if (yearDiff) return yearDiff;
-    const orderDiff = (a.sortOrder || 0) - (b.sortOrder || 0);
-    if (orderDiff) return orderDiff;
     return dynasties.findIndex((dynasty) => dynasty.id === a.dynastyId) - dynasties.findIndex((dynasty) => dynasty.id === b.dynastyId);
   });
-  const emperors = Object.values(dynastyEmperors).flat();
+  const emperors = Object.values(dynastyEmperors).flat().map(normalizeEmperor);
 
   window.HISTORY_DATA = {
     scope: dynasties.map((dynasty) => dynasty.scope).join(" / "),
@@ -300,7 +241,6 @@
     topics,
     regions,
     civilizationPackages,
-    geoCatalog,
     territoryPopulation: territoryPopulationData,
     politicalMaps: politicalMapData
   };
@@ -309,5 +249,4 @@
   window.HISTORY_TOPICS = topics;
   window.HISTORY_REGIONS = regions;
   window.HISTORY_CIVILIZATION_PACKAGES = civilizationPackages;
-  window.HISTORY_GEO_CATALOG = geoCatalog;
 })();

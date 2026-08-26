@@ -37,8 +37,7 @@ window.CHINA_HISTORY_PACKAGE = {
     "区域包只做索引收束，不复制事件正文；事件事实仍由各时期模块维护。"
   ],
   nextExpansionSlots: [
-    { id: "japan", title: "日本", status: "active" },
-    { id: "korean-peninsula", title: "朝鲜半岛", status: "planned" },
+    { id: "japan", title: "日本", status: "planned" },
     { id: "vietnam", title: "越南", status: "planned" },
     { id: "mongolian-steppe", title: "蒙古高原/内亚", status: "planned" },
     { id: "ryukyu", title: "琉球", status: "planned" }

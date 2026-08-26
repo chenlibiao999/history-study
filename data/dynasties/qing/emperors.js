@@ -26,7 +26,7 @@
     ruler("宣宗", "旻宁", "1820-1850", ["qing-opium-lin-zexu", "qing-first-opium-war"], ["林则徐禁烟", "第一次鸦片战争"]),
     ruler("文宗", "奕詝", "1850-1861", ["qing-taiping-rebellion", "qing-second-opium-war"], ["太平天国", "第二次鸦片战争"]),
     ruler("穆宗", "载淳", "1861-1875", ["qing-self-strengthening", "qing-nian-muslim-rebellions"], ["洋务运动", "内乱平定"]),
-    ruler("德宗", "载湉", "1875-1908", ["qing-sino-french-war", "qing-sino-japanese-war", "jp-first-sino-japanese-war", "qing-hundred-days-reform", "qing-boxer-protocol", "qing-new-policies"], ["中法战争", "甲午战争", "戊戌变法", "义和团", "清末新政"]),
+    ruler("德宗", "载湉", "1875-1908", ["qing-sino-french-war", "qing-sino-japanese-war", "qing-hundred-days-reform", "qing-boxer-protocol", "qing-new-policies"], ["中法战争", "甲午战争", "戊戌变法", "义和团", "清末新政"]),
     ruler("宣统帝", "溥仪", "1908-1912", ["qing-xinhai-revolution", "qing-abdication-1912"], ["辛亥革命", "清帝退位"])
   ];
 })();

@@ -1,0 +1,9 @@
+window.KOREAN_PENINSULA_EMPERORS = [
+  { dynastyId: "korean-peninsula", title: "古代国家形成", name: "古朝鲜、三韩与早期国家", years: "约前4世纪-4世纪", summary: "半岛北部和南部形成多种政治共同体，外部交流与内部农业、铁器和战争共同推动国家化。", keyEvents: ["卫满朝鲜与汉朝冲突", "三韩与伽倻网络"], relatedEventIds: ["korea-wiman-joseon", "korea-three-han"] },
+  { dynastyId: "korean-peninsula", title: "三国时代", name: "高句丽、百济、新罗", years: "约前1世纪-668", summary: "三国在半岛和东北亚竞争，既相互战争，也通过中国王朝、日本列岛和草原世界进行外交。", keyEvents: ["高句丽扩张", "百济与倭关系", "新罗骨品制"], relatedEventIds: ["korea-goguryeo-rise", "korea-baekje-wajapan", "korea-silla-golpum"] },
+  { dynastyId: "korean-peninsula", title: "统一新罗与渤海", name: "统一新罗与渤海国", years: "668-926", summary: "唐罗战争后新罗控制半岛南部，东北亚则形成渤海与新罗并立的南北国时代格局。", keyEvents: ["唐罗战争", "统一新罗制度", "渤海建国"], relatedEventIds: ["korea-tang-silla-war", "korea-unified-silla", "korea-balhae-foundation"] },
+  { dynastyId: "korean-peninsula", title: "高丽建立", name: "王建与高丽统一后三国", years: "918-936", summary: "王建以松岳为基地整合后高句丽、后百济和新罗，建立高丽并完成半岛中南部再统一。", keyEvents: ["高丽建国", "后三国统一"], relatedEventIds: ["korea-goryeo-foundation", "korea-later-three-unification"] },
+  { dynastyId: "korean-peninsula", title: "高丽中期", name: "高丽王权、科举与文臣政治", years: "10-12世纪", summary: "高丽吸收唐宋制度，发展科举、中央官制和佛教国家秩序，同时面对契丹、女真和地方军事压力。", keyEvents: ["光宗改革", "契丹战争", "高丽科举"], relatedEventIds: ["korea-goryeo-gwangjong", "korea-goryeo-khitan-war", "korea-goryeo-examination"] },
+  { dynastyId: "korean-peninsula", title: "高丽后期", name: "武臣政权与蒙古支配", years: "1170-1356", summary: "武臣政变改变高丽权力结构，蒙古入侵和干涉又使高丽长期处于复杂的宗藩与内政调整之中。", keyEvents: ["武臣政变", "三别抄抗蒙", "高丽改革"], relatedEventIds: ["korea-goryeo-military-regime", "korea-goryeo-mongol-war", "korea-goryeo-gongmin"] },
+  { dynastyId: "korean-peninsula", title: "朝鲜王朝", name: "李成桂与朝鲜国家", years: "1392-1910", summary: "朝鲜王朝以儒学官僚、科举、宗法秩序和中央集权治理半岛，经历世宗改革、党争、壬辰战争和清朝压力。", keyEvents: ["朝鲜建国", "训民正音", "壬辰战争", "丙子胡乱"], relatedEventIds: ["korea-joseon-foundation", "korea-sejong-hangul", "korea-imjin-war", "korea-manchu-invasions"] }
+];

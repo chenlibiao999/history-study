@@ -2,17 +2,25 @@
   const dynastyId = "western-zhou";
   const dynasty = "西周";
   function emperor(item) {
+    const title = item.title || (item.reign === "摄政人物" || item.id.includes("gonghe") ? "摄政" : "西周王");
     return {
       id: item.id,
+      phase: item.phase || item.era || "西周王室",
+      title,
       name: item.name,
+      names: item.names || [item.name, title],
       dynasty,
       dynastyId,
       reign: item.reign,
       era: item.era,
       summary: item.summary,
       tags: item.tags,
+      keyEvents: item.keyEvents || item.tags || item.relatedEventIds,
       focus: item.focus,
+      position: item.position || `${title}${item.name}应结合西周主线事件理解其历史作用。`,
+      plainText: item.plainText || item.focus || item.summary,
       source: item.source || "《史记·周本纪》及西周金文、传世文献相关资料",
+      sourceUrl: item.sourceUrl || "https://zh.wikisource.org/zh-hans/%E5%8F%B2%E8%A8%98/%E5%8D%B7004",
       relatedEventIds: item.relatedEventIds
     };
   }

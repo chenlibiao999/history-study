@@ -1,7 +1,7 @@
 window.SOUTH_ASIA_REGION = {
   id: "south-asia",
   title: "南亚",
-  scope: "南亚历史区域：印度次大陆、印度洋北岸和现代印度、巴基斯坦、孟加拉国、斯里兰卡、尼泊尔等相关历史空间。",
-  packageIds: ["indian-subcontinent"],
-  description: "区域层只管理南亚文明/国家单元组合，不直接写具体事件。具体事件放在印度地区等独立模块中。"
+  scope: "南亚历史区域：印度河流域、恒河流域、德干、高原与沿海、斯里兰卡、喜马拉雅边缘和印度洋贸易网络。",
+  packageIds: ["south-asia"],
+  description: "南亚区域层只管理次大陆文明、政权和海陆网络的组合关系；具体事件由南亚历史主线及后续细分模块维护。"
 };

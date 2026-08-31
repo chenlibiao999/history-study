@@ -6,15 +6,14 @@
 
 ### 规则文档
 
-- `data/rules.md`: 历史内容、事件、史料、疆域人口和地图的总规则池。
+- `data/rules/`: 历史内容、事件、史料、疆域人口和地图的正式规则池。
 - `data/rules/agent-collaboration.md`: 三角色协作、职责边界、复用策略和验收流程。
 - `data/schema.md`: 数据字段、关联关系和结构约束。
 
 - `index.html`: 页面骨架，只保留布局容器。
 - `assets/styles.css`: 视觉样式。
 - `assets/app.js`: 渲染、搜索、筛选、切换事件、笔记、复习卡片等交互。
-- `data/history-data.js`: 历史事件数据。
-- `data/tang-emperors.js`: 唐朝帝王谱系索引，覆盖唐朝皇帝和武周阶段。
+- `data/dynasties/`: 按朝代、区域和专题拆分的历史事件与人物数据。
 - `data/schema.md`: 数据字段说明和后续扩展规则。
 
 ## 当前能力

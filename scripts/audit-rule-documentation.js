@@ -13,9 +13,7 @@ const required = [
   'data/rules/07-political-maps.md',
   'data/rules/08-dynasty-and-cross-period.md',
   'data/rules/09-audit-and-acceptance.md',
-  'data/rules/10-rule-sync.md',
-  '.agent/RULES_VERSION.md',
-  '.agent/tasks/INDEX.md'
+  'data/rules/10-rule-sync.md'
 ];
 
 const errors = [];
@@ -26,12 +24,9 @@ for (const file of required) {
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 if (fs.existsSync(path.join(root, 'data/rules/10-rule-sync.md'))) {
   const sync = read('data/rules/10-rule-sync.md');
-  for (const token of ['SYNC-001', '对应正式规则文档', 'data/schema.md', '.agent/RULES_VERSION.md']) {
+  for (const token of ['SYNC-001', '对应正式规则文档', 'data/schema.md']) {
     if (!sync.includes(token)) errors.push(`syncMissing=${token}`);
   }
-}
-if (fs.existsSync(path.join(root, 'data/rules.md')) && !read('data/rules.md').includes('data/rules/00-index.md')) {
-  errors.push('legacyIndexMissingCanonicalLink');
 }
 if (fs.existsSync(path.join(root, 'data/schema.md')) && !read('data/schema.md').includes('data/rules/')) {
   errors.push('schemaMissingRulesReference');

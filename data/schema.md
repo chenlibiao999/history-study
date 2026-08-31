@@ -2,10 +2,7 @@
 
 正式规则入口：[data/rules/00-index.md](rules/00-index.md)。数据字段、展示格式与验收流程均以该规则目录为准。
 
-当前为了支持直接双击打开 `index.html`，数据放在 JS 文件中：
-
-- `history-data.js`: `window.HISTORY_DATA`
-- `tang-emperors.js`: `window.TANG_EMPERORS`
+当前为了支持直接双击打开 `index.html`，数据放在按模块拆分的 JS 文件中，并由 `data/index.js` 汇总为 `window.HISTORY_DATA`。
 
 字段结构后续可以一比一迁移到 JSON 或数据库。
 
@@ -47,7 +44,7 @@
 
 ## emperor
 
-帝王数据放在 `tang-emperors.js` 的 `window.TANG_EMPERORS` 中。
+帝王数据放在 `data/dynasties/<dynastyId>/emperors.js` 中，并由 `data/index.js` 汇总。
 
 - `phase`: 所在阶段，用于分组。
 - `title`: 庙号、谥号或阶段称呼。
@@ -55,7 +52,7 @@
 - `names`: 可匹配的别名，用于和事件人物关联。
 - `reign`: 在位时间。
 - `position`: 主线定位。
-- `keyEvents`: 与该皇帝有关的大事标签。标签必须能匹配到 `history-data.js` 的事件标题或 `aliases`。
+- `keyEvents`: 与该皇帝有关的大事标签。标签必须能匹配到已汇总事件的标题或 `aliases`。
 - `relatedEventIds`: 已升级为完整事件页的事件 ID。
 - `plainText`: 白话阅读提示。
 - `source`: 史料入口说明。
@@ -80,7 +77,7 @@
 
 ## 规则池
 
-详细执行规则见 `data/rules.md`。后续扩充朝代内容时，先按规则池整理，再运行 `scripts/validate-history-rules.js` 自检。
+详细执行规则见 `data/rules/00-index.md`。后续扩充朝代内容时，先按规则池整理，再运行 `scripts/validate-history-rules.js` 自检。
 
 ## territoryPopulation
 

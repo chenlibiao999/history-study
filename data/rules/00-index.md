@@ -28,6 +28,7 @@
 | MOD | `08-dynasty-and-cross-period.md` | 朝代拆分与跨朝代专题 |
 | AUD | `09-audit-and-acceptance.md` | 自动审计与验收 |
 | SYNC | `10-rule-sync.md` | 规则变更和文档同步 |
+| REWRITE | `11-upgrade-rewrite.md` | 分层重写、资料归位与全库验收 |
 
 ## 当前残余
 

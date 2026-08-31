@@ -622,6 +622,7 @@
 
   function renderEvent(){
     const event = currentEvent();
+    const isOutline = event.contentLevel === "outline";
     const eventEmperors = emperors.filter(emperor => emperorRelatedEventIds(emperor).includes(event.id));
     $("#eventTitle").textContent = displayText(event.title, "未命名事件");
     $("#bookmarkBtn").classList.toggle("bookmarked", bookmarked.has(event.id));
@@ -633,7 +634,8 @@
       ["时间", event.time, "amber"],
       ["朝代", event.period, "accent"],
       ["地区", event.regions.join(" / "), ""],
-      ["类型", event.topics.join(" · "), ""]
+      ["类型", event.topics.join(" · "), ""],
+      ["层级", isOutline ? "索引线索" : event.contentLevel === "core" ? "核心案例" : "主线节点", ""]
     ].forEach(([label, value, tone]) => {
       const item = textNode("span", "meta-item", "");
       item.append(textNode("span", "meta-label", label), textNode("span", "meta-value " + tone, value));
@@ -645,6 +647,11 @@
       textNode("span", "meta-value accent", eventEmperors.map(emperorDisplayName).join(" / ") || "待关联")
     );
     meta.append(emperorMeta);
+
+    ["#peopleChips", "#territoryPopulationContent", "#politicalMapContent", "#processList", "#resultContent", "#debateContent", "#claimsList"]
+      .forEach(selector => $(selector).closest(".detail-section").hidden = isOutline);
+    $("#backgroundContent").closest(".detail-section").querySelector("h2").textContent = isOutline ? "定位" : "背景";
+    document.querySelector(".supplementary-panel").hidden = isOutline;
 
     renderPeopleChips(event);
     renderBackground(event);
@@ -674,6 +681,10 @@
   function renderBackground(event){
     const container = $("#backgroundContent");
     clear(container);
+    if (event.contentLevel === "outline") {
+      container.append(textNode("p", "", event.summary));
+      return;
+    }
     renderLearningCase(container, event.learningCase);
     (event.background || []).forEach(paragraph => container.append(textNode("p", "", paragraph)));
   }

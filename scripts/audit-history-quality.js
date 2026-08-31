@@ -25,6 +25,7 @@ function requireTree(dirPath) {
 
 const dataDir = path.join(__dirname, "../data");
 const dynastyDir = path.join(dataDir, "dynasties");
+requireIfExists(path.join(dataDir, "time-utils.js"));
 for (const dir of fs.readdirSync(dynastyDir).sort()) {
   for (const file of ["metadata.js", "sources.js", "events.js", "emperors.js"]) {
     requireIfExists(path.join(dynastyDir, dir, file));
@@ -37,6 +38,7 @@ requireIfExists(path.join(dataDir, "political-maps.js"));
 require(path.join(dataDir, "index.js"));
 
 const data = window.HISTORY_DATA || {};
+const normalizedEventsByDynasty = Object.groupBy(data.events || [], (event) => event.dynastyId);
 const errors = [];
 const warnings = [];
 const sharedEventIds = [];
@@ -116,20 +118,20 @@ for (const dynasty of data.dynasties || []) {
   }
 }
 
-for (const [dynastyId, events] of Object.entries(data.dynastyEvents || {})) {
+for (const [dynastyId, events] of Object.entries(normalizedEventsByDynasty)) {
   if (!dynastyIds.has(dynastyId)) {
     errors.push(`dynastyEvents.${dynastyId}: dynasty metadata does not exist`);
   }
   let reversals = 0;
   let previous = null;
   for (const event of events || []) {
-    if (!Number.isFinite(event.sortYear) || event.sortYear === Number.MAX_SAFE_INTEGER) {
-      errors.push(`${labelForEvent(event)}: sortYear is not a usable timeline year`);
+    if (!Number.isFinite(event.timelineStartYear)) {
+      errors.push(`${labelForEvent(event)}: timelineStartYear is not a usable timeline year`);
     }
-    if (previous !== null && Number.isFinite(event.sortYear) && event.sortYear < previous) {
+    if (previous !== null && Number.isFinite(event.timelineStartYear) && event.timelineStartYear < previous) {
       reversals += 1;
     }
-    if (Number.isFinite(event.sortYear)) previous = event.sortYear;
+    if (Number.isFinite(event.timelineStartYear)) previous = event.timelineStartYear;
   }
   if ((events || []).length >= 12 && reversals > Math.max(2, Math.floor(events.length * 0.12))) {
     warnings.push(`${dynastyId}: raw event order has ${reversals} timeline reversals; check whether the left timeline will feel jumpy`);
@@ -178,15 +180,8 @@ for (const event of data.events || []) {
   if (genericCount >= 2) {
     genericProcessEvents.push(`${label} x${genericCount}`);
   }
-  if (!Array.isArray(event.geoRegion) || !event.geoRegion.length) {
-    errors.push(`${label}: geoRegion is required`);
-  } else {
-    for (const region of event.geoRegion) {
-      const root = String(region || "").split("/")[0].trim();
-      if (!String(region || "").includes("/") || !knownRegionRoots.has(root)) {
-        badGeoRegions.push(`${label}: ${region}`);
-      }
-    }
+  if (!Array.isArray(event.regions) || !event.regions.length) {
+    errors.push(`${label}: regions is required`);
   }
   if (event.sourceRequirement === "verified") {
     const hasHttps = (event.sources || []).some((source) => /^https:\/\//.test(source.url || ""));
@@ -199,11 +194,9 @@ for (const event of data.events || []) {
 
 for (const historyPackage of data.civilizationPackages || []) {
   const packageEvents = (historyPackage.moduleIds || [])
-    .flatMap((moduleId) => data.dynastyEvents?.[moduleId] || []);
-  const roots = new Set(packageEvents.flatMap((event) => event.geoRegion || []).map((region) => String(region).split("/")[0].trim()).filter(Boolean));
-  if (roots.size > 3) {
-    warnings.push(`${historyPackage.id}: package spans ${roots.size} region roots; verify this is intentional and not a taxonomy leak`);
-  }
+    .flatMap((moduleId) => normalizedEventsByDynasty[moduleId] || []);
+  const roots = new Set(packageEvents.flatMap((event) => event.regions || []).map((region) => String(region).trim()).filter(Boolean));
+  if (roots.size > 12) warnings.push(`${historyPackage.id}: package has ${roots.size} region labels; check taxonomy consistency`);
 }
 
 if (sharedEventIds.length) warnings.push(`sharedEventIds=${sharedEventIds.length}; samples=${sharedEventIds.slice(0, 12).join(" | ")}`);
@@ -211,7 +204,7 @@ if (shortProcessEvents.length) warnings.push(`processLt3=${shortProcessEvents.le
 if (genericProcessEvents.length) warnings.push(`genericProcessSuffix=${genericProcessEvents.length}; samples=${genericProcessEvents.slice(0, 12).join(" | ")}`);
 if (badGeoRegions.length) warnings.push(`badGeoRegionTaxonomy=${badGeoRegions.length}; samples=${badGeoRegions.slice(0, 12).join(" | ")}`);
 
-const byModule = Object.entries(data.dynastyEvents || {})
+const byModule = Object.entries(normalizedEventsByDynasty)
   .map(([dynastyId, events]) => ({
     dynastyId,
     events: (events || []).length,
@@ -220,10 +213,16 @@ const byModule = Object.entries(data.dynastyEvents || {})
   }))
   .sort((a, b) => b.events - a.events);
 
+const levelCounts = ["core", "mainline", "outline"].map((level) => [level, (data.events || []).filter((event) => event.contentLevel === level).length]);
+const unstructuredProcessNodes = (data.events || []).flatMap((event) => (event.process || []).map((node) => ({ event, node })))
+  .filter(({ node }) => !["participants", "action", "impact"].every((field) => field in node));
+
 console.log(`qualityErrors=${errors.length}`);
 console.log(`qualityWarnings=${warnings.length}`);
 console.log(`processStructuredNodes=${structuredProcessNodes.length}`);
 console.log(`processStructuredGaps=${structuredProcessGaps.length}`);
+console.log(`unstructuredProcessNodes=${unstructuredProcessNodes.length}`);
+console.log(`contentLevels=${levelCounts.map(([level, count]) => `${level}:${count}`).join(",")}`);
 console.log("topModulesByEventCount=");
 for (const row of byModule.slice(0, 12)) {
   console.log(`- ${row.dynastyId}: events=${row.events}, processLt3=${row.processLt3}, eventsWithoutMap=${row.eventsWithoutMap}`);

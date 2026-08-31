@@ -638,7 +638,16 @@ for (const event of data.events) {
     errors.push(`${event.id || event.title}: 基础字段不完整`);
   }
   const isOutline = event.contentLevel === "outline";
+  if (!["core", "mainline", "outline"].includes(event.contentLevel)) {
+    errors.push(`${event.title}: contentLevel 必须是 core、mainline 或 outline`);
+  }
   const hasLearningCase = Boolean(event.learningCase?.claim);
+  if (event.contentLevel === "core" && (!hasLearningCase || !event.learningCase?.evidence)) {
+    errors.push(`${event.title}: 核心案例必须具备独有判断和材料锚点`);
+  }
+  if (event.contentLevel === "mainline" && !((event.previousEventIds || []).length || (event.nextEventIds || []).length)) {
+    errors.push(`${event.title}: 主线节点必须至少关联一个前后事件`);
+  }
   if (!isOutline && !hasLearningCase && (!Array.isArray(event.process) || event.process.length === 0)) {
     errors.push(`${event.title}: 缺少 process`);
   }
@@ -682,16 +691,16 @@ for (const event of data.events) {
       errors.push(`${event.title}: process 节点字段不完整`);
     }
   }
-  if (!Array.isArray(event.results) || event.results.length === 0) {
+  if (!isOutline && (!Array.isArray(event.results) || event.results.length === 0)) {
     errors.push(`${event.title}: 缺少 results`);
   }
-  if (!Array.isArray(event.sources) || event.sources.length === 0) {
+  if (event.contentLevel === "core" && (!Array.isArray(event.sources) || event.sources.length === 0)) {
     errors.push(`${event.title}: 缺少 sources`);
   }
-  if (!Array.isArray(event.citations) || event.citations.length === 0) {
+  if (event.contentLevel === "core" && (!Array.isArray(event.citations) || event.citations.length === 0)) {
     errors.push(`${event.title}: 缺少 citations`);
   }
-  for (const citation of event.citations || []) {
+  for (const citation of event.contentLevel === "core" ? event.citations || [] : []) {
     if (!citation.plainText) errors.push(`${event.title}: citation 缺少白话释义`);
   }
   if (event.sourceRequirement === "verified") {

@@ -163,9 +163,13 @@
     const title = fallbackText(event.title, "未命名事件");
     const sourceTime = fallbackText(event.time, "时间待核");
     const timelineRange = parseTimelineRange(sourceTime);
+    const contentLevel = ["core", "mainline", "outline"].includes(event.contentLevel)
+      ? event.contentLevel
+      : event.learningCase?.claim ? "core" : "outline";
     return {
       ...event,
       title,
+      contentLevel,
       time: formatTimelineTimestamp(sourceTime) || "时间待核",
       sourceTime,
       timelineStartYear: timelineRange?.start ?? null,

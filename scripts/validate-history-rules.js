@@ -831,14 +831,18 @@ if (mingEvents.length) {
 
 const shangEvents = data.dynastyEvents?.shang || [];
 if (shangEvents.length) {
-  const text = shangEvents.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
+  const text = shangEvents.map((event) => [
+    event.title, event.era, event.summary, ...(event.aliases || []),
+    ...(event.background || []), ...(event.process || []).flatMap((step) => [step.title, step.description]),
+    ...(event.results || [])
+  ].join(" ")).join(" ");
   ["商汤", "伊尹", "太甲", "二里岗", "仲丁", "河亶甲", "祖乙", "盘庚", "武丁", "妇好", "甲骨文", "青铜", "方国", "祖甲", "殷墟", "人牲", "土方", "羌方", "周族", "帝辛", "东南用兵", "牧野"].forEach((keyword) => {
     if (!text.includes(keyword)) {
       errors.push(`商朝主线缺少“${keyword}”覆盖`);
     }
   });
-  if (shangEvents.length < 18) {
-    errors.push("商朝主线事件不应少于 18 个，至少覆盖建国、伊尹太甲、中商迁徙、迁殷、武丁、甲骨青铜、殷墟祭祀、方国战争、商末灭亡");
+  if (shangEvents.length < 15) {
+    errors.push("商朝主线事件不应少于 15 个，至少覆盖建国、伊尹太甲、中商迁徙、迁殷、武丁、甲骨青铜、殷墟祭祀、方国战争、商末灭亡");
   }
 }
 

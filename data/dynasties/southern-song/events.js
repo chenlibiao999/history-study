@@ -66,6 +66,7 @@
     event({
       id: "ssong-gaozong-enthroned-jiankang",
       title: "宋高宗即位与建炎南渡",
+      aliases: ["建炎南渡"],
       era: "建炎南渡",
       time: "1127-1129",
       regions: ["应天府", "扬州", "建康", "临安"],
@@ -87,6 +88,7 @@
     event({
       id: "ssong-miao-liu-mutiny",
       title: "苗刘兵变与高宗皇权危机",
+      aliases: ["苗刘兵变"],
       era: "建炎南渡",
       time: "1129",
       regions: ["临安"],
@@ -150,6 +152,7 @@
     event({
       id: "ssong-shaoxing-peace-yuefei-death",
       title: "绍兴和议与岳飞被害",
+      aliases: ["绍兴和议", "岳飞被害"],
       era: "绍兴和战",
       time: "1141-1142",
       regions: ["临安", "金", "淮河"],
@@ -192,6 +195,7 @@
     event({
       id: "ssong-longxing-northern-campaign",
       title: "隆兴北伐与隆兴和议",
+      aliases: ["隆兴北伐"],
       era: "孝宗恢复",
       time: "1163-1164",
       regions: ["两淮", "中原", "金"],
@@ -213,6 +217,7 @@
     event({
       id: "ssong-qiandao-chunxi-governance",
       title: "乾淳之治与南宋治理高峰",
+      aliases: ["乾淳之治"],
       era: "孝宗恢复",
       time: "1165-1189",
       regions: ["临安", "江南", "全国"],
@@ -234,6 +239,7 @@
     event({
       id: "ssong-guangzong-succession-crisis",
       title: "光宗失政与内禅危机",
+      aliases: ["光宗失政", "内禅危机"],
       era: "宁宗理宗转折",
       time: "1189-1194",
       regions: ["临安"],
@@ -255,6 +261,7 @@
     event({
       id: "ssong-qingyuan-party-ban",
       title: "庆元党禁与理学受压",
+      aliases: ["庆元党禁"],
       era: "宁宗理宗转折",
       time: "1195-1202",
       regions: ["临安", "江南"],
@@ -276,6 +283,7 @@
     event({
       id: "ssong-kaixi-northern-campaign",
       title: "开禧北伐与韩侂胄失败",
+      aliases: ["开禧北伐"],
       era: "宁宗理宗转折",
       time: "1206-1208",
       regions: ["两淮", "金", "临安"],
@@ -297,6 +305,7 @@
     event({
       id: "ssong-shi-miyuan-power",
       title: "史弥远专政与宁理更替",
+      aliases: ["史弥远专政"],
       era: "宁宗理宗转折",
       time: "1208-1233",
       regions: ["临安"],
@@ -360,6 +369,7 @@
     event({
       id: "ssong-duanping-enter-luoyang",
       title: "端平入洛与宋蒙破裂",
+      aliases: ["端平入洛"],
       era: "蒙宋战争",
       time: "1234-1235",
       regions: ["洛阳", "开封", "河南"],
@@ -423,6 +433,7 @@
     event({
       id: "ssong-diaoyucheng-battle-mongke",
       title: "钓鱼城之战与蒙哥之死",
+      aliases: ["钓鱼城"],
       era: "蒙宋战争",
       time: "1258-1259",
       regions: ["合州", "钓鱼城", "四川"],
@@ -465,6 +476,7 @@
     event({
       id: "ssong-hubei-xiangyang-front",
       title: "荆襄防线与襄阳围城",
+      aliases: ["襄阳围城"],
       era: "蒙宋战争",
       time: "1268-1273",
       regions: ["襄阳", "樊城", "汉水"],
@@ -507,6 +519,7 @@
     event({
       id: "ssong-jiasidao-dingjiazhou",
       title: "贾似道丁家洲败战",
+      aliases: ["丁家洲败战"],
       era: "崖山终局",
       time: "1275",
       regions: ["丁家洲", "长江", "临安"],
@@ -528,6 +541,7 @@
     event({
       id: "ssong-linan-surrender",
       title: "临安投降与恭帝北迁",
+      aliases: ["临安投降"],
       era: "崖山终局",
       time: "1276",
       regions: ["临安"],
@@ -570,6 +584,7 @@
     event({
       id: "ssong-fuzhou-court-duanzong",
       title: "端宗流亡政权",
+      aliases: ["端宗流亡"],
       era: "崖山终局",
       time: "1276-1278",
       regions: ["福州", "泉州", "广东"],
@@ -591,6 +606,7 @@
     event({
       id: "ssong-yashan-fall",
       title: "崖山海战与南宋灭亡",
+      aliases: ["崖山海战", "南宋灭亡"],
       era: "崖山终局",
       time: "1279",
       regions: ["崖山", "广东"],

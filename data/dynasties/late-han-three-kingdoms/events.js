@@ -464,6 +464,7 @@ window.LH3K_EVENTS = [
     "notes": [],
     "id": "lh3k-hejin-eunuchs-crisis",
     "title": "何进诛宦失败与洛阳权力真空",
+    "aliases": ["何进诛宦失败"],
     "era": "东汉崩解",
     "time": "189",
     "regions": [
@@ -1445,6 +1446,7 @@ window.LH3K_EVENTS = [
     "notes": [],
     "id": "lh3k-cao-cao-controls-emperor",
     "title": "曹操迎献帝与挟天子",
+    "aliases": ["曹操迎献帝", "迎献帝"],
     "era": "群雄割据",
     "time": "196",
     "regions": [
@@ -2023,6 +2025,7 @@ window.LH3K_EVENTS = [
     "notes": [],
     "id": "lh3k-liubiao-jingzhou",
     "title": "刘表荆州与荆襄士人网络",
+    "aliases": ["刘表荆州"],
     "era": "群雄割据",
     "time": "190-208",
     "regions": [
@@ -2447,6 +2450,7 @@ window.LH3K_EVENTS = [
     "notes": [],
     "id": "lh3k-liubei-enters-shu",
     "title": "刘备入蜀与益州根据地",
+    "aliases": ["刘备入蜀"],
     "era": "三分成形",
     "time": "211-214",
     "regions": [
@@ -2870,6 +2874,7 @@ window.LH3K_EVENTS = [
     "notes": [],
     "id": "lh3k-caopi-replaces-han",
     "title": "曹丕代汉建魏",
+    "aliases": ["曹丕代汉"],
     "era": "三国建立",
     "time": "220",
     "regions": [
@@ -4389,6 +4394,7 @@ window.LH3K_EVENTS = [
     "notes": [],
     "id": "lh3k-wei-conquers-shu",
     "title": "魏灭蜀汉",
+    "aliases": ["魏灭蜀"],
     "era": "司马氏崛起",
     "time": "263",
     "regions": [

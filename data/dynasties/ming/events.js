@@ -119,6 +119,7 @@
     event({
       id: "ming-hongwu-institutions",
       title: "洪武制度重建与里甲黄册",
+      aliases: ["洪武制度"],
       era: "明初建制",
       time: "1370s-1380s",
       regions: ["全国"],
@@ -141,6 +142,7 @@
     event({
       id: "ming-abolish-chancellery",
       title: "胡惟庸案与废丞相",
+      aliases: ["废丞相"],
       era: "明初建制",
       time: "1380",
       regions: ["南京"],
@@ -251,6 +253,7 @@
     event({
       id: "ming-yongle-northern-campaigns",
       title: "永乐五征漠北",
+      aliases: ["五征漠北"],
       era: "永乐扩张",
       time: "1410-1424",
       regions: ["漠北", "蒙古高原"],
@@ -339,6 +342,7 @@
     event({
       id: "ming-tumu-crisis",
       title: "土木堡之变与北京保卫战",
+      aliases: ["土木堡之变", "北京保卫战"],
       era: "中期转折",
       time: "1449",
       regions: ["土木堡", "北京"],
@@ -361,6 +365,7 @@
     event({
       id: "ming-duomen-restoration",
       title: "夺门之变与英宗复辟",
+      aliases: ["夺门之变"],
       era: "中期转折",
       time: "1457",
       regions: ["北京"],
@@ -405,6 +410,7 @@
     event({
       id: "ming-zhengde-tumult",
       title: "正德朝刘瑾专权与宁王之乱",
+      aliases: ["刘瑾专权", "宁王之乱"],
       era: "中期转折",
       time: "1505-1521",
       regions: ["北京", "江西"],
@@ -427,6 +433,7 @@
     event({
       id: "ming-great-rites",
       title: "大礼议与嘉靖皇权",
+      aliases: ["大礼议"],
       era: "嘉靖万历危机",
       time: "1521-1524",
       regions: ["北京"],
@@ -449,6 +456,7 @@
     event({
       id: "ming-jiajing-wokou-and-altan",
       title: "嘉靖倭患与庚戌之变",
+      aliases: ["嘉靖倭患", "庚戌之变"],
       era: "嘉靖万历危机",
       time: "1540s-1550s",
       regions: ["东南沿海", "北京", "北疆"],
@@ -471,6 +479,7 @@
     event({
       id: "ming-longqing-opening",
       title: "隆庆开关与俺答封贡",
+      aliases: ["隆庆开关", "俺答封贡"],
       era: "嘉靖万历危机",
       time: "1567-1571",
       regions: ["福建", "北疆", "蒙古"],
@@ -493,6 +502,7 @@
     event({
       id: "ming-zhang-juzheng-reforms",
       title: "张居正改革与一条鞭法",
+      aliases: ["张居正改革"],
       era: "嘉靖万历危机",
       time: "1572-1582",
       regions: ["北京", "全国"],
@@ -537,6 +547,7 @@
     event({
       id: "ming-guoben-and-donglin",
       title: "国本之争与东林党争",
+      aliases: ["国本之争"],
       era: "嘉靖万历危机",
       time: "1586-1620s",
       regions: ["北京", "江南"],
@@ -559,6 +570,7 @@
     event({
       id: "ming-liaodong-nurhaci-rise",
       title: "努尔哈赤崛起与萨尔浒之战",
+      aliases: ["萨尔浒"],
       era: "晚明崩溃",
       time: "1616-1619",
       regions: ["辽东", "赫图阿拉", "萨尔浒"],
@@ -581,6 +593,7 @@
     event({
       id: "ming-tianqi-weizhongxian",
       title: "天启朝魏忠贤专权",
+      aliases: ["魏忠贤专权"],
       era: "晚明崩溃",
       time: "1620-1627",
       regions: ["北京", "全国"],
@@ -603,6 +616,7 @@
     event({
       id: "ming-chongzhen-fiscal-crisis",
       title: "崇祯财政危机与驿卒裁撤",
+      aliases: ["崇祯财政危机"],
       era: "晚明崩溃",
       time: "1628-1630s",
       regions: ["陕西", "北京", "全国"],
@@ -625,6 +639,7 @@
     event({
       id: "ming-liaodong-yuan-chonghuan",
       title: "宁锦防线与袁崇焕之死",
+      aliases: ["袁崇焕之死"],
       era: "晚明崩溃",
       time: "1626-1630",
       regions: ["宁远", "锦州", "北京"],
@@ -647,6 +662,7 @@
     event({
       id: "ming-qing-founded-and-songjin",
       title: "皇太极称清与松锦大战",
+      aliases: ["松锦大战"],
       era: "晚明崩溃",
       time: "1636-1642",
       regions: ["沈阳", "松山", "锦州"],

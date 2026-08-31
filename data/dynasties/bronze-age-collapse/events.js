@@ -1,4 +1,8 @@
 (() => {
+  // keyEvents 别名回填：由 scripts/backfill-keyevent-aliases.js 生成，勿手工改动格式
+  const eventAliases = {
+    "bac-cyprus-destruction-rebuilding": ["塞浦路斯破坏与重建"]
+  };
   const dynastyId = "bronze-age-collapse";
   const dynasty = "青铜时代崩溃";
   const sources = window.BRONZE_AGE_COLLAPSE_SOURCES || [];
@@ -147,4 +151,5 @@
     topics: ["青铜时代崩溃", era],
     regions: ["亚非欧交界地", "东地中海", "黎凡特", "安纳托利亚", "爱琴", "西亚", "北非"]
   }));
+  window.BRONZE_AGE_COLLAPSE_EVENTS.forEach((item) => { if (eventAliases[item.id]) item.aliases = eventAliases[item.id]; });
 })();

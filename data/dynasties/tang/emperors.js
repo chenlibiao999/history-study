@@ -403,8 +403,7 @@ window.TANG_EMPERORS = [
     "reign": "840-846",
     "position": "会昌时期对佛教和财政资源进行强力整顿。",
     "keyEvents": [
-      "会昌灭佛",
-      "财政整顿"
+      "会昌灭佛"
     ],
     "relatedEventIds": [
       "huichang-suppression-buddhism",

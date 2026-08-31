@@ -252,6 +252,7 @@ require(path.join(__dirname, "../data/regions/afro-eurasia-crossroads/afro-euras
 require(path.join(__dirname, "../data/filter-catalog.js"));
 require(path.join(__dirname, "../data/territory-population.js"));
 require(path.join(__dirname, "../data/political-maps.js"));
+require(path.join(__dirname, "../data/label-aliases.js"));
 require(path.join(__dirname, "../data/index.js"));
 
 const data = window.HISTORY_DATA;
@@ -319,6 +320,28 @@ if (uncoveredPeriods.length) {
 for (const event of data.events || []) {
   requireFields("event", event, ["id", "title", "time", "era", "period", "summary"]);
   requireArrayFields("event", event, ["regions", "topics", "people", "background", "process", "results", "debates", "sources", "citations", "claims", "notes", "aliases"]);
+}
+
+const rawEvents = Object.entries(window)
+  .filter(([key, value]) => key.endsWith("_EVENTS") && Array.isArray(value))
+  .flatMap(([, events]) => events);
+const rawEventIds = new Set(rawEvents.map((event) => event.id));
+const rawLabels = new Map();
+for (const event of rawEvents) {
+  for (const label of [event.title, ...(event.aliases || [])]) {
+    if (!rawLabels.has(label)) rawLabels.set(label, []);
+    rawLabels.get(label).push(event.id);
+  }
+}
+for (const [label, eventId] of Object.entries(window.LABEL_ALIASES || {})) {
+  if (!rawEventIds.has(eventId)) {
+    errors.push(`集中别名「${label}」引用了不存在的事件 ID：${eventId}`);
+    continue;
+  }
+  const conflicts = (rawLabels.get(label) || []).filter((id) => id !== eventId);
+  if (conflicts.length) {
+    errors.push(`集中别名「${label}」与既有事件标签冲突：${conflicts.join("、")}`);
+  }
 }
 
 for (const emperor of emperors) {

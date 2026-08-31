@@ -68,6 +68,7 @@
     event({
       id: "saws-eastward-move",
       title: "周平王东迁与东周开始",
+      aliases: ["平王东迁"],
       era: "春秋前期",
       time: "前770",
       regions: ["镐京", "洛邑"],
@@ -90,6 +91,7 @@
     event({
       id: "saws-zheng-zhuang-rise",
       title: "郑庄公小霸与王室受挫",
+      aliases: ["郑庄公小霸"],
       era: "春秋前期",
       time: "前743-前701",
       regions: ["郑", "洛邑", "繻葛"],
@@ -112,6 +114,7 @@
     event({
       id: "saws-qi-huan-hegemony",
       title: "齐桓公尊王攘夷与春秋首霸",
+      aliases: ["春秋首霸"],
       era: "春秋霸政",
       time: "前685-前643",
       regions: ["齐", "中原"],
@@ -156,6 +159,7 @@
     event({
       id: "saws-jin-wen-chengpu",
       title: "晋文公回国与城濮之战",
+      aliases: ["城濮之战"],
       era: "春秋霸政",
       time: "前636-前632",
       regions: ["晋", "城濮", "楚"],
@@ -200,6 +204,7 @@
     event({
       id: "saws-chu-zhuang-hegemony",
       title: "楚庄王问鼎与邲之战",
+      aliases: ["邲之战"],
       era: "春秋霸政",
       time: "前613-前591",
       regions: ["楚", "洛邑", "邲"],
@@ -244,6 +249,7 @@
     event({
       id: "saws-wu-yue-rise",
       title: "吴越争霸与南方入局",
+      aliases: ["吴越争霸"],
       era: "春秋晚期",
       time: "前6世纪-前473",
       regions: ["吴", "越", "楚"],
@@ -332,6 +338,7 @@
     event({
       id: "saws-li-kui-wei-reform",
       title: "李悝变法与魏国强盛",
+      aliases: ["李悝变法"],
       era: "战国变法",
       time: "前445-前396",
       regions: ["魏"],
@@ -354,6 +361,7 @@
     event({
       id: "saws-wuqi-chu-reform",
       title: "吴起变法与楚国贵族阻力",
+      aliases: ["吴起变法"],
       era: "战国变法",
       time: "前401-前381",
       regions: ["楚"],
@@ -376,6 +384,7 @@
     event({
       id: "saws-shang-yang-reforms",
       title: "商鞅变法与秦国崛起",
+      aliases: ["商鞅变法"],
       era: "战国变法",
       time: "前356-前338",
       regions: ["秦", "关中"],
@@ -398,6 +407,7 @@
     event({
       id: "saws-guiling-maling",
       title: "桂陵马陵之战与魏国衰落",
+      aliases: ["桂陵马陵"],
       era: "战国变法",
       time: "前354-前341",
       regions: ["桂陵", "马陵", "齐", "魏"],
@@ -464,6 +474,7 @@
     event({
       id: "saws-king-wuling-reform",
       title: "赵武灵王胡服骑射",
+      aliases: ["胡服骑射"],
       era: "秦一统前夜",
       time: "前307",
       regions: ["赵", "北方"],
@@ -486,6 +497,7 @@
     event({
       id: "saws-yue-yi-attacks-qi",
       title: "乐毅伐齐与田单复国",
+      aliases: ["乐毅伐齐"],
       era: "秦一统前夜",
       time: "前284-前279",
       regions: ["齐", "燕"],
@@ -530,6 +542,7 @@
     event({
       id: "saws-lu-buwei-and-qin-politics",
       title: "吕不韦执政与秦王政亲政",
+      aliases: ["秦王政亲政"],
       era: "秦一统前夜",
       time: "前249-前238",
       regions: ["秦", "咸阳"],
@@ -552,6 +565,7 @@
     event({
       id: "saws-qin-destroys-six-states",
       title: "秦灭六国与统一战争",
+      aliases: ["秦灭六国"],
       era: "秦一统前夜",
       time: "前230-前221",
       regions: ["韩", "赵", "魏", "楚", "燕", "齐", "秦"],

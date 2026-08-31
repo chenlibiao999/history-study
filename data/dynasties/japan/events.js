@@ -1,10 +1,20 @@
 (() => {
+  // keyEvents 别名回填：由 scripts/backfill-keyevent-aliases.js 生成，勿手工改动格式
+  const eventAliases = {
+    "japan-yamato-polity": ["大和王权整合列岛"],
+    "japan-sekkanke": ["摄关政治"],
+    "japan-kamakura-shogunate": ["镰仓幕府成立"],
+    "japan-jokyu-war": ["承久之乱"],
+    "japan-onin-war": ["应仁之乱"],
+    "japan-oda-nobunaga": ["织田信长统一进程"],
+    "japan-sekigahara": ["关原合战"]
+  };
   const dynastyId = "japan";
   const dynasty = "日本列岛历史主线";
   const sources = window.JAPAN_SOURCES || [];
   const people = (names, title) => (names || []).map((name) => ({ name, role: "关键人物/群体", years: "", color: "var(--accent-gold)", bio: `${name}需要放在“${title}”的国家形成、制度、战争或东亚交流背景中理解。`, events: [title] }));
   const event = (id, title, era, time, summary, result, names, topics) => ({
-    id, title, aliases: [], era, period: dynasty, time, regions: ["日本列岛", "东亚", "日本主要岛屿"], topics, summary, bookmarked: false,
+    id, title, aliases: eventAliases[id] || [], era, period: dynasty, time, regions: ["日本列岛", "东亚", "日本主要岛屿"], topics, summary, bookmarked: false,
     people: people(names, title), relations: [], background: [],
     process: [], results: [result], debates: [], learningCase: learningCases[id], contentLevel: learningCases[id] ? "core" : "outline",
     claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["japan-main-source"], note: "首轮按主线整理，具体考古材料和文献卷目后续逐条补充。" }],

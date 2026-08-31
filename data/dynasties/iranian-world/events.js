@@ -1,4 +1,9 @@
 (() => {
+  // keyEvents 别名回填：由 scripts/backfill-keyevent-aliases.js 生成，勿手工改动格式
+  const eventAliases = {
+    "iranian-world-safavid-founding": ["萨非王朝建立"],
+    "iranian-world-abbas-reforms": ["阿巴斯一世改革"]
+  };
   const dynastyId = "iranian-world";
   const dynasty = "伊朗高原与波斯世界";
   const sources = window.IRANIAN_WORLD_SOURCES || [];
@@ -16,7 +21,7 @@
     { time, title: "影响延伸", description: `${result} 这会影响西亚、中亚、南亚、地中海和伊斯兰世界之间的政治、贸易与文化联系。` }
   ];
   const event = (id, title, era, time, summary, result, names, topics, regions = ["伊朗高原", "西亚"]) => ({
-    id, title, aliases: [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
+    id, title, aliases: eventAliases[id] || [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
     people: people(names, title), relations: [], background: [`${title}应结合伊朗高原作为两河、中亚、印度河和地中海之间的交界位置理解，重点看王权、宗教、行省和交通网络如何重组。`],
     process: buildProcess(title, summary, result, time), results: [result], debates: [{ view: "学习提示", content: "伊朗高原帝国常有核心统治区、行省、附属和影响区差异，不能把最大影响范围都当成稳定行政疆域。" }],
     claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["iranian-world-britannica"], note: "首版按主线学习版整理，具体铭文、古典作者、阿拉伯波斯文献和现代研究页码后续逐条补充。" }],

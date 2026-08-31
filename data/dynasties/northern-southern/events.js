@@ -618,6 +618,7 @@ window.NS_EVENTS = [
     "notes": [],
     "id": "ns-zu-ti-northern-expedition",
     "title": "祖逖北伐与东晋恢复中原的早期尝试",
+    "aliases": ["祖逖北伐"],
     "era": "东晋十六国",
     "time": "317-321",
     "regions": [
@@ -916,6 +917,7 @@ window.NS_EVENTS = [
     "notes": [],
     "id": "ns-chenghan-and-shu",
     "title": "成汉割据与巴蜀格局",
+    "aliases": ["成汉割据"],
     "era": "东晋十六国",
     "time": "304-347",
     "regions": [
@@ -995,6 +997,7 @@ window.NS_EVENTS = [
     "notes": [],
     "id": "ns-later-zhao-northern-orders",
     "title": "后赵兴起与北方政权重组",
+    "aliases": ["后赵兴起"],
     "era": "东晋十六国",
     "time": "319-349",
     "regions": [
@@ -2106,6 +2109,7 @@ window.NS_EVENTS = [
     "dynasty": "五胡十六国南北朝",
     "id": "ns-huanxuan-usurpation",
     "title": "桓玄篡晋与刘裕崛起",
+    "aliases": ["桓玄篡晋"],
     "era": "东晋门阀政治",
     "time": "403-405",
     "regions": [
@@ -2319,6 +2323,7 @@ window.NS_EVENTS = [
     "notes": [],
     "id": "ns-northern-wei-rise",
     "title": "北魏崛起与北方整合",
+    "aliases": ["北方整合"],
     "era": "南北朝形成",
     "time": "386-439",
     "regions": [
@@ -2451,10 +2456,7 @@ window.NS_EVENTS = [
   {
     "id": "ns-liusong-yuanjia-and-northern-campaigns",
     "title": "刘宋元嘉政治与北伐失败",
-    "aliases": [
-      "元嘉之治",
-      "元嘉北伐"
-    ],
+    "aliases": ["元嘉之治", "元嘉北伐", "元嘉政治"],
     "period": "五胡十六国南北朝",
     "dynastyId": "northern-southern",
     "dynasty": "五胡十六国南北朝",
@@ -2678,6 +2680,7 @@ window.NS_EVENTS = [
     "notes": [],
     "id": "ns-liusong-imperial-clan-killings",
     "title": "刘宋宗室相残与南朝皇权危机",
+    "aliases": ["刘宋宗室相残"],
     "era": "南朝更替",
     "time": "453-479",
     "regions": [
@@ -3105,6 +3108,7 @@ window.NS_EVENTS = [
     "dynasty": "五胡十六国南北朝",
     "id": "ns-tuoba-han-governance",
     "title": "北魏均田制与三长制",
+    "aliases": ["均田制与三长制"],
     "era": "北魏改革",
     "time": "485-486",
     "regions": [
@@ -3909,9 +3913,7 @@ window.NS_EVENTS = [
   {
     "id": "ns-southern-dynasties-transition",
     "title": "南朝宋齐梁陈更替",
-    "aliases": [
-      "宋齐梁陈"
-    ],
+    "aliases": ["宋齐梁陈", "宋齐梁陈更替"],
     "period": "五胡十六国南北朝",
     "dynastyId": "northern-southern",
     "dynasty": "五胡十六国南北朝",
@@ -4218,6 +4220,7 @@ window.NS_EVENTS = [
     "notes": [],
     "id": "ns-nanqi-short-rule-and-xiao-yan",
     "title": "南齐短促统治与萧衍代齐",
+    "aliases": ["南齐短促统治"],
     "era": "南朝更替",
     "time": "479-502",
     "regions": [
@@ -4383,6 +4386,7 @@ window.NS_EVENTS = [
     "notes": [],
     "id": "ns-liang-wudi-governance-buddhism",
     "title": "梁武帝前期治理与佛教政治",
+    "aliases": ["梁武帝前期治理"],
     "era": "南朝更替",
     "time": "502-547",
     "regions": [
@@ -4807,6 +4811,7 @@ window.NS_EVENTS = [
     "notes": [],
     "id": "ns-northern-qi-gao-politics",
     "title": "北齐高氏政治与华北消耗",
+    "aliases": ["北齐高氏政治"],
     "era": "北朝分裂",
     "time": "550-577",
     "regions": [

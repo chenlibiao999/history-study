@@ -81,6 +81,7 @@
     event({
       id: "nsong-chenqiao-song-founded",
       title: "陈桥兵变与北宋建国",
+      aliases: ["陈桥兵变"],
       era: "建国与统一收束",
       time: "960",
       regions: ["陈桥驿", "开封"],
@@ -102,6 +103,7 @@
     event({
       id: "nsong-military-centralization",
       title: "杯酒释兵权与禁军中央化",
+      aliases: ["杯酒释兵权"],
       era: "建国与统一收束",
       time: "961前后",
       regions: ["开封"],
@@ -144,6 +146,7 @@
     event({
       id: "nsong-southern-unification",
       title: "宋初平定南方诸国",
+      aliases: ["平定南方诸国"],
       era: "建国与统一收束",
       time: "963-978",
       regions: ["荆湖", "四川", "岭南", "江南", "两浙"],
@@ -228,6 +231,7 @@
     event({
       id: "nsong-chanyuan-treaty",
       title: "澶渊之盟与宋辽长期和平",
+      aliases: ["澶渊之盟"],
       era: "太宗真宗守成",
       time: "1004-1005",
       regions: ["澶州", "开封", "辽"],
@@ -270,6 +274,7 @@
     event({
       id: "nsong-western-xia-rise",
       title: "西夏兴起与宋夏战争",
+      aliases: ["西夏兴起"],
       era: "仁宗朝调整",
       time: "1038-1044",
       regions: ["西北", "延州", "夏州"],
@@ -312,6 +317,7 @@
     event({
       id: "nsong-rensong-literati-politics",
       title: "仁宗朝士大夫政治成熟",
+      aliases: ["仁宗朝士大夫政治"],
       era: "仁宗朝调整",
       time: "1022-1063",
       regions: ["开封", "全国"],
@@ -354,6 +360,7 @@
     event({
       id: "nsong-yingzong-succession",
       title: "英宗继统与濮议",
+      aliases: ["英宗继统", "濮议"],
       era: "仁宗朝调整",
       time: "1063-1067",
       regions: ["开封"],
@@ -417,6 +424,7 @@
     event({
       id: "nsong-xihe-hehuang-expansion",
       title: "熙河开边与河湟经营",
+      aliases: ["熙河开边"],
       era: "神宗哲宗变法党争",
       time: "1070s-1090s",
       regions: ["熙河", "河湟", "西北"],
@@ -459,6 +467,7 @@
     event({
       id: "nsong-yuanyou-reversal",
       title: "元祐更化与旧党执政",
+      aliases: ["元祐更化"],
       era: "神宗哲宗变法党争",
       time: "1085-1093",
       regions: ["开封", "全国"],
@@ -480,6 +489,7 @@
     event({
       id: "nsong-shaosheng-restoration",
       title: "绍圣绍述与哲宗亲政",
+      aliases: ["绍圣绍述"],
       era: "神宗哲宗变法党争",
       time: "1093-1100",
       regions: ["开封", "西北"],
@@ -501,6 +511,7 @@
     event({
       id: "nsong-huizong-caijing-politics",
       title: "徽宗朝蔡京当政与新法变质",
+      aliases: ["蔡京当政"],
       era: "徽钦危局与靖康",
       time: "1100-1125",
       regions: ["开封", "全国"],
@@ -522,6 +533,7 @@
     event({
       id: "nsong-huashi-gang",
       title: "花石纲与东南民力消耗",
+      aliases: ["花石纲"],
       era: "徽钦危局与靖康",
       time: "1100s-1120s",
       regions: ["江南", "开封"],
@@ -543,6 +555,7 @@
     event({
       id: "nsong-fangla-uprising",
       title: "方腊起义与东南危机",
+      aliases: ["方腊起义"],
       era: "徽钦危局与靖康",
       time: "1120-1121",
       regions: ["两浙", "睦州", "江南"],
@@ -564,6 +577,7 @@
     event({
       id: "nsong-haishang-alliance",
       title: "海上之盟与联金灭辽",
+      aliases: ["海上之盟"],
       era: "徽钦危局与靖康",
       time: "1118-1125",
       regions: ["辽", "金", "燕云", "开封"],
@@ -606,6 +620,7 @@
     event({
       id: "nsong-jingkang-crisis",
       title: "靖康之变与北宋灭亡",
+      aliases: ["靖康之变", "北宋灭亡"],
       era: "徽钦危局与靖康",
       time: "1125-1127",
       regions: ["开封", "金"],

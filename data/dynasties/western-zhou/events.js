@@ -89,6 +89,7 @@
     event({
       id: "wzhou-feudal-ritual-system",
       title: "分封制、宗法制与礼乐秩序形成",
+      aliases: ["礼乐", "礼乐秩序"],
       era: "周公制礼",
       time: "前11世纪",
       regions: ["镐京", "洛邑", "中原", "东方诸侯"],
@@ -111,6 +112,7 @@
     event({
       id: "wzhou-duke-of-zhou-regency",
       title: "周公摄政与平定三监之乱",
+      aliases: ["周公摄政", "摄政", "三监之乱"],
       era: "周公制礼",
       time: "前11世纪中叶",
       regions: ["镐京", "殷地", "东方"],
@@ -133,6 +135,7 @@
     event({
       id: "wzhou-luoyi-eastern-capital",
       title: "营建成周与东方控制",
+      aliases: ["成周"],
       era: "周公制礼",
       time: "前11世纪中叶",
       regions: ["洛邑", "成周", "镐京", "东方"],
@@ -155,6 +158,7 @@
     event({
       id: "wzhou-chengkang-peace",
       title: "成康之治与西周秩序稳定",
+      aliases: ["成康之治"],
       era: "成康秩序",
       time: "前11世纪后期",
       regions: ["镐京", "成周", "诸侯封国"],
@@ -177,6 +181,7 @@
     event({
       id: "wzhou-zhao-south-campaign",
       title: "周昭王南征与王师受挫",
+      aliases: ["南征"],
       era: "昭穆转折",
       time: "约前10世纪",
       regions: ["汉水流域", "南方"],
@@ -199,6 +204,7 @@
     event({
       id: "wzhou-mu-western-campaigns",
       title: "周穆王西征与王权巡行叙事",
+      aliases: ["西征", "巡行"],
       era: "昭穆转折",
       time: "约前10世纪",
       regions: ["关中", "西北", "犬戎地区"],
@@ -221,6 +227,7 @@
     event({
       id: "wzhou-liwang-reform-crisis",
       title: "周厉王专利与王权财政危机",
+      aliases: ["专利"],
       era: "厉宣幽危机",
       time: "前9世纪中叶",
       regions: ["镐京", "宗周"],
@@ -243,6 +250,7 @@
     event({
       id: "wzhou-guoren-riot",
       title: "国人暴动与厉王出奔",
+      aliases: ["国人暴动"],
       era: "厉宣幽危机",
       time: "前841",
       regions: ["镐京", "彘"],
@@ -265,6 +273,7 @@
     event({
       id: "wzhou-gonghe-regency",
       title: "共和行政与明确纪年起点",
+      aliases: ["共和行政", "明确纪年"],
       era: "厉宣幽危机",
       time: "前841-前828",
       regions: ["镐京", "宗周"],
@@ -287,6 +296,7 @@
     event({
       id: "wzhou-xuanwang-restoration",
       title: "周宣王中兴与南北用兵",
+      aliases: ["宣王中兴", "南北用兵"],
       era: "厉宣幽危机",
       time: "前827-前782",
       regions: ["宗周", "江汉", "西北", "淮夷地区"],
@@ -397,6 +407,7 @@
     event({
       id: "wzhou-gongwang-mi-state",
       title: "周共王灭密与王室威望维持",
+      aliases: ["灭密"],
       era: "昭穆转折",
       time: "约前10世纪后期",
       regions: ["密", "宗周"],
@@ -441,6 +452,7 @@
     event({
       id: "wzhou-xiaowang-feizi-qin",
       title: "周孝王封非子与秦人早期崛起",
+      aliases: ["非子", "秦人早期"],
       era: "昭穆转折",
       time: "约前9世纪",
       regions: ["秦地", "西垂", "宗周"],
@@ -463,6 +475,7 @@
     event({
       id: "wzhou-yiwang-boils-qi-ai",
       title: "周夷王烹齐哀公与诸侯关系恶化",
+      aliases: ["齐哀公", "诸侯关系"],
       era: "厉宣幽危机",
       time: "约前9世纪",
       regions: ["宗周", "齐"],
@@ -573,6 +586,7 @@
     event({
       id: "wzhou-western-zhou-fall",
       title: "犬戎破镐京与西周灭亡",
+      aliases: ["西周灭亡"],
       era: "厉宣幽危机",
       time: "前771",
       regions: ["镐京", "骊山", "关中"],

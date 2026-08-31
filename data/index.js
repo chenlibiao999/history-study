@@ -35,7 +35,12 @@
     yuan: window.YUAN_EVENTS || [],
     ming: window.MING_EVENTS || [],
     qing: window.QING_EVENTS || [],
-    "modern-china": window.MODERN_CHINA_EVENTS || [],
+    // modern-china 是唯一数据源（100 事件），但聚合时不直接进入时间线：
+    // republican-china / war-of-resistance / liberation-construction / reform-opening
+    // 四个分时期模块的 events.js / emperors.js 从 MODERN_CHINA_* 按 era/stageIds 派生切片，
+    // 且携带正确的 period/dynasty 标签。若此处同时纳入源与派生，会产生 100 个重复事件 ID
+    // （eventById 相互覆盖、时间线重复卡片）。故聚合只保留派生视图，源仅作数据承载。
+    "modern-china": [],
     "republican-china": window.REPUBLICAN_CHINA_EVENTS || [],
     "war-of-resistance": window.WAR_OF_RESISTANCE_EVENTS || [],
     "liberation-construction": window.LIBERATION_CONSTRUCTION_EVENTS || [],
@@ -99,7 +104,8 @@
     yuan: window.YUAN_EMPERORS || [],
     ming: window.MING_EMPERORS || [],
     qing: window.QING_EMPERORS || [],
-    "modern-china": window.MODERN_CHINA_EMPERORS || [],
+    // 同上：modern-china 帝王为源数据，聚合只保留四个分时期的派生视图，避免重复
+    "modern-china": [],
     "republican-china": window.REPUBLICAN_CHINA_EMPERORS || [],
     "war-of-resistance": window.WAR_OF_RESISTANCE_EMPERORS || [],
     "liberation-construction": window.LIBERATION_CONSTRUCTION_EMPERORS || [],
@@ -192,7 +198,7 @@
       citations: asArray(event.citations),
       claims: asArray(event.claims),
       notes: asArray(event.notes),
-      aliases: asArray(event.aliases)
+      aliases: [...new Set([...asArray(event.aliases), event.id])]
     };
   }
 

@@ -68,6 +68,7 @@
     event({
       id: "qin-first-emperor-system",
       title: "始皇帝称号与皇帝制度",
+      aliases: ["皇帝制度"],
       era: "统一建制",
       time: "前221",
       regions: ["咸阳", "全国"],
@@ -90,6 +91,7 @@
     event({
       id: "qin-commandery-county",
       title: "废分封与郡县制推行",
+      aliases: ["郡县制"],
       era: "统一建制",
       time: "前221",
       regions: ["全国"],
@@ -170,6 +172,7 @@
     event({
       id: "qin-northern-xiongnu-wall",
       title: "北击匈奴与修筑长城",
+      aliases: ["北击匈奴"],
       era: "边疆与工程",
       time: "前215-前214",
       regions: ["河套", "北方边郡"],
@@ -192,6 +195,7 @@
     event({
       id: "qin-baiyue-lingnan",
       title: "南征百越与岭南设郡",
+      aliases: ["南征百越"],
       era: "边疆与工程",
       time: "前214",
       regions: ["岭南", "南海", "桂林", "象郡"],
@@ -214,6 +218,7 @@
     event({
       id: "qin-burning-books",
       title: "焚书坑儒与思想控制",
+      aliases: ["焚书坑儒"],
       era: "思想控制",
       time: "前213-前212",
       regions: ["咸阳", "全国"],
@@ -258,6 +263,7 @@
     event({
       id: "qin-shaqiu-coup",
       title: "沙丘之变与秦二世即位",
+      aliases: ["沙丘之变"],
       era: "沙丘之后",
       time: "前210",
       regions: ["沙丘", "咸阳"],
@@ -346,6 +352,7 @@
     event({
       id: "qin-zhao-gao-chaos",
       title: "赵高专权与秦廷内乱",
+      aliases: ["赵高专权"],
       era: "秦末崩溃",
       time: "前208-前207",
       regions: ["咸阳"],

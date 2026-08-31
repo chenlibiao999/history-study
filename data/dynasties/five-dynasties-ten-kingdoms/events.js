@@ -82,6 +82,7 @@
     event({
       id: "fdtk-tang-collapse-zhu-wen-rise",
       title: "唐末藩镇格局与朱温崛起",
+      aliases: ["朱温崛起"],
       era: "唐末入五代",
       time: "880-907",
       regions: ["河南", "汴州", "长安"],
@@ -103,6 +104,7 @@
     event({
       id: "fdtk-later-liang-founded",
       title: "后梁建国与唐朝终结",
+      aliases: ["后梁建国"],
       era: "唐末入五代",
       time: "907",
       regions: ["汴州", "洛阳"],
@@ -124,6 +126,7 @@
     event({
       id: "fdtk-liang-jin-rivalry",
       title: "梁晋争霸与北方主导权争夺",
+      aliases: ["梁晋争霸"],
       era: "梁唐争霸",
       time: "907-923",
       regions: ["河东", "河南", "河北"],
@@ -166,6 +169,7 @@
     event({
       id: "fdtk-zhuangzong-crisis",
       title: "后唐庄宗失政与兴教门之变",
+      aliases: ["兴教门之变"],
       era: "梁唐争霸",
       time: "923-926",
       regions: ["洛阳", "魏博"],
@@ -187,6 +191,7 @@
     event({
       id: "fdtk-mingzong-restoration",
       title: "后唐明宗整顿与短暂稳定",
+      aliases: ["明宗整顿"],
       era: "梁唐争霸",
       time: "926-933",
       regions: ["洛阳", "中原"],
@@ -208,6 +213,7 @@
     event({
       id: "fdtk-shi-jingtang-yanyun",
       title: "石敬瑭割燕云与后晋建国",
+      aliases: ["后晋建国"],
       era: "晋汉周递嬗",
       time: "936",
       regions: ["太原", "燕云十六州", "契丹"],
@@ -250,6 +256,7 @@
     event({
       id: "fdtk-later-han-founded",
       title: "后汉建立与河东集团再起",
+      aliases: ["后汉建立"],
       era: "晋汉周递嬗",
       time: "947",
       regions: ["太原", "开封"],
@@ -271,6 +278,7 @@
     event({
       id: "fdtk-guo-wei-founds-zhou",
       title: "郭威代汉建后周",
+      aliases: ["郭威代汉"],
       era: "晋汉周递嬗",
       time: "951",
       regions: ["开封", "邺都"],
@@ -334,6 +342,7 @@
     event({
       id: "fdtk-chai-rong-reforms",
       title: "周世宗改革与统一战略",
+      aliases: ["周世宗改革"],
       era: "统一前夜",
       time: "954-959",
       regions: ["开封", "中原", "淮南", "河北"],
@@ -356,6 +365,7 @@
     event({
       id: "fdtk-wuyue-qian-family",
       title: "吴越钱氏保境与江浙稳定",
+      aliases: ["江浙稳定"],
       era: "十国并立",
       time: "907-978",
       regions: ["杭州", "两浙"],
@@ -419,6 +429,7 @@
     event({
       id: "fdtk-later-zhou-southern-tang-war",
       title: "后周攻南唐与淮南易手",
+      aliases: ["攻南唐"],
       era: "统一前夜",
       time: "955-958",
       regions: ["淮南", "长江", "金陵"],
@@ -440,6 +451,7 @@
     event({
       id: "fdtk-former-shu-founded",
       title: "前蜀建立与西川割据",
+      aliases: ["前蜀建立", "西川割据"],
       era: "十国并立",
       time: "907-925",
       regions: ["成都", "西川"],
@@ -461,6 +473,7 @@
     event({
       id: "fdtk-later-shu-founded",
       title: "后蜀建立与四川再分立",
+      aliases: ["后蜀建立"],
       era: "十国并立",
       time: "934-965",
       regions: ["成都", "四川"],
@@ -545,6 +558,7 @@
     event({
       id: "fdtk-chenqiao-mutiny",
       title: "陈桥兵变与北宋建立",
+      aliases: ["陈桥兵变"],
       era: "统一前夜",
       time: "960",
       regions: ["陈桥驿", "开封"],

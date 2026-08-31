@@ -67,6 +67,7 @@
     event({
       id: "shang-tang-overthrows-xia",
       title: "商汤灭夏与商朝建立",
+      aliases: ["商汤灭夏"],
       era: "早商建国",
       time: "约前1600",
       regions: ["亳", "中原"],
@@ -155,6 +156,7 @@
     event({
       id: "shang-wuding-prosperity",
       title: "武丁中兴与妇好征伐",
+      aliases: ["武丁中兴", "妇好征伐"],
       era: "晚商殷墟",
       time: "约前13世纪",
       regions: ["殷", "北方", "西北"],
@@ -177,6 +179,7 @@
     event({
       id: "shang-oracle-bones",
       title: "甲骨文与占卜政治",
+      aliases: ["甲骨文"],
       era: "晚商殷墟",
       time: "约前13世纪-前11世纪",
       regions: ["殷墟"],
@@ -243,6 +246,7 @@
     event({
       id: "shang-yiyin-taijia-regency",
       title: "伊尹辅政与太甲复位",
+      aliases: ["伊尹辅政", "太甲复位"],
       era: "早商建国",
       time: "约前16世纪",
       regions: ["亳", "中原"],
@@ -265,6 +269,7 @@
     event({
       id: "shang-zhongding-moves-ao",
       title: "仲丁迁隞与中商都邑调整",
+      aliases: ["仲丁迁隞"],
       era: "中商迁徙",
       time: "约前15世纪",
       regions: ["隞", "黄河中下游"],
@@ -287,6 +292,7 @@
     event({
       id: "shang-hedanjia-zuyi-relocations",
       title: "河亶甲居相与祖乙迁邢",
+      aliases: ["河亶甲居相", "祖乙迁邢"],
       era: "中商迁徙",
       time: "约前15-前14世纪",
       regions: ["相", "邢", "黄河流域"],
@@ -441,6 +447,7 @@
     event({
       id: "shang-di-xin-crisis",
       title: "帝辛时期商末危机",
+      aliases: ["商末危机"],
       era: "商末危机",
       time: "约前11世纪",
       regions: ["殷", "东南", "西土"],
@@ -463,6 +470,7 @@
     event({
       id: "shang-muye-fall",
       title: "牧野之战与商朝灭亡",
+      aliases: ["牧野之战"],
       era: "商末危机",
       time: "约前1046",
       regions: ["牧野", "殷"],

@@ -1,4 +1,8 @@
 (() => {
+  // keyEvents 别名回填：由 scripts/backfill-keyevent-aliases.js 生成，勿手工改动格式
+  const eventAliases = {
+    "south-asia-1857-rebellion-raj": ["1857年起义与英属印度"]
+  };
   const dynastyId = "south-asia";
   const dynasty = "南亚历史主线";
   const sources = window.SOUTH_ASIA_SOURCES || [];
@@ -14,7 +18,7 @@
     const learningCase = learningCases[id];
     const contentLevel = learningCase ? "core" : "mainline";
     return {
-      id, title, aliases: [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
+      id, title, aliases: eventAliases[id] || [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
       people: people(names, title), relations: [], background: [], process: [], results: learningCase ? [result] : [], debates: [],
       claims: learningCase ? [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["south-asia-britannica"], note: "核心判断以材料锚点为起点，具体年代和范围仍按史料类型分层理解。" }] : [],
       citations: learningCase ? [{ sourceId: "south-asia-britannica", reference: "南亚历史公开通史入口", status: "待逐条细核", plainText: `白话理解：${summary}`, note: "核心案例的材料锚点见正文；通史入口用于阶段核对。" }] : [],

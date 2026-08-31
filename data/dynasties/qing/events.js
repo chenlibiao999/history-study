@@ -93,6 +93,7 @@
     event({
       id: "qing-founded-1636",
       title: "皇太极称帝改国号大清",
+      aliases: ["改国号大清"],
       era: "后金与入关",
       time: "1636",
       regions: ["盛京", "辽东"],
@@ -115,6 +116,7 @@
     event({
       id: "qing-entry-1644",
       title: "清军入关与山海关之战",
+      aliases: ["清军入关"],
       era: "后金与入关",
       time: "1644",
       regions: ["山海关", "北京"],
@@ -159,6 +161,7 @@
     event({
       id: "qing-queue-order-and-jiangnan",
       title: "剃发令与江南抗清",
+      aliases: ["剃发令"],
       era: "后金与入关",
       time: "1645-1646",
       regions: ["江南", "扬州", "嘉定"],
@@ -181,6 +184,7 @@
     event({
       id: "qing-kangxi-oboi",
       title: "康熙亲政与擒鳌拜",
+      aliases: ["擒鳌拜"],
       era: "康雍乾治理",
       time: "1661-1669",
       regions: ["北京"],
@@ -247,6 +251,7 @@
     event({
       id: "qing-nerchinsk",
       title: "雅克萨之战与尼布楚条约",
+      aliases: ["尼布楚条约"],
       era: "康雍乾治理",
       time: "1685-1689",
       regions: ["黑龙江", "雅克萨", "尼布楚"],
@@ -269,6 +274,7 @@
     event({
       id: "qing-galdan-campaigns",
       title: "康熙亲征噶尔丹",
+      aliases: ["亲征噶尔丹"],
       era: "康雍乾治理",
       time: "1690-1697",
       regions: ["漠北", "准噶尔", "喀尔喀"],
@@ -291,6 +297,7 @@
     event({
       id: "qing-yongzheng-fiscal-reforms",
       title: "雍正财政整顿与摊丁入亩",
+      aliases: [],
       era: "康雍乾治理",
       time: "1723-1735",
       regions: ["全国"],
@@ -313,6 +320,7 @@
     event({
       id: "qing-grand-council",
       title: "军机处设立",
+      aliases: ["军机处"],
       era: "康雍乾治理",
       time: "1729-1732",
       regions: ["北京"],
@@ -357,6 +365,7 @@
     event({
       id: "qing-xinjiang-governance",
       title: "新疆设治与伊犁将军",
+      aliases: ["新疆设治"],
       era: "康雍乾治理",
       time: "1762以后",
       regions: ["伊犁", "新疆"],
@@ -379,6 +388,7 @@
     event({
       id: "qing-tibet-governance",
       title: "驻藏大臣与西藏治理制度化",
+      aliases: ["西藏治理"],
       era: "康雍乾治理",
       time: "1720-1793",
       regions: ["西藏", "拉萨"],
@@ -467,6 +477,7 @@
     event({
       id: "qing-opium-lin-zexu",
       title: "鸦片输入与林则徐禁烟",
+      aliases: ["林则徐禁烟"],
       era: "内忧外患",
       time: "1830s-1839",
       regions: ["广州", "广东"],
@@ -489,6 +500,7 @@
     event({
       id: "qing-first-opium-war",
       title: "第一次鸦片战争与《南京条约》",
+      aliases: ["第一次鸦片战争"],
       era: "内忧外患",
       time: "1840-1842",
       regions: ["广东", "长江", "南京"],
@@ -511,6 +523,7 @@
     event({
       id: "qing-taiping-rebellion",
       title: "太平天国运动",
+      aliases: ["太平天国"],
       era: "内忧外患",
       time: "1851-1864",
       regions: ["广西", "南京", "长江流域"],
@@ -533,6 +546,7 @@
     event({
       id: "qing-second-opium-war",
       title: "第二次鸦片战争与圆明园被焚",
+      aliases: ["第二次鸦片战争"],
       era: "内忧外患",
       time: "1856-1860",
       regions: ["广州", "天津", "北京"],
@@ -599,6 +613,7 @@
     event({
       id: "qing-sino-french-war",
       title: "中法战争与越南宗藩瓦解",
+      aliases: ["中法战争"],
       era: "内忧外患",
       time: "1883-1885",
       regions: ["越南", "福建", "台湾"],
@@ -621,6 +636,7 @@
     event({
       id: "qing-sino-japanese-war",
       title: "甲午战争与《马关条约》",
+      aliases: ["甲午战争"],
       era: "内忧外患",
       time: "1894-1895",
       regions: ["朝鲜", "黄海", "辽东", "台湾"],
@@ -665,6 +681,7 @@
     event({
       id: "qing-boxer-protocol",
       title: "义和团运动与辛丑条约",
+      aliases: ["义和团"],
       era: "晚清转型与覆亡",
       time: "1899-1901",
       regions: ["山东", "直隶", "北京"],
@@ -687,6 +704,7 @@
     event({
       id: "qing-new-policies",
       title: "清末新政与预备立宪",
+      aliases: ["清末新政"],
       era: "晚清转型与覆亡",
       time: "1901-1911",
       regions: ["全国"],
@@ -709,6 +727,7 @@
     event({
       id: "qing-xinhai-revolution",
       title: "辛亥革命与武昌起义",
+      aliases: ["辛亥革命"],
       era: "晚清转型与覆亡",
       time: "1911",
       regions: ["武昌", "湖北", "全国"],
@@ -731,6 +750,7 @@
     event({
       id: "qing-abdication-1912",
       title: "清帝退位与清朝灭亡",
+      aliases: ["清帝退位"],
       era: "晚清转型与覆亡",
       time: "1912",
       regions: ["北京", "南京"],

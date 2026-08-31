@@ -1,4 +1,8 @@
 (() => {
+  // keyEvents 别名回填：由 scripts/backfill-keyevent-aliases.js 生成，勿手工改动格式
+  const eventAliases = {
+    "islamic-world-mughal-akbar": ["莫卧儿帝国高峰"]
+  };
   const dynastyId = "islamic-world";
   const dynasty = "伊斯兰世界";
   const sources = window.ISLAMIC_WORLD_SOURCES || [];
@@ -16,7 +20,7 @@
     { time, title: "影响延伸", description: `${result} 它会继续影响西亚、北非、中亚、南亚、东南亚和欧洲边缘的政治、宗教、法律与贸易联系。` }
   ];
   const event = (id, title, era, time, summary, result, names, topics, regions = ["西亚", "阿拉伯半岛"]) => ({
-    id, title, aliases: [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
+    id, title, aliases: eventAliases[id] || [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
     people: people(names, title), relations: [], background: [`${title}要放在晚期古代欧亚非交界地的长期变化中理解，重点看宗教、贸易、军队和城市网络如何共同塑造伊斯兰世界。`],
     process: buildProcess(title, summary, result, time), results: [result], debates: [{ view: "学习提示", content: "伊斯兰世界不是单一国家，哈里发、苏丹、埃米尔、乌理玛、商人网络和地方社会经常并行存在。" }],
     claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["islamic-world-britannica"], note: "首版按主线学习版整理，具体阿拉伯文、波斯文史料和现代研究页码后续逐条补充。" }],

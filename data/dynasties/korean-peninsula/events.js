@@ -1,10 +1,22 @@
 (() => {
+  // keyEvents 别名回填：由 scripts/backfill-keyevent-aliases.js 生成，勿手工改动格式
+  const eventAliases = {
+    "korea-silla-golpum": ["新罗骨品制"],
+    "korea-tang-silla-war": ["唐罗战争"],
+    "korea-later-three-unification": ["后三国统一"],
+    "korea-goryeo-gwangjong": ["光宗改革"],
+    "korea-goryeo-examination": ["高丽科举"],
+    "korea-goryeo-military-regime": ["武臣政变"],
+    "korea-sambyeolcho-resistance": ["三别抄抗蒙"],
+    "korea-sejong-hangul": ["训民正音"],
+    "korea-imjin-war": ["壬辰战争"]
+  };
   const dynastyId = "korean-peninsula";
   const dynasty = "朝鲜半岛历史主线";
   const sources = window.KOREAN_PENINSULA_SOURCES || [];
   const people = (names, title) => (names || []).map((name) => ({ name, role: "关键人物/群体", years: "", color: "var(--accent-gold)", bio: `${name}需要放在“${title}”的政权形成、制度、战争或东亚外交背景中理解。`, events: [title] }));
   const event = (id, title, era, time, summary, result, names, topics) => ({
-    id, title, aliases: [], era, period: dynasty, time, regions: ["朝鲜半岛", "东亚", "东北亚"], topics, summary, bookmarked: false,
+    id, title, aliases: eventAliases[id] || [], era, period: dynasty, time, regions: ["朝鲜半岛", "东亚", "东北亚"], topics, summary, bookmarked: false,
     people: people(names, title), relations: [], background: [],
     process: [], results: [result], debates: [], learningCase: learningCases[id], contentLevel: learningCases[id] ? "core" : "outline",
     claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["korean-peninsula-main-source"], note: "首轮以主线学习为目标，后续可逐条补史料卷目和考古报告。" }],

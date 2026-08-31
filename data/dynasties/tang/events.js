@@ -111,7 +111,7 @@ window.TANG_EVENTS = [
   {
     "id": "tang-unification-wars",
     "title": "唐初统一战争",
-    "aliases": [],
+    "aliases": ["唐初统一"],
     "era": "初唐",
     "period": "唐",
     "time": "618-624",
@@ -1375,7 +1375,7 @@ window.TANG_EVENTS = [
   {
     "id": "tanglong-coup",
     "title": "唐隆政变",
-    "aliases": [],
+    "aliases": ["唐隆政变后复位"],
     "era": "中宗睿宗到开元",
     "period": "唐",
     "time": "710",

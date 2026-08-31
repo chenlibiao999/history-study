@@ -1,4 +1,8 @@
 (() => {
+  // keyEvents 别名回填：由 scripts/backfill-keyevent-aliases.js 生成，勿手工改动格式
+  const eventAliases = {
+    "southeast-asia-british-french-colonial": ["英法殖民扩张"]
+  };
   const dynastyId = "southeast-asia";
   const dynasty = "东南亚历史主线";
   const sources = window.SOUTHEAST_ASIA_SOURCES || [];
@@ -16,7 +20,7 @@
     { time, title: "影响延伸", description: `${result} 这改变了区域内的王权、宗教、贸易和外部势力关系，并影响后续殖民边界与民族国家形成。` }
   ];
   const event = (id, title, era, time, summary, result, names, topics, regions = ["东南亚"]) => ({
-    id, title, aliases: [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
+    id, title, aliases: eventAliases[id] || [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
     people: people(names, title), relations: [], background: [`${title}应结合东南亚大陆与群岛并行发展的结构理解，重点看河流、港口、季风贸易、宗教网络和外部帝国如何与本地社会重组。`],
     process: buildProcess(title, summary, result, time), results: [result], debates: [{ view: "学习提示", content: "东南亚古代政权边界常随贡赋、港口联盟和军事控制变化，不能把影响区直接等同现代领土。" }],
     claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["southeast-asia-britannica"], note: "首版按主线学习版整理，具体碑铭、中文史籍、考古和殖民档案后续逐条补充。" }],

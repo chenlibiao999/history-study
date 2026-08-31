@@ -100,7 +100,9 @@
   }
 
   function findEventByLabel(label){
-    return eventByLabel.get(label);
+    // keyEvents may be a title, a true alias, an event ID, or a curated link label.
+    // Curated labels stay outside event.aliases so they do not pollute user search.
+    return eventByLabel.get(label) || eventById.get(label) || eventById.get(window.LABEL_ALIASES?.[label]);
   }
 
   function emperorEvents(emperor){
@@ -113,7 +115,9 @@
       .forEach(event => found.set(event.id, event));
     emperorKeyEvents(emperor)
       .map(findEventByLabel)
-      .filter(Boolean)
+      // relatedEventIds is the cross-dynasty contract. Labels may be reused by
+      // parallel regional packages, so only use them as a same-dynasty fallback.
+      .filter(event => event && event.dynastyId === emperor.dynastyId)
       .forEach(event => found.set(event.id, event));
     const result = [...found.values()];
     emperorEventsCache.set(cacheKey, result);

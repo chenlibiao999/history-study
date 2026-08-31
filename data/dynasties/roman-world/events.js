@@ -1,4 +1,8 @@
 (() => {
+  // keyEvents 别名回填：由 scripts/backfill-keyevent-aliases.js 生成，勿手工改动格式
+  const eventAliases = {
+    "roman-world-punic-wars": ["布匿战争"]
+  };
   const dynastyId = "roman-world";
   const dynasty = "罗马世界";
   const sources = window.ROMAN_WORLD_SOURCES || [];
@@ -16,7 +20,7 @@
     { time, title: "影响延伸", description: `${result} 它会继续影响欧洲、西亚、北非的政治秩序、法制传统、宗教格局和城市网络。` }
   ];
   const event = (id, title, era, time, summary, result, names, topics, regions = ["意大利", "地中海世界"]) => ({
-    id, title, aliases: [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
+    id, title, aliases: eventAliases[id] || [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
     people: people(names, title), relations: [], background: [`${title}应放在罗马从城邦到帝国、从共和国到皇权、从多神传统到基督教帝国的长期变化中理解，重点看制度和地中海网络如何承接前后。`],
     process: buildProcess(title, summary, result, time), results: [result], debates: [{ view: "学习提示", content: "罗马边界、人口和身份都随时期变化，不能把共和国、帝国最大疆域和拜占庭晚期视为同一种政治形态。" }],
     claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["roman-world-britannica-rome"], note: "首版按主线学习版整理，具体古典作者卷章、铭文和现代研究页码后续逐条补充。" }],

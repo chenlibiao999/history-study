@@ -623,6 +623,7 @@
   function renderEvent(){
     const event = currentEvent();
     const isOutline = event.contentLevel === "outline";
+    const isCondensed = event.contentLevel !== "core";
     const eventEmperors = emperors.filter(emperor => emperorRelatedEventIds(emperor).includes(event.id));
     $("#eventTitle").textContent = displayText(event.title, "未命名事件");
     $("#bookmarkBtn").classList.toggle("bookmarked", bookmarked.has(event.id));
@@ -648,10 +649,11 @@
     );
     meta.append(emperorMeta);
 
-    ["#peopleChips", "#territoryPopulationContent", "#politicalMapContent", "#processList", "#resultContent", "#debateContent", "#claimsList"]
-      .forEach(selector => $(selector).closest(".detail-section").hidden = isOutline);
-    $("#backgroundContent").closest(".detail-section").querySelector("h2").textContent = isOutline ? "定位" : "背景";
-    document.querySelector(".supplementary-panel").hidden = isOutline;
+    ["#territoryPopulationContent", "#politicalMapContent", "#processList", "#resultContent", "#debateContent", "#claimsList"]
+      .forEach(selector => $(selector).closest(".detail-section").hidden = isCondensed);
+    $("#peopleChips").closest(".detail-section").hidden = isOutline;
+    $("#backgroundContent").closest(".detail-section").querySelector("h2").textContent = isOutline ? "定位" : isCondensed ? "主线定位" : "背景";
+    document.querySelector(".supplementary-panel").hidden = isCondensed;
 
     renderPeopleChips(event);
     renderBackground(event);
@@ -681,8 +683,14 @@
   function renderBackground(event){
     const container = $("#backgroundContent");
     clear(container);
-    if (event.contentLevel === "outline") {
+    if (event.contentLevel !== "core") {
       container.append(textNode("p", "", event.summary));
+      if (event.contentLevel === "mainline") {
+        const previous = (event.previousEventIds || []).map(id => events.find(item => item.id === id)?.title).filter(Boolean);
+        const next = (event.nextEventIds || []).map(id => events.find(item => item.id === id)?.title).filter(Boolean);
+        if (previous.length) container.append(textNode("p", "mainline-link", `承接：${previous.join("；")}`));
+        if (next.length) container.append(textNode("p", "mainline-link", `导向：${next.join("；")}`));
+      }
       return;
     }
     renderLearningCase(container, event.learningCase);

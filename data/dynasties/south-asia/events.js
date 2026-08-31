@@ -10,19 +10,17 @@
     bio: `${name}需要放在“${title}”的城市化、宗教、帝国、区域政权或殖民结构中理解。`,
     events: [title]
   }));
-  const buildProcess = (title, summary, result, time) => [
-    { time, title: "背景积累", description: `${title}发生前，南亚的河流农业、城市网络、王权竞争、宗教思想或印度洋贸易已经长期变化，事件是这些力量重新组合的节点。` },
-    { time, title: "事件展开", description: `${summary} 学习时要看参与者如何调动土地、军队、宗教、贸易或殖民制度，而不是只记一个王朝名或年份。` },
-    { time, title: "影响延伸", description: `${result} 这会改变南亚内部区域关系，并影响中亚、西亚、东南亚和印度洋世界与南亚的连接方式。` }
-  ];
-  const event = (id, title, era, time, summary, result, names, topics, regions = ["南亚", "印度次大陆"]) => ({
-    id, title, aliases: [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
-    people: people(names, title), relations: [], background: [`${title}应结合南亚多河流、多区域、多宗教和多语言的历史结构理解，不能简单套用单一王朝连续统治的框架。`],
-    process: buildProcess(title, summary, result, time), results: [result], debates: [{ view: "学习提示", content: "南亚古代材料常包含考古、铭文、宗教文献和后世叙事，年代、范围和政治控制强度需要分层理解。" }],
-    claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["south-asia-britannica"], note: "首版按主线学习版整理，具体铭文、考古报告和现代研究页码后续逐条补充。" }],
-    citations: [{ sourceId: "south-asia-britannica", reference: "南亚历史公开通史入口", status: "待逐条细核", plainText: `白话理解：${summary}`, note: "先提供可读释义；涉及古代年代和王朝范围时保留谨慎口径。" }], learningCase: learningCases[id],
-    causalChain: [], sources, reviewQuestions: [{ type: "主线理解", question: `${title}为什么重要？`, answer: result }], notes: [], dynastyId, dynasty, topicIds: topics
-  });
+  const event = (id, title, era, time, summary, result, names, topics, regions = ["南亚", "印度次大陆"]) => {
+    const learningCase = learningCases[id];
+    const contentLevel = learningCase ? "core" : "mainline";
+    return {
+      id, title, aliases: [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
+      people: people(names, title), relations: [], background: [], process: [], results: learningCase ? [result] : [], debates: [],
+      claims: learningCase ? [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["south-asia-britannica"], note: "核心判断以材料锚点为起点，具体年代和范围仍按史料类型分层理解。" }] : [],
+      citations: learningCase ? [{ sourceId: "south-asia-britannica", reference: "南亚历史公开通史入口", status: "待逐条细核", plainText: `白话理解：${summary}`, note: "核心案例的材料锚点见正文；通史入口用于阶段核对。" }] : [],
+      learningCase, contentLevel, causalChain: [], sources: learningCase ? sources : [], reviewQuestions: learningCase ? [{ type: "主线理解", question: `${title}为什么重要？`, answer: result }] : [], notes: [], dynastyId, dynasty, topicIds: topics
+    };
+  };
   const learningCases = {
     "south-asia-ashoka-kalinga": {
       label: "把一场征服看成治理问题",
@@ -40,6 +38,30 @@
       memory: ["征服之后", "铭文传播", "治理成本"],
       question: "为什么说羯陵伽战争的重点不只是阿育王个人转变？",
       answer: "因为它揭示了大帝国在扩张后面对的治理问题。阿育王用铭文和“法”把王权伦理公开化，试图降低统治摩擦、建立跨地区的共同语言，但这套工具仍要依赖行政、财政和地方合作。"
+    },
+    "south-asia-indus-urban": {
+      label: "有城市，不等于已有可确认的帝国",
+      claim: "印度河文明最值得记住的是跨城镇的标准化如何让大规模协作成为可能；文字未释读使我们不能把这种协作直接等同于某个已知王朝的中央集权。",
+      sections: [["可见的秩序", "砖块比例、度量衡、印章和排水设施在许多遗址反复出现，说明生产、交换和城市建设存在超越单一聚落的共同规则。"], ["看不见的权力", "没有可读文字，也缺少能与埃及王陵直接类比的王宫与王墓；考古能证明组织能力，不能替我们宣布已经找到一位统治全域的国王。"], ["长期转型", "约前1900年后城市网络改变，河流、环境、贸易与地方社会都可能参与其中；不应把转型简化成一次灾难或人群消失。"]],
+      evidence: { title: "材料锚点：标准化砖与印章", content: "哈拉帕、摩亨佐-达罗等遗址的标准化建筑材料和印章网络，是研究跨地区协作的实物证据；它们不能单独回答文字内容或统治结构。" },
+      misconception: "不要把排水系统直接记成已经发现了现代式国家。",
+      memory: ["标准化", "文字未释", "长期转型"], question: "为什么印度河文明不能简单套入王朝史？", answer: "遗址显示了广泛协作，却没有可直接读出的政权叙事；要同时看到其城市能力与材料边界。"
+    },
+    "south-asia-akbar-integration": {
+      label: "征服怎样变成可持续统治",
+      claim: "阿克巴的关键不只是扩大莫卧儿疆域，而是用军职等级、土地收入和地方精英联盟，把不同来源的武力转化为可重复运转的帝国关系。",
+      sections: [["军事关系", "曼萨布达尔制度把军职、俸禄和皇帝服务联系起来；它不是现代公务员制度，却能让皇权以职位和资源约束贵族。"], ["地方合作", "拉杰普特联盟并非消除冲突，而是让部分地方精英进入帝国军政与婚姻网络，降低北印度统治成本。"], ["财政边界", "土地收入调查和征收安排增强中央能力，但各地执行、季节风险和地方中介仍决定帝国命令能走多远。"]],
+      evidence: { title: "材料锚点：《阿克巴书》与《阿因-i-阿克巴里》", content: "阿布·法兹勒的宫廷著作记录官阶、军役和税收制度，是理解莫卧儿自我描述的重要材料；它也带有服务皇权的立场。" },
+      misconception: "不要把宗教宽容或拉杰普特联盟记成一条永远不变、覆盖所有群体的政策。",
+      memory: ["曼萨布达尔", "土地收入", "地方精英"], question: "阿克巴为什么比单纯的征服者更重要？", answer: "他试图把军事胜利转为职位、财政和地方合作的制度关系，这才解释了莫卧儿帝国的持续整合能力。"
+    },
+    "south-asia-partition-independence": {
+      label: "独立为何同时带来分治灾难",
+      claim: "1947年的关键不是英国简单离开，而是代表权、边界划分、地方安全和人口流动在极短时间内相互挤压，使独立与大规模暴力同时发生。",
+      sections: [["政治代表", "国大党、穆斯林联盟、英方与各地政治力量对谁能代表谁、中央应有多强存在根本分歧；分治是谈判破裂后的政治选择。"], ["边界与安全", "旁遮普、孟加拉的边界公布与权力移交速度极快，行政、警察和交通无法保护正在迁移的人群。"], ["遗留问题", "迁徙创伤、财产安置与克什米尔争端说明民族国家建立不是一个完成时，而是长期政治过程。"]],
+      evidence: { title: "材料锚点：拉德克利夫边界裁决", content: "1947年边界裁决在独立前后公布，直接影响旁遮普和孟加拉居民的安全与迁移判断；它是理解暴力如何被行政时间表放大的关键材料。" },
+      misconception: "不要把分治解释成两个天然同质民族必然分开，也不要把暴力归结为单一宗教仇恨。",
+      memory: ["代表权", "仓促边界", "人口迁移"], question: "独立为什么没有自动带来安全？", answer: "政治谈判、边界划分和权力移交同时推进，却缺少足以保护居民的行政能力；国家诞生和社会安全因此发生脱节。"
     }
   };
   const rows = [
@@ -70,5 +92,10 @@
     ["south-asia-national-movement", "印度国民大会与民族运动", "殖民与独立", "1885-1940s", "印度国民大会、穆斯林联盟、甘地的非暴力运动和多种政治派别共同推动反殖民斗争，民族代表权问题日益尖锐。", "南亚独立不是单一组织的线性胜利，而是群众运动、殖民改革、宗教社群政治和全球战争共同作用。", ["甘地", "尼赫鲁", "真纳", "国大党", "穆斯林联盟"], ["民族运动", "反殖民", "政治代表"], ["英属印度", "孟买", "德里"]],
     ["south-asia-partition-independence", "独立与印巴分治", "殖民与独立", "1947", "英国结束在印度的殖民统治，印度和巴基斯坦分别独立，但分治造成大规模迁徙、暴力和克什米尔等长期争端。", "现代南亚国家体系由此形成，殖民边界、宗教社群和民族国家建设问题持续影响地区政治。", ["尼赫鲁", "真纳", "蒙巴顿", "迁徙民众"], ["独立", "分治", "民族国家"], ["印度", "巴基斯坦", "旁遮普", "孟加拉"]]
   ];
-  window.SOUTH_ASIA_EVENTS = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
+  const events = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
+  window.SOUTH_ASIA_EVENTS = events.map((item, index) => ({
+    ...item,
+    previousEventIds: index ? [events[index - 1].id] : [],
+    nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
+  }));
 })();

@@ -648,9 +648,6 @@ for (const event of data.events) {
   if (event.contentLevel === "mainline" && !((event.previousEventIds || []).length || (event.nextEventIds || []).length)) {
     errors.push(`${event.title}: 主线节点必须至少关联一个前后事件`);
   }
-  if (!isOutline && !hasLearningCase && (!Array.isArray(event.process) || event.process.length === 0)) {
-    errors.push(`${event.title}: 缺少 process`);
-  }
   if (!Array.isArray(event.people)) {
     errors.push(`${event.title}: people 必须是数组`);
   }
@@ -669,7 +666,7 @@ for (const event of data.events) {
       errors.push(`${event.title}: people.role 必须是字符串`);
     }
   }
-  if (!isOutline && !hasLearningCase && unificationKeywords.some((keyword) => event.title.includes(keyword))) {
+  if (event.contentLevel === "core" && !hasLearningCase && unificationKeywords.some((keyword) => event.title.includes(keyword))) {
     if ((event.process || []).length < 5) {
       errors.push(`${event.title}: 统一战争类事件至少需要 5 个关键过程节点`);
     }
@@ -691,7 +688,7 @@ for (const event of data.events) {
       errors.push(`${event.title}: process 节点字段不完整`);
     }
   }
-  if (!isOutline && (!Array.isArray(event.results) || event.results.length === 0)) {
+  if (event.contentLevel === "core" && (!Array.isArray(event.results) || event.results.length === 0)) {
     errors.push(`${event.title}: 缺少 results`);
   }
   if (event.contentLevel === "core" && (!Array.isArray(event.sources) || event.sources.length === 0)) {

@@ -20,9 +20,28 @@
     people: people(names, title), relations: [], background: [`${title}应结合南亚多河流、多区域、多宗教和多语言的历史结构理解，不能简单套用单一王朝连续统治的框架。`],
     process: buildProcess(title, summary, result, time), results: [result], debates: [{ view: "学习提示", content: "南亚古代材料常包含考古、铭文、宗教文献和后世叙事，年代、范围和政治控制强度需要分层理解。" }],
     claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["south-asia-britannica"], note: "首版按主线学习版整理，具体铭文、考古报告和现代研究页码后续逐条补充。" }],
-    citations: [{ sourceId: "south-asia-britannica", reference: "南亚历史公开通史入口", status: "待逐条细核", plainText: `白话理解：${summary}`, note: "先提供可读释义；涉及古代年代和王朝范围时保留谨慎口径。" }],
+    citations: [{ sourceId: "south-asia-britannica", reference: "南亚历史公开通史入口", status: "待逐条细核", plainText: `白话理解：${summary}`, note: "先提供可读释义；涉及古代年代和王朝范围时保留谨慎口径。" }], learningCase: learningCases[id],
     causalChain: [], sources, reviewQuestions: [{ type: "主线理解", question: `${title}为什么重要？`, answer: result }], notes: [], dynastyId, dynasty, topicIds: topics
   });
+  const learningCases = {
+    "south-asia-ashoka-kalinga": {
+      label: "把一场征服看成治理问题",
+      claim: "羯陵伽战争的重点，不是一个君主忽然变得仁慈，而是孔雀帝国不得不回答：如何让刚被征服、语言和习俗不同的地区在战后继续服从。",
+      sections: [
+        ["胜利不等于整合", "军队可以夺取羯陵伽，却不能自动获得地方精英、不同社群和远方居民的持续配合。疆域越大，统治越需要命令被理解、被接受并反复执行。"],
+        ["阿育王的办法", "岩诏、柱诏和官员巡行把“法”变成公开的统治语言：节制、照顾民生、尊重不同教派不只是私人德行，也是在降低帝国统治的摩擦。"],
+        ["它解决不了什么", "这不是废弃军队，也不能证明佛教已成为单一国教。伦理化王权能辅助整合，却不能代替财政、军队和地方合作。"],
+      ],
+      evidence: {
+        title: "材料锚点：第十三号岩诏",
+        content: "阿育王在诏文中回顾征服羯陵伽，称十五万人被迁移、十万人被杀，且有更多人死去；他随后把这种痛苦与“法的征服”并置。数字首先是君主铭文中的自述，学习时要把它当作一手材料，而不是未经检验的现代统计。"
+      },
+      misconception: "常见误解是“战后才皈依佛教、从此完全放弃战争”。第十三号岩诏能证明他公开表达悔意和推崇法治，却不能单独证明这样一条完整的个人转变故事。",
+      memory: ["征服之后", "铭文传播", "治理成本"],
+      question: "为什么说羯陵伽战争的重点不只是阿育王个人转变？",
+      answer: "因为它揭示了大帝国在扩张后面对的治理问题。阿育王用铭文和“法”把王权伦理公开化，试图降低统治摩擦、建立跨地区的共同语言，但这套工具仍要依赖行政、财政和地方合作。"
+    }
+  };
   const rows = [
     ["south-asia-indus-urban", "印度河城市文明成熟", "印度河文明", "约前2600-前1900", "哈拉帕、摩亨佐-达罗等城市形成街区规划、排水系统、工艺生产和远距离交换网络，显示南亚早期城市文明已经高度复杂。", "它说明南亚文明起点不是后来的王朝政治，而是印度河流域的城市、手工业和贸易网络。", ["哈拉帕居民", "摩亨佐-达罗居民"], ["城市化", "考古", "贸易"], ["印度河流域", "旁遮普", "信德"]],
     ["south-asia-indus-decline", "印度河城市体系衰落", "印度河文明", "约前1900-前1300", "印度河城市中心逐步衰落，聚落、贸易和生产方式发生转移，原因可能涉及气候、水系、经济网络和社会结构多重变化。", "城市衰落并不等于人群消失，而是南亚北西部从大城市网络转向更分散的区域社会。", ["哈拉帕晚期社群"], ["城市衰落", "环境", "区域转型"], ["印度河流域", "古吉拉特"]],

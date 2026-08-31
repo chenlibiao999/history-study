@@ -148,29 +148,8 @@
   const regions = [window.EAST_ASIA_REGION, window.SOUTH_ASIA_REGION, window.SOUTHEAST_ASIA_REGION, window.CENTRAL_ASIA_REGION, window.EUROPE_REGION, window.AFRICA_REGION, window.WEST_ASIA_REGION, window.AMERICAS_REGION, window.OCEANIA_REGION, window.AFRO_EURASIA_CROSSROADS_REGION].filter(Boolean);
   const civilizationPackages = [window.CHINA_HISTORY_PACKAGE, window.JAPAN_HISTORY_PACKAGE, window.KOREAN_PENINSULA_HISTORY_PACKAGE, window.SOUTH_ASIA_HISTORY_PACKAGE, window.SOUTHEAST_ASIA_HISTORY_PACKAGE, window.CENTRAL_ASIA_HISTORY_PACKAGE, window.EUROPE_HISTORY_PACKAGE, window.AFRICA_HISTORY_PACKAGE, window.WEST_ASIA_HISTORY_PACKAGE, window.AMERICAS_HISTORY_PACKAGE, window.OCEANIA_HISTORY_PACKAGE, window.AFRO_EURASIA_CROSSROADS_PACKAGE].filter(Boolean);
 
-  function parseStartYear(timeText) {
-    const text = String(timeText || "");
-    const exact = text.match(/前(\d{3,4})/);
-    if (exact) return -Number(exact[1]);
-    const century = text.match(/前(\d{1,2})世纪/);
-    if (century) return -Number(century[1]) * 100;
-    const centuryRange = text.match(/前(\d{1,2})-/);
-    if (centuryRange) return -Number(centuryRange[1]) * 100;
-    const ce = text.match(/(\d{3,4})/);
-    if (ce) return Number(ce[1]);
-    return Number.MAX_SAFE_INTEGER;
-  }
-
-  function parseStartYearV2(timeText) {
-    const text = String(timeText || "");
-    const bce = text.match(/(?:约)?(?:前|公元前|BC|BCE)\s*(\d{1,4})/i);
-    if (bce) return -Number(bce[1]);
-    const bceCentury = text.match(/(?:约)?(?:前|公元前)\s*(\d{1,2})世纪/);
-    if (bceCentury) return -Number(bceCentury[1]) * 100;
-    const ce = text.match(/(\d{3,4})/);
-    if (ce) return Number(ce[1]);
-    return Number.MAX_SAFE_INTEGER;
-  }
+  const parseTimelineRange = window.HISTORY_TIME?.parseTimelineRange || (() => null);
+  const formatTimelineTimestamp = window.HISTORY_TIME?.formatTimelineTimestamp || (() => null);
 
   function asArray(value) {
     return Array.isArray(value) ? value : [];
@@ -182,10 +161,15 @@
 
   function normalizeEvent(event) {
     const title = fallbackText(event.title, "未命名事件");
+    const sourceTime = fallbackText(event.time, "时间待核");
+    const timelineRange = parseTimelineRange(sourceTime);
     return {
       ...event,
       title,
-      time: fallbackText(event.time, "时间待核"),
+      time: formatTimelineTimestamp(sourceTime) || "时间待核",
+      sourceTime,
+      timelineStartYear: timelineRange?.start ?? null,
+      timelineEndYear: timelineRange?.end ?? null,
       era: fallbackText(event.era, "未分期"),
       period: fallbackText(event.period, "未归类"),
       summary: fallbackText(event.summary, "摘要待补。"),
@@ -225,7 +209,7 @@
   }
 
   const events = Object.values(dynastyEvents).flat().map(normalizeEvent).sort((a, b) => {
-    const yearDiff = parseStartYearV2(a.time) - parseStartYearV2(b.time);
+    const yearDiff = (a.timelineStartYear ?? Number.MAX_SAFE_INTEGER) - (b.timelineStartYear ?? Number.MAX_SAFE_INTEGER);
     if (yearDiff) return yearDiff;
     return dynasties.findIndex((dynasty) => dynasty.id === a.dynastyId) - dynasties.findIndex((dynasty) => dynasty.id === b.dynastyId);
   });

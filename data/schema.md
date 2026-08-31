@@ -1,5 +1,7 @@
 # 历史数据结构说明
 
+正式规则入口：[data/rules/00-index.md](rules/00-index.md)。数据字段、展示格式与验收流程均以该规则目录为准。
+
 当前为了支持直接双击打开 `index.html`，数据放在 JS 文件中：
 
 - `history-data.js`: `window.HISTORY_DATA`

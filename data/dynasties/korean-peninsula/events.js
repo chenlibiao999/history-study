@@ -3,19 +3,21 @@
   const dynasty = "朝鲜半岛历史主线";
   const sources = window.KOREAN_PENINSULA_SOURCES || [];
   const people = (names, title) => (names || []).map((name) => ({ name, role: "关键人物/群体", years: "", color: "var(--accent-gold)", bio: `${name}需要放在“${title}”的政权形成、制度、战争或东亚外交背景中理解。`, events: [title] }));
-  const buildProcess = (title, summary, result, time) => [
-    { time, title: "背景积累", description: `${title}发生前，半岛内部的农业、铁器、地方共同体、贵族集团和东亚交流已经持续变化，事件是这些长期力量集中重组的节点。` },
-    { time, title: "事件展开", description: `${summary} 过程中的关键不只是政权更替，还包括军队、土地、官僚、宗教和对外关系如何共同推动下一阶段。` },
-    { time, title: "影响延伸", description: `${result} 这一结果改变了半岛内部的权力分配，也影响其与中国、日本、蒙古和东北亚草原地区的互动。` }
-  ];
   const event = (id, title, era, time, summary, result, names, topics) => ({
     id, title, aliases: [], era, period: dynasty, time, regions: ["朝鲜半岛", "东亚", "东北亚"], topics, summary, bookmarked: false,
-    people: people(names, title), relations: [], background: [`${title}应结合半岛南北地理、汉江与洛东江流域、辽东通道、海上交通和东亚国际秩序理解。`],
-    process: buildProcess(title, summary, result, time), results: [result], debates: [{ view: "学习提示", content: "早期半岛年代和政权边界存在文献与考古争议，本模块使用主流通史阶段和约数，不把争议写成绝对结论。" }],
+    people: people(names, title), relations: [], background: [],
+    process: [], results: [result], debates: [], learningCase: learningCases[id], contentLevel: learningCases[id] ? "core" : "outline",
     claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["korean-peninsula-main-source"], note: "首轮以主线学习为目标，后续可逐条补史料卷目和考古报告。" }],
     citations: [{ sourceId: "korean-peninsula-main-source", reference: "朝鲜半岛公开通史入口", status: "待逐条细核", plainText: `白话理解：${summary}`, note: "先提供可读释义，不直接堆古文或外文原文。" }],
     causalChain: [], sources, reviewQuestions: [{ type: "主线理解", question: `${title}为什么重要？`, answer: result }], notes: [], dynastyId, dynasty, topicIds: topics
   });
+  const learningCases = {
+    "korea-tang-silla-war": { label: "“统一”到底统一了什么", claim: "唐罗战争的意义不在于新罗吞并了整个高句丽世界，而在于新罗在击败唐军后，取得了半岛中南部的主导权；北方则由渤海等力量重组。", sections: [["同盟先改变三国格局", "唐与新罗联合先后灭百济、高句丽，但这并不意味着新罗自然获得全部战果。"], ["战后利益冲突", "唐试图以都护府等方式直接经营半岛，新罗转而同唐军作战，争的是谁在原三国领土上实际任命、征税和驻军。"], ["结果是分层的", "676年前后新罗控制半岛大部南方；高句丽北部故地并未纳入新罗，后来形成渤海与新罗并立的格局。"]], evidence: { title: "材料锚点：都护府与唐罗战争", content: "唐在百济、高句丽故地设置行政军事机构，是同盟破裂后争夺直接控制权的明确信号。" }, misconception: "不要把统一新罗等同于今天朝鲜半岛的完全统一。", memory: ["唐罗同盟", "战后冲突", "南北并立"], question: "新罗为何在与唐结盟后又同唐作战？", answer: "共同敌人消失后，双方都要决定谁控制原百济、高句丽地区；战争转为争夺实际统治权。" },
+    "korea-goryeo-mongol-war": { label: "王朝保存与自主性让渡", claim: "高丽面对蒙古并非简单的战败或胜利：王室借江华岛坚持多年，最后通过降服和联姻保存王朝，却进入蒙古帝国制约下的新秩序。", sections: [["地理改变战争", "王室迁往江华岛，使蒙古骑兵难以直接控制核心朝廷；但陆地社会长期承受征发、破坏和人口流离。"], ["妥协的条件", "1259年后高丽停止长期抵抗，以称臣、世子入朝和婚姻关系换取王朝延续。"], ["延续不等于独立", "高丽官僚和王室仍存在，但对外战争、王位继承与贵族网络受到元朝深刻影响。"]], evidence: { title: "材料锚点：江华岛迁都与王室联姻", content: "迁都反映高丽的防御选择；后来的元高丽王室婚姻则显示战争如何转化为制度性依附。" }, misconception: "不要把高丽说成被蒙古直接消灭，或说成完全未受控制。", memory: ["江华岛", "降服联姻", "王朝延续"], question: "高丽为何能保留王朝，却仍失去大量自主性？", answer: "它以承认蒙古宗主地位换取制度存续，因此保住王朝形式，却让渡了外交、继承和军事方面的自主空间。" },
+    "korea-joseon-foundation": { label: "改朝换代不只是一场兵变", claim: "李成桂建立朝鲜王朝，是高丽末期土地、军权、儒学士大夫与元明转换共同累积的结果；威化岛回军只是权力转移的触发点。", sections: [["高丽末的压力", "亲元权贵、佛寺土地、倭寇与财政困难使旧王朝难以整合军人和新兴士大夫。"], ["谁组成新联盟", "李成桂掌握军事资源，郑道传等士大夫提供制度和合法性方案，两者共同推动废高丽、建新朝。"], ["新秩序", "朝鲜以儒学官僚、科举和土地整顿重建中央权力，并以对明外交安置新王朝的外部合法性。"]], evidence: { title: "材料锚点：威化岛回军", content: "1388年李成桂拒绝按原计划北伐并回师，是军权转入政治斗争的关键节点，而非新王朝制度已自动成立。" }, misconception: "不要把朝鲜建国只记作李成桂个人夺位。", memory: ["威化岛回军", "军人和士大夫", "儒学新秩序"], question: "新朝为何需要士大夫而不只需要军队？", answer: "军队能够夺取政权，但土地、官制、礼制和对明关系需要一套新的制度语言与执行群体。" },
+    "korea-imjin-war": { label: "一场战争如何改变东亚三方", claim: "壬辰战争不是日军对朝鲜的单线入侵，而是朝鲜防御、明朝援军与日本后勤之间相互牵动的区域战争。", sections: [["日本的目标与困难", "丰臣政权试图经朝鲜进入大陆，但占领城市不等于能稳定补给和控制乡村。"], ["朝鲜的多层抵抗", "官军失利后，义兵、地方社会和李舜臣水军共同牵制日军，海上补给尤其成为关键。"], ["明朝介入", "明军援朝改变战场力量对比，也使战争的财政与军事压力扩展到整个东亚秩序。"]], evidence: { title: "材料锚点：李舜臣水军与补给线", content: "水军作战的战略意义在于限制日军海上运输，说明战局不能只按陆上城池得失理解。" }, misconception: "不要把战争归结为单一英雄或单一国家独力获胜。", memory: ["侵略与补给", "水军义兵", "明军援朝"], question: "壬辰战争为什么不是单纯的朝日战争？", answer: "日军补给、朝鲜社会抵抗与明军介入相互作用，战争实际重塑了东亚三方的资源和战略关系。" },
+    "korea-opening-and-annexation": { label: "半岛主权如何被逐步剥夺", claim: "1876至1910年的关键不是“朝鲜落后所以被吞并”，而是开港、改革冲突与清日俄竞争让朝鲜的外交和军事实权被逐步外部化。", sections: [["开港改变权力边界", "江华岛条约迫使朝鲜开放港口，条约体系让外国势力更直接介入贸易、居留和外交。"], ["国内改革处在外部竞争中", "改革派、守旧派和农民力量的冲突并非孤立发生，常被清日等外力放大或利用。"], ["战争决定控制权", "甲午战争后清朝影响下降，日俄战争后日本获得压倒性优势，1910年吞并是逐步控制的终点。"]], evidence: { title: "材料锚点：江华岛条约、甲午战争与保护国化", content: "从开港条约到1905年保护国化，能追踪日本如何逐步接管朝鲜的外交与行政权，而非把吞并当成突然事件。" }, misconception: "不要用“落后挨打”替代对国际竞争和国内政治的解释。", memory: ["开港", "列强竞争", "逐步保护国化"], question: "1910年吞并为何不是突然发生？", answer: "此前数十年中，条约、战争和保护国安排已持续削弱朝鲜的外交、军事和行政自主。" }
+  };
   const rows = [
     ["korea-gojoseon-formation", "古朝鲜与半岛北部国家形成", "古朝鲜与三韩", "约前4-前2世纪", "辽东和大同江流域出现以古朝鲜为代表的政治共同体，农业、青铜器、铁器和区域贸易推动社会分层。", "半岛北部进入早期国家竞争阶段，辽东通道成为中国东北与半岛互动的重要地理空间。", ["古朝鲜", "半岛北部社群"], ["国家形成", "东北亚"]],
     ["korea-wiman-joseon", "卫满朝鲜建立与汉朝冲突", "古朝鲜与三韩", "约前194-前108", "卫满进入古朝鲜后建立政权，控制对汉贸易和半岛北部交通，最终与汉朝发生战争。", "古朝鲜灭亡后汉四郡设立，半岛北部被纳入更强的帝国边疆体系。", ["卫满", "汉武帝", "古朝鲜"], ["战争", "边疆"]],

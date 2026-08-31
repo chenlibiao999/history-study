@@ -3,19 +3,21 @@
   const dynasty = "日本列岛历史主线";
   const sources = window.JAPAN_SOURCES || [];
   const people = (names, title) => (names || []).map((name) => ({ name, role: "关键人物/群体", years: "", color: "var(--accent-gold)", bio: `${name}需要放在“${title}”的国家形成、制度、战争或东亚交流背景中理解。`, events: [title] }));
-  const buildProcess = (title, summary, result, time) => [
-    { time, title: "背景积累", description: `${title}发生前，列岛内部的农业、聚落、豪族、庄园、军事或东亚交流条件已经持续变化，事件是这些力量集中重组的节点。` },
-    { time, title: "事件展开", description: `${summary} 关键不只在于谁取得胜利，还要看朝廷、武家、地方势力和外部关系如何共同推动下一阶段。` },
-    { time, title: "影响延伸", description: `${result} 这改变了中央与地方的权力分配，并影响后续日本列岛与朝鲜半岛、中国及海上贸易网络的关系。` }
-  ];
   const event = (id, title, era, time, summary, result, names, topics) => ({
     id, title, aliases: [], era, period: dynasty, time, regions: ["日本列岛", "东亚", "日本主要岛屿"], topics, summary, bookmarked: false,
-    people: people(names, title), relations: [], background: [`${title}应结合日本列岛的地理分区、农业生产、地方共同体、中央权力与东亚海域交流理解。`],
-    process: buildProcess(title, summary, result, time), results: [result], debates: [{ view: "学习提示", content: "日本古代至近世的年代、政权边界和制度名称需区分名义秩序与实际控制，不能直接套用中国王朝模式。" }],
+    people: people(names, title), relations: [], background: [],
+    process: [], results: [result], debates: [], learningCase: learningCases[id], contentLevel: learningCases[id] ? "core" : "outline",
     claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["japan-main-source"], note: "首轮按主线整理，具体考古材料和文献卷目后续逐条补充。" }],
     citations: [{ sourceId: "japan-main-source", reference: "日本历史公开通史入口", status: "待逐条细核", plainText: `白话理解：${summary}`, note: "先提供可读释文，不直接堆原文。" }],
     causalChain: [], sources, reviewQuestions: [{ type: "主线理解", question: `${title}为什么重要？`, answer: result }], notes: [], dynastyId, dynasty, topicIds: topics
   });
+  const learningCases = {
+    "japan-taika-reforms": { label: "改革不是一纸诏令", claim: "大化改新的关键不是日本突然变成中国式国家，而是宫廷集团借打倒苏我氏，开始把土地、户籍和官制变成中央可以主张的资源。", sections: [["权力冲突", "645年政变首先改变的是宫廷权力：中大兄皇子和中臣镰足夺取主导权，才有条件提出制度重组。"], ["制度方向", "改新诏令提出公地、公民、户籍和中央官制，但落实跨越数十年，律令国家是持续建构，不是一次改革完成。"], ["东亚条件", "遣隋遣唐和朝鲜半岛战局提供制度参照与安全压力，但日本并非照抄，而是在豪族与王权关系中改造这些资源。"]], evidence: { title: "材料锚点：改新诏", content: "645年后相关诏令把土地、户籍与中央行政列为改革方向；它反映的是新政权的主张，不能直接等同于制度已在全国完全落实。" }, misconception: "不要把“大化改新”记成一天完成的中央集权革命。", memory: ["宫廷政变", "户籍土地", "持续律令化"], question: "大化改新为什么不能只理解为模仿中国？", answer: "它既借鉴大陆制度，也服务于日本宫廷集团重组权力；制度落实是长期过程。" },
+    "japan-genpei-war": { label: "武士为何取得全国性基础", claim: "源平合战的转折不只在坛之浦，而在源赖朝把关东武士的私人效忠网络，变成可任命地方军事职务的政治组织。", sections: [["资源", "平氏掌握京都与海上贸易，源氏在关东依靠土地关系、御家人和地方动员建立另一套军事实力。"], ["胜利后的制度", "击败平氏后，源赖朝取得设置守护、地头的权力，使武士组织进入地方治理。"], ["双重秩序", "朝廷没有消失；幕府夺取的是军事和土地事务的主导，京都合法性与镰仓实际权力长期并存。"]], evidence: { title: "材料锚点：守护、地头任命", content: "1185年后源赖朝获准在各地设置守护、地头，是武家权力从战时联盟转为地方制度的关键线索。" }, misconception: "不要把镰仓幕府理解为立即取代天皇的单一政府。", memory: ["关东御家人", "守护地头", "朝廷并存"], question: "源平合战后，源赖朝怎样把战胜变成统治？", answer: "通过御家人网络和守护、地头任命，把军事胜利嵌入地方土地与治安管理。" },
+    "japan-tokugawa-shogunate": { label: "和平如何被制度化", claim: "德川幕府的稳定不只来自关原胜利，而来自把大名土地、婚姻、城郭和朝觐纳入将军可以监督的秩序，同时保留各藩的内部治理。", sections: [["胜后分配", "关原后德川重配领地，并以亲藩、谱代、外样区分大名，先处理谁掌握人和地。"], ["监督而非直辖", "幕府没有把全国直接改为县制；藩保有财政与家臣体系，但要受参勤交代、婚姻许可和城郭限制约束。"], ["长期代价", "和平促进城市与商品经济，也让幕府和藩越来越依赖货币与市场，旧有俸禄结构承受压力。"]], evidence: { title: "材料锚点：参勤交代", content: "大名定期赴江户并维持家属居住，是幕府以交通、成本和人质性安排约束地方势力的制度线索。" }, misconception: "不要把幕藩体制记成中央完全压倒地方。", memory: ["领地重配", "参勤交代", "幕府与藩"], question: "德川为何能维持长期和平？", answer: "它以制度化监督约束大名，同时让藩承担地方治理，形成集中监督与分权治理并存的秩序。" },
+    "japan-maritime-restrictions": { label: "“锁国”不是完全断绝", claim: "德川的对外限制是把海外航行、基督教和贸易节点纳入幕府分层管理，而不是日本从此与世界没有联系。", sections: [["限制对象", "幕府限制日本人大规模出洋、压制基督教，并控制谁能从事何种对外往来。"], ["保留的通道", "长崎连接荷兰与中国，对马处理朝鲜关系，萨摩联系琉球，松前面对虾夷，贸易并未消失。"], ["政治目的", "控制港口与宗教既关乎安全，也关乎幕府避免地方大名借海外资源形成独立力量。"]], evidence: { title: "材料锚点：四个对外窗口", content: "长崎、对马、萨摩、松前分别承担不同方向的对外交往，是理解德川政策的空间证据。" }, misconception: "不要把“锁国”理解成一堵把所有人挡在外面的墙。", memory: ["限制航海", "四个窗口", "幕府控制节点"], question: "德川对外政策的核心是什么？", answer: "不是消灭交流，而是让交流经过幕府可监督的港口、藩和制度。" },
+    "japan-black-ships-meiji": { label: "幕府为何无法把危机收回", claim: "黑船来航不是单一外力击垮幕府，而是条约压力把幕府原有的外交垄断、财政能力和大名政治同时暴露出来。", sections: [["外部冲击", "美国舰队要求开港，幕府必须在军事不足和国内不知如何应对之间作出选择。"], ["内部政治化", "开国与条约问题使朝廷、大名、志士和幕府官僚都能争夺“谁代表日本”的合法性。"], ["政权更替", "萨摩、长州等倒幕力量利用这一危机重组联盟，戊辰战争后才完成政权转移。"]], evidence: { title: "材料锚点：1854年《神奈川条约》", content: "条约开港并结束德川长期的对外安排；它是危机的起点，不足以单独解释1868年的政权更替。" }, misconception: "不要把明治维新写成黑船一到、日本立刻现代化。", memory: ["条约压力", "代表权争夺", "戊辰战争"], question: "黑船来航为什么会演变为幕府终结？", answer: "它使外交危机转化为国内合法性和资源分配危机，倒幕联盟才得以形成。" }
+  };
   const rows = [
     ["japan-yayoi-rice", "弥生农业与金属器传播", "弥生与古坟", "约前900-前300", "水稻农业、青铜器和铁器技术经朝鲜半岛等方向传入列岛，北九州聚落出现更明显的生产、战争和等级分化。", "农业剩余和金属资源推动聚落竞争，成为后续区域王权形成的社会基础。", ["弥生聚落", "朝鲜半岛交流"], ["农业", "技术", "东亚交流"]],
     ["japan-yayoi-chiefdoms", "弥生时代区域首长国兴起", "弥生与古坟", "约前300-3世纪", "北九州、濑户内海和近畿等地的首长国通过稻作、贸易和战争扩大影响，列岛政治开始出现区域网络。", "日本列岛尚未统一，但区域权力中心已为大和王权整合准备条件。", ["弥生首长", "北九州社群"], ["国家形成", "区域竞争"]],

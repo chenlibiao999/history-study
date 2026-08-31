@@ -2,6 +2,7 @@ const path = require("node:path");
 const fs = require("node:fs");
 
 global.window = {};
+require(path.join(__dirname, "../data/time-utils.js"));
 require(path.join(__dirname, "../data/dynasties/shang/metadata.js"));
 require(path.join(__dirname, "../data/dynasties/shang/events.js"));
 require(path.join(__dirname, "../data/dynasties/shang/emperors.js"));
@@ -608,9 +609,7 @@ if (medievalWesternEuropeMaps.length && medievalWesternEuropeMaps.length < 2) {
 });
 
 function parseEventStartYear(time) {
-  const match = String(time || "").match(/^(前)?(\d{3,4})/);
-  if (!match) return null;
-  return Number(match[2]) * (match[1] ? -1 : 1);
+  return window.HISTORY_TIME.parseTimelineStartYear(time);
 }
 
 if (!Array.isArray(data.dynasties) || !data.dynasties.length) {
@@ -638,7 +637,9 @@ for (const event of data.events) {
   if (!event.id || !event.title || !event.time || !event.era || !event.summary) {
     errors.push(`${event.id || event.title}: 基础字段不完整`);
   }
-  if (!Array.isArray(event.process) || event.process.length === 0) {
+  const isOutline = event.contentLevel === "outline";
+  const hasLearningCase = Boolean(event.learningCase?.claim);
+  if (!isOutline && !hasLearningCase && (!Array.isArray(event.process) || event.process.length === 0)) {
     errors.push(`${event.title}: 缺少 process`);
   }
   if (!Array.isArray(event.people)) {
@@ -659,7 +660,7 @@ for (const event of data.events) {
       errors.push(`${event.title}: people.role 必须是字符串`);
     }
   }
-  if (unificationKeywords.some((keyword) => event.title.includes(keyword))) {
+  if (!isOutline && !hasLearningCase && unificationKeywords.some((keyword) => event.title.includes(keyword))) {
     if ((event.process || []).length < 5) {
       errors.push(`${event.title}: 统一战争类事件至少需要 5 个关键过程节点`);
     }
@@ -705,6 +706,25 @@ for (const event of data.events) {
   for (const alias of event.aliases || []) {
     if (bannedAliasLabels.has(alias)) errors.push(`${event.title}: aliases 含非真别名「${alias}」`);
     if (eventTitles.has(alias)) errors.push(`${event.title}: aliases 含另一个事件标题「${alias}」`);
+  }
+}
+
+let previousTimelineEvent = null;
+for (const event of data.events) {
+  const startYear = parseEventStartYear(event.time);
+  if (startYear === null) {
+    errors.push(`${event.id || event.title}: 时间字段无法用于时间线排序「${event.time}」`);
+    continue;
+  }
+  if (previousTimelineEvent && startYear < previousTimelineEvent.startYear) {
+    errors.push(`时间线排序倒退：${previousTimelineEvent.event.title}（${previousTimelineEvent.event.time}）之后出现 ${event.title}（${event.time}）`);
+  }
+  previousTimelineEvent = { event, startYear };
+}
+
+for (const event of data.events) {
+  if (!/^(?:约)?(?:前)?\d+(?:-(?:前)?\d+)?$/.test(event.time)) {
+    errors.push(`${event.id || event.title}: 时间字段未规范为统一年份格式「${event.time}」`);
   }
 }
 

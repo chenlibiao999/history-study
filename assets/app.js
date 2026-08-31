@@ -647,7 +647,7 @@
     meta.append(emperorMeta);
 
     renderPeopleChips(event);
-    renderParagraphs($("#backgroundContent"), event.background);
+    renderBackground(event);
     renderTerritoryPopulation(event);
     renderPoliticalMaps(event);
     renderProcess(event);
@@ -669,6 +669,57 @@
       chip.append(dot, textNode("span", "person-name", person.name), textNode("span", "person-role", person.role));
       row.append(chip);
     });
+  }
+
+  function renderBackground(event){
+    const container = $("#backgroundContent");
+    clear(container);
+    renderLearningCase(container, event.learningCase);
+    (event.background || []).forEach(paragraph => container.append(textNode("p", "", paragraph)));
+  }
+
+  function renderLearningCase(container, learningCase){
+    if (!learningCase) return;
+    const section = document.createElement("section");
+    section.className = "learning-case";
+    section.append(textNode("div", "learning-case-label", learningCase.label || "先抓住这个判断"));
+    section.append(textNode("p", "learning-case-claim", learningCase.claim));
+
+    const sections = document.createElement("div");
+    sections.className = "learning-case-sections";
+    (learningCase.sections || []).forEach(([title, content]) => {
+      const item = document.createElement("div");
+      item.className = "learning-case-section";
+      item.append(textNode("strong", "", title), textNode("p", "", content));
+      sections.append(item);
+    });
+    section.append(sections);
+
+    if (learningCase.evidence) {
+      const evidence = document.createElement("div");
+      evidence.className = "learning-evidence";
+      evidence.append(textNode("strong", "", learningCase.evidence.title), textNode("p", "", learningCase.evidence.content));
+      section.append(evidence);
+    }
+    if (learningCase.misconception) section.append(textNode("p", "learning-misconception", `不要这样记：${learningCase.misconception}`));
+
+    const memory = document.createElement("div");
+    memory.className = "learning-memory";
+    (learningCase.memory || []).forEach(item => memory.append(textNode("span", "learning-memory-item", item)));
+    section.append(memory);
+
+    const recall = document.createElement("button");
+    recall.type = "button";
+    recall.className = "learning-recall";
+    recall.textContent = learningCase.question;
+    recall.addEventListener("click", () => {
+      recall.classList.toggle("revealed");
+      recall.setAttribute("aria-expanded", String(recall.classList.contains("revealed")));
+      recall.lastChild.textContent = recall.classList.contains("revealed") ? learningCase.answer : "点击后查看答案";
+    });
+    recall.append(textNode("span", "learning-recall-answer", "点击后查看答案"));
+    section.append(recall);
+    container.append(section);
   }
 
   function renderParagraphs(container, paragraphs){
@@ -725,6 +776,27 @@
     }[type] || type || "待补";
   }
 
+  function eventStartYear(time){
+    const text = String(time || "");
+    const bce = text.match(/(?:约)?(?:前|公元前|BC|BCE)\s*(\d{1,4})/i);
+    if (bce) return -Number(bce[1]);
+    const bceCentury = text.match(/(?:约)?(?:前|公元前)\s*(\d{1,2})世纪/);
+    if (bceCentury) return -Number(bceCentury[1]) * 100;
+    const ce = text.match(/(\d{3,4})/);
+    return ce ? Number(ce[1]) : null;
+  }
+
+  function territoryRecordsForEvent(event, profile){
+    const year = eventStartYear(event.time);
+    if (year === null) return [];
+    return (profile.records || [])
+      .map(record => ({ record, distance: Math.abs(record.year - year) }))
+      .filter(item => item.distance <= 150)
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, 1)
+      .map(item => item.record);
+  }
+
   function renderTerritoryPopulation(event){
     const container = $("#territoryPopulationContent");
     if (!container) return;
@@ -754,7 +826,13 @@
     const note = profile.note || profile.sourceBasis;
     if (note) container.append(textNode("div", "territory-note", note));
 
-    (profile.records || []).forEach(record => {
+    const records = territoryRecordsForEvent(event, profile);
+    if (!records.length) {
+      container.append(textNode("div", "empty-state", "暂无与当前事件时间和主体直接匹配的疆域与人口记录。"));
+      return;
+    }
+
+    records.forEach(record => {
       const card = document.createElement("article");
       card.className = "territory-card";
 
@@ -938,7 +1016,13 @@
   function renderProcess(event){
     const list = $("#processList");
     clear(list);
-    event.process.forEach(item => {
+    const process = event.process || [];
+    const isTemplateProcess = process.length === 3 && process.every((item, index) => item.title === ["背景积累", "事件展开", "影响延伸"][index]);
+    if (!process.length || isTemplateProcess) {
+      list.append(textNode("div", "empty-state", "该条作为主线导航节点，暂不展示未经展开的过程叙事。"));
+      return;
+    }
+    process.forEach(item => {
       const row = document.createElement("div");
       row.className = "sub-event";
       const body = document.createElement("div");

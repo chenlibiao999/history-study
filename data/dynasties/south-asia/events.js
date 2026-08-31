@@ -18,7 +18,7 @@
       people: people(names, title), relations: [], background: [], process: [], results: learningCase ? [result] : [], debates: [],
       claims: learningCase ? [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["south-asia-britannica"], note: "核心判断以材料锚点为起点，具体年代和范围仍按史料类型分层理解。" }] : [],
       citations: learningCase ? [{ sourceId: "south-asia-britannica", reference: "南亚历史公开通史入口", status: "待逐条细核", plainText: `白话理解：${summary}`, note: "核心案例的材料锚点见正文；通史入口用于阶段核对。" }] : [],
-      learningCase, contentLevel, causalChain: [], sources: learningCase ? sources : [], reviewQuestions: learningCase ? [{ type: "主线理解", question: `${title}为什么重要？`, answer: result }] : [], notes: [], dynastyId, dynasty, topicIds: topics
+      learningCase, contentLevel, contentPresentation: "tiered", causalChain: [], sources: learningCase ? sources : [], reviewQuestions: learningCase ? [{ type: "主线理解", question: `${title}为什么重要？`, answer: result }] : [], notes: [], dynastyId, dynasty, topicIds: topics
     };
   };
   const learningCases = {

@@ -622,8 +622,9 @@
 
   function renderEvent(){
     const event = currentEvent();
-    const isOutline = event.contentLevel === "outline";
-    const isCondensed = event.contentLevel !== "core";
+    const isTiered = event.contentPresentation === "tiered";
+    const isOutline = isTiered && event.contentLevel === "outline";
+    const isCondensed = isTiered && event.contentLevel !== "core";
     const eventEmperors = emperors.filter(emperor => emperorRelatedEventIds(emperor).includes(event.id));
     $("#eventTitle").textContent = displayText(event.title, "未命名事件");
     $("#bookmarkBtn").classList.toggle("bookmarked", bookmarked.has(event.id));
@@ -636,7 +637,7 @@
       ["朝代", event.period, "accent"],
       ["地区", event.regions.join(" / "), ""],
       ["类型", event.topics.join(" · "), ""],
-      ["层级", isOutline ? "索引线索" : event.contentLevel === "core" ? "核心案例" : "主线节点", ""]
+      ["层级", !isTiered ? "待分层" : isOutline ? "索引线索" : event.contentLevel === "core" ? "核心案例" : "主线节点", ""]
     ].forEach(([label, value, tone]) => {
       const item = textNode("span", "meta-item", "");
       item.append(textNode("span", "meta-label", label), textNode("span", "meta-value " + tone, value));
@@ -683,7 +684,7 @@
   function renderBackground(event){
     const container = $("#backgroundContent");
     clear(container);
-    if (event.contentLevel !== "core") {
+    if (event.contentPresentation === "tiered" && event.contentLevel !== "core") {
       container.append(textNode("p", "", event.summary));
       if (event.contentLevel === "mainline") {
         const previous = (event.previousEventIds || []).map(id => events.find(item => item.id === id)?.title).filter(Boolean);

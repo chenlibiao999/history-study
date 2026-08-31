@@ -166,10 +166,14 @@
     const contentLevel = ["core", "mainline", "outline"].includes(event.contentLevel)
       ? event.contentLevel
       : event.learningCase?.claim ? "core" : "outline";
+    // 内容层级用于审计；只有完成模块级人工重写的数据才可切换到分层展示。
+    // 未标记的存量事件必须保留原有详情，不能因默认层级被隐藏正文。
+    const contentPresentation = event.contentPresentation === "tiered" ? "tiered" : "legacy";
     return {
       ...event,
       title,
       contentLevel,
+      contentPresentation,
       time: formatTimelineTimestamp(sourceTime) || "时间待核",
       sourceTime,
       timelineStartYear: timelineRange?.start ?? null,

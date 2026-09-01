@@ -168,3 +168,28 @@
     })
   ];
 })();
+
+(() => {
+  const parentByChild = {
+    "wzhou-major-enfeoffments": "wzhou-feudal-ritual-system",
+    "wzhou-yin-remnants-management": "wzhou-feudal-ritual-system",
+    "wzhou-royal-domain-ministerial-system": "wzhou-feudal-ritual-system",
+    "wzhou-luoyi-eastern-capital": "wzhou-duke-of-zhou-regency",
+    "wzhou-chengkang-peace": "wzhou-duke-of-zhou-regency",
+    "wzhou-zhao-south-campaign": "wzhou-yiwang-decline",
+    "wzhou-mu-western-campaigns": "wzhou-yiwang-decline",
+    "wzhou-gongwang-mi-state": "wzhou-yiwang-decline",
+    "wzhou-xiaowang-feizi-qin": "wzhou-yiwang-decline",
+    "wzhou-yiwang-boils-qi-ai": "wzhou-yiwang-decline",
+    "wzhou-guoren-riot": "wzhou-liwang-reform-crisis",
+    "wzhou-jianghan-frontier-pressure": "wzhou-xuanwang-restoration",
+    "wzhou-xuanwang-buji-qianmu": "wzhou-xuanwang-restoration",
+    "wzhou-xuanwang-taiyuan-census": "wzhou-xuanwang-restoration",
+    "wzhou-xuanwang-jiangrong-defeat": "wzhou-xuanwang-restoration",
+    "wzhou-you-wang-crisis": "wzhou-western-zhou-fall"
+  };
+  window.WESTERN_ZHOU_EMPERORS = window.WESTERN_ZHOU_EMPERORS.map((item) => ({
+    ...item,
+    relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentByChild[id] || id))]
+  }));
+})();

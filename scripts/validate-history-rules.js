@@ -836,7 +836,15 @@ if (shangEvents.length) {
 
 const westernZhouEvents = data.dynastyEvents?.["western-zhou"] || [];
 if (westernZhouEvents.length) {
-  const text = westernZhouEvents.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
+  const text = westernZhouEvents.map((event) => [
+    event.title,
+    event.era,
+    event.summary,
+    ...(event.aliases || []),
+    ...(event.background || []),
+    ...(event.results || []),
+    ...(event.process || []).flatMap((step) => [step.title, step.description])
+  ].join(" ")).join(" ");
   ["武王", "分封", "鲁", "齐", "燕", "卫", "晋", "宋", "殷遗民", "宗法", "周公", "三监", "成周", "王畿", "采邑", "成康", "昭王", "穆王", "共王", "懿王", "孝王", "非子", "夷王", "厉王", "国人暴动", "共和", "宣王", "不籍千亩", "料民太原", "千亩之战", "幽王", "犬戎"].forEach((keyword) => {
     if (!text.includes(keyword)) {
       errors.push(`西周主线缺少“${keyword}”覆盖`);

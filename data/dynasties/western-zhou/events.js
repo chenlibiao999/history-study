@@ -618,4 +618,69 @@
   };
   const coreIds = new Set(Object.keys(learningCases));
   window.WESTERN_ZHOU_EVENTS = window.WESTERN_ZHOU_EVENTS.map((item) => ({ ...item, contentLevel: coreIds.has(item.id) ? "core" : "outline", learningCase: learningCases[item.id] || null }));
+
+  // Process-only entries stay searchable through these core cases instead of occupying
+  // separate one-step cards. Their original dates and titles remain in `process`.
+  const originalById = new Map(window.WESTERN_ZHOU_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "wzhou-muye-zhou-founded": ["wzhou-muye-zhou-founded"],
+    "wzhou-feudal-ritual-system": ["wzhou-feudal-ritual-system", "wzhou-major-enfeoffments", "wzhou-yin-remnants-management", "wzhou-royal-domain-ministerial-system"],
+    "wzhou-duke-of-zhou-regency": ["wzhou-duke-of-zhou-regency", "wzhou-luoyi-eastern-capital", "wzhou-chengkang-peace"],
+    "wzhou-yiwang-decline": ["wzhou-zhao-south-campaign", "wzhou-mu-western-campaigns", "wzhou-gongwang-mi-state", "wzhou-yiwang-decline", "wzhou-xiaowang-feizi-qin", "wzhou-yiwang-boils-qi-ai"],
+    "wzhou-liwang-reform-crisis": ["wzhou-liwang-reform-crisis", "wzhou-guoren-riot"],
+    "wzhou-gonghe-regency": ["wzhou-gonghe-regency"],
+    "wzhou-xuanwang-restoration": ["wzhou-xuanwang-restoration", "wzhou-jianghan-frontier-pressure", "wzhou-xuanwang-buji-qianmu", "wzhou-xuanwang-taiyuan-census", "wzhou-xuanwang-jiangrong-defeat"],
+    "wzhou-western-zhou-fall": ["wzhou-you-wang-crisis", "wzhou-western-zhou-fall"]
+  };
+  const parentByChild = Object.fromEntries(Object.entries(mergePlans).flatMap(([parentId, ids]) => ids.map((id) => [id, parentId])));
+  const caseAdditions = {
+    "wzhou-yiwang-decline": {
+      label: "王室威望为何从扩张转为维护",
+      claim: "昭穆以后的战事、册命与西部封邑表明，西周中期的重点已从建立秩序转为维持王室对边疆和诸侯的可见控制。",
+      sections: [["变化", "昭王南征受挫、穆王西向经营与共懿时期的王命活动，显示周王仍能动员资源，却越来越依赖对既有网络的维护。"], ["连接", "孝王时期非子受封是西部治理的一环；它是理解秦早期位置的线索，不宜脱离西周王畿与边疆体系单独夸大。"]],
+      evidence: { title: "材料锚点：西周中期金文与后出王世叙事", content: "册命、赏赐和地名材料可观察王室活动；昭王南征等完整战事经过主要见于后出文献，细节须保留限度。" },
+      misconception: "把中期每一次用兵或封赏都解释为王权持续增强。",
+      memory: ["南征受挫", "西向维护", "边疆封邑"],
+      question: "西周中期的王权难题是什么？",
+      answer: "不是简单扩张，而是在边疆压力和诸侯网络中持续证明王室仍有分配资源、发布命令和组织动员的能力。"
+    },
+    "wzhou-xuanwang-restoration": {
+      label: "中兴为何没有消除晚周危机",
+      claim: "宣王恢复用兵和王命活动带来短期威望，但不籍千亩、料民太原与千亩之战显示资源汲取和边疆压力并未被解决。",
+      sections: [["恢复", "宣王以南北用兵、册命和朝廷活动重建王室可见度，使厉王危机后的权威获得有限修复。"], ["限度", "围绕籍田、料民和西北战事的记忆说明，恢复依赖的财政、劳役与军事基础本身就在承压。"]],
+      evidence: { title: "材料锚点：西周晚期金文、《诗经》及传世史书", content: "金文可见王命与征伐活动；不籍千亩、料民与千亩之战的具体制度含义和年份在传世叙事中仍需谨慎辨析。" },
+      misconception: "宣王中兴等于西周已经回到成康时期的稳定。",
+      memory: ["短期恢复", "资源压力", "西北失利"],
+      question: "宣王中兴的历史限度是什么？",
+      answer: "它恢复了王室声望和部分动员能力，却没有消除资源、诸侯关系与西北边疆的结构性压力。"
+    }
+  };
+  const summaryOverrides = {
+    "wzhou-feudal-ritual-system": "周初大封鲁、齐、燕、卫、晋、宋等诸侯，兼顾殷遗民安置；再以宗法、王畿、采邑和礼乐把亲属、地方与朝廷权力连为一体。",
+    "wzhou-duke-of-zhou-regency": "周公平定三监后营建成周以控制东方，成康时期的相对安定是这一重组的结果，而非脱离周初危机的独立事件。",
+    "wzhou-yiwang-decline": "昭王南征、穆王经营、共王与懿王王命、孝王封非子及夷王时期的变化，连成西周中期由扩张转向维护王室威望的过程。",
+    "wzhou-liwang-reform-crisis": "厉王强化资源控制引发国人暴动并出奔，财政与权力冲突由此转化为公开的王权合法性危机。",
+    "wzhou-xuanwang-restoration": "宣王以南北用兵重建威望；江汉边疆、不籍千亩、料民太原和千亩之战却显示财政、劳役与西北压力仍在累积。",
+    "wzhou-western-zhou-fall": "幽王的继承危机、申侯关系破裂与犬戎压力使镐京在前771年失守，西周终结；前770年以后的东迁另归春秋战国模块。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.WESTERN_ZHOU_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return {
+      ...item,
+      summary: summaryOverrides[id] || item.summary,
+      process: members.flatMap((member) => member.process.map((step) => ({
+        time: step.time,
+        title: `${member.title}：${step.title}`,
+        description: step.description
+      }))),
+      contentLevel: "core",
+      contentPresentation: "tiered",
+      learningCase: caseAdditions[id] || item.learningCase,
+      previousEventIds: index ? [keptIds[index - 1]] : [],
+      nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [],
+      mergedEventIds: members.slice(1).map((member) => member.id)
+    };
+  });
 })();

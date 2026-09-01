@@ -6,3 +6,24 @@ window.CENTRAL_ASIA_EMPERORS = [
   { dynastyId: "central-asia", title: "蒙古与帖木儿", name: "察合台、帖木儿与河中", years: "13-15世纪", summary: "蒙古征服重组中亚，帖木儿以撒马尔罕为中心建立跨区域帝国。", keyEvents: ["蒙古征服中亚", "帖木儿帝国与撒马尔罕"], relatedEventIds: ["central-asia-mongol-conquest", "central-asia-timur"] },
   { dynastyId: "central-asia", title: "近现代转型", name: "汗国、俄国、苏联与独立", years: "16-20世纪", summary: "布哈拉、希瓦、浩罕等汗国面对俄国扩张，苏联时期形成现代边界，1991年后中亚国家独立。", keyEvents: ["布哈拉、希瓦、浩罕汗国", "俄国征服中亚", "苏联民族划界", "中亚国家独立"], relatedEventIds: ["central-asia-khanates", "central-asia-russian-conquest", "central-asia-soviet-delimitation", "central-asia-independence"] }
 ];
+
+(() => {
+  const parentById = {
+    "central-asia-yuezhi-bactria-kushan": "central-asia-scythian-saka",
+    "central-asia-xiongnu-western-regions": "central-asia-scythian-saka",
+    "central-asia-hephthalites": "central-asia-turkic-khaganate",
+    "central-asia-western-turks-tang": "central-asia-turkic-khaganate",
+    "central-asia-karakhanids": "central-asia-samanids",
+    "central-asia-qara-khitai": "central-asia-mongol-conquest",
+    "central-asia-khwarazm": "central-asia-mongol-conquest",
+    "central-asia-chagatai-khanate": "central-asia-mongol-conquest",
+    "central-asia-timurid-renaissance": "central-asia-timur",
+    "central-asia-uzbek-shaybanids": "central-asia-khanates",
+    "central-asia-kazakh-hordes": "central-asia-khanates",
+    "central-asia-collectivization": "central-asia-basmachi"
+  };
+  window.CENTRAL_ASIA_EMPERORS = window.CENTRAL_ASIA_EMPERORS.map((item) => ({
+    ...item,
+    relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentById[id] || id))]
+  }));
+})();

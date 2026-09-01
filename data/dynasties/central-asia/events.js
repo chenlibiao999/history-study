@@ -61,4 +61,43 @@
     previousEventIds: index ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));
+
+  const promotedCases = {
+    "central-asia-scythian-saka": { label: "草原移动如何塑造绿洲世界", claim: "斯基泰、塞种、月氏和匈奴压力表明草原并非绿洲外部背景；迁徙、军事保护与商路竞争不断重排河中、巴克特里亚和西域的城市机会。", sections: [["移动不是空白", "骑射、牧场与联盟使草原社会能跨越很大空间，并与伊朗、黑海和绿洲交换金属、牲畜与权力资源。"], ["迁徙的后果", "月氏西迁进入巴克特里亚，改变了希腊化残余、伊朗语社群与北印度网络，最终为贵霜崛起提供条件。"], ["帝国竞争", "匈奴与汉朝的军事经营改变天山南北交通，说明西域始终是多方竞争的枢纽。"]], evidence: { title: "材料锚点：墓葬、钱币、汉文与希腊-罗马记载", content: "不同材料可观察移动、贸易与外部观察，但人群名称和政治边界不能被直接等同为固定民族国家。" }, misconception: "不能把草原史写成没有城市和制度的纯粹破坏力量。", memory: ["移动", "绿洲", "通道"] },
+    "central-asia-turkic-khaganate": { label: "草原帝国怎样连接城市与外交", claim: "突厥汗国及西突厥并非只靠骑兵征服；可汗权力需要借粟特商人、绿洲税收和与唐朝等帝国的册封-战争关系维持。", sections: [["汗国的资源", "草原军事联盟提供快速动员，但远距离统治必须接入商道与绿洲城市。"], ["粟特的角色", "商人社群在贸易、外交和信息流动中连接可汗、拜占庭、萨珊与中国。"], ["竞争性秩序", "西突厥、唐、吐蕃和地方城市的关系反复变化，安西体系不等于唐朝永久直接统治河中。"]], evidence: { title: "材料锚点：突厥碑铭、粟特文书与唐代记录", content: "文本分别体现不同政治视角，需把权力宣称和实际控制分开。" }, misconception: "不能把突厥汗国当成一个边界稳定、行政均质的现代国家。", memory: ["可汗", "粟特", "竞争"] },
+    "central-asia-samanids": { label: "伊斯兰化怎样与波斯语、突厥语共存", claim: "萨曼与喀喇汗时期的关键不是一种文化取代另一种，而是伊斯兰制度、波斯语城市文化和突厥政治群体在河中重新组合。", sections: [["城市与学术", "布哈拉等城市以税收、市场和学习网络支撑波斯语文学及伊斯兰知识。"], ["突厥伊斯兰化", "喀喇汗接受伊斯兰后，突厥语政治精英进入既有城市与法学网络，形成新的统治组合。"], ["长期影响", "这种组合影响新疆、河中和后续汗国，却不意味着各地语言、教派与生活方式完全一致。"]], evidence: { title: "材料锚点：钱币、碑铭、文学与法学文献", content: "可追踪政治身份和城市文化，但需要区分宫廷语言与地方社会实际使用。" }, misconception: "中亚伊斯兰化不是阿拉伯化，更不是一夜之间完成。", memory: ["布哈拉", "波斯语", "突厥伊斯兰化"] },
+    "central-asia-khanates": { label: "帖木儿之后的中亚为何多中心化", claim: "昔班尼入主河中、布哈拉-希瓦-浩罕并立与哈萨克草原联盟，共同说明后帖木儿时代的中亚按绿洲、牧场、商税和部族关系分配权力，而非走向单一国家。", sections: [["河中的改朝换代", "乌兹别克力量取代帖木儿后裔，政治中心转向布哈拉等绿洲城市。"], ["绿洲与草原", "汗国依赖灌溉、商税和联盟；哈萨克三玉兹则以牧场、亲族和军事关系组织权力。"], ["不是静止边缘", "多中心竞争本身塑造贸易、宗教与外交，也决定俄国进入前的政治条件。"]], evidence: { title: "材料锚点：汗国文书、旅行记与绿洲-草原地图", content: "外来旅行记常带帝国视角，需与地方文书和口述传统互证。" }, misconception: "不能把近代前中亚写成俄国进入前的政治真空。", memory: ["绿洲", "牧场", "多中心"] },
+    "central-asia-basmachi": { label: "苏维埃统治如何进入地方社会", claim: "革命后的中亚不是被平稳接管；巴斯马奇抵抗、集体化和定居化表明苏维埃权力通过战争、行政、强制改造与地方协商才进入日常生活。", sections: [["权力真空与抵抗", "征发、革命和政权更替把宗教、部族、地方精英与武装行动重新组织。"], ["社会改造", "集体化与定居化改变牧业、农业和迁徙方式，部分地区付出饥荒与人口流动的沉重代价。"], ["现代性的双面", "教育、工业和基础设施的扩展不能抹去强制政策的社会成本。"]], evidence: { title: "材料锚点：苏维埃行政档案、地方回忆与人口材料", content: "官方记录强调改造成果，地方叙述强调损失；两类材料必须并读。" }, misconception: "不能把苏维埃化简单视为纯粹进步或纯粹外来占领。", memory: ["抵抗", "强制改造", "社会代价"] },
+    "central-asia-independence": { label: "共和国为何成为独立国家", claim: "1991年独立继承的是苏联时期形成的共和国边界、官僚机构和经济联系；主权诞生并未自动解决水资源、能源、族群与跨境交通问题。", sections: [["继承而非从零开始", "五国以既有共和国为制度容器，行政精英和基础设施多数来自苏联时期。"], ["边界的现实", "划界不是古代身份的自然延续，却在独立后成为实际治理、资源分配和安全问题。"], ["区域互赖", "河流上游下游、能源和劳动力流动跨越国界，要求各国在主权之外持续协调。"]], evidence: { title: "材料锚点：1991年独立文件与后苏联区域协议", content: "国家文件说明主权主张，跨境资源协议可显示独立后的互赖压力。" }, misconception: "不能把1991年理解为历史问题已被民族国家一次性解决。", memory: ["继承", "边界", "互赖"] }
+  };
+  const mergePlans = {
+    "central-asia-scythian-saka": ["central-asia-scythian-saka", "central-asia-yuezhi-bactria-kushan", "central-asia-xiongnu-western-regions"],
+    "central-asia-turkic-khaganate": ["central-asia-hephthalites", "central-asia-turkic-khaganate", "central-asia-western-turks-tang"],
+    "central-asia-samanids": ["central-asia-samanids", "central-asia-karakhanids"],
+    "central-asia-mongol-conquest": ["central-asia-qara-khitai", "central-asia-khwarazm", "central-asia-mongol-conquest", "central-asia-chagatai-khanate"],
+    "central-asia-timur": ["central-asia-timur", "central-asia-timurid-renaissance"],
+    "central-asia-khanates": ["central-asia-uzbek-shaybanids", "central-asia-khanates", "central-asia-kazakh-hordes"],
+    "central-asia-basmachi": ["central-asia-basmachi", "central-asia-collectivization"]
+  };
+  const originalById = new Map(window.CENTRAL_ASIA_EVENTS.map((item) => [item.id, item]));
+  const canonicalById = new Map();
+  Object.entries(mergePlans).forEach(([parentId, members]) => members.forEach((id) => canonicalById.set(id, parentId)));
+  window.CENTRAL_ASIA_EVENTS = window.CENTRAL_ASIA_EVENTS
+    .filter((item) => !canonicalById.has(item.id) || canonicalById.get(item.id) === item.id)
+    .map((item, index, kept) => {
+      const members = mergePlans[item.id] || [item.id];
+      const learningCase = promotedCases[item.id] || item.learningCase;
+      return {
+        ...item,
+        process: members.map((id) => {
+          const source = originalById.get(id);
+          return { time: source.time, title: source.title, description: `${source.summary} 它在此处作为解释区域结构变化的过程节点，而不单独保留为摘要卡。` };
+        }),
+        results: [item.results[0] || item.summary], learningCase, contentLevel: "core", contentPresentation: "tiered",
+        claims: [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["central-asia-britannica", "central-asia-met"], note: "核心判断以材料锚点限定适用范围。" }],
+        citations: [{ sourceId: "central-asia-met", reference: learningCase.evidence.title, status: "待逐条细核", plainText: learningCase.evidence.content, note: "材料锚点用于提示证据类型及其边界。" }],
+        sources, reviewQuestions: [{ type: "主线理解", question: learningCase.label, answer: learningCase.claim }],
+        previousEventIds: index ? [kept[index - 1].id] : [], nextEventIds: index < kept.length - 1 ? [kept[index + 1].id] : []
+      };
+    });
 })();

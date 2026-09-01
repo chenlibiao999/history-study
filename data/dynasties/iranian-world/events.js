@@ -15,19 +15,25 @@
     bio: `${name}需要放在“${title}”的伊朗高原、帝国行政、宗教、边疆战争或跨区域交流中理解。`,
     events: [title]
   }));
-  const buildProcess = (title, summary, result, time) => [
+  /* const buildProcess = (title, summary, result, time) => [
     { time, title: "背景积累", description: `${title}发生前，伊朗高原的山地、绿洲、草原边缘、两河通道和波斯湾网络已经长期互动，事件是这些力量重新组合的节点。` },
     { time, title: "事件展开", description: `${summary} 学习时要区分核心王权、行省体系、贵族联盟、宗教合法性和边疆影响，不能只记王朝名称。` },
     { time, title: "影响延伸", description: `${result} 这会影响西亚、中亚、南亚、地中海和伊斯兰世界之间的政治、贸易与文化联系。` }
-  ];
-  const event = (id, title, era, time, summary, result, names, topics, regions = ["伊朗高原", "西亚"]) => ({
+  ]; */
+  const learningCases = {
+    "iranian-world-cyrus-empire": { label: "帝国如何容纳差异", claim: "居鲁士的扩张建立了跨区域框架，但稳定统治依赖地方精英、既有行政与政治妥协，而不是单纯军事征服。", sections: [["征服之后", "新巴比伦等地的既有城市与行政不能被立刻替换。"], ["合法性语言", "王权以解放、恢复秩序等方式争取地方承认。"], ["避免神话", "宽容政策有现实统治目的，不能写成现代人权宣言。"]], evidence: { title: "材料锚点：居鲁士圆柱与巴比伦材料", content: "该文本展示王权如何表述征服和秩序，须结合其政治宣传性质阅读。" }, misconception: "不要将居鲁士圆柱直接等同现代人权文件。", memory: ["征服", "地方行政", "合法性"] },
+    "iranian-world-darius-administration": { label: "行省不是一张静态地图", claim: "大流士的关键在于将贡赋、道路、官员和铭文结合成跨区域治理工具，但帝国控制强度在核心、行省与边缘并不相同。", sections: [["资源可见", "贡赋和铸币把多地资源纳入王权计算。"], ["通信可达", "道路与驿传让命令和情报能跨越长距离。"], ["边界仍有弹性", "行省名称不等于现代式统一行政控制。"]], evidence: { title: "材料锚点：贝希斯敦铭文与波斯波利斯贡使浮雕", content: "铭文叙述平乱和合法性，浮雕呈现帝国秩序；二者都是王权自我表达。" }, misconception: "不要把阿契美尼德行省图当成每处控制程度完全相同的国界。", memory: ["贡赋", "道路", "王权叙事"] },
+    "iranian-world-parthian-rise": { label: "贵族联盟怎样成为帝国", claim: "帕提亚依靠骑兵、伊朗贵族与两河城市资源构成帝国，其分权结构既提供弹性，也限制中央动员。", sections: [["东北起点", "阿尔萨息从边缘力量进入伊朗高原政治中心。"], ["双重资源", "骑兵军事传统与城市税收共同支撑扩张。"], ["制度代价", "贵族自治使帝国难以像萨珊那样集中。"]], evidence: { title: "材料锚点：钱币、古典叙事与城市遗址", content: "可显示王权符号和战争互动，但罗马作者叙事带有强烈对手视角。" }, misconception: "不要只把帕提亚记成卡莱战役的骑兵。", memory: ["贵族", "骑兵", "两河城市"] },
+    "iranian-world-sasanian-founding": { label: "为何重新集中王权", claim: "萨珊建立以更强的王权和祆教政治语言重组伊朗，但宗教、贵族和地方社会并未完全服从单一中心。", sections: [["取代帕提亚", "阿尔达希尔以法尔斯为基础挑战贵族联盟式旧秩序。"], ["国家语言", "王权与祆教传统互相赋权，塑造帝国认同。"], ["现实限制", "大贵族、边疆与多宗教社群仍是统治协商对象。"]], evidence: { title: "材料锚点：萨珊岩刻、钱币与铭文", content: "王权图像和称号展示集中化诉求，不能替代对地方治理的完整证明。" }, misconception: "不要把萨珊解释为完全统一、宗教单一的国家。", memory: ["法尔斯", "王权", "贵族协商"] },
+    "iranian-world-arab-conquest": { label: "帝国灭亡后什么仍在延续", claim: "萨珊的灭亡改变政权归属，却没有消除波斯语文化、地方精英和行政传统；伊朗的伊斯兰化是长期重组。", sections: [["战争窗口", "拜占庭—萨珊长期消耗削弱双方，阿拉伯军队抓住机会。"], ["政权替换", "两河和高原被纳入哈里发体系，但地方社会的转换速度不同。"], ["文化延续", "行政经验与波斯语文化在伊斯兰世界中继续发挥作用。"]], evidence: { title: "材料锚点：早期阿拉伯叙事、钱币与行政文书", content: "不同材料记录征服、税制和权力符号，需避免把后世叙事当作即时社会现实。" }, misconception: "不要把651年当作伊朗社会即时、彻底伊斯兰化的日期。", memory: ["战争消耗", "政权替换", "文化延续"] },
+    "iranian-world-safavid-founding": { label: "什叶派如何国家化", claim: "萨非将十二伊玛目什叶派提升为国家核心身份，既是宗教政策，也是整合军队、官僚和边疆竞争的国家建构。", sections: [["身份与权力", "国家化把多样宗教实践纳入王权定义的正统框架。"], ["外部边界", "与奥斯曼、乌兹别克的竞争使宗教身份具有地缘政治功能。"], ["并非瞬间完成", "地方社会的接受和制度化需要长期推进。"]], evidence: { title: "材料锚点：萨非诏令、钱币与宗教建筑", content: "国家材料能追踪政策方向，但不能自动代表所有社群的信仰实践。" }, misconception: "不要把萨非前后的伊朗社会写成一夜间完全同质化。", memory: ["国家化", "边疆竞争", "长期制度化"] },
+    "iranian-world-constitutional-revolution": { label: "立宪为何难以稳定", claim: "伊朗立宪革命把议会、财政主权和限制王权推入政治中心，但外部干涉、地方力量与军力不足限制了制度落地。", sections: [["争的是什么", "争议不仅是君主是否开明，更是税收、贷款和代表权由谁控制。"], ["外部压力", "英俄竞争使改革面对主权与安全的双重约束。"], ["遗留问题", "议会政治与强国家建设的张力延续到巴列维时期。"]], evidence: { title: "材料锚点：1906年宪法、议会记录与外交档案", content: "它们可追踪制度目标与外部干预，但各行动者立场需要并读。" }, misconception: "不要把立宪革命看成一次失败就毫无后果的事件。", memory: ["财政主权", "议会", "外部干预"] }
+  };
+  const event = (id, title, era, time, summary, result, names, topics, regions = ["伊朗高原", "西亚"]) => {
+    const learningCase = learningCases[id]; return {
     id, title, aliases: eventAliases[id] || [], era, period: dynasty, time, regions, topics, summary, bookmarked: false,
-    people: people(names, title), relations: [], background: [`${title}应结合伊朗高原作为两河、中亚、印度河和地中海之间的交界位置理解，重点看王权、宗教、行省和交通网络如何重组。`],
-    process: buildProcess(title, summary, result, time), results: [result], debates: [{ view: "学习提示", content: "伊朗高原帝国常有核心统治区、行省、附属和影响区差异，不能把最大影响范围都当成稳定行政疆域。" }],
-    claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["iranian-world-britannica"], note: "首版按主线学习版整理，具体铭文、古典作者、阿拉伯波斯文献和现代研究页码后续逐条补充。" }],
-    citations: [{ sourceId: "iranian-world-britannica", reference: "伊朗历史公开通史入口", status: "待逐条细核", plainText: `白话理解：${summary}`, note: "先提供可读释义；涉及帝国范围和古代战役细节时保持谨慎口径。" }],
-    causalChain: [], sources, reviewQuestions: [{ type: "主线理解", question: `${title}为什么重要？`, answer: result }], notes: [], dynastyId, dynasty, topicIds: topics
-  });
+    people: people(names, title), relations: [], background: [], process: [], results: learningCase ? [result] : [], debates: [], claims: learningCase ? [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["iranian-world-britannica", "iranian-world-met"], note: "核心结论按材料类型保留边界。" }] : [], citations: learningCase ? [{ sourceId: "iranian-world-met", reference: "伊朗世界博物馆与通史资料", status: "待逐条细核", plainText: `白话理解：${summary}`, note: "正文材料锚点限定该卡证据范围。" }] : [], learningCase, contentLevel: learningCase ? "core" : "mainline", contentPresentation: "tiered", causalChain: [], sources: learningCase ? sources : [], reviewQuestions: learningCase ? [{ type: "主线理解", question: learningCase.label, answer: result }] : [], notes: [], dynastyId, dynasty, topicIds: topics
+  }; };
   const rows = [
     ["iranian-world-elam-susa", "埃兰与苏萨早期国家", "埃兰与伊朗高原早期", "约前3200-前539", "苏萨和埃兰长期位于两河与伊朗高原之间，形成文字、王权、城市和山地资源网络。", "伊朗高原早期不是波斯帝国才开始，埃兰提供了两河东缘国家传统和区域交流底层。", ["埃兰诸王", "苏萨居民"], ["埃兰", "苏萨", "早期国家"], ["苏萨", "胡齐斯坦", "两河东缘"]],
     ["iranian-world-indo-iranian-plateau", "伊朗语人群进入高原", "埃兰与伊朗高原早期", "约前2-前1千纪", "伊朗语人群逐步进入和分布于高原、草原边缘和绿洲区域，与既有城市、山地和牧业社群互动。", "米底、波斯和后续伊朗身份的形成，需要放在迁徙、语言和地方社会融合中理解。", ["伊朗语人群", "高原社群"], ["伊朗语", "迁徙", "高原"], ["伊朗高原", "扎格罗斯"]],
@@ -58,5 +64,6 @@
     ["iranian-world-qajar-great-game", "恺加王朝与英俄压力", "近代伊朗", "1789-1906", "恺加王朝在俄国和英国扩张压力下失去高加索权益，并在财政、关税、贷款和特许权中受到外部牵制。", "近代伊朗主权危机来自内政财政弱化和英俄大国竞争共同作用。", ["恺加王朝", "俄国", "英国"], ["恺加", "英俄竞争", "主权危机"], ["伊朗", "高加索", "波斯湾"]],
     ["iranian-world-constitutional-revolution", "立宪革命与巴列维前夜", "近代伊朗", "1905-1925", "伊朗立宪革命要求限制王权、建立议会和改革财政，但外部干涉、地方割据和中央军力不足使改革反复。", "立宪革命开启现代伊朗政治议题，最终通向礼萨汗崛起和巴列维王朝建立。", ["立宪派", "恺加王朝", "礼萨汗"], ["立宪革命", "议会", "现代国家"], ["德黑兰", "伊朗"]]
   ];
-  window.IRANIAN_WORLD_EVENTS = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
+  const events = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
+  window.IRANIAN_WORLD_EVENTS = events.map((item, index) => ({ ...item, previousEventIds: index ? [events[index - 1].id] : [], nextEventIds: index < events.length - 1 ? [events[index + 1].id] : [] }));
 })();

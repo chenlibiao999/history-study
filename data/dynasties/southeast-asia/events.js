@@ -63,4 +63,45 @@
     previousEventIds: index ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));
+
+  const promotedCases = {
+    "southeast-asia-pagan": { label: "寺院经济怎样既支撑又限制王权", claim: "蒲甘依靠伊洛瓦底江流域、上座部佛教和寺院捐献整合资源；同一套土地与宗教网络也会分散财政和强化地方力量，不能只把瓦解归为蒙古入侵。", sections: [["河谷整合", "王权以稻作腹地、城镇和交通连接不同社群，上座部佛教提供跨地方的合法性语言。"], ["寺院与资源", "捐献把土地、劳力和声望固定在寺院网络中，既支持统治秩序，也限制中央可直接征调的资源。"], ["多重瓦解", "边疆压力、财政结构和地方政治共同作用；蒙古只是可见的外部触发因素之一。"]], evidence: { title: "材料锚点：蒲甘碑铭、佛塔与土地捐献记录", content: "碑铭和宗教建筑能观察捐献与王权关系；不能以一项材料单独计算全境财政或解释全部瓦解原因。" }, misconception: "蒲甘不是被蒙古一击就从完整国家变成空白。", memory: ["河谷", "寺院土地", "多重压力"] },
+    "southeast-asia-ayutthaya": { label: "泰语族王权如何在大陆竞争中重组", claim: "从素可泰到大城，泰语族王权以平原稻作、上座部佛教、港口贸易和战争中的人口转移积累力量；大陆竞争争夺的不只是边界，而是人力、河谷和城市节点。", sections: [["早期王权", "素可泰的碑铭、地方联盟和宗教传统提供一套泰语族王权的表达，却不是后世国家的完整起点。"], ["大城的优势", "湄南河下游把水稻平原、海外贸易和都城行政连在一起，使大城成为长期区域中心。"], ["战争与重建", "缅暹战争反复改写都城、人口和贡赋网络；迁徙与劳动力控制比现代式国界更关键。"]], evidence: { title: "材料锚点：碑铭、王朝编年史与河谷城市遗址", content: "材料能显示王权自我表述、战争和城市变化，但不同王朝叙事会放大自身正统性。" }, misconception: "不要把素可泰或大城直接等同于现代泰国，或把缅暹战争写成固定民族国家的边界战。", memory: ["平原", "港口", "人口转移"] },
+    "southeast-asia-philippines-spanish-american": { label: "菲律宾为何形成不同的殖民连接", claim: "菲律宾被纳入西班牙的马尼拉-阿卡普尔科体系，1898年后又进入美国殖民行政；太平洋贸易、天主教网络和教育制度使其路径不同于大陆和荷属群岛。", sections: [["马尼拉的中介", "太平洋白银与中国货物经马尼拉连接美洲和东亚，殖民中心首先是海上节点。"], ["宗教与地方社会", "传教和地方中介重塑社群关系，但各岛屿的控制与接受程度差异很大。"], ["政权转换", "美国接管并非独立，新的行政、教育和武力秩序延续了殖民性，1946年才形成正式独立。"]], evidence: { title: "材料锚点：马尼拉大帆船贸易记录与殖民行政档案", content: "贸易与行政材料可追踪跨太平洋联系，但主要反映殖民机构的视角。" }, misconception: "不能把菲律宾历史简单归入“东南亚都被欧洲直接统治”的同一路径。", memory: ["马尼拉", "太平洋", "政权转换"] }
+  };
+  const mergePlans = {
+    "southeast-asia-funan": ["southeast-asia-rice-bronze", "southeast-asia-maritime-routes", "southeast-asia-funan", "southeast-asia-champa", "southeast-asia-chenla"],
+    "southeast-asia-angkor-wat": ["southeast-asia-angkor-founding", "southeast-asia-angkor-wat", "southeast-asia-jayavarman-vii", "southeast-asia-angkor-decline"],
+    "southeast-asia-pagan": ["southeast-asia-pagan", "southeast-asia-pagan-decline"],
+    "southeast-asia-ayutthaya": ["southeast-asia-sukhothai", "southeast-asia-ayutthaya", "southeast-asia-burmese-siamese-wars"],
+    "southeast-asia-malacca": ["southeast-asia-malacca", "southeast-asia-portuguese-malacca"]
+  };
+  const originalById = new Map(window.SOUTHEAST_ASIA_EVENTS.map((item) => [item.id, item]));
+  const canonicalById = new Map();
+  Object.entries(mergePlans).forEach(([parentId, members]) => members.forEach((id) => canonicalById.set(id, parentId)));
+  window.SOUTHEAST_ASIA_EVENTS = window.SOUTHEAST_ASIA_EVENTS
+    .filter((item) => !canonicalById.has(item.id) || canonicalById.get(item.id) === item.id)
+    .map((item, index, kept) => {
+      const members = mergePlans[item.id] || [item.id];
+      const learningCase = promotedCases[item.id] || item.learningCase;
+      const absorbed = members.filter((id) => id !== item.id).map((id) => originalById.get(id));
+      return {
+        ...item,
+        aliases: item.aliases,
+        process: members.map((id) => {
+          const source = originalById.get(id);
+          return { time: source.time, title: source.title, description: `${source.summary} 这是本学习单元的因果步骤，必须连同前后资源、网络或权力关系阅读。` };
+        }),
+        results: [item.results[0] || item.summary],
+        learningCase,
+        contentLevel: "core",
+        contentPresentation: "tiered",
+        claims: [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["southeast-asia-britannica", "southeast-asia-met"], note: "材料锚点限定结论范围；古代政权范围与年代按证据类型理解。" }],
+        citations: [{ sourceId: "southeast-asia-met", reference: learningCase.evidence.title, status: "待逐条细核", plainText: learningCase.evidence.content, note: "材料锚点说明该卡的证据边界。" }],
+        sources,
+        reviewQuestions: [{ type: "主线理解", question: learningCase.label, answer: learningCase.claim }],
+        previousEventIds: index ? [kept[index - 1].id] : [],
+        nextEventIds: index < kept.length - 1 ? [kept[index + 1].id] : []
+      };
+    });
 })();

@@ -270,3 +270,10 @@ window.WESTERN_HAN_EMPERORS = [
     "dynastyId": "western-han"
   }
 ];
+
+(() => {
+  const parentByChild = {
+    "whan-liu-bang-founds-han": "whan-chu-han-transition", "whan-feudal-commandery-compromise": "whan-chu-han-transition", "whan-zhulu-purged": "whan-empress-lu-regency", "whan-confucian-state-ideology": "whan-emperor-wu-centralization", "whan-heqin-xiongnu": "whan-han-xiongnu-war", "whan-hexi-western-regions": "whan-han-xiongnu-war", "whan-zhang-qian-western-regions": "whan-han-xiongnu-war", "whan-western-regions-protectorate": "whan-han-xiongnu-war", "whan-salt-iron-monopolies": "whan-salt-iron-debate", "whan-luntai-edict": "whan-salt-iron-debate", "whan-huo-guang-regency": "whan-witchcraft-disaster", "whan-zhaoxuan-restoration": "whan-witchcraft-disaster", "whan-wang-clan-power": "whan-consort-clans-rise", "whan-late-western-han-crisis": "whan-consort-clans-rise", "whan-wang-mang-regency": "whan-consort-clans-rise"
+  };
+  window.WESTERN_HAN_EMPERORS = window.WESTERN_HAN_EMPERORS.map((item) => ({ ...item, relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentByChild[id] || id))], keyEvents: [...new Set(item.keyEvents.map((id) => parentByChild[id] || id))] }));
+})();

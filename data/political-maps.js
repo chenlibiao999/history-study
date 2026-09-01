@@ -209,9 +209,7 @@
           period: "西汉初",
           timeRange: "前195",
           eventIds: [
-            "whan-liu-bang-founds-han",
-            "whan-feudal-commandery-compromise",
-            "whan-heqin-xiongnu",
+            "whan-chu-han-transition",
             "whan-rebellion-seven-states"
           ],
           basis: referenceMapBasis,

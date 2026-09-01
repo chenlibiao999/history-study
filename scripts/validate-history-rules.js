@@ -897,7 +897,7 @@ if (qingEvents.length) {
     errors.push(`缺少${label}独立事件集合`);
     return;
   }
-  const text = events.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
+  const text = events.map((event) => [event.title, event.era, event.summary, ...(event.process || []).flatMap((step) => [step.title, step.description])].join(" ")).join(" ");
   keywords.forEach((keyword) => {
     if (!text.includes(keyword)) {
       errors.push(`${label}主线缺少「${keyword}」覆盖`);

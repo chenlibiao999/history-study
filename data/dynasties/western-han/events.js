@@ -2940,4 +2940,37 @@ window.WESTERN_HAN_EVENTS = [
     }
   };
   window.WESTERN_HAN_EVENTS = window.WESTERN_HAN_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const originalById = new Map(window.WESTERN_HAN_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "whan-chu-han-transition": ["whan-chu-han-transition", "whan-liu-bang-founds-han", "whan-feudal-commandery-compromise"],
+    "whan-empress-lu-regency": ["whan-empress-lu-regency", "whan-zhulu-purged"],
+    "whan-wenjing-governance": ["whan-wenjing-governance"],
+    "whan-rebellion-seven-states": ["whan-rebellion-seven-states"],
+    "whan-emperor-wu-centralization": ["whan-emperor-wu-centralization", "whan-confucian-state-ideology"],
+    "whan-han-xiongnu-war": ["whan-heqin-xiongnu", "whan-han-xiongnu-war", "whan-hexi-western-regions", "whan-zhang-qian-western-regions", "whan-western-regions-protectorate"],
+    "whan-salt-iron-debate": ["whan-salt-iron-monopolies", "whan-luntai-edict", "whan-salt-iron-debate"],
+    "whan-witchcraft-disaster": ["whan-witchcraft-disaster", "whan-huo-guang-regency", "whan-zhaoxuan-restoration"],
+    "whan-consort-clans-rise": ["whan-consort-clans-rise", "whan-wang-clan-power", "whan-late-western-han-crisis", "whan-wang-mang-regency"]
+  };
+  const caseAdditions = {
+    "whan-empress-lu-regency": { label: "幼主继承如何让外戚进入权力中心", claim: "吕后临朝并非单纯个人专权：高祖死后，幼主、皇后家族和刘氏宗室缺少稳定权力边界，诸吕封王把临时辅政扩大为继承危机。", sections: [["进入", "太后在幼主时期掌握宫廷与诏令入口，能以任用亲属填补权力真空。"], ["反弹", "诸吕政治触碰刘氏宗室与功臣集团的继承底线，吕后死后清除诸吕并迎立文帝才重置秩序。"]], evidence: { title: "材料锚点：《史记·吕太后本纪》《汉书·高后纪》", content: "两种叙事都带有后世褒贬，应重点观察封王、继承与政变程序，而不是把外戚政治化约为性格评语。" }, misconception: "吕后时期只是西汉主线之外的宫廷插曲。", memory: ["幼主", "诸吕封王", "刘氏反弹"], question: "吕后临朝为何影响西汉后续政治？", answer: "它暴露了皇帝继承时外戚、宗室与官僚之间缺少稳定边界的风险。" },
+    "whan-wenjing-governance": { label: "轻徭薄赋为何是恢复国家能力", claim: "文景时期的节制并非什么都不做，而是在秦末、楚汉和诸侯政治之后降低征发强度、修复农业与财政，为后来扩张提供可动员的社会基础。", sections: [["恢复", "减少劳役和刑罚压力，有助于让战乱后的人口、土地与基层行政重新稳定。"], ["限度", "文景之治不是没有矛盾的静态黄金时代；诸侯国力量仍须经七国之乱处理。"]], evidence: { title: "材料锚点：《史记》《汉书》的文景纪事与汉初制度材料", content: "正史的治世叙事带有后世理想化色彩，应结合赋役、诸侯与人口恢复的具体问题理解。" }, misconception: "轻徭薄赋等于中央国家能力弱。", memory: ["战后恢复", "降低征发", "扩张基础"], question: "文景政策为何是武帝扩张的前提？", answer: "国家必须先恢复人口、财政和基层秩序，才有能力承担后来的长期动员。" },
+    "whan-consort-clans-rise": { label: "外戚网络如何从辅政走向代汉", claim: "西汉后期的外戚、王氏权力、财政社会压力与王莽摄政相互叠加，代汉不是某个野心家的孤立行动，而是继承与官僚网络长期失衡的终点。", sections: [["网络", "太后家族在幼主和继承转换中进入核心决策层，王氏借人事与宫廷位置将临时监护扩大为持续影响。"], ["终局", "王莽以复古与救弊语言取得摄政合法性，却面对晚西汉已积累的土地、财政与社会矛盾。"]], evidence: { title: "材料锚点：《汉书·元后传》《王莽传》及西汉晚期制度记录", content: "人物褒贬浓厚；应把外戚任用、摄政程序和社会危机分层阅读，而非只接受道德化叙事。" }, misconception: "王莽代汉只因个人善于伪装。", memory: ["幼主入口", "王氏网络", "摄政代汉"], question: "为何王莽能取得代汉的政治条件？", answer: "外戚网络已长期进入权力中心，晚期危机又使其复古与救弊主张获得了可操作的合法性。" }
+  };
+  const summaryOverrides = {
+    "whan-chu-han-transition": "楚汉终局、刘邦称帝与郡国并行共同说明：汉的建立既继承关中行政资源，也必须安置功臣诸侯并处理中央与地方的张力。",
+    "whan-empress-lu-regency": "吕后临朝与诸吕政治把幼主继承、外戚辅政和刘氏宗室反弹连成一条危机链，诸吕被诛后才重建文帝继承。",
+    "whan-emperor-wu-centralization": "汉武帝以内朝、刺史和推恩重组权力，同时以儒学国家化提供官僚选拔与政治秩序语言；这些措施处理的是不同层次的集权问题。",
+    "whan-han-xiongnu-war": "汉朝对匈奴从和亲转为进攻，河西经营、张骞出使与西域都护使北方战略从战场延伸为走廊、交通与边疆行政体系。",
+    "whan-salt-iron-debate": "盐铁官营、轮台诏与盐铁会议围绕武帝扩张遗留的财政压力展开，争点是边防国用、地方负担与国家干预的限度。",
+    "whan-witchcraft-disaster": "巫蛊之祸摧毁储君继承，霍光辅政和昭宣恢复是在这一断裂后重建皇权与官僚秩序的尝试。",
+    "whan-consort-clans-rise": "外戚、王氏网络、晚西汉危机与王莽摄政逐步汇合，西汉终结于继承、官僚与社会问题无法相互制衡的局面。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.WESTERN_HAN_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+  });
 })();

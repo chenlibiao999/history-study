@@ -4897,4 +4897,45 @@ window.LH3K_EVENTS = [
     "lh3k-wei-conquers-shu": { label: "魏灭蜀为何能突破蜀汉防线", claim: "263年伐蜀的成功来自多路牵制、蜀汉内部疲弊和邓艾非常规穿越的叠加。它不是“蜀道难所以不可攻”的反例，而是说明地理防线一旦被绕过、守方协同失灵，优势会迅速逆转。", sections: [["为何此时出兵", "司马昭需以外战巩固权威，蜀汉长期北伐与内部政治消耗使其防御弹性下降。"], ["多路进攻", "钟会正面牵制、诸路协同迫使蜀军分散；邓艾越阴平形成对成都方向的意外压力。"], ["战争之后", "蜀降后钟会之乱反而说明占领和军权处置比攻入成都更困难。"]], evidence: { title: "材料锚点：《三国志·邓艾传》《钟会传》", content: "行军路线与细节仍可讨论，但多路作战、守方困境和战后变乱构成稳定的理解骨架。" }, misconception: "不要把蜀亡归为单一人物投降或单一奇袭；战略疲弊与接收风险都不可省略。", memory: ["司马昭外战", "多路牵制", "攻下不等于接收"], question: "灭蜀后钟会之乱说明了什么？", answer: "征服成功不代表统治稳定，远征军权与新占地区的整合仍可能制造新的危机。" }
   };
   window.LH3K_EVENTS = window.LH3K_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const originalById = new Map(window.LH3K_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "lh3k-provincial-governors-militarized": ["lh3k-partisan-prohibitions", "lh3k-yellow-turban-rebellion", "lh3k-provincial-governors-militarized"],
+    "lh3k-hejin-eunuchs-crisis": ["lh3k-hejin-eunuchs-crisis", "lh3k-dong-zhuo-enters-luoyang", "lh3k-li-jue-guo-si-chaos", "lh3k-warlords-rise"],
+    "lh3k-cao-cao-controls-emperor": ["lh3k-cao-cao-qingzhou-army", "lh3k-xuzhou-liubei-lubu", "lh3k-yuan-shu-claims-emperor", "lh3k-cao-cao-controls-emperor"],
+    "lh3k-guandu-battle": ["lh3k-guandu-battle", "lh3k-cao-cao-unifies-hebei"],
+    "lh3k-chibi-battle": ["lh3k-sun-family-jiangdong", "lh3k-liubiao-jingzhou", "lh3k-longzhong-strategy", "lh3k-chibi-battle"],
+    "lh3k-liubei-enters-shu": ["lh3k-liubei-enters-shu", "lh3k-hanzhong-campaign"],
+    "lh3k-guan-yu-loses-jingzhou": ["lh3k-guan-yu-loses-jingzhou", "lh3k-yiling-battle"],
+    "lh3k-caopi-replaces-han": ["lh3k-caopi-replaces-han", "lh3k-nine-rank-system"],
+    "lh3k-sunquan-emperor-wu-shu-alliance": ["lh3k-hefei-jianghuai-front", "lh3k-sunquan-emperor-wu-shu-alliance"],
+    "lh3k-zhuge-liang-northern-expeditions": ["lh3k-zhuge-liang-northern-expeditions", "lh3k-jiang-wei-northern-expeditions"],
+    "lh3k-gaopingling-coup": ["lh3k-gongsun-liaodong", "lh3k-gaopingling-coup", "lh3k-shouchun-rebellions", "lh3k-caomao-death"],
+    "lh3k-wei-conquers-shu": ["lh3k-wei-conquers-shu", "lh3k-zhonghui-rebellion", "lh3k-jin-replaces-wei", "lh3k-late-wu-politics"]
+  };
+  const caseAdditions = {
+    "lh3k-hejin-eunuchs-crisis": { label: "宫廷危机为何会把首都交给军阀", claim: "何进无法在宫廷内部制衡宦官，转而召外兵；董卓、李傕郭汜相继控制洛阳，使皇帝与首都从制度中心变成军阀争夺的资源。", sections: [["失效", "继承、人事和禁军控制相互僵持，任何一方都缺少可被共同承认的处置程序。"], ["外溢", "外军入京本为解决宫廷危机，却让地方武装获得决定首都政治的合法入口。"]], evidence: { title: "材料锚点：《后汉书》何进、董卓传与献帝纪", content: "人物动机叙事各有差异，但外兵入京和其后首都反复易手构成稳定的结构事实。" }, misconception: "董卓入京只是单一野心家造成的偶然事故。", memory: ["宫廷僵局", "召外兵", "首都军阀化"], question: "何进事件为何改变东汉终局？", answer: "它使地方军队能直接决定皇帝和朝廷的归属，中央再难恢复独立裁决能力。" },
+    "lh3k-caopi-replaces-han": { label: "魏代汉为何需要保留禅让形式", claim: "曹丕代汉并非只换国号：它借受禅程序继承汉的官僚与正统语言，同时以九品中正制解决战争后选官信息不足的问题。", sections: [["合法性", "保留禅让形式能降低官僚和地方精英接受政权更替的成本。"], ["制度", "九品中正把中央任官与地方品评连接，短期重建选官，长期强化士族门第。"]], evidence: { title: "材料锚点：《三国志·文帝纪》与魏晋职官材料", content: "受禅文书显示政治语言，制度志与碑刻可补充选官的实际运行。" }, misconception: "曹丕称帝只是曹操去世后的自然结果。", memory: ["受禅形式", "继承汉制", "九品选官"], question: "魏代汉为何不直接废弃汉的政治语言？", answer: "新政权仍需要官僚与精英认可，汉的制度和正统形式是可利用的组织资源。" },
+    "lh3k-sunquan-emperor-wu-shu-alliance": { label: "吴国为何能守住江南却难以北进", claim: "江淮前线限制吴国北上，孙权称帝与吴蜀联盟确认三国并立；江南水网与区域资源支持防御，却不足以轻易穿透魏国北方腹地。", sections: [["防御", "长江与江淮使吴军可利用水军和本地补给，对北军形成进入成本。"], ["限度", "合肥等前线说明地理同样限制吴国北进，吴蜀联盟也无法消除两国的资源和利益差异。"]], evidence: { title: "材料锚点：《三国志》吴主传、合肥相关传记", content: "战役细节常受各方叙事影响，但江淮对峙与吴蜀同盟的战略约束较明确。" }, misconception: "吴蜀联盟是永久稳固的共同国家。", memory: ["长江防御", "合肥限制", "并立联盟"], question: "吴国的地理优势为何没有变成北方统一优势？", answer: "它更适合提高防御与水战能力，而北进仍要面对江淮关口和魏国更大的资源纵深。" },
+    "lh3k-liubei-enters-shu": { label: "蜀汉为何必须先取得益州与汉中", claim: "刘备入蜀与汉中争夺的意义，在于把流动作战集团转为拥有粮源、人口与险阻的区域政权；没有这一基本盘，蜀汉无法成为三方之一。", sections: [["益州", "益州提供相对完整的农业腹地与地方行政资源，使刘备不再只依附荆州和盟友。"], ["汉中", "汉中控制秦岭南北通道，既是益州北面的防线，也是蜀汉与曹魏争夺战略主动权的出口。"]], evidence: { title: "材料锚点：《三国志·先主传》《法正传》及汉中地理", content: "入蜀的合法性叙事有后见之明，应结合益州资源和汉中通道理解其战略效果。" }, misconception: "刘备得蜀只是一次机会主义扩张。", memory: ["益州腹地", "汉中通道", "政权基本盘"], question: "为何说益州和汉中共同塑造蜀汉？", answer: "益州提供资源，汉中提供防线与北向通道，两者才使蜀汉具有持续竞争的条件。" },
+    "lh3k-zhuge-liang-northern-expeditions": { label: "蜀汉北伐为何难以改变三国均势", claim: "诸葛亮、姜维北伐的难题不是意志不足，而是蜀汉人口、粮道和单一汉中通道难以长期对抗曹魏更大的资源腹地；进攻还能维持战略压力，却难以取得决定性突破。", sections: [["目的", "北伐既为争取关中，也为维持蜀汉内部动员与正统叙事，不能只用成败衡量。"], ["约束", "翻越秦岭的补给、有限兵源与魏军纵深使速胜困难；持续远征又会消耗本已狭窄的资源基础。"]], evidence: { title: "材料锚点：《三国志》诸葛亮、姜维传与后出北伐叙事", content: "军事细节和责任归属争议很大，但资源不对称和通道约束是理解多次北伐的稳定框架。" }, misconception: "北伐失败只因某次用人或天气。", memory: ["正统压力", "秦岭粮道", "资源不对称"], question: "北伐为何能反复发动却难以统一？", answer: "它有政治与战略必要性，但蜀汉难以持续克服补给、人口和魏国纵深带来的结构差距。" }
+  };
+  const summaryOverrides = {
+    "lh3k-provincial-governors-militarized": "党锢削弱制度内调节，黄巾危机迫使中央授权州牧募兵，军政财资源遂由临时平叛工具转化为地区首长的长期基础。",
+    "lh3k-hejin-eunuchs-crisis": "何进与宦官危机、董卓入洛阳、李傕郭汜之乱使首都无法再裁决军阀竞争，地方武装由此成为重组天下的主体。",
+    "lh3k-cao-cao-controls-emperor": "曹操以青州兵、许都朝廷和对各地竞争者的处置控制献帝，把汉室名义、诏令与官僚人事转为北方扩张的组织优势。",
+    "lh3k-guandu-battle": "官渡围绕补给与内部协调决定北方主导权，曹操随后平定河北才把战役优势转为更完整的人口和财政基础。",
+    "lh3k-chibi-battle": "孙氏经营江东、荆州局势和隆中路线为赤壁提供条件；孙刘合作挫败曹操南下，否定了北方迅速统一江南的可能。",
+    "lh3k-guan-yu-loses-jingzhou": "失荆州终结孙刘在长江中游的权宜合作，夷陵战败又固定蜀吴边界，使蜀汉失去两路北上的地理结构。",
+    "lh3k-caopi-replaces-han": "曹丕代汉结束东汉名义，九品中正制以地方品第重建选官信息渠道，却为魏晋门阀化提供制度条件。",
+    "lh3k-sunquan-emperor-wu-shu-alliance": "合肥与江淮对峙限制吴国北进，孙权称帝及吴蜀联盟确认三国并立，但联盟始终是面对魏国压力的有限协作。",
+    "lh3k-gaopingling-coup": "辽东经营、高平陵政变、淮南叛乱和曹髦之死显示司马氏逐步掌握军政与人事，曹魏皇帝虽在位却失去独立组织力量。",
+    "lh3k-wei-conquers-shu": "魏灭蜀、钟会之乱、晋代魏与吴末政治说明征服和接收交织：司马氏先以外战巩固权威，最终以晋朝完成对三国格局的终结。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.LH3K_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+  });
 })();

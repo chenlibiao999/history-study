@@ -521,3 +521,8 @@ window.LH3K_EMPERORS = [
     "sourceUrl": "https://zh.wikisource.org/wiki/資治通鑑"
   }
 ];
+
+(() => {
+  const parentByChild = { "lh3k-partisan-prohibitions": "lh3k-provincial-governors-militarized", "lh3k-yellow-turban-rebellion": "lh3k-provincial-governors-militarized", "lh3k-dong-zhuo-enters-luoyang": "lh3k-hejin-eunuchs-crisis", "lh3k-li-jue-guo-si-chaos": "lh3k-hejin-eunuchs-crisis", "lh3k-warlords-rise": "lh3k-hejin-eunuchs-crisis", "lh3k-cao-cao-qingzhou-army": "lh3k-cao-cao-controls-emperor", "lh3k-xuzhou-liubei-lubu": "lh3k-cao-cao-controls-emperor", "lh3k-yuan-shu-claims-emperor": "lh3k-cao-cao-controls-emperor", "lh3k-cao-cao-unifies-hebei": "lh3k-guandu-battle", "lh3k-sun-family-jiangdong": "lh3k-chibi-battle", "lh3k-liubiao-jingzhou": "lh3k-chibi-battle", "lh3k-longzhong-strategy": "lh3k-chibi-battle", "lh3k-hanzhong-campaign": "lh3k-liubei-enters-shu", "lh3k-yiling-battle": "lh3k-guan-yu-loses-jingzhou", "lh3k-nine-rank-system": "lh3k-caopi-replaces-han", "lh3k-hefei-jianghuai-front": "lh3k-sunquan-emperor-wu-shu-alliance", "lh3k-jiang-wei-northern-expeditions": "lh3k-zhuge-liang-northern-expeditions", "lh3k-gongsun-liaodong": "lh3k-gaopingling-coup", "lh3k-shouchun-rebellions": "lh3k-gaopingling-coup", "lh3k-caomao-death": "lh3k-gaopingling-coup", "lh3k-zhonghui-rebellion": "lh3k-wei-conquers-shu", "lh3k-jin-replaces-wei": "lh3k-wei-conquers-shu", "lh3k-late-wu-politics": "lh3k-wei-conquers-shu" };
+  window.LH3K_EMPERORS = window.LH3K_EMPERORS.map((item) => ({ ...item, relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentByChild[id] || id))], keyEvents: [...new Set(item.keyEvents.map((id) => parentByChild[id] || id))] }));
+})();

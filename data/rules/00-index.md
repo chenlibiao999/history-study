@@ -29,6 +29,7 @@
 | AUD | `09-audit-and-acceptance.md` | 自动审计与验收 |
 | SYNC | `10-rule-sync.md` | 规则变更和文档同步 |
 | REWRITE | `11-upgrade-rewrite.md` | 分层重写、资料归位与全库验收 |
+| REC | `12-east-asia-rewrite-review.md` | 东亚重写验收与待核历史判断 |
 
 ## 当前残余
 

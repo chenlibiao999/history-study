@@ -641,7 +641,7 @@
       ["朝代", event.period, "accent"],
       ["地区", event.regions.join(" / "), ""],
       ["类型", event.topics.join(" · "), ""],
-      ["层级", !isTiered ? "待分层" : isOutline ? "索引线索" : event.contentLevel === "core" ? "核心案例" : "主线节点", ""]
+      ["层级", isOutline ? "索引线索" : event.contentLevel === "core" ? "核心案例" : "主线节点", !isTiered ? "完整内容保留" : ""]
     ].forEach(([label, value, tone]) => {
       const item = textNode("span", "meta-item", "");
       item.append(textNode("span", "meta-label", label), textNode("span", "meta-value " + tone, value));

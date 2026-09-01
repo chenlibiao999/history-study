@@ -302,7 +302,7 @@
           timeRange: "622-750",
           eventIds: [
             "islamic-world-hijra-medina",
-            "islamic-world-yarmuk-qadisiyya",
+            "islamic-world-rashidun-ridda",
             "islamic-world-umayyad-caliphate"
           ],
           basis: referenceMapBasis,

@@ -7,3 +7,22 @@ window.ISLAMIC_WORLD_EMPERORS = [
   { dynastyId: "islamic-world", title: "蒙古冲击与重组", name: "伊儿汗、帖木儿和区域苏丹国", years: "13-15世纪", summary: "蒙古征服摧毁巴格达政治中心，但伊斯兰制度和波斯语文化在新王朝中重组。", keyEvents: ["蒙古攻陷巴格达", "伊儿汗国伊斯兰化", "帖木儿时代的伊斯兰文化圈"], relatedEventIds: ["islamic-world-mongol-baghdad", "islamic-world-ilkhanate-islamization", "islamic-world-timurid-cultural-world"] },
   { dynastyId: "islamic-world", title: "火药帝国与近代", name: "奥斯曼、萨法维、莫卧儿", years: "1453-1924", summary: "三大帝国以军政、宗教身份和跨区域贸易整合伊斯兰世界，并在近代面对欧洲扩张与民族国家转型。", keyEvents: ["奥斯曼夺取君士坦丁堡", "萨法维与什叶派伊朗", "莫卧儿帝国高峰", "奥斯曼改革与哈里发终结"], relatedEventIds: ["islamic-world-ottoman-constantinople", "islamic-world-safavid-shia", "islamic-world-mughal-akbar", "islamic-world-ottoman-tanzimat-caliphate-end"] }
 ];
+
+// 与事件卡合并保持同步：阶段索引只指向仍可打开的父学习单元。
+(() => {
+  const parentById = {
+    "islamic-world-late-antique-arabia": "islamic-world-hijra-medina",
+    "islamic-world-muhammad-arabia": "islamic-world-hijra-medina",
+    "islamic-world-yarmuk-qadisiyya": "islamic-world-rashidun-ridda",
+    "islamic-world-tours-talass": "islamic-world-umayyad-caliphate",
+    "islamic-world-cordoba-caliphate": "islamic-world-regional-dynasties",
+    "islamic-world-fatimid-cairo": "islamic-world-regional-dynasties",
+    "islamic-world-mamluk-ayn-jalut": "islamic-world-mongol-baghdad",
+    "islamic-world-ilkhanate-islamization": "islamic-world-mongol-baghdad",
+    "islamic-world-timurid-cultural-world": "islamic-world-mongol-baghdad"
+  };
+  window.ISLAMIC_WORLD_EMPERORS = window.ISLAMIC_WORLD_EMPERORS.map((item) => ({
+    ...item,
+    relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentById[id] || id))]
+  }));
+})();

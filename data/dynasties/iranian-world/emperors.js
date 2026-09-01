@@ -6,3 +6,15 @@ window.IRANIAN_WORLD_EMPERORS = [
   { dynastyId: "iranian-world", title: "伊斯兰化与波斯复兴", name: "塔希尔、萨法尔、萨曼与布益", years: "9-11世纪", summary: "伊朗高原在伊斯兰政治框架中重建波斯语文化和地方王权。", keyEvents: ["塔希尔、萨法尔与地方王朝", "萨曼王朝与新波斯语文化", "布益王朝进入巴格达"], relatedEventIds: ["iranian-world-local-dynasties", "iranian-world-samanid-persian", "iranian-world-buyids-baghdad"] },
   { dynastyId: "iranian-world", title: "早期近代与近代", name: "萨非、阿夫沙尔、恺加", years: "1501-1925", summary: "萨非王朝塑造什叶派伊朗国家框架，近代伊朗面对俄英压力和宪政革命。", keyEvents: ["萨非王朝建立", "阿巴斯一世改革", "纳迪尔沙扩张", "恺加王朝与英俄压力", "立宪革命与巴列维前夜"], relatedEventIds: ["iranian-world-safavid-founding", "iranian-world-abbas-reforms", "iranian-world-nader-shah", "iranian-world-qajar-great-game", "iranian-world-constitutional-revolution"] }
 ];
+
+(() => {
+  const parentById = {
+    "iranian-world-indo-iranian-plateau": "iranian-world-elam-susa", "iranian-world-medes-assyria": "iranian-world-elam-susa",
+    "iranian-world-cambyses-egypt": "iranian-world-cyrus-empire", "iranian-world-greco-persian-wars": "iranian-world-darius-administration", "iranian-world-persepolis-court": "iranian-world-darius-administration",
+    "iranian-world-alexander-fall": "iranian-world-parthian-rise", "iranian-world-seleucid-iran": "iranian-world-parthian-rise", "iranian-world-carrhae": "iranian-world-parthian-rise",
+    "iranian-world-shapur-rome": "iranian-world-sasanian-founding", "iranian-world-khosrow-reforms": "iranian-world-sasanian-founding", "iranian-world-late-sasanian-war": "iranian-world-arab-conquest",
+    "iranian-world-local-dynasties": "iranian-world-samanid-persian", "iranian-world-buyids-baghdad": "iranian-world-samanid-persian", "iranian-world-seljuk-iran": "iranian-world-samanid-persian",
+    "iranian-world-timurid-iran": "iranian-world-mongol-ilkhanate", "iranian-world-abbas-reforms": "iranian-world-safavid-founding", "iranian-world-qajar-great-game": "iranian-world-constitutional-revolution"
+  };
+  window.IRANIAN_WORLD_EMPERORS = window.IRANIAN_WORLD_EMPERORS.map((item) => ({ ...item, relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentById[id] || id))] }));
+})();

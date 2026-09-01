@@ -137,7 +137,7 @@
   "朝鲜建国": "korea-joseon-foundation",
   "丙子胡乱": "korea-manchu-invasions",
   "阿克巴整合帝国": "south-asia-akbar-integration",
-  "霍斯劳改革与萨珊高峰": "iranian-world-khosrow-reforms",
+  "霍斯劳改革与萨珊高峰": "iranian-world-sasanian-founding",
   "1905革命": "russian-eastern-europe-1905",
   "澳大利亚殖民与原住民 dispossession": "oceania-world-australia-colony"
   };

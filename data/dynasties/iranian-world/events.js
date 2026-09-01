@@ -66,4 +66,41 @@
   ];
   const events = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
   window.IRANIAN_WORLD_EVENTS = events.map((item, index) => ({ ...item, previousEventIds: index ? [events[index - 1].id] : [], nextEventIds: index < events.length - 1 ? [events[index + 1].id] : [] }));
+
+  const promotedCases = {
+    "iranian-world-elam-susa": { label: "波斯之前，高原如何进入国家网络", claim: "埃兰、伊朗语人群与米底的历史说明伊朗高原不是波斯帝国的空白前史；山地、两河东缘、迁徙和地方政治长期共同塑造了国家形成条件。", sections: [["苏萨的位置", "它连接两河城市与高原资源，埃兰已形成文字、王权与跨区域交换。"], ["人群与融合", "伊朗语人群进入高原是长期分布和互动过程，不能等同一次替代。"], ["米底的转折", "亚述崩溃后高原力量进入西亚权力中心，为波斯崛起创造条件。"]], evidence: { title: "材料锚点：苏萨遗址、埃兰铭文与亚述-巴比伦记录", content: "材料分别观察城市、王权与外部关系，不能把后世波斯身份倒投到全部早期社群。" }, misconception: "伊朗历史并非从居鲁士才开始。", memory: ["苏萨", "高原", "米底"] },
+    "iranian-world-samanid-persian": { label: "波斯语文化怎样在伊斯兰框架中重建", claim: "阿拉伯征服后的伊朗不是文化断裂；地方王朝、萨曼、布益和塞尔柱把波斯语书写、城市行政、伊斯兰法学与突厥军政力量重新结合。", sections: [["地方王朝", "塔希尔、萨法尔等在哈里发名义下强化地方统治，显示实际军政权已多中心化。"], ["萨曼与布益", "布哈拉的波斯语文化和布益进入巴格达，分别说明文化复兴与军事实权可以跨越哈里发名义。"], ["塞尔柱重组", "突厥军事力量与波斯官僚、逊尼制度结合，形成后续西亚政治的基本组合。"]], evidence: { title: "材料锚点：新波斯语文学、钱币、行政文书与城市遗址", content: "可见书写、赞助和权力符号变化，但语言文化影响不等于所有地区政治统一。" }, misconception: "伊斯兰化不是波斯语、地方精英和行政传统的消失。", memory: ["地方王朝", "布哈拉", "军政结合"] },
+    "iranian-world-mongol-ilkhanate": { label: "蒙古征服为何没有终结伊朗文化圈", claim: "蒙古征服重创伊朗与两河城市，却在伊儿汗和帖木儿时期重排官僚、贸易与城市赞助；破坏和文化再组织必须同时理解。", sections: [["征服冲击", "巴格达陷落及战争造成真实破坏，具体伤亡数字需谨慎。"], ["伊儿汗重组", "蒙古统治者逐步吸收伊斯兰与波斯官僚传统，税收和城市网络在新权力框架下调整。"], ["帖木儿文化圈", "赫拉特等城市的赞助与征服、迁移相伴，不能只讲“文艺复兴”。"]], evidence: { title: "材料锚点：波斯编年史、伊儿汗文书与赫拉特-撒马尔罕遗址", content: "不同材料对破坏、统治和赞助有不同立场，须避免单线叙事。" }, misconception: "蒙古时代既不是纯粹文明终结，也不是无代价的和平网络。", memory: ["破坏", "官僚重组", "城市赞助"] },
+    "iranian-world-nader-shah": { label: "军事复兴为何难以变成稳定国家", claim: "纳迪尔沙以军队和远征短期恢复伊朗强权并掠取资源，但缺少可持续的财政、继承与地方整合机制，帝国迅速瓦解。", sections: [["复兴资源", "萨非崩解后的军事重建使其能在区域竞争中取胜。"], ["远征的限度", "攻入德里带来财富，却不能自动建立常态税收和行政秩序。"], ["继承危机", "个人军事能力无法替代稳定继承和地方合作，死后分裂显示强权基础脆弱。"]], evidence: { title: "材料锚点：波斯编年史、钱币与印度远征记录", content: "宫廷叙事会夸大胜利，需与地区财政和政治后果对读。" }, misconception: "不能把纳迪尔沙的战绩等同于伊朗已恢复稳定帝国。", memory: ["军队", "远征", "继承"] }
+  };
+  const mergePlans = {
+    "iranian-world-elam-susa": ["iranian-world-elam-susa", "iranian-world-indo-iranian-plateau", "iranian-world-medes-assyria"],
+    "iranian-world-cyrus-empire": ["iranian-world-cyrus-empire", "iranian-world-cambyses-egypt"],
+    "iranian-world-darius-administration": ["iranian-world-darius-administration", "iranian-world-greco-persian-wars", "iranian-world-persepolis-court"],
+    "iranian-world-parthian-rise": ["iranian-world-alexander-fall", "iranian-world-seleucid-iran", "iranian-world-parthian-rise", "iranian-world-carrhae"],
+    "iranian-world-sasanian-founding": ["iranian-world-sasanian-founding", "iranian-world-shapur-rome", "iranian-world-khosrow-reforms"],
+    "iranian-world-arab-conquest": ["iranian-world-late-sasanian-war", "iranian-world-arab-conquest"],
+    "iranian-world-samanid-persian": ["iranian-world-local-dynasties", "iranian-world-samanid-persian", "iranian-world-buyids-baghdad", "iranian-world-seljuk-iran"],
+    "iranian-world-mongol-ilkhanate": ["iranian-world-mongol-ilkhanate", "iranian-world-timurid-iran"],
+    "iranian-world-safavid-founding": ["iranian-world-safavid-founding", "iranian-world-abbas-reforms"],
+    "iranian-world-constitutional-revolution": ["iranian-world-qajar-great-game", "iranian-world-constitutional-revolution"]
+  };
+  const originalById = new Map(window.IRANIAN_WORLD_EVENTS.map((item) => [item.id, item]));
+  const canonicalById = new Map();
+  Object.entries(mergePlans).forEach(([parentId, members]) => members.forEach((id) => canonicalById.set(id, parentId)));
+  window.IRANIAN_WORLD_EVENTS = window.IRANIAN_WORLD_EVENTS
+    .filter((item) => !canonicalById.has(item.id) || canonicalById.get(item.id) === item.id)
+    .map((item, index, kept) => {
+      const members = mergePlans[item.id] || [item.id];
+      const learningCase = promotedCases[item.id] || item.learningCase;
+      return {
+        ...item,
+        process: members.map((id) => { const source = originalById.get(id); return { time: source.time, title: source.title, description: `${source.summary} 这是父学习单元中不可脱离整体机制理解的过程步骤。` }; }),
+        results: [item.results[0] || item.summary], learningCase, contentLevel: "core", contentPresentation: "tiered",
+        claims: [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["iranian-world-britannica", "iranian-world-met"], note: "核心判断按材料类型保留边界。" }],
+        citations: [{ sourceId: "iranian-world-met", reference: learningCase.evidence.title, status: "待逐条细核", plainText: learningCase.evidence.content, note: "材料锚点提示该判断的证据范围。" }],
+        sources, reviewQuestions: [{ type: "主线理解", question: learningCase.label, answer: learningCase.claim }],
+        previousEventIds: index ? [kept[index - 1].id] : [], nextEventIds: index < kept.length - 1 ? [kept[index + 1].id] : []
+      };
+    });
 })();

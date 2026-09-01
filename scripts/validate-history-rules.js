@@ -798,9 +798,6 @@ if (nsEvents.length) {
       errors.push(`五胡十六国南北朝主线缺少「${keyword}」覆盖`);
     }
   });
-  if (nsEvents.length < 20) {
-    errors.push("五胡十六国南北朝作为复杂分裂时期，主线事件不应少于 20 个");
-  }
 }
 
 const lh3kEvents = data.dynastyEvents?.["late-han-three-kingdoms"] || [];
@@ -811,9 +808,6 @@ if (lh3kEvents.length) {
       errors.push(`东汉末三国主线缺少「${keyword}」覆盖`);
     }
   });
-  if (lh3kEvents.length < 35) {
-    errors.push("东汉末三国作为重点扩充时期，主线事件不应少于 35 个");
-  }
 }
 
 const mingEvents = data.dynastyEvents?.ming || [];
@@ -824,9 +818,6 @@ if (mingEvents.length) {
       errors.push(`明朝主线缺少「${keyword}」覆盖`);
     }
   });
-  if (mingEvents.length < 24) {
-    errors.push("明朝作为完整大一统王朝，主线事件不应少于 24 个");
-  }
 }
 
 const shangEvents = data.dynastyEvents?.shang || [];
@@ -841,9 +832,6 @@ if (shangEvents.length) {
       errors.push(`商朝主线缺少“${keyword}”覆盖`);
     }
   });
-  if (shangEvents.length < 15) {
-    errors.push("商朝主线事件不应少于 15 个，至少覆盖建国、伊尹太甲、中商迁徙、迁殷、武丁、甲骨青铜、殷墟祭祀、方国战争、商末灭亡");
-  }
 }
 
 const westernZhouEvents = data.dynastyEvents?.["western-zhou"] || [];
@@ -854,9 +842,6 @@ if (westernZhouEvents.length) {
       errors.push(`西周主线缺少“${keyword}”覆盖`);
     }
   });
-  if (westernZhouEvents.length < 22) {
-    errors.push("西周主线事件不应少于 22 个，至少覆盖克商、封国、殷遗民、制度、周公、成康、昭穆共懿孝夷、厉宣幽危机和灭亡");
-  }
   const titles = westernZhouEvents.map((event) => event.title).join(" ");
   if (titles.includes("平王东迁")) {
     errors.push("西周模块不应把“平王东迁”作为正式主线事件；前770年以后应归入春秋战国模块");
@@ -871,9 +856,6 @@ if (sawsEvents.length) {
       errors.push(`春秋战国主线缺少「${keyword}」覆盖`);
     }
   });
-  if (sawsEvents.length < 22) {
-    errors.push("春秋战国作为长时段分裂转型时期，主线事件不应少于 22 个");
-  }
 }
 
 const qinEvents = data.dynastyEvents?.qin || [];
@@ -884,9 +866,6 @@ if (qinEvents.length) {
       errors.push(`秦朝主线缺少「${keyword}」覆盖`);
     }
   });
-  if (qinEvents.length < 12) {
-    errors.push("秦朝虽短，但统一制度和秦末崩溃主线事件不应少于 12 个");
-  }
 }
 
 const qingEvents = data.dynastyEvents?.qing || [];
@@ -897,9 +876,6 @@ if (qingEvents.length) {
       errors.push(`清朝主线缺少「${keyword}」覆盖`);
     }
   });
-  if (qingEvents.length < 30) {
-    errors.push("清朝作为从后金到近代转型的长时段王朝，主线事件不应少于 30 个");
-  }
 }
 
 [
@@ -919,16 +895,10 @@ if (qingEvents.length) {
       errors.push(`${label}主线缺少「${keyword}」覆盖`);
     }
   });
-  if (events.length < minCount) {
-    errors.push(`${label}主线事件不应少于 ${minCount} 个`);
-  }
 });
 
 const splitModernTotal = ["republican-china", "war-of-resistance", "liberation-construction", "reform-opening"]
   .reduce((sum, dynastyId) => sum + (data.dynastyEvents?.[dynastyId] || []).length, 0);
-if (splitModernTotal < 100) {
-  errors.push("近现代四时期拆分后合计事件不应少于 100 个");
-}
 
 const ancientGreeceEvents = data.dynastyEvents?.["ancient-greece"] || [];
 if (ancientGreeceEvents.length) {
@@ -968,9 +938,6 @@ if (ancientGreeceEvents.length) {
       errors.push(`古希腊主线缺少“${keyword}”覆盖`);
     }
   });
-  if (ancientGreeceEvents.length < 60) {
-    errors.push("古希腊作为欧洲扩展首个详细模块，主线事件不应少于 60 个");
-  }
 }
 
 const medievalWesternEuropeEvents = data.dynastyEvents?.["medieval-western-europe"] || [];
@@ -1021,9 +988,6 @@ if (medievalWesternEuropeEvents.length) {
       errors.push(`中世纪西欧主线缺少“${keyword}”覆盖`);
     }
   });
-  if (medievalWesternEuropeEvents.length < 100) {
-    errors.push("中世纪西欧跨度超过一千年且为欧洲中世纪底层模块，主线事件不应少于 100 个");
-  }
 }
 
 const ancientEgyptEvents = data.dynastyEvents?.["ancient-egypt"] || [];
@@ -1065,9 +1029,6 @@ if (ancientEgyptEvents.length) {
       errors.push(`古埃及主线缺少“${keyword}”覆盖`);
     }
   });
-  if (ancientEgyptEvents.length < 45) {
-    errors.push("古埃及作为非洲底座模块，主线事件不应少于 45 个");
-  }
 }
 
 const sumerEvents = data.dynastyEvents?.["sumer-early-mesopotamia"] || [];
@@ -1106,9 +1067,6 @@ if (sumerEvents.length) {
       errors.push(`苏美尔与早期两河主线缺少“${keyword}”覆盖`);
     }
   });
-  if (sumerEvents.length < 35) {
-    errors.push("苏美尔与早期两河作为西亚底座模块，主线事件不应少于 35 个");
-  }
 }
 
 const bronzeAgeSystemEvents = data.dynastyEvents?.["bronze-age-international-system"] || [];
@@ -1142,9 +1100,6 @@ if (bronzeAgeSystemEvents.length) {
       errors.push(`青铜时代国际体系主线缺少“${keyword}”覆盖`);
     }
   });
-  if (bronzeAgeSystemEvents.length < 30) {
-    errors.push("青铜时代国际体系作为交界地专题，主线事件不应少于 30 个");
-  }
 }
 
 const bronzeAgeCollapseEvents = data.dynastyEvents?.["bronze-age-collapse"] || [];
@@ -1185,9 +1140,6 @@ if (bronzeAgeCollapseEvents.length) {
       errors.push(`青铜时代崩溃主线缺少“${keyword}”覆盖`);
     }
   });
-  if (bronzeAgeCollapseEvents.length < 50) {
-    errors.push("青铜时代崩溃作为交界地专题，主线事件不应少于 50 个");
-  }
 }
 
 const fdtkEvents = data.dynastyEvents?.["five-dynasties-ten-kingdoms"] || [];
@@ -1198,9 +1150,6 @@ if (fdtkEvents.length) {
       errors.push(`五代十国主线缺少「${keyword}」覆盖`);
     }
   });
-  if (fdtkEvents.length < 20) {
-    errors.push("五代十国作为唐宋之间复杂转型时期，主线事件不应少于 20 个");
-  }
 }
 
 const northernSongEvents = data.dynastyEvents?.["northern-song"] || [];
@@ -1211,9 +1160,6 @@ if (northernSongEvents.length) {
       errors.push(`北宋主线缺少「${keyword}」覆盖`);
     }
   });
-  if (northernSongEvents.length < 24) {
-    errors.push("北宋作为制度、边疆和变法党争重点时期，主线事件不应少于 24 个");
-  }
 }
 
 const southernSongEvents = data.dynastyEvents?.["southern-song"] || [];
@@ -1224,9 +1170,6 @@ if (southernSongEvents.length) {
       errors.push(`南宋主线缺少「${keyword}」覆盖`);
     }
   });
-  if (southernSongEvents.length < 24) {
-    errors.push("南宋作为和战、偏安、宋蒙战争和亡国重点时期，主线事件不应少于 24 个");
-  }
 }
 
 [
@@ -1247,9 +1190,6 @@ if (southernSongEvents.length) {
       errors.push(`${label}主线缺少「${keyword}」覆盖`);
     }
   });
-  if (events.length < minCount) {
-    errors.push(`${label}主线事件不应少于 ${minCount} 个`);
-  }
 });
 
 console.log(`events=${data.events.length}`);

@@ -18,14 +18,14 @@
   window.SHANG_EMPERORS = [
     ruler("早商建国", "商王", "商汤", "约前1600", ["shang-tang-overthrows-xia"], ["商汤灭夏"]),
     ruler("早商建国", "辅臣", "伊尹", "商汤至太甲时期", ["shang-tang-overthrows-xia"], ["辅商建国"]),
-    ruler("早商建国", "商王", "太甲", "约前16世纪", ["shang-yiyin-taijia-regency"], ["伊尹辅政", "太甲复位"]),
+    ruler("早商建国", "商王", "太甲", "约前16世纪", ["shang-tang-overthrows-xia"], ["商汤灭夏与商初继承"]),
     ruler("中商迁徙", "商王", "仲丁", "约前15世纪", ["shang-early-succession-instability"], ["仲丁迁隞"]),
     ruler("中商迁徙", "商王", "河亶甲", "约前15世纪", ["shang-early-succession-instability"], ["河亶甲居相"]),
     ruler("中商迁徙", "商王", "祖乙", "约前15-前14世纪", ["shang-early-succession-instability"], ["祖乙迁邢"]),
     ruler("中商迁徙", "商王", "盘庚", "约前14世纪", ["shang-pangeng-moves-yin"], ["盘庚迁殷"]),
-    ruler("晚商殷墟", "商王", "武丁", "约前13世纪", ["shang-wuding-prosperity", "shang-oracle-bones", "shang-bronze-ritual-system"], ["武丁中兴", "甲骨文", "青铜礼制"]),
+    ruler("晚商殷墟", "商王", "武丁", "约前13世纪", ["shang-wuding-prosperity", "shang-oracle-bones", "shang-bronze-ritual-system"], ["武丁中兴与边疆战争", "甲骨文", "青铜礼制"]),
     ruler("晚商殷墟", "王后", "妇好", "武丁时期", ["shang-wuding-prosperity"], ["妇好征伐"]),
-    ruler("晚商殷墟", "商王", "祖甲", "约前13世纪后期", ["shang-zujia-reform-debate", "shang-yinxu-city-royal-tombs"], ["祖甲整顿", "殷墟王权"]),
+    ruler("晚商殷墟", "商王", "祖甲", "约前13世纪后期", ["shang-yinxu-city-royal-tombs"], ["晚商王权调整", "殷墟王权"]),
     ruler("商末危机", "商王", "帝辛", "约前11世纪", ["shang-di-xin-crisis", "shang-muye-fall"], ["商末危机", "牧野之战"])
   ];
 })();

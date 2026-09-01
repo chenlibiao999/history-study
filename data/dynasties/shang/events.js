@@ -587,7 +587,7 @@
       { time: "制度层面", title: "继承与中心同步重组", description: "兄终弟及、父死子继等继承模式与都邑移动并存，反映早期王权仍在协调王室成员、贵族集团和政治中心。" }
     ],
     results: ["中商迁都不再拆成缺乏独立材料的王表碎片。", "盘庚迁殷的稳定性因此具有更清楚的对比意义。"],
-    contentLevel: "mainline",
+    contentLevel: "core",
     previousEventIds: ["shang-erligang-expansion"],
     nextEventIds: ["shang-pangeng-moves-yin"]
   });
@@ -595,14 +595,64 @@
   const lateCrisis = window.SHANG_EVENTS.find((item) => item.id === "shang-di-xin-crisis");
   lateCrisis.process.splice(2, 0, { time: "商末战略", title: "东南用兵与资源牵制", description: "商末在东南等方向的军事经营显示王权仍有动员力，但也可能分散兵力与资源，使西方周族获得整合联盟的时间窗口。" });
   lateCrisis.results = ["商末危机同时包含资源牵制、贵族离心和周族联盟形成。", "牧野之战成为长期结构变化的集中爆发。"];
-  lateCrisis.contentLevel = "mainline";
-  lateCrisis.previousEventIds = ["shang-zhou-rising-west"];
+  lateCrisis.contentLevel = "core";
+  lateCrisis.previousEventIds = ["shang-human-sacrifice-ritual-politics"];
   lateCrisis.nextEventIds = ["shang-muye-fall"];
+
+  const founding = window.SHANG_EVENTS.find((item) => item.id === "shang-tang-overthrows-xia");
+  const yiyin = window.SHANG_EVENTS.find((item) => item.id === "shang-yiyin-taijia-regency");
+  founding.process.splice(2, 0, { time: yiyin.time, title: yiyin.title, description: "伊尹辅政、太甲放逐与复位是后世传世政治叙事，强调开国功臣、祖先秩序与继承王权之间的张力；具体史实层次须审慎处理。" });
+
+  const wuding = window.SHANG_EVENTS.find((item) => item.id === "shang-wuding-prosperity");
+  const frontierWars = window.SHANG_EVENTS.find((item) => item.id === "shang-tufang-qiangfang-wars");
+  wuding.process.splice(2, 0, { time: frontierWars.time, title: frontierWars.title, description: "土方、羌方等战争记录显示晚商军事实践持续处理北西边疆压力；它与妇好等王室成员的军祭角色共同构成王权动员网络。" });
+
+  const yinxu = window.SHANG_EVENTS.find((item) => item.id === "shang-yinxu-city-royal-tombs");
+  const zujia = window.SHANG_EVENTS.find((item) => item.id === "shang-zujia-reform-debate");
+  yinxu.process.splice(2, 0, { time: zujia.time, title: zujia.title, description: "祖甲整顿的文献叙事与甲骨材料不能简单互证；保留这一节点，是为提示晚商王位、祭祀与王权调整存在材料边界。" });
+
+  const zhouRising = window.SHANG_EVENTS.find((item) => item.id === "shang-zhou-rising-west");
+  lateCrisis.process.splice(3, 0, { time: zhouRising.time, title: zhouRising.title, description: "周族在关中积累农业、联盟与军事基础，从西方方国成长为竞争集团；这为商末危机提供了能实际替代商王朝的政治力量。" });
+
+  Object.assign(learningCases, {
+    "shang-tang-overthrows-xia": {
+      label: "建国叙事怎样与早商考古并读",
+      claim: "商汤灭夏是王朝更替的重要传统叙事，但早商建立应同时看商族联盟、二里岗以前后的都邑变化与材料边界，不能把后世故事逐句当作已证实年代。",
+      sections: [["叙事提供什么", "商汤、夏桀与伊尹故事说明后世如何解释新王朝的合法性和继承秩序。"], ["考古能回答什么", "早商城邑与生产网络可证明国家能力增长，却未必能为每一场传说战争标注确切日期。"], ["为何合并伊尹", "辅政与复位的故事服务于同一个问题：开国后如何让重臣、继承和王权重新进入稳定秩序。"]],
+      evidence: { title: "材料锚点：《殷本纪》与早商考古分期", content: "传世王朝叙事和城址、器物分期各自能回答不同问题，不能互相替代。" },
+      misconception: "不能把夏商更替的完整故事当作逐年可核对的战史。", memory: ["合法性叙事", "早商考古", "继承秩序"], question: "商汤灭夏为何不能只按传说讲？", answer: "因为它既是王朝合法性叙事，也对应早商国家能力成长；两类证据必须分层阅读。"
+    },
+    "shang-early-succession-instability": {
+      label: "迁都为何是早期王权的治理工具",
+      claim: "中商多次迁都与继承调整不是杂乱王表，而是王室重组祭祀中心、贵族关系和区域控制网络的治理尝试；具体迁徙顺序仍有材料限制。",
+      sections: [["移动中心", "都邑位置影响交通、资源、贵族居住与祭祀组织，迁都必然重排既得利益。"], ["继承张力", "兄终弟及与父死子继并存，使王室成员和政治中心可能需要同步调整。"], ["通向迁殷", "正因中商中心不稳，盘庚迁殷的长期稳定才成为晚商转折。"]],
+      evidence: { title: "材料锚点：传世迁都记载与商文化考古分期", content: "文献保存迁徙记忆，考古显示中心变化；二者不能逐条机械对应。" },
+      misconception: "不能把中商迁都理解为随意搬家或王朝完全失序。", memory: ["都邑", "继承", "重组"], question: "中商迁都与继承为何要放在一起理解？", answer: "二者都涉及王室如何重新安排政治中心和贵族关系，是早期王权的同一治理问题。"
+    },
+    "shang-bronze-ritual-system": {
+      label: "礼器怎样把资源转成王权",
+      claim: "商代青铜礼器不是艺术孤品；矿料、工匠、祭祀和宴飨把可动员资源公开转成等级秩序与祖先政治。",
+      sections: [["生产前提", "复杂铸造需要稳定调集原料、技术和劳力，显示王室与贵族的组织能力。"], ["仪式用途", "礼器在祭祀和宴飨中区分身份，使资源控制被看见、被重复。"], ["范围限度", "商式器物扩散不等于各地均受商王直接行政统治。"]],
+      evidence: { title: "材料锚点：殷墟铸铜遗址与礼器组合", content: "作坊、器物和祭祀遗存可观察生产与礼制关系，不能据此概括全部社会生活。" },
+      misconception: "不能把青铜器只当作审美史插图。", memory: ["矿料", "铸造", "祭祀等级"], question: "为什么说青铜礼器属于政治史？", answer: "它把资源组织、祖先祭祀与贵族等级连接起来，是王权运作的物质形式。"
+    },
+    "shang-di-xin-crisis": {
+      label: "商末危机为何不是暴君单因故事",
+      claim: "帝辛时期仍有军事动员力，但东南用兵、方国关系、贵族离心和周族西土联盟同时削弱统治基础，牧野才可能成为决定性突破。",
+      sections: [["王权未必已空心", "商末仍能组织战争与工程，不能把失败倒推成早已毫无能力。"], ["压力如何叠加", "资源与兵力被多线牵制，内部政治叙事和边缘关系也在松动。"], ["替代力量出现", "周族并非突然起兵，而是已形成可吸纳反商力量的西方政治集团。"]],
+      evidence: { title: "材料锚点：周人文献、甲骨材料与殷周考古", content: "胜利者文献的道德叙事须与商末物质材料和长期结构分开理解。" },
+      misconception: "商亡不能只归结为帝辛个人品行。", memory: ["多线压力", "贵族离心", "周的联盟"], question: "为什么牧野之前必须先理解商末危机？", answer: "因为战役胜负依赖此前积累的资源、联盟和统治基础，而不是当日单一决策。"
+    }
+  });
 
   const removedEventIds = new Set([
     "shang-zhongding-moves-ao",
     "shang-hedanjia-zuyi-relocations",
-    "shang-late-eastern-campaigns"
+    "shang-late-eastern-campaigns",
+    "shang-yiyin-taijia-regency",
+    "shang-zujia-reform-debate",
+    "shang-tufang-qiangfang-wars",
+    "shang-zhou-rising-west"
   ]);
   const coreIds = new Set(Object.keys(learningCases));
   window.SHANG_EVENTS = window.SHANG_EVENTS
@@ -610,6 +660,7 @@
     .map((item) => ({
       ...item,
       contentLevel: coreIds.has(item.id) ? "core" : item.contentLevel || "outline",
+      contentPresentation: "tiered",
       learningCase: learningCases[item.id] || null
     }));
 })();

@@ -203,3 +203,8 @@ window.EASTERN_HAN_EMPERORS = [
     "dynastyId": "eastern-han"
   }
 ];
+
+(() => {
+  const parentByChild = { "ehan-unification-wars": "ehan-liu-xiu-restores-han", "ehan-soft-governance": "ehan-liu-xiu-restores-han", "ehan-land-tax-census": "ehan-liu-xiu-restores-han", "ehan-buddhism-white-horse": "ehan-mingzhang-governance", "ehan-dou-clan-overthrown": "ehan-ban-chao-western-regions", "ehan-ban-yong-withdrawal-western-regions": "ehan-ban-chao-western-regions", "ehan-qiang-wars-finance": "ehan-ban-chao-western-regions", "ehan-eunuch-marquis": "ehan-huan-kills-liangji", "ehan-liang-ji-power": "ehan-huan-kills-liangji", "ehan-first-partisan-prohibition": "ehan-second-partisan-prohibition", "ehan-sell-offices": "ehan-second-partisan-prohibition", "ehan-provincial-governors": "ehan-yellow-turban-rebellion", "ehan-dong-zhuo-enters-luoyang": "ehan-hejin-eunuchs", "ehan-emperor-xian-controlled": "ehan-hejin-eunuchs", "ehan-cao-pi-ends-han": "ehan-hejin-eunuchs" };
+  window.EASTERN_HAN_EMPERORS = window.EASTERN_HAN_EMPERORS.map((item) => ({ ...item, relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentByChild[id] || id))], keyEvents: [...new Set(item.keyEvents.map((id) => parentByChild[id] || id))] }));
+})();

@@ -2569,4 +2569,33 @@ window.EASTERN_HAN_EVENTS = [
     }
   };
   window.EASTERN_HAN_EVENTS = window.EASTERN_HAN_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const originalById = new Map(window.EASTERN_HAN_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "ehan-liu-xiu-restores-han": ["ehan-liu-xiu-restores-han", "ehan-unification-wars", "ehan-soft-governance", "ehan-land-tax-census"],
+    "ehan-mingzhang-governance": ["ehan-mingzhang-governance", "ehan-buddhism-white-horse"],
+    "ehan-ban-chao-western-regions": ["ehan-ban-chao-western-regions", "ehan-dou-clan-overthrown", "ehan-ban-yong-withdrawal-western-regions", "ehan-qiang-wars-finance"],
+    "ehan-huan-kills-liangji": ["ehan-eunuch-marquis", "ehan-liang-ji-power", "ehan-huan-kills-liangji"],
+    "ehan-second-partisan-prohibition": ["ehan-first-partisan-prohibition", "ehan-second-partisan-prohibition", "ehan-sell-offices"],
+    "ehan-yellow-turban-rebellion": ["ehan-yellow-turban-rebellion", "ehan-provincial-governors"],
+    "ehan-hejin-eunuchs": ["ehan-hejin-eunuchs", "ehan-dong-zhuo-enters-luoyang", "ehan-emperor-xian-controlled", "ehan-cao-pi-ends-han"]
+  };
+  const caseAdditions = {
+    "ehan-mingzhang-governance": { label: "稳定时期如何塑造东汉的制度与文化", claim: "明章时期的行政延续、儒学秩序和佛教初传并不构成单一政策，却共同显示东汉如何在恢复后建立可复制的官僚与文化框架。", sections: [["制度", "明章治理延续光武的节制与官僚秩序，使东汉的中期稳定不依赖持续的统一战争。"], ["文化", "白马寺传说象征佛教进入汉地的早期记忆，但传播是长期、多渠道过程，不能用单一建寺故事概括。"]], evidence: { title: "材料锚点：《后汉书》明章纪事、佛教早期文献与考古", content: "白马寺叙事的形成较晚；东汉佛教传播应结合译经、图像和交通网络理解。" }, misconception: "佛教在东汉一夜之间成为主流宗教。", memory: ["恢复后稳定", "官僚秩序", "长期传播"], question: "明章时期为何值得作为东汉中段节点？", answer: "它说明复汉后的制度可持续运行，也提供观察新思想如何逐步进入帝国网络的背景。" }
+  };
+  const summaryOverrides = {
+    "ehan-liu-xiu-restores-han": "刘秀以汉号重建秩序，完成统一战争并以节制治理和度田恢复财政；这既重建东汉，也暴露中央对豪强登记与控制的边界。",
+    "ehan-mingzhang-governance": "明章时期延续东汉中期的官僚稳定，佛教经由交通与译经逐步进入汉地；白马寺故事是这一长期传播的象征性记忆。",
+    "ehan-ban-chao-western-regions": "班超经营西域依赖使团、驻军与盟友网络；班勇撤守、羌乱和财政压力说明远距离边疆控制会随中央资源下降而反复。",
+    "ehan-huan-kills-liangji": "梁冀外戚网络、宦官封侯与桓帝借宦诛梁冀连成权力循环：清除一方并未改变幼主和宫廷入口所造成的结构。",
+    "ehan-second-partisan-prohibition": "两次党锢压缩士人清议和制度内批评，卖官等财政人事失序进一步削弱朝廷的修复能力，使冲突更易外溢到地方。",
+    "ehan-yellow-turban-rebellion": "黄巾起义迫使东汉依赖州郡和豪强募兵，州牧军政化使短期镇压转化为武力与财政资源的长期下沉。",
+    "ehan-hejin-eunuchs": "何进召外兵、董卓入洛阳、献帝被控制到曹丕代汉，显示宫廷继承危机一旦交给地方武装，皇帝与朝廷都会成为军事实力争夺物。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.EASTERN_HAN_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+  });
 })();

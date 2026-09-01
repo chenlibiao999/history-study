@@ -868,7 +868,7 @@ if (sawsEvents.length) {
 
 const qinEvents = data.dynastyEvents?.qin || [];
 if (qinEvents.length) {
-  const text = qinEvents.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
+  const text = qinEvents.map((event) => [event.title, event.era, event.summary, ...(event.process || []).flatMap((step) => [step.title, step.description])].join(" ")).join(" ");
   ["始皇帝", "郡县制", "书同文", "秦律", "匈奴", "百越", "焚书坑儒", "巡游", "沙丘", "陈胜吴广", "巨鹿", "秦朝灭亡"].forEach((keyword) => {
     if (!text.includes(keyword)) {
       errors.push(`秦朝主线缺少「${keyword}」覆盖`);

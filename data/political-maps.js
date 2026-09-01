@@ -167,8 +167,7 @@
           eventIds: [
             "qin-commandery-county",
             "qin-standardization",
-            "qin-northern-xiongnu-wall",
-            "qin-baiyue-lingnan"
+            "qin-northern-xiongnu-wall"
           ],
           basis: referenceMapBasis,
           confidence: "high",

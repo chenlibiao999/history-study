@@ -406,4 +406,33 @@
   };
   const coreIds = new Set(Object.keys(learningCases));
   window.QIN_EVENTS = window.QIN_EVENTS.map((item) => ({ ...item, contentLevel: coreIds.has(item.id) ? "core" : "outline", learningCase: learningCases[item.id] || null }));
+
+  const originalById = new Map(window.QIN_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "qin-first-emperor-system": ["qin-first-emperor-system", "qin-imperial-tours"],
+    "qin-commandery-county": ["qin-commandery-county", "qin-law-and-official-system"],
+    "qin-standardization": ["qin-standardization"],
+    "qin-northern-xiongnu-wall": ["qin-northern-xiongnu-wall", "qin-baiyue-lingnan"],
+    "qin-burning-books": ["qin-burning-books"],
+    "qin-shaqiu-coup": ["qin-shaqiu-coup", "qin-zhao-gao-chaos"],
+    "qin-chen-sheng-wu-guang": ["qin-chen-sheng-wu-guang", "qin-xiang-liu-rise", "qin-julu-battle", "qin-fall"]
+  };
+  const caseAdditions = {
+    "qin-first-emperor-system": { label: "皇帝称号如何把征服塑造成新秩序", claim: "始皇帝称号、刻石与巡行共同宣示新的权力尺度：六国不再并列，最高权威要直接面向全国行政与地方精英。", sections: [["建构", "称号把王的传统权威提升为统一帝国的单一来源，巡行把这一抽象权威带到新并入地区。"], ["限度", "刻石和巡行是国家自我宣示，不能直接证明地方已完全接受或服从。"]], evidence: { title: "材料锚点：秦刻石、传世本纪与考古遗址", content: "刻石可见帝国政治语言；巡行路线和细节须结合传世叙事谨慎使用。" }, misconception: "皇帝制度只是改了一个称号。", memory: ["单一权威", "刻石", "巡行"], question: "秦为何要创造始皇帝称号？", answer: "它要为跨越旧诸侯国的统治创造新的、不可并列的最高权威。" },
+    "qin-northern-xiongnu-wall": { label: "统一帝国如何处理两条边疆", claim: "北击匈奴、修筑防御体系与南征百越并非同一政策的简单复制：前者重在北方军事走廊，后者重在岭南郡县和资源通道。", sections: [["北方", "蒙恬经营河套与长城体系，回应的是骑兵与边塞通道压力。"], ["南方", "岭南征服和郡县设置把新地区纳入帝国网络，但治理成本、环境与地方社会条件不同。"]], evidence: { title: "材料锚点：秦简、长城遗址与岭南考古", content: "边疆工程、行政设置与战争叙事来自不同材料，疆域控制强度不应一概而论。" }, misconception: "秦朝地图的每一处边缘都表示同等强度的直接控制。", memory: ["北方防御", "岭南郡县", "控制差异"], question: "秦的南北边疆政策为何不同？", answer: "面对的地理、对手和治理目标不同，北方偏防御与通道，南方兼具征服、行政与资源整合。" },
+    "qin-chen-sheng-wu-guang": { label: "反秦为何从起义扩展为政权重组", claim: "陈胜吴广打开反秦出口后，项羽、刘邦等力量借旧国网络、地方武装和巨鹿战局争夺领导权，秦的崩解演为新的天下秩序竞争。", sections: [["扩散", "基层征发危机引爆后，反秦力量并非自动团结，而是围绕旧国名义、军队与地方资源竞争。"], ["转折", "巨鹿削弱秦军主力，子婴降刘邦结束秦朝，却没有解决项刘之间谁来安排天下的问题。"]], evidence: { title: "材料锚点：《史记》秦楚汉相关本纪、列传与秦末考古", content: "英雄叙事浓厚；应区分起义触发、军事胜负与后续权力重组三个层次。" }, misconception: "陈胜起义一发生，秦朝就立刻被推翻。", memory: ["征发失灵", "巨鹿转折", "秩序重组"], question: "秦末为何会接着爆发楚汉战争？", answer: "推翻秦只解决了旧帝国，新的政治中心、资源分配和合法性仍需通过竞争决定。" }
+  };
+  const summaryOverrides = {
+    "qin-first-emperor-system": "秦以始皇帝称号、刻石和巡行宣示六国已纳入单一最高权威；这既是新帝国的政治语言，也需靠行政制度持续落实。",
+    "qin-commandery-county": "郡县制以中央任免连接地方，秦律、户籍和文书追责把命令落实为可核验的行政链。",
+    "qin-northern-xiongnu-wall": "秦北击匈奴并经营长城、河套，同时南征百越和设置岭南郡县；南北边疆的控制目标与强度并不相同。",
+    "qin-shaqiu-coup": "沙丘政变改变继承顺序，赵高随后操控朝政，显示高度集权体系在信息封闭和继承失序中会迅速丧失纠错能力。",
+    "qin-chen-sheng-wu-guang": "陈胜吴广起义引爆反秦，项羽、刘邦等力量继而竞争；巨鹿之战与子婴降刘邦终结秦朝，却开启新的天下重组。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.QIN_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+  });
 })();

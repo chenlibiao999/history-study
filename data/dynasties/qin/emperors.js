@@ -21,3 +21,8 @@
     ruler("秦王", "子婴", "前207", ["qin-zhao-gao-chaos", "qin-fall"], ["杀赵高", "出降刘邦"])
   ];
 })();
+
+(() => {
+  const parentByChild = { "qin-imperial-tours": "qin-first-emperor-system", "qin-law-and-official-system": "qin-commandery-county", "qin-baiyue-lingnan": "qin-northern-xiongnu-wall", "qin-zhao-gao-chaos": "qin-shaqiu-coup", "qin-xiang-liu-rise": "qin-chen-sheng-wu-guang", "qin-julu-battle": "qin-chen-sheng-wu-guang", "qin-fall": "qin-chen-sheng-wu-guang" };
+  window.QIN_EMPERORS = window.QIN_EMPERORS.map((item) => ({ ...item, relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentByChild[id] || id))] }));
+})();

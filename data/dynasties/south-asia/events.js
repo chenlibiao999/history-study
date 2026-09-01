@@ -208,4 +208,52 @@
     previousEventIds: index ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));
+
+  // 过程步骤归入可独立解释的父卡，保留原名称、时间和关键词以供连续阅读。
+  const regionalizationCase = {
+    label: "帝国解体后，区域秩序怎样重建",
+    claim: "笈多后期的外部军事压力只是转折之一；王权、财政和地方精英关系松动后，北印度进入多中心竞争，戒日王的短暂整合恰好说明统一仍可出现，却难以恢复为稳定帝国。",
+    sections: [["王朝衰落", "5至6世纪西北压力与内部资源问题叠加，笈多的直接控制减弱，地方权力获得更大空间。"], ["短暂整合", "606至647年戒日王以北印度为中心重建霸权，并通过宗教赞助和外交联系扩大影响，但统治没有形成可长期继承的统一制度。"], ["区域化的意义", "这不是无序空白，而是地方王国、寺院、土地关系和跨区域网络重新组合的阶段。"]],
+    evidence: { title: "材料锚点：玄奘记述、碑铭与区域遗址", content: "旅行记提供北印度政治与宗教景观的一种观察；须与碑铭和地方遗址互证，不能把单一旅行者叙述当作全域行政档案。" },
+    misconception: "不要把笈多之后直接记成“印度进入黑暗时代”，也不要把戒日王短暂霸权当成恢复统一帝国。",
+    memory: ["权力松动", "短暂整合", "区域重组"], sourceIds: ["south-asia-met", "south-asia-britannica"], sourceRef: "Met 南亚年代学与北印度早期中世纪资料", question: "为什么戒日王不能被当作笈多帝国的简单续篇？", answer: "他的整合建立在区域化后的竞争与联盟上，持续时间有限，未重建笈多时期那种稳定的帝国资源结构。"
+  };
+  const mergePlans = {
+    "south-asia-mahajanapadas": ["south-asia-vedic-society", "south-asia-mahajanapadas"],
+    "south-asia-maurya-rise": ["south-asia-magadha-rise", "south-asia-alexander-northwest", "south-asia-maurya-rise"],
+    "south-asia-kushan-gandhara": ["south-asia-maurya-decline-regional", "south-asia-kushan-gandhara"],
+    "south-asia-huna-gupta-decline": ["south-asia-huna-gupta-decline", "south-asia-harsha-regional"],
+    "south-asia-chola-maritime": ["south-asia-south-indian-ocean", "south-asia-chola-maritime"],
+    "south-asia-delhi-sultanate": ["south-asia-delhi-sultanate", "south-asia-delhi-expansion"],
+    "south-asia-akbar-integration": ["south-asia-mughal-founding", "south-asia-akbar-integration"]
+  };
+  const originalById = new Map(window.SOUTH_ASIA_EVENTS.map((item) => [item.id, item]));
+  const canonicalById = new Map();
+  Object.entries(mergePlans).forEach(([parentId, members]) => members.forEach((id) => canonicalById.set(id, parentId)));
+  window.SOUTH_ASIA_EVENTS = window.SOUTH_ASIA_EVENTS
+    .filter((item) => !canonicalById.has(item.id) || canonicalById.get(item.id) === item.id)
+    .map((item, index, kept) => {
+      const members = mergePlans[item.id] || [item.id];
+      const learningCase = item.id === "south-asia-huna-gupta-decline" ? regionalizationCase : item.learningCase;
+      const sourceIds = learningCase?.sourceIds || [];
+      const absorbed = members.filter((id) => id !== item.id).map((id) => originalById.get(id));
+      return {
+        ...item,
+        aliases: [...new Set([...item.aliases, ...absorbed.map((source) => source.title)])],
+        process: members.map((id) => {
+          const source = originalById.get(id);
+          return { time: source.time, title: source.title, description: `${source.summary} 这一步在父学习单元中提供必要的因果条件，而不另设空壳卡片。` };
+        }),
+        results: [item.results[0] || item.summary],
+        learningCase,
+        contentLevel: "core",
+        contentPresentation: "tiered",
+        sources: learningCase ? sources.filter((source) => sourceIds.includes(source.id)) : item.sources,
+        claims: learningCase ? [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds, note: "核心判断以材料锚点为起点，具体年代和范围仍按史料类型分层理解。" }] : [],
+        citations: learningCase ? [{ sourceId: sourceIds[0], reference: learningCase.sourceRef, status: "待逐条细核", plainText: learningCase.evidence.content, note: "材料锚点用于界定论证边界。" }] : [],
+        reviewQuestions: learningCase ? [{ type: "主线理解", question: learningCase.question, answer: learningCase.answer }] : [],
+        previousEventIds: index ? [kept[index - 1].id] : [],
+        nextEventIds: index < kept.length - 1 ? [kept[index + 1].id] : []
+      };
+    });
 })();

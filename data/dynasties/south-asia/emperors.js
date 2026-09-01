@@ -7,3 +7,20 @@ window.SOUTH_ASIA_EMPERORS = [
   { dynastyId: "south-asia", title: "莫卧儿帝国", name: "巴布尔、阿克巴至奥朗则布", years: "1526-1707", summary: "早期近代南亚大帝国，在军事、财政、宗教政策和地方精英整合中达到高峰后转入压力期。", keyEvents: ["莫卧儿帝国建立", "阿克巴整合帝国", "奥朗则布扩张与帝国压力"], relatedEventIds: ["south-asia-mughal-founding", "south-asia-akbar-integration", "south-asia-aurangzeb-pressure"] },
   { dynastyId: "south-asia", title: "殖民与独立", name: "公司统治、英属印度与独立分治", years: "1757-1947", summary: "东印度公司、英属印度、民族运动和分治共同塑造现代南亚政治格局。", keyEvents: ["普拉西战役与公司统治", "1857年起义与英属印度", "印度国民大会与民族运动", "独立与印巴分治"], relatedEventIds: ["south-asia-plassey-company-rule", "south-asia-1857-rebellion-raj", "south-asia-national-movement", "south-asia-partition-independence"] }
 ];
+
+(() => {
+  const parentById = {
+    "south-asia-vedic-society": "south-asia-mahajanapadas",
+    "south-asia-magadha-rise": "south-asia-maurya-rise",
+    "south-asia-alexander-northwest": "south-asia-maurya-rise",
+    "south-asia-maurya-decline-regional": "south-asia-kushan-gandhara",
+    "south-asia-harsha-regional": "south-asia-huna-gupta-decline",
+    "south-asia-south-indian-ocean": "south-asia-chola-maritime",
+    "south-asia-delhi-expansion": "south-asia-delhi-sultanate",
+    "south-asia-mughal-founding": "south-asia-akbar-integration"
+  };
+  window.SOUTH_ASIA_EMPERORS = window.SOUTH_ASIA_EMPERORS.map((item) => ({
+    ...item,
+    relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentById[id] || id))]
+  }));
+})();

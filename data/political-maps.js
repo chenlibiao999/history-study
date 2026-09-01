@@ -87,9 +87,7 @@
           timeRange: "约前5世纪",
           eventIds: [
             "saws-eastward-move",
-            "saws-jin-qing-dafu-rise",
-            "saws-three-families-partition-jin",
-            "saws-tian-family-replaces-qi"
+            "saws-three-families-partition-jin"
           ],
           basis: referenceMapBasis,
           confidence: "medium-high",
@@ -125,7 +123,6 @@
             "saws-suqin-zhangyi-diplomacy",
             "saws-king-wuling-reform",
             "saws-changping-battle",
-            "saws-lu-buwei-and-qin-politics",
             "saws-qin-destroys-six-states"
           ],
           basis: referenceMapBasis,

@@ -600,4 +600,55 @@
   };
   const coreIds = new Set(Object.keys(learningCases));
   window.SAWS_EVENTS = window.SAWS_EVENTS.map((item) => ({ ...item, contentLevel: coreIds.has(item.id) ? "core" : "outline", learningCase: learningCases[item.id] || null }));
+
+  const originalById = new Map(window.SAWS_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "saws-eastward-move": ["saws-eastward-move", "saws-zheng-zhuang-rise"],
+    "saws-qi-huan-hegemony": ["saws-qi-huan-hegemony", "saws-song-xiang-failure"],
+    "saws-jin-wen-chengpu": ["saws-jin-wen-chengpu", "saws-qin-mu-western-hegemony", "saws-chu-zhuang-hegemony"],
+    "saws-wu-yue-rise": ["saws-wu-yue-rise"],
+    "saws-three-families-partition-jin": ["saws-jin-qing-dafu-rise", "saws-three-families-partition-jin", "saws-tian-family-replaces-qi"],
+    "saws-li-kui-wei-reform": ["saws-li-kui-wei-reform", "saws-wuqi-chu-reform", "saws-guiling-maling"],
+    "saws-shang-yang-reforms": ["saws-shang-yang-reforms"],
+    "saws-hundred-schools": ["saws-confucius-and-hundred-schools-prelude", "saws-hundred-schools"],
+    "saws-suqin-zhangyi-diplomacy": ["saws-suqin-zhangyi-diplomacy"],
+    "saws-king-wuling-reform": ["saws-king-wuling-reform"],
+    "saws-yue-yi-attacks-qi": ["saws-yue-yi-attacks-qi"],
+    "saws-changping-battle": ["saws-changping-battle"],
+    "saws-qin-destroys-six-states": ["saws-lu-buwei-and-qin-politics", "saws-qin-destroys-six-states"]
+  };
+  const caseAdditions = {
+    "saws-jin-wen-chengpu": { label: "霸政为何不断换手", claim: "晋文公在城濮建立中原霸权，秦穆公转向西陲、楚庄王北上问鼎，显示霸主秩序取决于地区资源、会盟名义和军事胜负的不断重组。", sections: [["竞争", "城濮以后的晋楚对峙不是两国轮流称雄，而是强国用会盟、盟友与战场胜负争夺秩序解释权。"], ["边界", "秦穆公的西向扩张奠定关中基础，但并不等于其已进入中原霸主序列。"]], evidence: { title: "材料锚点：《左传》《国语》与春秋金文", content: "会盟和战争次序主要见于传世叙事；金文可补充诸侯交往与王命背景，具体修辞应与事实层分开。" }, misconception: "春秋五霸是固定不变的排名。", memory: ["城濮", "晋楚", "西陲秦"], question: "春秋霸权为何不能稳定传承？", answer: "它依赖国家资源、联盟和周王名义的临时结合，任何一项变化都可能重组霸主格局。" },
+    "saws-wu-yue-rise": { label: "边缘地区如何改变全国格局", claim: "吴越争霸把东南的军事动员、楚国压力与中原会盟连到一起，说明春秋后期的竞争范围已超出传统中原。", sections: [["进入", "吴破楚、夫差北上使东南国家能直接干预楚与中原的力量关系。"], ["替代", "越灭吴说明新兴国家同样受内部资源、长期恢复与联盟变化制约，胜利并非永久。"]], evidence: { title: "材料锚点：《左传》《国语》、吴越金文与考古", content: "阖闾、夫差、勾践的基本战争框架可互证；孙武、火攻等戏剧化细节不可当作无争议史实。" }, misconception: "吴越只是中原争霸的边缘插曲。", memory: ["吴破楚", "北上会盟", "越灭吴"], question: "吴越争霸为何属于春秋主线？", answer: "它改变了楚国与诸侯的战略环境，并显示竞争已经扩展为跨区域格局。" },
+    "saws-li-kui-wei-reform": { label: "变法竞争先带来优势，也会重排强弱", claim: "魏国以李悝、吴起等改革率先集中资源，却在桂陵、马陵后失去先发优势；战国强弱取决于制度能否持续转化为军事与财政能力。", sections: [["先发", "法令、农业财政、人才任用和军政调整使魏国成为战国早期最强国家。"], ["反转", "魏国多线扩张后被齐国连续击败，说明改革带来的优势不能自动抵消战略过伸和对手学习。"]], evidence: { title: "材料锚点：《史记》魏世家、兵家叙事与战国制度材料", content: "李悝、吴起制度的具体条文多经后世归纳；应把握早期国家能力竞争，而非把每项改革视为可精确复原。" }, misconception: "变法成功就会永久强盛。", memory: ["魏国先强", "制度竞争", "桂陵马陵"], question: "魏国为何先强后弱？", answer: "它较早形成动员优势，却在扩张、战争和对手反制中失去相对领先地位。" },
+    "saws-suqin-zhangyi-diplomacy": { label: "六国明知秦强，为何仍难合纵", claim: "合纵连横的关键不是苏秦、张仪的个人口才，而是六国彼此存在边界、利益和安全次序冲突，秦可借此逐一瓦解联合。", sections: [["共同威胁", "六国面对秦东进时有结盟需求，却无法稳定分担风险、军费与让步成本。"], ["秦的策略", "连横通过分别许诺、威胁或结盟服务于逐国作战，使外交成为战争准备的一部分。"]], evidence: { title: "材料锚点：《战国策》《史记》与战国盟书材料", content: "纵横家故事高度文学化；联盟反复和各国行动结果比个人演说更可靠地反映结构困境。" }, misconception: "六国失败只是因为没有听从某位纵横家。", memory: ["共同威胁", "利益分裂", "逐国击破"], question: "合纵为何难以持续？", answer: "成员间的利益与安全优先级不同，缺乏能约束背离者的共同机制。" },
+    "saws-king-wuling-reform": { label: "军事学习为何要挑战礼俗", claim: "赵武灵王以胡服骑射适应北方作战，说明战国国家会为生存与扩张主动改造旧礼俗；改革的核心是军队组织与边疆战略。", sections: [["适应", "服饰改变服务于骑兵训练和机动战，不应把它缩成文化模仿。"], ["限度", "赵国军力提升并未消除其内部继承和地缘压力，技术创新不是国家强弱的唯一变量。"]], evidence: { title: "材料锚点：《战国策》《史记·赵世家》及北方考古材料", content: "改革叙事主要出自后出文献；骑射扩展的长期趋势可与边疆交流和军事考古背景结合理解。" }, misconception: "胡服骑射只是换一套衣服。", memory: ["北方压力", "骑兵", "礼俗让位"], question: "胡服骑射改变了什么？", answer: "它让赵国以更适合边地的骑兵和机动能力参与战国竞争。" },
+    "saws-yue-yi-attacks-qi": { label: "强国为何会因孤立接近覆灭", claim: "乐毅伐齐显示大国一旦失去盟友并遭联合打击，城邑与军力优势可迅速崩解；田单复国虽恢复齐国，却未恢复其原有的制衡能力。", sections: [["崩解", "五国伐齐利用齐国外交孤立，使燕军能快速占领大部分齐地。"], ["余波", "即墨反攻保住齐国，但长期损耗使它难再担当东方最强制衡者。"]], evidence: { title: "材料锚点：《史记·田单列传》《战国策》与齐燕考古", content: "火牛阵等细节带有显著叙事色彩；齐国受重创及其后果则是理解后期均势的重要事实。" }, misconception: "田单复国就等于齐国恢复强盛。", memory: ["外交孤立", "五国伐齐", "复国而不复强"], question: "乐毅伐齐为何影响秦统一前的均势？", answer: "它削弱了能够制衡秦的东方强国，改变了后期各国力量结构。" },
+    "saws-changping-battle": { label: "长平为何改变统一的可行性", claim: "长平之战不是单纯名将对决，而是上党争夺、补给能力、决战选择与秦赵国力差距共同把赵国主力消耗殆尽。", sections: [["机制", "秦以持久围困切断赵军补给，将区域争夺转为无法承受的国家资源消耗。"], ["后果", "赵国仍未立即灭亡，但其恢复能力受重创，关东对秦的军事制衡明显减弱。"]], evidence: { title: "材料锚点：《史记》秦赵叙事与战国地理、兵器材料", content: "坑杀人数及换将动机存在夸张和争议；赵军遭决定性重创及其战略后果较为明确。" }, misconception: "长平之后秦已毫无阻力地统一六国。", memory: ["上党", "补给围困", "赵国重创"], question: "长平之战为何是统一前夜转折？", answer: "它显著降低了赵国作为东方军事屏障的能力，使秦的逐国进攻更可行。" }
+  };
+  const summaryOverrides = {
+    "saws-eastward-move": "平王东迁保留周王名义，郑庄公在繻葛挫败王师则证明实际军政资源已下移到强诸侯。",
+    "saws-qi-huan-hegemony": "齐桓公以改革、会盟和尊王攘夷组织霸政；宋襄公泓水失利说明礼制名义不能替代军事实力。",
+    "saws-jin-wen-chengpu": "晋文公城濮取胜后，秦穆公西向扩张、楚庄王问鼎和邲之战共同重组春秋霸主竞争。",
+    "saws-three-families-partition-jin": "晋国六卿坐大、三家分晋与田氏代齐显示军政资源脱离公室后，旧诸侯可被新家族取代，战国国家由此形成。",
+    "saws-li-kui-wei-reform": "魏国以李悝等改革率先强盛，吴起在楚的改革受贵族反扑，桂陵马陵又使魏国优势下降，战国进入持续的制度竞争。",
+    "saws-hundred-schools": "孔子周游和士人流动为新知识阶层开路，战国诸子百家把秩序、战争与统治方案带入列国竞争。",
+    "saws-qin-destroys-six-states": "吕不韦执政、秦王政亲政完成统一战争前的权力集中；秦随后逐国灭六国，结束战国诸侯格局。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.SAWS_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return {
+      ...item,
+      summary: summaryOverrides[id] || item.summary,
+      process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))),
+      contentLevel: "core",
+      contentPresentation: "tiered",
+      learningCase: caseAdditions[id] || item.learningCase,
+      previousEventIds: index ? [keptIds[index - 1]] : [],
+      nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [],
+      mergedEventIds: members.slice(1).map((member) => member.id)
+    };
+  });
 })();

@@ -36,3 +36,22 @@
     ruler("秦统一前夜", "秦王政", "嬴政", "前246-前221", ["saws-lu-buwei-and-qin-politics", "saws-qin-destroys-six-states"], ["秦王政亲政", "秦灭六国"])
   ];
 })();
+
+(() => {
+  const parentByChild = {
+    "saws-zheng-zhuang-rise": "saws-eastward-move",
+    "saws-song-xiang-failure": "saws-qi-huan-hegemony",
+    "saws-qin-mu-western-hegemony": "saws-jin-wen-chengpu",
+    "saws-chu-zhuang-hegemony": "saws-jin-wen-chengpu",
+    "saws-jin-qing-dafu-rise": "saws-three-families-partition-jin",
+    "saws-tian-family-replaces-qi": "saws-three-families-partition-jin",
+    "saws-wuqi-chu-reform": "saws-li-kui-wei-reform",
+    "saws-guiling-maling": "saws-li-kui-wei-reform",
+    "saws-confucius-and-hundred-schools-prelude": "saws-hundred-schools",
+    "saws-lu-buwei-and-qin-politics": "saws-qin-destroys-six-states"
+  };
+  window.SAWS_EMPERORS = window.SAWS_EMPERORS.map((item) => ({
+    ...item,
+    relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentByChild[id] || id))]
+  }));
+})();

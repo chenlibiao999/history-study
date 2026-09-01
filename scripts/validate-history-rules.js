@@ -858,7 +858,7 @@ if (westernZhouEvents.length) {
 
 const sawsEvents = data.dynastyEvents?.["spring-autumn-warring-states"] || [];
 if (sawsEvents.length) {
-  const text = sawsEvents.map((event) => `${event.title} ${event.era} ${event.summary}`).join(" ");
+  const text = sawsEvents.map((event) => [event.title, event.era, event.summary, ...(event.process || []).flatMap((step) => [step.title, step.description])].join(" ")).join(" ");
   ["平王东迁", "郑庄公", "齐桓公", "晋文公", "楚庄王", "吴越", "三家分晋", "田氏代齐", "李悝", "商鞅", "合纵连横", "胡服骑射", "长平", "秦灭六国"].forEach((keyword) => {
     if (!text.includes(keyword)) {
       errors.push(`春秋战国主线缺少「${keyword}」覆盖`);

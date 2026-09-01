@@ -27,3 +27,8 @@ window.XIN_EMPERORS = [
     "dynastyId": "xin"
   }
 ];
+
+(() => {
+  const parentByChild = { "xin-currency-chaos": "xin-reforms-land-slavery", "xin-official-title-reforms": "xin-reforms-land-slavery", "xin-frontier-breakdown": "xin-reforms-land-slavery", "xin-greenwood-red-eyebrows": "xin-natural-disasters-famine", "xin-kunyang-battle": "xin-natural-disasters-famine", "xin-fall-changan": "xin-natural-disasters-famine" };
+  window.XIN_EMPERORS = window.XIN_EMPERORS.map((item) => ({ ...item, relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentByChild[id] || id))], keyEvents: [...new Set(item.keyEvents.map((id) => parentByChild[id] || id))] }));
+})();

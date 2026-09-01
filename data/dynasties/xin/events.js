@@ -1002,4 +1002,21 @@ window.XIN_EVENTS = [
     }
   };
   window.XIN_EVENTS = window.XIN_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const originalById = new Map(window.XIN_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "xin-wang-mang-usurpation": ["xin-wang-mang-usurpation"],
+    "xin-reforms-land-slavery": ["xin-reforms-land-slavery", "xin-currency-chaos", "xin-official-title-reforms", "xin-frontier-breakdown"],
+    "xin-natural-disasters-famine": ["xin-natural-disasters-famine", "xin-greenwood-red-eyebrows", "xin-kunyang-battle", "xin-fall-changan"]
+  };
+  const summaryOverrides = {
+    "xin-reforms-land-slavery": "王田、币制、官名和边疆改制试图以复古方式重建秩序，却在登记、执行、市场信用和边地协作不足时不断放大国家能力的缺口。",
+    "xin-natural-disasters-famine": "灾荒、行政与币制失灵使流民组织为绿林赤眉；更始政权借此兴起，昆阳之战击穿新军威信，长安陷落终结新朝。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.XIN_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+  });
 })();

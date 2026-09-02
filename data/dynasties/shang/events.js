@@ -650,6 +650,56 @@
     ]
   });
 
+  const erligang = window.SHANG_EVENTS.find((item) => item.id === "shang-erligang-expansion");
+  Object.assign(erligang, {
+    summary: "二里岗文化与郑州商城提供早商国家的可观察证据：城垣、宫殿区、府库、冶铸与水利设施说明资源被集中组织；器物和原料网络说明其影响跨出都邑。但文化分布、王都归属和直接行政控制范围必须分别判断。",
+    background: [
+      "[事实层] 早商传世文献稀少，难以逐王、逐年复原政治过程；二里岗遗址与郑州商城的地层、城址和作坊材料因而成为研究早商的主要证据。",
+      "[事实层] 郑州商城处于二里头遗址之后、安阳殷墟之前的早商阶段；其是否就是商汤亳都，仍有不同考古解释。",
+      "[解释层] 早商国家能力不应由王表推定，而应从其能否持续组织筑城、仓储、手工业、水利和跨区域原料取得来判断。"
+    ],
+    process: [
+      { time: "约前16世纪", title: "二里岗分期建立早商时间框架", description: "[事实层] 二里岗遗址上下文化层及陶器组合为早商分期提供基准，郑州商城作为早商都邑性遗址被置于二里头与殷墟之间。 [解释层] 分期是比较遗址先后的工具，不等于已能把每一层对应到某位商王。 [证据：中国社会科学网《新纪肇启》]" },
+      { time: "早商阶段", title: "城垣、宫殿与道路把聚落组织为都邑", description: "[事实层] 郑州商城具有内外城、宫殿区、城壕与道路系统；大型夯土工程需要持续协调劳力、材料和施工。 [解释层] 城市规划说明中心组织能力，但不能直接推断城外每一处聚落均由王室日常管理。 [证据：《考古所见的殷商文明》]" },
+      { time: "二里岗时期", title: "府库、冶铸与制骨作坊形成专业生产节点", description: "[事实层] 新发掘显示郑州商城有大型仓储设施、冶铸遗物与制骨活动遗存；铜矿来源可指向更远区域。 [解释层] 这些设施将粮食、矿料、技术与劳力集中到都邑，构成王权可持续调度资源的物质中介。 [证据：河南省文物考古研究院郑州商城考古新成果]" },
+      { time: "早商中后段", title: "水利、祭祀与等级空间共同维持中心", description: "[事实层] 城内沟渠、挡水与分流设施兼具排水和区划功能；祭祀遗存与高等级墓葬显示仪式和等级占据特定城市空间。 [解释层] 国家能力不仅是军事或城墙，也包含组织水、生产、仪式和身份差序的日常能力。 [证据：河南省文物考古研究院郑州商城考古新成果]" },
+      { time: "材料解释阶段", title: "由物质网络推断影响，而非伪造疆界", description: "[事实层] 二里岗类型遗存分布广泛。 [解释层] 器物、技术或原料的流动可能来自贸易、礼物、迁徙、军事或政治控制，不能直接绘制为稳定国界；缺乏可追溯事件地图时维持空状态。 [争议]" }
+    ],
+    results: [
+      "[即时影响｜政治空间] 早商王权具有组织大型都邑、城防和宫殿区的能力，城市成为处理生产、祭祀和等级关系的中心。",
+      "[即时影响｜经济] 仓储、冶铸、制骨和远距离矿料取得说明资源调度已经超出单一家庭或聚落规模。",
+      "[中期影响｜区域网络] 二里岗分期与物质文化网络为追踪早商影响提供尺度，但不能替代对方国关系和行政强度的逐点研究。",
+      "[后续关联｜商代演变] 早商都城制度与专业生产为中商迁徙、盘庚迁殷和晚商殷墟的城市体系提供比较基准。",
+      "[限制] 郑州商城是否为汤亳、二里岗文化覆盖范围是否等于商王直接控制范围，均不得写成确定事实。"
+    ],
+    debates: [
+      { view: "[争议] 郑州商城的王都归属", content: "[事实层] 郑州商城是早商都邑性遗址；关于它是汤亳、仲丁隞都或不同早商阶段的中心，学界有不同方案。 [解释层] 本卡只以它说明早商都邑与国家能力，不用单一归属说支撑全部论证。" },
+      { view: "[争议] 二里岗文化与政治疆界", content: "[事实层] 二里岗类型遗存在较大区域出现。 [解释层] 物质文化的分布不能自动等于商王直辖范围，须区分行政控制、军事行动、贸易网络和文化影响。" },
+      { view: "[争议] 城市规模如何转换为国家能力", content: "[事实层] 城垣、作坊、府库和水利设施可直接观察。 [解释层] 它们支持“组织能力较强”的判断，但具体人口、财政量和劳动征发方式仍需更多出土材料与量化研究。" }
+    ],
+    claims: [
+      { statement: "[事实层] 郑州商城具有内外城、宫殿区、城壕和道路等早商都城要素。", status: "较稳妥", statusType: "stable", confidence: "high", sourceIds: ["shang-erligang-city"], note: "证明早商都邑规划，不解决王都名称争议。" },
+      { statement: "[事实层] 郑州商城发现仓储、冶铸、制骨和水利遗存，显示专业生产与城市功能分区。", status: "较稳妥", statusType: "stable", confidence: "high", sourceIds: ["shang-erligang-city"], note: "证明遗存与功能解释的现有证据，不直接估算总产量。" },
+      { statement: "[解释层][主因] 筑城、仓储、作坊和水利的联动，使早商中心能够持续集中并调配劳力、原料和仪式资源。", status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["shang-erligang-city", "shang-erligang-overview"], note: "为多种物质证据的机制性解释。" },
+      { statement: "[解释层][有限反事实] 若缺少仓储、生产和水利等持续性节点，单独城墙难以长期维持早商都邑的资源供给与功能分区。", status: "待进一步核验", statusType: "contested", confidence: "medium", sourceIds: ["shang-erligang-city"], note: "基于城市组织机理的有限推论，不是直接文本事实。" }
+    ],
+    citations: [
+      { sourceId: "shang-erligang-overview", reference: "中国社会科学网《新纪肇启：郑州二里岗早商遗址发现的意义》", status: "已核公开资料", plainText: "说明二里岗分期、郑州商城与早商文字材料的考古意义。", note: "用于早商分期与材料边界。" },
+      { sourceId: "shang-erligang-city", reference: "河南省文物考古研究院《郑州商城发现70周年》", status: "已核公开资料", plainText: "记录城垣、府库、冶铸、制骨与水利等新发现。", note: "用于城市功能和资源组织。" }
+    ],
+    causalChain: [
+      { kind: "cause", label: "[事实层] 前置条件", title: "早商都邑需要稳定资源组织", description: "大规模城址和生产活动要求跨聚落协调劳力、材料与技术。" },
+      { kind: "process", label: "[事实层] 生产中介", title: "城垣、府库、作坊与水利", description: "这些设施将防御、储藏、生产与城市区划连接起来。" },
+      { kind: "process", label: "[事实层] 网络中介", title: "原料与器物的跨区域联系", description: "矿料、技术和物质文化网络扩大中心可动员的资源范围。" },
+      { kind: "impact", label: "[解释层] 即时结果", title: "早商国家能力可被物质证据观察", description: "中心具备持续组织城市与生产的能力，但控制强度因地而异。" },
+      { kind: "impact", label: "[解释层] 后续关联", title: "为中晚商都城比较提供基准", description: "迁都与殷墟形成须在早商都城制度的演变中理解。" }
+    ],
+    sources: [
+      { id: "shang-erligang-overview", type: "考古综述", title: "《新纪肇启：郑州二里岗早商遗址发现的意义》", author: "中国社会科学网", authorityLevel: "公开考古资料入口", url: "https://www.cssn.cn/skgz/bwyc/202410/t20241018_5795125.shtml", note: "二里岗分期、郑州商城和早商文字材料。", credibility: "中", credibilityLevel: "medium" },
+      { id: "shang-erligang-city", type: "考古机构发布", title: "《郑州商城发现70周年|郑州商城考古新成果 新认识》", author: "河南省文物考古研究院", authorityLevel: "公开考古机构资料", url: "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=2731", note: "仓储、冶铸、制骨和水利等郑州商城遗存。", credibility: "高", credibilityLevel: "high" }
+    ]
+  });
+
   const wuding = window.SHANG_EVENTS.find((item) => item.id === "shang-wuding-prosperity");
   const frontierWars = window.SHANG_EVENTS.find((item) => item.id === "shang-tufang-qiangfang-wars");
   wuding.process.splice(2, 0, { time: frontierWars.time, title: frontierWars.title, description: "土方、羌方等战争记录显示晚商军事实践持续处理北西边疆压力；它与妇好等王室成员的军祭角色共同构成王权动员网络。" });

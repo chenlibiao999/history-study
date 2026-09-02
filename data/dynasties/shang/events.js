@@ -700,6 +700,54 @@
     ]
   });
 
+  const middleSuccession = window.SHANG_EVENTS.find((item) => item.id === "shang-early-succession-instability");
+  Object.assign(middleSuccession, {
+    summary: "中商迁都与继承调整不是可逐年核实的王表碎片。传世记载保留仲丁、河亶甲、祖乙等迁徙记忆，考古则显示早商至晚商之间的都邑中心确有变化；二者共同提示王室在重组政治中心、亲属关系和资源网络，但地点、次序与成因仍有争议。",
+    background: [
+      "[事实层] 早商都邑具有城垣、生产和区域网络，但此后郑州商城、小双桥、洹北商城与殷墟之间存在中心转移。",
+      "[事实层] 《史记·殷本纪》记载仲丁迁隞、河亶甲居相、祖乙迁邢等事件；这些记载不能逐条等同于已被考古确认的迁都事实。",
+      "[解释层] 都邑移动与继承模式须一并理解，因为二者都可能重排王室成员、贵族居住、祭祀资源和地区控制网络。"
+    ],
+    process: [
+      { time: "约前15世纪", title: "早商中心发生调整的考古背景", description: "[事实层] 郑州商城的功能衰落后，小双桥与洹北商城等遗址呈现中商都邑活动。 [解释层] 这支持中心转移的总体判断，却不自动确认传世王表中每一次迁都的地点与年代。 [证据：《考古所见的殷商文明》]" },
+      { time: "传世中商王表所记阶段", title: "仲丁、河亶甲、祖乙迁徙保存王室重组记忆", description: "[事实层] 《殷本纪》记录数次迁徙。 [争议] 文献成书晚于所述事件，地名对应和顺序仍需与考古分期交叉检验。 [证据：《史记·殷本纪》]" },
+      { time: "中商政治结构", title: "继承模式与都邑位置共同影响贵族关系", description: "[事实层] 商代王位继承存在兄终弟及与父死子继并存的复杂情况。 [解释层] 在固定继承制度尚未形成时，都邑迁移可能同时服务于王室支系、祭祀中心和地方资源的再配置；这是一种机制性解释，不是每次迁都的已证实动机。 [争议]" },
+      { time: "约前14世纪前后", title: "迁徙累积提高稳定中心的价值", description: "[事实层] 中商多中心的考古格局与文献迁都记忆都提示政治中心未长期固定。 [解释层] 盘庚迁殷之所以成为后续叙事的转折，不在于一次性消除全部矛盾，而在于殷墟阶段留下更连续的王室文字与考古材料。" }
+    ],
+    results: [
+      "[即时影响｜空间] 商王室的都邑中心并非自始固定，迁徙改变政治、生产与祭祀资源的集聚位置。",
+      "[即时影响｜政治] 继承与都邑调整反映王权必须持续协调王室支系和贵族集团，不能套用后世嫡长子继承模型。",
+      "[中期影响｜国家结构] 多次调整并不等于王朝无组织；其本身可能是早期国家在交通、资源和控制网络间寻找新支点的方式。",
+      "[后续关联] 盘庚迁殷、晚商甲骨文与殷墟都邑体系应被理解为这一长期重组之后更可观察的阶段。",
+      "[限制] 不为仲丁、河亶甲、祖乙各自绘制疆域或地图；材料不足以支持事件级稳定边界。"
+    ],
+    debates: [
+      { view: "[争议] 王表迁都能否逐条考古对应", content: "[事实层] 文献与考古都表明中商存在中心变化。 [解释层] 二者对应关系并未形成逐条共识，应保留为分期与地望问题，而非将王表当作已完全证实的编年。" },
+      { view: "[争议] 迁都的主要动机", content: "[事实层] 文献没有为每次迁都留下可独立核验的完整原因。 [解释层] 河患、资源、交通、王室斗争与区域控制均可能参与，不能指定单一动机为确定事实。" },
+      { view: "[争议] 继承变化是否等于政治失序", content: "[解释层] 继承模式多样和都邑移动显示制度仍在调整，但不能直接推导商王室已丧失统治能力；早期王朝可能通过调整维持网络。" }
+    ],
+    claims: [
+      { statement: "[事实层] 传世文献记载仲丁、河亶甲、祖乙等中商迁徙，考古亦显示郑州、小双桥、洹北与殷墟之间存在都邑演变。", status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["shiji-yinbenji", "shang-middle-capitals"], note: "两类材料可支持总体中心变化，不能逐条定年定址。" },
+      { statement: "[解释层][主因] 都邑移动和继承调整共同服务于王室、祭祀与区域资源网络的再组织。", status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["shiji-yinbenji", "shang-middle-capitals"], note: "机制性解释，具体动机按事件保留争议。" },
+      { statement: "[解释层][有限反事实] 若政治中心和继承安排无法随资源与贵族关系变化调整，王室更难维持跨区域网络；但材料不足以衡量每次调整的成败。", status: "待进一步核验", statusType: "contested", confidence: "low", sourceIds: ["shang-middle-capitals"], note: "有限反事实，不作为直接事实。" }
+    ],
+    citations: [
+      { sourceId: "shiji-yinbenji", reference: "《史记·殷本纪》", status: "已核公开文本", plainText: "保存中商迁隞、居相、迁邢等王表记忆。", note: "用于文献叙事，非逐条考古确认。" },
+      { sourceId: "shang-middle-capitals", reference: "《考古所见的殷商文明》", status: "已核公开资料", plainText: "说明郑州商城、小双桥、洹北商城与殷墟的早中晚商都邑演变。", note: "用于中商都邑演变的考古框架。" }
+    ],
+    causalChain: [
+      { kind: "cause", label: "[事实层] 前置条件", title: "早商中心与区域网络持续变化", description: "都邑、生产与交通条件并非长期固定。" },
+      { kind: "process", label: "[事实层] 调整中介", title: "都邑迁徙与继承重组", description: "文献与考古共同提示王室在中商阶段调整政治中心。" },
+      { kind: "process", label: "[解释层] 关系中介", title: "贵族、祭祀与资源重新配置", description: "迁都改变居住、祭祀和资源组织的支点。" },
+      { kind: "impact", label: "[解释层] 即时结果", title: "王权以移动维持网络", description: "调整并非无序的同义词，但成本和具体成效难以量化。" },
+      { kind: "impact", label: "[解释层] 后续关联", title: "盘庚迁殷成为可观察的稳定阶段", description: "晚商殷墟材料使此前的迁徙问题获得更清晰对照。" }
+    ],
+    sources: [
+      { id: "shiji-yinbenji", type: "传世史书", title: "《史记·殷本纪》", author: "司马迁", authorityLevel: "公开古籍文本", url: "https://zh.wikisource.org/zh-hans/%E5%8F%B2%E8%A8%98/%E5%8D%B7003", note: "中商王表和迁都叙事。", credibility: "高", credibilityLevel: "high" },
+      { id: "shang-middle-capitals", type: "考古综述", title: "《考古所见的殷商文明》", author: "宋国定", authorityLevel: "公开考古资料入口", url: "https://www.cssn.cn/kgxc/kgxc_kgxl/202211/t20221120_5565364.shtml", note: "商代早中晚都邑演变与材料边界。", credibility: "中", credibilityLevel: "medium" }
+    ]
+  });
+
   const wuding = window.SHANG_EVENTS.find((item) => item.id === "shang-wuding-prosperity");
   const frontierWars = window.SHANG_EVENTS.find((item) => item.id === "shang-tufang-qiangfang-wars");
   wuding.process.splice(2, 0, { time: frontierWars.time, title: frontierWars.title, description: "土方、羌方等战争记录显示晚商军事实践持续处理北西边疆压力；它与妇好等王室成员的军祭角色共同构成王权动员网络。" });

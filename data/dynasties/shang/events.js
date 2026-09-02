@@ -601,7 +601,54 @@
 
   const founding = window.SHANG_EVENTS.find((item) => item.id === "shang-tang-overthrows-xia");
   const yiyin = window.SHANG_EVENTS.find((item) => item.id === "shang-yiyin-taijia-regency");
-  founding.process.splice(2, 0, { time: yiyin.time, title: yiyin.title, description: "伊尹辅政、太甲放逐与复位是后世传世政治叙事，强调开国功臣、祖先秩序与继承王权之间的张力；具体史实层次须审慎处理。" });
+  Object.assign(founding, {
+    summary: "传世文献以商汤伐桀、鸣条之战解释夏商更替；考古材料则显示二里头与二里岗之间中原都邑和物质文化发生重组。两类证据共同说明早商国家形成，但不能把后世叙事中的人物、战役和年代逐项等同于已证实事实。",
+    background: [
+      "[事实层] 传世文献将夏末政治危机、商汤与伊尹活动、诸方国关系写为商取夏的背景。",
+      "[事实层] 考古学可观察到二里头文化晚期至二里岗早期的区域文化与都邑格局变化；商汤、夏桀和鸣条战役的精确对应及绝对年代仍有讨论。",
+      "[解释层] 王朝建立不是一场战役单独造成，而需要能调动盟友、劳力、生产与祭祀合法性的政治网络。"
+    ],
+    process: [
+      { time: "约前17世纪末至前16世纪初", title: "商与夏商之际中原政治格局变化", description: "[事实层] 传世文献记载夏、商及韦、顾、昆吾等集团的冲突；考古材料显示中原不同中心之间的文化格局发生变化。具体集团与遗址不能逐一机械对应。 [证据：《史记·殷本纪》；夏商周考古研究]" },
+      { time: "商汤时期（具体绝对年代存争议）", title: "商族组织盟友并取得伐夏的政治名义", description: "[事实层] 《殷本纪》叙述商汤与伊尹先后处理韦、顾、昆吾等力量，再与夏桀决战。 [解释层] 无论具体战役顺序如何，取代旧中心需要商族将周边集团纳入联盟或服从关系，而非仅依靠本族兵力。 [证据：《史记·殷本纪》]" },
+      { time: "灭夏叙事所指的关键阶段", title: "鸣条之战成为王朝更替的文献锚点", description: "[事实层] 传世史书将鸣条之战记作夏桀失败、商汤取得胜利的转折。 [争议] 其地点、时间、兵力和具体战况缺少可与文本一一对应的同时代文字材料；不能将后世道德化细节当作确定战史。 [证据：《史记·殷本纪》]" },
+      { time: "早商初期", title: "从胜利联盟转为都邑、生产与祭祀中心", description: "[事实层] 郑州商城与二里岗遗存体现早商大型城址、手工业和跨区域物质联系。 [解释层] 新政权能否延续，取决于是否将军事胜利转成稳定的劳力组织、青铜生产、仓储与仪式权威；这一过程不由商汤个人传说单独解释。 [证据：郑州商城、二里岗考古资料]" },
+      { time: "开国后王权叙事", title: "伊尹辅政与太甲故事保存继承秩序问题", description: "[事实层] 后世文献记载伊尹辅政、太甲被放逐及复位。 [解释层] 该叙事将开国功臣、祖先祭祀与继承王权的张力制度化表达；其细节的历史层次须与早商考古分开处理。 [证据：《史记·殷本纪》；[争议]]" }
+    ],
+    results: [
+      "[即时影响｜政治] 传世叙事将商汤取夏确立为新的王朝合法性起点；商王不再只是方国首领，而被置于“受命”与诸侯关系的中心。",
+      "[即时影响｜空间与经济] 早商都邑和二里岗文化网络显示黄河中游、东部及周边的资源、工匠和交通联系被重新组织；遗物分布不等于均质行政疆界。",
+      "[中期影响｜制度] 王权、祖先祭祀、贵族关系与专业生产逐渐构成早商政治的共同基础，之后的迁都、继承和方国关系均在这一结构中调整。",
+      "[后续关联｜史学] 夏商更替成为后世解释王朝合法性的范式，但以德性叙事说明兴亡的文本逻辑不能取代考古对都邑、生产和人口组织的检验。",
+      "[限制] 不能由这场更替直接推算商初疆域、人口或各方国的服属程度；缺乏合格事件级历史地图时不展示地图。"
+    ],
+    debates: [
+      { view: "[争议] 传世文本与考古分期如何对应", content: "[事实层] 《殷本纪》提供商汤、夏桀与鸣条的连续叙事；二里岗与郑州商城提供早商国家的考古证据。 [解释层] 两者可相互限定，却不能把某一遗址、某一文化层或某一年份直接指定为文本中的单一事件。" },
+      { view: "[争议] 商汤建国是单次征服还是联盟重组", content: "[事实层] 文献叙述商汤与多个集团的冲突和会合。 [解释层] 将早商建立理解为联盟、战争、都邑迁移和生产网络重组的复合过程，比“单场决战完成建国”更能容纳现有材料；各因素权重仍待考古与文献互证。" },
+      { view: "[争议] 夏桀与商汤的道德化形象", content: "[事实层] 传世史书用桀、汤的德性说明政权更替。 [解释层] 这是后世王朝叙事的重要证据，但不能直接用作夏末社会、商汤个人行为或战争细节的无条件事实。" }
+    ],
+    claims: [
+      { statement: "[事实层] 《史记·殷本纪》将商汤伐夏、鸣条获胜叙述为商朝建立的关键转折。", status: "较稳妥", statusType: "stable", confidence: "high", sourceIds: ["shiji-yinbenji"], note: "证明传世叙事的内容与后世记忆，不单独证明战役细节的考古真实性。" },
+      { statement: "[事实层] 郑州商城与二里岗遗存证明早商存在大型都邑、城垣、手工业与区域物质文化网络。", status: "较稳妥", statusType: "stable", confidence: "high", sourceIds: ["erligang-archaeology"], note: "证明早商国家能力与都邑形态，不直接标定商汤个人活动。" },
+      { statement: "[解释层][主因] 商朝形成需要联盟与军事胜利、都邑和生产组织、祭祀合法性共同转化为持续统治能力。", status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["shiji-yinbenji", "erligang-archaeology"], note: "机制性解释；具体绝对年代和文本—遗址对应仍有争议。" },
+      { statement: "[解释层][有限反事实] 即使存在一次决定性军事胜利，若没有后续的都邑、生产和资源组织，商族也难将联盟优势稳定为早商王朝。", status: "待进一步核验", statusType: "contested", confidence: "medium", sourceIds: ["erligang-archaeology"], note: "依据早期国家形成的一般机制作有限推论，不是可由单一文本直接证实的反事实。" }
+    ],
+    citations: [
+      { sourceId: "shiji-yinbenji", reference: "《史记·殷本纪》", status: "已核公开文本", plainText: "记载商汤、伊尹、夏桀、韦顾昆吾与鸣条等传统更替叙事。", note: "用于区分传世王朝叙事与可直接考古验证的事实。" },
+      { sourceId: "erligang-archaeology", reference: "中国社会科学网《新纪肇启：郑州二里岗早商遗址发现的意义》", status: "已核公开资料", plainText: "说明二里岗分期、郑州商城的早商都邑性质以及城垣、宫殿与文字遗存。", note: "用于早商都邑和物质文化网络，不为商汤战役细节背书。" }
+    ],
+    causalChain: [
+      { kind: "cause", label: "[事实层] 前置条件", title: "夏商之际多中心竞争", description: "传世文献与考古分期都提示中原政治与文化格局处在调整中。" },
+      { kind: "process", label: "[事实层] 动员中介", title: "商族联盟、战争与合法性叙事", description: "商汤伐夏的文献叙事将多个集团关系和军事行动组织为取代旧王朝的过程。" },
+      { kind: "process", label: "[事实层] 资源中介", title: "早商都邑与生产网络", description: "城垣、作坊和区域物质联系为王权持续组织资源提供条件。" },
+      { kind: "impact", label: "[解释层] 即时结果", title: "胜利转化为新王朝的统治能力", description: "军事优势须经都邑、祭祀和资源调度才能被稳定化。" },
+      { kind: "impact", label: "[解释层] 后续关联", title: "早商国家结构继续调整", description: "后续迁都、继承和方国关系不应视为建国完成后无关的插曲。" }
+    ],
+    sources: [
+      { id: "shiji-yinbenji", type: "传世史书", title: "《史记·殷本纪》", author: "司马迁", authorityLevel: "公开古籍文本", url: "https://zh.wikisource.org/zh-hans/%E5%8F%B2%E8%A8%98/%E5%8D%B7003", note: "商汤伐夏与鸣条叙事的主要传世文本入口。", credibility: "高", credibilityLevel: "high" },
+      { id: "erligang-archaeology", type: "考古综述", title: "《新纪肇启：郑州二里岗早商遗址发现的意义》", author: "中国社会科学网", authorityLevel: "公开考古资料入口", url: "https://www.cssn.cn/skgz/bwyc/202410/t20241018_5795125.shtml", note: "郑州商城、二里岗分期和早商都邑性质的公开考古综述。", credibility: "中", credibilityLevel: "medium" }
+    ]
+  });
 
   const wuding = window.SHANG_EVENTS.find((item) => item.id === "shang-wuding-prosperity");
   const frontierWars = window.SHANG_EVENTS.find((item) => item.id === "shang-tufang-qiangfang-wars");

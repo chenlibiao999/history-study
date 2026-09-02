@@ -664,6 +664,26 @@
     "wzhou-western-zhou-fall": "幽王的继承危机、申侯关系破裂与犬戎压力使镐京在前771年失守，西周终结；前770年以后的东迁另归春秋战国模块。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreCausality = {
+    "wzhou-muye-zhou-founded": ["[表层因] 周武王联军击败商军。", "[深层因] 周族已整合西土盟友并取得东进条件。", "[结构因] 克商后需安置殷遗民和联盟，战争胜利不等于统治稳固。", "[传导] 联军胜利 → 商都易手 → 周以分封和天命重组统治。"],
+    "wzhou-feudal-ritual-system": ["[表层因] 周初须控制东方与封赏功臣宗族。", "[深层因] 王室不能以直接行政覆盖全部新获地区。", "[结构因] 血缘、封邑和祭祀共同构成早期统治网络。", "[传导] 分封责任 → 宗法继承 → 礼乐仪式 → 王室中心地位。"],
+    "wzhou-duke-of-zhou-regency": ["[表层因] 成王年幼与三监叛乱冲击周初秩序。", "[深层因] 摄政、殷遗民和东方控制相互牵动。", "[结构因] 新建王朝尚未形成稳定继承与地区治理网络。", "[传导] 周公东征 → 叛乱平定 → 成周营建与封国重组。"],
+    "wzhou-yiwang-decline": ["[表层因] 昭穆以后王室多方向巡行、征伐与封赏。", "[深层因] 边疆与诸侯关系需要持续投入资源维护。", "[结构因] 王室影响依赖可动员资源和威望，非均质直接控制。", "[传导] 边地压力 → 王命与军事经营 → 资源消耗上升 → 王权转向守成。"],
+    "wzhou-liwang-reform-crisis": ["[表层因] 厉王强化对资源收益的控制。", "[深层因] 王室财政与政治成本上升。", "[结构因] 王畿社会与贵族支持是王权资源汲取的条件。", "[传导] 专利争议 → 利益冲突 → 国人暴动 → 厉王出奔。"],
+    "wzhou-gonghe-regency": ["[表层因] 厉王出奔造成王权空缺。", "[深层因] 危机后朝廷仍须处理行政与防御。", "[结构因] 王室权威受损时贵族共同执政可成权宜安排。", "[传导] 国人暴动 → 王权中断 → 共和行政 → 宣王继位。"],
+    "wzhou-xuanwang-restoration": ["[表层因] 宣王重启王命与边疆军事活动。", "[深层因] 厉王危机后须重建王室威望和资源汲取。", "[结构因] 西周晚期财政、劳役和边疆压力未被根除。", "[传导] 中兴动员 → 短期威望恢复 → 边疆与资源矛盾延续 → 幽王危机。"],
+    "wzhou-western-zhou-fall": ["[表层因] 幽王继承与申侯关系破裂，犬戎入关。", "[深层因] 王室已难稳定协调诸侯、边疆和财政。", "[结构因] 分封网络在王权衰弱后可转化为离心力量。", "[传导] 镐京失守 → 平王东迁 → 天子资源下移 → 春秋诸侯竞争。"]
+  };
+  const coreDebates = {
+    "wzhou-muye-zhou-founded": ["[主流说] 牧野是商周政权更替的关键节点。", "[挑战说] 商军倒戈等战场细节主要见于周人和后世叙事。"],
+    "wzhou-feudal-ritual-system": ["[主流说] 分封、宗法与礼乐共同服务西周贵族统治。", "[挑战说] 后出礼书不能等同于西周完整制度实态。"],
+    "wzhou-duke-of-zhou-regency": ["[主流说] 周公东征与东方重组是周初巩固的重要过程。", "[挑战说] 周公形象受后世政治叙事塑造，细节须与金文区分。"],
+    "wzhou-yiwang-decline": ["[主流说] 西周中期王室经营边疆并逐步面临压力。", "[挑战说] 昭穆王世部分战事细节和年代主要依赖后出文献。"],
+    "wzhou-liwang-reform-crisis": ["[主流说] 厉王危机反映资源控制与政治支持的冲突。", "[挑战说] “专利”的具体制度含义不能直接套为现代垄断。"],
+    "wzhou-gonghe-regency": ["[主流说] 前841年共和行政标志厉王出奔后的非常权力安排。", "[挑战说] 具体执政者和权力结构仍有不同解释。"],
+    "wzhou-xuanwang-restoration": ["[主流说] 宣王时期存在有限的王室恢复。", "[挑战说] “中兴”不能掩盖财政、劳役和边疆压力的延续。"],
+    "wzhou-western-zhou-fall": ["[主流说] 前771年镐京失守终结西周。", "[挑战说] 褒姒烽火叙事文学化强，不能替代继承、联盟与边疆解释。"]
+  };
   const coreAnchors = {
     "wzhou-muye-zhou-founded": { regnal: "前1046年；商帝辛末年／周武王克商", coordinate: "35.62N, 113.85E", admin: "牧野，今河南省新乡市北", terrainTransport: "黄河北岸平原；周军由关中经孟津东进" },
     "wzhou-feudal-ritual-system": { regnal: "约前1046-前1000年；武王、成王、康王时期", coordinate: "34.26N, 108.94E", admin: "宗周镐京，今陕西省西安市西南", terrainTransport: "渭河平原王畿；通向洛邑和东方封国的交通网络" },
@@ -681,6 +701,9 @@
       ...item,
       timeAnchor: { time: item.time, ...coreAnchors[id] },
       spatialAnchor: coreAnchors[id],
+      factLayer: members.flatMap((member) => member.process.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "western-zhou-main-source" }))).slice(0, 5),
+      debates: coreDebates[id].map((content) => ({ view: content.startsWith("[主流说]") ? "[主流说]" : "[挑战说]", content: content.replace(/^\[(主流说|挑战说)\]\s*/, "") })),
+      causalChain: coreCausality[id].map((description, index) => ({ kind: index < 3 ? "cause" : "impact", label: index < 3 ? "因果层" : "传导机制", title: description.split(" ")[0], description })),
       summary: summaryOverrides[id] || item.summary,
       process: members.flatMap((member) => member.process.map((step) => ({
         time: step.time,

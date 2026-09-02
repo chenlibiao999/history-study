@@ -658,6 +658,17 @@
       ...item,
       timeAnchor: { time: item.time, ...coreAnchors[id] },
       spatialAnchor: coreAnchors[id],
+      factLayer: members.flatMap((member) => member.process.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "saws-main-source" }))).slice(0, 5),
+      debates: [
+        { view: "[主流说]", content: (caseAdditions[id] || item.learningCase).claim },
+        { view: "[挑战说]", content: (caseAdditions[id] || item.learningCase).misconception || "具体事件细节须受传世文献、出土材料与后世叙事范围限制。" }
+      ],
+      causalChain: [
+        { kind: "cause", label: "[表层因]", title: "直接行动", description: members[0].process[0].description },
+        { kind: "cause", label: "[深层因]", title: "资源与关系", description: members[0].process[1]?.description || item.summary },
+        { kind: "cause", label: "[结构因]", title: "国家竞争结构", description: (caseAdditions[id] || item.learningCase).claim },
+        { kind: "impact", label: "[传导机制]", title: "后续影响", description: summaryOverrides[id] || item.summary }
+      ],
       summary: summaryOverrides[id] || item.summary,
       process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))),
       contentLevel: "core",

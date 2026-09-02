@@ -9,7 +9,7 @@ window.IMPERIAL_EXAM_TOPIC = {
   ],
   "eventIds": [
     "sui-grand-canal-luoyang",
-    "tang-imperial-exam-expanded"
+    "wu-zhou-replaces-tang"
   ],
   "plannedEventIds": [
     "song-imperial-exam-matured"

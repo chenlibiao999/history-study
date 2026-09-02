@@ -5040,4 +5040,30 @@ window.TANG_EVENTS = [
     "tang-baima-massacre": { label: "白马驿之祸为何是唐亡前的政治清场", claim: "朱温集团杀害朝臣并非孤立暴行，而是将仍能以唐朝名义组织政治反对的旧文官与士族网络清除。此后废帝改朝的阻力显著降低，唐的制度外壳也失去支撑者。", sections: [["谁被清除", "受害者多为朝廷重臣和士族代表，象征旧中央文官秩序。"], ["为何此时发生", "朱温已控制朝廷与军事资源，但仍需消除可能借唐室名义反对代唐的政治网络。"], ["后果", "唐亡不只是皇帝被废，也是原有朝廷政治共同体被暴力拆散。"]], evidence: { title: "材料锚点：《资治通鉴》卷265", content: "事件细节与人数有叙事夸张的可能，但针对朝臣集团的清洗及其代唐背景较为明确。" }, misconception: "不能把白马驿仅作残酷轶事；它解释了为何唐末缺少能组织制度性抵抗的中央力量。", memory: ["清洗朝臣", "朱温代唐", "政治共同体断裂"], question: "白马驿为何比一次宫廷杀戮更具结构意义？", answer: "它清除了依托唐朝制度和名义运作的官僚网络，为改朝换代扫除了主要政治阻力。" }
   };
   window.TANG_EVENTS = window.TANG_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const originalById = new Map(window.TANG_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "tang-unification-wars": ["li-yuan-founds-tang", "tang-unification-wars"],
+    "xuanwu-gate-incident": ["xuanwu-gate-incident", "zhenguan-era", "defeat-eastern-turkic-khaganate", "conquest-goguryeo", "tang-equal-field-zuyongdiao"],
+    "wu-zhou-replaces-tang": ["empress-wu-rise", "wu-zhou-replaces-tang", "shenlong-coup", "tanglong-coup", "xiantian-coup", "tang-imperial-exam-expanded"],
+    "an-shi-rebellion": ["kaiyuan-era", "tianbao-frontier-crisis", "tang-tubo-relations-heqin", "tang-talas-and-western-regions", "tang-nanzhao-frontier-crisis", "an-shi-rebellion"],
+    "post-anshi-fanzhen-order": ["post-anshi-fanzhen-order", "tibetans-capture-changan", "two-tax-law", "fengtian-crisis", "yuanhe-campaigns"],
+    "eunuch-shence-control": ["yongzhen-reform", "eunuch-shence-control", "niu-li-factional-struggle", "ganlu-incident", "huichang-suppression-buddhism", "dazhong-era", "helong-recovery"],
+    "huang-chao-rebellion": ["pang-xun-rebellion", "tang-wang-xianzhi-rebellion", "huang-chao-rebellion", "zhu-wen-controls-court", "tang-baima-massacre", "fall-of-tang"]
+  };
+  const summaryOverrides = {
+    "tang-unification-wars": "李渊建唐取得关中，唐初再按河东、中原、河北、江淮和江陵等战区完成统一，关中政权遂转为全国王朝。",
+    "xuanwu-gate-incident": "玄武门重置继承后，贞观以官僚程序、均田租庸调和对突厥高句丽的军事经营重建唐初的国家能力与边疆秩序。",
+    "wu-zhou-replaces-tang": "武则天通过参政、人事、科举扩展与符瑞建立武周；神龙、唐隆、先天政变又显示非常规继承与宗室权力的持续张力。",
+    "an-shi-rebellion": "开元繁荣、天宝边镇扩张、吐蕃和西域竞争以及南诏边患共同抬高军事动员压力，安史之乱由此成为既有失衡的爆发。",
+    "post-anshi-fanzhen-order": "安史后藩镇留任、吐蕃攻长安、两税法与元和削藩显示唐廷以财政改造和局部军事行动维持名义统一，却难重建战前控制。",
+    "eunuch-shence-control": "神策军使宦官掌握宫廷武力，永贞改革、牛李党争、甘露之变、会昌灭佛与大中河陇经营都在这一脆弱的首都权力结构内展开。",
+    "huang-chao-rebellion": "庞勋、王仙芝到黄巢的连续危机击穿地方与城市秩序；朱温借平叛控制朝廷、白马清洗并废唐，唐末遂由军阀完成政权替换。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.TANG_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+  });
 })();

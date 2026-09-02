@@ -5019,6 +5019,22 @@ window.TANG_EVENTS = [
     "xuanwu-gate-incident": { label: "玄武门政变怎样影响贞观政治", claim: "玄武门解决了皇位继承，却以宗室流血和权力集中为代价。李世民继位后强调纳谏、法制和用人，既有治理能力的需要，也有修复政变合法性的政治必要。", sections: [["冲突结构", "建成、世民集团各有军功、官僚和宫廷支持，太子制度无法吸收竞争。"], ["政变结果", "李世民控制宫门与武装，继承秩序被以暴力重置。"], ["如何修复", "贞观时期重视谏官、官僚程序与政治形象，不能脱离这一继位背景。"]], evidence: { title: "材料锚点：《旧唐书·太宗本纪》《资治通鉴》卷191", content: "史料多为胜者叙事，应同时看政变前集团配置和政变后的人事、制度安排。" }, misconception: "不能把玄武门当作“英明皇帝的必要手段”而跳过其对继承制度的破坏。", memory: ["继承竞争", "宫门武力", "贞观需修复"], question: "玄武门与贞观纳谏有何联系？", answer: "政变后的政权尤其需要借可见的官僚程序和治理绩效重建合法性。" },
     "tang-equal-field-zuyongdiao": { label: "均田与租庸调如何支撑初唐国家", claim: "初唐财政与兵役依赖编户、土地授受和租庸调的组合。它的关键不是绝对平均，而是让国家能够登记人口、取得粮布与劳役，并以此维持行政和军队。", sections: [["国家需要什么", "统一后需稳定税源和兵源，不能只依赖临时征发。"], ["制度怎样联动", "均田提供授受原则，编户提供登记，租庸调把土地和人身义务转成财政与劳役。"], ["为何会失灵", "人口流动、土地兼并和逃户增加后，原有登记基础被侵蚀，安史前后财政必须改造。"]], evidence: { title: "材料锚点：《唐六典》《通典》与敦煌户籍文书", content: "制度文献说明规则，敦煌文书可观察基层登记，二者不能互相替代。" }, misconception: "均田制不等于全国土地平均分配，它首先服务于赋役和基层登记。", memory: ["编户", "授田", "租庸调"], question: "为何均田与租庸调不能分开学？", answer: "土地规则、户籍登记和税役征收共同构成一套国家动员体系。" },
     "wu-zhou-replaces-tang": { label: "武周为何能以新王朝名义出现", claim: "武则天称帝并非单靠宫廷夺权。她利用高宗后期参政、官僚任用、科举扩展与符瑞话语，逐步建立可支撑女性皇帝的政治联盟；但继承安排仍决定武周难以稳定延续。", sections: [["权力基础", "由皇后、天后到临朝，武氏先占据决策和人事入口。"], ["合法性语言", "改国号、符瑞和制度安排把非常规继承包装为天命与治世。"], ["为什么复唐", "武周后期围绕继承人与旧唐宗室的矛盾未被消除，政变得以借恢复李唐名义取得支持。"]], evidence: { title: "材料锚点：《旧唐书·则天皇后本纪》与金石材料", content: "官方叙事褒贬极重，需将制度、人事和符瑞政治分开判断。" }, misconception: "武周不能只作为“唯一女皇帝”的奇观；它检验了官僚帝国如何处理非常规继承。", memory: ["参政入口", "符瑞联盟", "继承难题"], question: "武周为何能建立却难长期延续？", answer: "武氏能组织现实权力与合法性，但继承时旧唐宗室和官僚联盟仍有强大吸引力。" },
+    "kaiyuan-era": {
+      label: "开元年间的国家运行：整顿、供给与边防",
+      claim: "[解释层] 开元年间并非只以“繁荣”概括。它建立在玄宗亲政后重整中枢、压缩冗费、恢复行政与财政秩序的基础上；同一时期，边防经营和城市、市场扩张也提高了国家对军费、运输与地方执行的依赖。",
+      sections: [
+        ["[事实层｜时间与空间]", "唐玄宗开元元年至二十九年（713-741）。朝廷决策中心在京兆府长安，并以东都洛阳、运河漕运和关中仓储连接全国；河西走廊、陇右、朔方等边区承担对吐蕃、突厥及西域方向的防务。"],
+        ["[事实层｜政治与财政]", "玄宗亲政后任用姚崇、宋璟等为相，整饬吏治、限制冗官和奢费，要求州县考课与赋役执行回到常规程序。政治整顿的可观察结果，是中枢诏令、官员考核与财政收支重新形成较稳定的日常运行。"],
+        ["[事实层｜社会与文化]", "户籍、赋役和粮食供给仍是国家运行的基础；长安、洛阳及运河沿线的市场与手工业活动活跃。科举取士和文官任用继续扩展，但这不等于社会流动已脱离门第、地域和资源条件。"],
+        ["[事实层｜军事与外交]", "唐廷持续经营北方和西北边防，设置并强化边镇以应对长期军事压力。边防并非开元后期才出现的问题；只是将领、军队与供给在边区长期集中，为天宝年间更明显的节度使权力扩张准备了制度条件。"],
+        ["[解释层｜因果链]", "[主因] 武周末年至先天政变后的中枢重组，提供了重新安排宰相、人事和财政的政治入口；[辅因] 关中、运河和州县网络使粮赋与行政命令能够传导；二者共同支持了开元前期较高的国家动员与日常治理能力。证据链：中枢任用与政令调整 → 州县考课、赋役和仓储运输恢复常态 → 中央可持续调度文官、财政和边防资源。"],
+        ["[解释层｜边界与争议]", "“开元盛世”是后世概括，不应推成所有地区、阶层都同步富足，也不能把后来的安史之乱倒推为开元治理必然失败。[争议] 具体财政余额、人口规模和边镇实力的变化，仍需分别使用户籍、食货志、墓志及边防材料核对，不能只凭编年史作总量判断。"]
+      ],
+      evidence: { title: "证据锚点：《资治通鉴》卷211及唐代制度、食货材料", content: "卷211可核对开元初年的政局与人事；对赋役、人口、市场和边防的判断，还须与《旧唐书》《新唐书》食货、地理诸志及出土文书互证。这里将编年事实与结构解释分开陈述。" },
+      misconception: "“开元盛世”不是可替代解释的结论：必须分别核对政治整顿、财政供给、社会生产和边防组织。",
+      question: "开元年间国家能力通过哪些中介环节传导？",
+      answer: "中枢人事与政令调整，经由州县考课、赋役登记、仓储漕运和边防供给，转化为行政、财政与军事资源的持续调度。"
+    },
     "an-shi-rebellion": {
       label: "一场叛乱为何改写唐朝结构",
       claim: "安史之乱不是“安禄山造反，唐朝从此衰落”的单线故事：边镇军力、中央财政和宫廷政治在战前已失衡，战争又迫使唐廷以藩镇、宦官和新税制换取存续。",
@@ -5046,7 +5062,8 @@ window.TANG_EVENTS = [
     "tang-unification-wars": ["li-yuan-founds-tang", "tang-unification-wars"],
     "xuanwu-gate-incident": ["xuanwu-gate-incident", "zhenguan-era", "defeat-eastern-turkic-khaganate", "conquest-goguryeo", "tang-equal-field-zuyongdiao"],
     "wu-zhou-replaces-tang": ["empress-wu-rise", "wu-zhou-replaces-tang", "shenlong-coup", "tanglong-coup", "xiantian-coup", "tang-imperial-exam-expanded"],
-    "an-shi-rebellion": ["kaiyuan-era", "tianbao-frontier-crisis", "tang-tubo-relations-heqin", "tang-talas-and-western-regions", "tang-nanzhao-frontier-crisis", "an-shi-rebellion"],
+    "kaiyuan-era": ["kaiyuan-era"],
+    "an-shi-rebellion": ["tianbao-frontier-crisis", "tang-tubo-relations-heqin", "tang-talas-and-western-regions", "tang-nanzhao-frontier-crisis", "an-shi-rebellion"],
     "post-anshi-fanzhen-order": ["post-anshi-fanzhen-order", "tibetans-capture-changan", "two-tax-law", "fengtian-crisis", "yuanhe-campaigns"],
     "eunuch-shence-control": ["yongzhen-reform", "eunuch-shence-control", "niu-li-factional-struggle", "ganlu-incident", "huichang-suppression-buddhism", "dazhong-era", "helong-recovery"],
     "huang-chao-rebellion": ["pang-xun-rebellion", "tang-wang-xianzhi-rebellion", "huang-chao-rebellion", "zhu-wen-controls-court", "tang-baima-massacre", "fall-of-tang"]
@@ -5055,7 +5072,8 @@ window.TANG_EVENTS = [
     "tang-unification-wars": "李渊建唐取得关中，唐初再按河东、中原、河北、江淮和江陵等战区完成统一，关中政权遂转为全国王朝。",
     "xuanwu-gate-incident": "玄武门重置继承后，贞观以官僚程序、均田租庸调和对突厥高句丽的军事经营重建唐初的国家能力与边疆秩序。",
     "wu-zhou-replaces-tang": "武则天通过参政、人事、科举扩展与符瑞建立武周；神龙、唐隆、先天政变又显示非常规继承与宗室权力的持续张力。",
-    "an-shi-rebellion": "开元繁荣、天宝边镇扩张、吐蕃和西域竞争以及南诏边患共同抬高军事动员压力，安史之乱由此成为既有失衡的爆发。",
+    "kaiyuan-era": "开元年间，玄宗亲政后的中枢整顿、赋役与行政运行、城市和运输网络及长期边防经营共同构成唐前期国家能力的高位状态；其地区差异和边防成本不能被“盛世”一词抹平。",
+    "an-shi-rebellion": "天宝边镇扩张、吐蕃和西域竞争以及南诏边患共同抬高军事动员压力，安史之乱由此成为既有失衡的爆发。",
     "post-anshi-fanzhen-order": "安史后藩镇留任、吐蕃攻长安、两税法与元和削藩显示唐廷以财政改造和局部军事行动维持名义统一，却难重建战前控制。",
     "eunuch-shence-control": "神策军使宦官掌握宫廷武力，永贞改革、牛李党争、甘露之变、会昌灭佛与大中河陇经营都在这一脆弱的首都权力结构内展开。",
     "huang-chao-rebellion": "庞勋、王仙芝到黄巢的连续危机击穿地方与城市秩序；朱温借平叛控制朝廷、白马清洗并废唐，唐末遂由军阀完成政权替换。"

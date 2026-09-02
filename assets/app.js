@@ -638,11 +638,14 @@
     clear(meta);
     [
       ["时间", event.time, "amber"],
+      ["纪年", event.timeAnchor?.regnal, "amber"],
+      ["空间锚", event.spatialAnchor ? `${event.spatialAnchor.coordinate}｜${event.spatialAnchor.admin}` : "", ""],
+      ["地形/交通", event.spatialAnchor?.terrainTransport, ""],
       ["朝代", event.period, "accent"],
       ["地区", event.regions.join(" / "), ""],
       ["类型", event.topics.join(" · "), ""],
       ["层级", isOutline ? "索引线索" : event.contentLevel === "core" ? "核心案例" : "主线节点", !isTiered ? "完整内容保留" : ""]
-    ].forEach(([label, value, tone]) => {
+    ].filter(([, value]) => value).forEach(([label, value, tone]) => {
       const item = textNode("span", "meta-item", "");
       item.append(textNode("span", "meta-label", label), textNode("span", "meta-value " + tone, value));
       meta.append(item);

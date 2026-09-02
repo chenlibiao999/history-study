@@ -799,11 +799,27 @@
     "shang-tufang-qiangfang-wars",
     "shang-zhou-rising-west"
   ]);
+  const coreAnchors = {
+    "shang-tang-overthrows-xia": { time: "约前1600年（传统早商起始，绝对年代存争议）", regnal: "商汤时期；《史记》所载夏商易代", coordinate: "34.75N, 113.64E", admin: "河南郑州一带早商城址群", terrainTransport: "黄河中下游平原；济、洛与黄河交通网络" },
+    "shang-erligang-expansion": { time: "约前1600-前1400年（考古分期）", regnal: "早商；非可逐年对应的王年", coordinate: "34.75N, 113.64E", admin: "郑州商城、河南省郑州市", terrainTransport: "黄河中游冲积平原；沿黄河及支流的资源运输" },
+    "shang-early-succession-instability": { time: "约前1500-前1400年（考古分期）", regnal: "中商；仲丁、河亶甲、祖乙王表为传世记载", coordinate: "34.75N, 113.64E", admin: "郑州至安阳之间的中原都邑带", terrainTransport: "黄河中下游与洹河流域；都邑、资源和交通支点转换" },
+    "shang-pangeng-moves-yin": { time: "约前1300年（传统纪年，年代仍有争议）", regnal: "盘庚时期；晚商殷墟阶段起点", coordinate: "36.10N, 114.35E", admin: "殷墟，河南省安阳市", terrainTransport: "洹河流域；连接冀南、豫北的平原交通" },
+    "shang-wuding-prosperity": { time: "约前1250-前1192年（王年为学界常用推定）", regnal: "武丁时期；晚商", coordinate: "36.10N, 114.35E", admin: "殷墟，河南省安阳市", terrainTransport: "洹河流域王畿；通向北方与西北方国的军事通道" },
+    "shang-oracle-bones": { time: "约前1250-前1046年", regnal: "武丁至帝辛时期；晚商", coordinate: "36.10N, 114.35E", admin: "殷墟，河南省安阳市", terrainTransport: "洹河流域王都；占卜材料集中于宫殿宗庙区" },
+    "shang-bronze-ritual-system": { time: "约前1300-前1046年", regnal: "晚商殷墟时期", coordinate: "36.10N, 114.35E", admin: "殷墟及中原商文化区", terrainTransport: "洹河流域作坊区；铜、锡、铅等矿料的跨区域运输" },
+    "shang-fangguo-relations": { time: "约前1250-前1046年", regnal: "武丁至帝辛时期；晚商", coordinate: "36.10N, 114.35E", admin: "殷墟王畿与北方、西北、东南方国", terrainTransport: "黄河中下游平原及山前通道；征伐与贡纳路线" },
+    "shang-yinxu-city-royal-tombs": { time: "约前1300-前1046年", regnal: "盘庚后至帝辛；晚商", coordinate: "36.10N, 114.35E", admin: "殷墟，河南省安阳市", terrainTransport: "洹河两岸；宫殿宗庙区、王陵区和作坊区的城市空间" },
+    "shang-human-sacrifice-ritual-politics": { time: "约前1250-前1046年", regnal: "武丁至帝辛时期；晚商", coordinate: "36.10N, 114.35E", admin: "殷墟祭祀区与王陵区，河南省安阳市", terrainTransport: "洹河流域王都；战争俘获与祭祀场所的空间连接" },
+    "shang-di-xin-crisis": { time: "约前1075-前1046年", regnal: "帝辛时期；商末", coordinate: "36.10N, 114.35E", admin: "殷墟王畿及关中东缘", terrainTransport: "黄河中下游至渭河流域；东南用兵与西方周族联盟的双向压力" },
+    "shang-muye-fall": { time: "前1046年（常用纪年）", regnal: "帝辛末年／周武王克商", coordinate: "35.62N, 113.85E", admin: "牧野，今河南省新乡市北", terrainTransport: "黄河以北平原；周军东进与诸侯会师路线" }
+  };
   const coreIds = new Set(Object.keys(learningCases));
   window.SHANG_EVENTS = window.SHANG_EVENTS
     .filter((item) => !removedEventIds.has(item.id))
     .map((item) => ({
       ...item,
+      timeAnchor: coreAnchors[item.id] || null,
+      spatialAnchor: coreAnchors[item.id] || null,
       contentLevel: coreIds.has(item.id) ? "core" : item.contentLevel || "outline",
       contentPresentation: "tiered",
       learningCase: learningCases[item.id] || null

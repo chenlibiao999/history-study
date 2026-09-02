@@ -664,11 +664,23 @@
     "wzhou-western-zhou-fall": "幽王的继承危机、申侯关系破裂与犬戎压力使镐京在前771年失守，西周终结；前770年以后的东迁另归春秋战国模块。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreAnchors = {
+    "wzhou-muye-zhou-founded": { regnal: "前1046年；商帝辛末年／周武王克商", coordinate: "35.62N, 113.85E", admin: "牧野，今河南省新乡市北", terrainTransport: "黄河北岸平原；周军由关中经孟津东进" },
+    "wzhou-feudal-ritual-system": { regnal: "约前1046-前1000年；武王、成王、康王时期", coordinate: "34.26N, 108.94E", admin: "宗周镐京，今陕西省西安市西南", terrainTransport: "渭河平原王畿；通向洛邑和东方封国的交通网络" },
+    "wzhou-duke-of-zhou-regency": { regnal: "约前1043-前1036年；周成王初年、周公摄政", coordinate: "34.62N, 112.45E", admin: "成周洛邑，今河南省洛阳市", terrainTransport: "洛河盆地；连接关中、殷地与东方诸侯" },
+    "wzhou-yiwang-decline": { regnal: "约前10世纪；昭王至夷王时期", coordinate: "32.04N, 112.15E", admin: "汉水流域及关中西北边地", terrainTransport: "汉水航道与关中西北山前通道" },
+    "wzhou-liwang-reform-crisis": { regnal: "约前878-前841年；周厉王时期", coordinate: "34.26N, 108.94E", admin: "宗周镐京，今陕西省西安市西南", terrainTransport: "渭河平原；王畿山林川泽及诸侯贡赋网络" },
+    "wzhou-gonghe-regency": { regnal: "前841-前828年；共和行政", coordinate: "34.26N, 108.94E", admin: "宗周镐京，今陕西省西安市西南", terrainTransport: "渭河平原王畿；贵族朝廷权力中心" },
+    "wzhou-xuanwang-restoration": { regnal: "前828-前782年；周宣王时期", coordinate: "35.60N, 108.20E", admin: "宗周与太原、江汉等边区", terrainTransport: "渭河平原通西北山前与江汉谷地的军事路线" },
+    "wzhou-western-zhou-fall": { regnal: "前771年；周幽王末年", coordinate: "34.26N, 108.94E", admin: "宗周镐京，今陕西省西安市西南", terrainTransport: "关中渭河平原；西北戎狄入关通道与东迁路线" }
+  };
   window.WESTERN_ZHOU_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     return {
       ...item,
+      timeAnchor: { time: item.time, ...coreAnchors[id] },
+      spatialAnchor: coreAnchors[id],
       summary: summaryOverrides[id] || item.summary,
       process: members.flatMap((member) => member.process.map((step) => ({
         time: step.time,

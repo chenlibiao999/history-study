@@ -709,7 +709,7 @@
     if (!learningCase) return;
     const section = document.createElement("section");
     section.className = "learning-case";
-    section.append(textNode("div", "learning-case-label", learningCase.label || "先抓住这个判断"));
+    section.append(textNode("div", "learning-case-label", learningCase.label || "核心判断"));
     section.append(textNode("p", "learning-case-claim", learningCase.claim));
 
     const sections = document.createElement("div");
@@ -728,24 +728,7 @@
       evidence.append(textNode("strong", "", learningCase.evidence.title), textNode("p", "", learningCase.evidence.content));
       section.append(evidence);
     }
-    if (learningCase.misconception) section.append(textNode("p", "learning-misconception", `不要这样记：${learningCase.misconception}`));
-
-    const memory = document.createElement("div");
-    memory.className = "learning-memory";
-    (learningCase.memory || []).forEach(item => memory.append(textNode("span", "learning-memory-item", item)));
-    section.append(memory);
-
-    const recall = document.createElement("button");
-    recall.type = "button";
-    recall.className = "learning-recall";
-    recall.textContent = learningCase.question;
-    recall.addEventListener("click", () => {
-      recall.classList.toggle("revealed");
-      recall.setAttribute("aria-expanded", String(recall.classList.contains("revealed")));
-      recall.lastChild.textContent = recall.classList.contains("revealed") ? learningCase.answer : "点击后查看答案";
-    });
-    recall.append(textNode("span", "learning-recall-answer", "点击后查看答案"));
-    section.append(recall);
+    if (learningCase.misconception) section.append(textNode("p", "learning-misconception", `[证据边界] ${learningCase.misconception}`));
     container.append(section);
   }
 

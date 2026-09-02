@@ -5358,4 +5358,36 @@ window.NS_EVENTS = [
     "ns-houjing-rebellion": { label: "侯景之乱为何重创南朝", claim: "侯景之乱的破坏不止于建康陷落。梁朝内部对降将、宗室和地方军的协调失败，使战争长期化；江南人口、城市与财政网络受损，陈朝只能在收缩后的资源基础上重建。", sections: [["危机起点", "侯景投梁后与中央互不信任，梁武帝对军事和地方局势的判断迟缓。"], ["为何守不住", "宗室与将领各自计算，救援无法形成统一指挥，首都被围和内战相互加剧。"], ["区域后果", "建康及长江中下游受到长期破坏，南朝虽未立刻结束，却失去与北方整合政权抗衡的资源弹性。"]], evidence: { title: "材料锚点：《梁书》《资治通鉴》侯景纪事", content: "正史对侯景极度妖魔化，仍可从围城、援军和战后权力分裂观察国家协调失败。" }, misconception: "侯景之乱不是单一叛将毁国；中央、宗室和地方军事网络无法协同才让破坏扩大。", memory: ["降将失信", "援军不合", "江南资源受损"], question: "侯景之乱为何影响到陈朝的命运？", answer: "陈朝是在战乱破坏后的收缩基础上建立，人口、财政和战略空间都已大幅减少。" }
   };
   window.NS_EVENTS = window.NS_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const originalById = new Map(window.NS_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "ns-eight-princes-war": ["ns-jin-unifies-wu", "ns-eight-princes-war"],
+    "ns-yongjia-collapse": ["ns-yongjia-collapse"],
+    "ns-eastern-jin-southward": ["ns-eastern-jin-southward", "ns-zu-ti-northern-expedition", "ns-wangdun-sujun-rebellions"],
+    "ns-feishui-battle": ["ns-chenghan-and-shu", "ns-later-zhao-northern-orders", "ns-huanwen-northern-expeditions", "ns-former-liang-and-hexi", "ns-former-yan-qin-rise", "ns-feishui-battle", "ns-post-feishui-fragmentation"],
+    "ns-liuyu-song": ["ns-sun-en-lu-xun-rebellions", "ns-huanxuan-usurpation", "ns-liuyu-song", "ns-liusong-yuanjia-and-northern-campaigns", "ns-liusong-imperial-clan-killings"],
+    "ns-xiaowen-reforms": ["ns-northern-wei-rise", "ns-northern-wei-buddhism-and-state", "ns-xiaowen-reforms", "ns-tuoba-han-governance"],
+    "ns-six-garrisons-rebellion": ["ns-six-garrisons-rebellion", "ns-heyin-massacre", "ns-northern-wei-split"],
+    "ns-guanzhong-fubing-system": ["ns-northern-qi-zhou-founded", "ns-guanzhong-fubing-system", "ns-northern-qi-gao-politics", "ns-northern-zhou-reforms", "ns-northern-zhou-prevails"],
+    "ns-houjing-rebellion": ["ns-southern-dynasties-transition", "ns-nanqi-short-rule-and-xiao-yan", "ns-liang-wudi-governance-buddhism", "ns-houjing-rebellion", "ns-chen-baxian-founds-chen", "ns-chen-northern-frontier-and-sui-threat"]
+  };
+  const caseAdditions = {
+    "ns-liuyu-song": { label: "南朝为何反复依赖军人建国", claim: "东晋末的流民动乱、军府坐大与桓玄篡位使刘裕能够以军事整合夺取政权；南朝宋的北伐和宗室冲突又显示，军功建国并不能自动建立稳定继承与中央控制。", sections: [["军府入口", "平叛和北伐让刘裕掌握军队、财政与声望，东晋皇室已无力独立约束军人集团。"], ["循环", "宋文帝北伐与宗室相残都说明南朝政治仍受军事资源、继承竞争和区域防御的共同制约。"]], evidence: { title: "材料锚点：《宋书》《晋书》及《资治通鉴》东晋末年纪事", content: "正史常以禅代道德评价人物，应结合军府、北伐与宗室权力配置理解政权转换。" }, misconception: "刘裕建宋只是一次个人篡位。", memory: ["军府平乱", "北伐声望", "继承未稳"], question: "南朝宋为何未能终结南方政权脆弱性？", answer: "它改变了统治家族，却未消除军人政治、宗室竞争和北方压力的结构条件。" }
+  };
+  const summaryOverrides = {
+    "ns-eight-princes-war": "西晋灭吴后的统一未能解决宗王军政权与继承风险；八王之乱耗尽中枢资源，为永嘉崩解打开缺口。",
+    "ns-eastern-jin-southward": "东晋南渡、祖逖北伐与王敦苏峻之乱说明建康政权依赖北来士族、江南豪族与军府协作，能够存续却难以直接统一北方。",
+    "ns-feishui-battle": "十六国的区域政权、前秦北方整合与淝水战败说明快速扩张若无法整合军队和地方集团，战场受挫会迅速引发多中心分裂。",
+    "ns-liuyu-song": "东晋末动乱、刘裕建宋、元嘉北伐和宗室相残构成南朝早期的军人建国与继承脆弱性链条。",
+    "ns-xiaowen-reforms": "北魏建立后以佛教国家化、迁洛与均田三长等制度治理华北；改革加强行政能力，也重新分配了旧贵族和边镇的资源。",
+    "ns-six-garrisons-rebellion": "六镇起义、河阴之变与北魏分裂让原边防军政体系转化为尔朱、高欢、宇文等军事集团竞争。",
+    "ns-guanzhong-fubing-system": "北齐北周并立、关中府兵与北周改革使关陇军政网络成为北方整合的基础，北周胜齐直接构成隋统一前夜。",
+    "ns-houjing-rebellion": "南朝政权递换、梁武帝时期的宗教与军政、侯景之乱、陈朝建立和隋的威胁共同显示江南资源在长期内战后难以再与北方整合政权抗衡。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.NS_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+  });
 })();

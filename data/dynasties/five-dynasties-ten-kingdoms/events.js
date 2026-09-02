@@ -610,4 +610,28 @@
     "fdtk-song-unification-strategy": { label: "宋初为何先南后北", claim: "北宋的统一路线是风险排序：南方诸国彼此分散、辽与北汉却互为支援。先取荆湖、四川、岭南和江南，既扩大税源与交通纵深，也避免在北方过早与辽决战。", sections: [["南方的可分割性", "南方政权之间难形成稳定联盟，宋可逐段控制长江和沿海资源。"], ["北方的高风险", "北汉依辽而存，直接北伐可能把局部统一战争变为与辽的大规模冲突。"], ["统一后的缺口", "979年灭北汉结束五代十国，却未收回燕云，宋辽长期对峙由此成为新主线。"]], evidence: { title: "材料锚点：《续资治通鉴长编》与宋初战争纪事", content: "按战区追踪荆湖、蜀、岭南、江南和太原，才能看出统一并非年份清单。" }, misconception: "先南后北不是怯战，而是对敌我资源与联盟关系的排序。", memory: ["南方可逐取", "北汉有辽", "统一留燕云"], question: "北宋统一后最大的战略遗留是什么？", answer: "燕云仍在辽手中，中原北方防御与进攻空间受到长期限制。" }
   };
   window.FDTK_EVENTS = window.FDTK_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const originalById = new Map(window.FDTK_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "fdtk-later-liang-founded": ["fdtk-tang-collapse-zhu-wen-rise", "fdtk-later-liang-founded", "fdtk-liang-jin-rivalry", "fdtk-later-tang-destroys-liang", "fdtk-zhuangzong-crisis", "fdtk-mingzong-restoration"],
+    "fdtk-shi-jingtang-yanyun": ["fdtk-shi-jingtang-yanyun", "fdtk-liao-destroys-later-jin", "fdtk-later-han-founded", "fdtk-northern-han-survival"],
+    "fdtk-chai-rong-reforms": ["fdtk-guo-wei-founds-zhou", "fdtk-guo-wei-reforms", "fdtk-chai-rong-reforms"],
+    "fdtk-wuyue-qian-family": ["fdtk-wuyue-qian-family", "fdtk-wu-yang-family", "fdtk-former-shu-founded", "fdtk-later-shu-founded", "fdtk-min-and-southern-han", "fdtk-chu-jingnan"],
+    "fdtk-southern-tang-destroys-min-chu": ["fdtk-southern-tang-founded", "fdtk-southern-tang-destroys-min-chu", "fdtk-later-zhou-southern-tang-war"],
+    "fdtk-chenqiao-mutiny": ["fdtk-chenqiao-mutiny"],
+    "fdtk-song-unification-strategy": ["fdtk-song-unification-strategy"]
+  };
+  const summaryOverrides = {
+    "fdtk-later-liang-founded": "唐末朱温崛起、后梁后唐更替及庄宗危机、明宗恢复说明五代王朝以军镇资源争夺北方有限中心，皇帝名义无法自动恢复全国秩序。",
+    "fdtk-shi-jingtang-yanyun": "石敬瑭借契丹建后晋并割燕云，契丹灭后晋、后汉短立与北汉依辽而存，形成宋辽时代中原北防的长期缺口。",
+    "fdtk-chai-rong-reforms": "郭威建后周、整顿军政与柴荣改革把五代末的禁军、财政和统一路线交给宋初承接。",
+    "fdtk-wuyue-qian-family": "吴越、杨吴、前后蜀、闽南汉、楚荆南等十国分别依托区域资源求存，南方并非同一种割据模式。",
+    "fdtk-southern-tang-destroys-min-chu": "南唐建国、取闽楚与后周攻淮南显示区域扩张若不能稳定整合，反会使核心江淮防御在北方压力下更脆弱。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.FDTK_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+  });
 })();

@@ -196,3 +196,8 @@ window.FDTK_EMPERORS = [
     "dynastyId": "five-dynasties-ten-kingdoms"
   }
 ];
+
+(() => {
+  const parentByChild = { "fdtk-tang-collapse-zhu-wen-rise": "fdtk-later-liang-founded", "fdtk-liang-jin-rivalry": "fdtk-later-liang-founded", "fdtk-later-tang-destroys-liang": "fdtk-later-liang-founded", "fdtk-zhuangzong-crisis": "fdtk-later-liang-founded", "fdtk-mingzong-restoration": "fdtk-later-liang-founded", "fdtk-liao-destroys-later-jin": "fdtk-shi-jingtang-yanyun", "fdtk-later-han-founded": "fdtk-shi-jingtang-yanyun", "fdtk-northern-han-survival": "fdtk-shi-jingtang-yanyun", "fdtk-guo-wei-founds-zhou": "fdtk-chai-rong-reforms", "fdtk-guo-wei-reforms": "fdtk-chai-rong-reforms", "fdtk-wu-yang-family": "fdtk-wuyue-qian-family", "fdtk-former-shu-founded": "fdtk-wuyue-qian-family", "fdtk-later-shu-founded": "fdtk-wuyue-qian-family", "fdtk-min-and-southern-han": "fdtk-wuyue-qian-family", "fdtk-chu-jingnan": "fdtk-wuyue-qian-family", "fdtk-southern-tang-founded": "fdtk-southern-tang-destroys-min-chu", "fdtk-later-zhou-southern-tang-war": "fdtk-southern-tang-destroys-min-chu" };
+  window.FDTK_EMPERORS = window.FDTK_EMPERORS.map((item) => ({ ...item, relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentByChild[id] || id))], keyEvents: [...new Set(item.keyEvents.map((id) => parentByChild[id] || id))] }));
+})();

@@ -799,6 +799,126 @@
     "shang-tufang-qiangfang-wars",
     "shang-zhou-rising-west"
   ]);
+  const coreSourceCatalog = [
+    { id: "shiji-yinbenji", type: "传世史书", title: "《史记·殷本纪》", author: "司马迁", authorityLevel: "公开古籍文本", url: "https://zh.wikisource.org/zh-hans/%E5%8F%B2%E8%A8%98/%E5%8D%B7003", note: "用于商王表、夏商更替与商周更替的传世叙事。", credibility: "高", credibilityLevel: "high" },
+    { id: "erligang-archaeology", type: "考古综述", title: "《新纪肇启：郑州二里岗早商遗址发现的意义》", author: "中国社会科学网", authorityLevel: "公开考古资料入口", url: "https://www.cssn.cn/skgz/bwyc/202410/t20241018_5795125.shtml", note: "用于早商分期、郑州商城和早商文字材料。", credibility: "中", credibilityLevel: "medium" },
+    { id: "shang-erligang-city", type: "考古机构发布", title: "《郑州商城发现70周年|郑州商城考古新成果 新认识》", author: "河南省文物考古研究院", authorityLevel: "公开考古机构资料", url: "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=2731", note: "用于郑州商城城垣、仓储、冶铸、制骨与水利遗存。", credibility: "高", credibilityLevel: "high" },
+    { id: "shang-middle-capitals", type: "考古综述", title: "《考古所见的殷商文明》", author: "宋国定", authorityLevel: "公开考古资料入口", url: "https://www.cssn.cn/kgxc/kgxc_kgxl/202211/t20221120_5565364.shtml", note: "用于商代早中晚都邑演变及其材料边界。", credibility: "中", credibilityLevel: "medium" }
+  ];
+  const coreFacts = {
+    "shang-tang-overthrows-xia": [
+      { text: "商汤、夏桀与鸣条之战构成《史记·殷本纪》的夏商易代叙事。", sourceId: "shiji-yinbenji" },
+      { text: "该叙事将伊尹列为商汤的重要辅臣。", sourceId: "shiji-yinbenji" },
+      { text: "郑州商城属于二里岗文化核心遗存，反映早商大型都邑的形成。", sourceId: "erligang-archaeology" },
+      { text: "郑州商城有城垣、宫殿区及手工业遗存。", sourceId: "shang-erligang-city" },
+      { text: "传世夏商更替故事与早商考古分期不能逐年直接对应。", sourceId: "shang-middle-capitals" }
+    ],
+    "shang-erligang-expansion": [
+      { text: "二里岗文化以郑州商城为核心，年代属早商考古分期。", sourceId: "shang-erligang-overview" },
+      { text: "郑州商城存在大型城垣与宫殿区。", sourceId: "shang-erligang-city" },
+      { text: "城内发现冶铸、制骨等专业生产遗存。", sourceId: "shang-erligang-city" },
+      { text: "二里岗类型遗存分布远超单一城址。", sourceId: "shang-erligang-overview" },
+      { text: "早商文字材料已见于郑州商城相关遗存。", sourceId: "shang-erligang-overview" }
+    ],
+    "shang-early-succession-instability": [
+      { text: "《史记·殷本纪》记仲丁迁隞、河亶甲居相、祖乙迁邢。", sourceId: "shiji-yinbenji" },
+      { text: "郑州商城、小双桥、洹北商城与殷墟构成商代都邑演变序列。", sourceId: "shang-middle-capitals" },
+      { text: "传世王表的迁都次序不能逐条视为考古已证实事实。", sourceId: "shang-middle-capitals" },
+      { text: "商代继承存在兄终弟及与父死子继并存的记载与研究问题。", sourceId: "shiji-yinbenji" },
+      { text: "中商阶段的政治中心尚未像晚商殷墟那样留下连续甲骨文档案。", sourceId: "shang-middle-capitals" }
+    ],
+    "shang-pangeng-moves-yin": [
+      { text: "《史记·殷本纪》将盘庚迁殷列为商代迁都的重要节点。", sourceId: "shiji-yinbenji" },
+      { text: "殷墟位于今河南安阳洹河流域。", sourceId: "shang-middle-capitals" },
+      { text: "殷墟保存宫殿宗庙、王陵、甲骨与作坊遗存。", sourceId: "shang-main-source" },
+      { text: "晚商甲骨文主要集中于殷墟阶段。", sourceId: "shang-main-source" },
+      { text: "盘庚具体迁徙年份及过程仍须区分传世记载与考古分期。", sourceId: "shang-middle-capitals" }
+    ],
+    "shang-wuding-prosperity": [
+      { text: "武丁是甲骨卜辞中可直接见到的晚商王名。", sourceId: "shang-main-source" },
+      { text: "卜辞记录武丁时期对土方、羌方等的征伐。", sourceId: "shang-main-source" },
+      { text: "妇好墓出土于殷墟，墓主与甲骨所见妇好相互关联。", sourceId: "shang-main-source" },
+      { text: "妇好相关卜辞涉及祭祀与军事活动。", sourceId: "shang-main-source" },
+      { text: "傅说故事主要来自后出的传世文献，不能与甲骨材料等量使用。", sourceId: "shiji-yinbenji" }
+    ],
+    "shang-oracle-bones": [
+      { text: "殷墟甲骨文属于晚商同时代出土文字材料。", sourceId: "shang-main-source" },
+      { text: "卜辞涉及祭祀、战争、田猎、天气、疾病和王室事务。", sourceId: "shang-main-source" },
+      { text: "卜辞常保留问卜、占断和验辞等不同记录环节。", sourceId: "shang-main-source" },
+      { text: "甲骨文可用于核对部分晚商王名与事件。", sourceId: "shang-main-source" },
+      { text: "甲骨材料不能直接补足早商与中商的逐年历史。", sourceId: "shang-middle-capitals" }
+    ],
+    "shang-bronze-ritual-system": [
+      { text: "晚商殷墟存在规模化青铜铸造遗存。", sourceId: "shang-main-source" },
+      { text: "鼎、爵、觚等青铜器与祭祀、宴飨活动相关。", sourceId: "shang-main-source" },
+      { text: "复杂铸造要求矿料、工匠与劳力的持续组织。", sourceId: "shang-main-source" },
+      { text: "商式青铜器在中原及周边地区均有发现。", sourceId: "shang-main-source" },
+      { text: "器物分布不能直接等同于商王的均质行政边界。", sourceId: "shang-erligang-overview" }
+    ],
+    "shang-fangguo-relations": [
+      { text: "甲骨卜辞保存多个方国或族群名称。", sourceId: "shang-main-source" },
+      { text: "卜辞多次记录商王对方国的征伐。", sourceId: "shang-main-source" },
+      { text: "晚商王都位于殷墟，构成王畿政治中心。", sourceId: "shang-main-source" },
+      { text: "方国关系可包括征伐、贡纳、婚盟等不同形式。", sourceId: "shang-main-source" },
+      { text: "多数方国地望仍有不同考释，不能逐一固定在现代地图。", sourceId: "shang-main-source" }
+    ],
+    "shang-yinxu-city-royal-tombs": [
+      { text: "殷墟位于今河南安阳，是晚商王都遗址群。", sourceId: "shang-main-source" },
+      { text: "殷墟包含宫殿宗庙区、王陵区、居住区和作坊区。", sourceId: "shang-main-source" },
+      { text: "殷墟甲骨文为晚商王室活动提供同时代文字材料。", sourceId: "shang-main-source" },
+      { text: "大型王陵和祭祀遗存显示王室仪式活动的规模。", sourceId: "shang-main-source" },
+      { text: "王都遗址不能直接代表全部普通聚落的生活状况。", sourceId: "shang-main-source" }
+    ],
+    "shang-human-sacrifice-ritual-politics": [
+      { text: "殷墟祭祀遗存与部分墓葬中可见人牲、人殉现象。", sourceId: "shang-main-source" },
+      { text: "甲骨卜辞记录与祭祀相关的人牲用语。", sourceId: "shang-main-source" },
+      { text: "商王战争记录涉及羌方等外部群体。", sourceId: "shang-main-source" },
+      { text: "人牲、人殉与战俘不能在所有材料中直接视为同一类别。", sourceId: "shang-main-source" },
+      { text: "数量、身份与用途需依具体遗存和卜辞语境分别解释。", sourceId: "shang-main-source" }
+    ],
+    "shang-di-xin-crisis": [
+      { text: "帝辛为《史记·殷本纪》所载商末君主。", sourceId: "shiji-yinbenji" },
+      { text: "周族在关中西部形成可与商竞争的政治集团。", sourceId: "shiji-yinbenji" },
+      { text: "商末仍保有王都、祭祀与军事动员体系。", sourceId: "shang-main-source" },
+      { text: "周人文献将商末解释为天命转移，属于胜利者政治叙事。", sourceId: "shiji-yinbenji" },
+      { text: "商末方国、资源与军事压力的具体权重尚难量化。", sourceId: "shang-main-source" }
+    ],
+    "shang-muye-fall": [
+      { text: "牧野之战通常系于前1046年。", sourceId: "shiji-yinbenji" },
+      { text: "《史记·殷本纪》记周武王伐纣，商军败于牧野。", sourceId: "shiji-yinbenji" },
+      { text: "周武王克商后进入朝歌，商朝政权终结。", sourceId: "shiji-yinbenji" },
+      { text: "西周初年仍需处理殷遗民与东方封国安排。", sourceId: "shiji-yinbenji" },
+      { text: "商军倒戈、帝辛自焚等细节主要来自后世传世叙事。", sourceId: "shiji-yinbenji" }
+    ]
+  };
+  const coreDebates = {
+    "shang-tang-overthrows-xia": [{ view: "[主流说]", content: "夏商更替有传世王朝叙事与考古文化重组两类材料。" }, { view: "[挑战说]", content: "鸣条战役、人物活动与绝对年代不能逐项由考古确认。" }],
+    "shang-erligang-expansion": [{ view: "[主流说]", content: "郑州商城是早商核心都邑，二里岗文化反映区域性组织能力。" }, { view: "[挑战说]", content: "器物分布与政治直接控制范围并不等同。" }],
+    "shang-early-succession-instability": [{ view: "[主流说]", content: "中商存在都邑中心变化。" }, { view: "[挑战说]", content: "王表迁都的地点、次序及动机尚不能逐条确定。" }],
+    "shang-pangeng-moves-yin": [{ view: "[主流说]", content: "盘庚迁殷是晚商殷墟阶段的重要传统节点。" }, { view: "[挑战说]", content: "具体迁徙年代与活动过程不能由殷墟遗存直接逐项复原。" }],
+    "shang-wuding-prosperity": [{ view: "[主流说]", content: "甲骨与妇好墓可支持武丁时期王室军祭活动旺盛。" }, { view: "[挑战说]", content: "傅说等传说性细节不能与甲骨文同等视为同时代证据。" }],
+    "shang-oracle-bones": [{ view: "[主流说]", content: "甲骨文是研究晚商的第一手文字材料。" }, { view: "[挑战说]", content: "卜辞属特定王室仪式文书，不能直接代表整个社会。" }],
+    "shang-bronze-ritual-system": [{ view: "[主流说]", content: "青铜生产和礼器使用与王室祭祀、等级展示密切相关。" }, { view: "[挑战说]", content: "商式器物扩散不证明各地区均受直接行政统治。" }],
+    "shang-fangguo-relations": [{ view: "[主流说]", content: "商与方国间存在多种政治和军事关系。" }, { view: "[挑战说]", content: "不少方国地望与性质仍有争论。" }],
+    "shang-yinxu-city-royal-tombs": [{ view: "[主流说]", content: "殷墟是晚商王都与王室仪式、生产中心。" }, { view: "[挑战说]", content: "王都材料不能推及所有社会阶层。" }],
+    "shang-human-sacrifice-ritual-politics": [{ view: "[主流说]", content: "人牲、人殉现象见于殷墟遗存与相关卜辞。" }, { view: "[挑战说]", content: "身份、数量和用途必须按不同遗存语境解释。" }],
+    "shang-di-xin-crisis": [{ view: "[主流说]", content: "商周更替需同时考虑周族联盟和商末统治压力。" }, { view: "[挑战说]", content: "将商亡归结为帝辛个人行为是后世道德化叙事的简化。" }],
+    "shang-muye-fall": [{ view: "[主流说]", content: "牧野是商周政权更替的决定性节点。" }, { view: "[挑战说]", content: "战场细节和伤亡规模不能脱离周人、后世叙事的立场。" }]
+  };
+  const coreCausality = {
+    "shang-tang-overthrows-xia": ["[表层因] 商族与夏王朝发生权力竞争。", "[深层因] 早商都邑和区域资源网络扩大。", "[结构因] 中原早期国家尚通过方国联盟竞争中心地位。", "[传导] 商族联盟扩张 → 军事政治挑战 → 王朝更替叙事与早商都邑重组。"],
+    "shang-erligang-expansion": ["[表层因] 王室集中营建城邑和手工业。", "[深层因] 青铜生产需要跨区域原料、劳力和运输。", "[结构因] 早期国家以都邑中心组织区域网络。", "[传导] 城垣与作坊 → 专业生产 → 器物网络扩展 → 中心影响力提高。"],
+    "shang-early-succession-instability": ["[表层因] 王位支系与都邑位置发生调整。", "[深层因] 祭祀、贵族居住和资源支点需重新配置。", "[结构因] 早期王权尚无固定继承和长期固定都城。", "[传导] 继承变化 → 都邑迁移 → 政治网络重组 → 盘庚迁殷的稳定价值上升。"],
+    "shang-pangeng-moves-yin": ["[表层因] 王室决定将中心迁至殷。", "[深层因] 迁都重排贵族、祭祀和生产资源。", "[结构因] 王都承担早期国家的行政、仪式与动员枢纽。", "[传导] 迁殷 → 王室活动集中 → 殷墟文字与遗存留存 → 晚商可直接研究。"],
+    "shang-wuding-prosperity": ["[表层因] 商王频繁占卜、征伐并动员王室成员。", "[深层因] 军事与祭祀共同维持对方国和贵族的组织。", "[结构因] 晚商王权以祖先仪式和战争动员合一运行。", "[传导] 卜辞决策 → 王室军祭行动 → 方国关系调整 → 王权动员能力显现。"],
+    "shang-oracle-bones": ["[表层因] 王室将重要事务纳入占卜。", "[深层因] 占卜使决策与祖先祭祀取得可重复的程序。", "[结构因] 王权、文字记录和仪式权威由同一中心控制。", "[传导] 问卜记录 → 仪式决策 → 王室档案累积 → 晚商历史获得第一手材料。"],
+    "shang-bronze-ritual-system": ["[表层因] 王室和贵族持续使用青铜礼器。", "[深层因] 铸造与祭祀把资源控制转为公开等级。", "[结构因] 礼制通过物质与仪式维持早期政治关系。", "[传导] 矿料劳力组织 → 铸造礼器 → 祭祀宴飨 → 王权与贵族等级可见化。"],
+    "shang-fangguo-relations": ["[表层因] 商王对不同方国征伐、结盟或纳贡。", "[深层因] 王畿外控制依赖关系调节而非同质行政。", "[结构因] 商为中心与多方国并存的区域政治网络。", "[传导] 军事和仪式互动 → 方国关系改变 → 资源与安全再分配 → 王畿影响维持或收缩。"],
+    "shang-yinxu-city-royal-tombs": ["[表层因] 王室集中建设宗庙、王陵和作坊。", "[深层因] 仪式、生产和劳力需在王都协调。", "[结构因] 王都空间是晚商权力组织的物质基础。", "[传导] 城市分区 → 祭祀与生产集中 → 资源调度强化 → 王权结构留存为考古材料。"],
+    "shang-human-sacrifice-ritual-politics": ["[表层因] 祭祀与墓葬中出现人牲、人殉。", "[深层因] 战争俘获与仪式资源被王室支配。", "[结构因] 暴力、祖先祭祀和等级秩序彼此嵌合。", "[传导] 军事俘获 → 仪式投入 → 王室展示支配力 → 等级关系被强化。"],
+    "shang-di-xin-crisis": ["[表层因] 商末与周族及相关方国的冲突加剧。", "[深层因] 多方向资源与联盟压力削弱中枢协调。", "[结构因] 以王畿为中心的关系网络一旦离心，难以快速重建。", "[传导] 方国和资源压力 → 周族吸纳联盟 → 商军政应对受限 → 牧野更替成为可能。"],
+    "shang-muye-fall": ["[表层因] 周武王联军在牧野击败商军。", "[深层因] 周族联盟形成与商末统治压力相互叠加。", "[结构因] 王朝更替取决于军队、方国与旧都地区能否重新组织。", "[传导] 联军东进 → 商军失利 → 商都易手 → 西周仍需安置殷遗民和东方。"]
+  };
   const coreAnchors = {
     "shang-tang-overthrows-xia": { time: "约前1600年（传统早商起始，绝对年代存争议）", regnal: "商汤时期；《史记》所载夏商易代", coordinate: "34.75N, 113.64E", admin: "河南郑州一带早商城址群", terrainTransport: "黄河中下游平原；济、洛与黄河交通网络" },
     "shang-erligang-expansion": { time: "约前1600-前1400年（考古分期）", regnal: "早商；非可逐年对应的王年", coordinate: "34.75N, 113.64E", admin: "郑州商城、河南省郑州市", terrainTransport: "黄河中游冲积平原；沿黄河及支流的资源运输" },
@@ -820,6 +940,10 @@
       ...item,
       timeAnchor: coreAnchors[item.id] || null,
       spatialAnchor: coreAnchors[item.id] || null,
+      factLayer: coreFacts[item.id] || [],
+      debates: coreDebates[item.id] || item.debates,
+      causalChain: (coreCausality[item.id] || []).map((description, index) => ({ kind: index < 3 ? "cause" : "impact", label: ["因果链", "因果链", "因果链", "传导机制"][index], title: description.split(" ")[0], description })),
+      sources: [...(item.sources || []), ...coreSourceCatalog.filter((source) => !(item.sources || []).some((existing) => existing.id === source.id))],
       contentLevel: coreIds.has(item.id) ? "core" : item.contentLevel || "outline",
       contentPresentation: "tiered",
       learningCase: learningCases[item.id] || null

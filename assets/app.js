@@ -702,7 +702,25 @@
       return;
     }
     renderLearningCase(container, event.learningCase);
+    renderFactLayer(container, event.factLayer || []);
     (event.background || []).forEach(paragraph => container.append(textNode("p", "", paragraph)));
+  }
+
+  function renderFactLayer(container, facts){
+    if (!facts.length) return;
+    const section = document.createElement("section");
+    section.className = "learning-case";
+    section.append(textNode("div", "learning-case-label", "[事实层]"));
+    const list = document.createElement("div");
+    list.className = "learning-case-sections";
+    facts.forEach(({ text, sourceId }) => {
+      const item = document.createElement("div");
+      item.className = "learning-case-section";
+      item.append(textNode("p", "", text), textNode("small", "source-ref", `来源：${sourceId}`));
+      list.append(item);
+    });
+    section.append(list);
+    container.append(section);
   }
 
   function renderLearningCase(container, learningCase){

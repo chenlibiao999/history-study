@@ -636,11 +636,28 @@
     "saws-qin-destroys-six-states": "吕不韦执政、秦王政亲政完成统一战争前的权力集中；秦随后逐国灭六国，结束战国诸侯格局。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreAnchors = {
+    "saws-eastward-move": { regnal: "前770年；周平王元年", coordinate: "34.62N, 112.45E", admin: "洛邑，今河南省洛阳市", terrainTransport: "洛河盆地；函谷关以东的中原交通枢纽" },
+    "saws-qi-huan-hegemony": { regnal: "前685-前643年；齐桓公时期", coordinate: "36.82N, 118.31E", admin: "临淄，今山东省淄博市", terrainTransport: "鲁北平原与济水交通；滨海盐业和东部会盟路线" },
+    "saws-jin-wen-chengpu": { regnal: "前632年；周襄王二十年、晋文公五年", coordinate: "35.25N, 115.10E", admin: "城濮，今山东鄄城一带", terrainTransport: "黄河中下游平原；晋楚北上与中原会盟通道" },
+    "saws-wu-yue-rise": { regnal: "前506-前473年；吴王阖闾至越王勾践时期", coordinate: "31.30N, 120.58E", admin: "姑苏，今江苏省苏州市", terrainTransport: "太湖流域、江南水网与长江下游航道" },
+    "saws-three-families-partition-jin": { regnal: "前453／前403年；周贞定王十六年／周威烈王二十三年", coordinate: "37.87N, 112.56E", admin: "晋阳，今山西省太原市", terrainTransport: "汾河谷地；太行山西麓通向三晋的关隘与道路" },
+    "saws-li-kui-wei-reform": { regnal: "约前445-前341年；魏文侯至魏惠王时期", coordinate: "34.82N, 114.93E", admin: "大梁，今河南省开封市", terrainTransport: "黄河、济水与鸿沟水系；三晋东出交通" },
+    "saws-shang-yang-reforms": { regnal: "前356、前350年；秦孝公六年、十二年", coordinate: "34.34N, 108.71E", admin: "咸阳，今陕西省咸阳市", terrainTransport: "渭河平原；函谷关连接关中与崤函东出通道" },
+    "saws-hundred-schools": { regnal: "前5世纪-前3世纪；春秋晚期至战国末", coordinate: "36.82N, 118.31E", admin: "临淄稷下，今山东省淄博市", terrainTransport: "齐鲁平原；列国使者与士人流动网络" },
+    "saws-suqin-zhangyi-diplomacy": { regnal: "约前334-前221年；战国中晚期", coordinate: "34.34N, 108.71E", admin: "咸阳与关东六国都城", terrainTransport: "函谷关、崤函道及黄河中下游纵横交通" },
+    "saws-king-wuling-reform": { regnal: "前307年；赵武灵王十九年", coordinate: "37.07N, 114.50E", admin: "邯郸，今河北省邯郸市", terrainTransport: "太行山东麓与阴山南缘的北方骑兵通道" },
+    "saws-yue-yi-attacks-qi": { regnal: "前284-前279年；燕昭王、齐湣王时期", coordinate: "36.39N, 120.45E", admin: "即墨，今山东省平度市一带", terrainTransport: "胶东丘陵与渤海沿岸；燕齐海陆补给线" },
+    "saws-changping-battle": { regnal: "前260年；周赧王五十五年、秦昭襄王四十七年", coordinate: "35.98N, 113.10E", admin: "长平，今山西省高平市", terrainTransport: "太行山南端山地谷口；上党通向中原的战略走廊" },
+    "saws-qin-destroys-six-states": { regnal: "前230-前221年；秦王政十七年至二十六年", coordinate: "34.34N, 108.71E", admin: "咸阳，今陕西省咸阳市", terrainTransport: "关中盆地、函谷关与黄河中下游进攻轴线" }
+  };
   window.SAWS_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     return {
       ...item,
+      timeAnchor: { time: item.time, ...coreAnchors[id] },
+      spatialAnchor: coreAnchors[id],
       summary: summaryOverrides[id] || item.summary,
       process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))),
       contentLevel: "core",

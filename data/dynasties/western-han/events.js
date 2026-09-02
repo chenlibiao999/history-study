@@ -2968,9 +2968,20 @@ window.WESTERN_HAN_EVENTS = [
     "whan-consort-clans-rise": "外戚、王氏网络、晚西汉危机与王莽摄政逐步汇合，西汉终结于继承、官僚与社会问题无法相互制衡的局面。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreAnchors = {
+    "whan-chu-han-transition": { regnal: "前206-前202年；汉高祖元年至五年", coordinate: "34.26N, 108.94E", admin: "关中长安与垓下，今陕西西安、安徽灵璧一带", terrainTransport: "关中盆地、鸿沟与淮河平原；楚汉军粮和水陆交通线" },
+    "whan-empress-lu-regency": { regnal: "前195-前180年；惠帝至高后八年", coordinate: "34.26N, 108.94E", admin: "长安，今陕西省西安市", terrainTransport: "渭河平原中枢；宫廷、诸侯国与关中军政网络" },
+    "whan-wenjing-governance": { regnal: "前180-前141年；文帝、景帝时期", coordinate: "34.26N, 108.94E", admin: "长安及关东诸侯国", terrainTransport: "关中盆地与黄河中下游；漕运和土地赋役网络" },
+    "whan-rebellion-seven-states": { regnal: "前154年；汉景帝三年", coordinate: "34.82N, 114.93E", admin: "吴楚及梁国，今江苏、安徽、河南东部", terrainTransport: "淮河下游、睢水与黄河东部交通；梁地为关东屏障" },
+    "whan-emperor-wu-centralization": { regnal: "前141-前87年；汉武帝建元至后元", coordinate: "34.26N, 108.94E", admin: "长安，今陕西省西安市", terrainTransport: "渭河平原中枢；郡国、刺史与全国漕运网络" },
+    "whan-han-xiongnu-war": { regnal: "前133-前60年；武帝马邑之谋至宣帝神爵二年", coordinate: "37.87N, 102.63E", admin: "河西走廊及西域都护府", terrainTransport: "河西走廊、居延绿洲与丝绸之路绿洲通道" },
+    "whan-salt-iron-debate": { regnal: "前119-前81年；武帝元狩四年至昭帝始元六年", coordinate: "34.26N, 108.94E", admin: "长安，今陕西省西安市", terrainTransport: "盐铁产区至关中；漕运、官营运输与边防供给路线" },
+    "whan-witchcraft-disaster": { regnal: "前91-前74年；征和二年至元平元年", coordinate: "34.26N, 108.94E", admin: "长安未央宫与关中", terrainTransport: "宫城、长安城与关中驻军通道；告发信息进入皇权中枢" },
+    "whan-consort-clans-rise": { regnal: "前49-前8年；元帝至哀帝时期", coordinate: "34.26N, 108.94E", admin: "长安，今陕西省西安市", terrainTransport: "宫廷中枢与关东郡国的人事、财政网络" }
+  };
   window.WESTERN_HAN_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

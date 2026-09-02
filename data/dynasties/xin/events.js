@@ -1014,9 +1014,14 @@ window.XIN_EVENTS = [
     "xin-natural-disasters-famine": "灾荒、行政与币制失灵使流民组织为绿林赤眉；更始政权借此兴起，昆阳之战击穿新军威信，长安陷落终结新朝。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreAnchors = {
+    "xin-wang-mang-usurpation": { regnal: "前9年；新始建国元年", coordinate: "34.26N, 108.94E", admin: "长安，今陕西省西安市", terrainTransport: "渭河平原中枢；宫廷、官僚与关东郡国联络网络" },
+    "xin-reforms-land-slavery": { regnal: "前9-后14年；始建国至天凤年间", coordinate: "34.26N, 108.94E", admin: "长安与全国郡国", terrainTransport: "关中中枢至乡里土地、货币和边疆行政网络" },
+    "xin-natural-disasters-famine": { regnal: "后17-后23年；天凤至地皇四年", coordinate: "33.04N, 112.94E", admin: "昆阳，今河南省平顶山市叶县一带", terrainTransport: "黄河、淮河流域灾区；南阳至洛阳的军队补给路线" }
+  };
   window.XIN_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

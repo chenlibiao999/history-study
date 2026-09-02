@@ -4933,9 +4933,23 @@ window.LH3K_EVENTS = [
     "lh3k-wei-conquers-shu": "魏灭蜀、钟会之乱、晋代魏与吴末政治说明征服和接收交织：司马氏先以外战巩固权威，最终以晋朝完成对三国格局的终结。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreAnchors = {
+    "lh3k-provincial-governors-militarized": { regnal: "后184-后189年；中平元年至六年", coordinate: "36.67N, 114.49E", admin: "冀州及东汉各州", terrainTransport: "黄河中下游州郡道路；地方募兵、仓储和驿传网络" },
+    "lh3k-hejin-eunuchs-crisis": { regnal: "后189-后192年；中平六年至初平三年", coordinate: "34.68N, 112.47E", admin: "洛阳、长安", terrainTransport: "洛阳宫城、函谷关与关中；董卓等外军进京路线" },
+    "lh3k-cao-cao-controls-emperor": { regnal: "后196年；建安元年", coordinate: "34.08N, 113.85E", admin: "许都，今河南省许昌市", terrainTransport: "颍川平原；许昌至兖豫、关中和河北的道路网络" },
+    "lh3k-guandu-battle": { regnal: "后200年；建安五年", coordinate: "35.25N, 114.80E", admin: "官渡，今河南省中牟县东北", terrainTransport: "黄河、汴水与河北南下补给线" },
+    "lh3k-chibi-battle": { regnal: "后208年；建安十三年", coordinate: "29.87N, 113.56E", admin: "赤壁，今湖北省赤壁市一带", terrainTransport: "长江中游水道；江汉平原与荆州水陆补给线" },
+    "lh3k-liubei-enters-shu": { regnal: "后214-后219年；建安十九年至二十四年", coordinate: "30.57N, 104.06E", admin: "成都、汉中", terrainTransport: "成都平原、剑门蜀道与秦岭汉中通道" },
+    "lh3k-guan-yu-loses-jingzhou": { regnal: "后219-后222年；建安二十四年至章武二年", coordinate: "30.97N, 112.20E", admin: "江陵、夷陵，今湖北省荆州市至宜昌市", terrainTransport: "长江中游、汉水与荆州水陆枢纽" },
+    "lh3k-caopi-replaces-han": { regnal: "后220年；延康元年／黄初元年", coordinate: "34.82N, 114.93E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛阳至许昌的中原交通；朝廷文书与地方中正网络" },
+    "lh3k-sunquan-emperor-wu-shu-alliance": { regnal: "后222-后229年；黄初三年至黄龙元年", coordinate: "31.98N, 118.79E", admin: "建业，今江苏省南京市", terrainTransport: "长江下游与江淮水网；合肥前线和吴蜀水路联络" },
+    "lh3k-zhuge-liang-northern-expeditions": { regnal: "后228-后262年；建兴六年至景耀五年", coordinate: "33.91N, 106.84E", admin: "汉中，今陕西省汉中市", terrainTransport: "秦岭褒斜道、祁山道与关中粮道" },
+    "lh3k-gaopingling-coup": { regnal: "后249年；正始十年", coordinate: "34.68N, 112.47E", admin: "洛阳高平陵，今河南省洛阳市", terrainTransport: "洛阳宫城、城外陵区与禁军控制点" },
+    "lh3k-wei-conquers-shu": { regnal: "后263-后280年；魏景元四年至晋太康元年", coordinate: "30.57N, 104.06E", admin: "成都至建业", terrainTransport: "阴平道、成都平原、长江下游水路" }
+  };
   window.LH3K_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

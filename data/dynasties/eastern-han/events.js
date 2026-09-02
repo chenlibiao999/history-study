@@ -2593,9 +2593,18 @@ window.EASTERN_HAN_EVENTS = [
     "ehan-hejin-eunuchs": "何进召外兵、董卓入洛阳、献帝被控制到曹丕代汉，显示宫廷继承危机一旦交给地方武装，皇帝与朝廷都会成为军事实力争夺物。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreAnchors = {
+    "ehan-liu-xiu-restores-han": { regnal: "后25年；建武元年", coordinate: "34.68N, 112.47E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛河盆地；黄河中下游与关东郡国交通枢纽" },
+    "ehan-mingzhang-governance": { regnal: "后57-后88年；明帝、章帝时期", coordinate: "34.68N, 112.47E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛河盆地；东汉漕运、郡国文书和太学网络" },
+    "ehan-ban-chao-western-regions": { regnal: "后73-后107年；明帝永平十六年至安帝永初元年", coordinate: "39.47N, 75.99E", admin: "疏勒，今新疆喀什地区", terrainTransport: "塔里木盆地绿洲与河西走廊；丝路节点和驻军补给线" },
+    "ehan-huan-kills-liangji": { regnal: "后159年；延熹二年", coordinate: "34.68N, 112.47E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛阳宫城与禁军驻地；宫廷诏令和人事网络" },
+    "ehan-second-partisan-prohibition": { regnal: "后169年；建宁二年", coordinate: "34.68N, 112.47E", admin: "洛阳太学与各州郡士人网络", terrainTransport: "洛阳至地方的太学生、门生故吏和驿传网络" },
+    "ehan-yellow-turban-rebellion": { regnal: "后184年；中平元年", coordinate: "36.67N, 114.49E", admin: "冀州、颍川与中原各地", terrainTransport: "黄河中下游平原；州郡道路、募兵和粮饷网络" },
+    "ehan-hejin-eunuchs": { regnal: "后189年；中平六年", coordinate: "34.68N, 112.47E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛阳宫城、北邙与函谷关东部；外军入京路线" }
+  };
   window.EASTERN_HAN_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

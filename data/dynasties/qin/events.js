@@ -430,9 +430,18 @@
     "qin-chen-sheng-wu-guang": "陈胜吴广起义引爆反秦，项羽、刘邦等力量继而竞争；巨鹿之战与子婴降刘邦终结秦朝，却开启新的天下重组。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreAnchors = {
+    "qin-first-emperor-system": { regnal: "前221年；秦王政二十六年", coordinate: "34.34N, 108.71E", admin: "咸阳，今陕西省咸阳市", terrainTransport: "渭河平原；函谷关东出与全国驰道网络" },
+    "qin-commandery-county": { regnal: "前221年后；秦始皇时期", coordinate: "34.34N, 108.71E", admin: "咸阳中央与三十六郡", terrainTransport: "关中盆地为中枢；驰道、水道与文书系统连接郡县" },
+    "qin-standardization": { regnal: "前221年后；秦始皇时期", coordinate: "34.34N, 108.71E", admin: "咸阳及原六国地区", terrainTransport: "驰道、车轨与统一度量衡服务跨区域运输和行政" },
+    "qin-northern-xiongnu-wall": { regnal: "前215年后；秦始皇三十二年后", coordinate: "40.35N, 109.75E", admin: "河套与九原，今内蒙古自治区西部", terrainTransport: "黄河河套、阴山南麓；北方边塞与岭南水陆通道" },
+    "qin-burning-books": { regnal: "前213-前212年；秦始皇三十四年至三十五年", coordinate: "34.34N, 108.71E", admin: "咸阳，今陕西省咸阳市", terrainTransport: "帝国中枢；诏令沿郡县文书网络传达" },
+    "qin-shaqiu-coup": { regnal: "前210年；秦始皇三十七年", coordinate: "37.57N, 115.03E", admin: "沙丘，今河北省邢台市广宗一带", terrainTransport: "北方巡行路线；沙丘至咸阳的驿传与诏令通道" },
+    "qin-chen-sheng-wu-guang": { regnal: "前209-前207年；秦二世元年至三年", coordinate: "33.10N, 116.98E", admin: "大泽乡，今安徽省宿州市一带", terrainTransport: "淮北平原；通向陈、关东旧国与武关的征发道路" }
+  };
   window.QIN_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

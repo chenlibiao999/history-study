@@ -1909,4 +1909,26 @@ window.SUI_EVENTS = [
     "sui-jiangdu-mutiny-fall": { label: "江都兵变为何只是隋亡过程的终点之一", claim: "江都兵变杀死隋炀帝，象征中央权威崩溃，但隋亡并非在一夜完成。长安的禅让、洛阳的余部和各地军阀竞争说明，王朝名义、行政遗产与实际控制权会在不同地点以不同速度消失。", sections: [["兵变背景", "大业后期，禁军与随驾军队远离关中，长期东征与南巡导致补给、士气和返乡期待恶化。"], ["为何发生", "军队内部对前途失去信心，宇文化及等利用近侍和军中网络发动政变。"], ["如何理解灭亡", "皇帝被杀使统一指挥终结，但唐取代隋仍需处理关中、洛阳和各地割据势力。"]], evidence: { title: "材料锚点：《隋书·炀帝纪》《资治通鉴》卷185", content: "可按江都、长安、洛阳三处线索阅读，避免把复杂的政权转换压缩为单一宫廷兵变。" }, misconception: "隋炀帝被杀不等于全国立即归唐；政权解体有区域差异和时间差。", memory: ["随驾军失信", "江都兵变", "三地不同步"], question: "为什么说江都兵变不是隋亡的全部解释？", answer: "它击碎中央象征，但各地行政、军队和竞争政权仍需经过一段时间才重新归并。" }
   };
   window.SUI_EVENTS = window.SUI_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const originalById = new Map(window.SUI_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "sui-kaihuang-governance": ["sui-founds-dynasty", "sui-kaihuang-governance", "sui-kaihuang-code-and-local-rule"],
+    "sui-unifies-china": ["sui-unifies-china"],
+    "sui-grand-canal-luoyang": ["sui-imperial-exam-beginnings", "sui-grand-canal-luoyang", "sui-daye-tours-and-frontier-display"],
+    "sui-jiangdu-mutiny-fall": ["sui-crown-prince-change", "sui-goguryeo-campaigns", "sui-yang-xuangan-rebellion", "sui-late-rebellions", "sui-wagang-luoyang-crisis", "sui-jiangdu-mutiny-fall"]
+  };
+  const caseAdditions = {
+    "sui-grand-canal-luoyang": { label: "运河为何同时是统一基础与统治负担", claim: "运河、东都营建、巡行与选官尝试都服务于跨区域调度：国家希望把南方粮赋、北方政治中心和官僚网络连接起来，但工程与征发的规模也提高了社会承受的成本。", sections: [["能力", "大运河降低南北水运与粮食调度成本，使统一国家能更直接连接长江流域与北方核心。"], ["代价", "工程、巡行和战争若在短时间集中征发，会把基础设施收益转化为基层劳役和财政压力。"]], evidence: { title: "材料锚点：《隋书》食货、炀帝纪与运河考古", content: "遗址可见交通网络，正史保存征发与政治叙事；不应把运河的长期价值直接等同于当时政策无代价。" }, misconception: "运河有长期价值，所以隋炀帝的所有征发都合理。", memory: ["南粮北运", "国家调度", "收益与负担"], question: "为何同一运河工程既有历史价值又会加速危机？", answer: "基础设施的长期收益不能消除短期征发、时间安排和战争叠加造成的社会压力。" }
+  };
+  const summaryOverrides = {
+    "sui-kaihuang-governance": "杨坚建隋后以户籍、赋役、律令和地方行政重建国家能力，开皇制度使灭陈与后续统一具备可持续的组织基础。",
+    "sui-grand-canal-luoyang": "科举萌芽、运河、东都与巡行共同服务于南北资源和官僚调度，却也把工程和征发的成本集中压向社会。",
+    "sui-jiangdu-mutiny-fall": "继承变动、辽东战争、各地反叛与瓦岗洛阳危机逐步瓦解隋的军政网络，江都兵变只是区域不同步崩解的终点之一。"
+  };
+  const keptIds = Object.keys(mergePlans);
+  window.SUI_EVENTS = keptIds.map((id, index) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+  });
 })();

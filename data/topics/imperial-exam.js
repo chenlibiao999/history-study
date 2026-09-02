@@ -8,7 +8,7 @@ window.IMPERIAL_EXAM_TOPIC = {
     "song"
   ],
   "eventIds": [
-    "sui-imperial-exam-beginnings",
+    "sui-grand-canal-luoyang",
     "tang-imperial-exam-expanded"
   ],
   "plannedEventIds": [

@@ -796,4 +796,21 @@
     }
   };
   window.QING_EVENTS = window.QING_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+  const anchors = {
+    "qing-entry-1644": { regnal: "1644年；清世祖顺治元年", coordinate: "40.15N, 117.30E", admin: "山海关至北京顺天府", terrainTransport: "燕山、关宁锦防线与华北平原；关外八旗入关和京师方向军路" },
+    "qing-three-feudatories": { regnal: "1673-1681年；清圣祖康熙十二年至二十年", coordinate: "25.04N, 102.72E", admin: "云南、贵州、广东三藩辖区", terrainTransport: "西南山地、长江水系和岭南通道；地方军饷与中央调兵网络" },
+    "qing-yongzheng-fiscal-reforms": { regnal: "1723-1735年；清世宗雍正元年至十三年", coordinate: "39.90N, 116.40E", admin: "京师户部与各省州县", terrainTransport: "漕运、赋役册籍和省际解运网络；地丁税与养廉银的财政传导" },
+    "qing-dzungar-conquest": { regnal: "1755-1759年；清高宗乾隆二十年至二十四年", coordinate: "43.82N, 87.62E", admin: "伊犁、准噶尔与天山南北", terrainTransport: "天山、伊犁河谷与河西走廊；远征粮道、驻防和屯田网络" },
+    "qing-first-opium-war": { regnal: "1840-1842年；清宣宗道光二十年至二十二年", coordinate: "31.23N, 121.47E", admin: "广东、长江口至南京战区", terrainTransport: "珠江口、东南沿海、长江和大运河；英军海上机动与江南财赋通道" },
+    "qing-taiping-rebellion": { regnal: "1851-1864年；清文宗咸丰元年至清穆宗同治三年", coordinate: "31.23N, 121.47E", admin: "广西、天京与长江中下游", terrainTransport: "西江、长江、运河与江南财赋区；太平军行军和湘淮军筹饷线路" },
+    "qing-sino-japanese-war": { regnal: "1894-1895年；清德宗光绪二十年至二十一年", coordinate: "37.54N, 121.39E", admin: "朝鲜、黄海、辽东与台湾", terrainTransport: "黄海海路、辽东半岛和朝鲜半岛交通；北洋舰队基地与日军登陆路线" }
+  };
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = window.QING_EVENTS.map((item) => {
+    const learningCase = learningCases[item.id];
+    if (!learningCase) return item;
+    const facts = [...(item.background || []).map((text) => ({ text: `[事实层] 背景：${text}`, sourceId: "qing-main-source" })), ...(item.process || []).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "qing-main-source" })), ...(item.results || []).map((text) => ({ text: `[事实层] 结果：${text}`, sourceId: "qing-main-source" }))].slice(0, 5);
+    return { ...item, timeAnchor: { time: item.time, ...anchors[item.id] }, spatialAnchor: anchors[item.id], factLayer: facts, debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: learningCase.misconception }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接条件", description: item.process?.[0]?.description || item.summary }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: item.process?.[1]?.description || item.background?.[0] || item.summary }, { kind: "cause", label: "[结构因]", title: "清朝结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: item.results?.[0] || item.summary }], contentPresentation: "tiered" };
+  }).sort((left, right) => timelineKey(left) - timelineKey(right));
+  window.QING_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

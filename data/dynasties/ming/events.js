@@ -756,4 +756,25 @@
     }
   };
   window.MING_EVENTS = window.MING_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+  const anchors = {
+    "ming-founded-and-northern-expedition": { regnal: "1368年；明太祖洪武元年", coordinate: "32.06N, 118.80E", admin: "应天府至大都北伐路线", terrainTransport: "长江下游、运河、华北平原与燕山；江南粮饷向北方战场输送" },
+    "ming-hongwu-institutions": { regnal: "1370-1380年代；明太祖洪武年间", coordinate: "32.06N, 118.80E", admin: "应天府及全国府州县、卫所", terrainTransport: "驿路、里甲、黄册和卫所屯田网络；人口土地登记与军役征发" },
+    "ming-abolish-chancellery": { regnal: "1380年；明太祖洪武十三年", coordinate: "32.06N, 118.80E", admin: "京师应天府中书省", terrainTransport: "中央六部奏事、文书递送和全国行政命令网络" },
+    "ming-yongle-move-capital": { regnal: "1403-1421年；明成祖永乐元年至十九年", coordinate: "39.90N, 116.40E", admin: "北京顺天府", terrainTransport: "大运河、通惠河与燕山北防；江南漕粮供给京师和驻军" },
+    "ming-zhenghe-voyages": { regnal: "1405-1433年；明成祖永乐至明宣宗宣德年间", coordinate: "31.23N, 121.47E", admin: "南京龙江关、苏州刘家港与东南港口", terrainTransport: "长江口、南海、马六甲与印度洋航路；造船、粮秣和使团补给网络" },
+    "ming-tumu-crisis": { regnal: "1449年；明英宗正统十四年", coordinate: "40.15N, 115.20E", admin: "土木堡与北京九门防区", terrainTransport: "宣府、大同至居庸关军路；北方草原边防和京师粮道" },
+    "ming-longqing-opening": { regnal: "1567-1571年；明穆宗隆庆元年至五年", coordinate: "24.48N, 118.18E", admin: "月港与宣府大同边市", terrainTransport: "东南海港、海上贸易航线及长城边市；白银流通和边防互市" },
+    "ming-zhang-juzheng-reforms": { regnal: "1572-1582年；明神宗万历元年至十年", coordinate: "39.90N, 116.40E", admin: "北京内阁与全国赋役区", terrainTransport: "运河漕粮、州县赋役册籍和驿传行政网络" },
+    "ming-liaodong-nurhaci-rise": { regnal: "1616-1619年；明神宗万历四十四年至四十七年", coordinate: "41.88N, 123.43E", admin: "辽东、抚顺与萨尔浒战区", terrainTransport: "辽河平原、长白山通道与辽东军镇补给线" },
+    "ming-chongzhen-fiscal-crisis": { regnal: "1628-1630年代；明思宗崇祯元年至末年", coordinate: "39.90N, 116.40E", admin: "北京与陕西、河南等灾区", terrainTransport: "运河漕粮、驿站与西北军路；军饷征收和流民迁徙通道" },
+    "ming-fall-of-beijing": { regnal: "1644年；明思宗崇祯十七年", coordinate: "39.90N, 116.40E", admin: "北京顺天府", terrainTransport: "华北平原、居庸关与通州粮道；大顺入京和关外军队南下通道" }
+  };
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = window.MING_EVENTS.map((item) => {
+    const learningCase = learningCases[item.id];
+    if (!learningCase) return item;
+    const facts = [...(item.background || []).map((text) => ({ text: `[事实层] 背景：${text}`, sourceId: "ming-main-source" })), ...(item.process || []).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "ming-main-source" })), ...(item.results || []).map((text) => ({ text: `[事实层] 结果：${text}`, sourceId: "ming-main-source" }))].slice(0, 5);
+    return { ...item, timeAnchor: { time: item.time, ...anchors[item.id] }, spatialAnchor: anchors[item.id], factLayer: facts, debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: learningCase.misconception }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接条件", description: item.process?.[0]?.description || item.summary }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: item.process?.[1]?.description || item.background?.[0] || item.summary }, { kind: "cause", label: "[结构因]", title: "明朝结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: item.results?.[0] || item.summary }], contentPresentation: "tiered" };
+  }).sort((left, right) => timelineKey(left) - timelineKey(right));
+  window.MING_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

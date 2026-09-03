@@ -94,4 +94,21 @@
     }
   };
   window.YUAN_EVENTS = window.YUAN_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+  const anchors = {
+    "yuan-foundation": { regnal: "1271年；元世祖至元八年", coordinate: "40.02N, 116.41E", admin: "大都，今北京市城区", terrainTransport: "燕山南麓、通惠河与大运河北端；华北财赋、漕运和南宋战场调度中枢" },
+    "yuan-xiangyang": { regnal: "1271-1273年；元世祖至元八年至十年", coordinate: "32.01N, 112.12E", admin: "襄阳路、樊城，今湖北省襄阳市", terrainTransport: "汉水与长江中游；水陆封锁、江汉补给和南下通道" },
+    "yuan-provinces": { regnal: "1271-1280年代；元世祖至元年间", coordinate: "40.02N, 116.41E", admin: "中书省直辖与各行中书省", terrainTransport: "驿路、漕运与区域军政网络；跨区域调兵、征粮和行政传达" },
+    "yuan-paper-money": { regnal: "1271-1290年代；元世祖至元年间", coordinate: "40.02N, 116.41E", admin: "大都中书省及江南财赋区", terrainTransport: "大运河、商路与钞法流通网络；赋税征收和军需调拨" },
+    "yuan-restores-examinations": { regnal: "1313-1315年；元仁宗皇庆二年至延祐二年", coordinate: "40.02N, 116.41E", admin: "大都及各行省贡举区", terrainTransport: "州县学校、驿路和会试入京路线；士人流动与官僚补充渠道" },
+    "yuan-yellow-river": { regnal: "1351年；元顺帝至正十一年", coordinate: "34.60N, 115.70E", admin: "黄河故道与河南、山东河工区", terrainTransport: "黄河、运河和华北平原；治河征发、漕运恢复与灾区粮道" },
+    "yuan-northern-expedition": { regnal: "1368年；元顺帝至正二十八年", coordinate: "39.90N, 116.40E", admin: "大都至上都北遁路线", terrainTransport: "华北平原、燕山关隘与蒙古高原通道；明军北伐和元廷撤退路线" }
+  };
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = window.YUAN_EVENTS.map((item) => {
+    const learningCase = learningCases[item.id];
+    if (!learningCase) return item;
+    const facts = [...(item.background || []).map((text) => ({ text: `[事实层] 背景：${text}`, sourceId: "yuan-main-source" })), ...(item.process || []).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "yuan-main-source" })), ...(item.results || []).map((text) => ({ text: `[事实层] 结果：${text}`, sourceId: "yuan-main-source" }))].slice(0, 5);
+    return { ...item, timeAnchor: { time: item.time, ...anchors[item.id] }, spatialAnchor: anchors[item.id], factLayer: facts, debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: learningCase.misconception }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接条件", description: item.process?.[0]?.description || item.summary }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: item.process?.[1]?.description || item.background?.[0] || item.summary }, { kind: "cause", label: "[结构因]", title: "元朝结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: item.results?.[0] || item.summary }], contentPresentation: "tiered" };
+  }).sort((left, right) => timelineKey(left) - timelineKey(right));
+  window.YUAN_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

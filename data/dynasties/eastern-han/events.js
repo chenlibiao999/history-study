@@ -2592,6 +2592,10 @@ window.EASTERN_HAN_EVENTS = [
     "ehan-yellow-turban-rebellion": "黄巾起义迫使东汉依赖州郡和豪强募兵，州牧军政化使短期镇压转化为武力与财政资源的长期下沉。",
     "ehan-hejin-eunuchs": "何进召外兵、董卓入洛阳、献帝被控制到曹丕代汉，显示宫廷继承危机一旦交给地方武装，皇帝与朝廷都会成为军事实力争夺物。"
   };
+  const restoredIds = [...new Set(Object.values(mergePlans).flat().filter((memberId) => !Object.prototype.hasOwnProperty.call(mergePlans, memberId)))];
+  Object.keys(mergePlans).forEach((id) => {
+    mergePlans[id] = mergePlans[id].filter((memberId) => memberId === id || !restoredIds.includes(memberId));
+  });
   const keptIds = Object.keys(mergePlans);
   const coreDebates = {
     "ehan-liu-xiu-restores-han": "光武重建的正统叙事不应掩盖地方豪强和战后资源重组的作用。",
@@ -2611,11 +2615,28 @@ window.EASTERN_HAN_EVENTS = [
     "ehan-yellow-turban-rebellion": { regnal: "后184年；中平元年", coordinate: "36.67N, 114.49E", admin: "冀州、颍川与中原各地", terrainTransport: "黄河中下游平原；州郡道路、募兵和粮饷网络" },
     "ehan-hejin-eunuchs": { regnal: "后189年；中平六年", coordinate: "34.68N, 112.47E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛阳宫城、北邙与函谷关东部；外军入京路线" }
   };
-  window.EASTERN_HAN_EVENTS = keptIds.map((id, index) => {
+  const coreEvents = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
     const learningCase = caseAdditions[id] || item.learningCase;
     return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "eastern-han-main-source" })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "东汉结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
+  const restoredEvents = restoredIds.map((id) => {
+    const item = originalById.get(id);
+    const facts = (item.process || []).slice(0, 5);
+    return {
+      ...item,
+      contentLevel: "mainline",
+      contentPresentation: "full",
+      timeAnchor: { time: item.time, regnal: `${item.time}；东汉相关纪年` },
+      spatialAnchor: { admin: (item.regions || []).join("、"), terrainTransport: "地理环境、漕运、边疆或军路条件见本卡事实层与来源。" },
+      factLayer: facts.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "eastern-han-main-source" })),
+      debates: [{ view: "[主流说]", content: item.claim || item.summary }, { view: "[挑战说]", content: "正史纪传中的人物动机、兵力与政治标签须与制度材料、考古材料及现代研究分别核对。" }],
+      causalChain: [{ kind: "cause", label: "[表层因]", title: "前置条件", description: item.background?.[0] || item.summary }, { kind: "process", label: "[传导机制]", title: facts[0]?.title || "事件推进", description: facts[0]?.description || item.summary }, { kind: "impact", label: "[后续关联]", title: "结果", description: item.results?.[0] || item.summary }]
+    };
+  });
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = [...coreEvents, ...restoredEvents].sort((a, b) => timelineKey(a) - timelineKey(b));
+  window.EASTERN_HAN_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

@@ -1013,6 +1013,10 @@ window.XIN_EVENTS = [
     "xin-reforms-land-slavery": "王田、币制、官名和边疆改制试图以复古方式重建秩序，却在登记、执行、市场信用和边地协作不足时不断放大国家能力的缺口。",
     "xin-natural-disasters-famine": "灾荒、行政与币制失灵使流民组织为绿林赤眉；更始政权借此兴起，昆阳之战击穿新军威信，长安陷落终结新朝。"
   };
+  const restoredIds = [...new Set(Object.values(mergePlans).flat().filter((memberId) => !Object.prototype.hasOwnProperty.call(mergePlans, memberId)))];
+  Object.keys(mergePlans).forEach((id) => {
+    mergePlans[id] = mergePlans[id].filter((memberId) => memberId === id || !restoredIds.includes(memberId));
+  });
   const keptIds = Object.keys(mergePlans);
   const coreDebates = {
     "xin-wang-mang-usurpation": "符命、禅让与王莽形象主要见于褒贬强烈的正史叙事，须与摄政程序分层处理。",
@@ -1024,11 +1028,28 @@ window.XIN_EVENTS = [
     "xin-reforms-land-slavery": { regnal: "前9-后14年；始建国至天凤年间", coordinate: "34.26N, 108.94E", admin: "长安与全国郡国", terrainTransport: "关中中枢至乡里土地、货币和边疆行政网络" },
     "xin-natural-disasters-famine": { regnal: "后17-后23年；天凤至地皇四年", coordinate: "33.04N, 112.94E", admin: "昆阳，今河南省平顶山市叶县一带", terrainTransport: "黄河、淮河流域灾区；南阳至洛阳的军队补给路线" }
   };
-  window.XIN_EVENTS = keptIds.map((id, index) => {
+  const coreEvents = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
     const learningCase = learningCases[id] || item.learningCase;
     return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "xin-main-source" })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "制度执行", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "新朝结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
+  const restoredEvents = restoredIds.map((id) => {
+    const item = originalById.get(id);
+    const facts = (item.process || []).slice(0, 5);
+    return {
+      ...item,
+      contentLevel: "mainline",
+      contentPresentation: "full",
+      timeAnchor: { time: item.time, regnal: `${item.time}；新朝相关纪年` },
+      spatialAnchor: { admin: (item.regions || []).join("、"), terrainTransport: "地理环境、交通与补给条件见本卡事实层与来源。" },
+      factLayer: facts.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "xin-main-source" })),
+      debates: [{ view: "[主流说]", content: item.claim || item.summary }, { view: "[挑战说]", content: "诏令执行范围、灾害记载与人物褒贬须区分正史叙事、地方实效和现代研究结论。" }],
+      causalChain: [{ kind: "cause", label: "[表层因]", title: "前置条件", description: item.background?.[0] || item.summary }, { kind: "process", label: "[传导机制]", title: facts[0]?.title || "事件推进", description: facts[0]?.description || item.summary }, { kind: "impact", label: "[后续关联]", title: "结果", description: item.results?.[0] || item.summary }]
+    };
+  });
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = [...coreEvents, ...restoredEvents].sort((a, b) => timelineKey(a) - timelineKey(b));
+  window.XIN_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

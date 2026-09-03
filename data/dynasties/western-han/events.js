@@ -2967,6 +2967,10 @@ window.WESTERN_HAN_EVENTS = [
     "whan-witchcraft-disaster": "巫蛊之祸摧毁储君继承，霍光辅政和昭宣恢复是在这一断裂后重建皇权与官僚秩序的尝试。",
     "whan-consort-clans-rise": "外戚、王氏网络、晚西汉危机与王莽摄政逐步汇合，西汉终结于继承、官僚与社会问题无法相互制衡的局面。"
   };
+  const restoredIds = [...new Set(Object.values(mergePlans).flat().filter((memberId) => !Object.prototype.hasOwnProperty.call(mergePlans, memberId)))];
+  Object.keys(mergePlans).forEach((id) => {
+    mergePlans[id] = mergePlans[id].filter((memberId) => memberId === id || !restoredIds.includes(memberId));
+  });
   const keptIds = Object.keys(mergePlans);
   const coreDebates = {
     "whan-chu-han-transition": "楚汉战争叙事以《史记》为主，垓下细节与人物动机不能脱离胜者叙事阅读。",
@@ -2990,11 +2994,31 @@ window.WESTERN_HAN_EVENTS = [
     "whan-witchcraft-disaster": { regnal: "前91-前74年；征和二年至元平元年", coordinate: "34.26N, 108.94E", admin: "长安未央宫与关中", terrainTransport: "宫城、长安城与关中驻军通道；告发信息进入皇权中枢" },
     "whan-consort-clans-rise": { regnal: "前49-前8年；元帝至哀帝时期", coordinate: "34.26N, 108.94E", admin: "长安，今陕西省西安市", terrainTransport: "宫廷中枢与关东郡国的人事、财政网络" }
   };
-  window.WESTERN_HAN_EVENTS = keptIds.map((id, index) => {
+  const coreEvents = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
     const learningCase = caseAdditions[id] || item.learningCase;
     return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "western-han-main-source" })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "汉代结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
+  const restoredEvents = restoredIds.map((id) => {
+    const item = originalById.get(id);
+    const facts = (item.process || []).slice(0, 5);
+    return {
+      ...item,
+      contentLevel: "mainline",
+      contentPresentation: "full",
+      timeAnchor: { time: item.time, regnal: `${item.time}；西汉相关纪年` },
+      spatialAnchor: { admin: (item.regions || []).join("、"), terrainTransport: "地理环境、漕运、军路或边疆通道见本卡事实层与来源。" },
+      factLayer: facts.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "western-han-main-source" })),
+      debates: [{ view: "[主流说]", content: item.claim || item.summary }, { view: "[挑战说]", content: "传世纪传的褒贬、人物动机及统计数字，应与制度文献、出土材料和现代研究分别对读。" }],
+      causalChain: [{ kind: "cause", label: "[表层因]", title: "前置条件", description: item.background?.[0] || item.summary }, { kind: "process", label: "[传导机制]", title: facts[0]?.title || "事件推进", description: facts[0]?.description || item.summary }, { kind: "impact", label: "[后续关联]", title: "结果", description: item.results?.[0] || item.summary }]
+    };
+  });
+  const timelineKey = (item) => {
+    const value = Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+    return String(item.time || "").includes("前") ? -value : value;
+  };
+  const timeline = [...coreEvents, ...restoredEvents].sort((a, b) => timelineKey(a) - timelineKey(b));
+  window.WESTERN_HAN_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

@@ -429,6 +429,10 @@
     "qin-shaqiu-coup": "沙丘政变改变继承顺序，赵高随后操控朝政，显示高度集权体系在信息封闭和继承失序中会迅速丧失纠错能力。",
     "qin-chen-sheng-wu-guang": "陈胜吴广起义引爆反秦，项羽、刘邦等力量继而竞争；巨鹿之战与子婴降刘邦终结秦朝，却开启新的天下重组。"
   };
+  const restoredIds = [...new Set(Object.values(mergePlans).flat().filter((memberId) => !Object.prototype.hasOwnProperty.call(mergePlans, memberId)))];
+  Object.keys(mergePlans).forEach((id) => {
+    mergePlans[id] = mergePlans[id].filter((memberId) => memberId === id || !restoredIds.includes(memberId));
+  });
   const keptIds = Object.keys(mergePlans);
   const coreDebates = {
     "qin-first-emperor-system": "称号、刻石与巡行可见帝国政治语言；其对地方实际控制的效果不能仅由官方宣示推出。",
@@ -448,11 +452,31 @@
     "qin-shaqiu-coup": { regnal: "前210年；秦始皇三十七年", coordinate: "37.57N, 115.03E", admin: "沙丘，今河北省邢台市广宗一带", terrainTransport: "北方巡行路线；沙丘至咸阳的驿传与诏令通道" },
     "qin-chen-sheng-wu-guang": { regnal: "前209-前207年；秦二世元年至三年", coordinate: "33.10N, 116.98E", admin: "大泽乡，今安徽省宿州市一带", terrainTransport: "淮北平原；通向陈、关东旧国与武关的征发道路" }
   };
-  window.QIN_EVENTS = keptIds.map((id, index) => {
+  const coreEvents = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
     const learningCase = caseAdditions[id] || item.learningCase;
     return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "qin-main-source" })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "帝国结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
+  const restoredEvents = restoredIds.map((id) => {
+    const item = originalById.get(id);
+    const facts = (item.process || []).slice(0, 5);
+    return {
+      ...item,
+      contentLevel: "mainline",
+      contentPresentation: "full",
+      timeAnchor: { time: item.time, regnal: `${item.time}；秦朝相关纪年` },
+      spatialAnchor: { admin: (item.regions || []).join("、"), terrainTransport: "地理环境、道路或边疆通道见本卡事实层与来源。" },
+      factLayer: facts.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "qin-main-source" })),
+      debates: [{ view: "[主流说]", content: item.claim || item.summary }, { view: "[挑战说]", content: "人物动机、兵力数字和叙事细节须以《史记》《资治通鉴》及相关出土材料分别核对。" }],
+      causalChain: [{ kind: "cause", label: "[表层因]", title: "前置条件", description: item.background?.[0] || item.summary }, { kind: "process", label: "[传导机制]", title: facts[0]?.title || "事件推进", description: facts[0]?.description || item.summary }, { kind: "impact", label: "[后续关联]", title: "结果", description: item.results?.[0] || item.summary }]
+    };
+  });
+  const timelineKey = (item) => {
+    const value = Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+    return String(item.time || "").includes("前") ? -value : value;
+  };
+  const timeline = [...coreEvents, ...restoredEvents].sort((a, b) => timelineKey(a) - timelineKey(b));
+  window.QIN_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

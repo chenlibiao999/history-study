@@ -635,4 +635,67 @@
     "ssong-yashan-fall": { label: "崖山为何是南宋终点而非临安", claim: "1276年临安投降使中央朝廷瓦解，但宗室、海军和地方力量仍在福建广东延续法统。崖山失败才摧毁最后的流亡政权与皇帝象征，说明王朝灭亡往往是多中心抵抗逐步被压缩的过程。", sections: [["临安之后", "端宗、赵昺相继被拥立，政权依托沿海和海上机动继续存在。"], ["最后条件", "海上政权缺少稳定陆上税源与补给，船队集中也易受封锁。"], ["终局意义", "崖山后宋室皇统和可组织的军事核心均终结，元完成对南方的政治统一。"]], evidence: { title: "材料锚点：《宋史·瀛国公纪》《元史》及岭南地方记忆", content: "英雄叙事极强，应先区分临安降、流亡抵抗与崖山终局三个阶段。" }, misconception: "“崖山之后无中国”是后世情绪化说法，不能替代对政权、社会与文化连续性的历史分析。", memory: ["临安先降", "海上续统", "崖山终局"], question: "为何南宋灭亡不能只记临安投降？", answer: "投降后仍有流亡朝廷和海上抵抗，崖山才终结最后可维持的宋室政治核心。" }
   };
   window.SOUTHERN_SONG_EVENTS = window.SOUTHERN_SONG_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const originalById = new Map(window.SOUTHERN_SONG_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "ssong-gaozong-enthroned-jiankang": ["ssong-gaozong-enthroned-jiankang", "ssong-miao-liu-mutiny"],
+    "ssong-shaoxing-peace-yuefei-death": ["ssong-shaoxing-peace-yuefei-death", "ssong-shaoxing-internal-consolidation"],
+    "ssong-ally-mongol-destroy-jin": ["ssong-ally-mongol-destroy-jin", "ssong-duanping-enter-luoyang"],
+    "ssong-sichuan-mountain-fortresses": ["ssong-sichuan-mountain-fortresses", "ssong-diaoyucheng-battle-mongke"],
+    "ssong-hubei-xiangyang-front": ["ssong-hubei-xiangyang-front"],
+    "ssong-yashan-fall": ["ssong-yashan-fall"]
+  };
+  const coreAnchors = {
+    "ssong-gaozong-enthroned-jiankang": { regnal: "1127-1129年；宋高宗建炎元年至三年", coordinate: "32.06N, 118.80E", admin: "建康府，今江苏省南京市", terrainTransport: "长江下游、运河与江南水网；北来军民渡江和朝廷转移路线" },
+    "ssong-shaoxing-peace-yuefei-death": { regnal: "1141-1142年；宋高宗绍兴十一年至十二年", coordinate: "31.23N, 121.47E", admin: "临安府与淮河防区", terrainTransport: "淮河-大散关防线与长江水运；南宋军费、粮运和北伐路线" },
+    "ssong-ally-mongol-destroy-jin": { regnal: "1233-1235年；宋理宗绍定六年至端平二年", coordinate: "33.86N, 114.12E", admin: "蔡州与河南路旧金辖区", terrainTransport: "淮河、黄河与洛阳通道；战后接收军粮和北方交通线" },
+    "ssong-sichuan-mountain-fortresses": { regnal: "1240年代-1270年代；宋理宗至宋度宗年间", coordinate: "29.70N, 106.72E", admin: "夔州路与重庆府、合州一线", terrainTransport: "嘉陵江、长江上游与四川山地；山城、江防和地方转运网络" },
+    "ssong-hubei-xiangyang-front": { regnal: "1268-1273年；宋度宗咸淳四年至九年", coordinate: "32.01N, 112.12E", admin: "襄阳府、樊城，今湖北省襄阳市", terrainTransport: "汉水与长江中游；襄樊控制中原南下和江防补给通道" },
+    "ssong-yashan-fall": { regnal: "1279年；宋帝昺祥兴二年", coordinate: "21.73N, 112.78E", admin: "崖山，今广东省江门市新会区", terrainTransport: "珠江口近海与广东沿海航道；流亡船队的补给和退避空间" }
+  };
+  const coreEvents = Object.keys(mergePlans).map((id) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    const process = members.flatMap((member) => member.process.map((step) => ({
+      time: step.time,
+      title: `${member.title}：${step.title}`,
+      description: step.description
+    })));
+    const learningCase = learningCases[id];
+    const facts = [
+      ...(item.background || []).map((text) => ({ text: `[事实层] 背景：${text}`, sourceId: "songshi-xu-tongjian-southern" })),
+      ...process.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "songshi-xu-tongjian-southern" })),
+      ...(item.results || []).map((text) => ({ text: `[事实层] 结果：${text}`, sourceId: "songshi-xu-tongjian-southern" }))
+    ].slice(0, 5);
+    return {
+      ...item,
+      timeAnchor: { time: item.time, ...coreAnchors[id] },
+      spatialAnchor: coreAnchors[id],
+      factLayer: facts,
+      debates: [
+        { view: "[主流说]", content: learningCase.claim },
+        { view: "[挑战说]", content: learningCase.misconception }
+      ],
+      causalChain: [
+        { kind: "cause", label: "[表层因]", title: "直接条件", description: process[0]?.description || item.summary },
+        { kind: "cause", label: "[深层因]", title: "资源与制度", description: process[1]?.description || item.background?.[0] || item.summary },
+        { kind: "cause", label: "[结构因]", title: "南宋结构", description: learningCase.claim },
+        { kind: "impact", label: "[传导机制]", title: "后续关联", description: item.results?.[0] || item.summary }
+      ],
+      process,
+      contentLevel: "core",
+      contentPresentation: "tiered",
+      learningCase,
+      mergedEventIds: members.slice(1).map((member) => member.id)
+    };
+  });
+  const mergedIds = new Set(Object.values(mergePlans).flat());
+  const outlineEvents = window.SOUTHERN_SONG_EVENTS.filter((item) => !mergedIds.has(item.id));
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = [...coreEvents, ...outlineEvents].sort((left, right) => timelineKey(left) - timelineKey(right));
+  window.SOUTHERN_SONG_EVENTS = timeline.map((item, index) => ({
+    ...item,
+    previousEventIds: index ? [timeline[index - 1].id] : [],
+    nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : []
+  }));
 })();

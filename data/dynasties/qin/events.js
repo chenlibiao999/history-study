@@ -430,6 +430,15 @@
     "qin-chen-sheng-wu-guang": "陈胜吴广起义引爆反秦，项羽、刘邦等力量继而竞争；巨鹿之战与子婴降刘邦终结秦朝，却开启新的天下重组。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreDebates = {
+    "qin-first-emperor-system": "称号、刻石与巡行可见帝国政治语言；其对地方实际控制的效果不能仅由官方宣示推出。",
+    "qin-commandery-county": "郡县制确立中央任免框架；具体郡数、地方执行强度与沿革仍应按简牍和传世材料区分。",
+    "qin-standardization": "统一文字与度量衡有物证和文献支持；其覆盖速度及地方差异不应被忽略。",
+    "qin-northern-xiongnu-wall": "秦北方与岭南经营均有制度和考古材料；边缘地区的控制强度并不相同。",
+    "qin-burning-books": "焚书和坑儒的对象、规模与过程主要见于传世叙事，不能视为全部先秦知识被毁。",
+    "qin-shaqiu-coup": "继承政变的密谋细节主要来自《史记》，其制度性后果比戏剧化情节更可作为分析重点。",
+    "qin-chen-sheng-wu-guang": "起义扩散与秦末崩解可由多类记载确认；口号和人物细节含文学化传述。"
+  };
   const coreAnchors = {
     "qin-first-emperor-system": { regnal: "前221年；秦王政二十六年", coordinate: "34.34N, 108.71E", admin: "咸阳，今陕西省咸阳市", terrainTransport: "渭河平原；函谷关东出与全国驰道网络" },
     "qin-commandery-county": { regnal: "前221年后；秦始皇时期", coordinate: "34.34N, 108.71E", admin: "咸阳中央与三十六郡", terrainTransport: "关中盆地为中枢；驰道、水道与文书系统连接郡县" },
@@ -442,6 +451,8 @@
   window.QIN_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
+    const learningCase = caseAdditions[id] || item.learningCase;
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "qin-main-source" })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "帝国结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

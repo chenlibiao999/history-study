@@ -4933,6 +4933,20 @@ window.LH3K_EVENTS = [
     "lh3k-wei-conquers-shu": "魏灭蜀、钟会之乱、晋代魏与吴末政治说明征服和接收交织：司马氏先以外战巩固权威，最终以晋朝完成对三国格局的终结。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreDebates = {
+    "lh3k-provincial-governors-militarized": "州牧化的具体时间和权限各地不一，不能将制度设置与立即割据等同。",
+    "lh3k-hejin-eunuchs-crisis": "人物动机有不同传述，但外军入京使首都军阀化的后果可由事件链核对。",
+    "lh3k-cao-cao-controls-emperor": "“挟天子”概括应落实到诏令、人事和军政资源，而非只作道德评价。",
+    "lh3k-guandu-battle": "兵力数字与乌巢细节有叙事夸张可能，补给与河北整合的战略后果更稳定。",
+    "lh3k-chibi-battle": "火攻规模、地点和疫病影响有不同记载；曹军南下受挫及其格局后果较明确。",
+    "lh3k-liubei-enters-shu": "入蜀合法性叙事带有后见之明，应结合益州资源和汉中地理判断。",
+    "lh3k-guan-yu-loses-jingzhou": "关羽个人责任受传记褒贬影响，荆州归属和联盟利益同样构成解释条件。",
+    "lh3k-caopi-replaces-han": "受禅文本反映政治语言，九品中正的早期实际流动性不能被后世门阀结果倒推。",
+    "lh3k-sunquan-emperor-wu-shu-alliance": "吴蜀联盟是有限协作，不能按永久共同国家理解。",
+    "lh3k-zhuge-liang-northern-expeditions": "北伐成败与责任归属争议较大，资源差距和秦岭补给约束相对稳定。",
+    "lh3k-gaopingling-coup": "司马氏胜利影响后世史料叙事，应以军权、诏令与人事处置观察政变后果。",
+    "lh3k-wei-conquers-shu": "邓艾行军路线与细节可讨论，多路作战、蜀汉疲弊和战后钟会之乱构成稳定框架。"
+  };
   const coreAnchors = {
     "lh3k-provincial-governors-militarized": { regnal: "后184-后189年；中平元年至六年", coordinate: "36.67N, 114.49E", admin: "冀州及东汉各州", terrainTransport: "黄河中下游州郡道路；地方募兵、仓储和驿传网络" },
     "lh3k-hejin-eunuchs-crisis": { regnal: "后189-后192年；中平六年至初平三年", coordinate: "34.68N, 112.47E", admin: "洛阳、长安", terrainTransport: "洛阳宫城、函谷关与关中；董卓等外军进京路线" },
@@ -4950,6 +4964,9 @@ window.LH3K_EVENTS = [
   window.LH3K_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
+    const learningCase = caseAdditions[id] || item.learningCase;
+    const sourceId = item.sources?.[0]?.id || item.citations?.[0]?.sourceId || "zztj-056";
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "三国结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

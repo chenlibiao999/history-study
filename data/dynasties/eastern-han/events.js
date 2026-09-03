@@ -2593,6 +2593,15 @@ window.EASTERN_HAN_EVENTS = [
     "ehan-hejin-eunuchs": "何进召外兵、董卓入洛阳、献帝被控制到曹丕代汉，显示宫廷继承危机一旦交给地方武装，皇帝与朝廷都会成为军事实力争夺物。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreDebates = {
+    "ehan-liu-xiu-restores-han": "光武重建的正统叙事不应掩盖地方豪强和战后资源重组的作用。",
+    "ehan-mingzhang-governance": "明章治世主要来自正史概括，制度实效与地区差异需区分。",
+    "ehan-ban-chao-western-regions": "东汉西域影响依赖绿洲盟友、驻军与补给，不等于完整主权控制。",
+    "ehan-huan-kills-liangji": "诛梁冀的传记叙事褒贬鲜明，关键应放在政变后的封赏和权力转移。",
+    "ehan-second-partisan-prohibition": "党人范围和责任标签来自政治斗争，需与禁锢制度及士人网络分开分析。",
+    "ehan-yellow-turban-rebellion": "黄巾口号和组织目标并不完全一致；其长远作用主要在地方军政资源下沉。",
+    "ehan-hejin-eunuchs": "何进动机细节有不同传述，但召外兵使武装集团进入中央的结构后果较明确。"
+  };
   const coreAnchors = {
     "ehan-liu-xiu-restores-han": { regnal: "后25年；建武元年", coordinate: "34.68N, 112.47E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛河盆地；黄河中下游与关东郡国交通枢纽" },
     "ehan-mingzhang-governance": { regnal: "后57-后88年；明帝、章帝时期", coordinate: "34.68N, 112.47E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛河盆地；东汉漕运、郡国文书和太学网络" },
@@ -2605,6 +2614,8 @@ window.EASTERN_HAN_EVENTS = [
   window.EASTERN_HAN_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
+    const learningCase = caseAdditions[id] || item.learningCase;
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "eastern-han-main-source" })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "东汉结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

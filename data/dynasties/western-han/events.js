@@ -2968,6 +2968,17 @@ window.WESTERN_HAN_EVENTS = [
     "whan-consort-clans-rise": "外戚、王氏网络、晚西汉危机与王莽摄政逐步汇合，西汉终结于继承、官僚与社会问题无法相互制衡的局面。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreDebates = {
+    "whan-chu-han-transition": "楚汉战争叙事以《史记》为主，垓下细节与人物动机不能脱离胜者叙事阅读。",
+    "whan-empress-lu-regency": "吕后、诸吕政治的道德评价浓厚，应重点核对封王、继承与政变程序。",
+    "whan-wenjing-governance": "“文景之治”属后世概括，赋役减轻与财政恢复的程度需按不同材料区分。",
+    "whan-rebellion-seven-states": "七国之乱的参与范围与中央应对可核对；削藩动机与人物责任有传世叙事取舍。",
+    "whan-emperor-wu-centralization": "内朝、刺史、推恩与儒学国家化作用不同，不应化约为单一集权政策。",
+    "whan-han-xiongnu-war": "汉对匈奴及西域的影响强度随地区和时期变化，不能按现代领土概念理解。",
+    "whan-salt-iron-debate": "《盐铁论》经后世整理，适合观察政策争点，不等同于会议逐字记录。",
+    "whan-witchcraft-disaster": "巫蛊案的罪责与人物形象受后出平反叙事影响，须区分信息机制与道德裁断。",
+    "whan-consort-clans-rise": "外戚、王莽与西汉末危机不能仅以人物野心解释，传记褒贬应与制度事实分开。"
+  };
   const coreAnchors = {
     "whan-chu-han-transition": { regnal: "前206-前202年；汉高祖元年至五年", coordinate: "34.26N, 108.94E", admin: "关中长安与垓下，今陕西西安、安徽灵璧一带", terrainTransport: "关中盆地、鸿沟与淮河平原；楚汉军粮和水陆交通线" },
     "whan-empress-lu-regency": { regnal: "前195-前180年；惠帝至高后八年", coordinate: "34.26N, 108.94E", admin: "长安，今陕西省西安市", terrainTransport: "渭河平原中枢；宫廷、诸侯国与关中军政网络" },
@@ -2982,6 +2993,8 @@ window.WESTERN_HAN_EVENTS = [
   window.WESTERN_HAN_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
+    const learningCase = caseAdditions[id] || item.learningCase;
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "western-han-main-source" })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "汉代结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

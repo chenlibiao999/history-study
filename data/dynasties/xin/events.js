@@ -1014,6 +1014,11 @@ window.XIN_EVENTS = [
     "xin-natural-disasters-famine": "灾荒、行政与币制失灵使流民组织为绿林赤眉；更始政权借此兴起，昆阳之战击穿新军威信，长安陷落终结新朝。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreDebates = {
+    "xin-wang-mang-usurpation": "符命、禅让与王莽形象主要见于褒贬强烈的正史叙事，须与摄政程序分层处理。",
+    "xin-reforms-land-slavery": "王田、币制与官名改革的具体执行范围难以精确复原，不能把诏令等同于地方实效。",
+    "xin-natural-disasters-famine": "灾害记载带有天人感应框架；灾荒、流民组织和新军崩解之间不应归结为单一原因。"
+  };
   const coreAnchors = {
     "xin-wang-mang-usurpation": { regnal: "前9年；新始建国元年", coordinate: "34.26N, 108.94E", admin: "长安，今陕西省西安市", terrainTransport: "渭河平原中枢；宫廷、官僚与关东郡国联络网络" },
     "xin-reforms-land-slavery": { regnal: "前9-后14年；始建国至天凤年间", coordinate: "34.26N, 108.94E", admin: "长安与全国郡国", terrainTransport: "关中中枢至乡里土地、货币和边疆行政网络" },
@@ -1022,6 +1027,8 @@ window.XIN_EVENTS = [
   window.XIN_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
+    const learningCase = learningCases[id] || item.learningCase;
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "xin-main-source" })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "制度执行", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "新朝结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

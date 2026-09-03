@@ -662,7 +662,77 @@
       memory: ["冗费边防", "青苗免役保甲", "目标与执行"],
       question: "为什么说王安石变法同时是财政改革和国家能力改革？",
       answer: "它不只增加收入，还试图通过信贷、役法、市场和保甲让中央更稳定地获取资源并组织基层。"
-    }
+    },
+    "nsong-southern-unification": { label: "宋初统一如何收束五代十国", claim: "北宋先取分散的南方政权、再处理有辽援的北汉，是基于交通、财赋与外援关系的战区排序；979年完成五代十国范围内的统一，但燕云仍使北方边防问题延续。", sections: [["南方战区", "荆湖、蜀、岭南与江南政权彼此分散，宋军可依长江和运河逐段取得资源节点。"], ["北方限制", "北汉与辽相互支援，宋需在南方资源已整合后再发动太原战役。"], ["结果边界", "统一结束十国格局，却没有收回燕云，也未消除辽的北方压力。"]], evidence: { title: "材料锚点：《宋史·太祖纪》《太宗纪》与《续资治通鉴长编》", content: "应按荆湖、蜀、江南和太原各战区的接收过程阅读，不把统一写成单一年份。" }, misconception: "979年灭北汉完成的是五代十国范围内的统一，不等于北方战略问题已经解决。" },
+    "nsong-huizong-caijing-politics": { label: "徽宗朝为何由政策延续转为东南危机", claim: "蔡京当政、财政取用和花石纲并非彼此孤立；当中央以江南财赋、转运和地方征发持续供给宫廷与工程时，执行压力会沿地方行政传导，方腊起事显示这种压力已转化为区域秩序危机。", sections: [["财政与工程", "中央持续调取东南物资、劳役与运输资源，地方官须在既有税役之外完成额外任务。"], ["地方传导", "花石纲依托漕运和地方征发运行，成本由不同层级向基层转移。"], ["危机结果", "方腊起事不能化约为单一政策后果，但它暴露东南治理、财政与社会压力已相互叠加。"]], evidence: { title: "材料锚点：《宋史·徽宗纪》《蔡京传》与方腊相关纪事", content: "传世人物褒贬很强，应将财政征发、物资运输与起事范围分别核对。" }, misconception: "方腊起事不是花石纲一项政策的机械后果，而是东南多重征发与治理失灵叠加后的危机。" }
   };
   window.NORTHERN_SONG_EVENTS = window.NORTHERN_SONG_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const originalById = new Map(window.NORTHERN_SONG_EVENTS.map((item) => [item.id, item]));
+  const mergePlans = {
+    "nsong-military-centralization": ["nsong-military-centralization"],
+    "nsong-southern-unification": ["nsong-southern-unification", "nsong-northern-han-annexed"],
+    "nsong-chanyuan-treaty": ["nsong-chanyuan-treaty", "nsong-east-fengshan-heavenly-texts"],
+    "nsong-western-xia-rise": ["nsong-western-xia-rise"],
+    "nsong-wang-anshi-reforms": ["nsong-wang-anshi-reforms", "nsong-baojia-and-military-reform", "nsong-xihe-hehuang-expansion", "nsong-yuanfeng-official-reform"],
+    "nsong-yuanyou-reversal": ["nsong-yuanyou-reversal", "nsong-shaosheng-restoration"],
+    "nsong-huizong-caijing-politics": ["nsong-huizong-caijing-politics", "nsong-huashi-gang", "nsong-fangla-uprising"],
+    "nsong-haishang-alliance": ["nsong-haishang-alliance", "nsong-jin-destroys-liao-yanyun"],
+    "nsong-jingkang-crisis": ["nsong-jingkang-crisis"]
+  };
+  const coreAnchors = {
+    "nsong-military-centralization": { regnal: "961年前后；宋太祖建隆至乾德年间", coordinate: "34.80N, 114.31E", admin: "开封府，今河南省开封市", terrainTransport: "汴河与开封城；禁军、漕运和全国财赋中枢" },
+    "nsong-southern-unification": { regnal: "963-979年；宋太祖乾德至宋太宗太平兴国四年", coordinate: "34.80N, 114.31E", admin: "开封与江南、太原诸战区", terrainTransport: "长江、运河与汾河谷地；南北战区的粮运和军路" },
+    "nsong-chanyuan-treaty": { regnal: "1004-1005年；宋真宗景德元年至二年", coordinate: "35.20N, 115.02E", admin: "澶州，今河南省濮阳市", terrainTransport: "黄河下游与河北平原；辽军南下、宋军北援的交通轴线" },
+    "nsong-western-xia-rise": { regnal: "1038-1044年；宋仁宗宝元至庆历年间", coordinate: "38.49N, 106.23E", admin: "兴庆府，今宁夏银川市", terrainTransport: "河套、贺兰山与黄河灌区；西北堡寨和补给路线" },
+    "nsong-wang-anshi-reforms": { regnal: "1069-1085年；宋神宗熙宁至元丰年间", coordinate: "34.80N, 114.31E", admin: "开封府与各路州县", terrainTransport: "汴河漕运、州县簿籍与西北军费供给网络" },
+    "nsong-yuanyou-reversal": { regnal: "1085-1093年；宋哲宗元祐年间", coordinate: "34.80N, 114.31E", admin: "开封府，今河南省开封市", terrainTransport: "中央诏令经路、州、县人事与财政网络传导" },
+    "nsong-huizong-caijing-politics": { regnal: "1100-1125年；宋徽宗建中靖国至宣和年间", coordinate: "34.80N, 114.31E", admin: "开封府与两浙、江南东路", terrainTransport: "汴河至江南运河；东南物资、花石与漕运路线" },
+    "nsong-haishang-alliance": { regnal: "1118-1125年；宋徽宗政和至宣和年间", coordinate: "34.80N, 114.31E", admin: "开封府与燕京地区", terrainTransport: "海路使节、燕云山地关隘与华北进军路线" },
+    "nsong-jingkang-crisis": { regnal: "1125-1127年；宋徽宗宣和末至宋钦宗靖康二年", coordinate: "34.80N, 114.31E", admin: "开封府，今河南省开封市", terrainTransport: "黄河下游平原；开封城防、汴河补给与金军南下通道" }
+  };
+  const keptIds = Object.keys(mergePlans);
+  const coreEvents = keptIds.map((id) => {
+    const item = originalById.get(id);
+    const members = mergePlans[id].map((memberId) => originalById.get(memberId));
+    const process = members.flatMap((member) => member.process.map((step) => ({
+      time: step.time,
+      title: `${member.title}：${step.title}`,
+      description: step.description
+    })));
+    const learningCase = learningCases[id];
+    return {
+      ...item,
+      timeAnchor: { time: item.time, ...coreAnchors[id] },
+      spatialAnchor: coreAnchors[id],
+      factLayer: process.slice(0, 5).map((step) => ({
+        text: `[事实层] ${step.time}：${step.description}`,
+        sourceId: "songshi-zizhi-tongjian"
+      })),
+      debates: [
+        { view: "[主流说]", content: learningCase.claim },
+        { view: "[挑战说]", content: learningCase.misconception }
+      ],
+      causalChain: [
+        { kind: "cause", label: "[表层因]", title: "直接条件", description: process[0]?.description || item.summary },
+        { kind: "cause", label: "[深层因]", title: "制度与资源", description: process[1]?.description || item.background?.[0] || item.summary },
+        { kind: "cause", label: "[结构因]", title: "北宋结构", description: learningCase.claim },
+        { kind: "impact", label: "[传导机制]", title: "后续关联", description: item.results?.[0] || item.summary }
+      ],
+      process,
+      contentLevel: "core",
+      contentPresentation: "tiered",
+      learningCase,
+      mergedEventIds: members.slice(1).map((member) => member.id)
+    };
+  });
+  const mergedIds = new Set(Object.values(mergePlans).flat());
+  const outlineEvents = window.NORTHERN_SONG_EVENTS.filter((item) => !mergedIds.has(item.id));
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = [...coreEvents, ...outlineEvents].sort((left, right) => timelineKey(left) - timelineKey(right));
+  window.NORTHERN_SONG_EVENTS = timeline.map((item, index) => ({
+    ...item,
+    previousEventIds: index ? [timeline[index - 1].id] : [],
+    nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : []
+  }));
 })();

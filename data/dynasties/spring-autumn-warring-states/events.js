@@ -617,6 +617,10 @@
     "saws-changping-battle": ["saws-changping-battle"],
     "saws-qin-destroys-six-states": ["saws-lu-buwei-and-qin-politics", "saws-qin-destroys-six-states"]
   };
+  const restoredIds = [...new Set(Object.values(mergePlans).flat().filter((memberId) => !Object.prototype.hasOwnProperty.call(mergePlans, memberId)))];
+  Object.keys(mergePlans).forEach((id) => {
+    mergePlans[id] = mergePlans[id].filter((memberId) => memberId === id);
+  });
   const caseAdditions = {
     "saws-jin-wen-chengpu": { label: "霸政为何不断换手", claim: "晋文公在城濮建立中原霸权，秦穆公转向西陲、楚庄王北上问鼎，显示霸主秩序取决于地区资源、会盟名义和军事胜负的不断重组。", sections: [["竞争", "城濮以后的晋楚对峙不是两国轮流称雄，而是强国用会盟、盟友与战场胜负争夺秩序解释权。"], ["边界", "秦穆公的西向扩张奠定关中基础，但并不等于其已进入中原霸主序列。"]], evidence: { title: "材料锚点：《左传》《国语》与春秋金文", content: "会盟和战争次序主要见于传世叙事；金文可补充诸侯交往与王命背景，具体修辞应与事实层分开。" }, misconception: "春秋五霸是固定不变的排名。", memory: ["城濮", "晋楚", "西陲秦"], question: "春秋霸权为何不能稳定传承？", answer: "它依赖国家资源、联盟和周王名义的临时结合，任何一项变化都可能重组霸主格局。" },
     "saws-wu-yue-rise": { label: "边缘地区如何改变全国格局", claim: "吴越争霸把东南的军事动员、楚国压力与中原会盟连到一起，说明春秋后期的竞争范围已超出传统中原。", sections: [["进入", "吴破楚、夫差北上使东南国家能直接干预楚与中原的力量关系。"], ["替代", "越灭吴说明新兴国家同样受内部资源、长期恢复与联盟变化制约，胜利并非永久。"]], evidence: { title: "材料锚点：《左传》《国语》、吴越金文与考古", content: "阖闾、夫差、勾践的基本战争框架可互证；孙武、火攻等戏剧化细节不可当作无争议史实。" }, misconception: "吴越只是中原争霸的边缘插曲。", memory: ["吴破楚", "北上会盟", "越灭吴"], question: "吴越争霸为何属于春秋主线？", answer: "它改变了楚国与诸侯的战略环境，并显示竞争已经扩展为跨区域格局。" },
@@ -651,7 +655,7 @@
     "saws-changping-battle": { regnal: "前260年；周赧王五十五年、秦昭襄王四十七年", coordinate: "35.98N, 113.10E", admin: "长平，今山西省高平市", terrainTransport: "太行山南端山地谷口；上党通向中原的战略走廊" },
     "saws-qin-destroys-six-states": { regnal: "前230-前221年；秦王政十七年至二十六年", coordinate: "34.34N, 108.71E", admin: "咸阳，今陕西省咸阳市", terrainTransport: "关中盆地、函谷关与黄河中下游进攻轴线" }
   };
-  window.SAWS_EVENTS = keptIds.map((id, index) => {
+  const coreEvents = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     return {
@@ -679,4 +683,24 @@
       mergedEventIds: members.slice(1).map((member) => member.id)
     };
   });
+  const restoredEvents = restoredIds.map((id) => {
+    const item = originalById.get(id);
+    const facts = (item.process || []).slice(0, 5);
+    return {
+      ...item,
+      contentLevel: "mainline",
+      contentPresentation: "full",
+      timeAnchor: { time: item.time, regnal: `${item.time}；东周／春秋战国相关纪年` },
+      spatialAnchor: { admin: (item.regions || []).join("、"), terrainTransport: "相关河流、关隘、都城、边疆或军路条件见本卡事实层与来源。" },
+      factLayer: facts.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "saws-main-source" })),
+      debates: [{ view: "[主流说]", content: item.claim || item.summary }, { view: "[挑战说]", content: "传世编年叙事、人物动机、军队数字和后出故事须同出土材料及现代研究分别核对。" }],
+      causalChain: [{ kind: "cause", label: "[前置条件]", title: "前置条件", description: item.background?.[0] || item.summary }, { kind: "process", label: "[传导机制]", title: facts[0]?.title || "事件推进", description: facts[0]?.description || item.summary }, { kind: "impact", label: "[后续关联]", title: "结果", description: item.results?.[0] || item.summary }]
+    };
+  });
+  const timelineKey = (item) => {
+    const value = Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+    return String(item.time || "").includes("前") ? -value : value;
+  };
+  const timeline = [...coreEvents, ...restoredEvents].sort((a, b) => timelineKey(a) - timelineKey(b));
+  window.SAWS_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

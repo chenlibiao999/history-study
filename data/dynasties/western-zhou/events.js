@@ -633,6 +633,10 @@
     "wzhou-western-zhou-fall": ["wzhou-you-wang-crisis", "wzhou-western-zhou-fall"]
   };
   const parentByChild = Object.fromEntries(Object.entries(mergePlans).flatMap(([parentId, ids]) => ids.map((id) => [id, parentId])));
+  const restoredIds = [...new Set(Object.values(mergePlans).flat().filter((memberId) => !Object.prototype.hasOwnProperty.call(mergePlans, memberId)))];
+  Object.keys(mergePlans).forEach((id) => {
+    mergePlans[id] = mergePlans[id].filter((memberId) => memberId === id);
+  });
   const caseAdditions = {
     "wzhou-yiwang-decline": {
       label: "王室威望为何从扩张转为维护",
@@ -694,7 +698,7 @@
     "wzhou-xuanwang-restoration": { regnal: "前828-前782年；周宣王时期", coordinate: "35.60N, 108.20E", admin: "宗周与太原、江汉等边区", terrainTransport: "渭河平原通西北山前与江汉谷地的军事路线" },
     "wzhou-western-zhou-fall": { regnal: "前771年；周幽王末年", coordinate: "34.26N, 108.94E", admin: "宗周镐京，今陕西省西安市西南", terrainTransport: "关中渭河平原；西北戎狄入关通道与东迁路线" }
   };
-  window.WESTERN_ZHOU_EVENTS = keptIds.map((id, index) => {
+  const coreEvents = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     return {
@@ -718,4 +722,24 @@
       mergedEventIds: members.slice(1).map((member) => member.id)
     };
   });
+  const restoredEvents = restoredIds.map((id) => {
+    const item = originalById.get(id);
+    const facts = (item.process || []).slice(0, 5);
+    return {
+      ...item,
+      contentLevel: "mainline",
+      contentPresentation: "full",
+      timeAnchor: { time: item.time, regnal: `${item.time}；西周相关纪年` },
+      spatialAnchor: { admin: (item.regions || []).join("、"), terrainTransport: "相关王畿、河流、关隘或军事路线见本卡事实层与来源。" },
+      factLayer: facts.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "western-zhou-main-source" })),
+      debates: [{ view: "[主流说]", content: item.claim || item.summary }, { view: "[挑战说]", content: "传世王世、战事细节与后出制度叙事须同金文和考古年代框架分别核对。" }],
+      causalChain: [{ kind: "cause", label: "[前置条件]", title: "前置条件", description: item.background?.[0] || item.summary }, { kind: "process", label: "[传导机制]", title: facts[0]?.title || "事件推进", description: facts[0]?.description || item.summary }, { kind: "impact", label: "[后续关联]", title: "结果", description: item.results?.[0] || item.summary }]
+    };
+  });
+  const timelineKey = (item) => {
+    const value = Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+    return String(item.time || "").includes("前") ? -value : value;
+  };
+  const timeline = [...coreEvents, ...restoredEvents].sort((a, b) => timelineKey(a) - timelineKey(b));
+  window.WESTERN_ZHOU_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

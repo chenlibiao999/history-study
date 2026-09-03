@@ -934,18 +934,27 @@
     "shang-muye-fall": { time: "前1046年（常用纪年）", regnal: "帝辛末年／周武王克商", coordinate: "35.62N, 113.85E", admin: "牧野，今河南省新乡市北", terrainTransport: "黄河以北平原；周军东进与诸侯会师路线" }
   };
   const coreIds = new Set(Object.keys(learningCases));
-  window.SHANG_EVENTS = window.SHANG_EVENTS
-    .filter((item) => !removedEventIds.has(item.id))
-    .map((item) => ({
-      ...item,
-      timeAnchor: coreAnchors[item.id] || null,
-      spatialAnchor: coreAnchors[item.id] || null,
-      factLayer: coreFacts[item.id] || [],
-      debates: coreDebates[item.id] || item.debates,
-      causalChain: (coreCausality[item.id] || []).map((description, index) => ({ kind: index < 3 ? "cause" : "impact", label: ["因果链", "因果链", "因果链", "传导机制"][index], title: description.split(" ")[0], description })),
-      sources: [...(item.sources || []), ...coreSourceCatalog.filter((source) => !(item.sources || []).some((existing) => existing.id === source.id))],
-      contentLevel: coreIds.has(item.id) ? "core" : item.contentLevel || "outline",
-      contentPresentation: "tiered",
-      learningCase: learningCases[item.id] || null
-    }));
+  const restoredIds = removedEventIds;
+  const shangEvents = window.SHANG_EVENTS
+    .map((item) => {
+      const restored = restoredIds.has(item.id);
+      const facts = (item.process || []).slice(0, 5);
+      return {
+        ...item,
+        timeAnchor: coreAnchors[item.id] || (restored ? { time: item.time, regnal: `${item.time}；商朝相关纪年与考古分期需区分` } : null),
+        spatialAnchor: coreAnchors[item.id] || (restored ? { admin: (item.regions || []).join("、"), terrainTransport: "相关都邑、河流、边疆或交通条件见本卡事实层与来源。" } : null),
+        factLayer: coreFacts[item.id] || facts.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "shang-main-source" })),
+        debates: coreDebates[item.id] || (restored ? [{ view: "[主流说]", content: item.claim || item.summary }, { view: "[挑战说]", content: "早期王表、人物事迹与地望须区分传世叙事、甲骨材料和考古分期的证据范围。" }] : item.debates),
+        causalChain: (coreCausality[item.id] || (restored ? [item.background?.[0] || item.summary, facts[0]?.description || item.summary, item.results?.[0] || item.summary] : [])).map((description, index) => ({ kind: index < 2 ? "cause" : "impact", label: ["[前置条件]", "[传导机制]", "[后续关联]"][index] || "[后续关联]", title: ["前置条件", "事件推进", "结果"][index] || "结果", description })),
+        sources: [...(item.sources || []), ...coreSourceCatalog.filter((source) => !(item.sources || []).some((existing) => existing.id === source.id))],
+        contentLevel: coreIds.has(item.id) ? "core" : restored ? "mainline" : item.contentLevel || "outline",
+        contentPresentation: restored ? "full" : "tiered",
+        learningCase: learningCases[item.id] || null
+      };
+    });
+  window.SHANG_EVENTS = shangEvents.map((item, index) => ({
+    ...item,
+    previousEventIds: index ? [shangEvents[index - 1].id] : [],
+    nextEventIds: index < shangEvents.length - 1 ? [shangEvents[index + 1].id] : []
+  }));
 })();

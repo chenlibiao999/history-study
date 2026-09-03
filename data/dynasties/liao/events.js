@@ -1113,4 +1113,45 @@ window.LIAO_EVENTS = [
     "liao-western-liao": { label: "西辽说明辽史没有在1125年完全结束", claim: "耶律大石西走建立西辽，带去的是王朝合法性、军政组织和对多族群地区的统治经验。它把东亚北方政权的历史延伸到中亚，也提醒我们王朝覆灭与政治传统消失并不相同。", sections: [["西走背景", "金灭辽后，部分契丹贵族与追随者无法在东北继续立足。"], ["为何能立国", "中亚已有城市、商路与多政权竞争空间，耶律大石的军事与政治声望可在当地重新组织联盟。"], ["跨区域意义", "西辽将辽的制度与称号带入中亚，是后续理解中亚伊斯兰、草原与中国关系的重要连接点。"]], evidence: { title: "材料锚点：《辽史·耶律大石传》及中亚史料研究", content: "东亚正史对西辽材料有限，需结合波斯文史料与现代中亚研究，保留细节不确定性。" }, misconception: "西辽不是辽朝的简单尾声，而是政治传统在新区域重新组合。", memory: ["辽亡后西走", "中亚重组", "传统跨区域"], question: "为何西辽应放进东亚历史学习？", answer: "它连接契丹政治传统与中亚格局，显示东亚北方政权的影响并未止于东北。" }
   };
   window.LIAO_EVENTS = window.LIAO_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+
+  const coreAnchors = {
+    "liao-abaoji-founds-khitan": { regnal: "916年；契丹太祖元年", coordinate: "43.50N, 118.97E", admin: "上京临潢府，今内蒙古自治区赤峰市巴林左旗", terrainTransport: "西辽河流域与草原交通；契丹部众的牧地、营帐与东向通道" },
+    "liao-yanyun-acquired": { regnal: "936-938年；辽太宗会同元年至三年", coordinate: "39.90N, 116.40E", admin: "燕云十六州，含幽州、云州等", terrainTransport: "燕山、太行山关隘与桑干河、滹沱河通道；华北北缘城镇带" },
+    "liao-southern-northern-administration": { regnal: "10世纪；辽太祖至圣宗时期逐步定型", coordinate: "43.50N, 118.97E", admin: "辽上京与南面州县并行辖区", terrainTransport: "草原部众活动区、农耕州县与连接两者的交通、贡赋网络" },
+    "liao-chanyuan-south-campaign": { regnal: "1004-1005年；辽圣宗统和二十二年至二十三年", coordinate: "35.20N, 115.02E", admin: "澶州，今河南省濮阳市", terrainTransport: "河北平原与黄河下游；辽军南下、宋军北援和边市贸易走廊" },
+    "liao-jurchen-rise": { regnal: "1114-1122年；辽天庆四年至保大二年", coordinate: "46.83N, 126.53E", admin: "女真完颜部活动区与辽东京道", terrainTransport: "松花江流域、长白山与辽东东北交通线；边地骑兵动员空间" },
+    "liao-western-liao": { regnal: "1124年后；辽天祚帝末年、西辽德宗时期", coordinate: "43.82N, 87.62E", admin: "可敦城及中亚河中地区", terrainTransport: "天山北麓、伊犁河谷与中亚商路；西迁部众和城市绿洲网络" }
+  };
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = window.LIAO_EVENTS.map((item) => {
+    const learningCase = learningCases[item.id];
+    if (!learningCase) return item;
+    const facts = [
+      ...(item.background || []).map((text) => ({ text: `[事实层] 背景：${text}`, sourceId: "liao-main-source" })),
+      ...(item.process || []).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "liao-main-source" })),
+      ...(item.results || []).map((text) => ({ text: `[事实层] 结果：${text}`, sourceId: "liao-main-source" }))
+    ].slice(0, 5);
+    return {
+      ...item,
+      timeAnchor: { time: item.time, ...coreAnchors[item.id] },
+      spatialAnchor: coreAnchors[item.id],
+      factLayer: facts,
+      debates: [
+        { view: "[主流说]", content: learningCase.claim },
+        { view: "[挑战说]", content: learningCase.misconception }
+      ],
+      causalChain: [
+        { kind: "cause", label: "[表层因]", title: "直接条件", description: item.process?.[0]?.description || item.summary },
+        { kind: "cause", label: "[深层因]", title: "资源与制度", description: item.process?.[1]?.description || item.background?.[0] || item.summary },
+        { kind: "cause", label: "[结构因]", title: "辽的统治结构", description: learningCase.claim },
+        { kind: "impact", label: "[传导机制]", title: "后续关联", description: item.results?.[0] || item.summary }
+      ],
+      contentPresentation: "tiered"
+    };
+  }).sort((left, right) => timelineKey(left) - timelineKey(right));
+  window.LIAO_EVENTS = timeline.map((item, index) => ({
+    ...item,
+    previousEventIds: index ? [timeline[index - 1].id] : [],
+    nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : []
+  }));
 })();

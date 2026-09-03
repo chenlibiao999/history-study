@@ -5385,9 +5385,34 @@ window.NS_EVENTS = [
     "ns-houjing-rebellion": "南朝政权递换、梁武帝时期的宗教与军政、侯景之乱、陈朝建立和隋的威胁共同显示江南资源在长期内战后难以再与北方整合政权抗衡。"
   };
   const keptIds = Object.keys(mergePlans);
+  const coreAnchors = {
+    "ns-eight-princes-war": { regnal: "291-306年；晋惠帝元康元年至光熙元年", coordinate: "34.68N, 112.47E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛河盆地；通向关中、河北与北方边镇的道路" },
+    "ns-yongjia-collapse": { regnal: "311-316年；晋怀帝永嘉五年至愍帝建兴四年", coordinate: "34.68N, 112.47E", admin: "洛阳、长安", terrainTransport: "黄河中下游与崤函通道；两京防御和北方军镇走廊" },
+    "ns-eastern-jin-southward": { regnal: "317-322年；晋元帝建武元年至永昌元年", coordinate: "32.06N, 118.80E", admin: "建康，今江苏省南京市", terrainTransport: "长江下游、秦淮河与江南水网；北方南渡通道" },
+    "ns-feishui-battle": { regnal: "383年；晋孝武帝太元八年／前秦建元十九年", coordinate: "32.55N, 116.79E", admin: "淝水，今安徽省寿县一带", terrainTransport: "淮河支流与江淮平原；北军南下补给线" },
+    "ns-liuyu-song": { regnal: "420年；晋恭帝元熙二年／宋武帝永初元年", coordinate: "32.06N, 118.80E", admin: "建康，今江苏省南京市", terrainTransport: "长江下游与江南财赋水运网络" },
+    "ns-xiaowen-reforms": { regnal: "494-499年；北魏孝文帝太和十八年至二十三年", coordinate: "34.62N, 112.45E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛河盆地；连接华北平原、关中与北方边镇" },
+    "ns-six-garrisons-rebellion": { regnal: "523-534年；北魏孝明帝正光四年至永熙三年", coordinate: "40.82N, 114.88E", admin: "六镇，今内蒙古南部与河北北部边地", terrainTransport: "阴山南麓、长城沿线与北方草原通道" },
+    "ns-guanzhong-fubing-system": { regnal: "535-577年；西魏大统元年至北周建德六年", coordinate: "34.26N, 108.94E", admin: "长安及关中", terrainTransport: "渭河平原、函谷关与陇山通道；关陇军政腹地" },
+    "ns-houjing-rebellion": { regnal: "548-557年；梁太清二年至陈永定元年", coordinate: "32.06N, 118.80E", admin: "建康，今江苏省南京市", terrainTransport: "长江下游、京口与江南漕运网络" }
+  };
+  const coreDebates = {
+    "ns-eight-princes-war": "八王之乱并非宗室数量本身所致，关键在宗王军政权与继承危机的结合。",
+    "ns-yongjia-collapse": "“五胡乱华”不能替代对西晋内战、北方政权竞争和人口迁徙的解释。",
+    "ns-eastern-jin-southward": "“王与马，共天下”是后世概括，须结合北来士族和江南豪族的实际协作理解。",
+    "ns-feishui-battle": "风声鹤唳等成语化细节不应取代对前秦多集团整合困境的分析。",
+    "ns-liuyu-song": "刘裕建宋不只是个人篡位，军府、北伐和继承结构共同构成条件。",
+    "ns-xiaowen-reforms": "汉化不是单向替代，改革同时重塑鲜卑旧贵族、边镇军人与中原官僚的资源关系。",
+    "ns-six-garrisons-rebellion": "六镇起义不能化约为反汉化，而是边镇待遇、身份与军政资源失衡的结果。",
+    "ns-guanzhong-fubing-system": "府兵名称和实际征发方式会随时期变化，不应以后期制度倒推西魏北周。",
+    "ns-houjing-rebellion": "侯景个人行动不足以解释南朝受创，中央、宗室与地方军事网络失协同样关键。"
+  };
   window.NS_EVENTS = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
-    return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+    const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
+    const learningCase = caseAdditions[id] || item.learningCase;
+    const sourceId = item.sources?.[0]?.id || item.citations?.[0]?.sourceId || "zztj-081";
+    return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "魏晋南北结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
 })();

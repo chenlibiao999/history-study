@@ -5384,6 +5384,17 @@ window.NS_EVENTS = [
     "ns-guanzhong-fubing-system": "北齐北周并立、关中府兵与北周改革使关陇军政网络成为北方整合的基础，北周胜齐直接构成隋统一前夜。",
     "ns-houjing-rebellion": "南朝政权递换、梁武帝时期的宗教与军政、侯景之乱、陈朝建立和隋的威胁共同显示江南资源在长期内战后难以再与北方整合政权抗衡。"
   };
+  const restoredIds = [
+    "ns-zu-ti-northern-expedition", "ns-wangdun-sujun-rebellions",
+    "ns-later-zhao-northern-orders", "ns-huanwen-northern-expeditions", "ns-post-feishui-fragmentation",
+    "ns-liusong-yuanjia-and-northern-campaigns", "ns-northern-wei-rise", "ns-northern-wei-buddhism-and-state",
+    "ns-tuoba-han-governance", "ns-heyin-massacre", "ns-northern-wei-split",
+    "ns-northern-qi-zhou-founded", "ns-northern-zhou-reforms", "ns-northern-zhou-prevails",
+    "ns-liang-wudi-governance-buddhism", "ns-chen-baxian-founds-chen", "ns-chen-northern-frontier-and-sui-threat"
+  ];
+  Object.keys(mergePlans).forEach((parentId) => {
+    mergePlans[parentId] = mergePlans[parentId].filter((memberId) => memberId === parentId || !restoredIds.includes(memberId));
+  });
   const keptIds = Object.keys(mergePlans);
   const coreAnchors = {
     "ns-eight-princes-war": { regnal: "291-306年；晋惠帝元康元年至光熙元年", coordinate: "34.68N, 112.47E", admin: "洛阳，今河南省洛阳市", terrainTransport: "洛河盆地；通向关中、河北与北方边镇的道路" },
@@ -5407,12 +5418,39 @@ window.NS_EVENTS = [
     "ns-guanzhong-fubing-system": "府兵名称和实际征发方式会随时期变化，不应以后期制度倒推西魏北周。",
     "ns-houjing-rebellion": "侯景个人行动不足以解释南朝受创，中央、宗室与地方军事网络失协同样关键。"
   };
-  window.NS_EVENTS = keptIds.map((id, index) => {
+  const coreEvents = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     const process = members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description })));
     const learningCase = caseAdditions[id] || item.learningCase;
     const sourceId = item.sources?.[0]?.id || item.citations?.[0]?.sourceId || "zztj-081";
     return { ...item, timeAnchor: { time: item.time, ...coreAnchors[id] }, spatialAnchor: coreAnchors[id], factLayer: process.slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId })), debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: coreDebates[id] }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接行动", description: process[0].description }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: process[1]?.description || item.summary }, { kind: "cause", label: "[结构因]", title: "魏晋南北结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: summaryOverrides[id] || item.summary }], summary: summaryOverrides[id] || item.summary, process, contentLevel: "core", contentPresentation: "tiered", learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
+  });
+
+  const restoredEvents = restoredIds.map((id) => {
+    const item = originalById.get(id);
+    const sourceId = item.sources?.[0]?.id || item.citations?.[0]?.sourceId || "zztj-081";
+    return {
+      ...item,
+      contentLevel: "mainline",
+      contentPresentation: "full",
+      factLayer: (item.process || []).slice(0, 5).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId })),
+      debates: [{ view: "[主流说]", content: item.claims?.[0]?.statement || item.summary }, { view: "[挑战说]", content: "传世文献的叙事立场与具体人物动机需同制度、地理及考古材料交叉判断。" }],
+      causalChain: (item.causalChain || []).length ? item.causalChain : [{ kind: "cause", label: "前置条件", title: "前期结构", description: item.background?.[0] || item.summary }, { kind: "process", label: "事件推进", title: "关键行动", description: item.process?.[0]?.description || item.summary }, { kind: "impact", label: "后续关联", title: "历史影响", description: item.results?.[0] || item.summary }],
+      previousEventIds: [],
+      nextEventIds: []
+    };
+  });
+  const eventsById = new Map([...coreEvents, ...restoredEvents].map((item) => [item.id, item]));
+  const timelineOrder = [
+    "ns-eight-princes-war", "ns-yongjia-collapse", "ns-eastern-jin-southward", "ns-zu-ti-northern-expedition", "ns-wangdun-sujun-rebellions",
+    "ns-later-zhao-northern-orders", "ns-huanwen-northern-expeditions", "ns-feishui-battle", "ns-post-feishui-fragmentation",
+    "ns-liuyu-song", "ns-liusong-yuanjia-and-northern-campaigns", "ns-northern-wei-rise", "ns-northern-wei-buddhism-and-state", "ns-xiaowen-reforms", "ns-tuoba-han-governance",
+    "ns-six-garrisons-rebellion", "ns-heyin-massacre", "ns-northern-wei-split", "ns-northern-qi-zhou-founded", "ns-northern-zhou-reforms", "ns-northern-zhou-prevails", "ns-guanzhong-fubing-system",
+    "ns-liang-wudi-governance-buddhism", "ns-houjing-rebellion", "ns-chen-baxian-founds-chen", "ns-chen-northern-frontier-and-sui-threat"
+  ];
+  window.NS_EVENTS = timelineOrder.map((id, index) => {
+    const item = eventsById.get(id);
+    return { ...item, previousEventIds: index ? [timelineOrder[index - 1]] : [], nextEventIds: index < timelineOrder.length - 1 ? [timelineOrder[index + 1]] : [] };
   });
 })();

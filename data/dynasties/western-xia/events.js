@@ -1201,4 +1201,20 @@ window.WESTERN_XIA_EVENTS = [
     "xia-destroyed-by-mongols": { label: "蒙古灭夏为何不是单次攻城", claim: "蒙古灭夏是长期侵扰、强制盟属与最终总攻的累积。西夏在金、宋、蒙古三方间的战略空间被压缩，内部资源与军事承受力难以恢复，1227年的覆灭才成为终局。", sections: [["前期压力", "蒙古先多次攻夏并迫使其提供资源和军事配合，逐渐消耗其独立能力。"], ["战略孤立", "西夏难从金宋获得稳定援助，反而受多方竞争牵制。"], ["征服后果", "城市、人口与制度遭受严重破坏，西夏文字和文献的保存更显珍贵。"]], evidence: { title: "材料锚点：《元史》《宋史》与西夏遗址考古", content: "蒙古征服叙事细节存争议，宜区分长期战争、1227终局与战后破坏程度。" }, misconception: "西夏并非一战即亡；长期战略孤立和资源消耗已先削弱了它。", memory: ["多次压迫", "无稳定盟友", "1227终局"], question: "蒙古为何能最终灭西夏？", answer: "西夏已被长期征伐和盟属关系消耗，又缺少可持续的外部支援与战略纵深。" }
   };
   window.WESTERN_XIA_EVENTS = window.WESTERN_XIA_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+  const anchors = {
+    "xia-dangxiang-rise": { regnal: "10世纪-1030年代；北宋至西夏建国前", coordinate: "37.93N, 108.24E", admin: "夏州，今陕西省榆林市靖边县一带", terrainTransport: "鄂尔多斯高原、无定河与河套边缘；部落迁徙和边地军路" },
+    "xia-yuanhao-proclaims-emperor": { regnal: "1038年；西夏景宗大庆三年", coordinate: "38.49N, 106.23E", admin: "兴庆府，今宁夏回族自治区银川市", terrainTransport: "贺兰山、黄河灌区与河套通道；西北城镇和补给网络" },
+    "xia-song-war-sanzhuankou": { regnal: "1040-1042年；西夏景宗天授礼法延祚三年至五年", coordinate: "35.75N, 106.10E", admin: "三川口、好水川、定川寨等陕甘边地", terrainTransport: "六盘山、泾河河谷与堡寨道路；宋军长距离补给线" },
+    "xia-qingli-peace": { regnal: "1044年；西夏景宗天授礼法延祚七年", coordinate: "38.49N, 106.23E", admin: "兴庆府与宋陕西路边境", terrainTransport: "河套、黄河和西北边市；岁赐与互市通道" },
+    "xia-renzong-prosperity": { regnal: "1139-1193年；西夏仁宗天盛至乾祐年间", coordinate: "38.49N, 106.23E", admin: "兴庆府及河套灌区", terrainTransport: "黄河灌溉农业、贺兰山屏障与河西走廊商路" },
+    "xia-destroyed-by-mongols": { regnal: "1226-1227年；西夏献宗乾定六年至末年", coordinate: "38.49N, 106.23E", admin: "兴庆府与西夏腹地", terrainTransport: "河套灌区、贺兰山和河西走廊；蒙古多路进攻与西夏城镇防御" }
+  };
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = window.WESTERN_XIA_EVENTS.map((item) => {
+    const learningCase = learningCases[item.id];
+    if (!learningCase) return item;
+    const facts = [...(item.background || []).map((text) => ({ text: `[事实层] 背景：${text}`, sourceId: "western-xia-main-source" })), ...(item.process || []).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "western-xia-main-source" })), ...(item.results || []).map((text) => ({ text: `[事实层] 结果：${text}`, sourceId: "western-xia-main-source" }))].slice(0, 5);
+    return { ...item, timeAnchor: { time: item.time, ...anchors[item.id] }, spatialAnchor: anchors[item.id], factLayer: facts, debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: learningCase.misconception }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接条件", description: item.process?.[0]?.description || item.summary }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: item.process?.[1]?.description || item.background?.[0] || item.summary }, { kind: "cause", label: "[结构因]", title: "西夏结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: item.results?.[0] || item.summary }], contentPresentation: "tiered" };
+  }).sort((left, right) => timelineKey(left) - timelineKey(right));
+  window.WESTERN_XIA_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

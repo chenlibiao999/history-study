@@ -1446,4 +1446,21 @@ window.JIN_EVENTS = [
     "jin-caizhou-fall": { label: "蔡州灭金为何成为宋蒙关系转折", claim: "金末退守蔡州时已被蒙古与南宋夹击。南宋参与灭金实现短期复仇，却在战后直接面对蒙古；金亡既是一个王朝终局，也消除了宋北方最后的缓冲。", sections: [["金的末路", "迁汴后资源、兵源和城市防御持续缩减，只能退守蔡州。"], ["宋蒙合作", "双方共同围攻基于各自利益，对战后中原归属并无共同安排。"], ["新的危机", "金亡后宋端平入洛受挫，蒙古由盟友迅速转为直接进攻者。"]], evidence: { title: "材料锚点：《金史·哀宗纪》《宋史》《元史》蔡州纪事", content: "可连同1234年后宋蒙关系观察，避免把灭金视为南宋的纯胜利。" }, misconception: "“联蒙灭金”并非结束战争，而是将南宋带入更危险的战略环境。", memory: ["蔡州被围", "宋蒙各算", "金亡失缓冲"], question: "金亡为何对南宋是胜利也是危机？", answer: "南宋除掉金患，却直接面对更强的蒙古且缺乏战后边界安排。" }
   };
   window.JIN_EVENTS = window.JIN_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+  const anchors = {
+    "jin-aguda-founds-jin": { regnal: "1115年；金太祖收国元年", coordinate: "46.82N, 126.57E", admin: "会宁府，今黑龙江省哈尔滨市阿城区", terrainTransport: "松花江流域与东北林地；女真部落动员和辽东交通线" },
+    "jin-destroys-liao": { regnal: "1125年；金太宗天会三年", coordinate: "40.95N, 111.67E", admin: "辽南京、上京及燕云战区", terrainTransport: "燕山、太行山与辽西平原；金军南下和辽军撤退路线" },
+    "jin-jingkang-captures-kaifeng": { regnal: "1125-1127年；金太宗天会三年至五年", coordinate: "34.80N, 114.31E", admin: "开封府，今河南省开封市", terrainTransport: "黄河下游平原、汴河与开封城防；金军南下补给和围城路线" },
+    "jin-hailing-move-capital": { regnal: "1153-1161年；金海陵王贞元至正隆年间", coordinate: "39.90N, 116.40E", admin: "中都大兴府，今北京市城区", terrainTransport: "燕山南麓、华北平原与大运河北端；迁都后的华北军政中枢" },
+    "jin-shizong-dading": { regnal: "1161-1189年；金世宗大定年间", coordinate: "39.90N, 116.40E", admin: "中都大兴府及华北诸路", terrainTransport: "华北农耕区、东北部族区与运河、驿路财政网络" },
+    "jin-mongol-war-begins": { regnal: "1211年；金卫绍王大安三年", coordinate: "41.00N, 112.00E", admin: "野狐岭及西北边防", terrainTransport: "阴山南麓、居庸关至宣府通道；金西北防线与蒙古骑兵机动空间" },
+    "jin-caizhou-fall": { regnal: "1233-1234年；金哀宗天兴二年至三年", coordinate: "33.26N, 114.90E", admin: "蔡州，今河南省驻马店市汝南县", terrainTransport: "淮河上游、汝水与豫南城防；蒙宋夹击和末期补给路线" }
+  };
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = window.JIN_EVENTS.map((item) => {
+    const learningCase = learningCases[item.id];
+    if (!learningCase) return item;
+    const facts = [...(item.background || []).map((text) => ({ text: `[事实层] 背景：${text}`, sourceId: "jin-main-source" })), ...(item.process || []).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "jin-main-source" })), ...(item.results || []).map((text) => ({ text: `[事实层] 结果：${text}`, sourceId: "jin-main-source" }))].slice(0, 5);
+    return { ...item, timeAnchor: { time: item.time, ...anchors[item.id] }, spatialAnchor: anchors[item.id], factLayer: facts, debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: learningCase.misconception }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接条件", description: item.process?.[0]?.description || item.summary }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: item.process?.[1]?.description || item.background?.[0] || item.summary }, { kind: "cause", label: "[结构因]", title: "金朝结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: item.results?.[0] || item.summary }], contentPresentation: "tiered" };
+  }).sort((left, right) => timelineKey(left) - timelineKey(right));
+  window.JIN_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

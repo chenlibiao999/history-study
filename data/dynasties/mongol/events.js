@@ -1462,4 +1462,20 @@ window.MONGOL_EVENTS.push({
     "mongol-xiangfan-siege-pre-yuan": { label: "襄樊围城为何要从1268年开始理解", claim: "蒙古在建元前已开始筑垒、封锁和消耗襄樊，目标是切断南宋的汉水补给与江汉防线。围城跨越蒙古帝国与元朝两个阶段，拆分可避免把时间归属和军事过程混在一起。", sections: [["战略位置", "襄樊控制汉水与长江中游的入口，是突破南宋防线的关键。"], ["长期方法", "先筑城封锁、再逐步控制水陆通道，说明攻城不是短促冲锋。"], ["阶段边界", "1268-1270属蒙古阶段，1271建元后到1273失守由元模块继续解释。"]], evidence: { title: "材料锚点：《宋史》咸淳四年襄阳备御记载", content: "已绑定公开正史入口，能核对1268年筑垒与宋方应对。" }, misconception: "襄樊不是一次战役，而是数年围城、封锁和技术适应的过程。", memory: ["1268先围", "筑垒封锁", "建元后续"], question: "为何将襄樊拆为蒙古与元两个阶段？", answer: "围城开始早于1271建元，按阶段拆分才能保持时间戳和政权归属准确。" }
   };
   window.MONGOL_EVENTS = window.MONGOL_EVENTS.map((item) => learningCases[item.id] ? { ...item, learningCase: learningCases[item.id], contentLevel: "core" } : { ...item, contentLevel: "outline" });
+  const anchors = {
+    "mongol-temujin-unifies-steppe": { regnal: "1180年代-1206年；成吉思汗即位前", coordinate: "47.20N, 105.20E", admin: "斡难河、怯绿连河流域蒙古诸部", terrainTransport: "蒙古高原河谷与草场；部众迁徙、结盟和骑兵动员路线" },
+    "mongol-kurultai-1206": { regnal: "1206年；成吉思汗元年", coordinate: "47.20N, 105.20E", admin: "斡难河源头大会区域", terrainTransport: "蒙古高原河谷和草原驿传；千户组织联结部众、军队与贡赋" },
+    "mongol-war-against-jin": { regnal: "1211-1215年；成吉思汗六年至十年", coordinate: "41.00N, 112.00E", admin: "野狐岭、居庸关至金中都战区", terrainTransport: "阴山南麓、燕山关隘与华北平原；骑兵机动、攻城与南下补给线" },
+    "mongol-western-campaign-khwarazm": { regnal: "1219-1223年；成吉思汗十四年至十八年", coordinate: "39.65N, 66.96E", admin: "河中地区、撒马尔罕与花剌子模诸城", terrainTransport: "锡尔河、阿姆河与中亚绿洲商路；跨沙漠行军和城市围攻路线" },
+    "mongol-kublai-ariq-boke": { regnal: "1260-1264年；忽必烈中统元年至五年", coordinate: "39.90N, 116.40E", admin: "开平、燕京与蒙古本土", terrainTransport: "漠南草原、燕山南北与中原财赋通道；汗位竞争中的资源基础" },
+    "mongol-xiangfan-siege-pre-yuan": { regnal: "1268-1270年；忽必烈至元建国前", coordinate: "32.01N, 112.12E", admin: "襄阳府、樊城，今湖北省襄阳市", terrainTransport: "汉水与长江中游；围城封锁、江汉水运和攻城器械输送路线" }
+  };
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = window.MONGOL_EVENTS.map((item) => {
+    const learningCase = learningCases[item.id];
+    if (!learningCase) return item;
+    const facts = [...(item.background || []).map((text) => ({ text: `[事实层] 背景：${text}`, sourceId: "mongol-main-source" })), ...(item.process || []).map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "mongol-main-source" })), ...(item.results || []).map((text) => ({ text: `[事实层] 结果：${text}`, sourceId: "mongol-main-source" }))].slice(0, 5);
+    return { ...item, timeAnchor: { time: item.time, ...anchors[item.id] }, spatialAnchor: anchors[item.id], factLayer: facts, debates: [{ view: "[主流说]", content: learningCase.claim }, { view: "[挑战说]", content: learningCase.misconception }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接条件", description: item.process?.[0]?.description || item.summary }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: item.process?.[1]?.description || item.background?.[0] || item.summary }, { kind: "cause", label: "[结构因]", title: "蒙古帝国结构", description: learningCase.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: item.results?.[0] || item.summary }], contentPresentation: "tiered" };
+  }).sort((left, right) => timelineKey(left) - timelineKey(right));
+  window.MONGOL_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

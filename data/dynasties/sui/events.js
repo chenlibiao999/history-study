@@ -1917,6 +1917,10 @@ window.SUI_EVENTS = [
     "sui-grand-canal-luoyang": ["sui-imperial-exam-beginnings", "sui-grand-canal-luoyang", "sui-daye-tours-and-frontier-display"],
     "sui-jiangdu-mutiny-fall": ["sui-crown-prince-change", "sui-goguryeo-campaigns", "sui-yang-xuangan-rebellion", "sui-late-rebellions", "sui-wagang-luoyang-crisis", "sui-jiangdu-mutiny-fall"]
   };
+  const restoredIds = [...new Set(Object.values(mergePlans).flat().filter((memberId) => !Object.prototype.hasOwnProperty.call(mergePlans, memberId)))];
+  Object.keys(mergePlans).forEach((id) => {
+    mergePlans[id] = mergePlans[id].filter((memberId) => memberId === id);
+  });
   const caseAdditions = {
     "sui-grand-canal-luoyang": { label: "运河为何同时是统一基础与统治负担", claim: "运河、东都营建、巡行与选官尝试都服务于跨区域调度：国家希望把南方粮赋、北方政治中心和官僚网络连接起来，但工程与征发的规模也提高了社会承受的成本。", sections: [["能力", "大运河降低南北水运与粮食调度成本，使统一国家能更直接连接长江流域与北方核心。"], ["代价", "工程、巡行和战争若在短时间集中征发，会把基础设施收益转化为基层劳役和财政压力。"]], evidence: { title: "材料锚点：《隋书》食货、炀帝纪与运河考古", content: "遗址可见交通网络，正史保存征发与政治叙事；不应把运河的长期价值直接等同于当时政策无代价。" }, misconception: "运河有长期价值，所以隋炀帝的所有征发都合理。", memory: ["南粮北运", "国家调度", "收益与负担"], question: "为何同一运河工程既有历史价值又会加速危机？", answer: "基础设施的长期收益不能消除短期征发、时间安排和战争叠加造成的社会压力。" }
   };
@@ -1926,9 +1930,26 @@ window.SUI_EVENTS = [
     "sui-jiangdu-mutiny-fall": "继承变动、辽东战争、各地反叛与瓦岗洛阳危机逐步瓦解隋的军政网络，江都兵变只是区域不同步崩解的终点之一。"
   };
   const keptIds = Object.keys(mergePlans);
-  window.SUI_EVENTS = keptIds.map((id, index) => {
+  const coreEvents = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", learningCase: caseAdditions[id] || item.learningCase, previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
+  const restoredEvents = restoredIds.map((id) => {
+    const item = originalById.get(id);
+    const facts = (item.process || []).slice(0, 5);
+    return {
+      ...item,
+      contentLevel: "mainline",
+      contentPresentation: "full",
+      timeAnchor: { time: item.time, regnal: `${item.time}；隋朝相关纪年` },
+      spatialAnchor: { admin: (item.regions || []).join("、"), terrainTransport: "相关运河、关隘、都城、边疆或军路条件见本卡事实层与来源。" },
+      factLayer: facts.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "sui-main-source" })),
+      debates: [{ view: "[主流说]", content: item.claim || item.summary }, { view: "[挑战说]", content: "传世纪传中的人物动机、征发数字和政策效果，须结合制度志、地理材料和现代研究分别核对。" }],
+      causalChain: [{ kind: "cause", label: "[前置条件]", title: "前置条件", description: item.background?.[0] || item.summary }, { kind: "process", label: "[传导机制]", title: facts[0]?.title || "事件推进", description: facts[0]?.description || item.summary }, { kind: "impact", label: "[后续关联]", title: "结果", description: item.results?.[0] || item.summary }]
+    };
+  });
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = [...coreEvents, ...restoredEvents].sort((a, b) => timelineKey(a) - timelineKey(b));
+  window.SUI_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

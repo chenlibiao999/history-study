@@ -124,8 +124,3 @@ window.SUI_EMPERORS = [
     "sourceUrl": "https://zh.wikisource.org/wiki/資治通鑑"
   }
 ];
-
-(() => {
-  const parentByChild = { "sui-founds-dynasty": "sui-kaihuang-governance", "sui-kaihuang-code-and-local-rule": "sui-kaihuang-governance", "sui-imperial-exam-beginnings": "sui-grand-canal-luoyang", "sui-daye-tours-and-frontier-display": "sui-grand-canal-luoyang", "sui-crown-prince-change": "sui-jiangdu-mutiny-fall", "sui-goguryeo-campaigns": "sui-jiangdu-mutiny-fall", "sui-yang-xuangan-rebellion": "sui-jiangdu-mutiny-fall", "sui-late-rebellions": "sui-jiangdu-mutiny-fall", "sui-wagang-luoyang-crisis": "sui-jiangdu-mutiny-fall" };
-  window.SUI_EMPERORS = window.SUI_EMPERORS.map((item) => ({ ...item, relatedEventIds: [...new Set(item.relatedEventIds.map((id) => parentByChild[id] || id))], keyEvents: [...new Set(item.keyEvents.map((id) => parentByChild[id] || id))] }));
-})();

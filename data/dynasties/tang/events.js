@@ -5215,6 +5215,10 @@ window.TANG_EVENTS = [
     "eunuch-shence-control": ["yongzhen-reform", "eunuch-shence-control", "niu-li-factional-struggle", "ganlu-incident", "huichang-suppression-buddhism", "dazhong-era", "helong-recovery"],
     "huang-chao-rebellion": ["pang-xun-rebellion", "tang-wang-xianzhi-rebellion", "huang-chao-rebellion", "zhu-wen-controls-court", "tang-baima-massacre", "fall-of-tang"]
   };
+  const restoredIds = [...new Set(Object.values(mergePlans).flat().filter((memberId) => !Object.prototype.hasOwnProperty.call(mergePlans, memberId)))];
+  Object.keys(mergePlans).forEach((id) => {
+    mergePlans[id] = mergePlans[id].filter((memberId) => memberId === id);
+  });
   const summaryOverrides = {
     "tang-unification-wars": "李渊建唐取得关中，唐初再按河东、中原、河北、江淮和江陵等战区完成统一，关中政权遂转为全国王朝。",
     "xuanwu-gate-incident": "玄武门重置继承后，贞观以官僚程序、均田租庸调和对突厥高句丽的军事经营重建唐初的国家能力与边疆秩序。",
@@ -5226,9 +5230,26 @@ window.TANG_EVENTS = [
     "huang-chao-rebellion": "庞勋、王仙芝到黄巢的连续危机击穿地方与城市秩序；朱温借平叛控制朝廷、白马清洗并废唐，唐末遂由军阀完成政权替换。"
   };
   const keptIds = Object.keys(mergePlans);
-  window.TANG_EVENTS = keptIds.map((id, index) => {
+  const coreEvents = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
+  const restoredEvents = restoredIds.map((id) => {
+    const item = originalById.get(id);
+    const facts = (item.process || []).slice(0, 5);
+    return {
+      ...item,
+      contentLevel: "mainline",
+      contentPresentation: "full",
+      timeAnchor: { time: item.time, regnal: `${item.time}；唐／武周相关纪年` },
+      spatialAnchor: { admin: (item.regions || []).join("、"), terrainTransport: "相关都城、漕运、边疆、关隘或军路条件见本卡事实层与来源。" },
+      factLayer: facts.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "tang-main-source" })),
+      debates: [{ view: "[主流说]", content: item.claim || item.summary }, { view: "[挑战说]", content: "传世纪传、军队数字、人物动机和后出的制度叙事，须与碑刻、制度志及现代研究分别核对。" }],
+      causalChain: [{ kind: "cause", label: "[前置条件]", title: "前置条件", description: item.background?.[0] || item.summary }, { kind: "process", label: "[传导机制]", title: facts[0]?.title || "事件推进", description: facts[0]?.description || item.summary }, { kind: "impact", label: "[后续关联]", title: "结果", description: item.results?.[0] || item.summary }]
+    };
+  });
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = [...coreEvents, ...restoredEvents].sort((a, b) => timelineKey(a) - timelineKey(b));
+  window.TANG_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

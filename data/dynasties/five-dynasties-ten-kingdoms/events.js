@@ -621,6 +621,10 @@
     "fdtk-chenqiao-mutiny": ["fdtk-chenqiao-mutiny"],
     "fdtk-song-unification-strategy": ["fdtk-song-unification-strategy"]
   };
+  const restoredIds = [...new Set(Object.values(mergePlans).flat().filter((memberId) => !Object.prototype.hasOwnProperty.call(mergePlans, memberId)))];
+  Object.keys(mergePlans).forEach((id) => {
+    mergePlans[id] = mergePlans[id].filter((memberId) => memberId === id);
+  });
   const summaryOverrides = {
     "fdtk-later-liang-founded": "唐末朱温崛起、后梁后唐更替及庄宗危机、明宗恢复说明五代王朝以军镇资源争夺北方有限中心，皇帝名义无法自动恢复全国秩序。",
     "fdtk-shi-jingtang-yanyun": "石敬瑭借契丹建后晋并割燕云，契丹灭后晋、后汉短立与北汉依辽而存，形成宋辽时代中原北防的长期缺口。",
@@ -629,9 +633,26 @@
     "fdtk-southern-tang-destroys-min-chu": "南唐建国、取闽楚与后周攻淮南显示区域扩张若不能稳定整合，反会使核心江淮防御在北方压力下更脆弱。"
   };
   const keptIds = Object.keys(mergePlans);
-  window.FDTK_EVENTS = keptIds.map((id, index) => {
+  const coreEvents = keptIds.map((id, index) => {
     const item = originalById.get(id);
     const members = mergePlans[id].map((memberId) => originalById.get(memberId));
     return { ...item, summary: summaryOverrides[id] || item.summary, process: members.flatMap((member) => member.process.map((step) => ({ time: step.time, title: `${member.title}：${step.title}`, description: step.description }))), contentLevel: "core", contentPresentation: "tiered", previousEventIds: index ? [keptIds[index - 1]] : [], nextEventIds: index < keptIds.length - 1 ? [keptIds[index + 1]] : [], mergedEventIds: members.slice(1).map((member) => member.id) };
   });
+  const restoredEvents = restoredIds.map((id) => {
+    const item = originalById.get(id);
+    const facts = (item.process || []).slice(0, 5);
+    return {
+      ...item,
+      contentLevel: "mainline",
+      contentPresentation: "full",
+      timeAnchor: { time: item.time, regnal: `${item.time}；五代十国相关纪年` },
+      spatialAnchor: { admin: (item.regions || []).join("、"), terrainTransport: "相关河流、关隘、都城、海路或军路条件见本卡事实层与来源。" },
+      factLayer: facts.map((step) => ({ text: `[事实层] ${step.time}：${step.description}`, sourceId: "fdtk-main-source" })),
+      debates: [{ view: "[主流说]", content: item.claim || item.summary }, { view: "[挑战说]", content: "传世五代史书的政权正统叙事、人物褒贬与军队数字，须与地方文献及现代研究分别核对。" }],
+      causalChain: [{ kind: "cause", label: "[前置条件]", title: "前置条件", description: item.background?.[0] || item.summary }, { kind: "process", label: "[传导机制]", title: facts[0]?.title || "事件推进", description: facts[0]?.description || item.summary }, { kind: "impact", label: "[后续关联]", title: "结果", description: item.results?.[0] || item.summary }]
+    };
+  });
+  const timelineKey = (item) => Number(String(item.time || "").match(/\d+/)?.[0] || 0);
+  const timeline = [...coreEvents, ...restoredEvents].sort((a, b) => timelineKey(a) - timelineKey(b));
+  window.FDTK_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

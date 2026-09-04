@@ -1479,4 +1479,25 @@
   ]);
 
   window.MEDIEVAL_WESTERN_EUROPE_EVENTS = items.map(event);
+  const coreDetails = {
+    "mwe-charlemagne-coronation-800": {
+      regnal: "800年；查理曼在位时期", coordinate: "41.90N, 12.49E", admin: "罗马圣伯多禄大殿、法兰克王国", terrainTransport: "阿尔卑斯山口、莱茵-多瑙河流域与意大利军路",
+      claim: "800年加冕把法兰克军事保护、教皇合法性和罗马皇帝称号连接起来；它没有恢复古罗马帝国，而是为西欧王权与教会的长期竞争提供新框架。",
+      facts: ["768年查理曼继承法兰克王位，并在西欧持续扩张。", "774年他征服伦巴第王国，获得干预意大利和保护教廷的能力。", "800年12月25日，教皇利奥三世在罗马为查理曼加冕为皇帝。", "加冕强化了法兰克王权在西方基督教世界的地位，也使东罗马对皇帝称号产生争议。", "814年查理曼去世后，帝国依赖的个人军政整合难以由继承者完整维持。"],
+      debate: "[争议] 加冕是否完全出自教皇主动安排、查理曼事前知情程度如何，史料叙事并不一致。"
+    },
+    "mwe-black-death-1347": {
+      regnal: "1347-1352年；中世纪晚期", coordinate: "43.77N, 11.25E", admin: "西欧港口、城市与乡村", terrainTransport: "地中海航线、商路、河谷和城市市场网络",
+      claim: "黑死病通过贸易与交通网络扩散，人口骤减改变劳动力、地租和社会关系；其结果因地区、阶层和制度不同而差异显著。",
+      facts: ["1347年瘟疫随地中海航运进入西欧多个港口。", "1348至1352年间，疾病扩散至城市、乡村和北欧地区。", "现代研究通常将病原与鼠疫耶尔森菌联系，但传播机制存在复杂性。", "人口损失造成劳动力紧缺并冲击庄园收入和城市生产。", "1349年后劳工管制、税负和社会紧张在多地引发长期争论与冲突。"],
+      debate: "[争议] 死亡比例和不同地区传播路径差异很大，不能用单一数字概括整个欧洲。"
+    }
+  };
+  const timeline = window.MEDIEVAL_WESTERN_EUROPE_EVENTS.map((item) => {
+    const d = coreDetails[item.id];
+    if (!d) return { ...item, contentLevel: "outline" };
+    const facts = d.facts;
+    return { ...item, contentLevel: "core", contentPresentation: "tiered", timeAnchor: { time: item.time, regnal: d.regnal, coordinate: d.coordinate, admin: d.admin, terrainTransport: d.terrainTransport }, spatialAnchor: { coordinate: d.coordinate, admin: d.admin, terrainTransport: d.terrainTransport }, factLayer: facts.map((text) => ({ text: `[事实层] ${text}`, sourceId: "mwe-britannica-middle-ages" })), debates: [{ view: "[主流说]", content: d.claim }, { view: "[争议边界]", content: d.debate }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接条件", description: facts[0] }, { kind: "cause", label: "[深层因]", title: "资源与制度", description: facts[1] }, { kind: "cause", label: "[结构因]", title: "西欧结构", description: d.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: facts[4] }], process: facts.map((description, index) => ({ time: item.time, title: `事实 ${index + 1}`, description: `${description} 该事实需结合编年史、法令、教会文书与考古材料交叉核验。` })) };
+  });
+  window.MEDIEVAL_WESTERN_EUROPE_EVENTS = timeline.map((item, index) => ({ ...item, previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

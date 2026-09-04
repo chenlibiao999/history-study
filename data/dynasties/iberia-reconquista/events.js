@@ -888,5 +888,13 @@
     "ire-expulsion-jews":{a:["1492年；卡斯蒂利亚与阿拉贡驱逐犹太人","40.42N, -3.70E","卡斯蒂利亚、阿拉贡与地中海侨居网络","伊比利亚港口、地中海航线与北非-奥斯曼移民通道"],c:"1492年驱逐令以宗教统一政策重组王国社会，造成犹太社群迁移、改宗与财产处置；它必须与中世纪伊比利亚长期的多社群法律秩序和暴力史一并理解。",f:["1492年3月王室发布阿尔罕布拉敕令，要求未改宗犹太人离境。","敕令适用于卡斯蒂利亚和阿拉贡的王室领地。","部分犹太人迁往葡萄牙、北非、意大利和奥斯曼领地，形成新的侨居网络。","大量人选择改宗，后被称为新基督徒，其宗教身份持续受到审查。","1478年建立的宗教裁判所与此后的改宗者监控密切相关。"],d:"[争议] 被驱逐和改宗者的具体人数难以精确统计；政策影响应区分地区、阶层与迁徙路径。"}
   };
   const timeline=window.IBERIA_RECONQUISTA_EVENTS.map(item=>{const d=coreDetails[item.id];if(!d)return {...item,contentLevel:"outline"};const f=d.f;return {...item,contentLevel:"core",contentPresentation:"tiered",learningCase:{label:item.title,claim:d.c,sections:[["事实链",f.join(" ")]],evidence:{title:"材料锚点：阿拉伯文、拉丁文编年史与王室文书",content:"核心事实应与多语种编年史、王室法令、考古和现代研究交叉核验。"},misconception:d.d},timeAnchor:{time:item.time,regnal:d.a[0],coordinate:d.a[1],admin:d.a[2],terrainTransport:d.a[3]},spatialAnchor:{coordinate:d.a[1],admin:d.a[2],terrainTransport:d.a[3]},factLayer:f.map(text=>({text:`[事实层] ${text}`,sourceId:"ire-britannica-spain"})),debates:[{view:"[主流说]",content:d.c},{view:"[争议边界]",content:d.d}],causalChain:[{kind:"cause",label:"[表层因]",title:"直接条件",description:f[0]},{kind:"cause",label:"[深层因]",title:"资源与制度",description:f[1]},{kind:"cause",label:"[结构因]",title:"伊比利亚结构",description:d.c},{kind:"impact",label:"[传导机制]",title:"后续关联",description:f[4]}],process:f.map((description,index)=>({time:item.time,title:`事实 ${index+1}`,description:`${description} 该事实应以多语种文献、法令和考古材料交叉核验。`}))};});
-  window.IBERIA_RECONQUISTA_EVENTS=timeline.map((item,index)=>({...item,previousEventIds:index?[timeline[index-1].id]:[],nextEventIds:index<timeline.length-1?[timeline[index+1].id]:[]}));
+  const mergedInto = { "ire-taifa-fragmentation": "ire-taifas-fragmentation", "ire-las-navas-tolosa": "ire-las-navas" };
+  const visibleTimeline = timeline.filter(item => !mergedInto[item.id]);
+  window.IBERIA_RECONQUISTA_EVENTS=visibleTimeline.map((item,index)=>({
+    ...item,
+    legacyEventIds: Object.keys(mergedInto).filter(legacyId => mergedInto[legacyId] === item.id),
+    mergedEventIds: Object.keys(mergedInto).filter(legacyId => mergedInto[legacyId] === item.id),
+    previousEventIds:index?[visibleTimeline[index-1].id]:[],
+    nextEventIds:index<visibleTimeline.length-1?[visibleTimeline[index+1].id]:[]
+  }));
 })();

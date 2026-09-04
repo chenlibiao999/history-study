@@ -11,6 +11,7 @@
   const regionFilterLabels = new Map();
   const topicFilterLabels = new Map();
   const eventById = new Map(events.map(event => [event.id, event]));
+  events.forEach(event => (event.legacyEventIds || []).forEach(legacyId => eventById.set(legacyId, event)));
   const eventByLabel = new Map();
   events.forEach(event => {
     eventByLabel.set(event.title, event);
@@ -50,8 +51,9 @@
   }
 
   function selectEvent(eventId){
-    if (!eventById.has(eventId)) return;
-    selectedId = eventId;
+    const event = eventById.get(eventId);
+    if (!event) return;
+    selectedId = event.id;
     renderAll();
   }
 

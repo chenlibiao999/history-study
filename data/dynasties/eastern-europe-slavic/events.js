@@ -1030,5 +1030,13 @@
     "ees-kosovo-1389":{a:["1389年；科索沃战役","42.67N, 21.17E","科索沃平原、塞尔维亚诸侯与奥斯曼边疆","巴尔干山地通道、摩拉瓦河谷与通往马其顿的军路"],c:"科索沃战役是巴尔干权力重组中的重要节点：双方统治者皆阵亡，塞尔维亚诸侯随后在不同条件下进入奥斯曼宗主体系，过程并非当日决定。",f:["1389年拉扎尔亲王领导的塞尔维亚诸侯军与穆拉德一世的奥斯曼军交战。","穆拉德一世与拉扎尔均在战役前后死亡。","战役后奥斯曼王朝迅速完成继承并继续巴尔干扩张。","塞尔维亚诸侯此后在朝贡、联姻和军事义务中与奥斯曼形成多种关系。","15世纪奥斯曼对巴尔干的控制进一步扩大，科索沃的记忆被后世政治文化持续重塑。"],d:"[争议] 战役战果与伤亡难以精确复原；民族叙事常把复杂的后续过程压缩为单一“决定性失败”。"}
   };
   const timeline=window.EASTERN_EUROPE_SLAVIC_EVENTS.map(item=>{const d=coreDetails[item.id];if(!d)return {...item,contentLevel:"outline"};const f=d.f;return {...item,contentLevel:"core",contentPresentation:"tiered",learningCase:{label:item.title,claim:d.c,sections:[["事实链",f.join(" ")]],evidence:{title:"材料锚点：编年史、教会文书与考古",content:"核心事实应与多语种编年史、王室文书、教会记录和考古材料交叉核验。"},misconception:d.d},timeAnchor:{time:item.time,regnal:d.a[0],coordinate:d.a[1],admin:d.a[2],terrainTransport:d.a[3]},spatialAnchor:{coordinate:d.a[1],admin:d.a[2],terrainTransport:d.a[3]},factLayer:f.map(text=>({text:`[事实层] ${text}`,sourceId:"ees-britannica-russia"})),debates:[{view:"[主流说]",content:d.c},{view:"[争议边界]",content:d.d}],causalChain:[{kind:"cause",label:"[表层因]",title:"直接条件",description:f[0]},{kind:"cause",label:"[深层因]",title:"资源与制度",description:f[1]},{kind:"cause",label:"[结构因]",title:"东欧结构",description:d.c},{kind:"impact",label:"[传导机制]",title:"后续关联",description:f[4]}],process:f.map((description,index)=>({time:item.time,title:`事实 ${index+1}`,description:`${description} 该事实应以编年史、教会文书和考古材料交叉核验。`}))};});
-  window.EASTERN_EUROPE_SLAVIC_EVENTS=timeline.map((item,index)=>({...item,previousEventIds:index?[timeline[index-1].id]:[],nextEventIds:index<timeline.length-1?[timeline[index+1].id]:[]}));
+  const mergedInto = { "ees-krewo-union": "ees-polish-lithuanian-union-krewo" };
+  const visibleTimeline = timeline.filter(item => !mergedInto[item.id]);
+  window.EASTERN_EUROPE_SLAVIC_EVENTS=visibleTimeline.map((item,index)=>({
+    ...item,
+    legacyEventIds: Object.keys(mergedInto).filter(legacyId => mergedInto[legacyId] === item.id),
+    mergedEventIds: Object.keys(mergedInto).filter(legacyId => mergedInto[legacyId] === item.id),
+    previousEventIds:index?[visibleTimeline[index-1].id]:[],
+    nextEventIds:index<visibleTimeline.length-1?[visibleTimeline[index+1].id]:[]
+  }));
 })();

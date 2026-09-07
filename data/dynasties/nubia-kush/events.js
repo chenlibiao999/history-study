@@ -3050,3 +3050,56 @@ window.NUBIA_KUSH_EVENTS = [
     "sourceStatus": "公开入口已补"
   }
 ];
+
+(() => {
+  const events = window.NUBIA_KUSH_EVENTS || [];
+  window.NUBIA_KUSH_EVENTS = events.map((event, index) => ({
+    ...event,
+    contentLevel: "mainline",
+    contentPresentation: "tiered",
+    previousEventIds: index > 0 ? [events[index - 1].id] : [],
+    nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
+  }));
+})();
+
+(() => {
+  const source = { id: "british-museum-sudan-egypt-nubia", title: "British Museum: Sudan, Egypt and Nubia", url: "https://www.britishmuseum.org/collection/galleries/sudan-egypt-and-nubia", type: "museum-gallery" };
+  const events = window.NUBIA_KUSH_EVENTS || [];
+  window.NUBIA_KUSH_EVENTS = events.map((event) => {
+    if (event.id !== "nubia-piye-campaign") return event;
+    const facts = [
+      "约前728年，纳帕塔国王皮耶从努比亚北进，干预分裂中的下埃及诸侯政治。",
+      "皮耶在杰贝尔巴尔卡勒留下胜利碑铭，叙述其沿尼罗河向北的行军、围城和诸侯臣服。",
+      "碑铭显示底比斯、孟斐斯及三角洲政权是这场行动的关键节点，但它首先是王室胜利叙事。",
+      "皮耶控制埃及后返回纳帕塔；库施王权并非把首都永久迁往埃及。",
+      "其后沙巴卡等库施统治者建立第二十五王朝，尼罗河流域在前8至前7世纪再度被同一王朝整合。"
+    ];
+    const process = [
+      ["约前8世纪中叶", "纳帕塔王权积累", "库施王权以纳帕塔和杰贝尔巴尔卡勒为宗教与政治中心，利用尼罗河谷的交通与贡赋组织军队。"],
+      ["约前728年", "北方诸侯冲突", "下埃及多个地方统治者竞争，皮耶以支援盟友和维护阿蒙秩序为名发动北进。"],
+      ["约前728年", "沿尼罗河推进", "军队控制底比斯并向孟斐斯和三角洲推进；河运、城堡与河谷补给决定行动节奏。"],
+      ["约前728年后", "胜利碑铭", "皮耶碑将征服叙述为恢复秩序，提供了研究事件的同时代王室文本，也限制了我们对失败者立场的了解。"],
+      ["前8世纪后期", "第二十五王朝形成", "皮耶的后继者继续统治埃及，使库施王权成为埃及王朝史和努比亚国家史共同的一部分。"]
+    ];
+    const causes = [
+      "[表层因] 下埃及诸侯竞争为库施北进提供了军事与外交机会。",
+      "[深层因] 纳帕塔王权通过阿蒙宗教中心、河谷贡赋和军队组织积累了跨区域行动能力。",
+      "[结构因] 尼罗河既连接努比亚与埃及，也使控制河道、城市和宗教中心成为争夺政治合法性的关键。",
+      "[传导机制] 征服叙事、王室继承和河谷行政把一次北进转化为第二十五王朝的长期统治。"
+    ];
+    return {
+      ...event,
+      contentLevel: "core", contentPresentation: "tiered",
+      timeAnchor: { time: event.time, regnal: "约前728年；库施皮耶北进", coordinate: "18.54, 31.83", admin: "纳帕塔—底比斯—孟斐斯与尼罗河三角洲", terrainTransport: "尼罗河航运、杰贝尔巴尔卡勒、河谷城堡与三角洲水网" },
+      spatialAnchor: { coordinate: "18.54, 31.83", admin: "纳帕塔—底比斯—孟斐斯与尼罗河三角洲", terrainTransport: "尼罗河航运、杰贝尔巴尔卡勒、河谷城堡与三角洲水网" },
+      factLayer: facts.map((text) => ({ text: `[事实层] ${text}`, sourceId: source.id })),
+      background: [causes[2]], process: process.map(([time, title, description]) => ({ time, title, description })), results: [causes[3]],
+      causalChain: causes.map((description, index) => ({ kind: index === 3 ? "impact" : "cause", label: ["[表层因]", "[深层因]", "[结构因]", "[传导机制]"][index], title: ["直接条件", "资源与制度", "长时段结构", "后续关联"][index], description })),
+      debates: [{ view: "[争议边界]", content: "皮耶碑铭是王室自述，征服范围、地方服从程度和具体行军细节需与其他埃及、努比亚材料及考古资料交叉判断。" }],
+      claims: facts.map((statement) => ({ statement, status: "较稳定", statusType: "stable", confidence: "medium", sourceIds: [source.id], note: "碑铭和博物馆资料需要与考古、埃及文献互证。" })),
+      sources: [source], citations: [{ sourceId: source.id, reference: "皮耶胜利碑铭及努比亚—埃及馆藏资料", status: "已核对公开资料入口", plainText: event.summary, note: "该卡以王室碑铭为材料锚点，并明确其叙事立场。" }],
+      learningCase: { claim: "皮耶北进证明努比亚库施王权能够主导尼罗河政治整合，不能将埃及文明理解为单向向南扩散。", evidence: "皮耶胜利碑铭、杰贝尔巴尔卡勒遗址与埃及—努比亚考古材料。" },
+      sourceRequirement: "verified"
+    };
+  });
+})();

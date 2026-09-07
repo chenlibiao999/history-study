@@ -28,5 +28,45 @@ window.IRANIAN_WORLD_SOURCES = [
     credibility: "中",
     credibilityLevel: "medium",
     url: "https://www.livius.org/articles/dynasty/achaemenids/"
+  },
+  {
+    id: "iranian-world-iranica-preislamic",
+    type: "学术百科全书",
+    title: "Encyclopaedia Iranica: Iranian History, Pre-Islamic Times",
+    author: "Encyclopaedia Iranica",
+    authorityLevel: "学术参考工具，适合核对前伊斯兰伊朗的王朝、战争与断代",
+    credibility: "高",
+    credibilityLevel: "high",
+    url: "https://www.iranicaonline.org/articles/iran-ii1-pre-islamic-times/"
+  },
+  {
+    id: "iranian-world-iranica-arab",
+    type: "学术百科全书",
+    title: "Encyclopaedia Iranica: Arab Conquest of Iran",
+    author: "Michael G. Morony, Encyclopaedia Iranica",
+    authorityLevel: "学术参考工具，适合核对征服过程、年代争议与社会延续",
+    credibility: "高",
+    credibilityLevel: "high",
+    url: "https://www.iranicaonline.org/articles/arab-ii/"
+  },
+  {
+    id: "iranian-world-iranica-constitutional",
+    type: "学术百科全书",
+    title: "Encyclopaedia Iranica: Constitutional Revolution",
+    author: "Abbas Amanat, Encyclopaedia Iranica",
+    authorityLevel: "学术参考工具，适合核对立宪革命的制度目标与多方政治诉求",
+    credibility: "高",
+    credibilityLevel: "high",
+    url: "https://www.iranicaonline.org/articles/constitutional-revolution-index/"
+  },
+  {
+    id: "iranian-world-loc-nadir",
+    type: "一手史料馆藏说明",
+    title: "Library of Congress: Waqiat-i-Nadiri (History of Nadir Shah)",
+    author: "Library of Congress",
+    authorityLevel: "馆藏手稿说明，适合核对纳迪尔沙的生平、统治起点与史料线索",
+    credibility: "高",
+    credibilityLevel: "high",
+    url: "https://www.loc.gov/item/2013415018/"
   }
 ];

@@ -76,33 +76,34 @@
     "islamic-world-ottoman-tanzimat-caliphate-end": { members: ["islamic-world-ottoman-tanzimat-caliphate-end"], label: "改革为何走向主权危机", claim: "坦志麦特试图重建税收、军队、法律与国际承认；改革同时暴露地方执行差异和列强干预，帝国解体后哈里发制度也失去原有政治基础。", sections: [["重建国家能力", "征兵、税收和行政统一是改革的核心，并非单纯模仿欧洲。"], ["权利与外交", "臣民平等语言既服务国内治理，也回应欧洲外交和少数社群保护问题。"], ["解体与废止", "一战、民族运动和战后安排改变主权框架，1924年废止哈里发是这一长过程的后果。"]], evidence: ["改革敕令、法律、外交文书与议会材料", "官方目标不能直接证明地方实施效果。"], misconception: "不能把坦志麦特理解为自动成功或注定失败的西化。", memory: ["税收军队", "外交", "主权"] }
   };
   const originalById = new Map(window.ISLAMIC_WORLD_EVENTS.map((item) => [item.id, item]));
+  const eventTitles = new Set(window.ISLAMIC_WORLD_EVENTS.map((item) => item.title));
   const canonicalById = new Map();
   Object.entries(plans).forEach(([parentId, plan]) => plan.members.forEach((id) => canonicalById.set(id, parentId)));
   window.ISLAMIC_WORLD_EVENTS = window.ISLAMIC_WORLD_EVENTS
-    .filter((item) => canonicalById.get(item.id) === item.id)
+    .filter(() => true)
     .map((item, index, kept) => {
       const plan = plans[item.id];
-      const absorbed = plan.members.filter((id) => id !== item.id).map((id) => originalById.get(id));
-      const process = plan.members.map((id) => {
+      const absorbed = plan ? plan.members.filter((id) => id !== item.id).map((id) => originalById.get(id)) : [];
+      const process = plan ? plan.members.map((id) => {
         const source = originalById.get(id);
         return {
           time: source.time,
           title: source.title,
           description: `${source.summary} 在本单元中，它不是独立结论，而是通向“${plan.label}”的一个可追踪因果步骤。`
         };
-      });
+      }) : [];
       return {
         ...item,
         title: item.title,
-        aliases: [...new Set([...item.aliases, ...absorbed.map((source) => source.title)])],
+        aliases: plan ? [...new Set([...item.aliases, ...absorbed.map((source) => source.title)])].filter((alias) => !eventTitles.has(alias)) : (item.aliases || []).filter((alias) => !eventTitles.has(alias)),
         background: [],
         process,
-        results: [item.results[0]],
-        debates: [{ view: "边界提示", content: plan.misconception }],
-        claims: [{ statement: plan.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["islamic-world-britannica", "islamic-world-met"], note: "核心判断须结合该卡材料锚点阅读。" }],
-        citations: [{ sourceId: "islamic-world-britannica", reference: plan.evidence[0], status: "待逐条细核", plainText: plan.evidence[1], note: "这是材料类型锚点，不把概括性通史入口伪装成细部证据。" }],
-        learningCase: { ...plan, evidence: { title: `材料锚点：${plan.evidence[0]}`, content: plan.evidence[1] }, question: `复述：${plan.label}`, answer: plan.claim },
-        contentLevel: "core",
+        results: plan ? [item.results[0]] : [],
+        debates: plan ? [{ view: "边界提示", content: plan.misconception }] : [],
+        claims: plan ? [{ statement: plan.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["islamic-world-britannica", "islamic-world-met"], note: "核心判断须结合该卡材料锚点阅读。" }] : [],
+        citations: plan ? [{ sourceId: "islamic-world-britannica", reference: plan.evidence[0], status: "待逐条细核", plainText: plan.evidence[1], note: "这是材料类型锚点，不把概括性通史入口伪装成细部证据。" }] : [],
+        learningCase: plan ? { ...plan, evidence: { title: `材料锚点：${plan.evidence[0]}`, content: plan.evidence[1] }, question: `复述：${plan.label}`, answer: plan.claim } : undefined,
+        contentLevel: plan ? "core" : "mainline",
         contentPresentation: "tiered",
         previousEventIds: index ? [kept[index - 1].id] : [],
         nextEventIds: index < kept.length - 1 ? [kept[index + 1].id] : []

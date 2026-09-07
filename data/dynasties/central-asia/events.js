@@ -70,15 +70,7 @@
     "central-asia-basmachi": { label: "苏维埃统治如何进入地方社会", claim: "革命后的中亚不是被平稳接管；巴斯马奇抵抗、集体化和定居化表明苏维埃权力通过战争、行政、强制改造与地方协商才进入日常生活。", sections: [["权力真空与抵抗", "征发、革命和政权更替把宗教、部族、地方精英与武装行动重新组织。"], ["社会改造", "集体化与定居化改变牧业、农业和迁徙方式，部分地区付出饥荒与人口流动的沉重代价。"], ["现代性的双面", "教育、工业和基础设施的扩展不能抹去强制政策的社会成本。"]], evidence: { title: "材料锚点：苏维埃行政档案、地方回忆与人口材料", content: "官方记录强调改造成果，地方叙述强调损失；两类材料必须并读。" }, misconception: "不能把苏维埃化简单视为纯粹进步或纯粹外来占领。", memory: ["抵抗", "强制改造", "社会代价"] },
     "central-asia-independence": { label: "共和国为何成为独立国家", claim: "1991年独立继承的是苏联时期形成的共和国边界、官僚机构和经济联系；主权诞生并未自动解决水资源、能源、族群与跨境交通问题。", sections: [["继承而非从零开始", "五国以既有共和国为制度容器，行政精英和基础设施多数来自苏联时期。"], ["边界的现实", "划界不是古代身份的自然延续，却在独立后成为实际治理、资源分配和安全问题。"], ["区域互赖", "河流上游下游、能源和劳动力流动跨越国界，要求各国在主权之外持续协调。"]], evidence: { title: "材料锚点：1991年独立文件与后苏联区域协议", content: "国家文件说明主权主张，跨境资源协议可显示独立后的互赖压力。" }, misconception: "不能把1991年理解为历史问题已被民族国家一次性解决。", memory: ["继承", "边界", "互赖"] }
   };
-  const mergePlans = {
-    "central-asia-scythian-saka": ["central-asia-scythian-saka", "central-asia-yuezhi-bactria-kushan", "central-asia-xiongnu-western-regions"],
-    "central-asia-turkic-khaganate": ["central-asia-hephthalites", "central-asia-turkic-khaganate", "central-asia-western-turks-tang"],
-    "central-asia-samanids": ["central-asia-samanids", "central-asia-karakhanids"],
-    "central-asia-mongol-conquest": ["central-asia-qara-khitai", "central-asia-khwarazm", "central-asia-mongol-conquest", "central-asia-chagatai-khanate"],
-    "central-asia-timur": ["central-asia-timur", "central-asia-timurid-renaissance"],
-    "central-asia-khanates": ["central-asia-uzbek-shaybanids", "central-asia-khanates", "central-asia-kazakh-hordes"],
-    "central-asia-basmachi": ["central-asia-basmachi", "central-asia-collectivization"]
-  };
+  const mergePlans = {};
   const originalById = new Map(window.CENTRAL_ASIA_EVENTS.map((item) => [item.id, item]));
   const canonicalById = new Map();
   Object.entries(mergePlans).forEach(([parentId, members]) => members.forEach((id) => canonicalById.set(id, parentId)));
@@ -89,14 +81,11 @@
       const learningCase = promotedCases[item.id] || item.learningCase;
       return {
         ...item,
-        process: members.map((id) => {
-          const source = originalById.get(id);
-          return { time: source.time, title: source.title, description: `${source.summary} 它在此处作为解释区域结构变化的过程节点，而不单独保留为摘要卡。` };
-        }),
-        results: [item.results[0] || item.summary], learningCase, contentLevel: "core", contentPresentation: "tiered",
-        claims: [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["central-asia-britannica", "central-asia-met"], note: "核心判断以材料锚点限定适用范围。" }],
-        citations: [{ sourceId: "central-asia-met", reference: learningCase.evidence.title, status: "待逐条细核", plainText: learningCase.evidence.content, note: "材料锚点用于提示证据类型及其边界。" }],
-        sources, reviewQuestions: [{ type: "主线理解", question: learningCase.label, answer: learningCase.claim }],
+        process: [],
+        results: learningCase ? [item.results[0] || item.summary] : [], learningCase, contentLevel: learningCase ? "core" : "mainline", contentPresentation: "tiered",
+        claims: learningCase ? [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["central-asia-britannica", "central-asia-met"], note: "核心判断以材料锚点限定适用范围。" }] : [],
+        citations: learningCase ? [{ sourceId: "central-asia-met", reference: learningCase.evidence.title, status: "待逐条细核", plainText: learningCase.evidence.content, note: "材料锚点用于提示证据类型及其边界。" }] : [],
+        sources: learningCase ? sources : [], reviewQuestions: learningCase ? [{ type: "主线理解", question: learningCase.label, answer: learningCase.claim }] : [],
         previousEventIds: index ? [kept[index - 1].id] : [], nextEventIds: index < kept.length - 1 ? [kept[index + 1].id] : []
       };
     });

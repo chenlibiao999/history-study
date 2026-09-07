@@ -73,18 +73,7 @@
     "iranian-world-mongol-ilkhanate": { label: "蒙古征服为何没有终结伊朗文化圈", claim: "蒙古征服重创伊朗与两河城市，却在伊儿汗和帖木儿时期重排官僚、贸易与城市赞助；破坏和文化再组织必须同时理解。", sections: [["征服冲击", "巴格达陷落及战争造成真实破坏，具体伤亡数字需谨慎。"], ["伊儿汗重组", "蒙古统治者逐步吸收伊斯兰与波斯官僚传统，税收和城市网络在新权力框架下调整。"], ["帖木儿文化圈", "赫拉特等城市的赞助与征服、迁移相伴，不能只讲“文艺复兴”。"]], evidence: { title: "材料锚点：波斯编年史、伊儿汗文书与赫拉特-撒马尔罕遗址", content: "不同材料对破坏、统治和赞助有不同立场，须避免单线叙事。" }, misconception: "蒙古时代既不是纯粹文明终结，也不是无代价的和平网络。", memory: ["破坏", "官僚重组", "城市赞助"] },
     "iranian-world-nader-shah": { label: "军事复兴为何难以变成稳定国家", claim: "纳迪尔沙以军队和远征短期恢复伊朗强权并掠取资源，但缺少可持续的财政、继承与地方整合机制，帝国迅速瓦解。", sections: [["复兴资源", "萨非崩解后的军事重建使其能在区域竞争中取胜。"], ["远征的限度", "攻入德里带来财富，却不能自动建立常态税收和行政秩序。"], ["继承危机", "个人军事能力无法替代稳定继承和地方合作，死后分裂显示强权基础脆弱。"]], evidence: { title: "材料锚点：波斯编年史、钱币与印度远征记录", content: "宫廷叙事会夸大胜利，需与地区财政和政治后果对读。" }, misconception: "不能把纳迪尔沙的战绩等同于伊朗已恢复稳定帝国。", memory: ["军队", "远征", "继承"] }
   };
-  const mergePlans = {
-    "iranian-world-elam-susa": ["iranian-world-elam-susa", "iranian-world-indo-iranian-plateau", "iranian-world-medes-assyria"],
-    "iranian-world-cyrus-empire": ["iranian-world-cyrus-empire", "iranian-world-cambyses-egypt"],
-    "iranian-world-darius-administration": ["iranian-world-darius-administration", "iranian-world-greco-persian-wars", "iranian-world-persepolis-court"],
-    "iranian-world-parthian-rise": ["iranian-world-alexander-fall", "iranian-world-seleucid-iran", "iranian-world-parthian-rise", "iranian-world-carrhae"],
-    "iranian-world-sasanian-founding": ["iranian-world-sasanian-founding", "iranian-world-shapur-rome", "iranian-world-khosrow-reforms"],
-    "iranian-world-arab-conquest": ["iranian-world-late-sasanian-war", "iranian-world-arab-conquest"],
-    "iranian-world-samanid-persian": ["iranian-world-local-dynasties", "iranian-world-samanid-persian", "iranian-world-buyids-baghdad", "iranian-world-seljuk-iran"],
-    "iranian-world-mongol-ilkhanate": ["iranian-world-mongol-ilkhanate", "iranian-world-timurid-iran"],
-    "iranian-world-safavid-founding": ["iranian-world-safavid-founding", "iranian-world-abbas-reforms"],
-    "iranian-world-constitutional-revolution": ["iranian-world-qajar-great-game", "iranian-world-constitutional-revolution"]
-  };
+  const mergePlans = {};
   const originalById = new Map(window.IRANIAN_WORLD_EVENTS.map((item) => [item.id, item]));
   const canonicalById = new Map();
   Object.entries(mergePlans).forEach(([parentId, members]) => members.forEach((id) => canonicalById.set(id, parentId)));
@@ -95,11 +84,11 @@
       const learningCase = promotedCases[item.id] || item.learningCase;
       return {
         ...item,
-        process: members.map((id) => { const source = originalById.get(id); return { time: source.time, title: source.title, description: `${source.summary} 这是父学习单元中不可脱离整体机制理解的过程步骤。` }; }),
-        results: [item.results[0] || item.summary], learningCase, contentLevel: "core", contentPresentation: "tiered",
-        claims: [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["iranian-world-britannica", "iranian-world-met"], note: "核心判断按材料类型保留边界。" }],
-        citations: [{ sourceId: "iranian-world-met", reference: learningCase.evidence.title, status: "待逐条细核", plainText: learningCase.evidence.content, note: "材料锚点提示该判断的证据范围。" }],
-        sources, reviewQuestions: [{ type: "主线理解", question: learningCase.label, answer: learningCase.claim }],
+        process: [],
+        results: learningCase ? [item.results[0] || item.summary] : [], learningCase, contentLevel: learningCase ? "core" : "mainline", contentPresentation: "tiered",
+        claims: learningCase ? [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["iranian-world-britannica", "iranian-world-met"], note: "核心判断按材料类型保留边界。" }] : [],
+        citations: learningCase ? [{ sourceId: "iranian-world-met", reference: learningCase.evidence.title, status: "待逐条细核", plainText: learningCase.evidence.content, note: "材料锚点提示该判断的证据范围。" }] : [],
+        sources: learningCase ? sources : [], reviewQuestions: learningCase ? [{ type: "主线理解", question: learningCase.label, answer: learningCase.claim }] : [],
         previousEventIds: index ? [kept[index - 1].id] : [], nextEventIds: index < kept.length - 1 ? [kept[index + 1].id] : []
       };
     });

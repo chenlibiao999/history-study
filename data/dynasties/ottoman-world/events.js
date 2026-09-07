@@ -20,5 +20,6 @@
     ["ottoman-world-wwi", "第一次世界大战中的奥斯曼", "民族主义与解体", "1914-1918", "奥斯曼加入同盟国阵营，战场遍及高加索、阿拉伯地区和达达尼尔。", "战争加速帝国财政、军事和民族关系崩溃。", ["奥斯曼政府", "协约国"], ["一战", "中东"]],
     ["ottoman-world-end", "土耳其独立战争与帝国终结", "民族主义与解体", "1919-1922", "穆斯塔法凯末尔领导独立战争，苏丹制被废除。", "奥斯曼帝国终结，现代土耳其共和国和中东托管体系成形。", ["凯末尔", "奥斯曼苏丹"], ["土耳其", "帝国终结"]]
   ];
-  window.OTTOMAN_WORLD_EVENTS = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
+  const timeline = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
+  window.OTTOMAN_WORLD_EVENTS = timeline.map((item, index) => ({ ...item, contentLevel: "mainline", contentPresentation: "tiered", background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [], previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

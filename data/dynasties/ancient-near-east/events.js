@@ -23,3 +23,11 @@
     ["cyrus-babylon", "居鲁士进入巴比伦", "新亚述与新巴比伦", "前539", "波斯占领巴比伦，西亚进入阿契美尼德帝国时代。"]
   ].map(event);
 })();
+(() => {
+  const events = window.ANCIENT_NEAR_EAST_EVENTS || [];
+  window.ANCIENT_NEAR_EAST_EVENTS = events.map((event, index) => ({
+    ...event, contentLevel: "mainline", contentPresentation: "tiered",
+    background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [],
+    previousEventIds: index ? [events[index - 1].id] : [], nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
+  }));
+})();

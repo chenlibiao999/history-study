@@ -144,3 +144,11 @@
     regions: ["两河流域", "西亚", "底格里斯河", "幼发拉底河"]
   }));
 })();
+(() => {
+  const events = window.SUMER_EARLY_MESOPOTAMIA_EVENTS || [];
+  window.SUMER_EARLY_MESOPOTAMIA_EVENTS = events.map((event, index) => ({
+    ...event, contentLevel: "mainline", contentPresentation: "tiered",
+    background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [],
+    previousEventIds: index ? [events[index - 1].id] : [], nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
+  }));
+})();

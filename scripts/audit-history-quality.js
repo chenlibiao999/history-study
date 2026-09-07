@@ -154,7 +154,7 @@ for (const event of data.events || []) {
       }
     }
   }
-  if (!Array.isArray(event.process) || event.process.length < 3) {
+  if (event.contentLevel === "core" && (!Array.isArray(event.process) || event.process.length < 3)) {
     shortProcessEvents.push(label);
   }
   let genericCount = 0;
@@ -208,7 +208,7 @@ const byModule = Object.entries(normalizedEventsByDynasty)
   .map(([dynastyId, events]) => ({
     dynastyId,
     events: (events || []).length,
-    processLt3: (events || []).filter((event) => (event.process || []).length < 3).length,
+    processLt3: (events || []).filter((event) => event.contentLevel === "core" && (event.process || []).length < 3).length,
     eventsWithoutMap: (events || []).filter((event) => !(data.politicalMaps?.[dynastyId]?.snapshots || []).some((map) => (map.eventIds || []).includes(event.id))).length
   }))
   .sort((a, b) => b.events - a.events);

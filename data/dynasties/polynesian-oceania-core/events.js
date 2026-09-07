@@ -17,3 +17,15 @@
   };
   window.POLYNESIAN_OCEANIA_CORE_EVENTS = [["australia","澳大利亚原住民深时历史","澳洲深时","约前50000以后","澳大利亚原住民社会具有极长连续性，不能从欧洲接触才开始叙述。"],["lapita","拉皮塔文化扩散","拉皮塔扩散","约前1500-前500","拉皮塔陶器和迁徙网络是理解远洋岛屿定居的重要线索。"],["polynesian-voyaging","波利尼西亚远航定居","波利尼西亚航海","约前1000-1200","远航技术、亲族组织和岛屿生态适应推动太平洋大范围定居。"],["maori","毛利社会形成","波利尼西亚航海","约1250以后","新西兰毛利社会体现波利尼西亚迁徙后的本地化发展。"],["hawaii","夏威夷王权形成","波利尼西亚航海","18世纪末","夏威夷在接触时代前后形成跨岛王权，成为太平洋政治转型案例。"],["colonial-contact","欧洲接触与殖民压力","接触与殖民","18-19世纪","传教、贸易、疾病和殖民行政改变太平洋岛屿社会。"]].map(event);
 })();
+(() => {
+  const events = window.POLYNESIAN_OCEANIA_CORE_EVENTS || [];
+  window.POLYNESIAN_OCEANIA_CORE_EVENTS = events.map((event, index) => ({
+    ...event,
+    contentLevel: "mainline",
+    contentPresentation: "tiered",
+    background: [], process: [], results: [], debates: [], claims: [], citations: [],
+    sources: [], reviewQuestions: [],
+    previousEventIds: index ? [events[index - 1].id] : [],
+    nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
+  }));
+})();

@@ -19,3 +19,15 @@
   };
   window.MESOAMERICA_ANDES_CORE_EVENTS = [["olmec","奥尔梅克文明","早期文明","约前1500-前400","奥尔梅克常被视为中美洲复杂社会的重要早期代表。"],["chavin","查文文化","早期文明","约前900-前200","查文展示安第斯宗教中心、工艺和高地交流网络。"],["maya-classic","古典玛雅城邦","古典城邦","约250-900","玛雅城邦发展文字、历法、神庙和复杂政治竞争。"],["teotihuacan","特奥蒂瓦坎","古典城邦","约1-7世纪","特奥蒂瓦坎以大型城市和区域影响塑造中墨西哥政治文化。"],["wari-tiwanaku","瓦里与蒂瓦纳科","高原帝国","约600-1000","安第斯出现高原国家和区域整合，为后来的印加体系提供背景。"],["aztec","阿兹特克联盟","高原帝国","1428-1521","阿兹特克在墨西哥盆地建立贡赋帝国，直至西班牙征服。"],["inca","印加帝国","高原帝国","约1438-1533","印加以道路、劳役和行政体系整合安第斯大范围地区。"],["conquest","西班牙征服断裂","征服断裂","1519-1533","军事联盟、疾病和帝国冲突共同导致中美洲与安第斯政治结构剧变。"]].map(event);
 })();
+(() => {
+  const events = window.MESOAMERICA_ANDES_CORE_EVENTS || [];
+  window.MESOAMERICA_ANDES_CORE_EVENTS = events.map((event, index) => ({
+    ...event,
+    contentLevel: "mainline",
+    contentPresentation: "tiered",
+    background: [], process: [], results: [], debates: [], claims: [], citations: [],
+    sources: [], reviewQuestions: [],
+    previousEventIds: index ? [events[index - 1].id] : [],
+    nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
+  }));
+})();

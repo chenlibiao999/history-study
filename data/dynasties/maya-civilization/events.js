@@ -4937,3 +4937,12 @@ window.MAYA_CIVILIZATION_EVENTS = [
   "sourceStatus": "公开入口已补"
 }
 ];
+window.MAYA_CIVILIZATION_EVENTS = window.MAYA_CIVILIZATION_EVENTS.map((event, index, all) => ({
+  ...event,
+  contentLevel: "mainline",
+  contentPresentation: "tiered",
+  background: [], process: [], results: [], debates: [], claims: [], citations: [],
+  sources: [], reviewQuestions: [],
+  previousEventIds: index ? [all[index - 1].id] : [],
+  nextEventIds: index < all.length - 1 ? [all[index + 1].id] : []
+}));

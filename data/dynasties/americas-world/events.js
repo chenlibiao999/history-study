@@ -30,3 +30,15 @@
   ];
   window.AMERICAS_WORLD_EVENTS = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
 })();
+(() => {
+  const events = window.AMERICAS_WORLD_EVENTS || [];
+  window.AMERICAS_WORLD_EVENTS = events.map((event, index) => ({
+    ...event,
+    contentLevel: "mainline",
+    contentPresentation: "tiered",
+    background: [], process: [], results: [], debates: [], claims: [], citations: [],
+    sources: [], reviewQuestions: [],
+    previousEventIds: index ? [events[index - 1].id] : [],
+    nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
+  }));
+})();

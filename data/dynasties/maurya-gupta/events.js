@@ -36,3 +36,11 @@
   };
   window.MAURYA_GUPTA_EVENTS = [["magadha-rise","摩揭陀扩张","摩揭陀扩张","前6-前4世纪","摩揭陀依托恒河平原、铁器、城市和军事资源，成为北印度国家竞争的胜出者。"],["chandragupta","旃陀罗笈多建立孔雀帝国","孔雀帝国","前322左右","旃陀罗笈多在亚历山大东征后重组北印度权力，建立孔雀帝国。"],["ashoka-kalinga","阿育王与羯陵伽战争","孔雀帝国","前261左右","羯陵伽战争后，阿育王以法诏表达统治伦理，并推动佛教和帝国意识形态传播。"],["maurya-decline","孔雀帝国瓦解","孔雀帝国","前2世纪","孔雀帝国衰落后，次大陆重新进入区域王国、外来政权和贸易网络并行阶段。"],["gupta-rise","笈多王权兴起","笈多时代","约320以后","笈多王朝在恒河流域重建北印度强权，形成古典梵语文化的重要背景。"],["gupta-classical","笈多古典文化","笈多时代","4-5世纪","数学、天文学、文学、印度教和佛教艺术在笈多时代持续发展。"],["huna-pressure","嚈哒压力与笈多衰落","笈多时代","5-6世纪","内部分权和西北压力削弱笈多王权，北印度再次分化。"]].map(event);
 })();
+(() => {
+  const events = window.MAURYA_GUPTA_EVENTS || [];
+  window.MAURYA_GUPTA_EVENTS = events.map((event, index) => ({
+    ...event, contentLevel: "mainline", contentPresentation: "tiered",
+    background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [],
+    previousEventIds: index ? [events[index - 1].id] : [], nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
+  }));
+})();

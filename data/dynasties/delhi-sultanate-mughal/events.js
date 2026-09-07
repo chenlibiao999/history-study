@@ -35,3 +35,11 @@
   };
   window.DELHI_SULTANATE_MUGHAL_EVENTS = [["delhi-founded","德里苏丹国建立","德里苏丹国","1206","突厥阿富汗军事集团以德里为中心建立苏丹国，把北印度更紧密接入伊斯兰政治世界。"],["khalji-tughluq","哈勒吉与图格鲁克扩张","德里苏丹国","13-14世纪","德里苏丹国多次向德干和南印度推进，但长期控制受交通、地方势力和财政压力限制。"],["babur-panipat","巴布尔与第一次帕尼帕特战役","莫卧儿扩张","1526","巴布尔击败洛迪王朝，开启莫卧儿在北印度的统治。"],["akbar-reforms","阿克巴改革","莫卧儿扩张","1556-1605","阿克巴通过曼萨卜、税制和宗教政策整合贵族与地方社会，强化帝国基础。"],["aurangzeb-peak","奥朗则布时期最大扩张","莫卧儿扩张","17世纪后期","莫卧儿疆域达到高峰，但德干战争和财政军事负担也加重帝国张力。"],["company-rule","东印度公司扩张","殖民转折","1757以后","普拉西战役后，东印度公司逐步从贸易公司转为领土统治力量。"],["raj-1858","1857起义与王冠统治","殖民转折","1857-1858","1857起义后，英国王冠取代公司直接治理印度，殖民国家形态进一步制度化。"]].map(event);
 })();
+(() => {
+  const events = window.DELHI_SULTANATE_MUGHAL_EVENTS || [];
+  window.DELHI_SULTANATE_MUGHAL_EVENTS = events.map((event, index) => ({
+    ...event, contentLevel: "mainline", contentPresentation: "tiered",
+    background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [],
+    previousEventIds: index ? [events[index - 1].id] : [], nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
+  }));
+})();

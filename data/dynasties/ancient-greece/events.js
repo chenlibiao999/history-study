@@ -815,7 +815,7 @@
   };
   const timeline = window.ANCIENT_GREECE_EVENTS.map((item) => {
     const detail = coreDetails[item.id];
-    if (!detail) return { ...item, contentLevel: "outline" };
+    if (!detail) return { ...item, contentLevel: "outline", contentPresentation: "tiered" };
     const facts = detail.facts.map((text) => ({ text: `[事实层] ${text}`, sourceId: "ancient-greece-main-source" }));
     return { ...item, contentLevel: "core", contentPresentation: "tiered", learningCase: { label: item.title, claim: detail.claim, sections: [["事实链", detail.facts.join(" ")]], evidence: { title: "材料锚点：古典作者、碑铭与考古材料", content: "核心事实须与希罗多德、修昔底德、亚里士多德、普鲁塔克等文本及现代考古研究交叉核对。" }, misconception: detail.debate }, timeAnchor: { time: item.time, regnal: detail.regnal, coordinate: detail.coordinate, admin: detail.admin, terrainTransport: detail.terrainTransport }, spatialAnchor: { coordinate: detail.coordinate, admin: detail.admin, terrainTransport: detail.terrainTransport }, factLayer: facts, debates: [{ view: "[主流说]", content: detail.claim }, { view: "[争议边界]", content: detail.debate }], causalChain: [{ kind: "cause", label: "[表层因]", title: "直接条件", description: detail.facts[0] }, { kind: "cause", label: "[深层因]", title: "制度与资源", description: detail.facts[1] }, { kind: "cause", label: "[结构因]", title: "希腊世界结构", description: detail.claim }, { kind: "impact", label: "[传导机制]", title: "后续关联", description: detail.facts[4] }], process: detail.facts.map((description, index) => ({ time: item.time, title: `事实 ${index + 1}`, description: `${description} 该事实的时间、地点与范围应由古典文本、碑铭或考古材料交叉核验。` })), sources: item.sources, citations: item.citations };
   });

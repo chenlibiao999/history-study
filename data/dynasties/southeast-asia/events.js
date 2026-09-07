@@ -69,13 +69,7 @@
     "southeast-asia-ayutthaya": { label: "泰语族王权如何在大陆竞争中重组", claim: "从素可泰到大城，泰语族王权以平原稻作、上座部佛教、港口贸易和战争中的人口转移积累力量；大陆竞争争夺的不只是边界，而是人力、河谷和城市节点。", sections: [["早期王权", "素可泰的碑铭、地方联盟和宗教传统提供一套泰语族王权的表达，却不是后世国家的完整起点。"], ["大城的优势", "湄南河下游把水稻平原、海外贸易和都城行政连在一起，使大城成为长期区域中心。"], ["战争与重建", "缅暹战争反复改写都城、人口和贡赋网络；迁徙与劳动力控制比现代式国界更关键。"]], evidence: { title: "材料锚点：碑铭、王朝编年史与河谷城市遗址", content: "材料能显示王权自我表述、战争和城市变化，但不同王朝叙事会放大自身正统性。" }, misconception: "不要把素可泰或大城直接等同于现代泰国，或把缅暹战争写成固定民族国家的边界战。", memory: ["平原", "港口", "人口转移"] },
     "southeast-asia-philippines-spanish-american": { label: "菲律宾为何形成不同的殖民连接", claim: "菲律宾被纳入西班牙的马尼拉-阿卡普尔科体系，1898年后又进入美国殖民行政；太平洋贸易、天主教网络和教育制度使其路径不同于大陆和荷属群岛。", sections: [["马尼拉的中介", "太平洋白银与中国货物经马尼拉连接美洲和东亚，殖民中心首先是海上节点。"], ["宗教与地方社会", "传教和地方中介重塑社群关系，但各岛屿的控制与接受程度差异很大。"], ["政权转换", "美国接管并非独立，新的行政、教育和武力秩序延续了殖民性，1946年才形成正式独立。"]], evidence: { title: "材料锚点：马尼拉大帆船贸易记录与殖民行政档案", content: "贸易与行政材料可追踪跨太平洋联系，但主要反映殖民机构的视角。" }, misconception: "不能把菲律宾历史简单归入“东南亚都被欧洲直接统治”的同一路径。", memory: ["马尼拉", "太平洋", "政权转换"] }
   };
-  const mergePlans = {
-    "southeast-asia-funan": ["southeast-asia-rice-bronze", "southeast-asia-maritime-routes", "southeast-asia-funan", "southeast-asia-champa", "southeast-asia-chenla"],
-    "southeast-asia-angkor-wat": ["southeast-asia-angkor-founding", "southeast-asia-angkor-wat", "southeast-asia-jayavarman-vii", "southeast-asia-angkor-decline"],
-    "southeast-asia-pagan": ["southeast-asia-pagan", "southeast-asia-pagan-decline"],
-    "southeast-asia-ayutthaya": ["southeast-asia-sukhothai", "southeast-asia-ayutthaya", "southeast-asia-burmese-siamese-wars"],
-    "southeast-asia-malacca": ["southeast-asia-malacca", "southeast-asia-portuguese-malacca"]
-  };
+  const mergePlans = {};
   const originalById = new Map(window.SOUTHEAST_ASIA_EVENTS.map((item) => [item.id, item]));
   const canonicalById = new Map();
   Object.entries(mergePlans).forEach(([parentId, members]) => members.forEach((id) => canonicalById.set(id, parentId)));
@@ -88,18 +82,15 @@
       return {
         ...item,
         aliases: item.aliases,
-        process: members.map((id) => {
-          const source = originalById.get(id);
-          return { time: source.time, title: source.title, description: `${source.summary} 这是本学习单元的因果步骤，必须连同前后资源、网络或权力关系阅读。` };
-        }),
-        results: [item.results[0] || item.summary],
+        process: [],
+        results: learningCase ? [item.results[0] || item.summary] : [],
         learningCase,
-        contentLevel: "core",
+        contentLevel: learningCase ? "core" : "mainline",
         contentPresentation: "tiered",
-        claims: [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["southeast-asia-britannica", "southeast-asia-met"], note: "材料锚点限定结论范围；古代政权范围与年代按证据类型理解。" }],
-        citations: [{ sourceId: "southeast-asia-met", reference: learningCase.evidence.title, status: "待逐条细核", plainText: learningCase.evidence.content, note: "材料锚点说明该卡的证据边界。" }],
-        sources,
-        reviewQuestions: [{ type: "主线理解", question: learningCase.label, answer: learningCase.claim }],
+        claims: learningCase ? [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: ["southeast-asia-britannica", "southeast-asia-met"], note: "材料锚点限定结论范围；古代政权范围与年代按证据类型理解。" }] : [],
+        citations: learningCase ? [{ sourceId: "southeast-asia-met", reference: learningCase.evidence.title, status: "待逐条细核", plainText: learningCase.evidence.content, note: "材料锚点说明该卡的证据边界。" }] : [],
+        sources: learningCase ? sources : [],
+        reviewQuestions: learningCase ? [{ type: "主线理解", question: learningCase.label, answer: learningCase.claim }] : [],
         previousEventIds: index ? [kept[index - 1].id] : [],
         nextEventIds: index < kept.length - 1 ? [kept[index + 1].id] : []
       };

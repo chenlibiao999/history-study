@@ -218,15 +218,7 @@
     misconception: "不要把笈多之后直接记成“印度进入黑暗时代”，也不要把戒日王短暂霸权当成恢复统一帝国。",
     memory: ["权力松动", "短暂整合", "区域重组"], sourceIds: ["south-asia-met", "south-asia-britannica"], sourceRef: "Met 南亚年代学与北印度早期中世纪资料", question: "为什么戒日王不能被当作笈多帝国的简单续篇？", answer: "他的整合建立在区域化后的竞争与联盟上，持续时间有限，未重建笈多时期那种稳定的帝国资源结构。"
   };
-  const mergePlans = {
-    "south-asia-mahajanapadas": ["south-asia-vedic-society", "south-asia-mahajanapadas"],
-    "south-asia-maurya-rise": ["south-asia-magadha-rise", "south-asia-alexander-northwest", "south-asia-maurya-rise"],
-    "south-asia-kushan-gandhara": ["south-asia-maurya-decline-regional", "south-asia-kushan-gandhara"],
-    "south-asia-huna-gupta-decline": ["south-asia-huna-gupta-decline", "south-asia-harsha-regional"],
-    "south-asia-chola-maritime": ["south-asia-south-indian-ocean", "south-asia-chola-maritime"],
-    "south-asia-delhi-sultanate": ["south-asia-delhi-sultanate", "south-asia-delhi-expansion"],
-    "south-asia-akbar-integration": ["south-asia-mughal-founding", "south-asia-akbar-integration"]
-  };
+  const mergePlans = {};
   const originalById = new Map(window.SOUTH_ASIA_EVENTS.map((item) => [item.id, item]));
   const canonicalById = new Map();
   Object.entries(mergePlans).forEach(([parentId, members]) => members.forEach((id) => canonicalById.set(id, parentId)));
@@ -240,13 +232,10 @@
       return {
         ...item,
         aliases: [...new Set([...item.aliases, ...absorbed.map((source) => source.title)])],
-        process: members.map((id) => {
-          const source = originalById.get(id);
-          return { time: source.time, title: source.title, description: `${source.summary} 这一步在父学习单元中提供必要的因果条件，而不另设空壳卡片。` };
-        }),
-        results: [item.results[0] || item.summary],
+        process: [],
+        results: learningCase ? [item.results[0] || item.summary] : [],
         learningCase,
-        contentLevel: "core",
+        contentLevel: learningCase ? "core" : "mainline",
         contentPresentation: "tiered",
         sources: learningCase ? sources.filter((source) => sourceIds.includes(source.id)) : item.sources,
         claims: learningCase ? [{ statement: learningCase.claim, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds, note: "核心判断以材料锚点为起点，具体年代和范围仍按史料类型分层理解。" }] : [],

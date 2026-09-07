@@ -68,7 +68,7 @@
   window.ROMAN_WORLD_EVENTS = window.ROMAN_WORLD_EVENTS.map((item, index, all) => {
     const detail = coreDetails[item.id];
     const links = { previousEventIds: index ? [all[index - 1].id] : [], nextEventIds: index < all.length - 1 ? [all[index + 1].id] : [] };
-    if (!detail) return { ...item, contentLevel: "outline", ...links };
+    if (!detail) return { ...item, contentLevel: "outline", contentPresentation: "tiered", ...links };
     const [regnal, coordinate, admin, terrainTransport] = detail.a;
     return { ...item, contentLevel: "core", contentPresentation: "tiered", ...links,
       learningCase: { label: item.title, claim: detail.c, sections: [["事实链", detail.f.join(" ")]], evidence: { title: "材料锚点", content: "古典叙事、铭文、法令、钱币与考古材料需互相校验；本卡来源绑定见各事实条目。" }, misconception: detail.d },

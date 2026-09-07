@@ -1576,5 +1576,6 @@
     ]
   }
 ];
-  window.INDIAN_SUBCONTINENT_EVENTS = items.map(event);
+  const timeline = items.map(event);
+  window.INDIAN_SUBCONTINENT_EVENTS = timeline.map((item, index) => ({ ...item, contentLevel: "mainline", contentPresentation: "tiered", background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [], previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

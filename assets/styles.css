@@ -308,6 +308,7 @@ button{cursor:pointer}
   font-weight:500;
   color:var(--text-secondary);
 }
+.timeline-collapse-btn{display:none}
 .timeline-tabs{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -1018,15 +1019,64 @@ button{cursor:pointer}
 }
 
 @media (max-width:680px){
+  html{font-size:16px}
+  body{padding-bottom:58px}
+  .app-header{position:sticky;top:0;z-index:30;gap:10px;padding:9px 12px;background:var(--bg-panel)}
+  .app-logo{min-width:34px}
   .app-logo span{display:none}
-  .header-filters{flex-basis:100%;justify-content:flex-start}
-  .active-filters{max-width:calc(100vw - 160px)}
-  .filter-panel{
-    left:0;
-    right:auto;
-    width:calc(100vw - 24px);
-    max-height:70vh;
-  }
+  .search-box{order:2;flex:1;flex-basis:calc(100% - 50px)}
+  .search-box input{height:42px;font-size:16px}
+  .search-icon{top:11px}
+  .header-filters{order:1;flex:0 0 auto;min-width:0}
+  .filter-toggle{width:42px;height:42px;justify-content:center;padding:0}
+  .filter-toggle span:not(.filter-toggle-icon):not(.filter-count){display:none}
+  .filter-toggle-icon{font-size:18px}
+  .clear-filters-btn{height:42px;padding:0 12px}
+  .active-filters{order:3;flex-basis:100%;max-width:none;overflow:auto;padding-bottom:1px}
+  .active-filter-chip{height:32px;font-size:12px}
+  .filter-panel{position:fixed;top:auto;right:0;bottom:0;left:0;width:100%;max-height:min(76dvh,620px);padding:16px 14px calc(16px + env(safe-area-inset-bottom));border-radius:10px 10px 0 0;box-shadow:0 -8px 24px rgba(0,0,0,.22)}
+  .filter-panel-close{width:44px;height:44px;font-size:22px}
+  .filter-option{min-height:38px;padding:7px 10px;font-size:12px}
+  .region-tree-group{padding:10px}
+  .workspace{display:block}
+  .timeline-panel{max-height:none;background:var(--bg-panel)}
+  .timeline-panel .panel-header{min-height:52px;padding:8px 14px}
+  .timeline-panel .panel-header h2{font-size:13px}
+  .timeline-collapse-btn{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:36px;border:1px solid var(--border-default);border-radius:var(--radius-sm);background:var(--bg-input);color:var(--text-secondary);font-size:12px}
+  .timeline-tabs{padding:9px 12px}
+  .timeline-tab{height:42px;font-size:13px}
+  .timeline-scroll{max-height:50dvh;padding:8px 0}
+  .timeline-collapsed .timeline-tabs,.timeline-collapsed .timeline-scroll{display:none}
+  .tl-event{min-height:48px;padding:10px 14px 10px 36px}
+  .tl-title{font-size:14px;line-height:1.45}
+  .tl-year{font-size:11px}
+  .event-detail{min-height:0;background:var(--bg-base)}
+  .detail-topbar{position:sticky;top:0;z-index:10;gap:10px;padding:14px 14px 10px;background:var(--bg-base)}
+  .detail-topbar h1{font-size:20px;line-height:1.4}
+  .detail-meta{gap:6px 10px}
+  .meta-item{font-size:11px}
+  .detail-actions{flex-shrink:0;gap:5px}
+  .detail-btn{width:42px;height:42px;padding:0;font-size:0}
+  .detail-btn::first-letter{font-size:17px}
+  .detail-body{padding:16px 14px 24px}
+  .detail-section{margin-bottom:28px}
+  .detail-section-header h2{font-size:15px}
+  .detail-section-content{font-size:16px;line-height:1.9}
+  .detail-section-content p{margin-bottom:16px}
+  .learning-case{padding:13px}
+  .learning-case-claim{font-size:16px}
+  .learning-case-section p,.learning-evidence p{font-size:14px;line-height:1.8}
+  .auxiliary-section{padding:11px}
+  .supplementary-panel{max-height:none;border-bottom:0;background:var(--bg-panel)}
+  .sup-tabs{position:sticky;top:0;z-index:8;overflow-x:auto;padding:8px 10px}
+  .sup-tab{min-width:62px;min-height:40px;font-size:12px}
+  .sup-content{min-height:180px;padding:14px}
+  .notes-bar{position:fixed;right:0;bottom:0;left:0;z-index:40;height:auto;min-height:58px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .notes-toggle{min-width:44px;min-height:42px;font-size:0}
+  .notes-toggle::first-letter{font-size:18px}
+  .notes-input{height:42px;font-size:16px}
+  .notes-count{display:none}
+  .notes-overlay{position:fixed;right:0;bottom:58px;left:0;max-height:60dvh;border-radius:10px 10px 0 0}
   .political-map-head{flex-direction:column}
   .political-map-preview{
     width:100%;

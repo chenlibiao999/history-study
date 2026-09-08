@@ -5,6 +5,8 @@
   let selectedId = events[0]?.id;
   let activeTab = "people";
   let timelineMode = "events";
+  const mobileLayoutQuery = window.matchMedia("(max-width: 680px)");
+  let mobileTimelineCollapsed = false;
   const TIMELINE_BATCH_SIZE = 180;
   const activeFilters = {period: "", region: "", topic: ""};
   const periodFilterLabels = new Map();
@@ -135,6 +137,16 @@
 
   function clear(el){
     el.replaceChildren();
+  }
+
+  function syncMobileLayout(event){
+    const isMobile = event.matches;
+    document.body.classList.toggle("mobile-layout", isMobile);
+    mobileTimelineCollapsed = isMobile;
+    document.body.classList.toggle("timeline-collapsed", mobileTimelineCollapsed);
+    const toggle = $("#timelineCollapseBtn");
+    toggle.setAttribute("aria-expanded", String(!mobileTimelineCollapsed));
+    toggle.textContent = mobileTimelineCollapsed ? "展开" : "收起";
   }
 
   function populateFilters(){
@@ -1362,6 +1374,15 @@
   }
 
   function bindEvents(){
+    $("#timelineCollapseBtn").addEventListener("click", () => {
+      if (!mobileLayoutQuery.matches) return;
+      mobileTimelineCollapsed = !mobileTimelineCollapsed;
+      document.body.classList.toggle("timeline-collapsed", mobileTimelineCollapsed);
+      const toggle = $("#timelineCollapseBtn");
+      toggle.setAttribute("aria-expanded", String(!mobileTimelineCollapsed));
+      toggle.textContent = mobileTimelineCollapsed ? "展开" : "收起";
+    });
+
     $("#searchInput").addEventListener("input", () => {
       afterFilterChange();
     });
@@ -1452,5 +1473,7 @@
 
   populateFilters();
   bindEvents();
+  syncMobileLayout(mobileLayoutQuery);
+  mobileLayoutQuery.addEventListener("change", syncMobileLayout);
   renderAll();
 })();

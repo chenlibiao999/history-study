@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>历史学习工作台</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/styles.css?v=20260908-mobile">
 </head>
 <body>
   <header class="app-header">
@@ -43,6 +43,7 @@
     <aside class="timeline-panel" aria-label="时间线">
       <div class="panel-header">
         <h2>时间线</h2>
+        <button id="timelineCollapseBtn" class="timeline-collapse-btn" type="button" aria-expanded="true" aria-controls="timelineList">收起</button>
       </div>
       <div class="timeline-tabs" role="tablist" aria-label="主线导航类型">
         <button class="timeline-tab active" type="button" data-mode="events">大事</button>
@@ -455,6 +456,6 @@
   <script src="data/time-utils.js"></script>
   <script src="data/label-aliases.js?v=20260831-keyevent-fix"></script>
   <script src="data/index.js?v=20260908-core-links"></script>
-  <script src="assets/app.js?v=20260908-core-links"></script>
+  <script src="assets/app.js?v=20260908-mobile"></script>
 </body>
 </html>

@@ -4169,3 +4169,16 @@ function addSouthAmericaExpansionEvent(item) {
   }
 ].forEach(addSouthAmericaExpansionEvent);
 
+(() => {
+  const absorbedByCore = new Set([
+    "chavin-horizon",
+    "tiwanaku-wari",
+    "inca-rise-cusco",
+    "pachacuti-expansion",
+    "inca-road-quipu",
+    "pizarro-cajamarca",
+    "fall-cusco"
+  ]);
+  window.SOUTH_AMERICA_EVENTS = window.SOUTH_AMERICA_EVENTS.filter((event) => !absorbedByCore.has(event.id));
+})();
+

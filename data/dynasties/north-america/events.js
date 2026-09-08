@@ -4350,3 +4350,19 @@ function addNorthAmericaExpansionEvent(item) {
     people: ["萨帕塔民族解放军", "恰帕斯原住民社群"]
   }
 ].forEach(addNorthAmericaExpansionEvent);
+
+(() => {
+  const absorbedByCore = new Set([
+    "olmec-foundation",
+    "teotihuacan-rise",
+    "classic-maya",
+    "aztec-triple-alliance"
+  ]);
+  window.NORTH_AMERICA_EVENTS = window.NORTH_AMERICA_EVENTS
+    .filter((event) => !absorbedByCore.has(event.id) && event.id !== "mexican-revolution")
+    .map((event) => event.id === "mexican-revolution-constitution" ? {
+      ...event,
+      aliases: [...(event.aliases || []), "mexican-revolution", "墨西哥革命"],
+      background: [event.background, "本卡合并原“墨西哥革命”索引卡；1917年宪法作为革命的制度结果保留在过程内。"].filter(Boolean)
+    } : event);
+})();

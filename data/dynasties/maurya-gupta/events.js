@@ -38,9 +38,18 @@
 })();
 (() => {
   const events = window.MAURYA_GUPTA_EVENTS || [];
+  const narratives = {
+    "maurya-gupta-magadha-rise": "恒河中下游的农业剩余、铁器利用、河运和城市税源提高了摩揭陀动员军队与吸收邻国的能力；这一优势来自区域资源组合，而非单一君主的军事才能。",
+    "maurya-gupta-chandragupta": "前322年前后，旃陀罗笈多在西北政治真空与北印度竞争中取得优势。帝国以帕塔利普特拉为中枢，却须通过地方官员、道路与地方精英维系广阔区域。",
+    "maurya-gupta-ashoka-kalinga": "羯陵伽战争发生在东海岸战略通道的争夺中。阿育王岩诏把“法”写入统治表述，并不等于停止战争，而是为帝国行政、伦理宣示和对外联络增添了新语言。",
+    "maurya-gupta-maurya-decline": "阿育王后中央权力难以持续控制广阔地区，约前2世纪帝国瓦解。地方王国、印度-希腊等西北政权和印度洋贸易网络随之并行发展。",
+    "maurya-gupta-gupta-rise": "约4世纪，笈多王权在恒河流域通过婚姻、征服和地方联盟扩大影响。它控制的范围与强度随地区而变，不能把“笈多时代”等同整个次大陆的统一。",
+    "maurya-gupta-gupta-classical": "梵语铭文、钱币、数学与天文学著作、宗教艺术在多种赞助网络中发展；所谓“古典”是王室、寺院、城市与知识群体共同作用的结果。",
+    "maurya-gupta-huna-pressure": "5世纪后，西北嚈哒势力进入与地方分权同时削弱笈多中心。帝国衰落并未终止文化和贸易，而是把北印度重新带入多个政权竞争的格局。"
+  };
   window.MAURYA_GUPTA_EVENTS = events.map((event, index) => ({
     ...event, contentLevel: "mainline", contentPresentation: "tiered",
-    background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [],
+    mainlineNarrative: narratives[event.id], background: [], process: [], results: [], debates: [], reviewQuestions: [],
     previousEventIds: index ? [events[index - 1].id] : [], nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));
 })();

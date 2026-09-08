@@ -35,5 +35,14 @@
     return { id: dynastyId + "-" + slug, title, aliases: [], era, period: dynasty, time, regions: [dynasty], topics: [], summary, bookmarked: false, people: [], relations: [], background: [title + "要放在" + dynasty + "的长时段主线中理解。"], process: process(title, summary, time), results: ["这一事件是理解" + dynasty + "后续走向的关键节点。"], debates: [{ view: "学习提示", content: "该节点保留为二级拆分模块的必要学习内容，后续不再短期扩张事件量。" }], claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium-high", sourceIds, note: "按二级模块做首轮来源分层。" }], citations: sourceIds.map((sourceId) => ({ sourceId, reference: "阶段核对来源", status: "已做首轮来源分层", plainText: "白话理解：" + summary, note: "保留估算和分层口径。" })), causalChain: [], sources, reviewQuestions: [{ type: "主线理解", question: title + "为什么重要？", answer: "因为它改变了" + dynasty + "的制度、权力或区域关系。" }], notes: [], dynastyId, dynasty, topicIds: [] };
   };
   const timeline = [["malacca-1511","葡萄牙占领马六甲","欧洲海权","1511","葡萄牙控制马六甲后，欧洲海权进入东南亚贸易节点。"],["voc","荷兰东印度公司扩张","欧洲海权","17世纪","荷兰东印度公司在群岛贸易、香料产地和港口中扩张势力。"],["british-burma-malaya","英国在缅甸与马来亚扩张","殖民分区","19世纪","英国控制缅甸和马来亚，把大陆边疆和海峡港口纳入帝国体系。"],["french-indochina","法属印度支那形成","殖民分区","19世纪后期","法国把越南、柬埔寨和老挝纳入印度支那殖民体系。"],["philippines-us","菲律宾从西班牙到美国统治","殖民分区","1898以后","美西战争后菲律宾转入美国统治，东南亚殖民格局更加多元。"],["japanese-occupation","日本占领东南亚","战争与独立","1941-1945","日本占领削弱欧洲殖民权威，也加速民族主义和战后独立运动。"],["postwar-independence","战后独立与国家形成","战争与独立","1945-1954","印度尼西亚、越南等独立斗争推动殖民东南亚向民族国家体系转变。"]].map(event);
-  window.COLONIAL_SOUTHEAST_ASIA_EVENTS = timeline.map((item, index) => ({ ...item, contentLevel: "mainline", contentPresentation: "tiered", background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [], previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
+  const narratives = {
+    "colonial-southeast-asia-malacca-1511": "葡萄牙夺取马六甲是武装商贸据点进入海峡的节点，并未取代所有本地航路；区域贸易随之向周边苏丹国和港口重新分布。",
+    "colonial-southeast-asia-voc": "荷兰东印度公司以契约、武力、种植控制和港口行政介入群岛，利润与国家权力在公司制度中相互转化。",
+    "colonial-southeast-asia-british-burma-malaya": "英国先后把缅甸边疆与马来亚海峡港口纳入帝国，稻米、锡矿、橡胶和劳工迁移使两地被置入不同但相连的殖民经济。",
+    "colonial-southeast-asia-french-indochina": "法属印度支那把越、柬、老编入统一殖民行政，但地方社会、王室和反殖民力量的经验并不相同。",
+    "colonial-southeast-asia-philippines-us": "1898年后菲律宾从西班牙转入美国统治，战争、教育和地方政治共同塑造新的殖民国家，而非单纯的主权移交。",
+    "colonial-southeast-asia-japanese-occupation": "日军占领动摇欧洲殖民威望，也以征粮、劳役和军事控制加重社会压力；战时合作和抵抗在各地具有不同组织形式。",
+    "colonial-southeast-asia-postwar-independence": "战后独立由武装斗争、谈判、国际环境与殖民财政危机共同推动；新国家的边界和制度保留了殖民时期的深刻影响。"
+  };
+  window.COLONIAL_SOUTHEAST_ASIA_EVENTS = timeline.map((item, index) => ({ ...item, contentLevel: "mainline", contentPresentation: "tiered", mainlineNarrative: narratives[item.id], background: [], process: [], results: [], debates: [], reviewQuestions: [], previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

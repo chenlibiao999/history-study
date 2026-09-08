@@ -37,9 +37,18 @@
 })();
 (() => {
   const events = window.DELHI_SULTANATE_MUGHAL_EVENTS || [];
+  const narratives = {
+    "delhi-sultanate-mughal-delhi-founded": "1206年后，德里成为突厥—阿富汗军事精英、波斯文行政文化与北印度税源的交汇点。苏丹国在地方合作、驻军和城市财政中形成。",
+    "delhi-sultanate-mughal-khalji-tughluq": "哈勒吉和图格鲁克向德干推进，试图把军事征服转为税收与行政控制；山地距离、地方政权与补给成本限制了长期统治。",
+    "delhi-sultanate-mughal-babur-panipat": "1526年帕尼帕特战役中，巴布尔的火器、骑兵战术和洛迪王朝内部裂缝共同作用；胜利打开北印度中枢，却未立即控制全次大陆。",
+    "delhi-sultanate-mughal-akbar-reforms": "曼萨卜等级、札吉尔分封与土地税评估连接皇帝、贵族和地方社会；拉其普特联盟与行政标准化是莫卧儿整合的关键中介。",
+    "delhi-sultanate-mughal-aurangzeb-peak": "德干征服扩大版图，也延长战争、驻军和财政征发。版图扩大不等于治理能力同步增加，地方势力因此获得更多活动空间。",
+    "delhi-sultanate-mughal-company-rule": "1757年普拉西战役后，公司把孟加拉税收用于雇佣军与贸易，再逐步进入司法、土地和行政领域，商业组织由此转为领土国家。",
+    "delhi-sultanate-mughal-raj-1858": "1857年起义涉及兵团、地方王公、农民与城市群体，诉求并不相同。镇压后王冠接管公司，军队、土地与行政分类被重新组织。"
+  };
   window.DELHI_SULTANATE_MUGHAL_EVENTS = events.map((event, index) => ({
     ...event, contentLevel: "mainline", contentPresentation: "tiered",
-    background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [],
+    mainlineNarrative: narratives[event.id], background: [], process: [], results: [], debates: [], reviewQuestions: [],
     previousEventIds: index ? [events[index - 1].id] : [], nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));
 })();

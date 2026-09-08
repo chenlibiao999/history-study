@@ -18,5 +18,15 @@
     return { id: dynastyId + "-" + slug, title, aliases: [], era, period: dynasty, time, regions: [dynasty], topics: [], summary, bookmarked: false, people: [], relations: [], background: [title + "要放在" + dynasty + "的长时段主线中理解。"], process: process(title, summary, time), results: ["这一事件是理解" + dynasty + "后续走向的关键节点。"], debates: [{ view: "学习提示", content: "这是第一版必要学习骨架，后续可继续补专门史料和争议。" }], claims: [{ statement: summary, status: "较稳妥", statusType: "stable", confidence: "medium-high", sourceIds, note: "已从单一通史入口升级为阶段性来源组合，后续仍可继续补专书和论文。" }], citations: sourceIds.map((sourceId) => ({ sourceId, reference: "阶段核对来源", status: "已做首轮来源分层", plainText: "白话理解：" + summary, note: "保留估算和分层口径。" })), causalChain: [], sources, reviewQuestions: [{ type: "主线理解", question: title + "为什么重要？", answer: "因为它改变了" + dynasty + "的制度、权力或区域关系。" }], notes: [], dynastyId, dynasty, topicIds: [] };
   };
   const timeline = [["funan","扶南与早期港口国家","早期港口","1-6世纪","湄公河下游港口国家连接印度洋和南海贸易。"],["champa","占婆与海岸网络","早期港口","2-15世纪","占婆沿越南中南部海岸发展海贸、印度教王权和区域竞争。"],["angkor","吴哥帝国","大陆王国","9-15世纪","高棉王权以水利、神庙和农业平原支撑大型国家。"],["pagan","蒲甘王国","大陆王国","11-13世纪","蒲甘整合伊洛瓦底江流域，并推动上座部佛教制度化。"],["srivijaya","室利佛逝","海洋帝国","7-13世纪","室利佛逝控制马六甲和巽他海峡佛教海贸网络。"],["majapahit","满者伯夷","海洋帝国","13-15世纪","爪哇政权以贡赋和海贸影响群岛多地。"],["malacca","马六甲苏丹国","殖民转型","15世纪","马六甲成为伊斯兰化海峡贸易枢纽。"],["colonial","殖民东南亚分区","殖民转型","16-20世纪","欧洲和美国殖民体系重塑区域边界。"]].map(event);
-  window.SOUTHEAST_ASIA_CORE_KINGDOMS_EVENTS = timeline.map((item, index) => ({ ...item, contentLevel: "mainline", contentPresentation: "tiered", background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [], previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
+  const narratives = {
+    "southeast-asia-core-kingdoms-funan": "湄公河下游港口国家的形成说明东南亚早期政治与海上交换相互依赖；中国使节记录、考古与碑铭各自只能支持部分范围。",
+    "southeast-asia-core-kingdoms-champa": "占婆沿狭长海岸把港口、印度教王权和海上贸易结合，长期与越南、高棉及岛屿商路竞争，不能被理解为固定单一民族国家。",
+    "southeast-asia-core-kingdoms-angkor": "吴哥以洞里萨湖平原、水利系统、寺院与劳役组织动员资源；大型工程与权力集中并行，也形成维护和环境压力。",
+    "southeast-asia-core-kingdoms-pagan": "蒲甘依托伊洛瓦底江谷地整合农业与佛教捐赠网络；僧团土地、贡赋和王权之间的平衡影响国家财政。",
+    "southeast-asia-core-kingdoms-srivijaya": "室利佛逝的海洋影响由港口、季风、佛教学习与贡纳关系构成，较适合视作网络中心而非连续疆域帝国。",
+    "southeast-asia-core-kingdoms-majapahit": "满者伯夷以爪哇农业核心、海贸和地方联盟发挥影响；文学所称的广阔“天下”需要与可验证的政治关系区分。",
+    "southeast-asia-core-kingdoms-malacca": "马六甲苏丹国在季风转口贸易中连接伊斯兰法、华人商人和区域苏丹国，是理解海峡政治与伊斯兰化的关键节点。",
+    "southeast-asia-core-kingdoms-colonial": "殖民分区把原有海陆网络切入荷、英、法、西、美等不同制度，现代国界和国家行政由此与早期王国网络发生错位。"
+  };
+  window.SOUTHEAST_ASIA_CORE_KINGDOMS_EVENTS = timeline.map((item, index) => ({ ...item, contentLevel: "mainline", contentPresentation: "tiered", mainlineNarrative: narratives[item.id], background: [], process: [], results: [], debates: [], reviewQuestions: [], previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

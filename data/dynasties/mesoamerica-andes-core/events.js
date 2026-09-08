@@ -54,10 +54,15 @@
   };
   window.MESOAMERICA_ANDES_CORE_EVENTS = events.map((event, index) => ({
     ...event,
-    contentLevel: "mainline",
+    contentLevel: "core",
     contentPresentation: "tiered",
-    mainlineNarrative: narratives[event.id] || event.summary,
-    background: [], process: [], results: [], debates: [], reviewQuestions: [],
+    learningCase: event.learningCase || {
+      label: `[解释层] ${event.title}`,
+      claim: narratives[event.id] || event.summary,
+      sections: [["材料与机制", "本卡事实链应结合遗址、物质文化、文字材料或殖民档案，区分区域影响与直接统治。"]],
+      evidence: { title: "材料锚点：考古遗址、文字与区域研究", content: "核心事实由本卡来源中的考古、碑铭、文书或殖民时期材料交叉限定。" },
+      misconception: "不同地区的影响、联盟与行政控制必须分别判断。"
+    },
     sources: event.sources?.length ? event.sources : sources,
     previousEventIds: index ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []

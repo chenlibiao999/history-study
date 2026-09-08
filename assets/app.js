@@ -701,6 +701,21 @@
         const next = (event.nextEventIds || []).map(id => events.find(item => item.id === id)?.title).filter(Boolean);
         if (previous.length) container.append(textNode("p", "mainline-link", `承接：${previous.join("；")}`));
         if (next.length) container.append(textNode("p", "mainline-link", `导向：${next.join("；")}`));
+        const coreLinks = (event.coreEventIds || []).map(id => events.find(item => item.id === id)).filter(Boolean);
+        if (coreLinks.length) {
+          const links = document.createElement("div");
+          links.className = "mainline-core-links";
+          links.append(textNode("span", "mainline-core-label", "关联核心案例"));
+          coreLinks.forEach(coreEvent => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "mainline-core-link";
+            button.textContent = coreEvent.title;
+            button.addEventListener("click", () => selectEvent(coreEvent.id));
+            links.append(button);
+          });
+          container.append(links);
+        }
         const sourceIds = [...new Set((event.citations || []).map(item => item.sourceId).filter(Boolean))];
         const sourceNames = sourceIds.map(id => event.sources?.find(source => source.id === id)?.title || id);
         if (sourceNames.length) container.append(textNode("p", "mainline-source", `依据：${sourceNames.join("；")}`));

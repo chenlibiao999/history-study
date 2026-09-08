@@ -205,6 +205,7 @@
       sources: asArray(event.sources),
       citations: asArray(event.citations),
       claims: asArray(event.claims),
+      coreEventIds: asArray(event.coreEventIds),
       notes: asArray(event.notes),
       aliases: [...new Set([...asArray(event.aliases), event.id])]
     };
@@ -230,7 +231,46 @@
     };
   }
 
-  const events = Object.values(dynastyEvents).flat().map(normalizeEvent).sort((a, b) => {
+  const normalizedEvents = Object.values(dynastyEvents).flat().map(normalizeEvent);
+  const coreEvents = normalizedEvents.filter((event) => event.contentLevel === "core");
+  const coreRegionFamilies = [
+    ["south-asia", "indus-civilization", "maurya-gupta", "delhi-sultanate-mughal", "south-asia-imperial-core"],
+    ["southeast-asia", "mainland-southeast-asia", "island-southeast-asia", "colonial-southeast-asia", "southeast-asia-core-kingdoms"],
+    ["african-civilizations", "african-world", "africa-essential-empires", "nubia-kush", "ancient-egypt"],
+    ["americas-world", "mesoamerica-andes-core"],
+    ["oceania-world", "polynesian-oceania-core"]
+  ];
+
+  function overlapCount(left, right) {
+    const rightSet = new Set(right || []);
+    return (left || []).filter((item) => rightSet.has(item)).length;
+  }
+
+  function chooseCoreLinks(event) {
+    if (event.contentLevel !== "mainline" || event.coreEventIds.length) return event;
+    const sameDynasty = coreEvents.filter((candidate) => candidate.dynastyId === event.dynastyId);
+    let candidates = sameDynasty.length
+      ? sameDynasty
+      : coreEvents.filter((candidate) => overlapCount(event.regions, candidate.regions) > 0);
+    const regionFamily = coreRegionFamilies.find((family) => family.includes(event.dynastyId));
+    if (!candidates.length && regionFamily) {
+      candidates = coreEvents.filter((candidate) => regionFamily.includes(candidate.dynastyId));
+    }
+    if (!candidates.length) return { ...event, coreLinkStatus: "needs-core" };
+    const ranked = candidates.map((candidate) => {
+      const topicScore = overlapCount(event.topics, candidate.topics) * 80;
+      const regionScore = overlapCount(event.regions, candidate.regions) * 40;
+      const distance = Math.abs((event.timelineStartYear || 0) - (candidate.timelineStartYear || 0));
+      return { candidate, score: topicScore + regionScore - distance / 200 };
+    }).sort((left, right) => right.score - left.score || left.candidate.timelineStartYear - right.candidate.timelineStartYear);
+    return {
+      ...event,
+      coreEventIds: ranked.slice(0, sameDynasty.length ? 1 : 2).map(({ candidate }) => candidate.id),
+      coreLinkBasis: sameDynasty.length ? "same-dynasty" : regionFamily ? "regional-family" : "regional-context"
+    };
+  }
+
+  const events = normalizedEvents.map(chooseCoreLinks).sort((a, b) => {
     const yearDiff = (a.timelineStartYear ?? Number.MAX_SAFE_INTEGER) - (b.timelineStartYear ?? Number.MAX_SAFE_INTEGER);
     if (yearDiff) return yearDiff;
     return dynasties.findIndex((dynasty) => dynasty.id === a.dynastyId) - dynasties.findIndex((dynasty) => dynasty.id === b.dynastyId);

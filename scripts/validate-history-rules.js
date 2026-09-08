@@ -679,6 +679,14 @@ for (const event of data.events) {
   if (event.contentLevel === "mainline" && !((event.previousEventIds || []).length || (event.nextEventIds || []).length)) {
     errors.push(`${event.title}: 主线节点必须至少关联一个前后事件`);
   }
+  if (event.contentLevel === "mainline" && !(event.coreEventIds || []).length && event.coreLinkStatus !== "needs-core") {
+    errors.push(`${event.title}: 主线节点必须关联解释性核心案例，或标记为 needs-core`);
+  }
+  for (const coreEventId of event.coreEventIds || []) {
+    const coreEvent = data.events.find((item) => item.id === coreEventId);
+    if (!coreEvent) errors.push(`${event.title}: coreEventIds 无效 ${coreEventId}`);
+    else if (coreEvent.contentLevel !== "core") errors.push(`${event.title}: coreEventIds 必须指向核心案例 ${coreEventId}`);
+  }
   if (!Array.isArray(event.people)) {
     errors.push(`${event.title}: people 必须是数组`);
   }

@@ -51,10 +51,15 @@
   };
   window.POLYNESIAN_OCEANIA_CORE_EVENTS = events.map((event, index) => ({
     ...event,
-    contentLevel: "mainline",
+    contentLevel: "core",
     contentPresentation: "tiered",
-    mainlineNarrative: narratives[event.id] || event.summary,
-    background: [], process: [], results: [], debates: [], reviewQuestions: [],
+    learningCase: event.learningCase || {
+      label: `[解释层] ${event.title}`,
+      claim: narratives[event.id] || event.summary,
+      sections: [["材料与机制", "本卡须把考古、口述传统、航海知识与殖民档案分别置于其可支持的范围内。"]],
+      evidence: { title: "材料锚点：考古、口述传统与档案", content: "核心事实由本卡来源中的遗址、物质文化、口传知识和档案材料交叉限定。" },
+      misconception: "岛屿社会不能用现代国界或欧洲殖民文书单独解释。"
+    },
     sources: event.sources?.length ? event.sources : sources,
     previousEventIds: index ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []

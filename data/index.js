@@ -135,6 +135,8 @@
     "african-civilizations": window.AFRICAN_CIVILIZATIONS_EMPERORS || [],
     "nubia-kush": window.NUBIA_KUSH_EMPERORS || [],
     "americas-world": window.AMERICAS_WORLD_EMPERORS || [],
+    "north-america": window.NORTH_AMERICA_EMPERORS || [],
+    "south-america": window.SOUTH_AMERICA_EMPERORS || [],
     "oceania-world": window.OCEANIA_WORLD_EMPERORS || [],
     "ancient-near-east": window.ANCIENT_NEAR_EAST_EMPERORS || [],
     "sumer-early-mesopotamia": window.SUMER_EARLY_MESOPOTAMIA_EMPERORS || [],

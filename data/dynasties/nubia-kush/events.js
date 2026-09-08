@@ -3057,6 +3057,7 @@ window.NUBIA_KUSH_EVENTS = [
     ...event,
     contentLevel: "mainline",
     contentPresentation: "tiered",
+    mainlineNarrative: event.summary,
     previousEventIds: index > 0 ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));

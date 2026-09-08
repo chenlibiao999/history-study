@@ -4416,6 +4416,7 @@ function addAfricaExpansionEvent(item) {
     ...event,
     contentLevel: "mainline",
     contentPresentation: "tiered",
+    mainlineNarrative: (event.results || []).find((item) => item && !item.includes("学习主线")) || event.summary,
     previousEventIds: index > 0 ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));

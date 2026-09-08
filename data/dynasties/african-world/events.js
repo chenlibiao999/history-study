@@ -48,5 +48,5 @@
     ["african-world-oau", "非洲统一组织成立", "殖民与独立", "1963", "新独立非洲国家建立非洲统一组织，试图推进反殖民、主权平等和区域合作。", "非洲独立后进入国家建设、边界继承、发展道路和区域一体化的新阶段。", ["非洲独立国家", "海尔·塞拉西一世"], ["非洲统一组织", "泛非主义", "独立后秩序"], ["非洲"]]
   ];
   const timeline = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
-  window.AFRICAN_WORLD_EVENTS = timeline.map((item, index) => ({ ...item, contentLevel: "mainline", contentPresentation: "tiered", background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [], previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
+  window.AFRICAN_WORLD_EVENTS = timeline.map((item, index) => ({ ...item, contentLevel: "mainline", contentPresentation: "tiered", mainlineNarrative: `${item.summary} ${item.results[0] || ""}`.trim(), background: [], process: [], results: [], debates: [], reviewQuestions: [], previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

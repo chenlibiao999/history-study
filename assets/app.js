@@ -696,10 +696,14 @@
     if (event.contentPresentation === "tiered" && event.contentLevel !== "core") {
       container.append(textNode("p", "", event.summary));
       if (event.contentLevel === "mainline") {
+        if (event.mainlineNarrative) container.append(textNode("p", "mainline-narrative", event.mainlineNarrative));
         const previous = (event.previousEventIds || []).map(id => events.find(item => item.id === id)?.title).filter(Boolean);
         const next = (event.nextEventIds || []).map(id => events.find(item => item.id === id)?.title).filter(Boolean);
         if (previous.length) container.append(textNode("p", "mainline-link", `承接：${previous.join("；")}`));
         if (next.length) container.append(textNode("p", "mainline-link", `导向：${next.join("；")}`));
+        const sourceIds = [...new Set((event.citations || []).map(item => item.sourceId).filter(Boolean))];
+        const sourceNames = sourceIds.map(id => event.sources?.find(source => source.id === id)?.title || id);
+        if (sourceNames.length) container.append(textNode("p", "mainline-source", `依据：${sourceNames.join("；")}`));
       }
       return;
     }

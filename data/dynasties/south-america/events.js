@@ -4183,6 +4183,16 @@ function addSouthAmericaExpansionEvent(item) {
 })();
 
 (() => {
+  const events = window.SOUTH_AMERICA_EVENTS || [];
+  window.SOUTH_AMERICA_EVENTS = events.map((event, index) => event.contentLevel === "core" ? event : {
+    ...event,
+    contentLevel: "mainline",
+    previousEventIds: event.previousEventIds?.length ? event.previousEventIds : (index ? [events[index - 1].id] : []),
+    nextEventIds: event.nextEventIds?.length ? event.nextEventIds : (index < events.length - 1 ? [events[index + 1].id] : [])
+  });
+})();
+
+(() => {
   const anchors = {
     "caral-norte-chico": ["-10.9, -77.5", "秘鲁苏佩河谷卡拉尔", "太平洋海岸、苏佩河谷与安第斯山前"],
     "moche-nazca": ["-8.1, -79.0", "秘鲁北海岸与纳斯卡高原", "海岸河谷灌溉、安第斯山前与太平洋"],

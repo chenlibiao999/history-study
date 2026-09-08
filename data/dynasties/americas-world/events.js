@@ -32,12 +32,53 @@
 })();
 (() => {
   const events = window.AMERICAS_WORLD_EVENTS || [];
+  const sources = window.AMERICAS_WORLD_SOURCES || [];
+  const narratives = {
+    "americas-world-peopling": "考古遗址、古 DNA 与海岸路线研究共同表明，进入美洲不是单一时点的一次迁徙；不同人群随后在极地、内陆平原和热带形成相异生计。",
+    "americas-world-agriculture": "作物驯化不是自动通向国家：玉米、马铃薯等提高定居与储存能力，而水利、劳作组织和交换网络才使部分地区出现更大聚落。",
+    "americas-world-olmec": "墨西哥湾沿岸的圣洛伦索、拉本塔等中心把大型公共工程、石雕与远距离物资交换聚合起来；其影响可追踪，但不能简单称为所有中美洲文明的直接母体。",
+    "americas-world-chavin": "查文-德万塔尔处在山地与海岸之间，祭祀图像、建筑和外来物品显示其作为宗教汇聚点的作用；它并非覆盖整个安第斯的统一帝国。",
+    "americas-world-maya-classic": "提卡尔、卡拉克穆尔等城邦以王权、碑铭、历法和联盟竞争组织政治；9 世纪多地政权衰落并不等于玛雅人消失，而是低地城市体系重组。",
+    "americas-world-teotihuacan": "这座大型城市通过街区、宗教建筑与贸易网络影响周边；在玛雅地区可见其联系痕迹，但影响方式在直接控制、移民与象征借用之间仍需分别判断。",
+    "americas-world-tiwanaku-wari": "高原的蒂瓦纳库与秘鲁中部的瓦里分别发展仪式中心、道路和地方治理网络，为后来的安第斯整合提供经验，却不是印加国家的简单前身。",
+    "americas-world-aztec": "三城同盟以战争、贡赋和地方中介扩展权力；其统治既依赖墨西哥谷的湖区农业，也制造了可被西班牙人利用的盟友与敌对关系。",
+    "americas-world-inca": "库斯科统治集团将道路、仓储、劳役征发和地方首领合作结合起来，以跨越山地生态带；各地接受程度与控制方式并不相同。",
+    "americas-world-columbus": "1492 年后的接触不是单向“发现”：航行开启持续跨洋往来，病原、动植物、人口迁移、军事与征服制度在数十年中共同改变加勒比和大陆。",
+    "americas-world-aztec-conquest": "西班牙小部队无法单独解释 1521 年的结局。特拉斯卡拉等本地盟友、围城战、天花流行与既有贡赋冲突共同改变了权力平衡。",
+    "americas-world-inca-conquest": "1532 年的卡哈马卡俘虏事件发生在印加内战和疫病冲击之后；西班牙取得库斯科并不意味着安第斯社会立即服从，抵抗和协商持续多年。",
+    "americas-world-atlantic-colonial": "矿山、种植园、港口与行政中心把美洲接入大西洋。强制劳动和被奴役非洲人的跨洋迁移是这一体系的组成部分，而非边缘后果。",
+    "americas-world-us-independence": "独立战争改变了主权归属和共和制度，但奴隶制、原住民土地扩张以及州与联邦的权力分配没有随 1783 年和平而解决。",
+    "americas-world-haiti": "从 1791 年种植园起义到 1804 年独立，革命先后对抗法国殖民权力与再奴役企图；它改变了整个大西洋世界对奴隶制和殖民统治的计算。",
+    "americas-world-latin-independence": "1810 年代的战争终结西班牙在多数大陆地区的统治；军事联盟解体后，关税、地方军政力量和土地关系又塑造了新共和国的不同道路。",
+    "americas-world-us-expansion": "领土购买、美墨战争、定居者迁移和铁路建设把美国国家权力推向西部；原住民驱逐、墨西哥领土丧失与 1898 年后的海外扩张属于同一扩张链条的不同阶段。"
+  };
+  const sourceIds = {
+    "americas-world-peopling": "americas-world-smithsonian",
+    "americas-world-agriculture": "americas-world-met",
+    "americas-world-olmec": "americas-world-met",
+    "americas-world-chavin": "americas-world-met",
+    "americas-world-maya-classic": "americas-world-britannica",
+    "americas-world-teotihuacan": "americas-world-met",
+    "americas-world-tiwanaku-wari": "americas-world-met",
+    "americas-world-aztec": "americas-world-britannica",
+    "americas-world-inca": "americas-world-britannica",
+    "americas-world-columbus": "americas-world-britannica",
+    "americas-world-aztec-conquest": "americas-world-britannica",
+    "americas-world-inca-conquest": "americas-world-britannica",
+    "americas-world-atlantic-colonial": "americas-world-britannica",
+    "americas-world-us-independence": "americas-world-britannica",
+    "americas-world-haiti": "americas-world-britannica",
+    "americas-world-latin-independence": "americas-world-britannica",
+    "americas-world-us-expansion": "americas-world-britannica"
+  };
   window.AMERICAS_WORLD_EVENTS = events.map((event, index) => ({
     ...event,
     contentLevel: "mainline",
     contentPresentation: "tiered",
-    background: [], process: [], results: [], debates: [], claims: [], citations: [],
-    sources: [], reviewQuestions: [],
+    mainlineNarrative: narratives[event.id] || event.summary,
+    claims: [{ statement: event.summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: [sourceIds[event.id] || "americas-world-britannica"], note: "主线节点只陈述来源可支持的范围。" }],
+    citations: [{ sourceId: sourceIds[event.id] || "americas-world-britannica", reference: "区域史与馆藏资料入口", status: "待逐条细核", plainText: narratives[event.id] || event.summary, note: "用于定位本卡的区域主线与材料范围。" }],
+    sources,
     previousEventIds: index ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));

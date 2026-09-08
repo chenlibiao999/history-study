@@ -33,12 +33,33 @@
 })();
 (() => {
   const events = window.OCEANIA_WORLD_EVENTS || [];
+  const sources = window.OCEANIA_WORLD_SOURCES || [];
+  const narratives = {
+    "oceania-world-aboriginal-country": "“Country”指人、土地、水域、祖先、规范与照护责任相连的关系，而不是可任意转让的空地；各群体的语言、制度和知识传统并不相同。",
+    "oceania-world-tonga": "汤加的 Tu'i Tonga 礼仪与贡纳网络把多个岛屿联系起来；海路、婚姻和仪式影响比现代国境更能说明其政治范围。",
+    "oceania-world-australia-colony": "1788 年后的定居扩张以“无主地”观念主张土地，随后通过牧场、边境暴力和行政制度改变原住民社会；这一法律前提后来受到系统挑战。",
+    "oceania-world-waitangi": "1840 年的英语文本与毛利语文本在主权与治理权表述上存在差异，条约签署和土地交易由此成为持续的法律与政治争论。",
+    "oceania-world-labor-trade": "19 世纪的“黑鸟”招募横跨美拉尼西亚与澳大利亚、斐济等种植园经济；自愿雇佣、欺骗招募和强制掳掠须依据具体航线与档案区别。",
+    "oceania-world-pacific-war": "岛屿被改造成机场、港口和补给基地，居民经历迁移、劳役、轰炸与物资流入；战后基地网络和美澳影响改变了区域安全条件。",
+    "oceania-world-independence": "1962 年萨摩亚独立、1975 年巴布亚新几内亚独立标志去殖民化推进，但托管地、海外领地与新主权国家继续并存。"
+  };
+  const sourceIds = {
+    "oceania-world-aboriginal-country": "oceania-world-australian-museum",
+    "oceania-world-tonga": "oceania-world-britannica",
+    "oceania-world-australia-colony": "oceania-world-australian-museum",
+    "oceania-world-waitangi": "oceania-world-teara",
+    "oceania-world-labor-trade": "oceania-world-britannica",
+    "oceania-world-pacific-war": "oceania-world-britannica",
+    "oceania-world-independence": "oceania-world-britannica"
+  };
   window.OCEANIA_WORLD_EVENTS = events.map((event, index) => ({
     ...event,
-    contentLevel: "mainline",
+    contentLevel: event.contentLevel === "outline" ? "outline" : "mainline",
     contentPresentation: "tiered",
-    background: [], process: [], results: [], debates: [], claims: [], citations: [],
-    sources: [], reviewQuestions: [],
+    mainlineNarrative: narratives[event.id] || event.summary,
+    claims: [{ statement: event.summary, status: "较稳妥", statusType: "stable", confidence: "medium", sourceIds: [sourceIds[event.id] || "oceania-world-britannica"], note: "主线节点只陈述来源可支持的范围。" }],
+    citations: [{ sourceId: sourceIds[event.id] || "oceania-world-britannica", reference: "区域史与公共史资料入口", status: "待逐条细核", plainText: narratives[event.id] || event.summary, note: "用于定位本卡的区域主线与材料范围。" }],
+    sources,
     previousEventIds: index ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));

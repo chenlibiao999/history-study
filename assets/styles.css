@@ -745,6 +745,20 @@ button{cursor:pointer}
   background:rgba(91,168,140,.12);
   color:var(--text-accent);
 }
+.mainline-narrative{
+  max-width:82ch;
+  margin-top:13px;
+  color:var(--text-secondary);
+  font:16px/1.85 var(--font-serif);
+}
+.mainline-link,
+.mainline-source{
+  margin-top:10px;
+  color:var(--text-tertiary);
+  font-size:13px;
+  line-height:1.7;
+}
+.mainline-source{ color:var(--text-accent); }
 .claims-list{display:flex;flex-direction:column;gap:8px;max-width:86ch}
 .claim-card{
   padding:10px 12px;

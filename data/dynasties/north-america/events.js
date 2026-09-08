@@ -4368,6 +4368,16 @@ function addNorthAmericaExpansionEvent(item) {
 })();
 
 (() => {
+  const events = window.NORTH_AMERICA_EVENTS || [];
+  window.NORTH_AMERICA_EVENTS = events.map((event, index) => event.contentLevel === "core" ? event : {
+    ...event,
+    contentLevel: "mainline",
+    previousEventIds: event.previousEventIds?.length ? event.previousEventIds : (index ? [events[index - 1].id] : []),
+    nextEventIds: event.nextEventIds?.length ? event.nextEventIds : (index < events.length - 1 ? [events[index + 1].id] : [])
+  });
+})();
+
+(() => {
   const anchors = {
     "first-peopling-americas": ["65.0, -168.0", "白令陆桥与北美西北部", "白令陆桥、太平洋沿岸与冰川通道"],
     "hopewell-mississippian": ["38.7, -90.2", "密西西比河流域与卡霍基亚", "密西西比河、土丘中心与内陆交换路线"],

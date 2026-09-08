@@ -139,6 +139,13 @@
     el.replaceChildren();
   }
 
+  function createCoreBadge(){
+    const badge = textNode("span", "core-event-badge", "♛");
+    badge.title = "核心案例";
+    badge.setAttribute("aria-label", "核心案例");
+    return badge;
+  }
+
   function syncMobileLayout(event){
     const isMobile = event.matches;
     document.body.classList.toggle("mobile-layout", isMobile);
@@ -552,9 +559,13 @@
     button.type = "button";
     button.className = "tl-event" + (event.id === selectedId ? " selected" : "");
     button.dataset.id = event.id;
+    const title = textNode("span", "tl-title", event.title);
+    if (event.contentLevel === "core") {
+      title.append(createCoreBadge());
+    }
     button.append(
       textNode("span", "tl-year", event.time),
-      textNode("span", "tl-title", event.title),
+      title,
       textNode("span", "tl-tag", event.topics.join(" · "))
     );
     button.addEventListener("click", () => {
@@ -644,7 +655,10 @@
     const isOutline = isTiered && event.contentLevel === "outline";
     const isCondensed = isTiered && event.contentLevel !== "core";
     const eventEmperors = emperors.filter(emperor => emperorRelatedEventIds(emperor).includes(event.id));
-    $("#eventTitle").textContent = displayText(event.title, "未命名事件");
+    const title = $("#eventTitle");
+    clear(title);
+    title.append(textNode("span", "event-title-text", displayText(event.title, "未命名事件")));
+    if (event.contentLevel === "core") title.append(createCoreBadge());
     $("#bookmarkBtn").classList.toggle("bookmarked", bookmarked.has(event.id));
     $("#bookmarkBtn").innerHTML = bookmarked.has(event.id) ? "&#9733; 已收藏" : "&#9734; 收藏";
 

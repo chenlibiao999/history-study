@@ -374,9 +374,19 @@ button{cursor:pointer}
 .tl-event.selected::before{background:var(--accent-teal);box-shadow:0 0 8px var(--accent-teal)}
 .tl-year{color:var(--text-tertiary);font:11px var(--font-mono)}
 .tl-event.selected .tl-year{color:var(--text-accent)}
-.tl-title{font-size:13px;color:var(--text-primary);line-height:1.4}
+.tl-title{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--text-primary);line-height:1.4}
 .tl-event.selected .tl-title{color:var(--text-accent);font-weight:500}
 .tl-tag{font-size:10px;color:var(--text-tertiary)}
+.core-event-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  color:var(--text-amber);
+  font:12px/1 var(--font-serif);
+}
+#eventTitle{display:flex;align-items:baseline;gap:8px}
+#eventTitle .core-event-badge{font-size:17px}
 .empty-state{padding:16px;color:var(--text-tertiary);font-size:13px}
 .tl-emperor{
   margin:0 10px 8px;

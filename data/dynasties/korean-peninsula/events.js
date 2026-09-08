@@ -78,3 +78,38 @@
   ];
   window.KOREAN_PENINSULA_EVENTS = rows.map(([id, title, era, time, summary, result, names, topics]) => event(id, title, era, time, summary, result, names, topics));
 })();
+
+(() => {
+  const anchors = {
+    "korea-tang-silla-war": ["35.8, 128.6", "汉江以南与新罗王京", "黄海海路、汉江流域与太白山脉通道"],
+    "korea-goryeo-gwangjong": ["37.5, 126.6", "开京及高丽中西部", "礼成江、松岳盆地与半岛道路"],
+    "korea-goryeo-khitan-war": ["40.0, 124.4", "鸭绿江、开京与高丽北境", "鸭绿江渡口、辽东通道与山地城堡"],
+    "korea-goryeo-military-regime": ["37.5, 126.6", "开京与高丽主要州县", "礼成江水路、山城与地方交通"],
+    "korea-goryeo-mongol-war": ["37.6, 126.5", "江华岛、开京及半岛中部", "江华海峡、黄海潮汐与陆路城堡线"],
+    "korea-goryeo-gongmin": ["37.5, 126.6", "开京、双城与东北边境", "鸭绿江与图们江通道、元明东北亚路线"],
+    "korea-joseon-foundation": ["37.6, 127.0", "开京、汉阳与半岛中部", "汉江流域、威化岛与辽东边路"],
+    "korea-sejong-hangul": ["37.6, 127.0", "汉阳及朝鲜八道", "汉江、驿路网络与北方边防"],
+    "korea-imjin-war": ["35.2, 129.1", "釜山、汉城与朝鲜三道", "朝鲜海峡、南海航线与汉江道路"],
+    "korea-manchu-invasions": ["37.4, 127.2", "汉阳、南汉山城与鸭绿江北境", "鸭绿江渡口、山城和辽东通道"],
+    "korea-opening-and-annexation": ["37.6, 127.0", "汉城、仁川与朝鲜半岛", "江华海峡、釜山港、铁路与日本海航线"]
+  };
+  const sourceId = "korean-peninsula-met";
+  window.KOREAN_PENINSULA_EVENTS = window.KOREAN_PENINSULA_EVENTS.map((item) => {
+    const anchor = anchors[item.id];
+    if (!anchor) return item;
+    const sections = item.learningCase.sections;
+    const facts = [item.summary, ...sections.map(([, content]) => content), item.results[0]];
+    return {
+      ...item,
+      contentLevel: "core",
+      contentPresentation: "tiered",
+      timeAnchor: { time: item.time, regnal: item.era, coordinate: anchor[0], admin: anchor[1], terrainTransport: anchor[2] },
+      spatialAnchor: { coordinate: anchor[0], admin: anchor[1], terrainTransport: anchor[2] },
+      factLayer: facts.map((text) => ({ text, sourceId })),
+      process: facts.map((description, index) => ({ time: item.time, title: `事实节点 ${index + 1}`, description: `${description}；这一环节经由${anchor[2]}上的人口、物资、权力或军事调动，连接到本卡所述的半岛与东北亚政治变化。` })),
+      causalChain: sections.map(([label, content], index) => ({ label: index === 0 ? "表层因" : index === 1 ? "深层因" : "结构因", content })),
+      debates: [{ view: "[争议边界]", content: item.learningCase.misconception }],
+      sources: window.KOREAN_PENINSULA_SOURCES || item.sources
+    };
+  });
+})();

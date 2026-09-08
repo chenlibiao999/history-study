@@ -96,3 +96,39 @@
       };
     });
 })();
+
+(() => {
+  const anchors = {
+    "southeast-asia-funan": ["10.3, 106.2", "湄公河三角洲扶南遗址群", "湄公河河网、河口港与南海航线"],
+    "southeast-asia-srivijaya": ["0.7, 103.4", "苏门答腊东南岸与马六甲海峡", "马六甲海峡、季风航线与港口转运"],
+    "southeast-asia-angkor-founding": ["13.4, 103.9", "吴哥及洞里萨湖平原", "洞里萨湖、水库运河与陆路网络"],
+    "southeast-asia-pagan": ["21.2, 94.9", "伊洛瓦底江中游蒲甘", "伊洛瓦底江航道、旱季灌溉与河谷稻作"],
+    "southeast-asia-angkor-wat": ["13.4, 103.9", "吴哥寺与暹粒平原", "壕沟、堤道、水库和洞里萨湖流域"],
+    "southeast-asia-majapahit": ["-7.5, 112.4", "东爪哇特罗乌兰及爪哇港口", "布兰塔斯河流域、爪哇稻作腹地与群岛航线"],
+    "southeast-asia-ayutthaya": ["14.4, 100.6", "湄南河下游大城", "湄南河水网、稻作平原与暹罗湾航路"],
+    "southeast-asia-malacca": ["2.2, 102.3", "马来半岛西岸马六甲", "马六甲海峡、季风停泊与印度洋-南海航线"],
+    "southeast-asia-dutch-voc": ["-6.2, 106.8", "巴达维亚、爪哇和马鲁古", "爪哇港口、巽他海峡与香料群岛航线"],
+    "southeast-asia-british-french-colonial": ["15.0, 105.0", "缅甸、马来亚与法属印度支那", "湄公河、伊洛瓦底江、港口与殖民铁路"],
+    "southeast-asia-philippines-spanish-american": ["14.6, 120.9", "吕宋马尼拉及菲律宾群岛", "马尼拉湾、太平洋航线与阿卡普尔科航路"],
+    "southeast-asia-japanese-occupation-independence": ["1.3, 103.8", "东南亚主要殖民地与港口城市", "南海、马六甲海峡、铁路与战时海运线"]
+  };
+  const sourceId = "southeast-asia-met";
+  window.SOUTHEAST_ASIA_EVENTS = window.SOUTHEAST_ASIA_EVENTS.map((item) => {
+    const anchor = anchors[item.id];
+    if (!anchor) return item;
+    const sections = item.learningCase.sections;
+    const facts = [item.summary, ...sections.map(([, content]) => content), item.results[0]];
+    return {
+      ...item,
+      contentLevel: "core",
+      contentPresentation: "tiered",
+      timeAnchor: { time: item.time, regnal: item.era, coordinate: anchor[0], admin: anchor[1], terrainTransport: anchor[2] },
+      spatialAnchor: { coordinate: anchor[0], admin: anchor[1], terrainTransport: anchor[2] },
+      factLayer: facts.map((text) => ({ text, sourceId })),
+      process: facts.map((description, index) => ({ time: item.time, title: `事实节点 ${index + 1}`, description: `${description}；这一环节经由${anchor[2]}上的人口、货物、制度或军事调动，连接到本卡所述的区域政治变化。` })),
+      causalChain: sections.map(([label, content], index) => ({ label: index === 0 ? "表层因" : index === 1 ? "深层因" : "结构因", content })),
+      debates: [{ view: "[争议边界]", content: item.learningCase.misconception }],
+      sources: window.SOUTHEAST_ASIA_SOURCES || item.sources
+    };
+  });
+})();

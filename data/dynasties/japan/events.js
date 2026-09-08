@@ -75,3 +75,36 @@
   ];
   window.JAPAN_EVENTS = rows.map(([id, title, era, time, summary, result, names, topics]) => event(id, title, era, time, summary, result, names, topics));
 })();
+
+(() => {
+  const anchors = {
+    "japan-taika-reforms": ["34.5, 135.8", "大和飞鸟地区", "奈良盆地、濑户内海与朝鲜海峡航线"],
+    "japan-genpei-war": ["34.4, 132.5", "关东、京都与濑户内海", "东海道、关东平原与关门海峡"],
+    "japan-mongol-invasions": ["33.6, 130.4", "九州博多湾与壹岐对马", "朝鲜海峡、博多湾与海上补给线"],
+    "japan-onin-war": ["35.0, 135.8", "京都与畿内", "京都盆地、山阴山阳道路与守护领国网络"],
+    "japan-toyotomi-unification": ["34.7, 135.5", "畿内、大阪及全国主要领国", "大阪湾、东海道与城下町交通线"],
+    "japan-korea-invasions": ["35.2, 129.1", "朝鲜半岛南部、九州与对马", "朝鲜海峡、釜山港与海上补给线"],
+    "japan-tokugawa-shogunate": ["35.7, 139.8", "江户与全国藩领", "东海道、利根川水系与大名参勤路线"],
+    "japan-maritime-restrictions": ["32.7, 129.9", "长崎、对马、萨摩与松前", "长崎港、朝鲜海峡、琉球航线与虾夷通道"],
+    "japan-black-ships-meiji": ["35.3, 139.7", "浦贺、江户与京都", "东京湾、太平洋航线与东海道" ]
+  };
+  const sourceId = "japan-met";
+  window.JAPAN_EVENTS = window.JAPAN_EVENTS.map((item) => {
+    const anchor = anchors[item.id];
+    if (!anchor) return item;
+    const sections = item.learningCase.sections;
+    const facts = [item.summary, ...sections.map(([, content]) => content), item.results[0]];
+    return {
+      ...item,
+      contentLevel: "core",
+      contentPresentation: "tiered",
+      timeAnchor: { time: item.time, regnal: item.era, coordinate: anchor[0], admin: anchor[1], terrainTransport: anchor[2] },
+      spatialAnchor: { coordinate: anchor[0], admin: anchor[1], terrainTransport: anchor[2] },
+      factLayer: facts.map((text) => ({ text, sourceId })),
+      process: facts.map((description, index) => ({ time: item.time, title: `事实节点 ${index + 1}`, description: `${description}；这一环节经由${anchor[2]}上的人口、物资、权力或军事调动，连接到本卡所述的制度和政治结果。` })),
+      causalChain: sections.map(([label, content], index) => ({ label: index === 0 ? "表层因" : index === 1 ? "深层因" : "结构因", content })),
+      debates: [{ view: "[争议边界]", content: item.learningCase.misconception }],
+      sources: window.JAPAN_SOURCES || item.sources
+    };
+  });
+})();

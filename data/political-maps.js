@@ -235,6 +235,41 @@
               area("代、雁门、上谷及北边", "白登之围和和亲政策说明西汉初北方边防仍受匈奴强压，不能把北边视为稳定扩张区。")
             ], "外部军事压力与边防空间。")
           ]
+        }),
+        snapshot({
+          id: "china-map-western-han-2ce",
+          dynastyId: "western-han",
+          title: "西汉末年郡国与西域都护空间",
+          period: "西汉末",
+          timeRange: "前60后至2年",
+          eventIds: [
+            "whan-han-xiongnu-war",
+            "whan-hexi-western-regions",
+            "whan-zhang-qian-western-regions"
+          ],
+          basis: referenceMapBasis,
+          confidence: "medium-high",
+          referenceMap: {
+            src: "assets/maps/china/han-dynasty-2ce.png",
+            title: "Han Dynasty map 2CE.png",
+            sourceTitle: "Wikimedia Commons: Han Dynasty map 2CE.png",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Han_Dynasty_map_2CE.png",
+            author: "Historian of the arab people",
+            license: "Public domain dedication (PD-self)",
+            note: "原图以郡国和西域都护府的不同色阶区分直接统治与西域政治关系；西域城邦不应理解为与内地同强度的郡县控制。"
+          },
+          note: "这是一张西汉末年的结果性快照，用于回看武帝时期河西经营、张骞通西域和汉匈战争怎样改变通道与政治关系；不把它当作这些行动发生当年的精确边界。",
+          layers: [
+            layer("core-admin", "郡国核心区", "#5ba88c", [
+              area("关中、中原至岭南郡国", "图中深色部分是西汉郡县与王国体系覆盖较稳定的核心，不等于边地的治理强度完全相同。")
+            ], "中央官僚、郡国与赋役体系的主要覆盖区。"),
+            layer("military", "河西走廊与边郡", "#c29a5c", [
+              area("河西四郡与北方边郡", "河西是连通关中、西域和北方边防的狭长走廊，设置郡县与军镇都依赖绿洲、粮道和驻军。")
+            ], "军事、移民屯垦与行政设置共同维持的通道。"),
+            layer("influence", "西域都护关系", "#4a7fb5", [
+              area("塔里木盆地诸城邦", "西域都护府与各城邦的关系包含驻军、册封、贸易与军事保护，不能直接等同于内地郡县。")
+            ], "政治与军事影响层。")
+          ]
         })
       ]
     },
@@ -580,6 +615,175 @@
             layer("contested", "接触时代压力区", "#c29a5c", [
               area("18-19世纪欧洲接触后的太平洋", "贸易、传教、疾病和殖民压力改变岛屿社会。")
             ], "后期外部压力和转型空间。")
+          ]
+        })
+      ]
+    },
+
+    "northern-southern": {
+      dynastyId: "northern-southern",
+      title: "西晋至南北朝参考历史地图",
+      mapPolicy: "reference-map-only",
+      note: "现阶段只接入西晋统一末期快照，用于解释八王之乱与永嘉崩解发生前的全国性政治空间；南北朝中后期另待可靠对应底图。",
+      snapshots: [
+        snapshot({
+          id: "china-map-western-jin-280",
+          dynastyId: "northern-southern",
+          title: "西晋灭吴后的统一格局",
+          period: "西晋统一",
+          timeRange: "280-304",
+          eventIds: ["ns-eight-princes-war", "ns-yongjia-collapse"],
+          basis: referenceMapBasis,
+          confidence: "medium",
+          referenceMap: {
+            src: "assets/maps/china/western-jin.png",
+            title: "China Western Jin.PNG",
+            sourceTitle: "Wikimedia Commons: China Western Jin.PNG",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:China_Western_Jin.PNG",
+            author: "LiDaobing",
+            license: "CC BY-SA 3.0 / GFDL",
+            note: "图示是280年灭吴至304年五胡十六国兴起前的西晋；它用于理解统一基础，不代表永嘉之后的分裂地图。"
+          },
+          note: "西晋统一并未消除军事与宗室的结构问题。此图应与八王之乱、永嘉崩解并读，观察洛阳中枢、北方边郡与江南之间怎样从同一政权空间重新断裂。",
+          layers: [
+            layer("core-admin", "西晋统一核心", "#5ba88c", [area("洛阳、关中与中原郡县", "西晋中央、宗室封国与官僚体系所在区域；同属帝国并不意味着权力协调。")], "统一后中央控制的主要政治空间。"),
+            layer("military", "北方边郡与内迁部族活动区", "#c29a5c", [area("并州、幽州及河套周边", "边郡军政、部族安置与地方武力是西晋后期风险集中处，不能以统一色块掩盖其脆弱性。")], "边防与内迁人口交错的压力区。")
+          ]
+        })
+      ]
+    },
+
+    "tang": {
+      dynastyId: "tang",
+      title: "唐前期参考历史地图",
+      mapPolicy: "reference-map-only",
+      note: "接入742年行政道与边疆空间快照，用于解释开元时期的中枢、漕运和边镇为何能共同支撑又牵制唐前期国家能力。",
+      snapshots: [
+        snapshot({
+          id: "china-map-tang-742",
+          dynastyId: "tang",
+          title: "742年唐朝行政道与边疆",
+          period: "开元后期",
+          timeRange: "742",
+          eventIds: ["kaiyuan-era", "an-shi-rebellion"],
+          basis: referenceMapBasis,
+          confidence: "medium-high",
+          referenceMap: {
+            src: "assets/maps/china/tang-742.svg",
+            title: "China, 742.svg",
+            sourceTitle: "Wikimedia Commons: China, 742.svg",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:China,_742.svg",
+            author: "Yug",
+            license: "CC BY-SA 3.0",
+            note: "原图据《剑桥中国史》相关地图绘制；西部行政与保护关系的口径需与核心内地行政区分开读。"
+          },
+          note: "742年是开元后期的空间快照，不是安史之乱时的疆域。它用来说明盛唐行政、漕运和边防资源的覆盖，也提示边区军事经营的成本与中枢的依赖关系。",
+          layers: [
+            layer("core-admin", "内地道与两京体系", "#5ba88c", [area("关中、河南、江淮与东南诸道", "两京、运河与主要赋役区构成唐廷财政和行政的重心。")], "内地官僚与财政调配覆盖较强的区域。"),
+            layer("military", "北方与西北边防", "#c29a5c", [area("河东、朔方、陇右及西北方向", "边镇、军镇与保护体系承担外部竞争，控制性质和成本均不同于内地行政。")], "军事经营与边疆控制区。"),
+            layer("influence", "安西、北庭及西域联结", "#4a7fb5", [area("西域交通节点", "保护、驻军与地方政权关系构成跨区域联结，不可简化为均质领土。")], "政治和军事影响层。")
+          ]
+        })
+      ]
+    },
+
+    "northern-song": {
+      dynastyId: "northern-song",
+      title: "北宋、辽与西夏参考历史地图",
+      mapPolicy: "reference-map-only",
+      note: "1111年快照用于解释北宋北方和西北边界的长期结构，而非替代各次战役的路线图。",
+      snapshots: [
+        snapshot({
+          id: "china-map-song-liao-xixia-1111-song",
+          dynastyId: "northern-song",
+          title: "1111年北宋、辽、西夏并立",
+          period: "北宋后期",
+          timeRange: "1111",
+          eventIds: ["nsong-chanyuan-treaty", "nsong-western-xia-rise", "nsong-haishang-alliance", "nsong-jingkang-crisis"],
+          basis: referenceMapBasis,
+          confidence: "medium",
+          referenceMap: {
+            src: "assets/maps/china/song-liao-xixia-1111.png",
+            title: "Song-Liao-Xixia-1111.png",
+            sourceTitle: "Wikimedia Commons: Song-Liao-Xixia-1111.png",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Song-Liao-Xixia-1111.png",
+            author: "Douglasfrankfort",
+            license: "CC BY 3.0",
+            note: "图示三国及周边在1111年的大致范围；边界应视为历史地图的概括，不代替条约、驻军与实际征税范围。"
+          },
+          note: "此图把北宋的财赋核心、辽控制的燕云与西夏占据的河西—西北走廊同时放入一张空间图中，是理解澶渊、宋夏边防、海上之盟和靖康危机的背景入口。",
+          layers: [
+            layer("core-admin", "北宋内地财赋区", "#5ba88c", [area("开封、中原与江南", "北宋财政与文官行政的重心在内地；强财赋并不自动转化为北方边防优势。")], "北宋稳定行政与财赋区。"),
+            layer("core-admin", "辽与西夏控制区", "#6a91c9", [area("燕云、辽上京道与西夏河西走廊", "燕云关系北宋北防，河西关系西北交通；两者的控制方式与内地郡县不同。")], "并立政权的主要控制区。"),
+            layer("contested", "宋辽、宋夏边境", "#c29a5c", [area("河北北部与陕西西北", "盟约、岁币、互市、堡寨和军事行动共同塑造边境，边线并非静态。")], "长期博弈与军政压力区。")
+          ]
+        })
+      ]
+    },
+
+    "liao": {
+      dynastyId: "liao",
+      title: "辽与宋夏并立参考历史地图",
+      mapPolicy: "reference-map-only",
+      note: "1111年快照用于解释辽的北方草原—燕云双重空间和宋夏三角关系；不以此图推定各时期的精确边界。",
+      snapshots: [
+        snapshot({
+          id: "china-map-song-liao-xixia-1111-liao",
+          dynastyId: "liao",
+          title: "1111年辽、北宋、西夏并立",
+          period: "辽道宗后期",
+          timeRange: "1111",
+          eventIds: ["liao-southern-northern-administration", "liao-chanyuan-south-campaign", "liao-shengzong-prosperity", "liao-daozong-decline"],
+          basis: referenceMapBasis,
+          confidence: "medium",
+          referenceMap: {
+            src: "assets/maps/china/song-liao-xixia-1111.png",
+            title: "Song-Liao-Xixia-1111.png",
+            sourceTitle: "Wikimedia Commons: Song-Liao-Xixia-1111.png",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Song-Liao-Xixia-1111.png",
+            author: "Douglasfrankfort",
+            license: "CC BY 3.0",
+            note: "图示1111年辽、北宋与西夏大致范围；对边地和附属关系只能作概览阅读。"
+          },
+          note: "同一张并立图从辽的视角强调两套治理、燕云与宋辽边境：辽的国家能力来自草原政治、燕云农业区和南北面官的组合，不是单一行政逻辑。",
+          layers: [
+            layer("core-admin", "辽的草原与燕云双重核心", "#6a91c9", [area("上京方向与燕云十六州", "草原部族政治和燕云农耕、城市区的治理对象不同，正是南北面官制度的空间基础。")], "辽的主要控制区。"),
+            layer("contested", "宋辽边境与澶渊后秩序", "#c29a5c", [area("河北北部与燕山南北", "边境由互市、岁币、军镇与盟约共同维持；不等同于完全封闭的国界。")], "长期军事和外交博弈区。"),
+            layer("influence", "西北三角关系", "#4a7fb5", [area("辽、西夏、北宋接触地带", "辽对西夏与北宋的影响包含盟约、战争和外交斡旋，不等于直接行政控制。")], "跨政权影响层。")
+          ]
+        })
+      ]
+    },
+
+    "western-xia": {
+      dynastyId: "western-xia",
+      title: "西夏与宋辽并立参考历史地图",
+      mapPolicy: "reference-map-only",
+      note: "1111年快照用来解释西夏如何依托河西走廊、贺兰山与宋夏边境维持国家，而非把其控制区误读为全域同等治理。",
+      snapshots: [
+        snapshot({
+          id: "china-map-song-liao-xixia-1111-xia",
+          dynastyId: "western-xia",
+          title: "1111年西夏、北宋与辽并立",
+          period: "西夏中期",
+          timeRange: "1111",
+          eventIds: ["xia-yuanhao-proclaims-emperor", "xia-song-war-sanzhuankou", "xia-qingli-peace", "xia-chongzong-prosperity"],
+          basis: referenceMapBasis,
+          confidence: "medium",
+          referenceMap: {
+            src: "assets/maps/china/song-liao-xixia-1111.png",
+            title: "Song-Liao-Xixia-1111.png",
+            sourceTitle: "Wikimedia Commons: Song-Liao-Xixia-1111.png",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Song-Liao-Xixia-1111.png",
+            author: "Douglasfrankfort",
+            license: "CC BY 3.0",
+            note: "图示1111年西夏、北宋与辽大致范围；河西城镇、边塞与游牧活动区的控制强度存在差异。"
+          },
+          note: "西夏的重点不是面积，而是河西走廊、灵州—兴庆与宋夏边境堡寨构成的交通、军政和贸易网络；图中边界必须结合具体战役与和议阅读。",
+          layers: [
+            layer("core-admin", "兴庆与河西走廊核心", "#5ba88c", [area("贺兰山以东、灵州至河西城镇", "王都、绿洲城镇、交通节点和军事据点共同构成西夏统治基础。")], "西夏较稳定的军政和城市网络。"),
+            layer("contested", "宋夏边境堡寨带", "#c29a5c", [area("陕西、河东与西夏东南边境", "三川口、好水川、定川寨等战事说明边境由堡寨、粮道、互市和季节性行动共同塑造。")], "冲突、和议与岁赐并存的边境。"),
+            layer("influence", "辽金与草原方向", "#4a7fb5", [area("西夏北东与北方政权接触区", "西夏对外关系受辽、金与草原势力变化影响，外交承认不等于附属地。")], "跨政权关系层。")
           ]
         })
       ]

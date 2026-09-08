@@ -148,7 +148,8 @@
   const events = window.SUMER_EARLY_MESOPOTAMIA_EVENTS || [];
   window.SUMER_EARLY_MESOPOTAMIA_EVENTS = events.map((event, index) => ({
     ...event, contentLevel: "mainline", contentPresentation: "tiered",
-    background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [],
+    mainlineNarrative: [event.summary, ...(event.results || []).filter((item) => item && !item.includes("关键解释链"))].join(" "),
+    background: [], process: [], results: [], debates: [], reviewQuestions: [],
     previousEventIds: index ? [events[index - 1].id] : [], nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));
 })();

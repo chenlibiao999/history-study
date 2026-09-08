@@ -21,5 +21,5 @@
     ["ottoman-world-end", "土耳其独立战争与帝国终结", "民族主义与解体", "1919-1922", "穆斯塔法凯末尔领导独立战争，苏丹制被废除。", "奥斯曼帝国终结，现代土耳其共和国和中东托管体系成形。", ["凯末尔", "奥斯曼苏丹"], ["土耳其", "帝国终结"]]
   ];
   const timeline = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
-  window.OTTOMAN_WORLD_EVENTS = timeline.map((item, index) => ({ ...item, contentLevel: "mainline", contentPresentation: "tiered", background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [], previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
+  window.OTTOMAN_WORLD_EVENTS = timeline.map((item, index) => ({ ...item, contentLevel: "mainline", contentPresentation: "tiered", mainlineNarrative: `${item.summary} ${item.results[0] || ""}`.trim(), background: [], process: [], results: [], debates: [], reviewQuestions: [], previousEventIds: index ? [timeline[index - 1].id] : [], nextEventIds: index < timeline.length - 1 ? [timeline[index + 1].id] : [] }));
 })();

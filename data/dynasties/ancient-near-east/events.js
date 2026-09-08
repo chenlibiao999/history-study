@@ -25,9 +25,27 @@
 })();
 (() => {
   const events = window.ANCIENT_NEAR_EAST_EVENTS || [];
+  const narratives = {
+    "ancient-near-east-neolithic-near-east": "新月沃地出现驯化植物、村落和祭祀中心，为城市和国家形成奠基。谷物与牲畜的可储存剩余，使定居人口、劳作分工和公共仪式能够在河谷及山前地带持续积累。",
+    "ancient-near-east-jericho-catalhoyuk": "耶利哥与恰塔霍裕克显示早期定居聚落已能组织建筑、储存与仪式空间。它们不是后世城市国家的直接复制品，却说明人口聚集和区域交换早于文字与王权。",
+    "ancient-near-east-uruk-expansion": "乌鲁克时期的南两河城市把神庙经济、手工业和远距离交换集中到更大聚落。泥板与印章记录的管理需求，解释了文字为何首先嵌入物资与劳动的组织。",
+    "ancient-near-east-akkadian-empire": "萨尔贡的阿卡德将多座两河城市置入更大尺度的军事与贡赋框架。帝国依赖驻军、道路和地方精英合作，因而其扩张并不等于对所有区域的同等直接控制。",
+    "ancient-near-east-ur-iii": "乌尔第三王朝以官僚记录、徭役与神庙经济重新整合南两河。大量行政泥板可见资源调配的密度，也显示这种高度集中体系对农业、运输和地方服从的依赖。",
+    "ancient-near-east-old-babylon-hammurabi": "汉谟拉比通过联盟、战争与城市整合扩大巴比伦的支配范围。《汉谟拉比法典》首先是王权秩序的公开表述，不能直接视作所有社会成员日常生活的完整实录。",
+    "ancient-near-east-hittite-rise": "赫梯在安纳托利亚高原组织王权，并经山口进入北叙利亚的青铜时代竞争网络。其力量来自宫廷、附庸与战车军事的组合，而非孤立的单一民族扩张。",
+    "ancient-near-east-kadesh": "卡迭石之战围绕叙利亚通道展开，埃及与赫梯都以王室铭文宣示胜利。其后条约更能说明双方承认长期均势：边境、安全与王族关系需要制度化处理。",
+    "ancient-near-east-levant-city-states": "黎凡特港口与城邦通过木材、金属、奢侈品和书写体系连接埃及、两河、安纳托利亚与地中海。乌加里特等地的文书表明这些城市既受大国压力，也拥有自身商贸与外交选择。",
+    "ancient-near-east-neo-assyrian-rise": "新亚述以常备军、行省和强制迁徙建立跨区域军事帝国。迁徙既服务于削弱反抗，也服务于调动劳力与手工业；不同省份的控制强度和社会后果并不相同。",
+    "ancient-near-east-assyrian-deportations": "亚述将征服后的城市接入行省、贡赋和人口转移体系，以降低地方精英重新动员的能力。铭文多从王权胜利出发，需与地方遗址和后续人口分布区分阅读。",
+    "ancient-near-east-fall-nineveh": "前612年尼尼微被新巴比伦与米底联军攻陷，亚述长期军政网络随之瓦解。帝国崩溃不是单次围城的结果，也与长期战争、王位危机和边疆压力有关。",
+    "ancient-near-east-neo-babylonian": "新巴比伦在亚述崩解后控制两河和黎凡特，并以巴比伦城的重建展示王权与城市资源的重新集中。其秩序仍依赖对西部行省、灌溉农业和地区商路的持续维系。",
+    "ancient-near-east-babylonian-exile": "犹大精英被迁往巴比伦，是新巴比伦征服政策的一部分。流亡经验在后来的文本传统中具有关键位置，但其人口规模、社会构成与地方生活不能只由宗教叙事推断。",
+    "ancient-near-east-cyrus-babylon": "居鲁士于前539年进入巴比伦，使西亚主要政治中心纳入阿契美尼德帝国。居鲁士圆柱等材料呈现合法性语言，但帝国统治仍须通过既有神庙、城市精英和贡赋网络落实。"
+  };
   window.ANCIENT_NEAR_EAST_EVENTS = events.map((event, index) => ({
     ...event, contentLevel: "mainline", contentPresentation: "tiered",
-    background: [], process: [], results: [], debates: [], claims: [], citations: [], sources: [], reviewQuestions: [],
+    mainlineNarrative: narratives[event.id] || event.summary,
+    background: [], process: [], results: [], debates: [], reviewQuestions: [],
     previousEventIds: index ? [events[index - 1].id] : [], nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));
 })();

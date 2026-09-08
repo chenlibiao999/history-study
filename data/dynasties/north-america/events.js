@@ -4366,3 +4366,23 @@ function addNorthAmericaExpansionEvent(item) {
       background: [event.background, "本卡合并原“墨西哥革命”索引卡；1917年宪法作为革命的制度结果保留在过程内。"].filter(Boolean)
     } : event);
 })();
+
+(() => {
+  const anchors = {
+    "first-peopling-americas": ["65.0, -168.0", "白令陆桥与北美西北部", "白令陆桥、太平洋沿岸与冰川通道"],
+    "hopewell-mississippian": ["38.7, -90.2", "密西西比河流域与卡霍基亚", "密西西比河、土丘中心与内陆交换路线"],
+    "pueblo-revolt-1680": ["35.7, -106.1", "新墨西哥普韦布洛地区", "格兰德河谷、干旱高原与西班牙驿路"],
+    "american-revolution": ["39.9, -75.2", "十三殖民地大西洋沿岸", "大西洋港口、阿巴拉契亚山脉与殖民驿路"],
+    "us-constitution": ["39.9, -75.2", "费城与联邦各州", "大西洋港口、州际驿路与密西西比河流域"],
+    "us-civil-war": ["38.9, -77.0", "华盛顿、南部邦联与密西西比河流域", "铁路、密西西比河与大西洋港口"],
+    "civil-rights": ["33.5, -86.8", "美国南部与华盛顿", "南部公路、城市迁徙网络与联邦法院体系"]
+  };
+  const ids = new Set(Object.keys(anchors));
+  window.NORTH_AMERICA_EVENTS = window.NORTH_AMERICA_EVENTS.map((event) => {
+    if (!ids.has(event.id)) return event;
+    const [coordinate, admin, terrainTransport] = anchors[event.id];
+    const facts = [event.summary, event.background, ...event.process.map((step) => step.description), event.result || event.results?.[0]].filter(Boolean).slice(0, 5);
+    const sourceId = event.claims?.[0]?.sourceIds?.[0] || event.sources?.[0]?.id;
+    return { ...event, contentLevel:"core", contentPresentation:"tiered", timeAnchor:{time:event.time,regnal:event.era,coordinate,admin,terrainTransport}, spatialAnchor:{coordinate,admin,terrainTransport}, factLayer:facts.map((text)=>({text,sourceId})), process:facts.map((description,index)=>({time:event.time,title:`事实节点 ${index+1}`,description:`${description}；该环节经由${terrainTransport}上的人口、物资、法律或军事组织，传导为本卡的政治后果。`})), causalChain:[{kind:"cause",label:"[表层因]",title:"直接条件",description:facts[0]},{kind:"cause",label:"[深层因]",title:"社会与资源",description:facts[1]},{kind:"cause",label:"[结构因]",title:"区域结构",description:event.summary},{kind:"impact",label:"[传导机制]",title:"后续影响",description:facts[4]}], debates:[{view:"[争议边界]",content:"本卡以原住民、殖民档案与现代研究交叉理解；不同群体的经验和史料立场不能由单一国家叙事替代。"}]} ;
+  });
+})();

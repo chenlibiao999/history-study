@@ -4182,3 +4182,24 @@ function addSouthAmericaExpansionEvent(item) {
   window.SOUTH_AMERICA_EVENTS = window.SOUTH_AMERICA_EVENTS.filter((event) => !absorbedByCore.has(event.id));
 })();
 
+(() => {
+  const anchors = {
+    "caral-norte-chico": ["-10.9, -77.5", "秘鲁苏佩河谷卡拉尔", "太平洋海岸、苏佩河谷与安第斯山前"],
+    "moche-nazca": ["-8.1, -79.0", "秘鲁北海岸与纳斯卡高原", "海岸河谷灌溉、安第斯山前与太平洋"],
+    "chimu-kingdom": ["-8.1, -79.1", "秘鲁北海岸昌昌", "莫切河谷灌溉、海岸道路与手工业中心"],
+    "potosi-silver": ["-19.6, -65.8", "上秘鲁波托西", "安第斯高原、银矿道路与大西洋贸易线"],
+    "bolivar-campaigns": ["4.7, -74.1", "新格拉纳达、委内瑞拉与安第斯北部", "安第斯山道、奥里诺科河与加勒比港口"],
+    "brazil-independence": ["-22.9, -43.2", "里约热内卢与巴西沿海", "大西洋港口、咖啡腹地与葡萄牙航线"],
+    "operation-condor": ["-34.6, -58.4", "南锥体多国", "安第斯山口、跨境情报网络与首都机场"],
+    "democratization-south-america": ["-23.6, -46.6", "南锥体与安第斯主要国家", "首都城市网络、跨国债务市场与区域组织"]
+  };
+  const ids = new Set(Object.keys(anchors));
+  window.SOUTH_AMERICA_EVENTS = window.SOUTH_AMERICA_EVENTS.map((event) => {
+    if (!ids.has(event.id)) return event;
+    const [coordinate, admin, terrainTransport] = anchors[event.id];
+    const facts = [event.summary, event.background, ...event.process.map((step) => step.description), event.result || event.results?.[0]].filter(Boolean).slice(0, 5);
+    const sourceId = event.claims?.[0]?.sourceIds?.[0] || event.sources?.[0]?.id;
+    return { ...event, contentLevel:"core", contentPresentation:"tiered", timeAnchor:{time:event.time,regnal:event.era,coordinate,admin,terrainTransport}, spatialAnchor:{coordinate,admin,terrainTransport}, factLayer:facts.map((text)=>({text,sourceId})), process:facts.map((description,index)=>({time:event.time,title:`事实节点 ${index+1}`,description:`${description}；该环节经由${terrainTransport}上的人口、物资、法律或军事组织，传导为本卡的区域后果。`})), causalChain:[{kind:"cause",label:"[表层因]",title:"直接条件",description:facts[0]},{kind:"cause",label:"[深层因]",title:"社会与资源",description:facts[1]},{kind:"cause",label:"[结构因]",title:"区域结构",description:event.summary},{kind:"impact",label:"[传导机制]",title:"后续影响",description:facts[4]}], debates:[{view:"[争议边界]",content:"本卡涉及殖民、国家与族群经验；官方档案、地方材料和受影响社群的叙述应并置，不能以单一国家叙事替代。"}]} ;
+  });
+})();
+

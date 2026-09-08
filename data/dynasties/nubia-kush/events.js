@@ -3076,7 +3076,7 @@ window.NUBIA_KUSH_EVENTS = [
     ];
     const process = [
       ["约前8世纪中叶", "纳帕塔王权积累", "库施王权以纳帕塔和杰贝尔巴尔卡勒为宗教与政治中心，利用尼罗河谷的交通与贡赋组织军队。"],
-      ["约前728年", "北方诸侯冲突", "下埃及多个地方统治者竞争，皮耶以支援盟友和维护阿蒙秩序为名发动北进。"],
+      ["约前728年", "北方诸侯冲突", "下埃及多个地方统治者竞争并彼此结盟，皮耶以支援盟友和维护阿蒙秩序为名发动北进，争夺尼罗河城市控制权。"],
       ["约前728年", "沿尼罗河推进", "军队控制底比斯并向孟斐斯和三角洲推进；河运、城堡与河谷补给决定行动节奏。"],
       ["约前728年后", "胜利碑铭", "皮耶碑将征服叙述为恢复秩序，提供了研究事件的同时代王室文本，也限制了我们对失败者立场的了解。"],
       ["前8世纪后期", "第二十五王朝形成", "皮耶的后继者继续统治埃及，使库施王权成为埃及王朝史和努比亚国家史共同的一部分。"]
@@ -3092,7 +3092,7 @@ window.NUBIA_KUSH_EVENTS = [
       contentLevel: "core", contentPresentation: "tiered",
       timeAnchor: { time: event.time, regnal: "约前728年；库施皮耶北进", coordinate: "18.54, 31.83", admin: "纳帕塔—底比斯—孟斐斯与尼罗河三角洲", terrainTransport: "尼罗河航运、杰贝尔巴尔卡勒、河谷城堡与三角洲水网" },
       spatialAnchor: { coordinate: "18.54, 31.83", admin: "纳帕塔—底比斯—孟斐斯与尼罗河三角洲", terrainTransport: "尼罗河航运、杰贝尔巴尔卡勒、河谷城堡与三角洲水网" },
-      factLayer: facts.map((text) => ({ text: `[事实层] ${text}`, sourceId: source.id })),
+      factLayer: facts.map((text) => ({ text, sourceId: source.id })),
       background: [causes[2]], process: process.map(([time, title, description]) => ({ time, title, description })), results: [causes[3]],
       causalChain: causes.map((description, index) => ({ kind: index === 3 ? "impact" : "cause", label: ["[表层因]", "[深层因]", "[结构因]", "[传导机制]"][index], title: ["直接条件", "资源与制度", "长时段结构", "后续关联"][index], description })),
       debates: [{ view: "[争议边界]", content: "皮耶碑铭是王室自述，征服范围、地方服从程度和具体行军细节需与其他埃及、努比亚材料及考古资料交叉判断。" }],

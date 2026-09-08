@@ -243,6 +243,19 @@
       estimate(1963, "独立浪潮与非洲统一组织", { min: 2800, max: 3000 }, { min: 28000, max: 32000 }, "medium-low", ancientWorldBasis, "按非洲大陆国家和殖民地过渡期合计估算，人口统计质量随国家差异很大。")
     ], "非洲主体模块是多区域文明与国家形成的合计口径，面积人口用于展示大陆主要政治文化网络变迁，不代表单一连续国家。", ancientWorldBasis),
 
+    "african-civilizations": civilization([
+      estimate(-700, "库施、迦太基与北非城市网络", { min: 80, max: 180 }, { min: 300, max: 900 }, "low", ancientWorldBasis, "按库施、迦太基及北非主要政治文化区合计估算，不代表单一政权。"),
+      estimate(1325, "马里、斯瓦希里与埃塞俄比亚并立", { min: 250, max: 500 }, { min: 1500, max: 3000 }, "low", ancientWorldBasis, "按西非帝国、东非海岸和东北非高原主要政权合计估算；贸易影响区不等于直接控制区。"),
+      estimate(1900, "殖民瓜分后的非洲", { min: 2800, max: 3000 }, { min: 12000, max: 16000 }, "medium-low", ancientWorldBasis, "接近非洲大陆殖民地和少数独立国家合计口径，边界是殖民行政结果。"),
+      estimate(1963, "独立浪潮与非洲统一组织", { min: 2800, max: 3000 }, { min: 28000, max: 32000 }, "medium-low", ancientWorldBasis, "按非洲大陆国家和殖民地过渡期合计估算，人口统计质量随国家差异很大。")
+    ], "扩展模块沿用大陆主要政治文化网络的合计口径，用于比较国家形成、贸易和殖民边界的变化，不表示连续统一国家。", ancientWorldBasis),
+
+    "nubia-kush": civilization([
+      estimate(-1500, "克尔马与尼罗河中游", { min: 5, max: 12 }, { min: 30, max: 100 }, "low", ancientWorldBasis, "以尼罗河第二至第四瀑布间的聚落和农业带为核心，边缘控制强度不明。"),
+      estimate(-700, "纳帕塔王国与第二十五王朝", { min: 20, max: 45 }, { min: 150, max: 350 }, "low", ancientWorldBasis, "按努比亚核心区和短期进入埃及的控制范围估算，不能把朝贡与驻军地区等同。"),
+      estimate(200, "麦罗埃王国", { min: 15, max: 35 }, { min: 120, max: 300 }, "low", ancientWorldBasis, "按麦罗埃、尼罗河中游农业区及与红海方向的贸易节点近似。")
+    ], "努比亚与库施是阶段性王国和河谷文明区；面积人口为核心控制与主要聚落范围的近似，非现代国家统计。", ancientWorldBasis),
+
     "americas-world": civilization([
       estimate(-1500, "农业村落和区域中心并行", { min: 300, max: 800 }, { min: 500, max: 1500 }, "low", ancientWorldBasis, "按美洲主要农业和聚落区域合计估算，狩猎采集与农业社会并存。"),
       estimate(800, "玛雅、特奥蒂瓦坎和安第斯区域国家", { min: 400, max: 900 }, { min: 1500, max: 3000 }, "low", ancientWorldBasis, "按中美洲与安第斯主要文明区估算，非全美洲统一政治体。"),

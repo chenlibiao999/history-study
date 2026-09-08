@@ -26,6 +26,11 @@
   ];
   window.OCEANIA_WORLD_EVENTS = rows.map(([id, title, era, time, summary, result, names, topics, regions]) => event(id, title, era, time, summary, result, names, topics, regions));
 })();
+
+(() => {
+  const absorbed = new Set(["oceania-world-australia-settlement","oceania-world-lapita","oceania-world-polynesian-voyaging","oceania-world-maori","oceania-world-hawaii","oceania-world-cook"]);
+  window.OCEANIA_WORLD_EVENTS = window.OCEANIA_WORLD_EVENTS.map((event) => absorbed.has(event.id) ? { ...event, contentLevel: "outline", contentPresentation: "tiered" } : event);
+})();
 (() => {
   const events = window.OCEANIA_WORLD_EVENTS || [];
   window.OCEANIA_WORLD_EVENTS = events.map((event, index) => ({

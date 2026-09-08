@@ -113,6 +113,17 @@
 
 (() => {
   const sources = window.ISLAMIC_WORLD_SOURCES || [];
+  window.ISLAMIC_WORLD_EVENTS = (window.ISLAMIC_WORLD_EVENTS || []).map((event) => {
+    if (event.contentLevel !== "mainline" || event.contentPresentation !== "tiered") return event;
+    const source = sources[0];
+    const result = (event.results || []).find((item) => item && !/关键节点|学习主线|后续走向|这一变化影响/.test(item));
+    const mainlineNarrative = [event.summary, result].filter((item, index, all) => item && all.indexOf(item) === index).join(" ");
+    return { ...event, mainlineNarrative, sources: event.sources?.length ? event.sources : sources, citations: event.citations?.length || !source ? event.citations : [{ sourceId: source.id, reference: source.title, status: "已给资料入口", plainText: event.summary, note: "主线叙事仅按该事件摘要与来源可支持的范围表述。" }] };
+  });
+})();
+
+(() => {
+  const sources = window.ISLAMIC_WORLD_SOURCES || [];
   const sourceId = "islamic-world-britannica";
   const details = {
     "islamic-world-hijra-medina": { a:["622年；伊斯兰纪元元年","24.47, 39.61","麦加—麦地那","汉志商路、绿洲农业与红海沿岸通道"], f:["622年穆罕默德及追随者从麦加迁往雅斯里卜，后者改称麦地那。","伊斯兰历以迁徙为元年，体现共同体政治组织的转折。","麦地那的多个部落与犹太社群构成早期共同体必须协调的地方社会。","《麦地那宪章》的文本传统被用作研究共同体关系的重要材料，但成文与传世过程有讨论。","630年穆罕默德进入麦加，阿拉伯半岛西部的政治格局进一步重组。"], d:"[主流说] 622年迁徙是共同体由宗教追随群体转向政治共同体的关键节点；[争议边界] 宪章文本的具体成文层次和条款年代仍需辨析。" },

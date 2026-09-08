@@ -98,6 +98,17 @@
 })();
 
 (() => {
+  const sources = window.SOUTHEAST_ASIA_SOURCES || [];
+  window.SOUTHEAST_ASIA_EVENTS = (window.SOUTHEAST_ASIA_EVENTS || []).map((event) => {
+    if (event.contentLevel !== "mainline" || event.contentPresentation !== "tiered") return event;
+    const source = sources[0];
+    const result = (event.results || []).find((item) => item && !/关键节点|学习主线|后续走向|这一变化影响/.test(item));
+    const mainlineNarrative = [event.summary, result].filter((item, index, all) => item && all.indexOf(item) === index).join(" ");
+    return { ...event, mainlineNarrative, sources: event.sources?.length ? event.sources : sources, citations: event.citations?.length || !source ? event.citations : [{ sourceId: source.id, reference: source.title, status: "已给资料入口", plainText: event.summary, note: "主线叙事仅按该事件摘要与来源可支持的范围表述。" }] };
+  });
+})();
+
+(() => {
   const anchors = {
     "southeast-asia-funan": ["10.3, 106.2", "湄公河三角洲扶南遗址群", "湄公河河网、河口港与南海航线"],
     "southeast-asia-srivijaya": ["0.7, 103.4", "苏门答腊东南岸与马六甲海峡", "马六甲海峡、季风航线与港口转运"],

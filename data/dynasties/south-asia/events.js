@@ -246,6 +246,17 @@
       };
     });
 })();
+
+(() => {
+  const sources = window.SOUTH_ASIA_SOURCES || [];
+  window.SOUTH_ASIA_EVENTS = (window.SOUTH_ASIA_EVENTS || []).map((event) => {
+    if (event.contentLevel !== "mainline" || event.contentPresentation !== "tiered") return event;
+    const source = sources[0];
+    const result = (event.results || []).find((item) => item && !/关键节点|学习主线|后续走向|这一变化影响/.test(item));
+    const mainlineNarrative = [event.summary, result].filter((item, index, all) => item && all.indexOf(item) === index).join(" ");
+    return { ...event, mainlineNarrative, sources: event.sources?.length ? event.sources : sources, citations: event.citations?.length || !source ? event.citations : [{ sourceId: source.id, reference: source.title, status: "已给资料入口", plainText: event.summary, note: "主线叙事仅按该事件摘要与来源可支持的范围表述。" }] };
+  });
+})();
 (() => {
   const details = {
     "south-asia-huna-gupta-decline": {

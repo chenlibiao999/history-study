@@ -93,6 +93,17 @@
 
 (() => {
   const sources = window.CENTRAL_ASIA_SOURCES || [];
+  window.CENTRAL_ASIA_EVENTS = (window.CENTRAL_ASIA_EVENTS || []).map((event) => {
+    if (event.contentLevel !== "mainline" || event.contentPresentation !== "tiered") return event;
+    const source = sources[0];
+    const result = (event.results || []).find((item) => item && !/关键节点|学习主线|后续走向|这一变化影响/.test(item));
+    const mainlineNarrative = [event.summary, result].filter((item, index, all) => item && all.indexOf(item) === index).join(" ");
+    return { ...event, mainlineNarrative, sources: event.sources?.length ? event.sources : sources, citations: event.citations?.length || !source ? event.citations : [{ sourceId: source.id, reference: source.title, status: "已给资料入口", plainText: event.summary, note: "主线叙事仅按该事件摘要与来源可支持的范围表述。" }] };
+  });
+})();
+
+(() => {
+  const sources = window.CENTRAL_ASIA_SOURCES || [];
   const sourceId = "central-asia-met";
   const details = {
     "central-asia-scythian-saka": { a:["约前8至前3世纪；斯基泰—塞种时期","45.00, 68.00","欧亚草原、七河与中亚北缘","草原牧场、天山山口与绿洲商路"], f:["前8世纪后，希腊、波斯和中国文献分别以斯基泰、塞种等名称记录草原骑马群体。","阿契美尼德波斯铭文将部分塞种列入帝国边缘和军事征伐对象。","草原墓葬中的马具、武器和金器表明跨区域交换与精英网络的存在。","月氏西迁与草原压力改变巴克特里亚、河中和北印度的政治机会。","草原联盟的边界、名称和成员随时变化，不能等同于固定民族国家。"], d:"[主流说] 草原移动持续重排绿洲与帝国边缘；[争议边界] 文献族名、考古文化与语言群体不能直接一一对应。" },

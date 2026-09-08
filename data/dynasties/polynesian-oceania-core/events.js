@@ -40,12 +40,22 @@
 })();
 (() => {
   const events = window.POLYNESIAN_OCEANIA_CORE_EVENTS || [];
+  const sources = window.POLYNESIAN_OCEANIA_CORE_SOURCES || [];
+  const narratives = {
+    "polynesian-oceania-core-australia": "澳大利亚原住民历史需从深时定居、口述传统、土地知识与区域交换开始理解。殖民档案只记录接触后的局部经验，不能替代原住民社会自身的历史尺度。",
+    "polynesian-oceania-core-lapita": "拉皮塔陶器、聚落与航海遗存显示俾斯麦群岛至西太平洋的跨岛迁徙和交换。考古材料能追踪联系网络，但不能把所有岛屿社会压成同一人群或单一路线。",
+    "polynesian-oceania-core-polynesian-voyaging": "远航依赖星象、洋流、风向和双体舟知识，也依赖亲族组织与岛屿间的物资协调。太平洋定居是持续的航海与环境适应过程，而非一次偶然漂流。",
+    "polynesian-oceania-core-maori": "毛利社会在新西兰温带生态中调整土地利用、部族关系与沿海交通。它保留波利尼西亚联系，同时形成不能直接以热带岛屿经验解释的本地制度。",
+    "polynesian-oceania-core-hawaii": "夏威夷王权建立在岛间战争、资源控制与联盟之上，并在接触时代面临枪械、贸易和疾病带来的快速条件变化。王国形成与殖民压力需要放在同一转型链中理解。",
+    "polynesian-oceania-core-colonial-contact": "传教、贸易、疾病和殖民行政通过不同港口、岛屿与种植园网络进入大洋洲。各社群的回应、损失与制度变迁存在显著差异，不能写成单向的欧洲扩张。"
+  };
   window.POLYNESIAN_OCEANIA_CORE_EVENTS = events.map((event, index) => ({
     ...event,
     contentLevel: "mainline",
     contentPresentation: "tiered",
-    background: [], process: [], results: [], debates: [], claims: [], citations: [],
-    sources: [], reviewQuestions: [],
+    mainlineNarrative: narratives[event.id] || event.summary,
+    background: [], process: [], results: [], debates: [], reviewQuestions: [],
+    sources: event.sources?.length ? event.sources : sources,
     previousEventIds: index ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));

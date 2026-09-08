@@ -41,12 +41,24 @@
 })();
 (() => {
   const events = window.MESOAMERICA_ANDES_CORE_EVENTS || [];
+  const sources = window.MESOAMERICA_ANDES_CORE_SOURCES || [];
+  const narratives = {
+    "mesoamerica-andes-core-olmec": "圣洛伦索、拉文塔等中心通过仪式空间、石材运输与交换网络组织区域精英。奥尔梅克的重要性在于早期复杂社会的多点互动，而非把它设定为其他文明的单一源头。",
+    "mesoamerica-andes-core-chavin": "查文·德·万塔尔位于高地通道，仪式建筑与图像把海岸、高地和东坡的物资及朝圣者联结起来。其影响主要表现为宗教与物质风格网络，不等同于直接帝国统治。",
+    "mesoamerica-andes-core-maya-classic": "玛雅文字、王朝碑铭和城市竞争显示低地由多个政治中心构成。9世纪后部分中心衰落与战争、资源和治理压力交织，但玛雅语言与社会并未消失。",
+    "mesoamerica-andes-core-teotihuacan": "特奥蒂瓦坎依托墨西哥谷、黑曜石与仪式性城市布局形成广泛影响。其人口组成和对外控制方式存在争议，不能把文化影响直接等同于行政征服。",
+    "mesoamerica-andes-core-wari-tiwanaku": "瓦里与蒂瓦纳库分别依托高地道路、农牧与跨生态交换推动区域整合。二者提供了安第斯国家组织的先例，却不能被直接写成印加帝国的前身。",
+    "mesoamerica-andes-core-aztec": "三城同盟以湖盆堤道、奇南帕农业和贡赋体系整合多地，但各地控制深度不同。1519至1521年的崩解由本地联盟、疾病与西班牙军事资源共同造成。",
+    "mesoamerica-andes-core-inca": "印加道路、仓储、劳役与地方首领合作让库斯科能够调动安第斯多生态带资源。帝国内战、疾病与地方政治裂缝使1530年代的征服得以迅速扩大。",
+    "mesoamerica-andes-core-conquest": "西班牙征服不是少数欧洲人单独完成的军事胜利，而是加勒比航线、本地盟友、疾病和既有帝国冲突相互放大的结果。殖民统治随后仍须依赖原住民中介、矿业与强制劳役。"
+  };
   window.MESOAMERICA_ANDES_CORE_EVENTS = events.map((event, index) => ({
     ...event,
     contentLevel: "mainline",
     contentPresentation: "tiered",
-    background: [], process: [], results: [], debates: [], claims: [], citations: [],
-    sources: [], reviewQuestions: [],
+    mainlineNarrative: narratives[event.id] || event.summary,
+    background: [], process: [], results: [], debates: [], reviewQuestions: [],
+    sources: event.sources?.length ? event.sources : sources,
     previousEventIds: index ? [events[index - 1].id] : [],
     nextEventIds: index < events.length - 1 ? [events[index + 1].id] : []
   }));
